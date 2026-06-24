@@ -62,11 +62,43 @@ const MAX_REQUESTS = 10;
 // CORS HEADERS
 // ============================================
 
-const CORS_HEADERS = {
-  'Access-Control-Allow-Origin': process.env.ADMIN_URL || 'http://localhost:3001',
-  'Access-Control-Allow-Methods': 'POST, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-};
+function getCorsHeaders(origin: string | null): Record<string, string> {
+  // Eğer origin yoksa veya aynı origin ise CORS gerekmez
+  if (!origin) {
+    return {};
+  }
+
+  // Environment variable'dan izin verilen origin'leri al
+  const allowedOrigins = process.env.ADMIN_URL
+    ? process.env.ADMIN_URL.split(',').map(o => o.trim())
+    : ['http://localhost:3001', 'http://localhost:3000'];
+
+  // Origin izin verilen listesinde mi kontrol et
+  const isAllowed = allowedOrigins.some(allowed => {
+    // Exact match veya subdomain match
+    return origin === allowed || origin === allowed.replace(/^https?:\/\//, '');
+  });
+
+  if (isAllowed) {
+    return {
+      'Access-Control-Allow-Origin': origin,
+      'Access-Control-Allow-Methods': 'POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+      'Access-Control-Allow-Credentials': 'true',
+    };
+  }
+
+  // Development için daha esnek
+  if (process.env.NODE_ENV === 'development') {
+    return {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+    };
+  }
+
+  return {};
+}
 
 // ============================================
 // RATE LIMITING
@@ -200,8 +232,10 @@ function generateUniqueFilename(file: File): string {
 /**
  * OPTIONS handler for CORS preflight
  */
-export async function OPTIONS() {
-  return NextResponse.json({}, { headers: CORS_HEADERS });
+export async function OPTIONS(request: NextRequest) {
+  const origin = request.headers.get('origin');
+  const corsHeaders = getCorsHeaders(origin);
+  return NextResponse.json({}, { headers: corsHeaders });
 }
 
 /**
@@ -231,7 +265,9 @@ function getClientIp(request: NextRequest): string {
  */
 export async function POST(request: NextRequest) {
   // Apply CORS headers
-  const headers = { ...CORS_HEADERS };
+  const origin = request.headers.get('origin');
+  const corsHeaders = getCorsHeaders(origin);
+  const headers = { ...corsHeaders };
 
   // Get client IP
   const ip = getClientIp(request);
@@ -248,7 +284,12 @@ export async function POST(request: NextRequest) {
   // Admin authentication
   const authError = await requireAdminAuth(request);
   if (authError) {
-    console.warn('Unauthorized upload attempt', { ip });
+    console.warn('Unauthorized upload attempt', {
+      ip,
+      hasCookie: !!request.cookies.get('next-auth.session-token'),
+      hasAuthorization: !!request.headers.get('authorization'),
+      authStatus: authError.status
+    });
     return authError;
   }
 
@@ -300,15 +341,32 @@ export async function POST(request: NextRequest) {
 
     // Ensure uploads directory exists
     if (!existsSync(UPLOADS_DIR)) {
-      await mkdir(UPLOADS_DIR, { recursive: true, mode: 0o755 });
-      console.log('Created uploads directory');
+      try {
+        await mkdir(UPLOADS_DIR, { recursive: true, mode: 0o755 });
+        console.log('Created uploads directory:', UPLOADS_DIR);
+      } catch (dirError) {
+        console.error('Failed to create uploads directory', { error: dirError, dir: UPLOADS_DIR });
+        return NextResponse.json(
+          { error: 'Upload klasoru olusturulamadi. Lutfen sistem yoneticisine basvurun.' },
+          { status: 500, headers }
+        );
+      }
     }
 
     // Write file securely
     const filePath = path.join(UPLOADS_DIR, fileName);
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
-    await writeFile(filePath, buffer, { mode: 0o644 });
+
+    try {
+      await writeFile(filePath, buffer, { mode: 0o644 });
+    } catch (writeError) {
+      console.error('Failed to write file', { error: writeError, filePath, size: file.size });
+      return NextResponse.json(
+        { error: 'Dosya yazilamadi. Disk dolu veya izin sorunu olabilir.' },
+        { status: 500, headers }
+      );
+    }
 
     console.log('File uploaded successfully', {
       fileName,
