@@ -340,6 +340,10 @@ export async function POST(request: NextRequest) {
     const fileName = generateUniqueFilename(file);
 
     // Ensure uploads directory exists
+    console.log('Checking uploads directory:', UPLOADS_DIR);
+    console.log('Directory exists:', existsSync(UPLOADS_DIR));
+    console.log('Current working directory:', process.cwd());
+
     if (!existsSync(UPLOADS_DIR)) {
       try {
         // Windows için mode parametresi kaldırıldı (chmod desteklenmez)
