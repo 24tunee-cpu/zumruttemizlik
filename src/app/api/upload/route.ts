@@ -342,7 +342,8 @@ export async function POST(request: NextRequest) {
     // Ensure uploads directory exists
     if (!existsSync(UPLOADS_DIR)) {
       try {
-        await mkdir(UPLOADS_DIR, { recursive: true, mode: 0o755 });
+        // Windows için mode parametresi kaldırıldı (chmod desteklenmez)
+        await mkdir(UPLOADS_DIR, { recursive: true });
         console.log('Created uploads directory:', UPLOADS_DIR);
       } catch (dirError) {
         console.error('Failed to create uploads directory', { error: dirError, dir: UPLOADS_DIR });
@@ -359,7 +360,8 @@ export async function POST(request: NextRequest) {
     const buffer = Buffer.from(bytes);
 
     try {
-      await writeFile(filePath, buffer, { mode: 0o644 });
+      // Windows için mode parametresi kaldırıldı (chmod desteklenmez)
+      await writeFile(filePath, buffer);
     } catch (writeError) {
       console.error('Failed to write file', { error: writeError, filePath, size: file.size });
       return NextResponse.json(
