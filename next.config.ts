@@ -79,6 +79,14 @@ const nextConfig: NextConfig = {
         hostname: 'fonts.gstatic.com',
         pathname: '/**',
       },
+      // Development için localhost (uploads klasörü)
+      ...(process.env.NODE_ENV === 'development' ? [
+        {
+          protocol: 'http',
+          hostname: 'localhost',
+          pathname: '/uploads/**',
+        } as const,
+      ] : []),
     ],
     minimumCacheTTL: 31536000, // 1 yıl cache - Google botları için hız
     dangerouslyAllowSVG: true,
