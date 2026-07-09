@@ -24,7 +24,7 @@ import { canonicalUrl } from '@/lib/seo';
 // ============================================
 
 export const metadata: Metadata = {
-  title: 'Kullanım Koşulları | Zümrüt Vadi Temizlik',
+  title: { absolute: 'Kullanım Koşulları | Zümrüt Vadi Temizlik' },
   description: 'Zümrüt Vadi Temizlik hizmetlerinin kullanım koşulları, sorumluluklar ve yasal bilgilendirmeler.',
   robots: {
     index: true,

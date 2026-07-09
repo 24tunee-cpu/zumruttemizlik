@@ -35,9 +35,9 @@ const Services = dynamic(() => import('@/components/site/Services').then(mod => 
 // ============================================
 
 export const metadata: Metadata = {
-  title: 'İstanbul Temizlik Şirketi | Ev, Ofis, İnşaat Sonrası | Zümrüt Vadi',
+  title: { absolute: 'İstanbul Temizlik Şirketi | Zümrüt Vadi Temizlik' },
   description:
-    'İstanbul genelinde ev temizliği, ofis temizliği, inşaat sonrası temizlik, koltuk ve halı temizliği. Hızlı teklif, 7/24 destek ve ücretsiz keşif.',
+    'İstanbul Avrupa Yakası (Sarıyer, Zekeriyaköy) ev, ofis ve inşaat sonrası temizlik. ✅ Ücretsiz keşif, aynı gün randevu, 7/24 destek. Anında fiyat hesapla ☎ 0551 925 09 43.',
   keywords: keywordsForPage('home'),
   alternates: {
     canonical: canonicalUrl('/'),

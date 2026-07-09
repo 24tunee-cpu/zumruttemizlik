@@ -5,6 +5,7 @@
  */
 import type { PrismaClient } from '@prisma/client';
 import { resolveBlogMetaDesc, resolveBlogMetaTitle } from './blog-meta';
+import { PRICING_BLOG_POSTS } from './seed-blog-pricing';
 
 const IMG_HOME = 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200';
 const IMG_OFFICE = 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200';
@@ -26,6 +27,8 @@ export type BlogSeedPost = {
   tags: string[];
   metaTitle?: string;
   metaDesc?: string;
+  /** true ise buildLongFormContent ile sarmalanmaz (fiyat rehberleri gibi hazır uzun içerik) */
+  skipLongFormEnrichment?: boolean;
 };
 
 const ISTANBUL_DISTRICTS = [
@@ -5172,6 +5175,7 @@ export const BLOG_SEED_POSTS: BlogSeedPost[] = [
   ...DISTRICT_POSTS,
   ...ISTANBUL_GUIDE_POSTS,
   ...LEAD_GENERATION_POSTS,
+  ...PRICING_BLOG_POSTS,
 ];
 
 const BLOG_CTR_META_OVERRIDES: Record<string, { title: string; desc: string }> = {
@@ -5220,8 +5224,10 @@ const BLOG_CTR_META_OVERRIDES: Record<string, { title: string; desc: string }> =
 export async function upsertCanonicalBlogPosts(prisma: PrismaClient): Promise<number> {
   for (const post of BLOG_SEED_POSTS) {
     const { slug, metaTitle, metaDesc, ...rest } = post;
-    const enrichedExcerpt = buildSeoExcerpt(post);
-    const enrichedContent = buildLongFormContent(post);
+    const enrichedExcerpt = post.skipLongFormEnrichment ? post.excerpt : buildSeoExcerpt(post);
+    const enrichedContent = post.skipLongFormEnrichment
+      ? post.content
+      : buildLongFormContent(post);
     const ctrOverride = BLOG_CTR_META_OVERRIDES[slug];
     const resolvedTitle = resolveBlogMetaTitle(
       rest.title,

@@ -35,7 +35,7 @@ const siteRoot = getSiteUrl();
 const rootMetadataBase: Metadata = {
   title: {
     default: 'Zümrüt Vadi Temizlik | İstanbul Temizlik Hizmetleri',
-    template: "%s",
+    template: "%s | Zümrüt Vadi Temizlik",
   },
   description:
     "İstanbul'un önde gelen profesyonel temizlik şirketi. İnşaat sonrası, ofis, ev, koltuk yıkama, halı temizliği. 15+ yıl deneyim, şeffaf süreç ve ücretsiz keşif. Hemen iletişime geçin.",

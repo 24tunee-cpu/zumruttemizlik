@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { canonicalUrl } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Gizlilik Politikası | KVKK ve Veri Güvenliği | Zümrüt Vadi',
+  title: { absolute: 'Gizlilik Politikası | KVKK | Zümrüt Vadi Temizlik' },
   description:
     'Zümrüt Vadi Temizlik gizlilik politikası: İstanbul temizlik hizmetlerinde kişisel verilerin işlenmesi, KVKK kapsamı ve veri güvenliği yaklaşımı.',
   alternates: {

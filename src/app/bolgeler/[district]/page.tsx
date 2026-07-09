@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const pageTitle = `${districtData.name} Temizlik Hizmetleri | İstanbul`;
 
   return {
-    title: pageTitle,
+    title: { absolute: pageTitle },
     description,
     openGraph: {
       title: pageTitle,

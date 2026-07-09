@@ -64,7 +64,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     if (neighborhood) {
       const canonical = canonicalUrl(`/bolgeler/${neighborhood.districtSlug}/${neighborhood.slug}`);
       return {
-        title: neighborhood.metaTitle,
+        title: { absolute: neighborhood.metaTitle },
         description: neighborhood.metaDescription,
         keywords: [
           `${neighborhood.name} temizlik`,
@@ -110,7 +110,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const canonical = canonicalUrl(`/bolgeler/${districtData.slug}/${serviceData.slug}`);
 
   return {
-    title,
+    title: { absolute: title },
     description,
     keywords: [districtData.name, serviceData.name, ...serviceData.intentKeywords],
     alternates: { canonical },

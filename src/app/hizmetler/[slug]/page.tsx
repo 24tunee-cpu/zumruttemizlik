@@ -195,7 +195,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     const derivedKeywords = serviceKeywordsFromTitleAndSlug(`${service.title} ${service.slug}`);
 
     return {
-      title,
+      title: { absolute: title },
       description,
       keywords: keywordsForPage('hizmetler', [...derivedKeywords, ...service.features]),
       alternates: {

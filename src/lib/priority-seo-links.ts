@@ -9,6 +9,26 @@ export type PrioritySeoLink = {
  */
 export const PRIORITY_BLOG_LINKS: PrioritySeoLink[] = [
   {
+    href: '/blog/ev-temizligi-fiyatlari-2026-istanbul',
+    label: 'Ev Temizligi Fiyatlari 2026',
+  },
+  {
+    href: '/blog/zekeriyakoy-temizlik-fiyatlari-2026',
+    label: 'Zekeriyakoy Temizlik Fiyatlari 2026',
+  },
+  {
+    href: '/blog/istanbul-temizlik-fiyatlari-online-hesaplama-2026',
+    label: 'Istanbul Temizlik Fiyatlari Online Hesaplama',
+  },
+  {
+    href: '/blog/ofis-temizligi-fiyatlari-2026-istanbul',
+    label: 'Ofis Temizligi Fiyatlari 2026',
+  },
+  {
+    href: '/blog/insaat-sonrasi-temizlik-fiyatlari-2026',
+    label: 'Insaat Sonrasi Temizlik Fiyatlari 2026',
+  },
+  {
     href: '/blog/istanbul-temizlik-sirketleri-rehberi-dogru-firma-secimi-icin-12-kriter',
     label: 'Istanbul Temizlik Sirketleri Rehberi',
   },
@@ -54,6 +74,7 @@ export const PRIORITY_BLOG_LINKS: PrioritySeoLink[] = [
  * Sitenin ticari dönüşüm odaklı ana URL kümeleri.
  */
 export const PRIORITY_CONVERSION_LINKS: PrioritySeoLink[] = [
+  { href: '/fiyat-hesaplama', label: 'Fiyat Hesaplama' },
   { href: '/randevu', label: 'Randevu Olustur' },
   { href: '/hizmetler', label: 'Tum Hizmetler' },
   { href: '/hizmetler/ofis-temizligi', label: 'Ofis Temizligi' },
