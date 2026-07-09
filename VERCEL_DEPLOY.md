@@ -30,7 +30,21 @@ NEXT_PUBLIC_SITE_URL=https://www.zumrutvaditemizlik.com
 NEXTAUTH_URL=https://www.zumrutvaditemizlik.com
 NEXTAUTH_SECRET=<openssl rand -base64 32 ile üretin>
 DATABASE_URL=mongodb+srv://<kullanici>:<sifre>@<cluster>.mongodb.net/zumrutvaditemizlik?retryWrites=true&w=majority
+
+# SEO / Analytics (opsiyonel ama önerilir)
+NEXT_PUBLIC_GA_MEASUREMENT_ID=G-20PLCYV15H
+# Google Search Console "HTML etiketi" yönteminin content değeri (yedek doğrulama):
+NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=<GSC HTML tag content değeri>
+# İşletme konumu (harita/schema); varsayılan Sarıyer/Zekeriyaköy'dür:
+NEXT_PUBLIC_BUSINESS_LAT=41.1669
+NEXT_PUBLIC_BUSINESS_LNG=29.0577
 ```
+
+### Google Search Console & Analytics Doğrulama
+- **Search Console (önerilen):** GSC'de **"URL öneki"** özelliği ekle → adresi **tam olarak** `https://www.zumrutvaditemizlik.com` (www ile) yaz → **"HTML dosyası"** yöntemini seç. `public/google53289b1c2d87e249.html` dosyası zaten canlıdır, "Doğrula" yeterlidir.
+  - Alternatif/yedek: GSC'nin **"HTML etiketi"** yönteminden aldığın `content` değerini `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` env'ine gir, redeploy et.
+  - **"Alan adı (Domain)"** özelliğini seçersen DNS'e **TXT** kaydı eklemen gerekir; ayrıca apex (www'suz) domainin de Vercel'de bağlı olması gerekir.
+- **Analytics:** Site Google Consent Mode v2 kullanır; GA etiketi her zaman yüklenir. Kullanıcı çerezleri kabul edince tam veri akışı başlar. GA4 kurulum sihirbazı "veri alınıyor" durumunu, canlı sitede çerez onayı verip birkaç sayfa gezdikten sonra görür.
 
 ### Adım 4: Domain Bağla
 Vercel Dashboard → Domains → Add Domain:

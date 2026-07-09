@@ -371,6 +371,89 @@ export function allProgrammaticLandingPaths(): string[] {
   return paths;
 }
 
+// ============================================
+// SEMT (NEIGHBORHOOD) LANDING SAYFALARI
+// Öncelikli semtler için ilçe altında özel içerikli sayfalar.
+// URL: /bolgeler/{districtSlug}/{slug} — dinamik [service] rotası üzerinden servis edilir.
+// ============================================
+
+export interface NeighborhoodLanding {
+  districtSlug: string;
+  slug: string;
+  name: string;
+  /** Meta ve H1 için ilçe adı */
+  districtName: string;
+  metaTitle: string;
+  metaDescription: string;
+  intro: string;
+  /** İçerik paragrafları */
+  body: string[];
+  highlights: string[];
+  faq: { q: string; a: string }[];
+  /** Öne çıkarılacak hizmet slug'ları (SERVICE_LANDINGS ile eşleşir) */
+  featuredServiceSlugs: string[];
+}
+
+export const NEIGHBORHOOD_LANDINGS: NeighborhoodLanding[] = [
+  {
+    districtSlug: 'sariyer',
+    slug: 'zekeriyakoy',
+    name: 'Zekeriyaköy',
+    districtName: 'Sarıyer',
+    metaTitle: 'Zekeriyaköy Temizlik Şirketi | Villa & Ev Temizliği',
+    metaDescription:
+      'Zekeriyaköy temizlik şirketi: villa, site ve daire için detaylı ev temizliği, inşaat sonrası, cam ve dış cephe temizliği. Ücretsiz keşif, aynı gün randevu. Anında fiyat hesaplama.',
+    intro:
+      'Zekeriyaköy, Zümrüt Vadi Temizlik’in öncelikli hizmet bölgesidir. Bölgedeki villalar, kapalı siteler ve orman içi konutlarda detaylı ev temizliği, inşaat sonrası teslim temizliği, cam ve dış cephe temizliğinde hızlı ve güvenilir ekip yönlendirmesi yapıyoruz.',
+    body: [
+      'Zekeriyaköy’deki müstakil villalar ve bahçeli konutlarda geniş cam yüzeyleri, yüksek tavanlar ve çok sayıda ıslak hacim nedeniyle temizlik detay ve deneyim gerektirir. Alanı; zemin türü, cam yüzeyi, dolap içi toz birikimi ve erişim koşullarına göre başlıklara ayırarak planlıyoruz.',
+      'Taşınma öncesi ve sonrası, tadilat/inşaat sonrası teslim ve periyodik bakım paketlerinde aynı gün ücretsiz keşif ve gizlilik odaklı çalışma önceliğimizdir. Bahçeköy, Kilyos, Demirciköy ve Boğaz hattı (Tarabya, Yeniköy, İstinye) dahil çevre semtlerde de hizmet veriyoruz.',
+      'Fiyatınızı önceden görmek için ana sayfamızdaki Anında Fiyat Hesaplama aracını kullanabilir; mekan tipi, oda sayısı veya metrekare ve ekstralara göre tahmini aralığı saniyeler içinde öğrenip WhatsApp üzerinden randevu oluşturabilirsiniz.',
+    ],
+    highlights: [
+      'Villa ve site odaklı detaylı ev temizliği',
+      'İnşaat/tadilat sonrası teslim temizliği',
+      'Geniş cam yüzeyleri ve dış cephe temizliği',
+      'Aynı gün ücretsiz keşif ve gizlilik odaklı çalışma',
+    ],
+    faq: [
+      {
+        q: 'Zekeriyaköy’de villa temizliği yapıyor musunuz?',
+        a: 'Evet. Zekeriyaköy’deki müstakil villalar ve sitelerde detaylı ev temizliği, inşaat sonrası ve cam/dış cephe temizliği hizmeti veriyoruz. Kapsam ücretsiz keşifte netleşir.',
+      },
+      {
+        q: 'Zekeriyaköy için fiyat nasıl öğrenebilirim?',
+        a: 'Ana sayfamızdaki Anında Fiyat Hesaplama aracıyla tahmini fiyat aralığınızı görebilir, ardından WhatsApp veya iletişim formundan ücretsiz keşif randevusu alabilirsiniz. Kesin fiyat keşif sonrası netleşir.',
+      },
+      {
+        q: 'Aynı gün randevu mümkün mü?',
+        a: 'Yoğunluğa göre aynı gün keşif ve hızlı ekip yönlendirmesi yapabiliyoruz. Acil talepler için doğrudan arayabilirsiniz.',
+      },
+    ],
+    featuredServiceSlugs: [
+      'ev-temizligi',
+      'insaat-sonrasi-temizlik',
+      'cam-temizligi',
+      'dis-cephe-temizligi',
+    ],
+  },
+];
+
+export function getNeighborhoodLanding(
+  districtSlug: string,
+  slug: string
+): NeighborhoodLanding | null {
+  return (
+    NEIGHBORHOOD_LANDINGS.find(
+      (n) => n.districtSlug === districtSlug && n.slug === slug
+    ) ?? null
+  );
+}
+
+export function allNeighborhoodLandingPaths(): string[] {
+  return NEIGHBORHOOD_LANDINGS.map((n) => `/bolgeler/${n.districtSlug}/${n.slug}`);
+}
+
 const HERO_TEMPLATES = [
   '{district} bölgesinde {serviceLower} ihtiyacında hızlı ekip yönlendirmesi ve net iş planı sunuyoruz.',
   '{district} için planlı {serviceLower} hizmetinde keşif sonrası kapsamı şeffaf biçimde paylaşıyoruz.',
