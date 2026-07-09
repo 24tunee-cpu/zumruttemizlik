@@ -24,8 +24,8 @@ import { canonicalUrl } from '@/lib/seo';
 // ============================================
 
 export const metadata: Metadata = {
-  title: 'Kullanım Koşulları | Günen Temizlik',
-  description: 'Günen Temizlik hizmetlerinin kullanım koşulları, sorumluluklar ve yasal bilgilendirmeler.',
+  title: 'Kullanım Koşulları | Zümrüt Vadi Temizlik',
+  description: 'Zümrüt Vadi Temizlik hizmetlerinin kullanım koşulları, sorumluluklar ve yasal bilgilendirmeler.',
   robots: {
     index: true,
     follow: true,
@@ -34,25 +34,25 @@ export const metadata: Metadata = {
     canonical: canonicalUrl('/kullanim-kosullari'),
   },
   openGraph: {
-    title: 'Kullanım Koşulları | Günen Temizlik',
-    description: 'Günen Temizlik hizmetlerinin kullanım koşulları, sorumluluklar ve yasal bilgilendirmeler.',
+    title: 'Kullanım Koşulları | Zümrüt Vadi Temizlik',
+    description: 'Zümrüt Vadi Temizlik hizmetlerinin kullanım koşulları, sorumluluklar ve yasal bilgilendirmeler.',
     url: canonicalUrl('/kullanim-kosullari'),
     type: 'website',
     locale: 'tr_TR',
-    siteName: 'Günen Temizlik',
+    siteName: 'Zümrüt Vadi Temizlik',
     images: [
       {
         url: canonicalUrl('/logo.png'),
         width: 1200,
         height: 630,
-        alt: 'Günen Temizlik - Kullanım koşulları',
+        alt: 'Zümrüt Vadi Temizlik - Kullanım koşulları',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Kullanım Koşulları | Günen Temizlik',
-    description: 'Günen Temizlik hizmetlerinin kullanım koşulları, sorumluluklar ve yasal bilgilendirmeler.',
+    title: 'Kullanım Koşulları | Zümrüt Vadi Temizlik',
+    description: 'Zümrüt Vadi Temizlik hizmetlerinin kullanım koşulları, sorumluluklar ve yasal bilgilendirmeler.',
     images: [canonicalUrl('/logo.png')],
   },
 };
@@ -69,7 +69,7 @@ const TERMS_ITEMS = [
   {
     id: 'service-scope',
     title: 'Hizmet Kapsamı',
-    content: 'Günen Temizlik olarak İstanbul genelinde inşaat sonrası temizlik, ofis temizliği, koltuk yıkama, halı temizliği ve cam temizliği hizmetleri sunmaktayız. Hizmet detayları ve fiyatlar için iletişime geçebilirsiniz.'
+    content: 'Zümrüt Vadi Temizlik olarak İstanbul genelinde inşaat sonrası temizlik, ofis temizliği, koltuk yıkama, halı temizliği ve cam temizliği hizmetleri sunmaktayız. Hizmet detayları ve fiyatlar için iletişime geçebilirsiniz.'
   },
   {
     id: 'cancellation',
@@ -94,7 +94,7 @@ const TERMS_ITEMS = [
   {
     id: 'changes',
     title: 'Değişiklik Hakkı',
-    content: 'Günen Temizlik, kullanım koşulları ve fiyatlandırma konusunda değişiklik yapma hakkını saklı tutar. Değişiklikler web sitemizde yayınlanır yayınlanmaz yürürlüğe girer.'
+    content: 'Zümrüt Vadi Temizlik, kullanım koşulları ve fiyatlandırma konusunda değişiklik yapma hakkını saklı tutar. Değişiklikler web sitemizde yayınlanır yayınlanmaz yürürlüğe girer.'
   }
 ] as const;
 
@@ -104,7 +104,7 @@ const termsPageSchema = {
   name: 'Kullanım Koşulları',
   url: canonicalUrl('/kullanim-kosullari'),
   description:
-    'Günen Temizlik hizmetlerinin kullanım koşulları, sorumluluklar ve yasal bilgilendirmeler.',
+    'Zümrüt Vadi Temizlik hizmetlerinin kullanım koşulları, sorumluluklar ve yasal bilgilendirmeler.',
   inLanguage: 'tr-TR',
 };
 
@@ -211,7 +211,7 @@ export default function TermsPage() {
                 })}
               </time>
             </p>
-            <p className="mt-1">© {new Date().getFullYear()} Günen Temizlik. Tüm hakları saklıdır.</p>
+            <p className="mt-1">© {new Date().getFullYear()} Zümrüt Vadi Temizlik. Tüm hakları saklıdır.</p>
           </footer>
         </div>
       </section>

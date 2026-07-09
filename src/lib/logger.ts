@@ -217,7 +217,7 @@ export function clearGlobalCorrelationId(): void {
 // EXPORTS
 // ============================================
 
-const logger = new Logger('gunen-temizlik');
+const logger = new Logger('zumrut-vadi-temizlik');
 
 export const createLogger = (source: string, options?: {
   correlationId?: string;

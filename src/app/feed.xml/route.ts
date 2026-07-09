@@ -43,7 +43,7 @@ function formatRfc2822(date: Date): string {
 export async function GET() {
   try {
     const baseUrl = getSiteUrl();
-    const siteName = 'Günen Temizlik';
+    const siteName = 'Zümrüt Vadi Temizlik';
     const siteDescription = 'İstanbul\'da profesyonel ev ve ofis temizlik hizmetleri. Güvenilir, sigortalı ve deneyimli ekiplerle 7/24 hizmetinizdeyiz.';
 
     // Fetch latest 20 published blog posts
@@ -74,7 +74,7 @@ export async function GET() {
       const pubDate = formatRfc2822(post.createdAt);
       const description = escapeXml(post.excerpt || stripHtml(post.content));
       const title = escapeXml(post.title);
-      const author = escapeXml(post.author || 'Günen Temizlik');
+      const author = escapeXml(post.author || 'Zümrüt Vadi Temizlik');
       const category = escapeXml(post.category);
 
       // Görseller kaldırıldı - Google botları daha hızlı tarama yapsın
@@ -104,10 +104,10 @@ ${enclosure}  </item>`;
     <description>${escapeXml(siteDescription)}</description>
     <language>tr-TR</language>
     <lastBuildDate>${lastBuildDate}</lastBuildDate>
-    <generator>Günen Temizlik RSS Feed Generator</generator>
+    <generator>Zümrüt Vadi Temizlik RSS Feed Generator</generator>
     <copyright>© ${now.getFullYear()} ${escapeXml(siteName)}. Tüm hakları saklıdır.</copyright>
-    <managingEditor>iletisim@gunentemizlik.com (${escapeXml(siteName)})</managingEditor>
-    <webMaster>iletisim@gunentemizlik.com (${escapeXml(siteName)})</webMaster>
+    <managingEditor>vedatgunenn@gmail.com (${escapeXml(siteName)})</managingEditor>
+    <webMaster>vedatgunenn@gmail.com (${escapeXml(siteName)})</webMaster>
     <ttl>60</ttl>
     <image>
       <url>${baseUrl}/logo.png</url>
@@ -131,7 +131,7 @@ ${items}
     const errorRss = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
   <channel>
-    <title>Hata - Günen Temizlik RSS</title>
+    <title>Hata - Zümrüt Vadi Temizlik RSS</title>
     <description>RSS feed oluşturulurken bir hata oluştu. Lütfen daha sonra tekrar deneyin.</description>
   </channel>
 </rss>`;

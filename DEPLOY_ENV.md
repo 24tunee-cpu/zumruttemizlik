@@ -3,12 +3,15 @@
 ## Vercel Environment Variables (Dashboard'da eklenecek)
 
 ```bash
+# Site URL
+NEXT_PUBLIC_SITE_URL=https://www.zumrutvaditemizlik.com
+
 # NextAuth.js
-NEXTAUTH_URL=https://gunentemizlik.com
-NEXTAUTH_SECRET=95839c0b0ed8b47b26faa39ce929bef84a45b6d9c4fb9a8d923c534a4a8bcf79
+NEXTAUTH_URL=https://www.zumrutvaditemizlik.com
+NEXTAUTH_SECRET=<openssl rand -base64 32 ile üretilecek güçlü secret>
 
 # Database (MongoDB Atlas - Production)
-DATABASE_URL=mongodb+srv://kronigaz_db_user:PYa2o2LUy2kWpX2C@cluster0.bhabjmw.mongodb.net/gunentemizlik?retryWrites=true&w=majority&appName=Cluster0
+DATABASE_URL=mongodb+srv://<kullanici>:<sifre>@<cluster>.mongodb.net/zumrutvaditemizlik?retryWrites=true&w=majority
 
 # Email (Opsiyonel - Contact form için)
 # SMTP_HOST=smtp.gmail.com
@@ -41,8 +44,8 @@ TTL: 300
 4. public_html boş kalsın (Vercel yönlendirmesi için)
 
 ## Admin Giriş Bilgileri:
-- URL: https://gunentemizlik.com/admin
-- Email: admin@gunentemizlik.com
+- URL: https://www.zumrutvaditemizlik.com/admin
+- Email: vedatgunenn@gmail.com
 - Password: admin123
 
 ## Önemli Kontroller:

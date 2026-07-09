@@ -50,7 +50,7 @@ export async function buildRootSchemaGraphJson(): Promise<string> {
   const base = getSiteUrl();
   const settings = await getCachedSiteSettingsForSchema();
 
-  const siteName = settings?.siteName?.trim() || 'Günen Temizlik';
+  const siteName = settings?.siteName?.trim() || 'Zümrüt Vadi Temizlik';
   const description =
     settings?.siteDescription?.trim() ||
     "İstanbul'un önde gelen profesyonel temizlik şirketi. İnşaat sonrası, ofis, ev temizliği ve koltuk yıkama hizmetleri.";

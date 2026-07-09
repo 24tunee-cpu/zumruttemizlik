@@ -15,7 +15,7 @@
   NODE_VERSION = "20"
   NPM_FLAGS = "--legacy-peer-deps"
   # Environment variables (set in Netlify dashboard)
-  # NEXT_PUBLIC_SITE_URL = "https://gunentemizlik.com"
+  # NEXT_PUBLIC_SITE_URL = "https://www.zumrutvaditemizlik.com"
 
 # ============================================
 # REDIRECTS

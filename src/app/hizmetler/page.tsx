@@ -13,25 +13,25 @@ export const metadata: Metadata = {
     canonical: canonicalUrl('/hizmetler'),
   },
   openGraph: {
-    title: 'İstanbul Temizlik Hizmetleri | Günen',
+    title: 'İstanbul Temizlik Hizmetleri | Zümrüt Vadi',
     description:
       'İstanbul genelinde ev, ofis, inşaat sonrası, koltuk-halı ve dış cephe temizlik çözümlerini karşılaştırın.',
     url: canonicalUrl('/hizmetler'),
     type: 'website',
     locale: 'tr_TR',
-    siteName: 'Günen Temizlik',
+    siteName: 'Zümrüt Vadi Temizlik',
     images: [
       {
         url: canonicalUrl('/logo.png'),
         width: 1200,
         height: 630,
-        alt: 'Günen Temizlik Hizmetleri',
+        alt: 'Zümrüt Vadi Temizlik Hizmetleri',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'İstanbul Temizlik Hizmetleri | Günen',
+    title: 'İstanbul Temizlik Hizmetleri | Zümrüt Vadi',
     description:
       'İstanbul genelinde ev, ofis, inşaat sonrası, koltuk-halı ve dış cephe temizlik çözümlerini karşılaştırın.',
     images: [canonicalUrl('/logo.png')],

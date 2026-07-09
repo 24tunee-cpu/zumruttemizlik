@@ -204,7 +204,7 @@ export function Sidebar() {
               >
                 {sidebarOpen && (
                   <>
-                    <span className="block truncate text-base font-bold tracking-tight text-white">Günen Temizlik</span>
+                    <span className="block truncate text-base font-bold tracking-tight text-white">Zümrüt Vadi Temizlik</span>
                     <span className="block truncate text-xs font-medium text-emerald-400/90">Yönetim paneli</span>
                   </>
                 )}

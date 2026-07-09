@@ -144,7 +144,7 @@ ${originalHtml}
 <ul>${mistakesListHtml}</ul>
 <h2>Profesyonel destek ile bireysel uygulama farkı</h2>
 <p>Profesyonel ekipler; yüzey uyumlu ürün, uygun ekipman ve kalite kontrol disiplini ile çalıştığı için sonuçlar daha tutarlı olur. Bireysel uygulama ise hızlı çözümler için yeterli olabilir ancak kapsam büyüdükçe standardizasyon zorlaşır.</p>
-<p>Günen Temizlik olarak İstanbul genelinde randevu öncesi kapsam netleştirme, uygulama sonrası kontrol ve sürdürülebilir bakım planı yaklaşımıyla çalışıyoruz.</p>
+<p>Zümrüt Vadi Temizlik olarak İstanbul genelinde randevu öncesi kapsam netleştirme, uygulama sonrası kontrol ve sürdürülebilir bakım planı yaklaşımıyla çalışıyoruz.</p>
 <h2>Sık sorulan sorular</h2>
 ${faqHtml}
 <h2>Sonuç ve önerilen aksiyon</h2>
@@ -501,7 +501,7 @@ const CLEANING_POSTS: BlogSeedPost[] = [
     tags: ['halı yıkama', 'istanbul', 'yerinde hizmet', 'halı'],
     image: IMG_CARPET,
     content: `<p>Yerinde hizmet, taşıma ve zaman kaybını azaltır. Fabrika tipi işlem çok kirli veya el dokuma ürünlerde tercih edilebilir.</p>
-<h2>Doğru seçim</h2><p>Halı tipi, leke yoğunluğu ve kuruma koşullarına göre yöntem seçilir. <strong>Günen Temizlik</strong> ile ön değerlendirme alabilirsiniz.</p>`,
+<h2>Doğru seçim</h2><p>Halı tipi, leke yoğunluğu ve kuruma koşullarına göre yöntem seçilir. <strong>Zümrüt Vadi Temizlik</strong> ile ön değerlendirme alabilirsiniz.</p>`,
   },
   {
     slug: 'koltukta-evcil-hayvan-koku-giderme',
@@ -762,7 +762,7 @@ const DISTRICT_POSTS: BlogSeedPost[] = [
 </ol>
 
 <h2>Profesyonel Temizlik Süreci</h2>
-<p>Günen Temizlik olarak Kağıthane operasyonlarımızda şu adımları izliyoruz:</p>
+<p>Zümrüt Vadi Temizlik olarak Kağıthane operasyonlarımızda şu adımları izliyoruz:</p>
 <ul>
 <li><strong>Keşif:</strong> Ücretsiz yerinde değerlendirme ve kapsam netleştirme</li>
 <li><strong>Planlama:</strong> Mahalleye özel ekip yönlendirme (trafik yoğunluğuna göre rota)</li>
@@ -789,7 +789,7 @@ const DISTRICT_POSTS: BlogSeedPost[] = [
 </div>
 
 <h2>Kağıthane İçin Özet ve Öneri</h2>
-<p>Kağıthane, İstanbul'un dinamikleşen bölgelerinden biri olarak hem eski hem yeni yapı stokuna hizmet vermektedir. Profesyonel temizlik hizmeti alırken, firmanın bölgeyi tanıması, trafik ve erişim koşullarını bilmesi önemlidir. Günen Temizlik olarak Kağıthane'de yıllara dayanan tecrübemizle, her mahalleye özel çözümler sunuyoruz. Ücretsiz keşif için hemen bize ulaşın.</p>`,
+<p>Kağıthane, İstanbul'un dinamikleşen bölgelerinden biri olarak hem eski hem yeni yapı stokuna hizmet vermektedir. Profesyonel temizlik hizmeti alırken, firmanın bölgeyi tanıması, trafik ve erişim koşullarını bilmesi önemlidir. Zümrüt Vadi Temizlik olarak Kağıthane'de yıllara dayanan tecrübemizle, her mahalleye özel çözümler sunuyoruz. Ücretsiz keşif için hemen bize ulaşın.</p>`,
   },
   {
     slug: 'kagithane-ofis-temizligi-kurumsal',
@@ -864,7 +864,7 @@ const DISTRICT_POSTS: BlogSeedPost[] = [
 </div>
 
 <h2>Kağıthane Ofis Temizliği için Son Söz</h2>
-<p>Profesyonel ofis temizliği, Kağıthane'deki işletmenizin imajını ve çalışan sağlığını doğrudan etkiler. Günen Temizlik olarak bölgeyi iyi tanıyan ekibimizle, iş akışınızı kesintiye uğratmadan kaliteli hizmet sunuyoruz. Ücretsiz keşif ve teklif için bize ulaşın.</p>`,
+<p>Profesyonel ofis temizliği, Kağıthane'deki işletmenizin imajını ve çalışan sağlığını doğrudan etkiler. Zümrüt Vadi Temizlik olarak bölgeyi iyi tanıyan ekibimizle, iş akışınızı kesintiye uğratmadan kaliteli hizmet sunuyoruz. Ücretsiz keşif ve teklif için bize ulaşın.</p>`,
   },
 
   // ŞİŞLİ
@@ -940,7 +940,7 @@ const DISTRICT_POSTS: BlogSeedPost[] = [
 </div>
 
 <h2>Şişli İçin Özet</h2>
-<p>Şişli, özellikle Nişantaşı ve Mecidiyeköy bölgeleri, İstanbul'un en dinamik ve prestijli yerleşim alanlarıdır. Günen Temizlik olarak bu bölgenin özel ihtiyaçlarını biliyor, lüks dairelerden tarihi apartmanlara kadar her türlü ev tipine profesyonel hizmet sunuyoruz. Detaylı bilgi ve keşif için bize ulaşın.</p>`,
+<p>Şişli, özellikle Nişantaşı ve Mecidiyeköy bölgeleri, İstanbul'un en dinamik ve prestijli yerleşim alanlarıdır. Zümrüt Vadi Temizlik olarak bu bölgenin özel ihtiyaçlarını biliyor, lüks dairelerden tarihi apartmanlara kadar her türlü ev tipine profesyonel hizmet sunuyoruz. Detaylı bilgi ve keşif için bize ulaşın.</p>`,
   },
   {
     slug: 'sisli-ofis-temizligi-plaza-nisantasi',
@@ -1017,7 +1017,7 @@ const DISTRICT_POSTS: BlogSeedPost[] = [
 </div>
 
 <h2>Şişli Kurumsal Temizlik için Son Söz</h2>
-<p>Şişli, İstanbul'un en prestijli iş bölgelerinden biri olarak yüksek standartlarda hizmet bekler. Günen Temizlik olarak plaza, mağaza ve ofis deneyimimizle Şişli'nin tüm mahallelerine profesyonel çözümler sunuyoruz. Keşif ve teklif için bize ulaşın.</p>`,
+<p>Şişli, İstanbul'un en prestijli iş bölgelerinden biri olarak yüksek standartlarda hizmet bekler. Zümrüt Vadi Temizlik olarak plaza, mağaza ve ofis deneyimimizle Şişli'nin tüm mahallelerine profesyonel çözümler sunuyoruz. Keşif ve teklif için bize ulaşın.</p>`,
   },
 
   // BEŞİKTAŞ
@@ -1092,7 +1092,7 @@ const DISTRICT_POSTS: BlogSeedPost[] = [
 </div>
 
 <h2>Beşiktaş İçin Özet</h2>
-<p>Beşiktaş, İstanbul'un en değerli bölgelerinden biri olarak Levent'ten Bebek'e kadar geniş bir yelpazede konut stokuna sahiptir. Günen Temizlik olarak bu bölgenin her mahallesine, her yapı tipine uygun profesyonel temizlik çözümleri sunuyoruz. Lüks rezidanslardan tarihi yalılara kadar her projede yüksek standart garantisi veriyoruz.</p>`,
+<p>Beşiktaş, İstanbul'un en değerli bölgelerinden biri olarak Levent'ten Bebek'e kadar geniş bir yelpazede konut stokuna sahiptir. Zümrüt Vadi Temizlik olarak bu bölgenin her mahallesine, her yapı tipine uygun profesyonel temizlik çözümleri sunuyoruz. Lüks rezidanslardan tarihi yalılara kadar her projede yüksek standart garantisi veriyoruz.</p>`,
   },
   {
     slug: 'besiktas-ofis-temizligi-levent-is-merkezleri',
@@ -1164,7 +1164,7 @@ const DISTRICT_POSTS: BlogSeedPost[] = [
 </div>
 
 <h2>Beşiktaş Kurumsal Temizlik Özeti</h2>
-<p>Levent ve çevresi, İstanbul'un finans kalbi olarak yüksek standartlarda hizmet bekler. Günen Temizlik olarak plaza ve kurumsal ofis deneyimimizle Beşiktaş'ın tüm iş bölgelerine profesyonel çözümler sunuyoruz.</p>`,
+<p>Levent ve çevresi, İstanbul'un finans kalbi olarak yüksek standartlarda hizmet bekler. Zümrüt Vadi Temizlik olarak plaza ve kurumsal ofis deneyimimizle Beşiktaş'ın tüm iş bölgelerine profesyonel çözümler sunuyoruz.</p>`,
   },
 
   // KADIKÖY
@@ -1241,7 +1241,7 @@ const DISTRICT_POSTS: BlogSeedPost[] = [
 </div>
 
 <h2>Kadıköy Özeti</h2>
-<p>Kadıköy, Anadolu yakasının merkezi olarak çeşitli mahalleler ve yaşam tarzları sunar. Günen Temizlik olarak Moda'nın tarihi dokusundan Bostancı'nın aile atmosferine kadar her mahalleye uygun profesyonel çözümler sunuyoruz.</p>`,
+<p>Kadıköy, Anadolu yakasının merkezi olarak çeşitli mahalleler ve yaşam tarzları sunar. Zümrüt Vadi Temizlik olarak Moda'nın tarihi dokusundan Bostancı'nın aile atmosferine kadar her mahalleye uygun profesyonel çözümler sunuyoruz.</p>`,
   },
   {
     slug: 'kadikoy-ofis-temizligi-bagdat-caddesi',
@@ -1307,7 +1307,7 @@ const DISTRICT_POSTS: BlogSeedPost[] = [
 </div>
 
 <h2>Kadıköy Kurumsal Özeti</h2>
-<p>Bağdat Caddesi, Anadolu yakasının iş ve ticaret merkezi olarak yüksek standartlarda temizlik hizmeti bekler. Günen Temizlik olarak cadde üzerindeki tüm işletme tiplerine profesyonel çözümler sunuyoruz.</p>`,
+<p>Bağdat Caddesi, Anadolu yakasının iş ve ticaret merkezi olarak yüksek standartlarda temizlik hizmeti bekler. Zümrüt Vadi Temizlik olarak cadde üzerindeki tüm işletme tiplerine profesyonel çözümler sunuyoruz.</p>`,
   },
 
   // ÜSKÜDAR
@@ -1383,7 +1383,7 @@ const DISTRICT_POSTS: BlogSeedPost[] = [
 </div>
 
 <h2>Üsküdar Özeti</h2>
-<p>Üsküdar, Anadolu yakasının tarihi ve modern yüzü olarak çeşitli mahalleler sunar. Günen Temizlik olarak Çengelköy'ün Boğaz hattından Acıbadem'in modern merkezine kadar her bölgeye profesyonel çözümler sunuyoruz.</p>`,
+<p>Üsküdar, Anadolu yakasının tarihi ve modern yüzü olarak çeşitli mahalleler sunar. Zümrüt Vadi Temizlik olarak Çengelköy'ün Boğaz hattından Acıbadem'in modern merkezine kadar her bölgeye profesyonel çözümler sunuyoruz.</p>`,
   },
   {
     slug: 'uskudar-ofis-temizligi-acibadem-is-yerleri',
@@ -1449,7 +1449,7 @@ const DISTRICT_POSTS: BlogSeedPost[] = [
 </div>
 
 <h2>Üsküdar Kurumsal Özeti</h2>
-<p>Acıbadem, Anadolu yakasının ulaşım ve iş merkezi olarak profesyonel temizlik hizmetine ihtiyaç duyar. Günen Temizlik olarak sağlık sektöründen hukuk ofislerine kadar her işletme tipine çözümler sunuyoruz.</p>`,
+<p>Acıbadem, Anadolu yakasının ulaşım ve iş merkezi olarak profesyonel temizlik hizmetine ihtiyaç duyar. Zümrüt Vadi Temizlik olarak sağlık sektöründen hukuk ofislerine kadar her işletme tipine çözümler sunuyoruz.</p>`,
   },
 
   // ATAŞEHİR
@@ -1532,7 +1532,7 @@ const DISTRICT_POSTS: BlogSeedPost[] = [
 </div>
 
 <h2>Ataşehir Özeti</h2>
-<p>Ataşehir, modern site yaşamı ve İstanbul Finans Merkezi ile Anadolu yakasının en planlı ilçelerinden biridir. Günen Temizlik olarak bölgenin lüks standartlarına uygun, düzenli ve profesyonel hizmet sunuyoruz.</p>`,
+<p>Ataşehir, modern site yaşamı ve İstanbul Finans Merkezi ile Anadolu yakasının en planlı ilçelerinden biridir. Zümrüt Vadi Temizlik olarak bölgenin lüks standartlarına uygun, düzenli ve profesyonel hizmet sunuyoruz.</p>`,
   },
   {
     slug: 'atasehir-ofis-temizligi-finans-merkezi-kurumsal',
@@ -1604,7 +1604,7 @@ const DISTRICT_POSTS: BlogSeedPost[] = [
 </div>
 
 <h2>Ataşehir Kurumsal Özeti</h2>
-<p>İstanbul Finans Merkezi, Türkiye'nin en prestijli iş adreslerinden biri olarak en yüksek standartlarda hizmet bekler. Günen Temizlik olarak IFM plazaları ve Ataşehir kurumsal ofisleri için profesyonel, güvenilir ve periyodik temizlik çözümleri sunuyoruz.</p>`,
+<p>İstanbul Finans Merkezi, Türkiye'nin en prestijli iş adreslerinden biri olarak en yüksek standartlarda hizmet bekler. Zümrüt Vadi Temizlik olarak IFM plazaları ve Ataşehir kurumsal ofisleri için profesyonel, güvenilir ve periyodik temizlik çözümleri sunuyoruz.</p>`,
   },
 
   // BAKIRKÖY
@@ -1678,7 +1678,7 @@ const DISTRICT_POSTS: BlogSeedPost[] = [
 </div>
 
 <h2>Bakırköy Özeti</h2>
-<p>Bakırköy, Ataköy'ün site yaşamından Florya'nın sail villalarına kadar geniş bir yelpazede konut stokuna sahiptir. Günen Temizlik olarak bölgenin tüm mahallelerine profesyonel çözümler sunuyoruz.</p>`,
+<p>Bakırköy, Ataköy'ün site yaşamından Florya'nın sail villalarına kadar geniş bir yelpazede konut stokuna sahiptir. Zümrüt Vadi Temizlik olarak bölgenin tüm mahallelerine profesyonel çözümler sunuyoruz.</p>`,
   },
   {
     slug: 'bakirkoy-ofis-temizligi-atakoy-is-yerleri',
@@ -1782,7 +1782,7 @@ const DISTRICT_POSTS: BlogSeedPost[] = [
 </div>
 
 <h2>Maltepe Özeti</h2>
-<p>Maltepe, sahil şeridinden iç mahallelere kadar geniş bir konut yelpazesi sunar. Günen Temizlik olarak bölgenin tüm mahallelerine profesyonel temizlik çözümleri sunuyoruz.</p>`,
+<p>Maltepe, sahil şeridinden iç mahallelere kadar geniş bir konut yelpazesi sunar. Zümrüt Vadi Temizlik olarak bölgenin tüm mahallelerine profesyonel temizlik çözümleri sunuyoruz.</p>`,
   },
 
   // KARTAL
@@ -1837,7 +1837,7 @@ const DISTRICT_POSTS: BlogSeedPost[] = [
 </div>
 
 <h2>Kartal Özeti</h2>
-<p>Kartal, OSB çevresinden deniz manzaralı konutlara kadar çeşitli bölgeler sunar. Günen Temizlik olarak ilçenin tüm mahallelerine profesyonel hizmet sunuyoruz.</p>`,
+<p>Kartal, OSB çevresinden deniz manzaralı konutlara kadar çeşitli bölgeler sunar. Zümrüt Vadi Temizlik olarak ilçenin tüm mahallelerine profesyonel hizmet sunuyoruz.</p>`,
   },
 
   // PENDİK
@@ -1899,7 +1899,7 @@ const DISTRICT_POSTS: BlogSeedPost[] = [
 </div>
 
 <h2>Pendik Özeti</h2>
-<p>Pendik, havalimanı çevresinden sahiline kadar geniş bir coğrafya sunar. Günen Temizlik olarak ilçenin tüm bölgelerine profesyonel temizlik çözümleri sunuyoruz.</p>`,
+<p>Pendik, havalimanı çevresinden sahiline kadar geniş bir coğrafya sunar. Zümrüt Vadi Temizlik olarak ilçenin tüm bölgelerine profesyonel temizlik çözümleri sunuyoruz.</p>`,
   },
 
   // ÜMRANİYE (kısa versiyon)
@@ -1945,7 +1945,7 @@ const DISTRICT_POSTS: BlogSeedPost[] = [
 </div>
 
 <h2>Ümraniye Özeti</h2>
-<p>Ümraniye, Finans Merkezi yakınlığıyla öne çıkan modern bir ilçedir. Günen Temizlik olarak site yaşamına uygun profesyonel hizmet sunuyoruz.</p>`,
+<p>Ümraniye, Finans Merkezi yakınlığıyla öne çıkan modern bir ilçedir. Zümrüt Vadi Temizlik olarak site yaşamına uygun profesyonel hizmet sunuyoruz.</p>`,
   },
 
   // SARIYER
@@ -2000,7 +2000,7 @@ const DISTRICT_POSTS: BlogSeedPost[] = [
 </div>
 
 <h2>Sarıyer Özeti</h2>
-<p>Sarıyer, İstanbul'un en seçkin bölgelerinden biridir. Günen Temizlik olarak lüks standartlarına uygun profesyonel hizmet sunuyoruz.</p>`,
+<p>Sarıyer, İstanbul'un en seçkin bölgelerinden biridir. Zümrüt Vadi Temizlik olarak lüks standartlarına uygun profesyonel hizmet sunuyoruz.</p>`,
   },
 
   // EYÜPSULTAN
@@ -2050,7 +2050,7 @@ const DISTRICT_POSTS: BlogSeedPost[] = [
 </div>
 
 <h2>Eyüpsultan Özeti</h2>
-<p>Eyüpsultan, kentsel dönüşüm ve doğal alanları bir arada sunar. Günen Temizlik olarak ilçenin tüm bölgelerine profesyonel hizmet sunuyoruz.</p>`,
+<p>Eyüpsultan, kentsel dönüşüm ve doğal alanları bir arada sunar. Zümrüt Vadi Temizlik olarak ilçenin tüm bölgelerine profesyonel hizmet sunuyoruz.</p>`,
   },
 
   // BAYRAMPAŞA
@@ -2094,7 +2094,7 @@ const DISTRICT_POSTS: BlogSeedPost[] = [
 </div>
 
 <h2>Bayrampaşa Özeti</h2>
-<p>Bayrampaşa, pratik ve hızlı hizmet beklentisi yüksek bir bölgedir. Günen Temizlik olarak ihtiyaçlara uygun çözümler sunuyoruz.</p>`,
+<p>Bayrampaşa, pratik ve hızlı hizmet beklentisi yüksek bir bölgedir. Zümrüt Vadi Temizlik olarak ihtiyaçlara uygun çözümler sunuyoruz.</p>`,
   },
 
   // GAZİOSMANPAŞA
@@ -2146,7 +2146,7 @@ const DISTRICT_POSTS: BlogSeedPost[] = [
 </div>
 
 <h2>Gaziosmanpaşa Özeti</h2>
-<p>Gaziosmanpaşa, yoğun konut stokuyla hızlı ve uygun fiyatlı hizmet bekler. Günen Temizlik olarak bölgeye özel çözümler sunuyoruz.</p>`,
+<p>Gaziosmanpaşa, yoğun konut stokuyla hızlı ve uygun fiyatlı hizmet bekler. Zümrüt Vadi Temizlik olarak bölgeye özel çözümler sunuyoruz.</p>`,
   },
 
   // ZEYTİNBURNU
@@ -2190,7 +2190,7 @@ const DISTRICT_POSTS: BlogSeedPost[] = [
 </div>
 
 <h2>Zeytinburnu Özeti</h2>
-<p>Zeytinburnu, esnek ve pratik hizmet beklentisi yüksek bir bölgedir. Günen Temizlik olarak ihtiyaçlara uygun çözümler sunuyoruz.</p>`,
+<p>Zeytinburnu, esnek ve pratik hizmet beklentisi yüksek bir bölgedir. Zümrüt Vadi Temizlik olarak ihtiyaçlara uygun çözümler sunuyoruz.</p>`,
   },
 
   // FATİH
@@ -2242,7 +2242,7 @@ const DISTRICT_POSTS: BlogSeedPost[] = [
 </div>
 
 <h2>Fatih Özeti</h2>
-<p>Fatih, tarihi değerleriyle özel bir ilçedir. Günen Temizlik olarak tarihi yapılara saygılı, profesyonel hizmet sunuyoruz.</p>`,
+<p>Fatih, tarihi değerleriyle özel bir ilçedir. Zümrüt Vadi Temizlik olarak tarihi yapılara saygılı, profesyonel hizmet sunuyoruz.</p>`,
   },
 
   // BAHÇELİEVLER
@@ -2295,7 +2295,7 @@ const DISTRICT_POSTS: BlogSeedPost[] = [
 </div>
 
 <h2>Bahçelievler Özeti</h2>
-<p>Bahçelievler, aile yaşamının yoğun olduğu bir bölgedir. Günen Temizlik olarak aile odaklı, uygun fiyatlı profesyonel hizmet sunuyoruz.</p>`,
+<p>Bahçelievler, aile yaşamının yoğun olduğu bir bölgedir. Zümrüt Vadi Temizlik olarak aile odaklı, uygun fiyatlı profesyonel hizmet sunuyoruz.</p>`,
   },
 ];
 
@@ -2417,7 +2417,7 @@ const ISTANBUL_GUIDE_POSTS: BlogSeedPost[] = [
 </div>
 
 <h2>İstanbul Temizlik Fiyatları Özeti</h2>
-<p>İstanbul'da temizlik fiyatları bölge, metrekare ve hizmet tipine göre değişir. Avrupa yakasının prestijli bölgeleri (Şişli, Beşiktaş) ile Anadolu yakasının doğu ilçeleri (Maltepe, Kartal) arasında fark vardır. Doğru fiyat almak için yerinde keşif yaptırmak ve kapsamı netleştirmek önemlidir. Günen Temizlik olarak tüm bölgelerde şeffaf fiyatlandırma ve ücretsiz keşif sunuyoruz.</p>`,
+<p>İstanbul'da temizlik fiyatları bölge, metrekare ve hizmet tipine göre değişir. Avrupa yakasının prestijli bölgeleri (Şişli, Beşiktaş) ile Anadolu yakasının doğu ilçeleri (Maltepe, Kartal) arasında fark vardır. Doğru fiyat almak için yerinde keşif yaptırmak ve kapsamı netleştirmek önemlidir. Zümrüt Vadi Temizlik olarak tüm bölgelerde şeffaf fiyatlandırma ve ücretsiz keşif sunuyoruz.</p>`,
   },
 
   {
@@ -2522,7 +2522,7 @@ const ISTANBUL_GUIDE_POSTS: BlogSeedPost[] = [
 </div>
 
 <h2>Özet ve Öneri</h2>
-<p>İstanbul'da temizlik şirketi seçerken referans, sigorta, şeffaf fiyat, net kapsam ve memnuniyet garantisi kriterlerini değerlendirin. Günen Temizlik olarak 7/24 hizmet, sigortalı personel ve memnuniyet garantisi sunuyoruz.</p>`,
+<p>İstanbul'da temizlik şirketi seçerken referans, sigorta, şeffaf fiyat, net kapsam ve memnuniyet garantisi kriterlerini değerlendirin. Zümrüt Vadi Temizlik olarak 7/24 hizmet, sigortalı personel ve memnuniyet garantisi sunuyoruz.</p>`,
   },
   {
     slug: 'istanbul-724-acil-temizlik-hizmeti',
@@ -2547,7 +2547,7 @@ const ISTANBUL_GUIDE_POSTS: BlogSeedPost[] = [
 </ul>
 
 <h2>İstanbul'da 7/24 Hizmet Veren Bölgeler</h2>
-<p>Günen Temizlik olarak şu bölgelere 7/24 acil hizmet veriyoruz:</p>
+<p>Zümrüt Vadi Temizlik olarak şu bölgelere 7/24 acil hizmet veriyoruz:</p>
 <ul>
 <li>Kağıthane, Şişli, Beşiktaş (merkezi konum avantajı)</li>
 <li>Kadıköy, Ataşehir, Üsküdar (Anadolu yakası merkezi)</li>
@@ -2600,7 +2600,7 @@ const ISTANBUL_GUIDE_POSTS: BlogSeedPost[] = [
 </div>
 
 <h2>7/24 Acil Temizlik Özeti</h2>
-<p>İstanbul'un yoğun yaşamında acil temizlik ihtiyaçları kaçınılmazdır. Günen Temizlik olarak 7/24 acil hattımızla, gece gündüz, hafta sonu demeden hizmet veriyoruz. Hemen arayın, hemen gelelim.</p>`,
+<p>İstanbul'un yoğun yaşamında acil temizlik ihtiyaçları kaçınılmazdır. Zümrüt Vadi Temizlik olarak 7/24 acil hattımızla, gece gündüz, hafta sonu demeden hizmet veriyoruz. Hemen arayın, hemen gelelim.</p>`,
   },
   {
     slug: 'istanbul-ev-temizligi-oncesi-hazirlik-rehberi',
@@ -2778,7 +2778,7 @@ const ISTANBUL_GUIDE_POSTS: BlogSeedPost[] = [
 </div>
 
 <h2>İnşaat Sonrası Temizlik Özeti</h2>
-<p>İstanbul'da yeni daire veya ofis teslimi öncesi detaylı inşaat sonrası temizlik, yaşanabilir ortam için şarttır. Günen Temizlik olarak profesyonel ekipman ve deneyimli personelle hizmet veriyoruz.</p>`,
+<p>İstanbul'da yeni daire veya ofis teslimi öncesi detaylı inşaat sonrası temizlik, yaşanabilir ortam için şarttır. Zümrüt Vadi Temizlik olarak profesyonel ekipman ve deneyimli personelle hizmet veriyoruz.</p>`,
   },
   {
     slug: 'istanbul-tasinma-temizligi-eski-yeni-ev-rehberi',
@@ -2870,7 +2870,7 @@ const ISTANBUL_GUIDE_POSTS: BlogSeedPost[] = [
 </div>
 
 <h2>Taşınma Temizliği Özeti</h2>
-<p>İstanbul'da taşınma sürecinde hem eski ev hem yeni ev temizliği önemlidir. Günen Temizlik olarak taşınma paketleriyle ekonomik ve etkili çözümler sunuyoruz.</p>`,
+<p>İstanbul'da taşınma sürecinde hem eski ev hem yeni ev temizliği önemlidir. Zümrüt Vadi Temizlik olarak taşınma paketleriyle ekonomik ve etkili çözümler sunuyoruz.</p>`,
   },
   {
     slug: 'istanbul-ofis-temizligi-sozlesme-ipuclari-2026',
@@ -2975,7 +2975,7 @@ const ISTANBUL_GUIDE_POSTS: BlogSeedPost[] = [
 </div>
 
 <h2>Sözleşme Özeti</h2>
-<p>Kurumsal ofis temizliğinde detaylı sözleşme, uzun vadeli başarılı iş ilişkisinin anahtarıdır. Günen Temizlik olarak şeffaf sözleşme koşulları ve SLA garantisi sunuyoruz.</p>`,
+<p>Kurumsal ofis temizliğinde detaylı sözleşme, uzun vadeli başarılı iş ilişkisinin anahtarıdır. Zümrüt Vadi Temizlik olarak şeffaf sözleşme koşulları ve SLA garantisi sunuyoruz.</p>`,
   },
 
   {
@@ -3072,7 +3072,7 @@ const ISTANBUL_GUIDE_POSTS: BlogSeedPost[] = [
 </div>
 
 <h2>Koltuk Yıkama Özeti</h2>
-<p>İstanbul'da koltuk yıkama seçimi ihtiyaç ve koltuk durumuna göre yapılmalı. Günen Temizlik olarak her iki yöntemle de profesyonel hizmet sunuyoruz.</p>`,
+<p>İstanbul'da koltuk yıkama seçimi ihtiyaç ve koltuk durumuna göre yapılmalı. Zümrüt Vadi Temizlik olarak her iki yöntemle de profesyonel hizmet sunuyoruz.</p>`,
   },
   {
     slug: 'istanbul-derin-temizlik-ne-zaman-gerekir',
@@ -3163,7 +3163,7 @@ const ISTANBUL_GUIDE_POSTS: BlogSeedPost[] = [
 </div>
 
 <h2>Derin Temizlik Özeti</h2>
-<p>İstanbul'da derin temizlik, sağlıklı ve konforlu yaşam için periyodik olarak yapılmalı. Günen Temizlik olarak sezonluk paketler ve detaylı derin temizlik hizmeti sunuyoruz.</p>`,
+<p>İstanbul'da derin temizlik, sağlıklı ve konforlu yaşam için periyodik olarak yapılmalı. Zümrüt Vadi Temizlik olarak sezonluk paketler ve detaylı derin temizlik hizmeti sunuyoruz.</p>`,
   },
   {
     slug: 'istanbul-yesil-temizlik-eko-dostu-urunler',
@@ -3214,7 +3214,7 @@ const ISTANBUL_GUIDE_POSTS: BlogSeedPost[] = [
 </ul>
 
 <h2>İstanbul'da Yeşil Temizlik Hizmeti</h2>
-<p>Günen Temizlik olarak sunduğumuz eko seçenekler:</p>
+<p>Zümrüt Vadi Temizlik olarak sunduğumuz eko seçenekler:</p>
 <ul>
 <li>Parfümsüz ve paraben içermeyen ürünler</li>
 <li>Bebek ve hassas bireyler için özel</li>
@@ -3244,7 +3244,7 @@ const ISTANBUL_GUIDE_POSTS: BlogSeedPost[] = [
 </div>
 
 <h2>Yeşil Temizlik Özeti</h2>
-<p>İstanbul'da sürdürülebilir temizlik, hem sağlık hem çevre için önemli. Günen Temizlik olarak eko-dostu seçenekler sunuyoruz.</p>`,
+<p>İstanbul'da sürdürülebilir temizlik, hem sağlık hem çevre için önemli. Zümrüt Vadi Temizlik olarak eko-dostu seçenekler sunuyoruz.</p>`,
   },
   {
     slug: 'istanbul-pet-friendly-evcil-hayvan-temizligi',
@@ -3292,7 +3292,7 @@ const ISTANBUL_GUIDE_POSTS: BlogSeedPost[] = [
 </ul>
 
 <h2>Profesyonel Pet-Friendly Temizlik</h2>
-<p>Günen Temizlik olarak sunduklarımız:</p>
+<p>Zümrüt Vadi Temizlik olarak sunduklarımız:</p>
 <ul>
 <li>Evcil hayvan dostu ürünler</li>
 <li>Tüy ve koku odaklı temizlik</li>
@@ -3326,7 +3326,7 @@ const ISTANBUL_GUIDE_POSTS: BlogSeedPost[] = [
 </div>
 
 <h2>Pet-Friendly Temizlik Özeti</h2>
-<p>İstanbul'da evcil hayvanlı evlerde düzenli ve doğru temizlik şart. Günen Temizlik olarak pet-friendly özel hizmet sunuyoruz.</p>`,
+<p>İstanbul'da evcil hayvanlı evlerde düzenli ve doğru temizlik şart. Zümrüt Vadi Temizlik olarak pet-friendly özel hizmet sunuyoruz.</p>`,
   },
   {
     slug: 'istanbul-alerji-dostu-temizlik-hassas-bireyler',
@@ -3377,7 +3377,7 @@ const ISTANBUL_GUIDE_POSTS: BlogSeedPost[] = [
 </table>
 
 <h2>Profesyonel Alerji Dostu Hizmet</h2>
-<p>Günen Temizlik olarak:</p>
+<p>Zümrüt Vadi Temizlik olarak:</p>
 <ul>
 <li>Parfümsüz, alerji dostu ürünler</li>
 <li>HEPA ekipmanları</li>
@@ -3407,7 +3407,7 @@ const ISTANBUL_GUIDE_POSTS: BlogSeedPost[] = [
 </div>
 
 <h2>Alerji Dostu Temizlik Özeti</h2>
-<p>İstanbul'da hassas bireyler için periyodik, doğru ürünlerle temizlik yaşam kalitesini artırır. Günen Temizlik olarak alerji dostu hizmet sunuyoruz.</p>`,
+<p>İstanbul'da hassas bireyler için periyodik, doğru ürünlerle temizlik yaşam kalitesini artırır. Zümrüt Vadi Temizlik olarak alerji dostu hizmet sunuyoruz.</p>`,
   },
   {
     slug: 'istanbul-temizlik-trendleri-2026-yapay-zeka-robotlar',
@@ -3456,7 +3456,7 @@ const ISTANBUL_GUIDE_POSTS: BlogSeedPost[] = [
 </ul>
 
 <h2>Profesyonel Temizlikte Teknoloji</h2>
-<p>Günen Temizlik olarak kullandığımız teknolojiler:</p>
+<p>Zümrüt Vadi Temizlik olarak kullandığımız teknolojiler:</p>
 <ul>
 <li>Online randevu ve takip sistemi</li>
 <li>Dijital kontrol listeleri</li>
@@ -3498,7 +3498,7 @@ const ISTANBUL_GUIDE_POSTS: BlogSeedPost[] = [
 </div>
 
 <h2>Temizlik Trendleri Özeti</h2>
-<p>2026'da teknoloji temizlik sektörünü dönüştürüyor. Günen Temizlik olarak hem teknolojiyi kullanıyor hem de profesyonel insan dokunuşu sunuyoruz.</p>`,
+<p>2026'da teknoloji temizlik sektörünü dönüştürüyor. Zümrüt Vadi Temizlik olarak hem teknolojiyi kullanıyor hem de profesyonel insan dokunuşu sunuyoruz.</p>`,
   },
   {
     slug: 'istanbul-hali-yikama-rehberi-evde-mi-fabrikada-mi',
@@ -3574,7 +3574,7 @@ const ISTANBUL_GUIDE_POSTS: BlogSeedPost[] = [
 </ul>
 
 <h2>Özet ve Öneri</h2>
-<p>Günlük bakım için yerinde, değerli halılar ve derin lekeler için fabrika tipi yıkama önerilir. Günen Temizlik olarak her iki yöntemle de hizmet veriyoruz.</p>
+<p>Günlük bakım için yerinde, değerli halılar ve derin lekeler için fabrika tipi yıkama önerilir. Zümrüt Vadi Temizlik olarak her iki yöntemle de hizmet veriyoruz.</p>
 
 <h2>Sık Sorulan Sorular</h2>
 <div>
@@ -3692,7 +3692,7 @@ const ISTANBUL_GUIDE_POSTS: BlogSeedPost[] = [
 </div>
 
 <h2>Dış Cephe Temizliği Özeti</h2>
-<p>İstanbul'da dış cephe cam temizliği, estetik kadar güvenlik gerektirir. Günen Temizlik olarak tüm mevzuat ve güvenlik standartlarına uygun profesyonel hizmet sunuyoruz.</p>`,
+<p>İstanbul'da dış cephe cam temizliği, estetik kadar güvenlik gerektirir. Zümrüt Vadi Temizlik olarak tüm mevzuat ve güvenlik standartlarına uygun profesyonel hizmet sunuyoruz.</p>`,
   },
 ];
 
@@ -4898,20 +4898,20 @@ const LEAD_GENERATION_POSTS: BlogSeedPost[] = [
 <p><strong>Evinize özel net fiyat ve ücretsiz teklif almak için hemen WhatsApp hattımızdan bize ulaşun veya arayın.</strong></p>
 
 <h2>Özet</h2>
-<p>Güvenilir temizlik şirketi seçerken bu 7 kritik soruyu sorun. Günen Temizlik olarak tüm cevapları sağlıyoruz.</p>`,
+<p>Güvenilir temizlik şirketi seçerken bu 7 kritik soruyu sorun. Zümrüt Vadi Temizlik olarak tüm cevapları sağlıyoruz.</p>`,
     image: IMG_TECH,
     category: 'Kurumsal',
     tags: ['guvenilir', 'temizlik sirketi', 'sigorta', 'referans'],
   },
   {
-    slug: 'gunen-temizlik-referanslar-calisma-prensibi',
-    title: 'Günen Temizlik Olarak Referanslarımız ve Çalışma Prensibimiz',
-    excerpt: 'Günen Temizlik olarak referanslarımız ve çalışma prensibimiz. 15+ yıl deneyim ve müşteri memnuniyeti.',
-    content: `<h2>Günen Temizlik Referansları</h2>
-<p>Günen Temizlik olarak referanslarımız ve çalışma prensibimizi inceledik. 15+ yıl deneyim ve müşteri memnuniyeti önceliğimizdir.</p>
+    slug: 'zumrut-vadi-temizlik-referanslar-calisma-prensibi',
+    title: 'Zümrüt Vadi Temizlik Olarak Referanslarımız ve Çalışma Prensibimiz',
+    excerpt: 'Zümrüt Vadi Temizlik olarak referanslarımız ve çalışma prensibimiz. 15+ yıl deneyim ve müşteri memnuniyeti.',
+    content: `<h2>Zümrüt Vadi Temizlik Referansları</h2>
+<p>Zümrüt Vadi Temizlik olarak referanslarımız ve çalışma prensibimizi inceledik. 15+ yıl deneyim ve müşteri memnuniyeti önceliğimizdir.</p>
 
 <h3>Referanslarımız</h3>
-<p>Günen Temizlik olarak 15+ yıldır İstanbul genelinde profesyonel temizlik hizmeti sunuyoruz. Binlerce mutlu müşterimiz var.</p>
+<p>Zümrüt Vadi Temizlik olarak 15+ yıldır İstanbul genelinde profesyonel temizlik hizmeti sunuyoruz. Binlerce mutlu müşterimiz var.</p>
 
 <h3>Çalışma Prensibimiz</h3>
 <p>Çalışma prensibimiz müşteri memnuniyeti odaklıdır. Kalite garantisi ve şeffaf fiyatlandırma sunuyoruz.</p>
@@ -4927,10 +4927,10 @@ const LEAD_GENERATION_POSTS: BlogSeedPost[] = [
 <p><strong>Evinize özel net fiyat ve ücretsiz teklif almak için hemen WhatsApp hattımızdan bize ulaşın veya arayın.</strong></p>
 
 <h2>Özet</h2>
-<p>Günen Temizlik olarak 15+ yıl deneyim ve müşteri memnuniyeti önceliğimizle hizmet veriyoruz.</p>`,
+<p>Zümrüt Vadi Temizlik olarak 15+ yıl deneyim ve müşteri memnuniyeti önceliğimizle hizmet veriyoruz.</p>`,
     image: IMG_TECH,
     category: 'Kurumsal',
-    tags: ['gunen temizlik', 'referans', 'deneyim', 'memnuniyet'],
+    tags: ['zümrüt vadi temizlik', 'referans', 'deneyim', 'memnuniyet'],
   },
   {
     slug: 'temizlik-personeli-sigortal-guvenilir-neden-onemli',
@@ -4956,7 +4956,7 @@ const LEAD_GENERATION_POSTS: BlogSeedPost[] = [
 <p><strong>Evinize özel net fiyat ve ücretsiz teklif almak için hemen WhatsApp hattımızdan bize ulaşun veya arayın.</strong></p>
 
 <h2>Özet</h2>
-<p>Temizlik personelinin sigortalı ve güvenilir olması sizin için önemlidir. Günen Temizlik olarak sigortalı personel çalıştırıyoruz.</p>`,
+<p>Temizlik personelinin sigortalı ve güvenilir olması sizin için önemlidir. Zümrüt Vadi Temizlik olarak sigortalı personel çalıştırıyoruz.</p>`,
     image: IMG_TECH,
     category: 'Kurumsal',
     tags: ['sigorta', 'personel', 'guvenlik', 'is kazasi'],
@@ -4979,13 +4979,13 @@ const LEAD_GENERATION_POSTS: BlogSeedPost[] = [
 <h3>Referans Kontrolü</h3>
 <p>Müşteri yorumlarını kontrol ederek şirketin kalitesini doğrulayın. Bu, doğru seçim yapmanıza yardımcı olur.</p>
 
-<h3>Günen Temizlik Yorumları</h3>
-<p>Günen Temizlik olarak binlerce olumlu müşteri yorumuna sahibiz. Referanslarımızı inceleyebilirsiniz.</p>
+<h3>Zümrüt Vadi Temizlik Yorumları</h3>
+<p>Zümrüt Vadi Temizlik olarak binlerce olumlu müşteri yorumuna sahibiz. Referanslarımızı inceleyebilirsiniz.</p>
 
 <p><strong>Evinize özel net fiyat ve ücretsiz teklif almak için hemen WhatsApp hattımızdan bize ulaşun veya arayın.</strong></p>
 
 <h2>Özet</h2>
-<p>Müşteri yorumları temizlik şirketi seçiminde belirleyicidir. Günen Temizlik olarak olumlu yorumlara sahibiz.</p>`,
+<p>Müşteri yorumları temizlik şirketi seçiminde belirleyicidir. Zümrüt Vadi Temizlik olarak olumlu yorumlara sahibiz.</p>`,
     image: IMG_TECH,
     category: 'Kurumsal',
     tags: ['musteri yorumlari', 'referans', 'guven', 'kalite'],
@@ -5008,13 +5008,13 @@ const LEAD_GENERATION_POSTS: BlogSeedPost[] = [
 <h3>Güven</h3>
 <p>Yüzde yüz memnuniyet güven anlamına gelir. Şirket hizmetine güvenilebilir.</p>
 
-<h3>Günen Temizlik Garantisi</h3>
-<p>Günen Temizlik olarak yüzde yüz memnuniyet garantisi sunuyoruz. Memnun kalmazsanız ücretsiz düzeltme yapıyoruz.</p>
+<h3>Zümrüt Vadi Temizlik Garantisi</h3>
+<p>Zümrüt Vadi Temizlik olarak yüzde yüz memnuniyet garantisi sunuyoruz. Memnun kalmazsanız ücretsiz düzeltme yapıyoruz.</p>
 
 <p><strong>Evinize özel net fiyat ve ücretsiz teklif almak için hemen WhatsApp hattımızdan bize ulaşun veya arayın.</strong></p>
 
 <h2>Özet</h2>
-<p>Yüzde yüz memnuniyet kalite garantisi ve müşteri odaklı hizmet anlamına gelir. Günen Temizlik olarak bu garantiyi sunuyoruz.</p>`,
+<p>Yüzde yüz memnuniyet kalite garantisi ve müşteri odaklı hizmet anlamına gelir. Zümrüt Vadi Temizlik olarak bu garantiyi sunuyoruz.</p>`,
     image: IMG_TECH,
     category: 'Kurumsal',
     tags: ['memnuniyet', 'kalite garantisi', 'musteri odakli', 'guven'],
@@ -5231,7 +5231,7 @@ export async function upsertCanonicalBlogPosts(prisma: PrismaClient): Promise<nu
       enrichedExcerpt,
       ctrOverride?.desc ?? metaDesc ?? null
     );
-    const normalizedTags = [...new Set([...rest.tags, 'istanbul', 'gunen temizlik blog'])].slice(0, 12);
+    const normalizedTags = [...new Set([...rest.tags, 'istanbul', 'zümrüt vadi temizlik blog'])].slice(0, 12);
     await prisma.blogPost.upsert({
       where: { slug },
       create: {
@@ -5242,7 +5242,7 @@ export async function upsertCanonicalBlogPosts(prisma: PrismaClient): Promise<nu
         image: rest.image ?? null,
         category: rest.category,
         tags: normalizedTags,
-        author: 'Günen Temizlik',
+        author: 'Zümrüt Vadi Temizlik',
         published: true,
         views: 0,
         metaTitle: resolvedTitle,

@@ -202,15 +202,15 @@ async function seed() {
     if (existingSettings === 0) {
       await prisma.siteSettings.create({
         data: {
-          siteName: 'Günen Temizlik',
+          siteName: 'Zümrüt Vadi Temizlik',
           siteDescription: 'Profesyonel temizlik hizmetleri',
-          phone: '0546 715 2844',
-          email: 'iletisim@gunentemizlik.com',
-          whatsapp: '905467152844',
-          address: 'İstanbul, Türkiye',
-          facebook: 'https://facebook.com/gunentemizlik',
-          instagram: 'https://instagram.com/gunentemizlik',
-          twitter: 'https://twitter.com/gunentemizlik',
+          phone: '0551 925 09 43',
+          email: 'vedatgunenn@gmail.com',
+          whatsapp: '905519250943',
+          address: 'Sarıyer Merkez, Sarıyer/İstanbul',
+          facebook: 'https://facebook.com/zumrutvaditemizlik',
+          instagram: 'https://instagram.com/zumrutvaditemizlik',
+          twitter: 'https://twitter.com/zumrutvaditemizlik',
         },
       });
       logger.success('Site ayarları eklendi');

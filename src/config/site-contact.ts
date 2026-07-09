@@ -3,20 +3,19 @@
  * WhatsApp: wa.me/{whatsappDigits}
  */
 export const SITE_CONTACT = {
-  companyName: 'Günen Temizlik',
-  addressLine:
-    'Gültepe Mahallesi, Talatpaşa Caddesi, Bıldırcın Sokağı No:13 kat -1, 34000 Kağıthane/İstanbul',
-  addressLocality: 'Kağıthane',
+  companyName: 'Zümrüt Vadi Temizlik',
+  addressLine: 'Sarıyer Merkez, Sarıyer/İstanbul',
+  addressLocality: 'Sarıyer',
   addressRegion: 'İstanbul',
-  postalCode: '34000',
+  postalCode: '34450',
   addressCountry: 'TR',
 
-  phoneDisplay: '0546 715 28 44',
+  phoneDisplay: '0551 925 09 43',
   /** tel: ve schema.org Telephone */
-  phoneE164: '+905467152844',
+  phoneE164: '+905519250943',
   /** wa.me yolu (ülke kodu + numara, başında + yok) */
-  whatsappDigits: '905467152844',
-  email: 'iletisim@gunentemizlik.com',
+  whatsappDigits: '905519250943',
+  email: 'vedatgunenn@gmail.com',
 } as const;
 
 /** tel: bağlantısı — yalnızca rakam ve + */

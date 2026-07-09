@@ -28,7 +28,7 @@ npm run start
 **🔧 Manuel Kontrol:**
 ```html
 <!-- Örnek beklenen output -->
-<title>🏠 Kadıköy Ev Temizliği %30 İndirim! 0532 123 45 67 | Günen</title>
+<title>🏠 Kadıköy Ev Temizliği %30 İndirim! 0551 925 09 43 | Zümrüt Vadi</title>
 <meta name="description" content="✨ Profesyonel ev temizliği hizmetimizle %30 indirim! Hemen arayın, aynı gün hizmet. 15+ yıl tecrübe, %98 müşteri memnuniyeti.">
 ```
 

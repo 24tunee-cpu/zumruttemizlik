@@ -17,24 +17,24 @@ export const metadata: Metadata = {
   keywords: keywordsForPage('randevu'),
   alternates: { canonical: canonicalUrl('/randevu') },
   openGraph: {
-    title: 'Ücretsiz keşif ve randevu | Günen Temizlik',
+    title: 'Ücretsiz keşif ve randevu | Zümrüt Vadi Temizlik',
     description: 'Uygun tarih ve saat diliminde ücretsiz keşif talebi oluşturun.',
     url: canonicalUrl('/randevu'),
     type: 'website',
     locale: 'tr_TR',
-    siteName: 'Günen Temizlik',
+    siteName: 'Zümrüt Vadi Temizlik',
     images: [
       {
         url: canonicalUrl('/logo.png'),
         width: 1200,
         height: 630,
-        alt: 'Günen Temizlik - Ücretsiz keşif ve randevu',
+        alt: 'Zümrüt Vadi Temizlik - Ücretsiz keşif ve randevu',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ücretsiz keşif ve randevu | Günen Temizlik',
+    title: 'Ücretsiz keşif ve randevu | Zümrüt Vadi Temizlik',
     description: 'Uygun tarih ve saat diliminde ücretsiz keşif talebi oluşturun.',
     images: [canonicalUrl('/logo.png')],
   },

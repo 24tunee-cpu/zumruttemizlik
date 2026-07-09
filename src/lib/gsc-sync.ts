@@ -122,7 +122,7 @@ export async function runSeoChecklistAutoSync(source: SyncSource): Promise<SyncR
     const knownKeys = knownKeysSet();
 
     // 1) sitemap presence check
-    const base = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.gunentemizlik.com';
+    const base = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zumrutvaditemizlik.com';
     const sitemapResp = await fetch(`${base.replace(/\/$/, '')}/sitemap.xml`, { method: 'GET' });
     const sitemapText = sitemapResp.ok ? await sitemapResp.text() : '';
     const hasBolgeler = sitemapText.includes('/bolgeler/');

@@ -55,7 +55,7 @@ export function buildReferanslarLocalBusinessJsonLd(rows: PublicTestimonialRow[]
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     '@id': BUSINESS_ID,
-    name: 'Günen Temizlik Şirketi',
+    name: 'Zümrüt Vadi Temizlik Şirketi',
     url: `${SITE_ORIGIN}/referanslar`,
     image: [`${SITE_ORIGIN}/logo.png`, `${SITE_ORIGIN}/og-image.jpg`],
     telephone: SITE_CONTACT.phoneE164,
@@ -97,7 +97,7 @@ export function buildReferanslarFaqJsonLd() {
     mainEntity: [
       {
         '@type': 'Question',
-        name: 'Günen Temizlik müşteri yorumları gerçek mi?',
+        name: 'Zümrüt Vadi Temizlik müşteri yorumları gerçek mi?',
         acceptedAnswer: {
           '@type': 'Answer',
           text: `Evet. ${SITE_ORIGIN}/referanslar sayfasındaki yorumlar yönetim panelinden yayınlanan aktif müşteri referanslarıdır; her yorum için isim ve metin site üzerinde görünür.`,
@@ -132,9 +132,9 @@ export function buildReferanslarWebPageJsonLd(
     '@type': 'WebPage',
     '@id': `${SITE_ORIGIN}/referanslar#webpage`,
     url: `${SITE_ORIGIN}/referanslar`,
-    name: 'Referanslar | Günen Temizlik',
+    name: 'Referanslar | Zümrüt Vadi Temizlik',
     description,
-    isPartOf: { '@type': 'WebSite', name: 'Günen Temizlik', url: SITE_ORIGIN },
+    isPartOf: { '@type': 'WebSite', name: 'Zümrüt Vadi Temizlik', url: SITE_ORIGIN },
     about: { '@id': BUSINESS_ID },
     mainEntity: {
       '@type': 'ItemList',

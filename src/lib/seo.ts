@@ -29,7 +29,7 @@ import { SITE_CONTACT } from '@/config/site-contact';
 // ============================================
 
 /** Kanonik host standardı: www */
-const DEFAULT_SITE_URL = 'https://www.gunentemizlik.com';
+const DEFAULT_SITE_URL = 'https://www.zumrutvaditemizlik.com';
 
 function normalizeSiteUrl(raw?: string): string {
   const input = raw?.trim();
@@ -39,9 +39,9 @@ function normalizeSiteUrl(raw?: string): string {
     const withProtocol = input.startsWith('http://') || input.startsWith('https://') ? input : `https://${input}`;
     const parsed = new URL(withProtocol);
 
-    // Alan adında tek kanonik host kullan: www.gunentemizlik.com
-    if (parsed.hostname === 'gunentemizlik.com') {
-      parsed.hostname = 'www.gunentemizlik.com';
+    // Alan adında tek kanonik host kullan: www.zumrutvaditemizlik.com
+    if (parsed.hostname === 'zumrutvaditemizlik.com') {
+      parsed.hostname = 'www.zumrutvaditemizlik.com';
     }
 
     return parsed.toString().replace(/\/$/, '');
@@ -77,27 +77,26 @@ const DEFAULT_OG_IMAGE = '/og-image.jpg';
 
 /** Site bilgileri */
 const SITE_CONFIG = {
-  name: 'Günen Temizlik',
+  name: 'Zümrüt Vadi Temizlik',
   description: 'İstanbul\'un önde gelen profesyonel temizlik şirketi',
   locale: 'tr_TR',
   language: 'tr',
   telephone: SITE_CONTACT.phoneE164,
   email: SITE_CONTACT.email,
   address: {
-    street:
-      'Gültepe Mahallesi, Talatpaşa Caddesi, Bıldırcın Sokağı No:13 kat -1',
-    locality: 'Kağıthane',
+    street: 'Sarıyer Merkez',
+    locality: 'Sarıyer',
     region: 'İstanbul',
-    postalCode: '34000',
+    postalCode: '34450',
     country: 'TR',
   },
   geo: {
-    latitude: 41.080921,
-    longitude: 28.993809,
+    latitude: 41.166900,
+    longitude: 29.057700,
   },
   social: {
-    facebook: 'https://facebook.com/gunentemizlik',
-    instagram: 'https://instagram.com/gunentemizlik',
+    facebook: 'https://facebook.com/zumrutvaditemizlik',
+    instagram: 'https://instagram.com/zumrutvaditemizlik',
   },
   openingHours: {
     days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],

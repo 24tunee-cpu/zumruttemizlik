@@ -348,7 +348,7 @@ export function MobileStickyHeader({
       isVisible ? 'translate-y-0' : '-translate-y-full'
     }`}>
       <div className="flex items-center justify-between p-4">
-        <div className="text-white font-semibold">Günen Temizlik</div>
+        <div className="text-white font-semibold">Zümrüt Vadi Temizlik</div>
         <div className="flex gap-2">
           <ClickToCall 
             phone={phone} 

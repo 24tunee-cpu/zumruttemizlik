@@ -1,4 +1,4 @@
-# Günen Temizlik - Profesyonel Temizlik Hizmetleri Web Sitesi
+# Zümrüt Vadi Temizlik - Profesyonel Temizlik Hizmetleri Web Sitesi
 
 Next.js 14, Prisma, MongoDB ve Tailwind CSS ile geli?tirilmi? kurumsal web sitesi.
 
@@ -13,8 +13,8 @@ Next.js 14, Prisma, MongoDB ve Tailwind CSS ile geli?tirilmi? kurumsal web sites
 ### 2. Projeyi ndirin
 
 ```bash
-git clone <repo-url>
-cd gunen-temizlik
+git clone https://github.com/24tunee-cpu/zumruttemizlik.git
+cd zumruttemizlik
 npm install
 ```
 
@@ -24,14 +24,14 @@ Proje kök dizininde `.env` dosyas? olu?turun:
 
 ```env
 # MongoDB Ba?lant?s?
-DATABASE_URL="mongodb+srv://<kullanici>:<sifre>@cluster0.xxxxx.mongodb.net/gunen-temizlik?retryWrites=true&w=majority"
+DATABASE_URL="mongodb+srv://<kullanici>:<sifre>@cluster0.xxxxx.mongodb.net/zumrutvaditemizlik?retryWrites=true&w=majority"
 
 # NextAuth.js Ayarlar?
 NEXTAUTH_URL="http://localhost:3000"
 NEXTAUTH_SECRET="rastgele-gizli-anahtar-32-karakter"
 
 # Admin Giri? Bilgileri (ilk kurulum için)
-ADMIN_EMAIL="admin@gunentemizlik.com"
+ADMIN_EMAIL="vedatgunenn@gmail.com"
 ADMIN_PASSWORD="guclu-sifre-123"
 ```
 
@@ -110,8 +110,8 @@ npm start
 ### Seçenek 3: Docker
 
 ```bash
-docker build -t gunen-temizlik .
-docker run -p 3000:3000 --env-file .env gunen-temizlik
+docker build -t zumrut-vadi-temizlik .
+docker run -p 3000:3000 --env-file .env zumrut-vadi-temizlik
 ```
 
 ---

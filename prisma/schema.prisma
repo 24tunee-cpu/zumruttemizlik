@@ -95,7 +95,7 @@ model BlogPost {
   image                String?
   category             String
   tags                 String[]
-  author               String    @default("Günen Temizlik")
+  author               String    @default("Zümrüt Vadi Temizlik")
   published            Boolean   @default(false)
   /// Yayın zamanı geldiğinde günlük cron `published` yapar
   scheduledPublishAt   DateTime?
@@ -163,16 +163,16 @@ model Subscriber {
 
 model SiteSettings {
   id              String   @id @default(auto()) @map("_id") @db.ObjectId
-  siteName        String   @default("Günen Temizlik")
+  siteName        String   @default("Zümrüt Vadi Temizlik")
   siteDescription String?
-  siteUrl         String   @default("https://gunentemizlik.com")
+  siteUrl         String   @default("https://www.zumrutvaditemizlik.com")
   logo            String?
   favicon         String   @default("/favicon.ico")
   primaryColor    String   @default("#10b981")
   secondaryColor  String   @default("#059669")
   accentColor     String   @default("#34d399")
-  phone           String   @default("0546 715 2844")
-  email           String   @default("iletisim@gunentemizlik.com")
+  phone           String   @default("0551 925 09 43")
+  email           String   @default("vedatgunenn@gmail.com")
   address         String?
   workingHours    String   @default("7/24 Hizmet")
   whatsapp        String?

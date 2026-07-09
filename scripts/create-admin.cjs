@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 const prisma = new PrismaClient();
 
 // Admin credentials from environment variables or defaults
-const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'admin@gunentemizlik.com';
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'vedatgunenn@gmail.com';
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'admin123';
 const ADMIN_NAME = process.env.ADMIN_NAME || 'Admin';
 

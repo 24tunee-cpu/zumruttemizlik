@@ -5,7 +5,7 @@ import {
   type ServiceLanding,
 } from '@/config/programmatic-seo';
 
-const BRAND_SHORT = 'Günen Temizlik';
+const BRAND_SHORT = 'Zümrüt Vadi Temizlik';
 
 function sidePhrase(d: DistrictLanding): string {
   if (d.side === 'anadolu') return 'İstanbul Anadolu yakasında';
@@ -30,7 +30,7 @@ export function buildSmartMetaForPair(
 ): { title: string; description: string } {
   let title = `${district.name} ${service.name} | ${BRAND_SHORT}`;
   if (title.length > 58) {
-    title = `${district.name} ${service.name} · Günen`;
+    title = `${district.name} ${service.name} · Zümrüt Vadi`;
   }
   title = trimEndEllipsis(title, 58);
 

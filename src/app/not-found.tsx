@@ -9,7 +9,7 @@ export default function NotFound() {
           Sayfa Bulunamadı
         </h1>
         <p className="mt-6 text-base leading-7 text-slate-400">
-          Aradığınız sayfa taşınmış, silinmiş veya hiç var olmamış olabilir. Günen Temizlik olarak size en iyi hizmeti sunmaya devam etmek için buradayız.
+          Aradığınız sayfa taşınmış, silinmiş veya hiç var olmamış olabilir. Zümrüt Vadi Temizlik olarak size en iyi hizmeti sunmaya devam etmek için buradayız.
         </p>
         <div className="mt-10 flex items-center justify-center gap-x-6">
           <Link

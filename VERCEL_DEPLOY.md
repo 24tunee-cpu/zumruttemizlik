@@ -1,4 +1,4 @@
-# Vercel Deploy Rehberi - Günen Temizlik
+# Vercel Deploy Rehberi - Zümrüt Vadi Temizlik
 
 ## 🚀 Hızlı Başlangıç
 
@@ -10,8 +10,8 @@ git add .
 git commit -m "Initial commit"
 git branch -M main
 
-# GitHub reposu oluştur (örn: gunen-temizlik)
-git remote add origin https://github.com/KULLANICI_ADI/gunen-temizlik.git
+# GitHub reposu (zumruttemizlik)
+git remote add origin https://github.com/24tunee-cpu/zumruttemizlik.git
 git push -u origin main
 ```
 
@@ -26,14 +26,15 @@ git push -u origin main
 Vercel Dashboard → Project Settings → Environment Variables:
 
 ```
-NEXTAUTH_URL=https://gunentemizlik.com
-NEXTAUTH_SECRET=your-secret-here
-DATABASE_URL=mongodb+srv://kronigaz_db_user:PYa2o2LUy2kWpX2C@cluster0.bhabjmw.mongodb.net/gunentemizlik?retryWrites=true&w=majority&appName=Cluster0
+NEXT_PUBLIC_SITE_URL=https://www.zumrutvaditemizlik.com
+NEXTAUTH_URL=https://www.zumrutvaditemizlik.com
+NEXTAUTH_SECRET=<openssl rand -base64 32 ile üretin>
+DATABASE_URL=mongodb+srv://<kullanici>:<sifre>@<cluster>.mongodb.net/zumrutvaditemizlik?retryWrites=true&w=majority
 ```
 
 ### Adım 4: Domain Bağla
 Vercel Dashboard → Domains → Add Domain:
-- `gunentemizlik.com` ekle
+- `zumrutvaditemizlik.com` ve `www.zumrutvaditemizlik.com` ekle
 - Vercel DNS nameserver'larını verecek
 
 ## 🌐 Hostinger DNS Ayarları
@@ -66,8 +67,8 @@ Vercel otomatik SSL verir (Let's Encrypt), ek işlem gerekmez.
 
 ## 📱 Admin Paneli Erişimi
 Canlıya geçtikten sonra:
-- https://gunentemizlik.com/admin
-- Login: admin@gunentemizlik.com / admin123
+- https://www.zumrutvaditemizlik.com/admin
+- Login: vedatgunenn@gmail.com / admin123
 
 ---
 

@@ -105,7 +105,7 @@ function apiRowToForm(row: Record<string, unknown>): FormState {
   const s = (k: string) => (typeof row[k] === 'string' ? (row[k] as string) : row[k] ? String(row[k]) : '');
   const b = (k: string, d: boolean) => (typeof row[k] === 'boolean' ? row[k] : d) as boolean;
   return {
-    siteName: s('siteName') || 'Günen Temizlik',
+    siteName: s('siteName') || 'Zümrüt Vadi Temizlik',
     siteDescription: s('siteDescription'),
     siteUrl: s('siteUrl') || getSiteUrl(),
     logo: s('logo'),

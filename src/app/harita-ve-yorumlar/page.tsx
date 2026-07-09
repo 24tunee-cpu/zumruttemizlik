@@ -20,7 +20,7 @@ function withUtm(path: string, extra: Record<string, string>) {
 
 // Embed: adres + marka ismi ile, sayfa içinde konumu gösteriyoruz
 const mapsEmbedSrc = `https://www.google.com/maps?q=${encodeURIComponent(
-  `Günen Temizlik, ${address}`
+  `Zümrüt Vadi Temizlik, ${address}`
 )}&output=embed`;
 // Haritada Aç: kullanıcıdan gelen Google Maps kısa linki
 const mapsOpenHref = withUtm(GOOGLE_MAPS_PLACE, { utm_campaign: 'gmb-harita' });
@@ -36,7 +36,7 @@ const directionsHref = withUtm(
 export const revalidate = 3600;
 
 export function generateMetadata(): Metadata {
-  const title = 'Google Harita ve Müşteri Yorumları | İstanbul | Günen';
+  const title = 'Google Harita ve Müşteri Yorumları | İstanbul | Zümrüt Vadi';
   const description = `${SITE_CONTACT.addressLocality} konumumuzu haritada görüntüleyin, gerçek müşteri yorumlarını inceleyin ve doğrudan yol tarifi alın.`;
   const canonical = canonicalUrl('/harita-ve-yorumlar');
 
@@ -89,7 +89,7 @@ export default function MapsAndReviewsPage() {
           <header>
             <h1 className="text-3xl font-bold sm:text-4xl">İstanbul Temizlik Hizmet Bölgelerimiz - Kağıthane Harita ve Yorumlar</h1>
             <p className="mt-4 max-w-3xl text-slate-300 leading-relaxed">
-              Günen Temizlik olarak Kağıthane ve İstanbul genelinde profesyonel temizlik hizmetleri sunuyoruz.
+              Zümrüt Vadi Temizlik olarak Kağıthane ve İstanbul genelinde profesyonel temizlik hizmetleri sunuyoruz.
               Ev temizliği, ofis temizliği, inşaat sonrası temizlik ve derzul temizliği alanlarında uzman ekibimizle
               hizmetinizdeyiz. Yerel temizlik firması olarak müşteri memnuniyetini ön planda tutuyor,
               güvenilir ve kaliteli hizmet anlayışımızla her projede en iyi sonuçları elde etmeyi hedefliyoruz.
@@ -109,7 +109,7 @@ export default function MapsAndReviewsPage() {
                 className="border-0"
                 allowFullScreen
                 loading="lazy"
-                title="Günen Temizlik Google My Maps"
+                title="Zümrüt Vadi Temizlik Google My Maps"
               />
             </div>
           </section>

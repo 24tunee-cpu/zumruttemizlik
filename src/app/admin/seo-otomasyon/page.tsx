@@ -83,9 +83,9 @@ const emptyForm = {
 };
 
 const SAMPLE_GSC_CSV = `query,page,clicks,impressions,ctr,position
-atasehir ofis temizligi,https://www.gunentemizlik.com/bolgeler/atasehir/ofis-temizligi,12,740,1.62,8.4
-kadikoy koltuk yikama,https://www.gunentemizlik.com/bolgeler/kadikoy/koltuk-yikama,9,515,1.74,9.2
-uskudar insaat sonrasi temizlik,https://www.gunentemizlik.com/bolgeler/uskudar/insaat-sonrasi-temizlik,6,401,1.49,11.7`;
+atasehir ofis temizligi,https://www.zumrutvaditemizlik.com/bolgeler/atasehir/ofis-temizligi,12,740,1.62,8.4
+kadikoy koltuk yikama,https://www.zumrutvaditemizlik.com/bolgeler/kadikoy/koltuk-yikama,9,515,1.74,9.2
+uskudar insaat sonrasi temizlik,https://www.zumrutvaditemizlik.com/bolgeler/uskudar/insaat-sonrasi-temizlik,6,401,1.49,11.7`;
 
 const TABS: { id: TabId; label: string; hint: string }[] = [
   { id: 'otomasyon', label: 'Tam otomasyon', hint: 'Tek akış: meta + isteğe bağlı GSC' },

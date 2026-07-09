@@ -41,13 +41,13 @@ export const metadata: Metadata = {
     url: canonicalUrl('/iletisim'),
     type: 'website',
     locale: 'tr_TR',
-    siteName: 'Günen Temizlik',
+    siteName: 'Zümrüt Vadi Temizlik',
     images: [
       {
         url: canonicalUrl('/logo.png'),
         width: 1200,
         height: 630,
-        alt: 'Günen Temizlik - İletişim',
+        alt: 'Zümrüt Vadi Temizlik - İletişim',
       },
     ],
   },
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
 const contactStructuredData = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Günen Temizlik Şirketi",
+  "name": "Zümrüt Vadi Temizlik Şirketi",
   "url": getSiteUrl(),
   "logo": canonicalUrl('/logo.png'),
   "contactPoint": [

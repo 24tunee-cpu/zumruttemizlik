@@ -3,9 +3,9 @@ import type { ReactNode } from 'react';
 import { canonicalUrl } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Gizlilik Politikası | KVKK ve Veri Güvenliği | Günen',
+  title: 'Gizlilik Politikası | KVKK ve Veri Güvenliği | Zümrüt Vadi',
   description:
-    'Günen Temizlik gizlilik politikası: İstanbul temizlik hizmetlerinde kişisel verilerin işlenmesi, KVKK kapsamı ve veri güvenliği yaklaşımı.',
+    'Zümrüt Vadi Temizlik gizlilik politikası: İstanbul temizlik hizmetlerinde kişisel verilerin işlenmesi, KVKK kapsamı ve veri güvenliği yaklaşımı.',
   alternates: {
     canonical: canonicalUrl('/gizlilik'),
   },
@@ -14,25 +14,25 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title: 'Gizlilik Politikası | Günen Temizlik',
+    title: 'Gizlilik Politikası | Zümrüt Vadi Temizlik',
     description:
       'Kişisel veriler, KVKK uyumu ve veri güvenliği süreçleri hakkında güncel gizlilik politikamızı inceleyin.',
     url: canonicalUrl('/gizlilik'),
     type: 'website',
     locale: 'tr_TR',
-    siteName: 'Günen Temizlik',
+    siteName: 'Zümrüt Vadi Temizlik',
     images: [
       {
         url: canonicalUrl('/logo.png'),
         width: 1200,
         height: 630,
-        alt: 'Günen Temizlik - Gizlilik Politikası',
+        alt: 'Zümrüt Vadi Temizlik - Gizlilik Politikası',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Gizlilik Politikası | Günen Temizlik',
+    title: 'Gizlilik Politikası | Zümrüt Vadi Temizlik',
     description: 'KVKK ve veri güvenliği süreçlerimiz hakkında detaylı bilgi alın.',
     images: [canonicalUrl('/logo.png')],
   },

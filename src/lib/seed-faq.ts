@@ -15,17 +15,17 @@ export type FaqSeedRow = {
 
 export const FAQ_SEED_DATA: FaqSeedRow[] = [
   {
-    seedKey: 'gunen-faq-01',
+    seedKey: 'zumrutvadi-faq-01',
     question: 'İstanbul’da profesyonel temizlik şirketi seçerken nelere dikkat etmeliyim?',
     answer:
-      'Deneyim, referans, ekipman kalitesi, ürün güvenliği ve şeffaf fiyatlandırmayı sorgulayın. Günen Temizlik olarak İstanbul genelinde eğitimli ekip, net hizmet kapsamı ve önceden bilgilendirme ile profesyonel temizlikte güvenilir bir adres olmayı hedefliyoruz.',
+      'Deneyim, referans, ekipman kalitesi, ürün güvenliği ve şeffaf fiyatlandırmayı sorgulayın. Zümrüt Vadi Temizlik olarak İstanbul genelinde eğitimli ekip, net hizmet kapsamı ve önceden bilgilendirme ile profesyonel temizlikte güvenilir bir adres olmayı hedefliyoruz.',
     category: 'Genel',
     order: 1,
     isActive: true,
   },
   {
-    seedKey: 'gunen-faq-02',
-    question: 'Günen Temizlik hangi hizmetleri sunuyor?',
+    seedKey: 'zumrutvadi-faq-02',
+    question: 'Zümrüt Vadi Temizlik hangi hizmetleri sunuyor?',
     answer:
       'İnşaat sonrası temizlik, kurumsal ofis temizliği, periyodik ev temizliği, cam temizliği, koltuk ve halı yıkama, depo ve ortak alan bakımı gibi talebe göre paketlenen çözümler sunuyoruz. İhtiyacınıza göre tek seferlik veya düzenli planla İstanbul’daki iş ve konut adreslerinizde hizmet veriyoruz.',
     category: 'Genel',
@@ -33,7 +33,7 @@ export const FAQ_SEED_DATA: FaqSeedRow[] = [
     isActive: true,
   },
   {
-    seedKey: 'gunen-faq-03',
+    seedKey: 'zumrutvadi-faq-03',
     question: 'İstanbul temizlik fiyatları nasıl belirleniyor?',
     answer:
       'Metrekare, kirlilik düzeyi, hizmet türü (ör. inşaat sonrası veya günlük ofis), süre ve ekip sayısı fiyatı etkiler. Telefon, WhatsApp veya iletişim formu üzerinden kısa bilgi alıp ücretsiz keşif veya net teklif sunuyoruz; böylece “İstanbul temizlik fiyatları” için önceden belirsizlik kalmaz.',
@@ -42,7 +42,7 @@ export const FAQ_SEED_DATA: FaqSeedRow[] = [
     isActive: true,
   },
   {
-    seedKey: 'gunen-faq-04',
+    seedKey: 'zumrutvadi-faq-04',
     question: 'Ofis temizliği ile ev temizliği arasındaki fark nedir?',
     answer:
       'Ofis temizliğinde çalışma saatleri, güvenlik prosedürleri ve yüksek trafikli ortak alanlar öne çıkar; ev temizliğinde ise mutfak, banyo ve kişisel eşyalara duyarlılık önemlidir. Her iki hizmette de yüzey tipine uygun ürün ve ekipman kullanıyor, İstanbul’daki iş yerleri ve konutlar için ayrı kontrol listeleri uyguluyoruz.',
@@ -51,7 +51,7 @@ export const FAQ_SEED_DATA: FaqSeedRow[] = [
     isActive: true,
   },
   {
-    seedKey: 'gunen-faq-05',
+    seedKey: 'zumrutvadi-faq-05',
     question: 'İnşaat sonrası temizlik ne kadar sürer ve neleri kapsar?',
     answer:
       'Süre alanın büyüklüğüne ve inşaat artığına göre değişir; tipik bir daire genelde bir iş günü içinde teslim edilebilir. İnce toz, çimento izleri, cam ve fayans yüzeyler, dolap içleri ve gerektiğinde detaylı süpürme–silme–havalandırma adımlarını kapsayan profesyonel inşaat sonrası temizlik paketleri sunuyoruz.',
@@ -60,7 +60,7 @@ export const FAQ_SEED_DATA: FaqSeedRow[] = [
     isActive: true,
   },
   {
-    seedKey: 'gunen-faq-06',
+    seedKey: 'zumrutvadi-faq-06',
     question: 'Hangi İstanbul bölgelerinde hizmet veriyorsunuz?',
     answer:
       'Avrupa ve Anadolu yakasındaki tüm ilçelerde planlı hizmet veriyoruz: Kadıköy, Üsküdar, Ataşehir, Beşiktaş, Şişli, Bakırköy, Bahçelievler, Pendik ve çevre ilçeler dahil. Yoğun trafik ve park koşullarına göre randevu saatini birlikte netleştiriyoruz.',
@@ -69,7 +69,7 @@ export const FAQ_SEED_DATA: FaqSeedRow[] = [
     isActive: true,
   },
   {
-    seedKey: 'gunen-faq-07',
+    seedKey: 'zumrutvadi-faq-07',
     question: 'Randevu ve ücretsiz keşif için nasıl iletişime geçebilirim?',
     answer:
       'Web sitemizdeki iletişim formu, sitede yer alan telefon ve WhatsApp hattı üzerinden bize yazabilir veya arayabilirsiniz. Adres, metrekare ve hizmet türünü paylaştığınızda size uygun gün–saat ve teklif çerçevesini hızlıca iletiyoruz.',
@@ -78,7 +78,7 @@ export const FAQ_SEED_DATA: FaqSeedRow[] = [
     isActive: true,
   },
   {
-    seedKey: 'gunen-faq-08',
+    seedKey: 'zumrutvadi-faq-08',
     question: 'Kullandığınız temizlik ürünleri çocuk ve evcil hayvan için güvenli mi?',
     answer:
       'Mümkün olduğunca etiketli, onaylı ve sağlık açısından güvenli ürünler kullanıyoruz; hassas alerji veya özel talebinizi randevu öncesinde bildirmeniz yeterli. Gerekirse sizin tercih ettiğiniz ürünlerle veya daha hafif formülasyonlarla çalışma seçeneği sunuyoruz.',
@@ -87,7 +87,7 @@ export const FAQ_SEED_DATA: FaqSeedRow[] = [
     isActive: true,
   },
   {
-    seedKey: 'gunen-faq-09',
+    seedKey: 'zumrutvadi-faq-09',
     question: 'Koltuk yıkama ve halı temizliği yerinde mi yapılıyor?',
     answer:
       'Evet; koltuk, kanepe ve yerinde halı yıkama hizmetlerinde ekipmanı adresinize getiriyoruz. Kumaş tipine uygun yöntem ve kuruma süresi önceden bilgilendirilir; İstanbul içi randevu planına göre iş yeri veya evde uygulama yapılır.',
@@ -96,7 +96,7 @@ export const FAQ_SEED_DATA: FaqSeedRow[] = [
     isActive: true,
   },
   {
-    seedKey: 'gunen-faq-10',
+    seedKey: 'zumrutvadi-faq-10',
     question: 'Temizlik süresi ve ekip sayısı nasıl planlanıyor?',
     answer:
       'Ön değerlendirmede metrekare, oda sayısı ve kirlilik seviyesine göre süre tahmini veriyoruz. Büyük ofis veya inşaat sonrası işlerde ekip sayısını artırarak aynı gün içinde teslim hedefliyoruz; değişiklik olursa sizi önceden bilgilendiriyoruz.',
@@ -105,7 +105,7 @@ export const FAQ_SEED_DATA: FaqSeedRow[] = [
     isActive: true,
   },
   {
-    seedKey: 'gunen-faq-11',
+    seedKey: 'zumrutvadi-faq-11',
     question: 'Akşam, hafta sonu veya mesai dışı temizlik mümkün mü?',
     answer:
       'Evet; ofisler için mesai dışı ve hafta sonu, konutlar için de size uygun saat dilimlerinde randevu açıyoruz. İstanbul’da trafik ve site yönetimi kurallarına uygun şekilde giriş–çıkış saatlerini önceden netleştirmenizi rica ediyoruz.',
@@ -114,7 +114,7 @@ export const FAQ_SEED_DATA: FaqSeedRow[] = [
     isActive: true,
   },
   {
-    seedKey: 'gunen-faq-12',
+    seedKey: 'zumrutvadi-faq-12',
     question: 'Hizmetten memnun kalmazsam ne yapmalıyım?',
     answer:
       'Öncelikle aynı gün içinde bize iletin; eksik kalan noktaları kayıt altına alıp makul sürede telafi veya düzeltme için dönüş yapıyoruz. Şeffaf iletişim ve tekrar kontrol listesi ile kaliteyi korumayı hedefliyoruz.',

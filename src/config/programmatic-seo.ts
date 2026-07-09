@@ -159,7 +159,7 @@ export const DISTRICT_LANDINGS: DistrictLanding[] = [
       'Dar sokak ve yoğun trafik saatlerine göre rota planlaması yapıldığında teslim süreleri kısalır.',
     ],
     deepDive: [
-      'Kağıthane, Günen Temizlik operasyonlarının merkezi olduğu için saha planlamasında referans ilçemizdir. Çağlayan, Gürsel ve Seyrantepe hattında özellikle yeni bina teslimleri, tadilat sonrası kullanım açılışları ve ofis katı devirlerinde kısa sürede ekip yönlendirmesi yapabiliyoruz.',
+      'Kağıthane, Zümrüt Vadi Temizlik operasyonlarının merkezi olduğu için saha planlamasında referans ilçemizdir. Çağlayan, Gürsel ve Seyrantepe hattında özellikle yeni bina teslimleri, tadilat sonrası kullanım açılışları ve ofis katı devirlerinde kısa sürede ekip yönlendirmesi yapabiliyoruz.',
       'İlçedeki yapı stoğunda hem eski apartmanlar hem de yeni rezidans/ofis projeleri birlikte bulunduğundan hizmet kapsamı projeye göre değişiyor. Bu nedenle iş başlamadan önce alanı; zemin türü, cam yüzeyi, dolap içi toz birikimi, ıslak hacim yoğunluğu ve erişim koşullarına göre başlıklara ayırıp uyguluyoruz.',
       'Kağıthane’deki mahalle bazlı deneyimimiz sayesinde operasyon sırası daha net ilerler: önce toz ve yüzey güvenliği, ardından detay temizlik, en sonda teslim kontrolü. Bu yaklaşım özellikle taşınma öncesi ve inşaat sonrası işlerde hem süre hem kalite dengesini iyileştirir.',
     ],

@@ -14,25 +14,25 @@ export const metadata: Metadata = {
     'İstanbul için ev, ofis, inşaat sonrası ve periyodik temizlikte doğru hizmeti seçmek için pratik karar rehberi ve uygulama önerileri.',
   alternates: { canonical: canonicalUrl('/rehber') },
   openGraph: {
-    title: 'Hangi temizlik ne zaman? | Günen Temizlik rehberi',
+    title: 'Hangi temizlik ne zaman? | Zümrüt Vadi Temizlik rehberi',
     description:
       'İnşaat sonrası, ofis, derinlemesine ve periyodik temizlik için pratik karar rehberi.',
     url: canonicalUrl('/rehber'),
     type: 'website',
     locale: 'tr_TR',
-    siteName: 'Günen Temizlik',
+    siteName: 'Zümrüt Vadi Temizlik',
     images: [
       {
         url: canonicalUrl('/logo.png'),
         width: 1200,
         height: 630,
-        alt: 'Günen Temizlik - Temizlik rehberi',
+        alt: 'Zümrüt Vadi Temizlik - Temizlik rehberi',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hangi temizlik ne zaman? | Günen Temizlik rehberi',
+    title: 'Hangi temizlik ne zaman? | Zümrüt Vadi Temizlik rehberi',
     description:
       'İnşaat sonrası, ofis, derinlemesine ve periyodik temizlik için pratik karar rehberi.',
     images: [canonicalUrl('/logo.png')],

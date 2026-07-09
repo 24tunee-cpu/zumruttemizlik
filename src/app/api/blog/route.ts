@@ -319,7 +319,7 @@ export async function POST(request: NextRequest) {
         tags: sanitizeStringList(data.tags, { maxItems: 16, maxLength: 60 }),
         author: data.author && typeof data.author === 'string'
           ? sanitizeInput(data.author).slice(0, MAX_LENGTHS.author)
-          : 'Günen Temizlik',
+          : 'Zümrüt Vadi Temizlik',
         published: typeof data.published === 'boolean' ? data.published : false,
         scheduledPublishAt:
           typeof data.scheduledPublishAt === 'string' && data.scheduledPublishAt
@@ -477,7 +477,7 @@ export async function PUT(request: NextRequest) {
     if (data.author !== undefined) {
       updateData.author = data.author && typeof data.author === 'string'
         ? sanitizeInput(data.author).slice(0, MAX_LENGTHS.author)
-        : 'Günen Temizlik';
+        : 'Zümrüt Vadi Temizlik';
     }
 
     if (data.published !== undefined) {

@@ -9,7 +9,7 @@ type Topic = {
 };
 
 const TARGET_COUNT = 80;
-const AUTHOR = 'Günen Temizlik';
+const AUTHOR = 'Zümrüt Vadi Temizlik';
 const DEFAULT_IMAGE = '/logo.png';
 const SHOULD_APPLY = process.argv.includes('--apply');
 
@@ -234,7 +234,7 @@ function buildExcerpt(topic: Topic): string {
 }
 
 function buildMetaTitle(topic: Topic): string {
-  const base = `${topic.keyword} Istanbul Rehberi | Gunen Temizlik`;
+  const base = `${topic.keyword} Istanbul Rehberi | Zumrut Vadi Temizlik`;
   return base.slice(0, 190);
 }
 
