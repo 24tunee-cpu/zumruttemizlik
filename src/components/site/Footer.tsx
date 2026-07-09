@@ -70,6 +70,8 @@ const FOOTER_LINKS: FooterLinkGroup = {
     { label: 'Hakkımızda', href: '/hakkimizda' },
     { label: 'Ekibimiz', href: '/ekibimiz' },
     { label: 'Bölgeler', href: '/bolgeler' },
+    { label: 'Fiyat Hesaplama', href: '/fiyat-hesaplama' },
+    { label: 'Zekeriyaköy Temizlik', href: '/bolgeler/sariyer/zekeriyakoy' },
     { label: 'Randevu', href: '/randevu' },
     { label: 'Rehber', href: '/rehber' },
     { label: 'Arama', href: '/ara' },
