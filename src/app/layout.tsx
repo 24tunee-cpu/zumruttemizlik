@@ -89,7 +89,7 @@ const rootMetadataBase: Metadata = {
   category: "business",
   classification: "Cleaning Services",
   other: {
-    "msapplication-TileColor": "#10b981",
+    "msapplication-TileColor": "#00A86B",
   },
 };
 
@@ -110,8 +110,8 @@ export async function generateMetadata(): Promise<Metadata> {
 // Viewport metadata (separate export for Next.js 14+)
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#0f172a" },
+    { media: "(prefers-color-scheme: light)", color: "#00A86B" },
+    { media: "(prefers-color-scheme: dark)", color: "#0A1F44" },
   ],
   width: "device-width",
   initialScale: 1,

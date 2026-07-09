@@ -17,90 +17,115 @@ html {
    ============================================ */
 
 :root {
+  /* ============================================
+     Zümrüt Vadi Temizlik - Kurumsal Renk Paleti
+     Zümrüt Yeşili #00A86B · Lacivert #0A1F44
+     Kırık Beyaz #FDF6E3 · Şampanya Altını #C19A6B
+     ============================================ */
+
   /* Light Mode Colors */
-  --background: #ffffff;
-  --foreground: #0f172a;
+  --background: #FDF6E3;
+  /* Kırık Beyaz / Krem */
+  --foreground: #0A1F44;
+  /* Lacivert */
   --card: #ffffff;
-  --card-foreground: #0f172a;
+  --card-foreground: #0A1F44;
   --popover: #ffffff;
-  --popover-foreground: #0f172a;
-  --primary: #10b981;
-  /* Emerald 500 */
+  --popover-foreground: #0A1F44;
+  --primary: #00A86B;
+  /* Zümrüt Yeşili */
   --primary-foreground: #ffffff;
-  --secondary: #f1f5f9;
-  /* Slate 100 */
-  --secondary-foreground: #0f172a;
-  --muted: #f1f5f9;
-  --muted-foreground: #64748b;
-  /* Slate 500 */
-  --accent: #f0fdf4;
-  /* Emerald 50 */
-  --accent-foreground: #047857;
-  /* Emerald 700 */
+  --secondary: #E5E9F1;
+  /* Navy 100 */
+  --secondary-foreground: #0A1F44;
+  --muted: #E5E9F1;
+  --muted-foreground: #4A5A7A;
+  /* Navy 500 */
+  --accent: #E6F7F0;
+  /* Green 50 */
+  --accent-foreground: #007548;
+  /* Green 700 */
+  --gold: #C19A6B;
+  /* Şampanya Altını */
+  --gold-foreground: #45341E;
   --destructive: #ef4444;
   /* Red 500 */
   --destructive-foreground: #ffffff;
-  --border: #e2e8f0;
-  /* Slate 200 */
-  --input: #e2e8f0;
-  --ring: #10b981;
-  /* Emerald 500 */
+  --border: #C6CEDE;
+  /* Navy 200 */
+  --input: #C6CEDE;
+  --ring: #00A86B;
+  /* Zümrüt Yeşili */
   --radius: 0.5rem;
 
-  /* Emerald Color Scale */
-  --emerald-50: #f0fdf4;
-  --emerald-100: #dcfce7;
-  --emerald-200: #bbf7d0;
-  --emerald-300: #86efac;
-  --emerald-400: #4ade80;
-  --emerald-500: #10b981;
-  --emerald-600: #059669;
-  --emerald-700: #047857;
-  --emerald-800: #065f46;
-  --emerald-900: #064e3b;
+  /* Emerald Color Scale -> Zümrüt Yeşili (#00A86B) */
+  --emerald-50: #E6F7F0;
+  --emerald-100: #C1EBD9;
+  --emerald-200: #8FDCBD;
+  --emerald-300: #5BCC9F;
+  --emerald-400: #2DBA85;
+  --emerald-500: #00A86B;
+  --emerald-600: #008F5A;
+  --emerald-700: #007548;
+  --emerald-800: #005C39;
+  --emerald-900: #00432A;
 
-  /* Slate Color Scale */
-  --slate-50: #f8fafc;
-  --slate-100: #f1f5f9;
-  --slate-200: #e2e8f0;
-  --slate-300: #cbd5e1;
-  --slate-400: #94a3b8;
-  --slate-500: #64748b;
-  --slate-600: #475569;
-  --slate-700: #334155;
-  --slate-800: #1e293b;
-  --slate-900: #0f172a;
+  /* Slate Color Scale -> Lacivert nötrler (#0A1F44) */
+  --slate-50: #F5F7FB;
+  --slate-100: #E5E9F1;
+  --slate-200: #C6CEDE;
+  --slate-300: #9AA6C0;
+  --slate-400: #6E7D9C;
+  --slate-500: #4A5A7A;
+  --slate-600: #33456A;
+  --slate-700: #22355A;
+  --slate-800: #14284C;
+  --slate-900: #0A1F44;
+
+  /* Amber Color Scale -> Şampanya Altını (#C19A6B) */
+  --amber-50: #FBF7F0;
+  --amber-100: #F4EAD8;
+  --amber-200: #E8D3B0;
+  --amber-300: #DBBC88;
+  --amber-400: #CEAA75;
+  --amber-500: #C19A6B;
+  --amber-600: #A6814F;
+  --amber-700: #86663C;
+  --amber-800: #664D2D;
+  --amber-900: #45341E;
 }
 
 /* Dark Mode Colors */
 .dark {
-  --background: #0f172a;
-  /* Slate 900 */
-  --foreground: #f8fafc;
-  /* Slate 50 */
-  --card: #1e293b;
-  /* Slate 800 */
-  --card-foreground: #f8fafc;
-  --popover: #1e293b;
-  --popover-foreground: #f8fafc;
-  --primary: #10b981;
-  /* Emerald 500 */
+  --background: #0A1F44;
+  /* Lacivert */
+  --foreground: #F5F7FB;
+  /* Navy 50 */
+  --card: #14284C;
+  /* Navy 800 */
+  --card-foreground: #F5F7FB;
+  --popover: #14284C;
+  --popover-foreground: #F5F7FB;
+  --primary: #00A86B;
+  /* Zümrüt Yeşili */
   --primary-foreground: #ffffff;
-  --secondary: #334155;
-  /* Slate 700 */
-  --secondary-foreground: #f8fafc;
-  --muted: #334155;
-  --muted-foreground: #94a3b8;
-  /* Slate 400 */
-  --accent: #064e3b;
-  /* Emerald 900 */
-  --accent-foreground: #f0fdf4;
+  --secondary: #22355A;
+  /* Navy 700 */
+  --secondary-foreground: #F5F7FB;
+  --muted: #22355A;
+  --muted-foreground: #9AA6C0;
+  /* Navy 300 */
+  --accent: #00432A;
+  /* Green 900 */
+  --accent-foreground: #E6F7F0;
+  --gold: #C19A6B;
+  --gold-foreground: #FBF7F0;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --border: #334155;
-  /* Slate 700 */
-  --input: #334155;
-  --ring: #10b981;
+  --border: #22355A;
+  /* Navy 700 */
+  --input: #22355A;
+  --ring: #00A86B;
 }
 
 /* ============================================
@@ -128,8 +153,10 @@ html {
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
 
-  /* Emerald Scale */
+  /* Emerald Scale -> Zümrüt Yeşili */
   --color-emerald-50: var(--emerald-50);
   --color-emerald-100: var(--emerald-100);
   --color-emerald-200: var(--emerald-200);
@@ -140,6 +167,30 @@ html {
   --color-emerald-700: var(--emerald-700);
   --color-emerald-800: var(--emerald-800);
   --color-emerald-900: var(--emerald-900);
+
+  /* Slate Scale -> Lacivert nötrler */
+  --color-slate-50: var(--slate-50);
+  --color-slate-100: var(--slate-100);
+  --color-slate-200: var(--slate-200);
+  --color-slate-300: var(--slate-300);
+  --color-slate-400: var(--slate-400);
+  --color-slate-500: var(--slate-500);
+  --color-slate-600: var(--slate-600);
+  --color-slate-700: var(--slate-700);
+  --color-slate-800: var(--slate-800);
+  --color-slate-900: var(--slate-900);
+
+  /* Amber Scale -> Şampanya Altını */
+  --color-amber-50: var(--amber-50);
+  --color-amber-100: var(--amber-100);
+  --color-amber-200: var(--amber-200);
+  --color-amber-300: var(--amber-300);
+  --color-amber-400: var(--amber-400);
+  --color-amber-500: var(--amber-500);
+  --color-amber-600: var(--amber-600);
+  --color-amber-700: var(--amber-700);
+  --color-amber-800: var(--amber-800);
+  --color-amber-900: var(--amber-900);
 
   /* Fonts */
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
