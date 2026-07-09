@@ -11,7 +11,7 @@
 
 import { motion, useReducedMotion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowRight, Sparkles, Shield, Clock, Award, ChevronDown } from 'lucide-react';
+import { ArrowRight, Sparkles, Shield, Clock, Award, ChevronDown, Star, CheckCircle2 } from 'lucide-react';
 import { useEffect, useState, useMemo, useCallback } from 'react';
 import { HeroPriceCalculator } from '@/components/site/HeroPriceCalculator';
 
@@ -19,11 +19,11 @@ import { HeroPriceCalculator } from '@/components/site/HeroPriceCalculator';
 // TYPES
 // ============================================
 
-/** Trust badge tipi */
-interface TrustBadge {
-  icon: React.ComponentType<{ size: number; className?: string }>;
-  text: string;
-  color: string;
+/** İstatistik kartı tipi */
+interface HeroStat {
+  icon: React.ComponentType<{ className?: string }>;
+  value: string;
+  label: string;
 }
 
 // ============================================
@@ -36,12 +36,15 @@ const PARTICLE_POSITIONS = [
   42, 59, 31, 76, 53, 69, 18, 95, 44, 67
 ];
 
-/** Trust badges */
-const TRUST_BADGES: TrustBadge[] = [
-  { icon: Shield, text: 'Güvenilir Hizmet', color: 'from-emerald-500/20 to-emerald-600/20' },
-  { icon: Clock, text: '7/24 Destek', color: 'from-blue-500/20 to-blue-600/20' },
-  { icon: Award, text: '15+ Yıl Deneyim', color: 'from-amber-500/20 to-amber-600/20' },
+/** Hero istatistikleri (cam efektli kartlar) */
+const HERO_STATS: HeroStat[] = [
+  { icon: Award, value: '5000+', label: 'Mutlu Müşteri' },
+  { icon: Shield, value: '7/24', label: 'Destek Hattı' },
+  { icon: Clock, value: '15+', label: 'Yıl Deneyim' },
 ];
+
+/** Güven rozetleri (küçük çipler) */
+const TRUST_PILLS = ['Sigortalı Hizmet', 'Aynı Gün Randevu', 'Ücretsiz Keşif'];
 
 // ============================================
 // MAIN COMPONENT
@@ -126,8 +129,8 @@ export function Hero() {
       <div className="absolute top-20 left-10 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl animate-pulse" aria-hidden="true" />
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-emerald-600/10 rounded-full blur-3xl animate-pulse delay-1000" aria-hidden="true" />
 
-      <div className="relative mx-auto max-w-7xl px-3 pt-24 pb-14 sm:px-6 sm:pt-28 sm:pb-16 md:pt-32 md:pb-20 lg:px-8 lg:pt-40">
-        <div className="grid items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-8">
+      <div className="relative mx-auto max-w-7xl px-4 pt-24 pb-20 sm:px-6 sm:pt-28 md:pt-28 md:pb-24 lg:px-8 lg:pt-32 lg:pb-28">
+        <div className="grid items-center gap-10 sm:gap-12 lg:grid-cols-2 lg:gap-10">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -197,6 +200,23 @@ export function Hero() {
               pırıl pırıl yapıyoruz.
             </motion.p>
 
+            {/* Puan / sosyal kanıt */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.65 }}
+              className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2"
+            >
+              <div className="flex items-center gap-0.5 text-amber-400" aria-hidden="true">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} size={16} className="fill-amber-400" />
+                ))}
+              </div>
+              <span className="text-sm text-slate-300">
+                <span className="font-bold text-white">5.0</span> puan · 5000+ memnun müşteri
+              </span>
+            </motion.div>
+
             {/* CTA Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -241,26 +261,49 @@ export function Hero() {
               </motion.div>
             </motion.div>
 
-            {/* Trust Badges with hover effects */}
+            {/* İstatistik kartları (cam efektli) */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8 }}
-              className="mt-12 flex flex-wrap gap-8"
+              transition={{ delay: 0.85 }}
+              className="mt-10 grid grid-cols-3 gap-2.5 sm:gap-4"
             >
-              {TRUST_BADGES.map((badge, index) => (
+              {HERO_STATS.map((stat, index) => (
                 <motion.div
                   key={index}
-                  whileHover={shouldReduceMotion ? {} : { scale: 1.05, y: -2 }}
-                  className="flex items-center gap-2 text-slate-400 cursor-default group"
+                  whileHover={shouldReduceMotion ? {} : { y: -4 }}
+                  className="group relative overflow-hidden rounded-2xl border border-slate-700/60 bg-slate-800/50 p-3 text-center backdrop-blur-xl transition-colors hover:border-emerald-500/50 sm:p-4"
                 >
-                  <div className={`p-2 rounded-lg bg-gradient-to-br ${badge.color} group-hover:scale-110 transition-transform`} aria-hidden="true">
-                    <badge.icon size={20} className="text-white" />
-                  </div>
-                  <span className="text-sm font-medium group-hover:text-emerald-400 transition-colors">
-                    {badge.text}
-                  </span>
+                  <div
+                    className="absolute inset-0 -z-10 bg-gradient-to-br from-emerald-500/0 to-emerald-500/0 opacity-0 transition-opacity duration-300 group-hover:from-emerald-500/10 group-hover:opacity-100"
+                    aria-hidden="true"
+                  />
+                  <stat.icon className="mx-auto h-5 w-5 text-emerald-400 sm:h-6 sm:w-6" />
+                  <p className="mt-1.5 text-lg font-bold leading-none text-white sm:mt-2 sm:text-2xl">
+                    {stat.value}
+                  </p>
+                  <p className="mt-1 text-[10px] leading-tight text-slate-400 sm:text-xs">
+                    {stat.label}
+                  </p>
                 </motion.div>
+              ))}
+            </motion.div>
+
+            {/* Güven çipleri */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.95 }}
+              className="mt-5 flex flex-wrap gap-2"
+            >
+              {TRUST_PILLS.map((pill) => (
+                <span
+                  key={pill}
+                  className="inline-flex items-center gap-1.5 rounded-full border border-slate-700/60 bg-slate-800/40 px-3 py-1.5 text-xs font-medium text-slate-300 backdrop-blur-sm"
+                >
+                  <CheckCircle2 size={14} className="text-emerald-400" />
+                  {pill}
+                </span>
               ))}
             </motion.div>
           </motion.div>
@@ -278,7 +321,7 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
-        className="absolute bottom-28 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-slate-400 transition-colors hover:text-emerald-400 focus:outline-none md:flex"
+        className="pointer-events-auto absolute bottom-5 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-slate-400 transition-colors hover:text-emerald-400 focus:outline-none xl:flex"
         aria-label="Sayfayı aşağı kaydır"
       >
         <span className="text-xs font-medium">Aşağı Kaydır</span>
