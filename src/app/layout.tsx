@@ -25,7 +25,7 @@ import { keywordsForPage } from "@/lib/seo-keywords";
 
 /** Google Analytics 4 — `NEXT_PUBLIC_GA_MEASUREMENT_ID` ile değiştirilebilir */
 const GA_MEASUREMENT_ID =
-  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "G-GX9WV429Y3";
+  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "G-20PLCYV15H";
 const DEXTER_WIDGET_TOKEN =
   process.env.NEXT_PUBLIC_DEXTER_WIDGET_TOKEN ??
   "qA_hhPpFkkr4agR36ikMZOfETZZFzmSB_P86Lz0sLJ2iuLdnCNXbmnRag7ZCgNxMfwirj8isNbTSM8UNNECU9gvL751V6LSqk9a0oIm3VuRyRUuf8aM2CAlitzPD4y-xWLAoPMK2pERuJmsYoEuA8vSu5e7F6z9_uYksMERB13k-QXEIwH6i4NA9dqnPJKHzgSB9XeBFkU2oOi0.3lwqgG1rGtCbM6KWrr3Eoed3dlz3W8AJwCGOZeAPFRE";
