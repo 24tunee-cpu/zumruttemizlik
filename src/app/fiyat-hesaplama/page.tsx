@@ -24,7 +24,7 @@ const pageDescription =
   'İstanbul temizlik fiyatları 2026: ev, ofis, inşaat sonrası ve dış cephe temizliği için güncel fiyat aralıkları. Anında fiyat hesaplama aracıyla saniyeler içinde tahmini fiyatınızı görün, ücretsiz keşif alın. Sarıyer, Zekeriyaköy ve İstanbul Avrupa Yakası.';
 
 export const metadata: Metadata = {
-  title: pageTitle,
+  title: { absolute: pageTitle },
   description: pageDescription,
   keywords: [
     'temizlik fiyatları 2026',

@@ -121,7 +121,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
     if (!post || !post.published) {
       return {
-        title: 'Yazı Bulunamadı | Zümrüt Vadi Temizlik Blog',
+        title: { absolute: 'Yazı Bulunamadı | Zümrüt Vadi Temizlik' },
         description: 'Aradığınız blog yazısı bulunamadı.'
       };
     }
@@ -140,7 +140,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     const ogImage = toAbsoluteAsset(post.image, getSiteUrl());
 
     return {
-      title: metaTitle,
+      title: { absolute: metaTitle },
       description: metaDesc,
       keywords: keywordsForPage('blog', post.tags),
       alternates: {
@@ -172,7 +172,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   } catch (error) {
     return {
-      title: 'Temizlik Rehberi Yazısı | İstanbul Blog | Zümrüt Vadi',
+      title: { absolute: 'Temizlik Rehberi | Zümrüt Vadi Temizlik Blog' },
       description: 'İstanbul temizlik süreçleri ve hijyen uygulamaları hakkında güncel blog içeriği.',
     };
   }
