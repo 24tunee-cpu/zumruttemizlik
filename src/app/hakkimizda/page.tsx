@@ -43,13 +43,13 @@ export const metadata: Metadata = {
     url: canonicalUrl('/hakkimizda'),
     type: 'website',
     locale: 'tr_TR',
-    siteName: 'Günen Temizlik',
+    siteName: 'Zümrüt Vadi Temizlik',
     images: [
       {
         url: canonicalUrl('/logo.png'),
         width: 1200,
         height: 630,
-        alt: 'Günen Temizlik - Hakkımızda',
+        alt: 'Zümrüt Vadi Temizlik - Hakkımızda',
       },
     ],
   },
@@ -68,8 +68,8 @@ export const metadata: Metadata = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Günen Temizlik Şirketi",
-  "alternateName": "Günen Temizlik",
+  "name": "Zümrüt Vadi Temizlik Şirketi",
+  "alternateName": "Zümrüt Vadi Temizlik",
   "url": getSiteUrl(),
   "logo": canonicalUrl('/logo.png'),
   "description": "İstanbul'un önde gelen profesyonel temizlik şirketi. 15+ yıllık deneyim ve kurumsal süreklilik odağı.",
@@ -77,7 +77,7 @@ const organizationSchema = {
   "founders": [
     {
       "@type": "Person",
-      "name": "Günen Temizlik Kurucuları"
+      "name": "Zümrüt Vadi Temizlik Kurucuları"
     }
   ],
   "address": {
@@ -96,8 +96,8 @@ const organizationSchema = {
     "availableLanguage": ["Turkish"]
   },
   "sameAs": [
-    "https://facebook.com/gunentemizlik",
-    "https://instagram.com/gunentemizlik"
+    "https://facebook.com/zumrutvaditemizlik",
+    "https://instagram.com/zumrutvaditemizlik"
   ]
 };
 
@@ -201,7 +201,7 @@ export default function AboutPage() {
             </h2>
             <article className="space-y-6 text-lg text-slate-600 dark:text-slate-300">
               <p>
-                Günen Temizlik, 2009 yılında küçük bir aile işletmesi olarak kuruldu.
+                Zümrüt Vadi Temizlik, 2009 yılında küçük bir aile işletmesi olarak kuruldu.
                 İlk günden itibaren kaliteli hizmet ve müşteri memnuniyeti odaklı çalışma
                 prensibiyle yolumuza devam ediyoruz.
               </p>

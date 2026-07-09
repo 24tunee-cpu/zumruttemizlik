@@ -67,7 +67,7 @@ const PAGE_KEYWORDS: Record<PageKey, string[]> = {
     'istanbul temizlik telefonu',
     'temizlik hizmeti talep',
     'temizlik fiyat al',
-    'günen temizlik iletişim',
+    'Zümrüt Vadi Temizlik iletişim',
   ],
   hakkimizda: [
     'güvenilir temizlik şirketi',

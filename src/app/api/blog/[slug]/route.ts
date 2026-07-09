@@ -394,7 +394,7 @@ export async function PUT(request: NextRequest, { params }: RouteParams) {
     if (data.author !== undefined) {
       updateData.author = data.author && typeof data.author === 'string'
         ? sanitizeInput(data.author).slice(0, MAX_LENGTHS.author)
-        : 'Günen Temizlik';
+        : 'Zümrüt Vadi Temizlik';
     }
 
     // Update richBlocks if provided

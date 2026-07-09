@@ -1,6 +1,6 @@
 /**
  * @fileoverview Home Page
- * @description Ana sayfa - Günen Temizlik kurumsal web sitesi giriş sayfası.
+ * @description Ana sayfa - Zümrüt Vadi Temizlik kurumsal web sitesi giriş sayfası.
  * SEO optimizasyonu, structured data ve lazy loading ile.
  *
  * @architecture
@@ -35,7 +35,7 @@ const Services = dynamic(() => import('@/components/site/Services').then(mod => 
 // ============================================
 
 export const metadata: Metadata = {
-  title: 'İstanbul Temizlik Şirketi | Ev, Ofis, İnşaat Sonrası | Günen',
+  title: 'İstanbul Temizlik Şirketi | Ev, Ofis, İnşaat Sonrası | Zümrüt Vadi',
   description:
     'İstanbul genelinde ev temizliği, ofis temizliği, inşaat sonrası temizlik, koltuk ve halı temizliği. Hızlı teklif, 7/24 destek ve ücretsiz keşif.',
   keywords: keywordsForPage('home'),
@@ -43,17 +43,17 @@ export const metadata: Metadata = {
     canonical: canonicalUrl('/'),
   },
   openGraph: {
-    title: "Günen Temizlik | İstanbul'da Profesyonel Temizlik Hizmetleri",
+    title: "Zümrüt Vadi Temizlik | İstanbul'da Profesyonel Temizlik Hizmetleri",
     description:
       'İstanbul genelinde ev, ofis ve inşaat sonrası temizlik çözümleri. Hızlı teklif ve 7/24 destek ile randevunuzu oluşturun.',
     url: canonicalUrl('/'),
-    siteName: "Günen Temizlik",
+    siteName: "Zümrüt Vadi Temizlik",
     images: [
       {
         url: canonicalUrl('/logo.png'),
         width: 1200,
         height: 630,
-        alt: "Günen Temizlik - İstanbul Profesyonel Temizlik",
+        alt: "Zümrüt Vadi Temizlik - İstanbul Profesyonel Temizlik",
       },
     ],
     locale: "tr_TR",

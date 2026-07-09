@@ -207,7 +207,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         type: 'website',
         url: canonical,
         locale: 'tr_TR',
-        siteName: 'Günen Temizlik',
+        siteName: 'Zümrüt Vadi Temizlik',
         images: [
           {
             url: imageUrl,
@@ -257,7 +257,7 @@ function generateServiceSchema(service: ServiceData) {
     "serviceType": service.title,
     "provider": {
       "@type": "LocalBusiness",
-      "name": "Günen Temizlik Şirketi",
+      "name": "Zümrüt Vadi Temizlik Şirketi",
       "url": canonicalUrl('/'),
       "address": {
         "@type": "PostalAddress",

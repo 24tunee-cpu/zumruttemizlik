@@ -18,7 +18,7 @@ export const SERVICE_SEED_DATA: ServiceSeedRow[] = [
 
 Düzenli ev temizliği paketleri (haftalık, iki haftada bir veya aylık) ile yoğun tempoda bile evinizin standartını koruyabilirsiniz. Tek seferlik genel temizlik, taşınma öncesi/sonrası veya özel gün öncesi detaylı temizlik taleplerinize uygun planlama sunuyoruz.
 
-Çocuklu aileler ve alerji hassasiyeti olanlar için yüzey uyumlu, güvenli ürün seçimi ve gerektiğinde dezenfeksiyon uygulamalarıyla hijyeni ön planda tutuyoruz. Ücretsiz keşif ve şeffaf fiyatlandırma ile Günen Temizlik’e hemen ulaşın.`,
+Çocuklu aileler ve alerji hassasiyeti olanlar için yüzey uyumlu, güvenli ürün seçimi ve gerektiğinde dezenfeksiyon uygulamalarıyla hijyeni ön planda tutuyoruz. Ücretsiz keşif ve şeffaf fiyatlandırma ile Zümrüt Vadi Temizlik’e hemen ulaşın.`,
     image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800',
     icon: 'Home',
     features: [

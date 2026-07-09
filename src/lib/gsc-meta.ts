@@ -127,7 +127,7 @@ export function buildMetaSuggestions(rows: GscRow[]): MetaSuggestion[] {
     bucket.sort((a, b) => b.impressions - a.impressions || b.clicks - a.clicks);
     const top = bucket[0];
     const score = top.impressions * 0.7 + top.clicks * 20 - top.position * 2;
-    const title = `${district.name} ${service.name} | ${top.query} - Günen Temizlik`.slice(0, 70);
+    const title = `${district.name} ${service.name} | ${top.query} - Zümrüt Vadi Temizlik`.slice(0, 70);
     const description = `${district.name} için ${service.name.toLowerCase()} hizmetinde ${top.query} odaklı hızlı teklif alın. Aynı gün planlama ve şeffaf fiyatlandırma.`.slice(
       0,
       160

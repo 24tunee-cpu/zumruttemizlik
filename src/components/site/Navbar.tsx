@@ -191,7 +191,7 @@ export function Navbar() {
               <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-xl sm:h-12 sm:w-12">
                 <Image
                   src="/logo.png"
-                  alt="Günen Temizlik"
+                  alt="Zümrüt Vadi Temizlik"
                   fill
                   className="object-contain"
                   priority
@@ -202,14 +202,14 @@ export function Navbar() {
                 <span
                   className={`block truncate text-[0.95rem] font-bold leading-tight transition-colors ${scrolled ? 'text-slate-900' : 'text-white'}`}
                 >
-                  Günen{' '}
+                  Zümrüt Vadi{' '}
                   <span className={scrolled ? 'text-emerald-600' : 'text-emerald-400'}>Temizlik</span>
                 </span>
               </div>
               <div className="hidden sm:block">
                 <span className={`text-xl font-bold transition-colors ${scrolled ? 'text-slate-900' : 'text-white'
                   }`}>
-                  Günen
+                  Zümrüt Vadi
                 </span>
                 <span className={`text-xl font-bold transition-colors ${scrolled ? 'text-emerald-600' : 'text-emerald-400'
                   }`}>

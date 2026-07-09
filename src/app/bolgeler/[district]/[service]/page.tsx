@@ -80,7 +80,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: canonical,
       type: 'website',
       locale: 'tr_TR',
-      siteName: 'Günen Temizlik',
+      siteName: 'Zümrüt Vadi Temizlik',
     },
     twitter: {
       card: 'summary_large_image',
@@ -133,7 +133,7 @@ export default async function ProgrammaticLandingPage({ params }: Props) {
     areaServed: districtData.name,
     provider: {
       '@type': 'LocalBusiness',
-      name: 'Günen Temizlik',
+      name: 'Zümrüt Vadi Temizlik',
       url: siteRoot,
     },
     url: canonical,

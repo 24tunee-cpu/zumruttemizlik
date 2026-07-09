@@ -6,7 +6,7 @@
 
 const TITLE_MAX = 58;
 const DESC_MAX = 155;
-const TITLE_SUFFIX = ' | Günen Temizlik Blog';
+const TITLE_SUFFIX = ' | Zümrüt Vadi Temizlik Blog';
 
 function truncateChars(s: string, max: number): string {
   const t = s.trim();

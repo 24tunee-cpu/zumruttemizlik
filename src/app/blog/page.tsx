@@ -83,13 +83,13 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<Met
       url: canonical,
       type: 'website',
       locale: 'tr_TR',
-      siteName: 'Günen Temizlik',
+      siteName: 'Zümrüt Vadi Temizlik',
       images: [
         {
           url: canonicalUrl('/logo.png'),
           width: 1200,
           height: 630,
-          alt: 'Günen Temizlik - Blog',
+          alt: 'Zümrüt Vadi Temizlik - Blog',
         },
       ],
     },
@@ -126,12 +126,12 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<Met
 const blogSchema = {
   "@context": "https://schema.org",
   "@type": "Blog",
-  "name": "Günen Temizlik Blog",
+  "name": "Zümrüt Vadi Temizlik Blog",
   "description": "Profesyonel temizlik hakkında faydalı bilgiler, ipuçları ve güncel makaleler",
   "url": canonicalUrl('/blog'),
   "publisher": {
     "@type": "Organization",
-    "name": "Günen Temizlik Şirketi",
+    "name": "Zümrüt Vadi Temizlik Şirketi",
     "logo": {
       "@type": "ImageObject",
       "url": canonicalUrl('/logo.png')

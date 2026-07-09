@@ -6,7 +6,7 @@
 
 const TITLE_MAX = 58;
 const DESC_MAX = 155;
-const TITLE_SUFFIX = ' | Günen Temizlik';
+const TITLE_SUFFIX = ' | Zümrüt Vadi Temizlik';
 
 // CTR artışı için emoji ve dikkat çekici elementler
 const CTR_ELEMENTS = {

@@ -10,7 +10,7 @@ function deriveKey(): Buffer {
     process.env.MAPS_OAUTH_SECRET?.trim() ||
     process.env.NEXTAUTH_SECRET?.trim() ||
     'development-maps-oauth-key-change-me';
-  return scryptSync(secret, 'gunen-maps-oauth-v1', 32);
+  return scryptSync(secret, 'zumrutvadi-maps-oauth-v1', 32);
 }
 
 export function encryptMapsSecret(plain: string): string {

@@ -121,7 +121,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
     if (!post || !post.published) {
       return {
-        title: 'Yazı Bulunamadı | Günen Temizlik Blog',
+        title: 'Yazı Bulunamadı | Zümrüt Vadi Temizlik Blog',
         description: 'Aradığınız blog yazısı bulunamadı.'
       };
     }
@@ -172,7 +172,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   } catch (error) {
     return {
-      title: 'Temizlik Rehberi Yazısı | İstanbul Blog | Günen',
+      title: 'Temizlik Rehberi Yazısı | İstanbul Blog | Zümrüt Vadi',
       description: 'İstanbul temizlik süreçleri ve hijyen uygulamaları hakkında güncel blog içeriği.',
     };
   }
@@ -206,7 +206,7 @@ function generateArticleSchema(post: BlogPostData) {
         image: toAbsoluteAsset(post.image, getSiteUrl())
       },
       getSiteUrl(),
-      'Günen Temizlik'
+      'Zümrüt Vadi Temizlik'
     );
   }
 
@@ -230,7 +230,7 @@ function generateArticleSchema(post: BlogPostData) {
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Günen Temizlik",
+      "name": "Zümrüt Vadi Temizlik",
       "logo": {
         "@type": "ImageObject",
         "url": canonicalUrl('/logo.png')

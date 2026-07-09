@@ -190,7 +190,7 @@ export function BlogContent({
                           </div>
                         ) : (
                           <div className="flex h-full items-center justify-center bg-gradient-to-br from-emerald-100 to-emerald-200" aria-hidden="true">
-                            <span className="text-emerald-500 font-medium">Günen Temizlik</span>
+                            <span className="text-emerald-500 font-medium">Zümrüt Vadi Temizlik</span>
                           </div>
                         )}
                       </div>

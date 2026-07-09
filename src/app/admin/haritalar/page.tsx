@@ -409,7 +409,7 @@ function HaritalarPageBody() {
                       value={form.businessName}
                       onChange={(e) => setForm((f) => ({ ...f, businessName: e.target.value }))}
                       className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2.5 text-sm dark:border-slate-600 dark:bg-slate-800"
-                      placeholder="Örn: Günen Temizlik"
+                      placeholder="Örn: Zümrüt Vadi Temizlik"
                     />
                   </div>
                   <div>

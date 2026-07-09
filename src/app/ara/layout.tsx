@@ -28,13 +28,13 @@ export const metadata: Metadata = {
     url: canonicalUrl('/ara'),
     type: 'website',
     locale: 'tr_TR',
-    siteName: 'Günen Temizlik',
+    siteName: 'Zümrüt Vadi Temizlik',
     images: [
       {
         url: canonicalUrl('/logo.png'),
         width: 1200,
         height: 630,
-        alt: 'Günen Temizlik - Site içi arama',
+        alt: 'Zümrüt Vadi Temizlik - Site içi arama',
       },
     ],
   },

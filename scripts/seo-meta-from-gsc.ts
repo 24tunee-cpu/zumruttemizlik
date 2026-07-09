@@ -116,7 +116,7 @@ function buildSuggestion(
   topQuery: string,
   score: number
 ): Suggestion {
-  const title = `${districtName} ${serviceName} | ${topQuery} - Günen Temizlik`;
+  const title = `${districtName} ${serviceName} | ${topQuery} - Zümrüt Vadi Temizlik`;
   const description = `${districtName} için ${serviceName.toLowerCase()} hizmetinde ${topQuery} odaklı hızlı teklif alın. Aynı gün planlama ve şeffaf fiyatlandırma.`;
   return {
     key,

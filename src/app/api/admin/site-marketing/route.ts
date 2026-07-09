@@ -15,7 +15,7 @@ async function getRow() {
   if (!row) {
     row = await prisma.siteSettings.create({
       data: {
-        siteName: 'Günen Temizlik',
+        siteName: 'Zümrüt Vadi Temizlik',
         siteDescription: "İstanbul'un güvenilir profesyonel temizlik şirketi",
         siteUrl: getSiteUrl(),
         email: SITE_CONTACT.email,

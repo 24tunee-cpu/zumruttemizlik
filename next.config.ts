@@ -19,7 +19,7 @@ const cspHeader = `
   script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://apiv4.dextergpt.com;
   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
   font-src 'self' https://fonts.gstatic.com;
-  img-src 'self' data: https: blob: https://gunentemizlik.com https://*.gunentemizlik.com https://images.unsplash.com;
+  img-src 'self' data: https: blob: https://zumrutvaditemizlik.com https://*.zumrutvaditemizlik.com https://images.unsplash.com;
   media-src 'self';
   connect-src 'self' https://vitals.vercel-insights.com https://www.google-analytics.com https://apiv4.dextergpt.com;
   frame-ancestors 'none';
@@ -50,12 +50,12 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'gunentemizlik.com',
+        hostname: 'zumrutvaditemizlik.com',
         pathname: '/**',
       },
       {
         protocol: 'https',
-        hostname: '*.gunentemizlik.com',
+        hostname: '*.zumrutvaditemizlik.com',
         pathname: '/**',
       },
       {
@@ -112,7 +112,7 @@ const nextConfig: NextConfig = {
       {
         key: 'Access-Control-Allow-Origin',
         value: process.env.NODE_ENV === 'production'
-          ? process.env.NEXT_PUBLIC_SITE_URL || 'https://www.gunentemizlik.com'
+          ? process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zumrutvaditemizlik.com'
           : '*',
       },
       {
@@ -225,7 +225,7 @@ const nextConfig: NextConfig = {
           },
         ],
         permanent: true,
-        destination: 'https://www.gunentemizlik.com/:path*',
+        destination: 'https://www.zumrutvaditemizlik.com/:path*',
       },
       // Legacy redirects (example)
       {

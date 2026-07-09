@@ -33,7 +33,7 @@ Sitemap: ${getSiteUrl()}/sitemap.xml`;
 /** Prisma create için varsayılanlar (şema ile birebir) */
 function defaultCreateData(): Omit<SiteSettingsRow, 'id' | 'updatedAt'> {
   return {
-    siteName: 'Günen Temizlik',
+    siteName: 'Zümrüt Vadi Temizlik',
     siteDescription: "İstanbul'un güvenilir profesyonel temizlik şirketi",
     siteUrl: getSiteUrl(),
     logo: null,
@@ -51,12 +51,12 @@ function defaultCreateData(): Omit<SiteSettingsRow, 'id' | 'updatedAt'> {
     twitter: null,
     linkedin: null,
     youtube: null,
-    seoTitle: 'Günen Temizlik | Profesyonel Temizlik Hizmetleri',
+    seoTitle: 'Zümrüt Vadi Temizlik | Profesyonel Temizlik Hizmetleri',
     seoDescription:
       'Ev, ofis ve endüstriyel temizlik. Profesyonel ekip, şeffaf fiyat, memnuniyet garantisi.',
     seoKeywords: 'temizlik, ofis temizliği, ev temizliği, istanbul temizlik',
     ogImage: '/og-image.jpg',
-    twitterHandle: '@gunentemizlik',
+    twitterHandle: '@zumrutvaditemizlik',
     canonicalUrl: getSiteUrl(),
     googleAnalyticsId: null,
     googleTagManagerId: null,

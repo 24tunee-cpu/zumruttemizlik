@@ -44,7 +44,7 @@ import bcrypt from 'bcryptjs';
 
 /** Default admin credentials - DEVELOPMENT ONLY! */
 const DEFAULT_ADMIN = {
-  email: 'admin@gunentemizlik.com',
+  email: 'vedatgunenn@gmail.com',
   password: 'admin123', // DEVELOPMENT ONLY - Change immediately after first login!
   name: 'Admin',
 } as const;
@@ -306,7 +306,7 @@ async function runSeed(request: NextRequest) {
       nextSteps: adminCreated
         ? [
           '1. /admin sayfasına gidin',
-          '2. Email: admin@gunentemizlik.com',
+          '2. Email: vedatgunenn@gmail.com',
           '3. Şifre: admin123',
           '4. Giriş yaptıktan sonra şifrenizi DEĞİŞTİRİN!',
         ]

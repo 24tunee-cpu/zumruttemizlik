@@ -34,15 +34,15 @@ const siteRoot = getSiteUrl();
 
 const rootMetadataBase: Metadata = {
   title: {
-    default: 'Günen Temizlik | İstanbul Temizlik Hizmetleri',
+    default: 'Zümrüt Vadi Temizlik | İstanbul Temizlik Hizmetleri',
     template: "%s",
   },
   description:
     "İstanbul'un önde gelen profesyonel temizlik şirketi. İnşaat sonrası, ofis, ev, koltuk yıkama, halı temizliği. 15+ yıl deneyim, şeffaf süreç ve ücretsiz keşif. Hemen iletişime geçin.",
   keywords: keywordsForPage("root"),
-  authors: [{ name: "Günen Temizlik" }],
-  creator: "Günen Temizlik",
-  publisher: "Günen Temizlik",
+  authors: [{ name: "Zümrüt Vadi Temizlik" }],
+  creator: "Zümrüt Vadi Temizlik",
+  publisher: "Zümrüt Vadi Temizlik",
   metadataBase: new URL(siteRoot),
   alternates: {
     canonical: canonicalUrl("/"),
@@ -51,29 +51,29 @@ const rootMetadataBase: Metadata = {
     },
   },
   openGraph: {
-    title: 'Günen Temizlik | İstanbul Profesyonel Temizlik Hizmetleri',
+    title: 'Zümrüt Vadi Temizlik | İstanbul Profesyonel Temizlik Hizmetleri',
     description: "15+ yıl deneyimli profesyonel temizlik ekibi. İnşaat sonrası, ofis, ev temizliği, koltuk yıkama. Ücretsiz keşif, uygun fiyatlar!",
     type: "website",
     locale: "tr_TR",
     url: canonicalUrl("/"),
-    siteName: "Günen Temizlik",
+    siteName: "Zümrüt Vadi Temizlik",
     images: [
       {
         url: canonicalUrl("/logo.png"),
         width: 1200,
         height: 630,
-        alt: "Günen Temizlik - İstanbul Profesyonel Temizlik Hizmetleri",
+        alt: "Zümrüt Vadi Temizlik - İstanbul Profesyonel Temizlik Hizmetleri",
         type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: 'Günen Temizlik | İstanbul Profesyonel Temizlik Hizmetleri',
+    title: 'Zümrüt Vadi Temizlik | İstanbul Profesyonel Temizlik Hizmetleri',
     description: "Profesyonel temizlik hizmetleri. 7/24 hizmet, ücretsiz keşif!",
     images: [canonicalUrl("/logo.png")],
-    creator: "@gunentemizlik",
-    site: "@gunentemizlik",
+    creator: "@zumrutvaditemizlik",
+    site: "@zumrutvaditemizlik",
   },
   robots: {
     index: true,

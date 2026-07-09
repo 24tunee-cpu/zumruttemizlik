@@ -18,13 +18,13 @@ export const metadata: Metadata = {
     url: canonicalUrl('/bolgeler'),
     type: 'website',
     locale: 'tr_TR',
-    siteName: 'Günen Temizlik',
+    siteName: 'Zümrüt Vadi Temizlik',
     images: [
       {
         url: canonicalUrl('/logo.png'),
         width: 1200,
         height: 630,
-        alt: 'Günen Temizlik - İstanbul bölge hizmetleri',
+        alt: 'Zümrüt Vadi Temizlik - İstanbul bölge hizmetleri',
       },
     ],
   },

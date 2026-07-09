@@ -103,7 +103,7 @@ export interface SiteSettings {
 // ============================================
 
 const defaultSettings: SiteSettings = {
-  siteName: 'Günen Temizlik',
+  siteName: 'Zümrüt Vadi Temizlik',
   siteDescription: "İstanbul'un en güvenilir profesyonel temizlik şirketi",
   siteUrl: getSiteUrl(),
   logo: '/logo.png',
@@ -116,19 +116,19 @@ const defaultSettings: SiteSettings = {
   workingHours: '24 saat açık',
   whatsapp: SITE_CONTACT.whatsappDigits,
 
-  seoTitle: 'Günen Temizlik | İstanbul Profesyonel Temizlik | 7/24',
+  seoTitle: 'Zümrüt Vadi Temizlik | İstanbul Profesyonel Temizlik | 7/24',
   seoDescription:
     'Profesyonel temizlik hizmetleri. İnşaat sonrası, ofis, ev temizliği, koltuk yıkama. 15+ yıl deneyim, şeffaf süreç. Ücretsiz keşif!',
   seoKeywords:
     'istanbul temizlik şirketi, profesyonel temizlik, ofis temizliği, inşaat sonrası temizlik, koltuk yıkama, halı temizliği, ev temizliği',
   ogImage: '/og-image.jpg',
-  twitterHandle: '@gunentemizlik',
+  twitterHandle: '@zumrutvaditemizlik',
   canonicalUrl: getSiteUrl(),
   language: 'tr-TR',
   region: 'TR',
 
-  facebook: 'https://facebook.com/gunentemizlik',
-  instagram: 'https://instagram.com/gunentemizlik',
+  facebook: 'https://facebook.com/zumrutvaditemizlik',
+  instagram: 'https://instagram.com/zumrutvaditemizlik',
   twitter: '',
   linkedin: '',
   youtube: '',

@@ -29,14 +29,14 @@ export async function generateMetadata(): Promise<Metadata> {
   const agg = computeTestimonialAggregate(rows);
   const description =
     n > 0 && agg
-      ? `${n} gerçek müşteri yorumu; ortalama ${agg.ratingValue.toFixed(1)}/5. İstanbul temizlik referansları, ofis ve ev hizmeti deneyimleri — Günen Temizlik.`
-      : 'Günen Temizlik müşteri yorumları ve İstanbul temizlik referansları. Profesyonel temizlik hizmeti geri bildirimleri.';
+      ? `${n} gerçek müşteri yorumu; ortalama ${agg.ratingValue.toFixed(1)}/5. İstanbul temizlik referansları, ofis ve ev hizmeti deneyimleri — Zümrüt Vadi Temizlik.`
+      : 'Zümrüt Vadi Temizlik müşteri yorumları ve İstanbul temizlik referansları. Profesyonel temizlik hizmeti geri bildirimleri.';
 
   return {
     title: 'Müşteri Yorumları ve Referanslar | İstanbul',
     description,
     keywords: [
-      'günen temizlik yorumları',
+      'Zümrüt Vadi Temizlik yorumları',
       'istanbul temizlik referansları',
       'müşteri memnuniyeti',
       'temizlik şirketi yorumları',
@@ -53,13 +53,13 @@ export async function generateMetadata(): Promise<Metadata> {
       url: canonicalUrl('/referanslar'),
       type: 'website',
       locale: 'tr_TR',
-      siteName: 'Günen Temizlik',
+      siteName: 'Zümrüt Vadi Temizlik',
       images: [
         {
           url: canonicalUrl('/logo.png'),
           width: 1200,
           height: 630,
-          alt: 'Günen Temizlik müşteri yorumları',
+          alt: 'Zümrüt Vadi Temizlik müşteri yorumları',
         },
       ],
     },
@@ -107,8 +107,8 @@ export default async function ReferencesPage() {
   const agg = computeTestimonialAggregate(rows);
   const metaDescription =
     rows.length > 0 && agg
-      ? `${rows.length} gerçek müşteri yorumu; ortalama ${agg.ratingValue.toFixed(1)}/5. İstanbul temizlik referansları — Günen Temizlik.`
-      : 'Günen Temizlik müşteri yorumları ve İstanbul temizlik referansları.';
+      ? `${rows.length} gerçek müşteri yorumu; ortalama ${agg.ratingValue.toFixed(1)}/5. İstanbul temizlik referansları — Zümrüt Vadi Temizlik.`
+      : 'Zümrüt Vadi Temizlik müşteri yorumları ve İstanbul temizlik referansları.';
 
   const localBusinessLd = buildReferanslarLocalBusinessJsonLd(rows);
   const breadcrumbLd = buildReferanslarBreadcrumbJsonLd();

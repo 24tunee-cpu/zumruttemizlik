@@ -164,7 +164,7 @@ function LoginForm() {
               <Sparkles className="h-10 w-10 text-white" />
             </motion.div>
           </Link>
-          <h1 className="text-3xl font-bold text-white mb-2">Günen Temizlik</h1>
+          <h1 className="text-3xl font-bold text-white mb-2">Zümrüt Vadi Temizlik</h1>
           <p className="text-slate-400">Yönetim Paneli</p>
         </div>
 
@@ -212,7 +212,7 @@ function LoginForm() {
                 onKeyDown={(e) => e.key === 'Enter' && !loading && handleSubmit(e as any)}
                 className={`w-full rounded-lg border px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 transition-all ${error && !email.trim() ? 'border-red-300 focus:border-red-500 focus:ring-red-500/20' : 'border-slate-300 focus:border-emerald-500'
                   }`}
-                placeholder="admin@gunentemizlik.com"
+                placeholder="vedatgunenn@gmail.com"
                 required
                 autoFocus
                 autoComplete="email"
@@ -291,7 +291,7 @@ function LoginForm() {
         </motion.div>
 
         <p className="mt-8 text-center text-sm text-slate-500">
-          © 2024 Günen Temizlik. Tüm hakları saklıdır.
+          © 2024 Zümrüt Vadi Temizlik. Tüm hakları saklıdır.
         </p>
       </motion.div>
     </div>

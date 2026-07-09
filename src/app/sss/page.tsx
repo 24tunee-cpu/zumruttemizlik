@@ -37,25 +37,25 @@ export const metadata: Metadata = {
     canonical: canonicalUrl('/sss'),
   },
   openGraph: {
-    title: 'Temizlik SSS | Günen Temizlik',
+    title: 'Temizlik SSS | Zümrüt Vadi Temizlik',
     description:
       'İstanbul temizlik fiyatı, hizmet kapsamı, randevu ve ilçe bazlı hizmet akışı hakkında kısa ve net yanıtlar.',
     url: canonicalUrl('/sss'),
     type: 'website',
     locale: 'tr_TR',
-    siteName: 'Günen Temizlik',
+    siteName: 'Zümrüt Vadi Temizlik',
     images: [
       {
         url: canonicalUrl('/logo.png'),
         width: 1200,
         height: 630,
-        alt: 'Günen Temizlik - Sıkça Sorulan Sorular',
+        alt: 'Zümrüt Vadi Temizlik - Sıkça Sorulan Sorular',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Temizlik SSS | Günen Temizlik',
+    title: 'Temizlik SSS | Zümrüt Vadi Temizlik',
     description:
       'İstanbul temizlik fiyatı, hizmet kapsamı, randevu ve ilçe bazlı hizmet akışı hakkında kısa ve net yanıtlar.',
     images: [canonicalUrl('/logo.png')],

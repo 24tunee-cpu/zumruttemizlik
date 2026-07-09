@@ -42,13 +42,13 @@ export const metadata: Metadata = {
     url: canonicalUrl('/galeri'),
     type: 'website',
     locale: 'tr_TR',
-    siteName: 'Günen Temizlik',
+    siteName: 'Zümrüt Vadi Temizlik',
     images: [
       {
         url: canonicalUrl('/logo.png'),
         width: 1200,
         height: 630,
-        alt: 'Günen Temizlik - Galeri',
+        alt: 'Zümrüt Vadi Temizlik - Galeri',
       },
     ],
   },
@@ -67,17 +67,17 @@ export const metadata: Metadata = {
 const gallerySchema = {
   "@context": "https://schema.org",
   "@type": "ImageGallery",
-  "name": "Günen Temizlik Galeri",
+  "name": "Zümrüt Vadi Temizlik Galeri",
   "description": "Temizlik çalışmalarımızdan örnekler ve before/after görselleri",
   "url": canonicalUrl('/galeri'),
   "isPartOf": {
     "@type": "WebSite",
-    "name": "Günen Temizlik",
+    "name": "Zümrüt Vadi Temizlik",
     "url": canonicalUrl('/')
   },
   "about": {
     "@type": "CleaningService",
-    "name": "Günen Temizlik Şirketi"
+    "name": "Zümrüt Vadi Temizlik Şirketi"
   }
 };
 

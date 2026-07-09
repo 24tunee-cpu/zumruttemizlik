@@ -6,7 +6,7 @@ Kod `main` dalında; canlıda çalışması için **Vercel Environment Variables
 
 | Değişken | Zorunlu | Açıklama |
 |----------|---------|----------|
-| `NEXTAUTH_URL` | Evet | Canlı site kökü, örn. `https://www.gunentemizlik.com` (OAuth redirect ile aynı host) |
+| `NEXTAUTH_URL` | Evet | Canlı site kökü, örn. `https://www.zumrutvaditemizlik.com` (OAuth redirect ile aynı host) |
 | `NEXTAUTH_SECRET` | Evet | Mevcut NextAuth secret |
 | `DATABASE_URL` | Evet | MongoDB bağlantısı |
 | `MAPS_GOOGLE_CLIENT_ID` | Haritalar Google OAuth için | Google Cloud → OAuth istemci kimliği |
@@ -17,10 +17,10 @@ Kod `main` dalında; canlıda çalışması için **Vercel Environment Variables
 
 ## Google Cloud Console
 
-1. **Yetkili JavaScript kökenleri:** sadece kök, path yok — örn. `https://www.gunentemizlik.com`
+1. **Yetkili JavaScript kökenleri:** sadece kök, path yok — örn. `https://www.zumrutvaditemizlik.com`
 2. **Yetkili yönlendirme URI’leri (tam path):**  
    `{NEXTAUTH_URL}/api/admin/maps/google/oauth/callback`  
-   Örnek: `https://www.gunentemizlik.com/api/admin/maps/google/oauth/callback`
+   Örnek: `https://www.zumrutvaditemizlik.com/api/admin/maps/google/oauth/callback`
 3. OAuth izin ekranı + gerekirse test kullanıcıları; kapsam: `business.manage`
 4. İlgili API’lerin (Business Profile / My Business Account Management / Business Information vb.) etkin olduğundan emin ol
 

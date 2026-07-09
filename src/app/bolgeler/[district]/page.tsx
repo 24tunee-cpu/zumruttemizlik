@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: canonicalUrl(`/bolgeler/${districtData.slug}`),
       type: 'website',
       locale: 'tr_TR',
-      siteName: 'Günen Temizlik',
+      siteName: 'Zümrüt Vadi Temizlik',
     },
     twitter: {
       card: 'summary_large_image',

@@ -20,7 +20,7 @@ interface FloatingWhatsAppProps {
 const ENV_PHONE = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || SITE_CONTACT.whatsappDigits;
 const DEFAULT_MESSAGE =
   process.env.NEXT_PUBLIC_WHATSAPP_MESSAGE ||
-  'Merhaba, Günen Temizlik hizmetleri hakkında bilgi almak istiyorum.';
+  'Merhaba, Zümrüt Vadi Temizlik hizmetleri hakkında bilgi almak istiyorum.';
 
 function digitsOnly(s: string): string {
   return s.replace(/\D/g, '');
@@ -156,7 +156,7 @@ export function FloatingWhatsApp({
                       id={`${panelId}-title`}
                       className="truncate text-base font-semibold tracking-tight text-white"
                     >
-                      {settings.siteName || 'Günen Temizlik'}
+                      {settings.siteName || 'Zümrüt Vadi Temizlik'}
                     </h2>
                     <p className="mt-0.5 flex items-center gap-1.5 text-xs font-medium text-white/90">
                       <span

@@ -77,7 +77,7 @@ export function generateSlug(text: string): string {
  *
  * @example
  * getInitials('Ahmet Yılmaz'); // => 'AY'
- * getInitials('Günen Temizlik'); // => 'GT'
+ * getInitials('Zümrüt Vadi Temizlik'); // => 'GT'
  */
 export function getInitials(name: string): string {
   if (!name) return '';
