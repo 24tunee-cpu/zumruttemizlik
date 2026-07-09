@@ -64,8 +64,9 @@ export async function buildRootSchemaGraphJson(): Promise<string> {
   const logoUrl = toAbsoluteUrl(base, settings?.logo) ?? `${base}/logo.png`;
   const ogUrl = toAbsoluteUrl(base, settings?.ogImage) ?? `${base}/og-image.jpg`;
 
-  const lat = Number(process.env.NEXT_PUBLIC_BUSINESS_LAT ?? '41.080921');
-  const lng = Number(process.env.NEXT_PUBLIC_BUSINESS_LNG ?? '28.993809');
+  // Varsayılan koordinat: Sarıyer / Zekeriyaköy (İstanbul Avrupa Yakası)
+  const lat = Number(process.env.NEXT_PUBLIC_BUSINESS_LAT ?? '41.1669');
+  const lng = Number(process.env.NEXT_PUBLIC_BUSINESS_LNG ?? '29.0577');
 
   const sameAs = [
     settings?.facebook,
@@ -109,7 +110,18 @@ export async function buildRootSchemaGraphJson(): Promise<string> {
         closes: '23:59',
       },
     ],
-    areaServed: ['İstanbul', 'Kağıthane', 'Kadıköy', 'Üsküdar'],
+    areaServed: [
+      'Sarıyer',
+      'Zekeriyaköy',
+      'İstanbul Avrupa Yakası',
+      'İstanbul',
+      'Beşiktaş',
+      'Şişli',
+      'Kağıthane',
+      'Eyüpsultan',
+      'Bakırköy',
+      'Fatih',
+    ],
     priceRange: '₺₺',
     foundingDate: '2010',
     hasMap: `https://www.google.com/maps?q=${encodeURIComponent(addressLine)}`,

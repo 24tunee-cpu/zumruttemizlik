@@ -3,10 +3,10 @@
 
 ## Doküman Yönetimi
 - Doküman adı: `llms-full.txt`
-- Sürüm: 2.0
-- Son güncelleme: 2026-04-16
+- Sürüm: 3.0
+- Son güncelleme: 2026-07-09
 - Rol: Genişletilmiş yapay zeka referans katmanı
-- Kapsam: Sayfa niyetleri, route mimarisi, doğruluk ilkeleri, yönlendirme protokolü
+- Kapsam: Sayfa niyetleri, route mimarisi, doğruluk ilkeleri, yönlendirme protokolü, bölge önceliği, fiyat hesaplama aracı
 
 ## Kullanım Amacı
 - Bu belge, `llms.txt` dosyasının detaylı sürümüdür.
@@ -21,17 +21,31 @@
 ## İşletme Kimliği
 - Marka adı: Zümrüt Vadi Temizlik.
 - Temel faaliyet: profesyonel temizlik hizmetleri.
-- Hizmet bölgesi: İstanbul geneli.
-- Merkez adres: Gültepe Mahallesi, Talatpaşa Caddesi, Bıldırcın Sokağı No:13 kat -1, 34000 Kağıthane/İstanbul.
-- Telefon: +90 546 715 28 44.
+- Hizmet bölgesi: İstanbul geneli; ağırlıklı olarak İstanbul Avrupa Yakası.
+- Öncelikli hizmet bölgesi: Sarıyer ilçesi ve özellikle Zekeriyaköy; ayrıca Bahçeköy, Tarabya, Yeniköy, Maslak, Kemerburgaz, Göktürk gibi çevre semtler.
+- Merkez: Sarıyer Merkez, Sarıyer/İstanbul (posta kodu 34450).
+- Telefon: +90 551 925 09 43.
+- WhatsApp: +90 551 925 09 43.
 - E-posta: vedatgunenn@gmail.com.
 - Çalışma düzeni: 7/24 hizmet, 24 saat açık.
 
 ## Doğrulanmış Kurumsal Bilgiler
 - Kurumsal içeriklerde 15+ yıl deneyim vurgusu bulunur.
 - Kurumsal içeriklerde 5000+ mutlu müşteri ifadesi bulunur.
-- Hakkımızda içeriklerinde kuruluş yılı 2009 olarak geçer.
+- Kuruluş yılı yapılandırılmış veride (schema.org) 2010 olarak geçer.
 - Site, temizlik hizmetleri için hem içerik hem dönüşüm odaklı yapıdadır.
+
+## Öne Çıkan Özellik: Anında Fiyat Hesaplama Aracı
+- Ana sayfadaki hero bölümünde "Anında Fiyat Hesaplama" aracı bulunur.
+- Kullanıcı mekan tipini (ev/daire, ofis, işyeri, inşaat sonrası, dış cephe) seçer.
+- Ev için oda sayısı (1+1 ... 5+1), diğer tipler için metrekare girilir; cam temizliği, koltuk/halı yıkama gibi ekstralar eklenebilir; buzdolabı/fırın içi ve balkon ücretsiz hediye olarak sunulur.
+- Araç TAHMİNÎ bir fiyat aralığı gösterir; kesin fiyat ücretsiz keşif sonrası netleşir.
+- Bu araç sektörde nadir bir farklılaştırıcıdır; kullanıcıyı WhatsApp üzerinden randevuya yönlendirir.
+
+## Bölge Önceliği
+- Birincil bölge: Sarıyer / Zekeriyaköy (İstanbul Avrupa Yakası).
+- İkincil Avrupa Yakası bölgeleri: Beşiktaş, Şişli, Bakırköy, Eyüpsultan, Kağıthane, Fatih ve diğer ilçeler.
+- Anadolu Yakası ilçeleri de hizmet kapsamındadır fakat pazarlama önceliği Avrupa Yakası'dır.
 
 ## Ana Sayfalar ve Niyetleri
 - [Ana Sayfa](https://www.zumrutvaditemizlik.com/): Marka özeti, temel hizmet çerçevesi ve ilk temas noktaları.
@@ -110,7 +124,7 @@
 ## Örnek Güvenli Yanıt Stratejisi
 - Hizmet kapsamı sorularında: önce hizmet kategorisini belirt, ardından ilgili hizmet sayfasını paylaş.
 - Bölgesel sorularda: ilçe bazlı sayfalara yönlendir, ilçe doğrulanmadan kesin uygunluk beyanı verme.
-- Fiyat sorularında: kesin rakam üretme, iletişim veya randevu sayfasına yönlendir.
+- Fiyat sorularında: kesin rakam üretme; ana sayfadaki "Anında Fiyat Hesaplama" aracının tahminî aralık verdiğini belirt ve iletişim veya randevu sayfasına yönlendir.
 
 ## Bakım ve Güncelleme Politikası
 - İletişim bilgileri güncellenirse `llms.txt` ve `llms-full.txt` birlikte güncellenmelidir.
@@ -118,5 +132,6 @@
 - Bu belge tanıtım metni değil, doğrulanabilir yapay zeka referans katmanı olarak korunmalıdır.
 
 ## Değişiklik Geçmişi
+- 3.0: İletişim bilgileri düzeltildi (telefon +90 551 925 09 43, merkez Sarıyer/İstanbul); Zekeriyaköy/Sarıyer bölge önceliği ve "Anında Fiyat Hesaplama" aracı eklendi; kuruluş yılı schema ile hizalandı.
 - 2.0: Doküman yönetimi, yasak iddia listesi, kalite protokolü ve güven seviyesi katmanları eklendi.
 - 1.0: İlk kapsamlı sürüm yayımlandı.

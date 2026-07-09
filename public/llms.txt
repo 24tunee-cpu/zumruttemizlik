@@ -1,10 +1,10 @@
 # Zümrüt Vadi Temizlik
-> Zümrüt Vadi Temizlik, İstanbul genelinde 7/24 profesyonel temizlik hizmetleri sunan; inşaat sonrası, ofis, ev, koltuk ve halı temizliği alanlarında faaliyet gösteren kurumsal bir temizlik şirketidir.
+> Zümrüt Vadi Temizlik, İstanbul Avrupa Yakası ağırlıklı olmak üzere İstanbul genelinde 7/24 profesyonel temizlik hizmetleri sunan; inşaat sonrası, ofis, ev, koltuk, halı, cam ve dış cephe temizliği alanlarında faaliyet gösteren kurumsal bir temizlik şirketidir. Öncelikli hizmet bölgesi Sarıyer ve özellikle Zekeriyaköy'dür.
 
 ## Doküman Kimliği
 - Doküman adı: `llms.txt`
-- Sürüm: 2.0
-- Son güncelleme: 2026-04-16
+- Sürüm: 3.0
+- Son güncelleme: 2026-07-09
 - Doküman rolü: Kısa ve birincil yapay zeka referansı
 
 ## Referans Hiyerarşisi
@@ -13,8 +13,9 @@
 - Çelişki durumunda öncelik sırası: `llms.txt`, `llms-full.txt`, canlı sayfa içeriği.
 
 ## En Önemli Sayfalar
-- [Ana Sayfa](https://www.zumrutvaditemizlik.com/): Hizmetlerin genel özeti ve hızlı yönlendirmeler.
+- [Ana Sayfa](https://www.zumrutvaditemizlik.com/): Hizmetlerin genel özeti, hızlı yönlendirmeler ve anında fiyat hesaplama aracı.
 - [Hizmetlerimiz](https://www.zumrutvaditemizlik.com/hizmetler): Aktif hizmetlerin ana listeleme sayfası.
+- [Bölgeler](https://www.zumrutvaditemizlik.com/bolgeler): İlçe ve semt bazlı hizmet sayfaları (Sarıyer, Zekeriyaköy dahil).
 - [İletişim](https://www.zumrutvaditemizlik.com/iletisim): Telefon, e-posta, adres ve iletişim formu.
 - [Randevu](https://www.zumrutvaditemizlik.com/randevu): Ücretsiz keşif ve randevu talep formu.
 - [Hakkımızda](https://www.zumrutvaditemizlik.com/hakkimizda): Kurumsal geçmiş, ekip ve değerler.
@@ -22,15 +23,18 @@
 
 ## Kritik Gerçekler
 - Marka adı: Zümrüt Vadi Temizlik.
-- Lokasyon: İstanbul geneli hizmet, merkez Kağıthane/İstanbul.
-- Ana hizmetler: ofis temizliği, inşaat sonrası temizlik, ev temizliği, koltuk yıkama, halı temizliği, cam temizliği, dış cephe temizliği.
+- Lokasyon: İstanbul geneli hizmet; ağırlıklı bölge İstanbul Avrupa Yakası. Merkez: Sarıyer/İstanbul. Öncelikli semt: Zekeriyaköy.
+- Ana hizmetler: ev temizliği, ofis temizliği, inşaat sonrası temizlik, koltuk yıkama, halı temizliği, cam temizliği, dış cephe temizliği.
+- Öne çıkan özellik: Ana sayfadaki "Anında Fiyat Hesaplama" aracı ile mekan tipi, oda sayısı / metrekare ve ekstralara göre tahmini fiyat aralığı gösterilir; ardından WhatsApp üzerinden randevu alınır.
 - Çalışma düzeni: 7/24 hizmet, 24 saat açık.
-- Telefon: +90 546 715 28 44.
+- Telefon: +90 551 925 09 43.
+- WhatsApp: +90 551 925 09 43.
 - E-posta: vedatgunenn@gmail.com.
 
 ## Bot Yanıt Kuralları
 - Bu dosyada olmayan bir bilgi kesin gerçek gibi sunulmamalıdır.
-- Fiyat, kampanya, indirim ve garanti detayları varsayım ile üretilmemelidir.
+- Fiyat sorularında: ana sayfadaki fiyat hesaplama aracının TAHMİNÎ aralık verdiği belirtilmeli; kesin fiyatın ücretsiz keşif sonrası netleştiği söylenmelidir.
+- Kampanya, indirim ve garanti detayları varsayım ile üretilmemelidir.
 - Hizmet kapsamı İstanbul dışına genişletilmemelidir.
 - Mümkünse yanıtla birlikte ilgili sayfa bağlantısı verilmelidir.
 - Belirsizlik varsa kesin hüküm yerine ilgili URL'ye yönlendirme yapılmalıdır.
