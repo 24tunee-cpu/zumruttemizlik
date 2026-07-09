@@ -13,7 +13,6 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X, Phone, ChevronDown } from 'lucide-react';
-import Image from 'next/image';
 import { useSiteSettings } from '@/context/SiteSettingsContext';
 import { SITE_CONTACT, toTelHref } from '@/config/site-contact';
 
@@ -178,7 +177,7 @@ export function Navbar() {
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-lg'
+          ? 'border-b border-slate-200/70 bg-white/90 shadow-sm backdrop-blur-xl'
           : 'bg-transparent'
           }`}
         role="navigation"
@@ -186,50 +185,55 @@ export function Navbar() {
       >
         <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between gap-2 sm:h-20">
-            {/* Logo */}
-            <Link href="/" className="flex min-w-0 items-center gap-2 sm:gap-3">
-              <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-xl sm:h-12 sm:w-12">
-                <Image
-                  src="/logo.png"
-                  alt="Zümrüt Vadi Temizlik"
-                  fill
-                  className="object-contain"
-                  priority
-                  sizes="(max-width: 640px) 40px, 48px"
-                />
-              </div>
-              <div className="min-w-0 sm:hidden">
-                <span
-                  className={`block truncate text-[0.95rem] font-bold leading-tight transition-colors ${scrolled ? 'text-slate-900' : 'text-white'}`}
-                >
-                  Zümrüt Vadi{' '}
-                  <span className={scrolled ? 'text-emerald-600' : 'text-emerald-400'}>Temizlik</span>
-                </span>
-              </div>
-              <div className="hidden sm:block">
-                <span className={`text-xl font-bold transition-colors ${scrolled ? 'text-slate-900' : 'text-white'
-                  }`}>
+            {/* Logo (yazı tabanlı wordmark) */}
+            <Link href="/" className="group flex min-w-0 flex-col justify-center leading-none">
+              <span className="whitespace-nowrap text-base font-extrabold tracking-tight transition-transform group-hover:-translate-y-px sm:text-2xl">
+                <span className={`transition-colors ${scrolled ? 'text-slate-900' : 'text-white'}`}>
                   Zümrüt Vadi
                 </span>
-                <span className={`text-xl font-bold transition-colors ${scrolled ? 'text-emerald-600' : 'text-emerald-400'
-                  }`}>
+                <span className="bg-gradient-to-r from-emerald-500 to-emerald-400 bg-clip-text text-transparent">
                   {' '}Temizlik
                 </span>
-              </div>
+              </span>
+              <span
+                className={`mt-1 hidden text-[10px] font-semibold uppercase tracking-[0.22em] transition-colors sm:block ${
+                  scrolled ? 'text-slate-400' : 'text-white/50'
+                }`}
+              >
+                İstanbul Profesyonel Temizlik
+              </span>
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden xl:flex items-center gap-5">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`text-sm font-medium transition-colors hover:text-emerald-500 ${scrolled ? 'text-slate-700' : 'text-white/90'
+            <div className="hidden xl:flex items-center gap-6">
+              {navLinks.map((link) => {
+                const active =
+                  link.href === '/' ? pathname === '/' : pathname.startsWith(link.href);
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    aria-current={active ? 'page' : undefined}
+                    className={`group relative text-sm font-medium transition-colors hover:text-emerald-500 ${
+                      active
+                        ? scrolled
+                          ? 'text-emerald-600'
+                          : 'text-emerald-400'
+                        : scrolled
+                          ? 'text-slate-700'
+                          : 'text-white/90'
                     }`}
-                >
-                  {link.label}
-                </Link>
-              ))}
+                  >
+                    {link.label}
+                    <span
+                      className={`absolute -bottom-1.5 left-0 h-0.5 rounded-full bg-emerald-500 transition-all duration-300 ${
+                        active ? 'w-full' : 'w-0 group-hover:w-full'
+                      }`}
+                      aria-hidden="true"
+                    />
+                  </Link>
+                );
+              })}
               <div className="relative" ref={resourcesDropdownRef}>
                 <button
                   type="button"
@@ -274,19 +278,21 @@ export function Navbar() {
             </div>
 
             {/* CTA Button */}
-            <div className="hidden xl:flex items-center gap-4">
+            <div className="hidden xl:flex items-center gap-3">
               <a
                 href={telHref}
                 data-source="navbar-desktop"
-                className={`flex items-center gap-2 text-sm font-medium transition-colors ${scrolled ? 'text-slate-700' : 'text-white'}`}
+                className={`inline-flex items-center gap-2 rounded-full px-3 py-2 text-sm font-semibold transition-colors ${
+                  scrolled ? 'text-slate-800 hover:bg-slate-100' : 'text-white hover:bg-white/10'
+                }`}
                 aria-label={`Telefon: ${phoneDisplay}`}
               >
-                <Phone size={16} />
+                <Phone size={16} className="text-emerald-500" />
                 {phoneDisplay}
               </a>
               <Link
                 href="/iletisim"
-                className="rounded-lg bg-emerald-500 px-5 py-2.5 text-sm font-medium text-white shadow-lg shadow-emerald-500/30 transition-all hover:bg-emerald-600 hover:shadow-emerald-500/40"
+                className="rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-emerald-500/30 transition-all hover:-translate-y-0.5 hover:shadow-emerald-500/50"
               >
                 Hemen Fiyat Al
               </Link>
@@ -388,7 +394,7 @@ export function Navbar() {
                 <Link
                   href="/iletisim"
                   onClick={closeMenu}
-                  className="mt-5 block rounded-lg bg-emerald-500 py-3.5 text-center text-base font-medium text-white hover:bg-emerald-600 sm:py-3"
+                  className="mt-5 block rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 py-3.5 text-center text-base font-semibold text-white shadow-lg shadow-emerald-500/30 transition-all hover:shadow-emerald-500/50 sm:py-3"
                 >
                   Hemen Fiyat Al
                 </Link>
