@@ -103,7 +103,7 @@ export default function MapsAndReviewsPage() {
           <section className="mt-8 overflow-hidden rounded-2xl border border-slate-800 bg-slate-800/30">
             <div className="w-full overflow-hidden">
               <iframe
-                src="https://www.google.com/maps/d/u/0/embed?mid=1LgUhtWIqBuSKRCDwhmXVVEISTrfrSPg&ehbc=2E312F"
+                src="https://www.google.com/maps/d/u/0/embed?mid=16qrblTON7mA6kRhhSsi8boG1m_Wt1aM&ehbc=2E312F"
                 width="100%"
                 height="480"
                 className="border-0"

@@ -263,8 +263,8 @@ export function optimizeImageProps(src: string, alt: string, priority: boolean =
     placeholder: 'blur' as const,
     blurDataURL: `data:image/svg+xml;base64,${Buffer.from(
       `<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
-        <rect width="100%" height="100%" fill="#1e293b"/>
-        <text x="50%" y="50%" text-anchor="middle" dy=".3em" fill="#64748b" font-size="14">
+        <rect width="100%" height="100%" fill="#14284C"/>
+        <text x="50%" y="50%" text-anchor="middle" dy=".3em" fill="#4A5A7A" font-size="14">
           Loading...
         </text>
       </svg>`
@@ -302,7 +302,7 @@ export function getCriticalCSS() {
   return `
     /* Critical CSS for above-the-fold content */
     body { margin: 0; font-family: Inter, system-ui, sans-serif; }
-    .bg-slate-900 { background-color: #0f172a; }
+    .bg-slate-900 { background-color: #0A1F44; }
     .text-white { color: #ffffff; }
     .flex { display: flex; }
     .items-center { align-items: center; }

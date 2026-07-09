@@ -150,7 +150,7 @@ function FloatingLabelInput({
         animate={{
           y: isActive ? -24 : 12,
           scale: isActive ? 0.85 : 1,
-          color: isActive ? (isDark ? '#34d399' : '#059669') : (isDark ? '#94a3b8' : '#64748b'),
+          color: isActive ? (isDark ? '#2DBA85' : '#008F5A') : (isDark ? '#6E7D9C' : '#4A5A7A'),
         }}
         transition={{ duration: shouldReduceMotion ? 0 : 0.2 }}
         className="absolute left-4 font-medium pointer-events-none origin-left transition-colors"

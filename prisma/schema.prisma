@@ -168,9 +168,9 @@ model SiteSettings {
   siteUrl         String   @default("https://www.zumrutvaditemizlik.com")
   logo            String?
   favicon         String   @default("/favicon.ico")
-  primaryColor    String   @default("#10b981")
-  secondaryColor  String   @default("#059669")
-  accentColor     String   @default("#34d399")
+  primaryColor    String   @default("#00A86B")
+  secondaryColor  String   @default("#0A1F44")
+  accentColor     String   @default("#C19A6B")
   phone           String   @default("0551 925 09 43")
   email           String   @default("vedatgunenn@gmail.com")
   address         String?

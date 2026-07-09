@@ -108,7 +108,7 @@ const defaultSettings: SiteSettings = {
   siteUrl: getSiteUrl(),
   logo: '/logo.png',
   favicon: '/favicon.ico',
-  accentColor: '#34d399',
+  accentColor: '#C19A6B',
 
   phone: SITE_CONTACT.phoneDisplay,
   email: SITE_CONTACT.email,
