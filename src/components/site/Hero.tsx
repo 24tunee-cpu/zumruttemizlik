@@ -10,21 +10,14 @@
 'use client';
 
 import { motion, useReducedMotion } from 'framer-motion';
-import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Sparkles, Shield, Clock, Award, ChevronDown } from 'lucide-react';
 import { useEffect, useState, useMemo, useCallback } from 'react';
+import { HeroPriceCalculator } from '@/components/site/HeroPriceCalculator';
 
 // ============================================
 // TYPES
 // ============================================
-
-/** FloatingCard component props */
-interface FloatingCardProps {
-  children: React.ReactNode;
-  delay?: number;
-  className?: string;
-}
 
 /** Trust badge tipi */
 interface TrustBadge {
@@ -49,41 +42,6 @@ const TRUST_BADGES: TrustBadge[] = [
   { icon: Clock, text: '7/24 Destek', color: 'from-blue-500/20 to-blue-600/20' },
   { icon: Award, text: '15+ Yıl Deneyim', color: 'from-amber-500/20 to-amber-600/20' },
 ];
-
-// ============================================
-// COMPONENT: FLOATING CARD
-// ============================================
-
-/**
- * Floating Card Component
- * @param children Card içeriği
- * @param delay Animasyon gecikmesi
- * @param className Ek CSS sınıfları
- */
-function FloatingCard({ children, delay = 0, className = '' }: FloatingCardProps) {
-  const shouldReduceMotion = useReducedMotion();
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ delay, duration: 0.5 }}
-      className={className}
-    >
-      <motion.div
-        animate={shouldReduceMotion ? {} : { y: [0, -10, 0] }}
-        transition={{
-          duration: 4,
-          delay,
-          repeat: Infinity,
-          ease: 'easeInOut',
-        }}
-      >
-        {children}
-      </motion.div>
-    </motion.div>
-  );
-}
 
 // ============================================
 // MAIN COMPONENT
@@ -307,88 +265,10 @@ export function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Right Side - 3D Card Stack */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            className="relative hidden lg:block"
-          >
-            <div className="relative">
-              {/* Main Card */}
-              <motion.div
-                animate={shouldReduceMotion ? {} : { rotateY: [0, 5, 0, -5, 0] }}
-                transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-                className="relative rounded-3xl bg-slate-800/50 p-8 backdrop-blur-xl border border-slate-700/50 shadow-2xl"
-                style={{ transformStyle: shouldReduceMotion ? 'flat' : 'preserve-3d' }}
-              >
-                <div className="aspect-square rounded-2xl bg-gradient-to-br from-emerald-500/20 to-emerald-600/20 flex items-center justify-center relative overflow-hidden" aria-hidden="true">
-                  {/* Animated circles inside */}
-                  <motion.div
-                    animate={shouldReduceMotion ? {} : { scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
-                    transition={{ duration: 3, repeat: Infinity }}
-                    className="absolute w-40 h-40 bg-emerald-500/20 rounded-full blur-2xl"
-                  />
-                  <div className="relative z-10 h-36 w-36 sm:h-40 sm:w-40">
-                    <Image
-                      src="/logo.png"
-                      alt=""
-                      fill
-                      className="object-contain drop-shadow-[0_0_28px_rgba(16,185,129,0.35)]"
-                      priority
-                      fetchPriority="high"
-                      sizes="(min-width: 640px) 160px, 144px"
-                    />
-                  </div>
-                </div>
-
-                {/* Floating Stats Cards */}
-                <FloatingCard delay={0.2} className="absolute -top-6 -right-6">
-                  <div className="rounded-2xl bg-white p-5 shadow-xl border border-emerald-100" aria-hidden="true">
-                    <div className="flex items-center gap-3">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100">
-                        <Award className="h-5 w-5 text-emerald-600" />
-                      </div>
-                      <div>
-                        <p className="text-2xl font-bold text-emerald-600">5000+</p>
-                        <p className="text-xs text-slate-500 font-medium">Mutlu Müşteri</p>
-                      </div>
-                    </div>
-                  </div>
-                </FloatingCard>
-
-                <FloatingCard delay={0.5} className="absolute -bottom-6 -left-6">
-                  <div className="rounded-2xl bg-slate-900 p-5 shadow-xl border border-slate-700" aria-hidden="true">
-                    <div className="flex items-center gap-3">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-500/20">
-                        <Shield className="h-5 w-5 text-emerald-400" />
-                      </div>
-                      <div>
-                        <p className="text-2xl font-bold text-emerald-400">7/24</p>
-                        <p className="text-xs text-slate-400 font-medium">Destek hattı</p>
-                      </div>
-                    </div>
-                  </div>
-                </FloatingCard>
-
-                {/* Additional mini cards */}
-                <FloatingCard delay={0.8} className="absolute top-1/2 -right-12">
-                  <div className="rounded-xl bg-emerald-500 p-3 shadow-lg" aria-hidden="true">
-                    <Clock className="h-6 w-6 text-white" />
-                  </div>
-                </FloatingCard>
-
-                <FloatingCard delay={1.1} className="absolute top-20 -left-8">
-                  <div className="rounded-xl bg-white p-3 shadow-lg border border-slate-200" aria-hidden="true">
-                    <Sparkles className="h-6 w-6 text-emerald-500" />
-                  </div>
-                </FloatingCard>
-              </motion.div>
-
-              {/* Glow Effect */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-emerald-500/20 to-emerald-600/20 rounded-3xl blur-2xl -z-10" aria-hidden="true" />
-            </div>
-          </motion.div>
+          {/* Right Side - Fiyat Hesaplama */}
+          <div className="relative">
+            <HeroPriceCalculator />
+          </div>
         </div>
       </div>
 
