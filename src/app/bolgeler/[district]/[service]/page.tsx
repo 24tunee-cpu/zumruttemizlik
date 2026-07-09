@@ -6,6 +6,7 @@ import { prisma } from '@/lib/prisma';
 import {
   DISTRICT_LANDINGS,
   SERVICE_LANDINGS,
+  NEIGHBORHOOD_LANDINGS,
   buildProgrammaticContentVariant,
   formatDistrictSide,
   getDistrictDeepDive,
@@ -13,8 +14,10 @@ import {
   getNearbyDistrictSlugs,
   getDistrictOperationalSignals,
   getServiceBySlug,
+  getNeighborhoodLanding,
 } from '@/config/programmatic-seo';
 import ProgrammaticCtaExperiment from '@/components/site/ProgrammaticCtaExperiment';
+import NeighborhoodLanding from '@/components/site/NeighborhoodLanding';
 import { SITE_CONTACT, toTelHref } from '@/config/site-contact';
 import { canonicalUrl, getSiteUrl } from '@/lib/seo';
 
@@ -37,18 +40,55 @@ function clampMetaTitle(input: string, max = 60): string {
 }
 
 export function generateStaticParams() {
-  return DISTRICT_LANDINGS.flatMap((district) =>
+  const serviceCombos = DISTRICT_LANDINGS.flatMap((district) =>
     SERVICE_LANDINGS.map((service) => ({
       district: district.slug,
       service: service.slug,
     }))
   );
+  const neighborhoodCombos = NEIGHBORHOOD_LANDINGS.map((n) => ({
+    district: n.districtSlug,
+    service: n.slug,
+  }));
+  return [...serviceCombos, ...neighborhoodCombos];
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { district, service } = await params;
   const districtData = getDistrictBySlug(district);
   const serviceData = getServiceBySlug(service);
+
+  // Semt (neighborhood) sayfası: servis bulunamadıysa özel semt landing'i kontrol et.
+  if (!serviceData) {
+    const neighborhood = getNeighborhoodLanding(district, service);
+    if (neighborhood) {
+      const canonical = canonicalUrl(`/bolgeler/${neighborhood.districtSlug}/${neighborhood.slug}`);
+      return {
+        title: neighborhood.metaTitle,
+        description: neighborhood.metaDescription,
+        keywords: [
+          `${neighborhood.name} temizlik`,
+          `${neighborhood.name} temizlik şirketi`,
+          `${neighborhood.name} ev temizliği`,
+          `${neighborhood.districtName} temizlik`,
+        ],
+        alternates: { canonical },
+        openGraph: {
+          title: neighborhood.metaTitle,
+          description: neighborhood.metaDescription,
+          url: canonical,
+          type: 'website',
+          locale: 'tr_TR',
+          siteName: 'Zümrüt Vadi Temizlik',
+        },
+        twitter: {
+          card: 'summary_large_image',
+          title: neighborhood.metaTitle,
+          description: neighborhood.metaDescription,
+        },
+      };
+    }
+  }
 
   if (!districtData || !serviceData) {
     return { title: 'Sayfa Bulunamadı' };
@@ -94,6 +134,15 @@ export default async function ProgrammaticLandingPage({ params }: Props) {
   const { district, service } = await params;
   const districtData = getDistrictBySlug(district);
   const serviceData = getServiceBySlug(service);
+
+  // Semt (neighborhood) sayfası dalı — ör. /bolgeler/sariyer/zekeriyakoy
+  if (!serviceData) {
+    const neighborhood = getNeighborhoodLanding(district, service);
+    if (neighborhood) {
+      return <NeighborhoodLanding data={neighborhood} />;
+    }
+  }
+
   if (!districtData || !serviceData) notFound();
 
   const canonical = canonicalUrl(`/bolgeler/${districtData.slug}/${serviceData.slug}`);
