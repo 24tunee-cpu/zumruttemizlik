@@ -140,10 +140,20 @@ export const DISTRICT_LANDINGS: DistrictLanding[] = [
     slug: 'sariyer',
     name: 'Sarıyer',
     side: 'avrupa',
-    populationNote: 'villa, site ve yüksek gelir segmentinde detay beklentisi',
+    populationNote: 'Zekeriyaköy başta olmak üzere villa, site ve yüksek gelir segmentinde detay beklentisi',
     regionBlurb:
-      'Boğaz hattı ve orman içi yerleşimlerde hijyen ve güven odaklı, titiz uygulama sunuyoruz.',
-    neighborhoods: ['Maslak', 'Zekeriyaköy', 'Tarabya', 'Yeniköy', 'Bahçeköy', 'Rumelihisarı'],
+      'Zekeriyaköy, Bahçeköy ve Boğaz hattındaki villa ve sitelerde hijyen ve güven odaklı, titiz temizlik uyguluyoruz. Sarıyer, öncelikli hizmet bölgemizdir.',
+    neighborhoods: ['Zekeriyaköy', 'Bahçeköy', 'Maslak', 'Tarabya', 'Yeniköy', 'Rumelihisarı', 'Kilyos', 'İstinye'],
+    localSignals: [
+      'Zekeriyaköy ve Bahçeköy’deki müstakil villa ve sitelerde detaylı ev temizliği ile taşınma öncesi/sonrası temizlik talepleri yoğundur.',
+      'Boğaz hattı yerleşimlerinde cam, dış cephe ve bahçe kenarı yüzey temizliği sık talep edilir.',
+      'Yüksek segment konutlarda aynı gün ücretsiz keşif ve gizlilik odaklı çalışma önceliklidir.',
+    ],
+    deepDive: [
+      'Zekeriyaköy, Zümrüt Vadi Temizlik için öncelikli hizmet bölgesidir. Bölgedeki müstakil villalar, kapalı siteler ve orman içi yerleşimlerde detaylı ev temizliği, inşaat sonrası teslim temizliği ve periyodik bakım paketlerinde hızlı ekip yönlendirmesi yapıyoruz.',
+      'Bahçeköy, Maslak ve Boğaz hattındaki (Tarabya, Yeniköy, İstinye) konutlarda geniş cam yüzeyleri, yüksek tavanlar ve bahçeli yapılar nedeniyle cam temizliği, dış cephe ve detay temizlik sıklıkla birlikte planlanır. Alanı; zemin türü, cam yüzeyi, ıslak hacim ve erişim koşullarına göre başlıklara ayırıp uyguluyoruz.',
+      'Sarıyer genelinde ana sayfamızdaki Anında Fiyat Hesaplama aracıyla mekan tipi, oda sayısı veya metrekare ve ekstralara göre tahmini fiyat aralığınızı saniyeler içinde görebilir, ardından WhatsApp üzerinden ücretsiz keşif randevusu oluşturabilirsiniz.',
+    ],
   },
   {
     slug: 'kagithane',

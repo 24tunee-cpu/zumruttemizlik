@@ -18,22 +18,22 @@ const CORE = [
   'inşaat sonrası temizlik',
 ];
 
+// Öncelik: İstanbul Avrupa Yakası, özellikle Sarıyer / Zekeriyaköy
 const LOCAL = [
-  'ataşehir temizlik',
-  'kadıköy temizlik',
-  'üsküdar temizlik',
+  'zekeriyaköy temizlik',
+  'sarıyer temizlik',
+  'istanbul avrupa yakası temizlik',
   'beşiktaş temizlik',
   'şişli temizlik',
-  'maltepe temizlik',
-  'pendik temizlik',
+  'kağıthane temizlik',
 ];
 
 const CONVERSION = [
   'temizlik şirketi fiyatları istanbul',
+  'online temizlik fiyat hesaplama',
   'ücretsiz keşif temizlik',
   'aynı gün temizlik hizmeti',
   'güvenilir temizlik şirketi istanbul',
-  'kurumsal temizlik şirketi istanbul',
 ];
 
 const PAGE_KEYWORDS: Record<PageKey, string[]> = {
