@@ -21,6 +21,7 @@ import { requireAdminAuth } from '@/lib/security';
 import { writeFile, mkdir } from 'fs/promises';
 import { existsSync } from 'fs';
 import path from 'path';
+import { put } from '@vercel/blob';
 
 // ============================================
 // CONFIGURATION
@@ -338,40 +339,57 @@ export async function POST(request: NextRequest) {
 
     // Generate safe filename
     const fileName = generateUniqueFilename(file);
-
-    // Ensure uploads directory exists
-    console.log('Checking uploads directory:', UPLOADS_DIR);
-    console.log('Directory exists:', existsSync(UPLOADS_DIR));
-    console.log('Current working directory:', process.cwd());
-
-    if (!existsSync(UPLOADS_DIR)) {
-      try {
-        // Windows için mode parametresi kaldırıldı (chmod desteklenmez)
-        await mkdir(UPLOADS_DIR, { recursive: true });
-        console.log('Created uploads directory:', UPLOADS_DIR);
-      } catch (dirError) {
-        console.error('Failed to create uploads directory', { error: dirError, dir: UPLOADS_DIR });
-        return NextResponse.json(
-          { error: 'Upload klasoru olusturulamadi. Lutfen sistem yoneticisine basvurun.' },
-          { status: 500, headers }
-        );
-      }
-    }
-
-    // Write file securely
-    const filePath = path.join(UPLOADS_DIR, fileName);
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
 
-    try {
-      // Windows için mode parametresi kaldırıldı (chmod desteklenmez)
-      await writeFile(filePath, buffer);
-    } catch (writeError) {
-      console.error('Failed to write file', { error: writeError, filePath, size: file.size });
-      return NextResponse.json(
-        { error: 'Dosya yazilamadi. Disk dolu veya izin sorunu olabilir.' },
-        { status: 500, headers }
-      );
+    let publicUrl: string;
+
+    // ============================================
+    // BULUT DEPOLAMA (Vercel Blob)
+    // Vercel'de dosya sistemi salt-okunur olduğundan, BLOB_READ_WRITE_TOKEN
+    // tanımlıysa dosyalar Vercel Blob'a yüklenir. Aksi halde (yerel geliştirme)
+    // public/uploads klasörüne yazılır.
+    // ============================================
+    if (process.env.BLOB_READ_WRITE_TOKEN) {
+      try {
+        const blob = await put(`uploads/${fileName}`, buffer, {
+          access: 'public',
+          contentType: file.type || undefined,
+        });
+        publicUrl = blob.url;
+      } catch (blobError) {
+        console.error('Failed to upload to Vercel Blob', { error: blobError, fileName, ip });
+        return NextResponse.json(
+          { error: 'Dosya buluta yuklenemedi. Lutfen tekrar deneyin.' },
+          { status: 500, headers }
+        );
+      }
+    } else {
+      // Yerel geliştirme: diske yaz
+      if (!existsSync(UPLOADS_DIR)) {
+        try {
+          await mkdir(UPLOADS_DIR, { recursive: true });
+        } catch (dirError) {
+          console.error('Failed to create uploads directory', { error: dirError, dir: UPLOADS_DIR });
+          return NextResponse.json(
+            { error: 'Upload klasoru olusturulamadi. Lutfen sistem yoneticisine basvurun.' },
+            { status: 500, headers }
+          );
+        }
+      }
+
+      const filePath = path.join(UPLOADS_DIR, fileName);
+      try {
+        await writeFile(filePath, buffer);
+      } catch (writeError) {
+        console.error('Failed to write file', { error: writeError, filePath, size: file.size });
+        return NextResponse.json(
+          { error: 'Dosya yazilamadi. Disk dolu veya izin sorunu olabilir.' },
+          { status: 500, headers }
+        );
+      }
+
+      publicUrl = `/uploads/${fileName}`;
     }
 
     console.log('File uploaded successfully', {
@@ -380,9 +398,6 @@ export async function POST(request: NextRequest) {
       type: file.type,
       ip
     });
-
-    // Return public URL
-    const publicUrl = `/uploads/${fileName}`;
 
     return NextResponse.json({
       success: true,

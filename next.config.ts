@@ -19,7 +19,7 @@ const cspHeader = `
   script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://apiv4.dextergpt.com;
   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
   font-src 'self' https://fonts.gstatic.com;
-  img-src 'self' data: https: blob: https://zumrutvaditemizlik.com https://*.zumrutvaditemizlik.com https://images.unsplash.com;
+  img-src 'self' data: https: blob: https://zumrutvaditemizlik.com https://*.zumrutvaditemizlik.com https://images.unsplash.com https://*.public.blob.vercel-storage.com;
   media-src 'self';
   connect-src 'self' https://vitals.vercel-insights.com https://www.google-analytics.com https://apiv4.dextergpt.com;
   frame-ancestors 'none';
@@ -61,6 +61,12 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: 'images.unsplash.com',
+        pathname: '/**',
+      },
+      // Vercel Blob (yüklenen dosyalar)
+      {
+        protocol: 'https',
+        hostname: '*.public.blob.vercel-storage.com',
         pathname: '/**',
       },
       {
