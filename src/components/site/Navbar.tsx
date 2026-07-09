@@ -33,13 +33,13 @@ const navLinks: NavLink[] = [
   { href: '/bolgeler', label: 'Bölgeler' },
   { href: '/fiyat-hesaplama', label: 'Fiyat Hesapla' },
   { href: '/randevu', label: 'Keşif' },
-  { href: '/galeri', label: 'Galeri' },
   { href: '/blog', label: 'Blog' },
-  { href: '/ara', label: 'Ara' },
   { href: '/iletisim', label: 'İletişim' },
 ];
 
 const resourcesNavLinks: NavLink[] = [
+  { href: '/galeri', label: 'Galeri' },
+  { href: '/ara', label: 'Ara' },
   { href: '/rehber', label: 'Rehber' },
   { href: '/sss', label: 'SSS' },
   { href: '/referanslar', label: 'Referanslar' },
@@ -187,7 +187,7 @@ export function Navbar() {
         <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between gap-2 sm:h-20">
             {/* Logo (yazı tabanlı wordmark) */}
-            <Link href="/" className="group flex min-w-0 flex-col justify-center leading-none">
+            <Link href="/" className="group flex shrink-0 flex-col justify-center leading-none">
               <span className="whitespace-nowrap text-base font-extrabold tracking-tight transition-transform group-hover:-translate-y-px sm:text-2xl">
                 <span className={`transition-colors ${scrolled ? 'text-slate-900' : 'text-white'}`}>
                   Zümrüt Vadi
@@ -206,7 +206,7 @@ export function Navbar() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden xl:flex items-center gap-6">
+            <div className="hidden min-w-0 items-center gap-4 xl:flex 2xl:gap-6">
               {navLinks.map((link) => {
                 const active =
                   link.href === '/' ? pathname === '/' : pathname.startsWith(link.href);
@@ -215,7 +215,7 @@ export function Navbar() {
                     key={link.href}
                     href={link.href}
                     aria-current={active ? 'page' : undefined}
-                    className={`group relative text-sm font-medium transition-colors hover:text-emerald-500 ${
+                    className={`group relative whitespace-nowrap text-sm font-medium transition-colors hover:text-emerald-500 ${
                       active
                         ? scrolled
                           ? 'text-emerald-600'
@@ -242,7 +242,7 @@ export function Navbar() {
                   aria-expanded={resourcesOpen}
                   aria-haspopup="true"
                   aria-controls="nav-resources-menu"
-                  className={`inline-flex items-center gap-1 text-sm font-medium transition-colors hover:text-emerald-500 ${scrolled ? 'text-slate-700' : 'text-white/90'}`}
+                  className={`inline-flex items-center gap-1 whitespace-nowrap text-sm font-medium transition-colors hover:text-emerald-500 ${scrolled ? 'text-slate-700' : 'text-white/90'}`}
                 >
                   Bilgi merkezi
                   <ChevronDown
@@ -279,21 +279,21 @@ export function Navbar() {
             </div>
 
             {/* CTA Button */}
-            <div className="hidden xl:flex items-center gap-3">
+            <div className="hidden shrink-0 items-center gap-2 xl:flex 2xl:gap-3">
               <a
                 href={telHref}
                 data-source="navbar-desktop"
-                className={`inline-flex items-center gap-2 rounded-full px-3 py-2 text-sm font-semibold transition-colors ${
+                className={`inline-flex items-center gap-2 whitespace-nowrap rounded-full px-3 py-2 text-sm font-semibold transition-colors ${
                   scrolled ? 'text-slate-800 hover:bg-slate-100' : 'text-white hover:bg-white/10'
                 }`}
                 aria-label={`Telefon: ${phoneDisplay}`}
               >
-                <Phone size={16} className="text-emerald-500" />
+                <Phone size={16} className="shrink-0 text-emerald-500" />
                 {phoneDisplay}
               </a>
               <Link
                 href="/iletisim"
-                className="rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-emerald-500/30 transition-all hover:-translate-y-0.5 hover:shadow-emerald-500/50"
+                className="whitespace-nowrap rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-emerald-500/30 transition-all hover:-translate-y-0.5 hover:shadow-emerald-500/50"
               >
                 Hemen Fiyat Al
               </Link>
