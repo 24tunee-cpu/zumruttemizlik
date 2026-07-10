@@ -1,20 +1,20 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import SiteLayout from '../site/layout';
-import { DISTRICT_LANDINGS, SERVICE_LANDINGS } from '@/config/programmatic-seo';
+import RegionsPageClient from '@/components/site/RegionsPageClient';
 import { canonicalUrl } from '@/lib/seo';
+import { keywordsForPage } from '@/lib/seo-keywords';
 
 export const metadata: Metadata = {
-  title: 'İstanbul İlçe Bazlı Temizlik Hizmetleri',
+  title: 'İstanbul İlçe Bazlı Temizlik Hizmetleri | Sarıyer & Zekeriyaköy',
   description:
-    'İstanbul ilçelerine özel temizlik hizmet sayfalarından bölgenize en uygun ev, ofis, inşaat sonrası ve diğer hizmetleri tek tek inceleyin.',
+    'Zekeriyaköy, Sarıyer, Beşiktaş, Şişli ve İstanbul\'un 20 ilçesinde ev, ofis, inşaat sonrası temizlik. İlçe bazlı landing sayfaları ve ücretsiz keşif.',
+  keywords: keywordsForPage('bolgeler'),
   alternates: {
     canonical: canonicalUrl('/bolgeler'),
   },
   openGraph: {
-    title: 'İstanbul İlçe Bazlı Temizlik Hizmetleri',
+    title: 'İstanbul İlçe Bazlı Temizlik | Zümrüt Vadi Temizlik',
     description:
-      'İstanbul ilçelerine özel ev, ofis, inşaat sonrası ve koltuk-halı temizlik sayfalarını karşılaştırın, hızlı teklif alın.',
+      'Zekeriyaköy ve Sarıyer öncelikli İstanbul ilçe temizlik sayfaları. Ev, ofis, inşaat sonrası ve halı-koltuk hizmetleri.',
     url: canonicalUrl('/bolgeler'),
     type: 'website',
     locale: 'tr_TR',
@@ -30,9 +30,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'İstanbul İlçe Bazlı Temizlik Hizmetleri',
-    description:
-      'İstanbul ilçelerine özel temizlik sayfalarında hizmet kapsamını karşılaştırın ve randevu oluşturun.',
+    title: 'İstanbul İlçe Bazlı Temizlik | Zümrüt Vadi',
+    description: 'Zekeriyaköy, Sarıyer ve İstanbul ilçelerinde profesyonel temizlik.',
     images: [canonicalUrl('/logo.png')],
   },
 };
@@ -42,7 +41,7 @@ const pageSchema = {
   '@type': 'CollectionPage',
   name: 'İstanbul İlçe Bazlı Temizlik Hizmetleri',
   url: canonicalUrl('/bolgeler'),
-  description: 'İlçe ve hizmet bazlı temizlik landing sayfaları.',
+  description: 'Zekeriyaköy, Sarıyer ve İstanbul ilçelerine özel temizlik landing sayfaları.',
 };
 
 const breadcrumbSchema = {
@@ -59,48 +58,7 @@ export default function RegionsHubPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <SiteLayout>
-        <div className="min-h-screen bg-slate-900 pb-16 pt-28 text-white">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h1 className="text-3xl font-bold sm:text-4xl">İstanbul İlçe + Hizmet Sayfaları</h1>
-            <p className="mt-4 max-w-3xl text-slate-300">
-              Arama niyetine uygun içeriklerle hazırlanan bu sayfalar, ilçe bazlı temizlik ihtiyacınıza hızlıca ulaşmanızı sağlar.
-            </p>
-
-            <section className="mt-10">
-              <h2 className="text-xl font-semibold">İlçeler</h2>
-              <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-                {DISTRICT_LANDINGS.map((district) => (
-                  <Link
-                    key={district.slug}
-                    href={`/bolgeler/${district.slug}`}
-                    className="rounded-xl border border-slate-700 bg-slate-800/50 p-4 transition-colors hover:border-emerald-500/50 hover:bg-slate-800"
-                  >
-                    <p className="font-medium">{district.name}</p>
-                    <p className="mt-1 text-sm text-slate-400">{district.populationNote}</p>
-                  </Link>
-                ))}
-              </div>
-            </section>
-
-            <section className="mt-10">
-              <h2 className="text-xl font-semibold">Odak Hizmetler</h2>
-              <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                {SERVICE_LANDINGS.map((service) => (
-                  <Link
-                    key={service.slug}
-                    href={`/hizmetler/${service.slug}`}
-                    className="rounded-xl border border-slate-700 bg-slate-800/40 p-4 transition-colors hover:border-emerald-500/50 hover:bg-slate-800"
-                  >
-                    <p className="font-medium">{service.name}</p>
-                    <p className="mt-1 text-sm text-slate-400">{service.shortPitch}</p>
-                  </Link>
-                ))}
-              </div>
-            </section>
-          </div>
-        </div>
-      </SiteLayout>
+      <RegionsPageClient />
     </>
   );
 }

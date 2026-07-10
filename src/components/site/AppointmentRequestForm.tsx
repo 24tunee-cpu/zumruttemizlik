@@ -20,7 +20,7 @@ const SERVICE_HINTS = [
   'Halı temizliği',
 ];
 
-export function AppointmentRequestForm() {
+export function AppointmentRequestForm({ embedded = false }: { embedded?: boolean }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -88,69 +88,77 @@ export function AppointmentRequestForm() {
   return (
     <motion.form
       onSubmit={submit}
-      className="mx-auto max-w-xl space-y-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-800"
+      className={
+        embedded
+          ? 'space-y-4'
+          : 'mx-auto max-w-xl space-y-4 rounded-2xl border border-slate-700/60 bg-slate-800/60 p-6 shadow-xl backdrop-blur-sm'
+      }
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
     >
-      <div className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400">
-        <Calendar className="h-5 w-5" />
-        <h2 className="text-lg font-semibold text-slate-900 dark:text-white">Keşif / randevu talebi</h2>
-      </div>
-      <p className="text-sm text-slate-600 dark:text-slate-400">
-        Uygun olduğunuz gün ve saat dilimini seçin; ekibimiz onay ve net saat için sizi arar.
-      </p>
+      {!embedded && (
+        <>
+          <div className="flex items-center gap-2 text-emerald-400">
+            <Calendar className="h-5 w-5" aria-hidden="true" />
+            <h2 className="text-lg font-semibold text-white">Keşif / randevu talebi</h2>
+          </div>
+          <p className="text-sm text-slate-400">
+            Uygun olduğunuz gün ve saat dilimini seçin; ekibimiz onay ve net saat için sizi arar.
+          </p>
+        </>
+      )}
       {submitted ? (
-        <div className="rounded-lg border border-emerald-200 bg-emerald-50 px-3 py-2 text-sm text-emerald-700 dark:border-emerald-900/50 dark:bg-emerald-900/20 dark:text-emerald-300">
+        <div className="rounded-lg border border-emerald-500/30 bg-emerald-950/40 px-3 py-2 text-sm text-emerald-300">
           Talebiniz alındı. Müsaitlik kontrolünden sonra sizinle iletişime geçeceğiz.
         </div>
       ) : null}
       <div className="grid gap-3 sm:grid-cols-2">
         <label className="text-sm">
-          <span className="mb-1 block font-medium text-slate-700 dark:text-slate-300">Ad Soyad *</span>
+          <span className="mb-1 block font-medium text-slate-300">Ad Soyad *</span>
           <input
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 dark:border-slate-600 dark:bg-slate-900 dark:text-white"
+            className="w-full rounded-lg border border-slate-600 bg-slate-900 px-3 py-2 text-white placeholder:text-slate-500 focus:border-emerald-500 focus:outline-none"
           />
         </label>
         <label className="text-sm">
-          <span className="mb-1 block font-medium text-slate-700 dark:text-slate-300">E-posta *</span>
+          <span className="mb-1 block font-medium text-slate-300">E-posta *</span>
           <input
             required
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 dark:border-slate-600 dark:bg-slate-900 dark:text-white"
+            className="w-full rounded-lg border border-slate-600 bg-slate-900 px-3 py-2 text-white placeholder:text-slate-500 focus:border-emerald-500 focus:outline-none"
           />
         </label>
       </div>
       <label className="block text-sm">
-        <span className="mb-1 block font-medium text-slate-700 dark:text-slate-300">Telefon</span>
+        <span className="mb-1 block font-medium text-slate-300">Telefon</span>
         <input
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
-          className="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 dark:border-slate-600 dark:bg-slate-900 dark:text-white"
+          className="w-full rounded-lg border border-slate-600 bg-slate-900 px-3 py-2 text-white placeholder:text-slate-500 focus:border-emerald-500 focus:outline-none"
         />
       </label>
       <div className="grid gap-3 sm:grid-cols-2">
         <label className="text-sm">
-          <span className="mb-1 block font-medium text-slate-700 dark:text-slate-300">Tercih tarihi *</span>
+          <span className="mb-1 block font-medium text-slate-300">Tercih tarihi *</span>
           <input
             required
             type="date"
             value={preferredDate}
             onChange={(e) => setPreferredDate(e.target.value)}
             min={minDate}
-            className="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 dark:border-slate-600 dark:bg-slate-900 dark:text-white"
+            className="w-full rounded-lg border border-slate-600 bg-slate-900 px-3 py-2 text-white focus:border-emerald-500 focus:outline-none"
           />
         </label>
         <label className="text-sm">
-          <span className="mb-1 block font-medium text-slate-700 dark:text-slate-300">Saat dilimi</span>
+          <span className="mb-1 block font-medium text-slate-300">Saat dilimi</span>
           <select
             value={timeSlot}
             onChange={(e) => setTimeSlot(e.target.value)}
-            className="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 dark:border-slate-600 dark:bg-slate-900 dark:text-white"
+            className="w-full rounded-lg border border-slate-600 bg-slate-900 px-3 py-2 text-white focus:border-emerald-500 focus:outline-none"
           >
             {SLOTS.map((s) => (
               <option key={s.value} value={s.value}>
@@ -161,31 +169,31 @@ export function AppointmentRequestForm() {
         </label>
       </div>
       <label className="block text-sm">
-        <span className="mb-1 block font-medium text-slate-700 dark:text-slate-300">İlçe</span>
+        <span className="mb-1 block font-medium text-slate-300">İlçe</span>
         <input
           value={district}
           onChange={(e) => setDistrict(e.target.value)}
-          placeholder="Örn. Kadıköy"
-          className="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 dark:border-slate-600 dark:bg-slate-900 dark:text-white"
+          placeholder="Örn. Sarıyer, Zekeriyaköy"
+          className="w-full rounded-lg border border-slate-600 bg-slate-900 px-3 py-2 text-white placeholder:text-slate-500 focus:border-emerald-500 focus:outline-none"
         />
       </label>
       <label className="block text-sm">
-        <span className="mb-1 block font-medium text-slate-700 dark:text-slate-300">Adres (isteğe bağlı)</span>
+        <span className="mb-1 block font-medium text-slate-300">Adres (isteğe bağlı)</span>
         <textarea
           value={address}
           onChange={(e) => setAddress(e.target.value)}
           rows={2}
-          className="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 dark:border-slate-600 dark:bg-slate-900 dark:text-white"
+          className="w-full rounded-lg border border-slate-600 bg-slate-900 px-3 py-2 text-white placeholder:text-slate-500 focus:border-emerald-500 focus:outline-none"
         />
       </label>
       <label className="block text-sm">
-        <span className="mb-1 block font-medium text-slate-700 dark:text-slate-300">Hizmet</span>
+        <span className="mb-1 block font-medium text-slate-300">Hizmet</span>
         <input
           list="appointment-service-hints"
           value={serviceHint}
           onChange={(e) => setServiceHint(e.target.value)}
           placeholder="Örn. Ofis temizliği"
-          className="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 dark:border-slate-600 dark:bg-slate-900 dark:text-white"
+          className="w-full rounded-lg border border-slate-600 bg-slate-900 px-3 py-2 text-white placeholder:text-slate-500 focus:border-emerald-500 focus:outline-none"
         />
         <datalist id="appointment-service-hints">
           {SERVICE_HINTS.map((hint) => (
@@ -194,19 +202,19 @@ export function AppointmentRequestForm() {
         </datalist>
       </label>
       <label className="block text-sm">
-        <span className="mb-1 block font-medium text-slate-700 dark:text-slate-300">Not</span>
+        <span className="mb-1 block font-medium text-slate-300">Not</span>
         <textarea
           value={notes}
           onChange={(e) => setNotes(e.target.value)}
           rows={3}
-          className="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 dark:border-slate-600 dark:bg-slate-900 dark:text-white"
+          className="w-full rounded-lg border border-slate-600 bg-slate-900 px-3 py-2 text-white placeholder:text-slate-500 focus:border-emerald-500 focus:outline-none"
         />
       </label>
       <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
       <button
         type="submit"
         disabled={loading}
-        className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-600 py-3 font-semibold text-white transition-colors hover:bg-emerald-700 disabled:opacity-60 dark:bg-emerald-500 dark:hover:bg-emerald-600"
+        className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-500 py-3 font-semibold text-white shadow-lg shadow-emerald-500/20 transition-colors hover:bg-emerald-600 disabled:opacity-60"
       >
         {loading ? <Loader2 className="h-5 w-5 animate-spin" /> : <Send className="h-5 w-5" />}
         Gönder
