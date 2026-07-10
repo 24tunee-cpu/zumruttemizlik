@@ -14,9 +14,10 @@ import type { Metadata } from 'next';
 import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
 import SiteLayout from './site/layout';
-import { canonicalUrl } from '@/lib/seo';
+import { canonicalUrl, serializeSchemaGraph } from '@/lib/seo';
 import DeferredHomeSections from '@/components/site/DeferredHomeSections';
 import { keywordsForPage } from '@/lib/seo-keywords';
+import { SERVICE_SEED_DATA } from '@/lib/seed-services';
 
 // ============================================
 // DYNAMIC IMPORTS (Code Splitting)
@@ -72,6 +73,22 @@ export const metadata: Metadata = {
   },
 };
 
+const homeServicesItemListJson = serializeSchemaGraph([
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Zümrüt Vadi Temizlik Hizmetleri',
+    description:
+      'İstanbul Avrupa Yakası, Sarıyer ve Zekeriyaköy ev, ofis, inşaat sonrası, koltuk, halı, cam ve dış cephe temizlik hizmetleri.',
+    itemListElement: SERVICE_SEED_DATA.filter((s) => s.isActive !== false).map((s, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: s.title,
+      url: canonicalUrl(`/hizmetler/${s.slug}`),
+    })),
+  },
+]);
+
 // ============================================
 // LOADING FALLBACKS
 // ============================================
@@ -96,6 +113,7 @@ function SectionLoading({ height = "h-96" }: { height?: string }) {
 export default function HomePage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: homeServicesItemListJson }} />
       <SiteLayout>
         {/* Hero - First Contentful Paint için öncelikli */}
         <Suspense fallback={<SectionLoading height="h-screen" />}>
