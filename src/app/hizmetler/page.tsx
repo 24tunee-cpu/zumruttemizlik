@@ -7,7 +7,7 @@ import { keywordsForPage } from '@/lib/seo-keywords';
 export const metadata: Metadata = {
   title: 'İstanbul Temizlik Hizmetleri',
   description:
-    'İstanbul genelinde ev temizliği, ofis temizliği, inşaat sonrası temizlik, koltuk-halı yıkama ve dış cephe dahil profesyonel hizmetleri inceleyin.',
+    'Zekeriyaköy, Sarıyer ve İstanbul Avrupa Yakası\'nda ev, ofis, inşaat sonrası, halı-koltuk yıkama ve dış cephe temizliği. Ücretsiz keşif ve online fiyat hesaplama.',
   keywords: keywordsForPage('hizmetler'),
   alternates: {
     canonical: canonicalUrl('/hizmetler'),
@@ -75,6 +75,7 @@ export default async function ServicesPage() {
       slug: true,
       shortDesc: true,
       features: true,
+      image: true,
     },
   });
 

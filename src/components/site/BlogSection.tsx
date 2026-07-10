@@ -81,6 +81,8 @@ interface BlogSectionProps {
   currentPage?: number;
   /** Ana sayfa: ilk yazı büyük kart, fiyat yazıları öncelikli */
   featuredLayout?: boolean;
+  /** Tam sayfa hero varken sade başlık (badge gizle) */
+  compactHeader?: boolean;
 }
 
 function blogListingPath(page: number): string {
@@ -233,6 +235,7 @@ export function BlogSection({
   initialPosts,
   currentPage: currentPageProp,
   featuredLayout = false,
+  compactHeader = false,
 }: BlogSectionProps) {
   const pathname = usePathname();
   const [allPosts, setAllPosts] = useState<BlogPost[]>(initialPosts || []);
@@ -379,18 +382,20 @@ export function BlogSection({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: shouldReduceMotion ? 0.2 : 0.6 }}
-          className="mb-16 text-center"
+          className={compactHeader ? 'mb-10 text-center' : 'mb-16 text-center'}
         >
-          <motion.span
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-1 text-sm font-medium text-emerald-400"
-          >
-            <Sparkles className="h-4 w-4" aria-hidden="true" />
-            Temizlik Rehberi
-          </motion.span>
-          <h2 className="mt-4 text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
+          {!compactHeader && (
+            <motion.span
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-1 text-sm font-medium text-emerald-400"
+            >
+              <Sparkles className="h-4 w-4" aria-hidden="true" />
+              Temizlik Rehberi
+            </motion.span>
+          )}
+          <h2 className={`font-bold text-white ${compactHeader ? 'text-2xl sm:text-3xl' : 'mt-4 text-3xl sm:text-4xl lg:text-5xl'}`}>
             {title}
           </h2>
           <p className="mx-auto mt-4 max-w-3xl text-lg text-slate-400">

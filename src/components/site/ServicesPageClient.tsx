@@ -1,58 +1,146 @@
 'use client';
 
 import SiteLayout from '@/app/site/layout';
-import { Sparkles, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useReducedMotion } from 'framer-motion';
-import { DISTRICT_LANDINGS } from '@/config/programmatic-seo';
-import { PRIORITY_BLOG_LINKS } from '@/lib/priority-seo-links';
+import {
+  Sparkles,
+  ArrowRight,
+  MapPin,
+  CheckCircle2,
+  Calculator,
+  Home,
+  Building2,
+  HardHat,
+  Sofa,
+  Layers,
+  PanelTop,
+  Building,
+} from 'lucide-react';
+import { PremiumPageHero } from '@/components/site/PremiumPageHero';
+import { SeoPriorityStrip } from '@/components/site/SeoPriorityStrip';
+import {
+  HOME_SERVICE_SEO,
+  DEFAULT_HOME_SERVICE_SEO,
+  type HomeServiceSeoMeta,
+} from '@/config/home-services-seo';
 
 interface Service {
   id: string;
   title: string;
   slug: string;
   shortDesc: string;
+  image?: string | null;
   features?: string[];
+}
+
+const SERVICE_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
+  'ev-temizligi': Home,
+  'ofis-temizligi': Building2,
+  'insaat-sonrasi-temizlik': HardHat,
+  'koltuk-yikama': Sofa,
+  'hali-temizligi': Layers,
+  'cam-temizligi': PanelTop,
+  'dis-cephe-temizligi': Building,
+};
+
+function getServiceIcon(slug: string) {
+  return SERVICE_ICONS[slug] ?? Sparkles;
+}
+
+function getSeo(slug: string): HomeServiceSeoMeta {
+  return HOME_SERVICE_SEO[slug] ?? DEFAULT_HOME_SERVICE_SEO;
 }
 
 function ServiceCard({ service, index }: { service: Service; index: number }) {
   const shouldReduceMotion = useReducedMotion();
+  const seo = getSeo(service.slug);
+  const Icon = getServiceIcon(service.slug);
 
   return (
     <motion.article
-      initial={{ opacity: 0, y: shouldReduceMotion ? 20 : 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{
-        delay: shouldReduceMotion ? 0 : index * 0.1,
-        duration: shouldReduceMotion ? 0.2 : 0.5,
-      }}
+      role="listitem"
+      initial={{ opacity: 0, y: shouldReduceMotion ? 12 : 28 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-40px' }}
+      transition={{ delay: shouldReduceMotion ? 0 : index * 0.08, duration: shouldReduceMotion ? 0.2 : 0.45 }}
     >
-      <Link
-        href={`/hizmetler/${service.slug}`}
-        className="group block rounded-2xl bg-white p-6 shadow-lg transition-all hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 dark:bg-slate-800 sm:p-8"
-        aria-label={`${service.title} hizmeti hakkında detaylı bilgi`}
-      >
-        <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-600 dark:bg-emerald-900/50 dark:text-emerald-400">
-          <Sparkles className="h-8 w-8" aria-hidden="true" />
-        </div>
-        <h2 className="text-xl font-bold text-slate-900 dark:text-white">{service.title}</h2>
-        <p className="mt-3 text-slate-600 dark:text-slate-300">{service.shortDesc}</p>
-        <div className="mt-6 flex items-center gap-2 font-medium text-emerald-600 dark:text-emerald-400">
-          <span>Detayları Gör</span>
-          <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" aria-hidden="true" />
-        </div>
-      </Link>
-    </motion.article>
-  );
-}
+      <div className="group relative h-full">
+        <div
+          className="absolute -inset-px rounded-2xl bg-gradient-to-br from-emerald-400/40 via-emerald-500/20 to-transparent opacity-0 blur-sm transition duration-500 group-hover:opacity-100"
+          aria-hidden="true"
+        />
+        <div className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-700/80 bg-slate-800/60 shadow-xl backdrop-blur-xl transition duration-500 group-hover:-translate-y-1 group-hover:border-emerald-500/40">
+          {service.image ? (
+            <div className="relative h-40 w-full overflow-hidden">
+              <Image
+                src={service.image}
+                alt={`${service.title} — İstanbul profesyonel temizlik hizmeti`}
+                fill
+                className="object-cover transition duration-700 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent" />
+              <div className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-slate-900/70 text-emerald-400 backdrop-blur-md">
+                <Icon className="h-5 w-5" aria-hidden="true" />
+              </div>
+              <span className="absolute right-4 top-4 rounded-full border border-emerald-500/30 bg-emerald-500/15 px-3 py-1 text-xs font-semibold text-emerald-300 backdrop-blur-sm">
+                {seo.priceBadge}
+              </span>
+            </div>
+          ) : (
+            <div className="flex items-start justify-between gap-3 p-5 pb-0">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500/20 to-emerald-600/10 text-emerald-400 ring-1 ring-emerald-500/20">
+                <Icon className="h-6 w-6" aria-hidden="true" />
+              </div>
+              <span className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-300">
+                {seo.priceBadge}
+              </span>
+            </div>
+          )}
 
-function EmptyState() {
-  return (
-    <div className="py-16 text-center">
-      <Sparkles className="mx-auto mb-4 h-12 w-12 text-slate-400" aria-hidden="true" />
-      <h2 className="mb-2 text-xl font-semibold text-slate-900 dark:text-white">Henüz Hizmet Bulunmuyor</h2>
-      <p className="text-slate-600 dark:text-slate-400">Yakında yeni hizmetlerimizi ekleyeceğiz.</p>
-    </div>
+          <div className="flex flex-1 flex-col p-5 sm:p-6">
+            <h2 className="text-lg font-bold text-white transition-colors group-hover:text-emerald-300 sm:text-xl">
+              <Link href={`/hizmetler/${service.slug}`}>{service.title}</Link>
+            </h2>
+            <p className="mt-1 flex items-center gap-1.5 text-xs font-medium text-emerald-400/90">
+              <MapPin className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+              {seo.regionLabel}
+            </p>
+            <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-300">{seo.seoDesc}</p>
+            <ul className="mt-4 flex flex-wrap gap-2">
+              {seo.highlights.map((h) => (
+                <li
+                  key={h}
+                  className="inline-flex items-center gap-1 rounded-full border border-slate-600/80 bg-slate-900/50 px-2.5 py-1 text-[11px] font-medium text-slate-300"
+                >
+                  <CheckCircle2 className="h-3 w-3 text-emerald-500" aria-hidden="true" />
+                  {h}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-5 flex flex-wrap items-center gap-3 border-t border-slate-700/60 pt-4">
+              <Link
+                href={`/hizmetler/${service.slug}`}
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-400 transition hover:text-emerald-300"
+              >
+                Detaylı bilgi
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+              <span className="text-slate-600" aria-hidden="true">·</span>
+              <Link href={`/blog/${seo.blogSlug}`} className="text-sm text-slate-400 transition hover:text-white">
+                Fiyat rehberi
+              </Link>
+              <span className="text-slate-600" aria-hidden="true">·</span>
+              <Link href={`/bolgeler/sariyer/${service.slug}`} className="text-sm text-slate-400 transition hover:text-white">
+                Sarıyer
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </motion.article>
   );
 }
 
@@ -63,92 +151,88 @@ interface Props {
 export default function ServicesPageClient({ services }: Props) {
   return (
     <SiteLayout>
-      <div className="flex min-h-full flex-1 flex-col bg-slate-900">
-        <section className="bg-slate-900 pb-12 pt-24 sm:pb-14 sm:pt-28 md:pb-16 md:pt-32" aria-label="Sayfa başlığı">
-          <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-            <h1 className="text-balance text-3xl font-bold text-white sm:text-4xl md:text-5xl">Hizmetlerimiz</h1>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-300">
-              Profesyonel temizlik çözümleri ile yaşam alanlarınızı pırıl pırıl yapıyoruz. Size özel hizmetlerimizi keşfedin.
-            </p>
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-2">
-              {DISTRICT_LANDINGS.slice(0, 4).map((district) => (
-                <Link
-                  key={district.slug}
-                  href={`/bolgeler/${district.slug}`}
-                  className="rounded-full border border-slate-600 px-3 py-1 text-sm text-slate-200 transition-colors hover:border-emerald-500/60 hover:text-emerald-300"
-                >
-                  {district.name} hizmet sayfaları
-                </Link>
-              ))}
-            </div>
+      <div className="flex min-h-full flex-1 flex-col bg-slate-950">
+        <PremiumPageHero
+          badge="Profesyonel Temizlik"
+          BadgeIcon={Sparkles}
+          title="İstanbul Temizlik Hizmetleri"
+          description="Zekeriyaköy, Sarıyer ve İstanbul Avrupa Yakası'nda ev, ofis, inşaat sonrası, halı-koltuk yıkama ve dış cephe temizliği. Şeffaf fiyatlandırma ve ücretsiz keşif."
+        >
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <Link
+              href="/fiyat-hesaplama"
+              className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-emerald-500/25 transition hover:bg-emerald-600"
+            >
+              <Calculator className="h-4 w-4" aria-hidden="true" />
+              Fiyat Hesapla
+            </Link>
+            <Link
+              href="/randevu"
+              className="inline-flex items-center gap-2 rounded-xl border border-slate-600 bg-slate-800 px-5 py-2.5 text-sm font-medium text-slate-200 transition hover:border-emerald-500/50 hover:text-white"
+            >
+              Ücretsiz Keşif
+            </Link>
           </div>
-        </section>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-2">
+            {[
+              { href: '/bolgeler/sariyer', label: 'Sarıyer' },
+              { href: '/bolgeler/sariyer/zekeriyakoy', label: 'Zekeriyaköy' },
+              { href: '/bolgeler/besiktas', label: 'Beşiktaş' },
+              { href: '/bolgeler/sisli', label: 'Şişli' },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="rounded-full border border-slate-700 bg-slate-800/60 px-3 py-1 text-xs font-medium text-slate-300 transition hover:border-emerald-500/40 hover:text-emerald-300"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        </PremiumPageHero>
 
-        <section className="flex-1 border-t border-slate-800 bg-slate-50 py-16 dark:bg-slate-900" aria-label="Hizmetler listesi">
+        <section className="relative border-t border-slate-800 py-16 sm:py-20" aria-label="Hizmetler listesi">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mb-8 rounded-xl border border-slate-300 bg-white/90 p-4 dark:border-slate-700 dark:bg-slate-800/60">
-              <h2 className="text-base font-semibold text-slate-900 dark:text-white">Populer temizlik aramalari</h2>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {[
-                  { href: '/hizmetler/ofis-temizligi', label: 'Ofis Temizligi Istanbul' },
-                  { href: '/hizmetler/insaat-sonrasi-temizlik', label: 'Insaat Sonrasi Temizlik Istanbul' },
-                  { href: '/hizmetler/ev-temizligi', label: 'Ev Temizligi Istanbul' },
-                  { href: '/hizmetler/koltuk-yikama', label: 'Koltuk Yikama Istanbul' },
-                  { href: '/randevu', label: 'Temizlik Randevu ve Kesif' },
-                ].map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="rounded-full border border-slate-300 px-3 py-1 text-sm text-slate-700 transition-colors hover:border-emerald-500/60 hover:text-emerald-700 dark:border-slate-600 dark:text-slate-200 dark:hover:text-emerald-300"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
+            <div className="mb-10">
+              <SeoPriorityStrip title="Popüler temizlik aramaları ve fiyat rehberleri" />
             </div>
 
             {services.length === 0 ? (
-              <EmptyState />
+              <div className="py-16 text-center">
+                <Sparkles className="mx-auto mb-4 h-12 w-12 text-slate-500" aria-hidden="true" />
+                <h2 className="text-xl font-semibold text-white">Henüz hizmet bulunmuyor</h2>
+              </div>
             ) : (
               <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3" role="list" aria-label="Mevcut hizmetler">
                 {services.map((service, index) => (
-                  <div key={service.id} role="listitem">
-                    <ServiceCard service={service} index={index} />
-                  </div>
+                  <ServiceCard key={service.id} service={service} index={index} />
                 ))}
               </div>
             )}
-
-            <div className="mt-10 rounded-xl border border-slate-300 bg-white/90 p-4 dark:border-slate-700 dark:bg-slate-800/60">
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-emerald-600 dark:text-emerald-300">
-                Hizmete gore rehber yazilari
-              </h3>
-              <div className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-                {PRIORITY_BLOG_LINKS.slice(0, 6).map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="text-sm text-slate-700 underline decoration-slate-400/70 underline-offset-4 transition-colors hover:text-emerald-700 dark:text-slate-300 dark:hover:text-emerald-300"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
           </div>
         </section>
 
-        <section className="border-t border-slate-800 bg-slate-900 py-16">
+        <section className="border-t border-slate-800 bg-slate-900/50 py-16">
           <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-            <h2 className="mb-4 text-2xl font-bold text-white">Size özel bir çözüm mü arıyorsunuz?</h2>
-            <p className="mx-auto mb-6 max-w-2xl text-slate-300">İhtiyaçlarınıza özel temizlik paketleri oluşturabiliriz.</p>
-            <Link
-              href="/iletisim"
-              className="inline-flex items-center justify-center rounded-lg bg-emerald-500 px-6 py-3 font-medium text-white transition-colors hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:ring-offset-slate-900"
-            >
-              Bizimle İletişime Geçin
-              <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
-            </Link>
+            <h2 className="text-2xl font-bold text-white sm:text-3xl">Size özel paket mi arıyorsunuz?</h2>
+            <p className="mx-auto mt-3 max-w-2xl text-slate-400">
+              Villa, site, plaza veya inşaat sonrası projeleriniz için özel temizlik planı oluşturalım.
+            </p>
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                href="/iletisim"
+                className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-6 py-3 font-medium text-white shadow-lg shadow-emerald-500/25 transition hover:bg-emerald-600"
+              >
+                Teklif Alın
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+              <Link
+                href="/bolgeler/sariyer/zekeriyakoy"
+                className="inline-flex items-center gap-2 rounded-xl border border-slate-600 bg-slate-800 px-6 py-3 font-medium text-slate-200 transition hover:border-emerald-500/50"
+              >
+                Zekeriyaköy Hizmetleri
+              </Link>
+            </div>
           </div>
         </section>
       </div>

@@ -5,6 +5,7 @@ type PageKey =
   | 'blog'
   | 'randevu'
   | 'iletisim'
+  | 'bolgeler'
   | 'hakkimizda'
   | 'galeri'
   | 'sss';
@@ -68,6 +69,14 @@ const PAGE_KEYWORDS: Record<PageKey, string[]> = {
     'temizlik hizmeti talep',
     'temizlik fiyat al',
     'Zümrüt Vadi Temizlik iletişim',
+  ],
+  bolgeler: [
+    'sarıyer temizlik',
+    'zekeriyaköy temizlik',
+    'istanbul ilçe temizlik',
+    'beşiktaş temizlik',
+    'şişli temizlik',
+    'avrupa yakası temizlik',
   ],
   hakkimizda: [
     'güvenilir temizlik şirketi',
