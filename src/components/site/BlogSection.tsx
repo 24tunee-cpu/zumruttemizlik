@@ -11,11 +11,29 @@
 
 import { useState, useEffect, useMemo, useCallback } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { Loader2, Calendar, ArrowRight, User, FileText, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Loader2, Calendar, ArrowRight, User, FileText, ChevronLeft, ChevronRight, Sparkles, Calculator, Tag } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import logger from '@/lib/logger';
+import { PRIORITY_BLOG_LINKS } from '@/lib/priority-seo-links';
+
+const PRIORITY_SLUGS = PRIORITY_BLOG_LINKS.map((l) => l.href.replace('/blog/', ''));
+
+function sortPostsByPriority(posts: BlogPost[]): BlogPost[] {
+  return [...posts].sort((a, b) => {
+    const ai = PRIORITY_SLUGS.indexOf(a.slug);
+    const bi = PRIORITY_SLUGS.indexOf(b.slug);
+    const as = ai === -1 ? 999 : ai;
+    const bs = bi === -1 ? 999 : bi;
+    if (as !== bs) return as - bs;
+    return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
+  });
+}
+
+function isPricingPost(slug: string): boolean {
+  return /fiyat|hesaplama|ucret|maliyet/i.test(slug);
+}
 
 // ============================================
 // TYPES
@@ -61,6 +79,8 @@ interface BlogSectionProps {
   initialPosts?: BlogPost[];
   /** Server tarafında hesaplanan geçerli sayfa (paginate için) */
   currentPage?: number;
+  /** Ana sayfa: ilk yazı büyük kart, fiyat yazıları öncelikli */
+  featuredLayout?: boolean;
 }
 
 function blogListingPath(page: number): string {
@@ -72,6 +92,7 @@ function blogListingPath(page: number): string {
 interface BlogCardProps {
   post: BlogPost;
   index: number;
+  featured?: boolean;
 }
 
 // ============================================
@@ -114,8 +135,9 @@ function BlogCardSkeleton({ index }: { index: number }) {
  * Blog Card Component
  * Individual blog post card with animations.
  */
-function BlogCard({ post, index }: BlogCardProps) {
+function BlogCard({ post, index, featured }: BlogCardProps) {
   const shouldReduceMotion = useReducedMotion();
+  const showPricingBadge = isPricingPost(post.slug);
 
   const formattedDate = useMemo(() => {
     const d = new Date(post.publishedAt);
@@ -128,33 +150,40 @@ function BlogCard({ post, index }: BlogCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: shouldReduceMotion ? 0 : index * 0.1, duration: shouldReduceMotion ? 0.2 : 0.5 }}
+      className={featured ? 'md:col-span-2' : undefined}
     >
       <Link
         href={`/blog/${post.slug}`}
         className="group block h-full"
         aria-label={`${post.title} - ${post.author || 'Yazar'} - ${formattedDate}`}
       >
-        <div className="relative h-full overflow-hidden rounded-2xl border border-slate-700 bg-slate-800 shadow-lg transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-emerald-900/20">
+        <div className="relative h-full overflow-hidden rounded-2xl border border-slate-700/60 bg-gradient-to-br from-slate-800/90 to-slate-900/90 shadow-lg transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-emerald-900/20 group-hover:border-emerald-500/30">
           {/* Image */}
-          <div className="relative h-48 overflow-hidden">
+          <div className={`relative overflow-hidden ${featured ? 'h-56 sm:h-64' : 'h-48'}`}>
             {post.coverImage ? (
               <Image
                 src={post.coverImage}
                 alt={post.title}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                sizes={featured ? '(max-width: 768px) 100vw, 66vw' : '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'}
               />
             ) : (
               <div className="flex h-full items-center justify-center bg-gradient-to-br from-slate-800 via-slate-800 to-emerald-950/80" aria-hidden="true">
                 <span className="text-4xl font-bold text-emerald-400/90">Blog</span>
               </div>
             )}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" aria-hidden="true" />
+            {showPricingBadge && (
+              <span className="absolute left-4 top-4 inline-flex items-center gap-1 rounded-full bg-emerald-500/90 px-3 py-1 text-xs font-semibold text-white shadow-lg">
+                <Tag className="h-3 w-3" aria-hidden="true" />
+                Fiyat Rehberi
+              </span>
+            )}
           </div>
 
           {/* Content */}
-          <div className="p-6">
+          <div className={featured ? 'p-7' : 'p-6'}>
             <div className="mb-3 flex flex-wrap items-center gap-4 text-sm text-slate-400">
               <span className="flex items-center gap-1">
                 <Calendar className="h-4 w-4" aria-hidden="true" />
@@ -168,11 +197,11 @@ function BlogCard({ post, index }: BlogCardProps) {
               )}
             </div>
 
-            <h3 className="mb-2 line-clamp-2 text-xl font-bold text-white transition-colors group-hover:text-emerald-400">
+            <h3 className={`mb-2 line-clamp-2 font-bold text-white transition-colors group-hover:text-emerald-400 ${featured ? 'text-2xl' : 'text-xl'}`}>
               {post.title}
             </h3>
 
-            <p className="mb-4 line-clamp-3 text-slate-200">{post.excerpt}</p>
+            <p className={`mb-4 line-clamp-3 text-slate-200 ${featured ? 'text-base' : 'text-sm'}`}>{post.excerpt}</p>
 
             <span className="inline-flex items-center font-medium text-emerald-400">
               Devamını Oku
@@ -203,6 +232,7 @@ export function BlogSection({
   pageSize: pageSizeProp = 9,
   initialPosts,
   currentPage: currentPageProp,
+  featuredLayout = false,
 }: BlogSectionProps) {
   const pathname = usePathname();
   const [allPosts, setAllPosts] = useState<BlogPost[]>(initialPosts || []);
@@ -211,11 +241,13 @@ export function BlogSection({
   const shouldReduceMotion = useReducedMotion();
   const showViewAllLink = pathname !== '/blog';
 
+  const sortedPosts = useMemo(() => sortPostsByPriority(allPosts), [allPosts]);
+
   const perPage = paginate ? pageSizeProp : limit;
   const totalPages = useMemo(() => {
     if (!paginate) return 1;
-    return Math.max(1, Math.ceil(allPosts.length / perPage));
-  }, [allPosts.length, paginate, perPage]);
+    return Math.max(1, Math.ceil(sortedPosts.length / perPage));
+  }, [sortedPosts.length, paginate, perPage]);
 
   const currentPage = useMemo(() => {
     if (!paginate) return 1;
@@ -225,10 +257,10 @@ export function BlogSection({
 
   const posts = useMemo(() => {
     if (paginate) {
-      return allPosts.slice((currentPage - 1) * perPage, currentPage * perPage);
+      return sortedPosts.slice((currentPage - 1) * perPage, currentPage * perPage);
     }
-    return allPosts.slice(0, limit);
-  }, [allPosts, paginate, currentPage, perPage, limit]);
+    return sortedPosts.slice(0, limit);
+  }, [sortedPosts, paginate, currentPage, perPage, limit]);
 
   useEffect(() => {
     if (!initialPosts) return;
@@ -301,7 +333,7 @@ export function BlogSection({
   // ============================================
   // EMPTY STATE (no posts at all)
   // ============================================
-  if (allPosts.length === 0) {
+  if (sortedPosts.length === 0) {
     return (
       <section
         className="relative flex-1 bg-slate-900 py-24"
@@ -327,9 +359,19 @@ export function BlogSection({
   // ============================================
   return (
     <section
-      className="relative flex-1 bg-slate-900 py-24"
+      id="blog"
+      className="relative flex-1 bg-slate-950 py-24 overflow-hidden"
       aria-label="Blog"
     >
+      <div
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-900/15 via-slate-950 to-slate-950"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute top-1/3 right-0 h-96 w-96 rounded-full bg-emerald-500/5 blur-3xl"
+        aria-hidden="true"
+      />
+
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.header
@@ -339,22 +381,40 @@ export function BlogSection({
           transition={{ duration: shouldReduceMotion ? 0.2 : 0.6 }}
           className="mb-16 text-center"
         >
-          <h2 className="text-4xl font-bold text-white sm:text-5xl">
+          <motion.span
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-1 text-sm font-medium text-emerald-400"
+          >
+            <Sparkles className="h-4 w-4" aria-hidden="true" />
+            Temizlik Rehberi
+          </motion.span>
+          <h2 className="mt-4 text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
             {title}
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-300">
+          <p className="mx-auto mt-4 max-w-3xl text-lg text-slate-400">
             {description}
           </p>
         </motion.header>
 
         {/* Blog Grid */}
         <div
-          className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+          className={
+            featuredLayout && posts.length > 0
+              ? 'grid gap-8 md:grid-cols-2'
+              : 'grid gap-8 md:grid-cols-2 lg:grid-cols-3'
+          }
           role="feed"
           aria-label="Blog yazıları"
         >
           {posts.map((post, index) => (
-            <BlogCard key={post.id} post={post} index={index} />
+            <BlogCard
+              key={post.id}
+              post={post}
+              index={index}
+              featured={featuredLayout && index === 0}
+            />
           ))}
         </div>
 
@@ -412,7 +472,7 @@ export function BlogSection({
               )}
             </div>
             <p className="text-center text-sm text-slate-400">
-              Sayfa {currentPage} / {totalPages} · Toplam {allPosts.length} yazı
+              Sayfa {currentPage} / {totalPages} · Toplam {sortedPosts.length} yazı
             </p>
           </nav>
         )}
@@ -424,7 +484,7 @@ export function BlogSection({
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: shouldReduceMotion ? 0 : 0.4 }}
-            className="mt-12 text-center"
+            className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <Link
               href="/blog"
@@ -432,6 +492,13 @@ export function BlogSection({
             >
               Tüm Yazılar
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+            <Link
+              href="/fiyat-hesaplama"
+              className="inline-flex items-center gap-2 rounded-xl border border-slate-600 bg-slate-800 px-6 py-3 font-medium text-slate-200 transition-all hover:border-emerald-500/50 hover:text-white"
+            >
+              <Calculator className="h-4 w-4" aria-hidden="true" />
+              Online Fiyat Hesapla
             </Link>
           </motion.div>
         )}
