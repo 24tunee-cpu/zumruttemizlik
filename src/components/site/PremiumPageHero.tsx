@@ -1,11 +1,37 @@
 'use client';
 
 import { motion, useReducedMotion } from 'framer-motion';
-import type { LucideIcon } from 'lucide-react';
+import {
+  Sparkles,
+  MapPin,
+  CalendarDays,
+  BookOpen,
+  MessageCircle,
+  Phone,
+  type LucideIcon,
+} from 'lucide-react';
+
+export type PremiumHeroIcon =
+  | 'sparkles'
+  | 'map-pin'
+  | 'calendar'
+  | 'book'
+  | 'message'
+  | 'phone';
+
+const HERO_ICONS: Record<PremiumHeroIcon, LucideIcon> = {
+  sparkles: Sparkles,
+  'map-pin': MapPin,
+  calendar: CalendarDays,
+  book: BookOpen,
+  message: MessageCircle,
+  phone: Phone,
+};
 
 export interface PremiumPageHeroProps {
   badge?: string;
-  BadgeIcon?: LucideIcon;
+  /** İkon adı — sunucu bileşenlerinden güvenle geçirilebilir */
+  badgeIcon?: PremiumHeroIcon;
   title: string;
   description: string;
   children?: React.ReactNode;
@@ -13,12 +39,13 @@ export interface PremiumPageHeroProps {
 
 export function PremiumPageHero({
   badge,
-  BadgeIcon,
+  badgeIcon,
   title,
   description,
   children,
 }: PremiumPageHeroProps) {
   const shouldReduceMotion = useReducedMotion();
+  const BadgeIcon = badgeIcon ? HERO_ICONS[badgeIcon] : null;
 
   return (
     <section

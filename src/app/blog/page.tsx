@@ -286,7 +286,7 @@ export default async function BlogPage({ searchParams }: PageProps) {
         <div className="flex min-h-full flex-1 flex-col bg-slate-950">
           <PremiumPageHero
             badge="Temizlik Rehberi"
-            BadgeIcon={BookOpen}
+            badgeIcon="book"
             title="İstanbul Temizlik Blogu"
             description="2026 fiyat rehberleri, Zekeriyaköy & Sarıyer odaklı içerikler, ev-ofis temizliği ipuçları ve profesyonel hijyen önerileri."
           >
