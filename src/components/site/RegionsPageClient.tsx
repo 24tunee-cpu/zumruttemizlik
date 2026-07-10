@@ -81,7 +81,7 @@ export default function RegionsPageClient() {
       <div className="min-h-screen bg-slate-950">
         <PremiumPageHero
           badge="İstanbul Bölgeleri"
-          BadgeIcon={MapPin}
+          badgeIcon="map-pin"
           title="İlçe Bazlı Temizlik Hizmetleri"
           description="Zekeriyaköy ve Sarıyer öncelikli olmak üzere İstanbul'un 20 ilçesinde ev, ofis, inşaat sonrası ve halı-koltuk temizliği. Her bölge için özel landing sayfaları."
         >

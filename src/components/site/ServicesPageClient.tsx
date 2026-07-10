@@ -154,7 +154,7 @@ export default function ServicesPageClient({ services }: Props) {
       <div className="flex min-h-full flex-1 flex-col bg-slate-950">
         <PremiumPageHero
           badge="Profesyonel Temizlik"
-          BadgeIcon={Sparkles}
+          badgeIcon="sparkles"
           title="İstanbul Temizlik Hizmetleri"
           description="Zekeriyaköy, Sarıyer ve İstanbul Avrupa Yakası'nda ev, ofis, inşaat sonrası, halı-koltuk yıkama ve dış cephe temizliği. Şeffaf fiyatlandırma ve ücretsiz keşif."
         >

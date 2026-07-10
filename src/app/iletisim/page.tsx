@@ -4,7 +4,7 @@
 
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
-import { Phone, Mail, MapPin, Clock, MessageCircle, Calculator, CalendarDays, ArrowRight } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Calculator, CalendarDays, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import SiteLayout from '../site/layout';
 import { ContactForm } from '@/components/site/ContactForm';
@@ -129,7 +129,7 @@ export default function ContactPage() {
         <div className="bg-slate-950">
           <PremiumPageHero
             badge="İletişim & Teklif"
-            BadgeIcon={MessageCircle}
+            badgeIcon="message"
             title="Sarıyer & Zekeriyaköy İçin Bize Ulaşın"
             description="Ücretsiz keşif, online fiyat hesaplama veya randevu için formu doldurun. Zekeriyaköy, Sarıyer ve İstanbul Avrupa Yakası'nda aynı gün dönüş sağlıyoruz."
           >
@@ -202,21 +202,34 @@ export default function ContactPage() {
               </div>
 
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-                {[
-                  { href: '/randevu', label: 'Randevu Oluştur', Icon: CalendarDays },
-                  { href: '/hizmetler', label: 'Hizmetlerimiz', Icon: ArrowRight },
-                  { href: '/bolgeler/sariyer/zekeriyakoy', label: 'Zekeriyaköy', Icon: MapPin },
-                  { href: '/blog', label: 'Fiyat Rehberleri', Icon: ArrowRight },
-                ].map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-800/60 px-4 py-2 text-sm text-slate-200 transition hover:border-emerald-500/40 hover:text-emerald-300"
-                  >
-                    <item.Icon className="h-3.5 w-3.5" aria-hidden="true" />
-                    {item.label}
-                  </Link>
-                ))}
+                <Link
+                  href="/randevu"
+                  className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-800/60 px-4 py-2 text-sm text-slate-200 transition hover:border-emerald-500/40 hover:text-emerald-300"
+                >
+                  <CalendarDays className="h-3.5 w-3.5" aria-hidden="true" />
+                  Randevu Oluştur
+                </Link>
+                <Link
+                  href="/hizmetler"
+                  className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-800/60 px-4 py-2 text-sm text-slate-200 transition hover:border-emerald-500/40 hover:text-emerald-300"
+                >
+                  <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                  Hizmetlerimiz
+                </Link>
+                <Link
+                  href="/bolgeler/sariyer/zekeriyakoy"
+                  className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-800/60 px-4 py-2 text-sm text-slate-200 transition hover:border-emerald-500/40 hover:text-emerald-300"
+                >
+                  <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
+                  Zekeriyaköy
+                </Link>
+                <Link
+                  href="/blog"
+                  className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-800/60 px-4 py-2 text-sm text-slate-200 transition hover:border-emerald-500/40 hover:text-emerald-300"
+                >
+                  <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                  Fiyat Rehberleri
+                </Link>
               </div>
 
               <div className="mt-10">

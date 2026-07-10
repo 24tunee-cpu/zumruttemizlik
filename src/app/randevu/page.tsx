@@ -77,7 +77,7 @@ export default function RandevuPage() {
       <div className="min-h-screen bg-slate-950">
         <PremiumPageHero
           badge="Ücretsiz Keşif"
-          BadgeIcon={CalendarDays}
+          badgeIcon="calendar"
           title="Hızlı Randevu, Aynı Gün Geri Dönüş"
           description="Zekeriyaköy, Sarıyer ve İstanbul Avrupa Yakası'nda ev, ofis ve inşaat sonrası temizlik için formu 1 dakikada doldurun. Operasyon ekibimiz uygunluk ve net saat için sizi arar."
         >
