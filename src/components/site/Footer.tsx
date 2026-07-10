@@ -42,6 +42,7 @@ interface FooterLink {
 /** Footer link grubu tipi */
 interface FooterLinkGroup {
   hizmetler: FooterLink[];
+  bolgeler: FooterLink[];
   kurumsal: FooterLink[];
 }
 
@@ -60,23 +61,27 @@ interface SocialLink {
 /** Footer navigasyon linkleri */
 const FOOTER_LINKS: FooterLinkGroup = {
   hizmetler: [
+    { label: 'Ev Temizliği', href: '/hizmetler/ev-temizligi' },
     { label: 'İnşaat Sonrası Temizlik', href: '/hizmetler/insaat-sonrasi-temizlik' },
     { label: 'Ofis Temizliği', href: '/hizmetler/ofis-temizligi' },
     { label: 'Koltuk Yıkama', href: '/hizmetler/koltuk-yikama' },
     { label: 'Halı Temizliği', href: '/hizmetler/hali-temizligi' },
+    { label: 'Cam Temizliği', href: '/hizmetler/cam-temizligi' },
     { label: 'Dış Cephe Temizliği', href: '/hizmetler/dis-cephe-temizligi' },
+  ],
+  bolgeler: [
+    { label: 'Sarıyer Temizlik', href: '/bolgeler/sariyer' },
+    { label: 'Zekeriyaköy Temizlik', href: '/bolgeler/sariyer/zekeriyakoy' },
+    { label: 'Beşiktaş Temizlik', href: '/bolgeler/besiktas' },
+    { label: 'Şişli Temizlik', href: '/bolgeler/sisli' },
+    { label: 'Tüm Bölgeler', href: '/bolgeler' },
   ],
   kurumsal: [
     { label: 'Hakkımızda', href: '/hakkimizda' },
-    { label: 'Ekibimiz', href: '/ekibimiz' },
-    { label: 'Bölgeler', href: '/bolgeler' },
     { label: 'Fiyat Hesaplama', href: '/fiyat-hesaplama' },
-    { label: 'Zekeriyaköy Temizlik', href: '/bolgeler/sariyer/zekeriyakoy' },
     { label: 'Randevu', href: '/randevu' },
-    { label: 'Rehber', href: '/rehber' },
-    { label: 'Arama', href: '/ara' },
-    { label: 'Blog', href: '/blog' },
     { label: 'Referanslar', href: '/referanslar' },
+    { label: 'Blog', href: '/blog' },
     { label: 'İletişim', href: '/iletisim' },
   ],
 };
@@ -179,14 +184,19 @@ export function Footer() {
           viewport={{ once: true }}
           transition={{ duration: shouldReduceMotion ? 0.2 : 0.6 }}
         >
-          <div className="grid gap-8 lg:grid-cols-2 items-center">
-            <div>
-              <h3 className="text-2xl font-bold mb-2">E-Bültenimize Katılın</h3>
-              <p className="text-slate-400">
-                Temizlik ipuçları, kampanyalar ve özel fırsatlardan haberdar olun.
-              </p>
-            </div>
-            <div>
+          <div className="rounded-2xl border border-slate-700/60 bg-slate-800/40 p-6 sm:p-8 backdrop-blur-sm">
+            <div className="grid gap-8 lg:grid-cols-2 items-center">
+              <div>
+                <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-400">
+                  <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
+                  E-Bülten
+                </span>
+                <h3 className="mt-3 text-2xl font-bold mb-2">E-Bültenimize Katılın</h3>
+                <p className="text-slate-400">
+                  2026 fiyat rehberleri, temizlik ipuçları ve Sarıyer–Zekeriyaköy kampanyalarından haberdar olun.
+                </p>
+              </div>
+              <div>
               {doneMessage ? (
                 <motion.div
                   className="flex items-center gap-3 text-emerald-400"
@@ -243,11 +253,12 @@ export function Footer() {
                   </motion.button>
                 </form>
               )}
+              </div>
             </div>
           </div>
         </motion.div>
 
-        <div className="grid gap-12 lg:grid-cols-4">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {/* Brand */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2 group" aria-label={`${settings.siteName} - Ana sayfa`}>
@@ -277,9 +288,9 @@ export function Footer() {
               )}
               <span className="text-xl font-bold group-hover:text-emerald-400 transition-colors">{settings.siteName}</span>
             </Link>
-            <p className="text-slate-400">
+            <p className="text-slate-400 text-sm leading-relaxed">
               {settings.siteDescription ||
-                "İstanbul'un her bölgesinde profesyonel temizlik hizmetleri. Deneyimli ekibimiz ve modern ekipmanlarımızla yanınızdayız."}
+                'Sarıyer, Zekeriyaköy ve İstanbul Avrupa Yakası\'nda profesyonel temizlik hizmetleri. Ücretsiz keşif, şeffaf fiyatlandırma ve deneyimli ekip.'}
             </p>
             {socialLinks.length > 0 ? (
               <div className="flex flex-wrap gap-3">
@@ -302,41 +313,58 @@ export function Footer() {
           </div>
 
           {/* Hizmetler */}
-          <div>
+          <nav aria-label="Footer hizmetler">
             <h3 className="mb-4 text-lg font-semibold text-white">Hizmetlerimiz</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2.5">
               {FOOTER_LINKS.hizmetler.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-slate-400 transition-all hover:text-emerald-400 hover:translate-x-1 inline-block"
+                    className="text-sm text-slate-400 transition-all hover:text-emerald-400 hover:translate-x-1 inline-block"
                   >
                     {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
+
+          {/* Bölgeler */}
+          <nav aria-label="Footer bölgeler">
+            <h3 className="mb-4 text-lg font-semibold text-white">Bölgeler</h3>
+            <ul className="space-y-2.5">
+              {FOOTER_LINKS.bolgeler.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-slate-400 transition-all hover:text-emerald-400 hover:translate-x-1 inline-block"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
 
           {/* Kurumsal */}
-          <div>
+          <nav aria-label="Footer kurumsal">
             <h3 className="mb-4 text-lg font-semibold text-white">Kurumsal</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2.5">
               {FOOTER_LINKS.kurumsal.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-slate-400 transition-all hover:text-emerald-400 hover:translate-x-1 inline-block"
+                    className="text-sm text-slate-400 transition-all hover:text-emerald-400 hover:translate-x-1 inline-block"
                   >
                     {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
           {/* İletişim */}
-          <div>
+          <address className="not-italic">
             <h3 className="mb-4 text-lg font-semibold text-white">İletişim</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3 group">
@@ -366,14 +394,17 @@ export function Footer() {
                 </a>
               </li>
             </ul>
-          </div>
+          </address>
         </div>
 
-        <div className="mt-10 rounded-xl border border-slate-800 bg-slate-800/30 p-4">
+        <div className="mt-10 rounded-2xl border border-slate-700/50 bg-slate-800/30 p-5 sm:p-6">
           <h3 className="text-sm font-semibold uppercase tracking-wide text-emerald-300">
-            One cikan bloglar
+            Öne Çıkan Bloglar
           </h3>
-          <div className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+          <p className="mt-1 text-xs text-slate-500">
+            2026 fiyat rehberleri ve İstanbul temizlik ipuçları
+          </p>
+          <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
             {PRIORITY_BLOG_LINKS.slice(0, 6).map((item) => (
               <Link
                 key={item.href}

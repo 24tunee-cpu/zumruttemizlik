@@ -10,8 +10,9 @@
 'use client';
 
 import { useState, useEffect, useMemo, useCallback } from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
-import { Send, CheckCircle, Phone, Mail, MapPin, Clock, AlertCircle } from 'lucide-react';
+import { Send, CheckCircle, Phone, Mail, MapPin, Clock, AlertCircle, MessageCircle, Calculator, CalendarDays } from 'lucide-react';
 import logger from '@/lib/logger';
 import { cn } from '@/lib/utils';
 import { toast } from '@/store/toastStore';
@@ -208,14 +209,19 @@ function FloatingLabelInput({
 export interface ContactFormProps {
   /** Ana sayfa: `light` (varsayılan). İletişim sayfası: `dark`. */
   variant?: 'light' | 'dark';
+  /** Ana sayfa düzeni: SEO metinleri ve hızlı aksiyonlar */
+  layout?: 'home' | 'default';
 }
+
+const HOME_REGIONS = ['Sarıyer', 'Zekeriyaköy', 'Beşiktaş', 'Şişli', 'Avrupa Yakası'];
 
 /**
  * Contact Form Component
  * Full-featured contact form with validation and accessibility.
  */
-export function ContactForm({ variant = 'light' }: ContactFormProps) {
+export function ContactForm({ variant = 'light', layout = 'default' }: ContactFormProps) {
   const isDark = variant === 'dark';
+  const isHome = layout === 'home';
   const { settings } = useSiteSettings();
 
   const contactCards = useMemo(
@@ -424,6 +430,7 @@ export function ContactForm({ variant = 'light' }: ContactFormProps) {
 
   return (
     <section
+      id={isHome ? 'bize-ulasin' : undefined}
       className={cn(
         'relative overflow-hidden py-16 sm:py-20 md:py-24',
         isDark ? 'bg-slate-900' : 'bg-slate-50',
@@ -474,11 +481,26 @@ export function ContactForm({ variant = 'light' }: ContactFormProps) {
                 isDark ? 'text-white' : 'text-slate-900',
               )}
             >
-              Bize Ulaşın
+              {isHome ? 'Zekeriyaköy & Sarıyer İçin Bize Ulaşın' : 'Bize Ulaşın'}
             </h2>
             <p className={cn('mt-4 text-base sm:text-lg', isDark ? 'text-slate-300' : 'text-slate-600')}>
-              Temizlik hizmetleri hakkında bilgi almak veya randevu oluşturmak için bize ulaşabilirsiniz.
+              {isHome
+                ? 'Ücretsiz keşif, online fiyat hesaplama veya randevu için formu doldurun. Sarıyer, Zekeriyaköy ve İstanbul Avrupa Yakası\'nda aynı gün dönüş sağlıyoruz.'
+                : 'Temizlik hizmetleri hakkında bilgi almak veya randevu oluşturmak için bize ulaşabilirsiniz.'}
             </p>
+
+            {isHome && (
+              <div className="mt-6 flex flex-wrap gap-2" aria-label="Hizmet bölgeleri">
+                {HOME_REGIONS.map((region) => (
+                  <span
+                    key={region}
+                    className="inline-flex items-center rounded-full border border-emerald-500/25 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-400"
+                  >
+                    {region}
+                  </span>
+                ))}
+              </div>
+            )}
 
             <div className="mt-8 space-y-4">
               {contactCards.map((item) => {
@@ -514,6 +536,34 @@ export function ContactForm({ variant = 'light' }: ContactFormProps) {
               );
               })}
             </div>
+
+            {isHome && (
+              <div className="mt-8 grid gap-3 sm:grid-cols-3">
+                <Link
+                  href={`https://wa.me/${SITE_CONTACT.whatsappDigits}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-4 py-3 text-sm font-medium text-emerald-400 transition-all hover:bg-emerald-500/20"
+                >
+                  <MessageCircle className="h-4 w-4" aria-hidden="true" />
+                  WhatsApp
+                </Link>
+                <Link
+                  href="/randevu"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-600 bg-slate-800 px-4 py-3 text-sm font-medium text-slate-200 transition-all hover:border-emerald-500/40 hover:text-white"
+                >
+                  <CalendarDays className="h-4 w-4" aria-hidden="true" />
+                  Randevu Al
+                </Link>
+                <Link
+                  href="/fiyat-hesaplama"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-600 bg-slate-800 px-4 py-3 text-sm font-medium text-slate-200 transition-all hover:border-emerald-500/40 hover:text-white"
+                >
+                  <Calculator className="h-4 w-4" aria-hidden="true" />
+                  Fiyat Hesapla
+                </Link>
+              </div>
+            )}
           </motion.div>
 
           {/* Form */}
