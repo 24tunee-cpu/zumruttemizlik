@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { SITE_CONTACT } from '@/config/site-contact';
 import SiteLayout from '../site/layout';
+import { MapsLazySection } from '@/components/site/MapsLazySection';
 import { canonicalUrl, generateWebPageSchema, serializeSchemaGraph } from '@/lib/seo';
 import {
   buildGoogleMapsReviewSchemaGraph,
@@ -23,10 +24,9 @@ function withUtm(path: string, extra: Record<string, string>) {
   return `${path}?${params.toString()}`;
 }
 
-// Embed: adres + marka ismi ile, sayfa içinde konumu gösteriyoruz
-const mapsEmbedSrc = `https://www.google.com/maps?q=${encodeURIComponent(
-  `Zümrüt Vadi Temizlik, ${address}`
-)}&output=embed`;
+// Embed: Google My Maps — yalnızca kullanıcı "Etkileşimli Harita" seçince yüklenir
+const mapsEmbedSrc =
+  'https://www.google.com/maps/d/u/0/embed?mid=16qrblTON7mA6kRhhSsi8boG1m_Wt1aM&ehbc=2E312F';
 // Haritada Aç: kullanıcıdan gelen Google Maps kısa linki
 const mapsOpenHref = withUtm(GOOGLE_MAPS_PLACE, { utm_campaign: 'gmb-harita' });
 
@@ -104,19 +104,11 @@ export default async function MapsAndReviewsPage() {
             </p>
           </header>
 
-          <section className="mt-8 overflow-hidden rounded-2xl border border-slate-800 bg-slate-800/30">
-            <div className="w-full overflow-hidden">
-              <iframe
-                src="https://www.google.com/maps/d/u/0/embed?mid=16qrblTON7mA6kRhhSsi8boG1m_Wt1aM&ehbc=2E312F"
-                width="100%"
-                height="480"
-                className="border-0"
-                allowFullScreen
-                loading="lazy"
-                title="Zümrüt Vadi Temizlik Google My Maps"
-              />
-            </div>
-          </section>
+          <MapsLazySection
+            embedSrc={mapsEmbedSrc}
+            mapsOpenHref={mapsOpenHref}
+            title="Zümrüt Vadi Temizlik Google My Maps"
+          />
 
           <section className="mt-8 rounded-2xl border border-slate-800 bg-white/5 p-5">
             <h2 className="text-lg font-semibold text-emerald-200">Aksiyonlar</h2>
@@ -128,21 +120,21 @@ export default async function MapsAndReviewsPage() {
               <a
                 href={mapsOpenHref}
                 data-source="gmb_map_click"
-                className="flex items-center justify-center rounded-xl bg-emerald-500 px-5 py-3 text-sm font-semibold text-white hover:bg-emerald-600 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-400"
+                className="flex min-h-[44px] items-center justify-center rounded-xl bg-emerald-500 px-5 py-3 text-sm font-semibold text-white hover:bg-emerald-600 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-400"
               >
                 Haritada Aç
               </a>
               <a
                 href={reviewHref}
                 data-source="gmb_review_click"
-                className="flex items-center justify-center rounded-xl bg-amber-500 px-5 py-3 text-sm font-semibold text-white hover:bg-amber-600 transition-colors focus:outline-none focus:ring-2 focus:ring-amber-400"
+                className="flex min-h-[44px] items-center justify-center rounded-xl bg-amber-500 px-5 py-3 text-sm font-semibold text-white hover:bg-amber-600 transition-colors focus:outline-none focus:ring-2 focus:ring-amber-400"
               >
                 Yorum Yaz
               </a>
               <a
                 href={directionsHref}
                 data-source="gmb_directions_click"
-                className="flex items-center justify-center rounded-xl border border-slate-700 bg-slate-800/30 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-800/50 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500/40"
+                className="flex min-h-[44px] items-center justify-center rounded-xl border border-slate-700 bg-slate-800/30 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-800/50 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500/40"
               >
                 Yol Tarifi Al
               </a>

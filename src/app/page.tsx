@@ -14,6 +14,7 @@ import type { Metadata } from 'next';
 import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
 import SiteLayout from './site/layout';
+import { Hero } from '@/components/site/Hero';
 import { canonicalUrl, serializeSchemaGraph } from '@/lib/seo';
 import DeferredHomeSections from '@/components/site/DeferredHomeSections';
 import { keywordsForPage } from '@/lib/seo-keywords';
@@ -22,10 +23,6 @@ import { SERVICE_SEED_DATA } from '@/lib/seed-services';
 // ============================================
 // DYNAMIC IMPORTS (Code Splitting)
 // ============================================
-
-const Hero = dynamic(() => import('@/components/site/Hero').then(mod => mod.Hero), {
-  loading: () => <div className="min-h-[100dvh] min-h-screen bg-slate-100 animate-pulse" />,
-});
 
 const Services = dynamic(() => import('@/components/site/Services').then(mod => mod.Services), {
   loading: () => <div className="h-96 bg-slate-50 animate-pulse" />,
@@ -51,7 +48,7 @@ export const metadata: Metadata = {
     siteName: "Zümrüt Vadi Temizlik",
     images: [
       {
-        url: canonicalUrl('/logo.png'),
+        url: canonicalUrl('/og-image.jpg'),
         width: 1200,
         height: 630,
         alt: "Zümrüt Vadi Temizlik - İstanbul Profesyonel Temizlik",

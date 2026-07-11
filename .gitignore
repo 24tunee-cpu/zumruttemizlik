@@ -157,3 +157,6 @@ next-env.d.ts
 # ============================================
 *.local
 .local/
+
+# Brand asset yedekleri (optimize script)
+/public/logo.original.png

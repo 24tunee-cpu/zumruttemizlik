@@ -350,6 +350,133 @@ html {
 }
 
 /* ============================================
+   HERO ENTRANCE (CSS — framer-motion yerine)
+   ============================================ */
+
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes hero-nudge-x {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(4px);
+  }
+}
+
+@keyframes hero-scroll-bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+.hero-enter {
+  animation: hero-fade-up 0.55s ease-out both;
+}
+
+.hero-enter-fade {
+  animation: hero-fade-in 0.5s ease-out both;
+}
+
+.hero-enter-delay-1 {
+  animation-delay: 0.1s;
+}
+
+.hero-enter-delay-2 {
+  animation-delay: 0.2s;
+}
+
+.hero-enter-delay-3 {
+  animation-delay: 0.3s;
+}
+
+.hero-enter-delay-4 {
+  animation-delay: 0.4s;
+}
+
+.hero-enter-delay-5 {
+  animation-delay: 0.5s;
+}
+
+.hero-enter-delay-6 {
+  animation-delay: 0.65s;
+}
+
+.hero-enter-delay-7 {
+  animation-delay: 0.75s;
+}
+
+.hero-icon-nudge {
+  animation: hero-nudge-x 1.5s ease-in-out infinite;
+}
+
+.hero-scroll-dot {
+  animation: hero-scroll-bounce 1.5s ease-in-out infinite;
+}
+
+@media (max-width: 767px) {
+
+  .hero-enter,
+  .hero-enter-fade {
+    animation-duration: 0.35s;
+  }
+
+  .hero-icon-nudge,
+  .hero-scroll-dot {
+    animation: none;
+  }
+}
+
+/* ============================================
+   MOBİL UX — touch hedefleri & form klavye
+   ============================================ */
+
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.form-field-focus {
+  scroll-margin-top: 6rem;
+  scroll-margin-bottom: 8rem;
+}
+
+@supports (padding: env(safe-area-inset-bottom)) {
+  .safe-bottom {
+    padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+  }
+}
+
+/* ============================================
    PRINT STYLES
    ============================================ */
 

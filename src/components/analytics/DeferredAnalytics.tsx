@@ -79,7 +79,7 @@ export default function DeferredAnalytics({ measurementId }: DeferredAnalyticsPr
 
   return (
     <>
-      {/* Consent Mode v2 — GA config'ten ÖNCE varsayılan izinleri "denied" yap */}
+      {/* Consent Mode v2 — küçük inline; GA harici script lazyOnload ile ertelenir */}
       <Script id="ga-consent-default" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
@@ -96,9 +96,9 @@ export default function DeferredAnalytics({ measurementId }: DeferredAnalyticsPr
       </Script>
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}
-        strategy="afterInteractive"
+        strategy="lazyOnload"
       />
-      <Script id="google-analytics" strategy="afterInteractive">
+      <Script id="google-analytics" strategy="lazyOnload">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}

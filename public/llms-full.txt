@@ -64,36 +64,12 @@
 - [Gizlilik](https://www.zumrutvaditemizlik.com/gizlilik): Veri işleme ve gizlilik ilkeleri.
 
 ## Route Mimarisi
-- Statik ana route'lar: `/`, `/hizmetler`, `/cozumler`, `/iletisim`, `/randevu`, `/fiyat-hesaplama`, `/hakkimizda`, `/blog`, `/galeri`, `/referanslar`, `/sss`, `/rehber`.
+- Statik ana route'lar: `/`, `/hizmetler`, `/iletisim`, `/randevu`, `/hakkimizda`, `/blog`, `/galeri`, `/referanslar`, `/sss`, `/rehber`.
 - Hizmet detay route'u: `/hizmetler/{slug}`.
-- **Niyet (use-case) hub:** `/cozumler` — inşaat sonrası, taşınma, kira teslim, boş ev, ofis temizliği rehberleri.
-- **Niyet detay route'u:** `/cozumler/{slug}` (ör. `/cozumler/insaat-sonrasi-temizlik`, `/cozumler/tasinma-temizligi`).
-- **Niyet × ilçe route'u:** `/cozumler/{slug}/{district}` (ör. `/cozumler/kira-teslim-temizligi/sariyer`, `/cozumler/ofis-temizligi/sisli`). 5 niyet × 8 ilçe = 40 yerel sayfa.
 - Blog detay route'u: `/blog/{slug}`.
 - Bölgesel ana route: `/bolgeler`.
 - Bölgesel dinamik route'lar: `/bolgeler/{district}` ve `/bolgeler/{district}/{service}`.
 - Alternatif dinamik bölgesel route'lar: `/{district}` ve `/{district}/{service}`.
-
-## Sitemap Segmentasyonu (Faz 3)
-- Ana sitemap: `/sitemap.xml` — çekirdek statik sayfalar + `/hizmetler/{slug}`.
-- Çözümler sitemap: `/cozumler/sitemap.xml` — hub, 5 niyet ve 40 niyet×ilçe URL.
-- Bölgeler sitemap: `/bolgeler/sitemap.xml` — ilçe hub, ilçe×hizmet ve semt landing.
-- Blog sitemap: `/blog/sitemap.xml` — yayınlanmış blog yazıları.
-
-## Structured Data (Faz 3)
-- `/cozumler/*` sayfalarında: WebPage, Breadcrumb, FAQPage, Service + Offer + HowTo; yeterli referans varsa Service.aggregateRating.
-- `/harita-ve-yorumlar`: Google Maps kaynaklı AggregateRating + Review (MapReviewSnapshot).
-- `/referanslar`: self-serving yıldız snippet riski nedeniyle aggregateRating eklenmez.
-
-## Fiyat Hesaplama & GA4 (Faz 4)
-- Niyet-aware URL: `/fiyat-hesaplama?intent={niyet-slug}&district={ilce-slug}` (district opsiyonel).
-- Intent slug → hesaplayıcı modu: inşaat sonrası → m² inşaat; ofis → m² ofis; taşınma/kira/boş ev → ev oda paketi.
-- GA4 event'leri: `price_calculator_view`, `price_calculated`, `generate_lead` (WhatsApp), plus intent-specific: `lead_insaat_sonrasi`, `lead_tasinma`, `lead_kira_teslim`, `lead_bos_ev`, `lead_ofis`.
-
-## Semt Landing & Blog Siloları (Faz 5)
-- **Semt sayfaları:** `/bolgeler/sariyer/{semt}` — Zekeriyaköy, Maslak, Tarabya, Bahçeköy (özel içerik + FAQ + schema).
-- **Blog silo hub:** `/blog/silo/{slug}` — 5 konu silosu: `insaat-sonrasi`, `tasinma`, `kira-teslim`, `bos-ev`, `ofis-kurumsal`.
-- Her silo: pillar `/cozumler/{intent}` + cluster blog yazıları + semt linkleri + fiyat hesaplama CTA.
 
 ## Hizmet Taksonomisi
 - Çekirdek hizmet kümeleri: ofis temizliği, inşaat sonrası temizlik, ev temizliği, koltuk yıkama, halı temizliği, cam temizliği, dış cephe temizliği.
@@ -106,13 +82,7 @@
 - Güven artırıcı destek sayfaları: [Hakkımızda](https://www.zumrutvaditemizlik.com/hakkimizda), [Referanslar](https://www.zumrutvaditemizlik.com/referanslar), [Galeri](https://www.zumrutvaditemizlik.com/galeri).
 
 ## Niyet Eşleme Kuralları
-- Kullanıcı **inşaat/tadilat sonrası** temizlik soruyorsa: `/cozumler/insaat-sonrasi-temizlik`.
-- Kullanıcı **taşınma öncesi/sonrası** temizlik soruyorsa: `/cozumler/tasinma-temizligi`.
-- Kullanıcı **kira öncesi/sonrası veya depozito** temizlik soruyorsa: `/cozumler/kira-teslim-temizligi`.
-- Kullanıcı **boş ev / satış-kiralama öncesi** temizlik soruyorsa: `/cozumler/bos-ev-temizligi`.
-- Kullanıcı **ofis/kurumsal** temizlik soruyorsa: `/cozumler/ofis-temizligi`.
-- Kullanıcı **belirli ilçe + niyet** soruyorsa (ör. "Sarıyer kira öncesi temizlik"): `/cozumler/{niyet-slug}/{ilce-slug}` — önce niyet slug'ını seç, sonra ilçe (sariyer, besiktas, sisli, kagithane, kadikoy, bakirkoy, atasehir, umraniye).
-- Kullanıcı hizmet türü soruyorsa: önce `/cozumler` veya `/hizmetler`, sonra uygun detay sayfası.
+- Kullanıcı hizmet türü soruyorsa: önce `/hizmetler`, sonra uygun `/hizmetler/{slug}`.
 - Kullanıcı bölgesel uygunluk soruyorsa: önce `/bolgeler`, sonra ilgili ilçe route'u.
 - Kullanıcı hızlı iletişim veya teklif istiyorsa: `/iletisim`.
 - Kullanıcı keşif ve tarih seçimi istiyorsa: `/randevu`.

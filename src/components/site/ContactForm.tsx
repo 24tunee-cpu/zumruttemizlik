@@ -44,6 +44,9 @@ interface FloatingLabelInputProps {
   error?: string;
   placeholder?: string;
   ariaDescribedBy?: string;
+  autoComplete?: string;
+  inputMode?: React.HTMLAttributes<HTMLInputElement>['inputMode'];
+  enterKeyHint?: React.HTMLAttributes<HTMLInputElement>['enterKeyHint'];
   /** Sayfa teması — `/iletisim` için `dark` */
   variant?: 'light' | 'dark';
 }
@@ -123,6 +126,9 @@ function FloatingLabelInput({
   error,
   placeholder,
   ariaDescribedBy,
+  autoComplete,
+  inputMode,
+  enterKeyHint,
   variant = 'light',
 }: FloatingLabelInputProps) {
   const [isFocused, setIsFocused] = useState(false);
@@ -167,8 +173,11 @@ function FloatingLabelInput({
         onChange={handleChange}
         onFocus={handleFocus}
         onBlur={handleBlur}
+        autoComplete={autoComplete}
+        inputMode={inputMode}
+        enterKeyHint={enterKeyHint}
         className={cn(
-          'w-full rounded-xl border-2 px-4 pb-2 pt-6 text-base transition-all duration-300 outline-none',
+          'form-field-focus w-full rounded-xl border-2 px-4 pb-2 pt-6 text-base transition-all duration-300 outline-none',
           error
             ? isDark
               ? 'border-red-500/60 focus:border-red-400 bg-red-950/30 text-white'
@@ -640,6 +649,8 @@ export function ContactForm({ variant = 'light', layout = 'default' }: ContactFo
                         onBlur={() => handleBlur('name')}
                         error={errors.name}
                         placeholder="Adınız Soyadınız"
+                        autoComplete="name"
+                        enterKeyHint="next"
                         variant={variant}
                       />
                       <FloatingLabelInput
@@ -652,6 +663,9 @@ export function ContactForm({ variant = 'light', layout = 'default' }: ContactFo
                         onBlur={() => handleBlur('email')}
                         error={errors.email}
                         placeholder="ornek@email.com"
+                        autoComplete="email"
+                        inputMode="email"
+                        enterKeyHint="next"
                         variant={variant}
                       />
                     </div>
@@ -665,7 +679,10 @@ export function ContactForm({ variant = 'light', layout = 'default' }: ContactFo
                         onChange={(value) => handleFieldChange('phone', value)}
                         onBlur={() => handleBlur('phone')}
                         error={errors.phone}
-                        placeholder="0546 715 2844"
+                        placeholder="0551 925 09 43"
+                        autoComplete="tel"
+                        inputMode="tel"
+                        enterKeyHint="next"
                         variant={variant}
                       />
                       <div className="relative">
@@ -680,7 +697,7 @@ export function ContactForm({ variant = 'light', layout = 'default' }: ContactFo
                           value={formData.service}
                           onChange={(e) => handleFieldChange('service', e.target.value)}
                           className={cn(
-                            'w-full rounded-xl border-2 px-4 py-3 focus:border-emerald-500 outline-none transition-colors',
+                            'form-field-focus w-full min-h-[44px] rounded-xl border-2 px-4 py-3 focus:border-emerald-500 outline-none transition-colors',
                             isDark
                               ? 'border-slate-600 bg-slate-800 text-white'
                               : 'border-slate-200 bg-white text-slate-900',
@@ -707,8 +724,10 @@ export function ContactForm({ variant = 'light', layout = 'default' }: ContactFo
                         value={formData.message}
                         onChange={(e) => handleFieldChange('message', e.target.value)}
                         onBlur={() => handleBlur('message')}
+                        autoComplete="off"
+                        enterKeyHint="send"
                         className={cn(
-                          'w-full rounded-xl border-2 px-4 py-3 outline-none resize-none',
+                          'form-field-focus w-full rounded-xl border-2 px-4 py-3 outline-none resize-none',
                           errors.message
                             ? isDark
                               ? 'border-red-500/60 focus:border-red-400 bg-red-950/30 text-white'
@@ -743,7 +762,7 @@ export function ContactForm({ variant = 'light', layout = 'default' }: ContactFo
                       disabled={loading || Object.keys(errors).length > 0}
                       whileHover={shouldReduceMotion ? {} : { scale: 1.02 }}
                       whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
-                      className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 py-4 font-semibold text-white shadow-lg transition-all hover:shadow-emerald-500/50 disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="flex w-full min-h-[44px] items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 py-4 font-semibold text-white shadow-lg transition-all hover:shadow-emerald-500/50 disabled:opacity-50 disabled:cursor-not-allowed"
                       aria-label={loading ? 'Mesaj gönderiliyor' : 'Mesaj gönder'}
                     >
                       {loading ? (

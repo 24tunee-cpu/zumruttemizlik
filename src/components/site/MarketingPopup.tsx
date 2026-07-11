@@ -10,6 +10,7 @@ import { SITE_CONTACT, toTelHref } from '@/config/site-contact';
 const POPUP_HIDE_UNTIL_KEY = 'marketing-popup-hide-until';
 const HIDE_FOR_MS = 24 * 60 * 60 * 1000; // 1 day
 const MOBILE_SHOW_DELAY_MS = 8_000;
+const MOBILE_SCROLL_THRESHOLD = 0.3;
 
 function getHideUntil(): number {
   if (typeof window === 'undefined') return 0;
@@ -72,10 +73,32 @@ export function MarketingPopup() {
       return () => document.removeEventListener('mouseout', handleExitIntent);
     }
 
-    const timeout = window.setTimeout(() => {
+    let shown = false;
+    const showPopup = () => {
+      if (shown) return;
+      shown = true;
       setOpen(true);
-    }, MOBILE_SHOW_DELAY_MS);
-    return () => window.clearTimeout(timeout);
+    };
+
+    const timeout = window.setTimeout(showPopup, MOBILE_SHOW_DELAY_MS);
+
+    const handleScroll = () => {
+      const doc = document.documentElement;
+      const maxScroll = doc.scrollHeight - window.innerHeight;
+      if (maxScroll <= 0) return;
+      const ratio = window.scrollY / maxScroll;
+      if (ratio >= MOBILE_SCROLL_THRESHOLD) {
+        window.clearTimeout(timeout);
+        window.removeEventListener('scroll', handleScroll);
+        showPopup();
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.clearTimeout(timeout);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, [mounted, isBlogDetail]);
 
   if (!mounted || !open || isBlogDetail) return null;
