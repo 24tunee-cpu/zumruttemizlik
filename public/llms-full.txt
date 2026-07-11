@@ -68,6 +68,7 @@
 - Hizmet detay route'u: `/hizmetler/{slug}`.
 - **Niyet (use-case) hub:** `/cozumler` — inşaat sonrası, taşınma, kira teslim, boş ev, ofis temizliği rehberleri.
 - **Niyet detay route'u:** `/cozumler/{slug}` (ör. `/cozumler/insaat-sonrasi-temizlik`, `/cozumler/tasinma-temizligi`).
+- **Niyet × ilçe route'u:** `/cozumler/{slug}/{district}` (ör. `/cozumler/kira-teslim-temizligi/sariyer`, `/cozumler/ofis-temizligi/sisli`). 5 niyet × 8 ilçe = 40 yerel sayfa.
 - Blog detay route'u: `/blog/{slug}`.
 - Bölgesel ana route: `/bolgeler`.
 - Bölgesel dinamik route'lar: `/bolgeler/{district}` ve `/bolgeler/{district}/{service}`.
@@ -89,6 +90,7 @@
 - Kullanıcı **kira öncesi/sonrası veya depozito** temizlik soruyorsa: `/cozumler/kira-teslim-temizligi`.
 - Kullanıcı **boş ev / satış-kiralama öncesi** temizlik soruyorsa: `/cozumler/bos-ev-temizligi`.
 - Kullanıcı **ofis/kurumsal** temizlik soruyorsa: `/cozumler/ofis-temizligi`.
+- Kullanıcı **belirli ilçe + niyet** soruyorsa (ör. "Sarıyer kira öncesi temizlik"): `/cozumler/{niyet-slug}/{ilce-slug}` — önce niyet slug'ını seç, sonra ilçe (sariyer, besiktas, sisli, kagithane, kadikoy, bakirkoy, atasehir, umraniye).
 - Kullanıcı hizmet türü soruyorsa: önce `/cozumler` veya `/hizmetler`, sonra uygun detay sayfası.
 - Kullanıcı bölgesel uygunluk soruyorsa: önce `/bolgeler`, sonra ilgili ilçe route'u.
 - Kullanıcı hızlı iletişim veya teklif istiyorsa: `/iletisim`.

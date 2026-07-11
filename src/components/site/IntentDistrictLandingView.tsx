@@ -7,21 +7,25 @@ import {
   Phone,
   CalendarDays,
   Sparkles,
+  Building2,
 } from 'lucide-react';
-import type { IntentLanding } from '@/config/intent-seo';
-import { getRelatedIntents, INTENT_DISTRICT_SLUGS } from '@/config/intent-seo';
+import type { IntentDistrictPage } from '@/config/intent-seo';
+import { getRelatedIntents, getOtherIntentDistricts } from '@/config/intent-seo';
+import { formatDistrictSide } from '@/config/programmatic-seo';
 import { SITE_CONTACT, toTelHref } from '@/config/site-contact';
 
-interface IntentLandingViewProps {
-  intent: IntentLanding;
+interface IntentDistrictLandingViewProps {
+  page: IntentDistrictPage;
 }
 
-export function IntentLandingView({ intent }: IntentLandingViewProps) {
+export function IntentDistrictLandingView({ page }: IntentDistrictLandingViewProps) {
+  const { intent, district } = page;
   const related = getRelatedIntents(intent.relatedIntentSlugs);
+  const otherDistricts = getOtherIntentDistricts(intent.slug, district.slug);
+  const sideLabel = formatDistrictSide(district);
 
   return (
     <div className="bg-slate-950">
-      {/* Hero */}
       <section className="relative overflow-hidden pt-24 pb-14 sm:pt-28 md:pt-32 md:pb-16">
         <div
           className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-900/25 via-slate-950 to-slate-950"
@@ -42,16 +46,23 @@ export function IntentLandingView({ intent }: IntentLandingViewProps) {
                 </Link>
               </li>
               <li aria-hidden="true">/</li>
-              <li className="text-emerald-400">{intent.name}</li>
+              <li>
+                <Link href={`/cozumler/${intent.slug}`} className="hover:text-emerald-400">
+                  {intent.name}
+                </Link>
+              </li>
+              <li aria-hidden="true">/</li>
+              <li className="text-emerald-400">{district.name}</li>
             </ol>
           </nav>
           <div className="max-w-3xl">
             <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-1 text-sm font-medium text-emerald-400">
-              <Sparkles className="h-4 w-4" aria-hidden="true" />
-              {intent.heroBadge}
+              <MapPin className="h-4 w-4" aria-hidden="true" />
+              {district.name}
+              {sideLabel ? ` · ${sideLabel}` : ''}
             </span>
-            <h1 className="mt-4 text-3xl font-bold text-white sm:text-4xl lg:text-5xl">{intent.heroTitle}</h1>
-            <p className="mt-5 text-lg text-slate-400">{intent.heroDescription}</p>
+            <h1 className="mt-4 text-3xl font-bold text-white sm:text-4xl lg:text-5xl">{page.heroTitle}</h1>
+            <p className="mt-5 text-lg text-slate-400">{page.heroDescription}</p>
             <p className="mt-4 inline-flex items-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-950/40 px-4 py-2 text-sm font-semibold text-emerald-300">
               Tahmini: {intent.priceHint}
             </p>
@@ -82,101 +93,128 @@ export function IntentLandingView({ intent }: IntentLandingViewProps) {
         </div>
       </section>
 
-      {/* Kapsam */}
-      <section className="border-t border-slate-800 py-14" aria-labelledby="includes-heading">
+      <section className="border-t border-slate-800 bg-slate-900/40 py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-2">
             <div>
-              <h2 id="includes-heading" className="text-2xl font-bold text-white sm:text-3xl">
-                Hizmet kapsamı
+              <h2 className="text-2xl font-bold text-white sm:text-3xl">
+                {district.name} bölgesinde {intent.name.toLowerCase()}
               </h2>
-              <p className="mt-3 text-slate-400">
-                {intent.name} için standart paket kapsamı. Keşif sonrası projenize özel ekleme yapılabilir.
-              </p>
-              <ul className="mt-6 space-y-3">
-                {intent.includes.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-slate-300">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500" aria-hidden="true" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <p className="mt-4 text-slate-400">{page.localBlurb}</p>
+              {district.localSignals && district.localSignals.length > 0 && (
+                <ul className="mt-6 space-y-2">
+                  {district.localSignals.slice(0, 4).map((signal) => (
+                    <li key={signal} className="flex items-start gap-2 text-sm text-slate-300">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400" aria-hidden="true" />
+                      {signal}
+                    </li>
+                  ))}
+                </ul>
+              )}
               <Link
-                href={`/hizmetler/${intent.serviceSlug}`}
+                href={`/cozumler/${intent.slug}`}
                 className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-emerald-400 hover:text-emerald-300"
               >
-                Hizmet detay sayfası
+                <Sparkles className="h-4 w-4" aria-hidden="true" />
+                {intent.name} genel rehberi
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
             </div>
             <div>
-              <h2 className="text-2xl font-bold text-white sm:text-3xl">Nasıl çalışırız?</h2>
-              <ol className="mt-6 space-y-4">
-                {intent.processSteps.map((step, idx) => (
-                  <li
-                    key={step.title}
-                    className="flex gap-4 rounded-2xl border border-slate-700/60 bg-slate-800/40 p-5"
-                  >
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 text-sm font-bold text-emerald-400">
-                      {idx + 1}
-                    </span>
-                    <div>
-                      <p className="font-semibold text-white">{step.title}</p>
-                      <p className="mt-1 text-sm text-slate-400">{step.description}</p>
-                    </div>
+              <h2 className="text-xl font-bold text-white">Kapsam</h2>
+              <ul className="mt-4 space-y-2">
+                {intent.includes.map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-slate-300">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400" aria-hidden="true" />
+                    {item}
                   </li>
                 ))}
-              </ol>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Bölgeler */}
-      <section className="border-t border-slate-800 bg-slate-900/40 py-14" aria-labelledby="regions-heading">
+      <section className="border-t border-slate-800 py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 id="regions-heading" className="text-2xl font-bold text-white sm:text-3xl">
-            Öncelikli bölgeler
-          </h2>
-          <p className="mt-3 text-slate-400">
-            Sarıyer ve Zekeriyaköy başta olmak üzere İstanbul genelinde {intent.name.toLowerCase()} hizmeti.
-          </p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            {intent.priorityDistricts.map((d) => {
-              const hasIntentDistrict = (INTENT_DISTRICT_SLUGS as readonly string[]).includes(d.slug);
-              return (
-                <Link
-                  key={d.slug}
-                  href={
-                    hasIntentDistrict
-                      ? `/cozumler/${intent.slug}/${d.slug}`
-                      : `/bolgeler/${d.slug}/${intent.serviceSlug}`
-                  }
-                  className="inline-flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-800/60 px-4 py-2.5 text-sm text-slate-200 transition hover:border-emerald-500/40 hover:text-emerald-300"
-                >
-                  <MapPin className="h-4 w-4 text-emerald-400" aria-hidden="true" />
-                  {d.name} {intent.name}
-                </Link>
-              );
-            })}
-            <Link
-              href="/bolgeler/sariyer/zekeriyakoy"
-              className="inline-flex items-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-950/30 px-4 py-2.5 text-sm font-medium text-emerald-300 transition hover:bg-emerald-950/50"
-            >
-              Zekeriyaköy
-            </Link>
+          <h2 className="text-2xl font-bold text-white sm:text-3xl">Nasıl çalışır?</h2>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {intent.processSteps.map((step, index) => (
+              <div
+                key={step.title}
+                className="rounded-xl border border-slate-700/60 bg-slate-800/40 p-5"
+              >
+                <span className="text-sm font-bold text-emerald-400">Adım {index + 1}</span>
+                <h3 className="mt-2 font-semibold text-white">{step.title}</h3>
+                <p className="mt-2 text-sm text-slate-400">{step.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
+      <section className="border-t border-slate-800 bg-slate-900/40 py-14" aria-labelledby="local-links-heading">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 id="local-links-heading" className="text-2xl font-bold text-white sm:text-3xl">
+            {district.name} ilgili sayfalar
+          </h2>
+          <p className="mt-3 text-slate-400">
+            Aynı ilçede hizmet detayı ve diğer niyet sayfalarına hızlı erişim.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link
+              href={`/bolgeler/${district.slug}/${intent.serviceSlug}`}
+              className="inline-flex items-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-950/30 px-4 py-2.5 text-sm font-medium text-emerald-300 transition hover:bg-emerald-950/50"
+            >
+              <Building2 className="h-4 w-4" aria-hidden="true" />
+              {district.name} {intent.serviceSlug.replace(/-/g, ' ')}
+            </Link>
+            <Link
+              href={`/bolgeler/${district.slug}`}
+              className="inline-flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-800/60 px-4 py-2.5 text-sm text-slate-200 transition hover:border-emerald-500/40 hover:text-emerald-300"
+            >
+              <MapPin className="h-4 w-4 text-emerald-400" aria-hidden="true" />
+              {district.name} tüm hizmetler
+            </Link>
+            {district.slug === 'sariyer' && (
+              <Link
+                href="/bolgeler/sariyer/zekeriyakoy"
+                className="inline-flex items-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-950/30 px-4 py-2.5 text-sm font-medium text-emerald-300 transition hover:bg-emerald-950/50"
+              >
+                Zekeriyaköy
+              </Link>
+            )}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-slate-800 py-14" aria-labelledby="other-districts-heading">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 id="other-districts-heading" className="text-2xl font-bold text-white sm:text-3xl">
+            Diğer ilçeler — {intent.name}
+          </h2>
+          <div className="mt-6 flex flex-wrap gap-3">
+            {otherDistricts.map((d) => (
+              <Link
+                key={d.slug}
+                href={`/cozumler/${intent.slug}/${d.slug}`}
+                className="inline-flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-800/60 px-4 py-2.5 text-sm text-slate-200 transition hover:border-emerald-500/40 hover:text-emerald-300"
+              >
+                <MapPin className="h-4 w-4 text-emerald-400" aria-hidden="true" />
+                {d.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="border-t border-slate-800 py-14" aria-labelledby="faq-heading">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <h2 id="faq-heading" className="text-2xl font-bold text-white sm:text-3xl">
             Sık sorulan sorular
           </h2>
           <div className="mt-6 space-y-3">
-            {intent.faq.map((item) => (
+            {page.faq.map((item) => (
               <details
                 key={item.q}
                 className="group rounded-xl border border-slate-700/60 bg-slate-800/40 p-4"
@@ -189,7 +227,6 @@ export function IntentLandingView({ intent }: IntentLandingViewProps) {
         </div>
       </section>
 
-      {/* İlgili çözümler + blog */}
       <section className="border-t border-slate-800 py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8 md:grid-cols-2">
@@ -200,11 +237,11 @@ export function IntentLandingView({ intent }: IntentLandingViewProps) {
                   {related.map((r) => (
                     <li key={r.slug}>
                       <Link
-                        href={`/cozumler/${r.slug}`}
+                        href={`/cozumler/${r.slug}/${district.slug}`}
                         className="flex items-center gap-2 text-slate-300 transition hover:text-emerald-400"
                       >
                         <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                        {r.name}
+                        {district.name} {r.name}
                       </Link>
                     </li>
                   ))}
@@ -230,12 +267,11 @@ export function IntentLandingView({ intent }: IntentLandingViewProps) {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="border-t border-slate-800 py-14">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
           <div className="rounded-2xl bg-gradient-to-br from-emerald-600 to-emerald-700 p-8 shadow-xl shadow-emerald-900/30">
             <h2 className="text-xl font-bold text-white sm:text-2xl">
-              {intent.name} için ücretsiz keşif alın
+              {district.name} — {intent.name} için ücretsiz keşif
             </h2>
             <p className="mt-2 text-sm text-emerald-50/90">
               Tahmini fiyatınızı hesaplayın veya doğrudan randevu oluşturun — aynı gün geri dönüş.
