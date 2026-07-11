@@ -9,25 +9,23 @@ import {
   Users,
   ArrowUpRight,
   ArrowDownRight,
-  Activity,
   Calendar,
   Loader2,
   RefreshCw,
   FileText,
   MessageSquare,
   Sparkles,
-  Eye,
   HelpCircle,
   Image as ImageIcon,
   Mail,
   Award,
   Quote,
   BarChart3,
-  ArrowRight,
   CheckCircle2,
   CircleAlert,
 } from 'lucide-react';
 import Link from 'next/link';
+import VisitorAnalyticsPanel from '@/components/admin/VisitorAnalyticsPanel';
 
 // ============================================
 // TYPES (API /api/admin/dashboard ile uyumlu)
@@ -94,23 +92,6 @@ interface DashboardPayload {
 // ============================================
 // HELPERS
 // ============================================
-
-function formatRelativeTr(iso: string): string {
-  const diffMs = Date.now() - new Date(iso).getTime();
-  if (diffMs < 0) return new Date(iso).toLocaleString('tr-TR');
-  const diffMin = Math.floor(diffMs / 60000);
-  if (diffMin < 1) return 'Az önce';
-  if (diffMin < 60) return `${diffMin} dk önce`;
-  const diffH = Math.floor(diffMin / 60);
-  if (diffH < 24) return `${diffH} sa. önce`;
-  const diffD = Math.floor(diffH / 24);
-  if (diffD < 14) return `${diffD} gün önce`;
-  return new Date(iso).toLocaleDateString('tr-TR', {
-    day: 'numeric',
-    month: 'short',
-    year: 'numeric',
-  });
-}
 
 function formatNumber(n: number): string {
   return new Intl.NumberFormat('tr-TR').format(n);
@@ -188,98 +169,6 @@ function StatsCard({
         </div>
       </div>
     </motion.div>
-  );
-}
-
-const CHART_MAX_PX = 112;
-
-function MiniBarChart({ values, labels }: { values: number[]; labels: string[] }) {
-  const max = Math.max(...values, 1);
-  const safeValues = values.length ? values : [0];
-  const safeLabels = labels.length === safeValues.length ? labels : safeValues.map(() => '');
-
-  return (
-    <div>
-      <div className="flex h-[7.5rem] items-end gap-1.5 sm:gap-2">
-        {safeValues.map((value, i) => {
-          const barPx = Math.max(6, Math.round((value / max) * CHART_MAX_PX));
-          return (
-            <div key={i} className="flex min-w-0 flex-1 flex-col items-center justify-end gap-1">
-              <motion.div
-                initial={{ height: 0 }}
-                animate={{ height: barPx }}
-                transition={{ delay: i * 0.04, duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                className="w-full max-w-[2.75rem] rounded-t-md bg-gradient-to-t from-emerald-600 to-emerald-400 dark:from-emerald-700 dark:to-emerald-500"
-                title={`${formatNumber(value)} talep`}
-              />
-            </div>
-          );
-        })}
-      </div>
-      <div className="mt-2 flex justify-between gap-1 text-[10px] text-slate-400 dark:text-slate-500 sm:text-xs">
-        {safeLabels.map((lab, i) => (
-          <span key={i} className="min-w-0 flex-1 truncate text-center">
-            {lab}
-          </span>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function ActivityFeed({
-  items,
-}: {
-  items: DashboardPayload['activity'];
-}) {
-  const icon = (kind: string) => {
-    switch (kind) {
-      case 'contact':
-        return <MessageSquare size={14} className="text-violet-600 dark:text-violet-400" />;
-      case 'blog':
-        return <FileText size={14} className="text-sky-600 dark:text-sky-400" />;
-      default:
-        return <Activity size={14} className="text-slate-600" />;
-    }
-  };
-
-  if (items.length === 0) {
-    return (
-      <p className="py-10 text-center text-sm text-slate-500 dark:text-slate-400">
-        Henüz kayıtlı aktivite yok. İletişim veya blog güncellemeleri burada görünecek.
-      </p>
-    );
-  }
-
-  return (
-    <ul className="space-y-1">
-      {items.map((row) => (
-        <li key={row.id}>
-          <div className="flex items-start gap-3 rounded-xl px-2 py-2.5 transition-colors hover:bg-slate-50 dark:hover:bg-slate-700/40">
-            <div
-              className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-700/80"
-              aria-hidden
-            >
-              {icon(row.kind)}
-            </div>
-            <div className="min-w-0 flex-1">
-              <p className="text-sm font-medium leading-snug text-slate-900 dark:text-white">
-                {row.title}
-              </p>
-              <p className="mt-0.5 truncate text-xs text-slate-500 dark:text-slate-400">
-                {row.subtitle}
-              </p>
-            </div>
-            <time
-              className="shrink-0 text-xs text-slate-400 dark:text-slate-500"
-              dateTime={row.at}
-            >
-              {formatRelativeTr(row.at)}
-            </time>
-          </div>
-        </li>
-      ))}
-    </ul>
   );
 }
 
@@ -373,8 +262,7 @@ export default function AdminDashboardPage() {
 
   if (!data) return null;
 
-  const { counts, chart, recentContacts, activity, contactsWeekHint, funnel } = data;
-  const recentBlog = data.recentBlog;
+  const { counts, contactsWeekHint, funnel } = data;
 
   const contactTrend: 'up' | 'down' | 'neutral' =
     counts.contactsThisWeek > counts.contactsPrevWeek
@@ -431,7 +319,7 @@ export default function AdminDashboardPage() {
             Kontrol paneli
           </h1>
           <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
-            Site içeriği ve talepler — canlı veritabanı özetiniz.
+            Site içeriği, talepler ve ziyaretçi analitiği — canlı veritabanı özetiniz.
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-2">
@@ -637,215 +525,7 @@ export default function AdminDashboardPage() {
         </div>
       </motion.div>
 
-      <div className="grid gap-4 lg:grid-cols-3">
-        {/* Grafik */}
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.25 }}
-          className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-slate-800 lg:col-span-2 sm:p-6"
-        >
-          <div className="mb-4 flex flex-wrap items-start justify-between gap-2">
-            <div>
-              <h2 className="text-lg font-semibold text-slate-900 dark:text-white">
-                {chart.title}
-              </h2>
-              <p className="text-sm text-slate-500 dark:text-slate-400">
-                Günlük yeni iletişim formu kayıtları
-              </p>
-            </div>
-            <span className="inline-flex items-center gap-1 rounded-lg bg-emerald-50 px-2.5 py-1 text-xs font-medium text-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-300">
-              <Eye size={12} aria-hidden />
-              Veritabanı
-            </span>
-          </div>
-          <MiniBarChart values={chart.values} labels={chart.labels} />
-        </motion.div>
-
-        {/* Hızlı işlemler */}
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-slate-800 sm:p-6"
-        >
-          <h2 className="text-lg font-semibold text-slate-900 dark:text-white">Hızlı işlemler</h2>
-          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">Sık kullanılan yönetim sayfaları</p>
-          <nav className="mt-4 flex flex-col gap-2" aria-label="Hızlı işlemler">
-            <Link
-              href="/admin/hizmetler/yeni"
-              className="flex items-center justify-between gap-2 rounded-xl bg-emerald-50 px-4 py-3 text-sm font-medium text-emerald-900 transition hover:bg-emerald-100 dark:bg-emerald-950/40 dark:text-emerald-100 dark:hover:bg-emerald-900/40"
-            >
-              <span className="flex items-center gap-2">
-                <Sparkles size={18} />
-                Yeni hizmet
-              </span>
-              <ArrowRight size={16} className="opacity-60" />
-            </Link>
-            <Link
-              href="/admin/blog/yeni"
-              className="flex items-center justify-between gap-2 rounded-xl bg-sky-50 px-4 py-3 text-sm font-medium text-sky-900 transition hover:bg-sky-100 dark:bg-sky-950/40 dark:text-sky-100 dark:hover:bg-sky-900/40"
-            >
-              <span className="flex items-center gap-2">
-                <FileText size={18} />
-                Yeni blog yazısı
-              </span>
-              <ArrowRight size={16} className="opacity-60" />
-            </Link>
-            <Link
-              href="/admin/talepler"
-              className="flex items-center justify-between gap-2 rounded-xl bg-violet-50 px-4 py-3 text-sm font-medium text-violet-900 transition hover:bg-violet-100 dark:bg-violet-950/40 dark:text-violet-100 dark:hover:bg-violet-900/40"
-            >
-              <span className="flex items-center gap-2">
-                <MessageSquare size={18} />
-                Müşteri talepleri
-              </span>
-              <ArrowRight size={16} className="opacity-60" />
-            </Link>
-            <Link
-              href="/admin/randevular"
-              className="flex items-center justify-between gap-2 rounded-xl bg-amber-50 px-4 py-3 text-sm font-medium text-amber-900 transition hover:bg-amber-100 dark:bg-amber-950/40 dark:text-amber-100 dark:hover:bg-amber-900/40"
-            >
-              <span className="flex items-center gap-2">
-                <Calendar size={18} />
-                Randevu talepleri
-              </span>
-              <ArrowRight size={16} className="opacity-60" />
-            </Link>
-            <Link
-              href="/admin/blog"
-              className="flex items-center justify-between gap-2 rounded-xl border border-slate-200 px-4 py-3 text-sm font-medium text-slate-800 transition hover:bg-slate-50 dark:border-slate-600 dark:text-slate-100 dark:hover:bg-slate-700/50"
-            >
-              <span className="flex items-center gap-2">
-                <FileText size={18} />
-                Tüm blog yazıları
-              </span>
-              <ArrowRight size={16} className="opacity-60" />
-            </Link>
-          </nav>
-        </motion.div>
-      </div>
-
-      <div className="grid gap-4 lg:grid-cols-3">
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.35 }}
-          className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-slate-800 sm:p-6 lg:col-span-2"
-        >
-          <div className="mb-2 flex items-center justify-between gap-2">
-            <h2 className="text-lg font-semibold text-slate-900 dark:text-white">Son hareketler</h2>
-            <Activity size={18} className="text-slate-400" aria-hidden />
-          </div>
-          <p className="mb-3 text-sm text-slate-500 dark:text-slate-400">
-            Son iletişim talepleri ve blog güncellemeleri (birleşik zaman çizelgesi)
-          </p>
-          <ActivityFeed items={activity} />
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-slate-800 sm:p-6"
-        >
-          <div className="mb-2 flex items-center justify-between gap-2">
-            <h2 className="text-lg font-semibold text-slate-900 dark:text-white">Son talepler</h2>
-            <Link
-              href="/admin/talepler"
-              className="text-xs font-medium text-emerald-600 hover:underline dark:text-emerald-400"
-            >
-              Tümünü aç
-            </Link>
-          </div>
-          {recentContacts.length === 0 ? (
-            <p className="py-10 text-center text-sm text-slate-500 dark:text-slate-400">
-              Henüz iletişim talebi yok.
-            </p>
-          ) : (
-            <ul className="divide-y divide-slate-100 dark:divide-slate-700">
-              {recentContacts.map((m) => (
-                <li key={m.id}>
-                  <Link
-                    href="/admin/talepler"
-                    className="flex items-center gap-3 py-3 transition hover:bg-slate-50/80 dark:hover:bg-slate-700/30"
-                  >
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-700">
-                      <Users size={18} className="text-slate-500 dark:text-slate-400" />
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <p className="truncate font-medium text-slate-900 dark:text-white">{m.name}</p>
-                      <p className="truncate text-sm text-slate-500 dark:text-slate-400">
-                        {m.service?.trim() || m.email}
-                      </p>
-                    </div>
-                    <div className="flex shrink-0 flex-col items-end gap-1">
-                      <span
-                        className={`rounded-full px-2 py-0.5 text-xs font-medium ${
-                          m.read
-                            ? 'bg-slate-100 text-slate-600 dark:bg-slate-600 dark:text-slate-200'
-                            : 'bg-amber-100 text-amber-800 dark:bg-amber-950/60 dark:text-amber-200'
-                        }`}
-                      >
-                        {m.read ? 'Okundu' : 'Yeni'}
-                      </span>
-                      <time className="text-xs text-slate-400" dateTime={m.createdAt}>
-                        {formatRelativeTr(m.createdAt)}
-                      </time>
-                    </div>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          )}
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.45 }}
-          className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-slate-800 sm:p-6"
-        >
-          <div className="mb-2 flex items-center justify-between gap-2">
-            <h2 className="text-lg font-semibold text-slate-900 dark:text-white">Son blog güncellemeleri</h2>
-            <Link
-              href="/admin/blog"
-              className="text-xs font-medium text-emerald-600 hover:underline dark:text-emerald-400"
-            >
-              Blog’u aç
-            </Link>
-          </div>
-          {recentBlog.length === 0 ? (
-            <p className="py-8 text-center text-sm text-slate-500 dark:text-slate-400">
-              Blog kaydı bulunamadı.
-            </p>
-          ) : (
-            <ul className="divide-y divide-slate-100 dark:divide-slate-700">
-              {recentBlog.slice(0, 6).map((b) => (
-                <li key={b.id} className="py-3">
-                  <Link href={`/admin/blog/${b.slug}/edit`} className="group block">
-                    <p className="line-clamp-2 text-sm font-medium text-slate-900 group-hover:text-emerald-700 dark:text-white dark:group-hover:text-emerald-300">
-                      {b.title}
-                    </p>
-                    <div className="mt-1 flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
-                      <span
-                        className={`rounded-full px-2 py-0.5 ${
-                          b.published
-                            ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300'
-                            : 'bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300'
-                        }`}
-                      >
-                        {b.published ? 'Yayında' : 'Taslak'}
-                      </span>
-                      <time dateTime={b.updatedAt}>{formatRelativeTr(b.updatedAt)}</time>
-                    </div>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          )}
-        </motion.div>
-      </div>
+      <VisitorAnalyticsPanel />
 
       <p className="text-center text-xs text-slate-400 dark:text-slate-500">
         Özet verisi:{' '}

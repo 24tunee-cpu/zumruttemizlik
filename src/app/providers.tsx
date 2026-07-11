@@ -17,6 +17,7 @@ import ErrorBoundary from '@/components/ErrorBoundary';
 import { SiteSettingsProvider } from '@/context/SiteSettingsContext';
 import { SiteCustomCss } from '@/components/SiteCustomCss';
 import MarketingEventTracker from '@/components/analytics/MarketingEventTracker';
+import VisitorAnalyticsTracker from '@/components/analytics/VisitorAnalyticsTracker';
 import DeferredAnalytics from '@/components/analytics/DeferredAnalytics';
 // import { setupGlobalErrorHandlers, logPerformanceMetrics } from '@/lib/client-error-handler'; // DISABLED
 
@@ -68,6 +69,7 @@ export function Providers({ children, gaMeasurementId = '' }: ProvidersProps) {
       <SiteSettingsProvider>
         <DeferredAnalytics measurementId={gaMeasurementId} />
         <MarketingEventTracker />
+        <VisitorAnalyticsTracker />
         <SiteCustomCss />
         {children}
       </SiteSettingsProvider>
@@ -99,6 +101,7 @@ export function Providers({ children, gaMeasurementId = '' }: ProvidersProps) {
       <SiteSettingsProvider>
         <DeferredAnalytics measurementId={gaMeasurementId} />
         <MarketingEventTracker />
+        <VisitorAnalyticsTracker />
         <SiteCustomCss />
         {children}
       </SiteSettingsProvider>

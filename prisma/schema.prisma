@@ -542,6 +542,63 @@ model AuditLog {
   @@map("audit_logs")
 }
 
+/// Site ziyaretçi oturumları (konum, cihaz, süre)
+model VisitorSession {
+  id            String         @id @default(auto()) @map("_id") @db.ObjectId
+  sessionKey    String         @unique
+  visitorKey    String
+  country       String?
+  countryCode   String?
+  region        String?
+  city          String?
+  deviceType    String?
+  os            String?
+  browser       String?
+  screenWidth   Int?
+  screenHeight  Int?
+  language      String?
+  referrer      String?
+  landingPath   String?
+  exitPath      String?
+  pageViews     Int            @default(0)
+  durationSec   Int            @default(0)
+  maxScrollPct  Int            @default(0)
+  clickCount    Int            @default(0)
+  userAgent     String?
+  ipHash        String?
+  isActive      Boolean        @default(true)
+  lastSeenAt    DateTime       @default(now())
+  startedAt     DateTime       @default(now())
+  endedAt       DateTime?
+  events        VisitorEvent[]
+
+  @@index([startedAt])
+  @@index([lastSeenAt])
+  @@index([isActive, lastSeenAt])
+  @@index([countryCode, city])
+  @@index([deviceType])
+  @@index([visitorKey])
+  @@map("visitor_sessions")
+}
+
+/// Oturum içi olaylar (sayfa, tıklama, scroll)
+model VisitorEvent {
+  id          String         @id @default(auto()) @map("_id") @db.ObjectId
+  sessionDbId String         @db.ObjectId
+  session     VisitorSession @relation(fields: [sessionDbId], references: [id], onDelete: Cascade)
+  kind        String
+  path        String?
+  label       String?
+  targetUrl   String?
+  metadata    Json?
+  createdAt   DateTime       @default(now())
+
+  @@index([sessionDbId, createdAt])
+  @@index([kind, createdAt])
+  @@index([path, createdAt])
+  @@map("visitor_events")
+}
+
 enum Role {
   USER
   ADMIN
