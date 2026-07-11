@@ -4,6 +4,7 @@ import {
   type NeighborhoodLanding as NeighborhoodLandingData,
   getServiceBySlug,
 } from '@/config/programmatic-seo';
+import { buildCalculatorHref } from '@/lib/intent-analytics';
 import { SITE_CONTACT, toTelHref } from '@/config/site-contact';
 import { canonicalUrl, getSiteUrl } from '@/lib/seo';
 
@@ -11,6 +12,7 @@ export default function NeighborhoodLanding({ data }: { data: NeighborhoodLandin
   const canonical = canonicalUrl(`/bolgeler/${data.districtSlug}/${data.slug}`);
   const siteRoot = getSiteUrl();
   const callHref = toTelHref(SITE_CONTACT.phoneE164);
+  const intentSlug = data.calculatorIntentSlug ?? 'tasinma-temizligi';
 
   const featuredServices = data.featuredServiceSlugs
     .map((slug) => getServiceBySlug(slug))
@@ -91,7 +93,7 @@ export default function NeighborhoodLanding({ data }: { data: NeighborhoodLandin
 
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
-                href="/fiyat-hesaplama"
+                href={buildCalculatorHref({ intent: intentSlug, district: data.districtSlug })}
                 className="rounded-lg bg-emerald-500 px-5 py-2.5 font-medium text-white transition-colors hover:bg-emerald-600"
               >
                 Anında Fiyat Hesapla
@@ -137,6 +139,12 @@ export default function NeighborhoodLanding({ data }: { data: NeighborhoodLandin
             </section>
 
             <div className="mt-10 flex flex-wrap gap-3">
+              <Link
+                href={`/cozumler/${intentSlug}/${data.districtSlug}`}
+                className="rounded-lg border border-emerald-500/30 px-5 py-2.5 font-medium text-emerald-200 transition-colors hover:bg-emerald-500/10"
+              >
+                İlgili Çözüm Rehberi
+              </Link>
               <Link
                 href="/randevu"
                 className="rounded-lg bg-emerald-500 px-5 py-2.5 font-medium text-white transition-colors hover:bg-emerald-600"

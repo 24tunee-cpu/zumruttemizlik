@@ -392,6 +392,8 @@ export interface NeighborhoodLanding {
   faq: { q: string; a: string }[];
   /** Öne çıkarılacak hizmet slug'ları (SERVICE_LANDINGS ile eşleşir) */
   featuredServiceSlugs: string[];
+  /** Fiyat hesaplama & çözüm sayfası niyet slug'ı */
+  calculatorIntentSlug?: string;
 }
 
 export const NEIGHBORHOOD_LANDINGS: NeighborhoodLanding[] = [
@@ -436,6 +438,126 @@ export const NEIGHBORHOOD_LANDINGS: NeighborhoodLanding[] = [
       'cam-temizligi',
       'dis-cephe-temizligi',
     ],
+    calculatorIntentSlug: 'tasinma-temizligi',
+  },
+  {
+    districtSlug: 'sariyer',
+    slug: 'maslak',
+    name: 'Maslak',
+    districtName: 'Sarıyer',
+    metaTitle: 'Maslak Temizlik Şirketi | Ofis & Rezidans Temizliği',
+    metaDescription:
+      'Maslak temizlik: plaza, ofis katı ve rezidans daireleri için kurumsal ve detaylı temizlik. İnşaat sonrası teslim, cam temizliği. Ücretsiz keşif, aynı gün randevu.',
+    intro:
+      'Maslak, İstanbul’un kurumsal ve rezidans yoğunluklu merkezlerinden biridir. Plaza ofisleri, yeni rezidans kuleleri ve karma kullanım binalarında ofis temizliği, taşınma öncesi/sonrası daire temizliği ve inşaat sonrası teslim hizmeti sunuyoruz.',
+    body: [
+      'Maslak’taki ofis katlarında mesai dışı veya hafta sonu temizlik planı; rezidans dairelerinde ise detaylı ev temizliği ve cam yüzey bakımı sık talep edilir. Metrekare, personel yoğunluğu ve erişim saatlerine göre kapsamı netleştiriyoruz.',
+      'Yeni teslim edilen rezidans ve ofis projelerinde inşaat sonrası detay temizlik, boya-toz ve cam iç yüzey teslimi önceliklidir. Maslak–Levent hattında hızlı ekip yönlendirmesi yapıyoruz.',
+      'Tahmini fiyat için niyet modlu fiyat hesaplama aracımızı kullanabilir; ofis veya inşaat sonrası moduyla saniyeler içinde aralık görebilirsiniz.',
+    ],
+    highlights: [
+      'Plaza ve ofis katı temizliği',
+      'Rezidans daire detay temizliği',
+      'İnşaat/tadilat sonrası teslim',
+      'Mesai dışı operasyon planı',
+    ],
+    faq: [
+      {
+        q: 'Maslak’ta ofis temizliği mesai dışı yapılır mı?',
+        a: 'Evet. Kurumsal müşterilerimizde mesai dışı veya hafta sonu slot planlaması yapıyoruz. Personel sayısı ve m² keşif sonrası netleşir.',
+      },
+      {
+        q: 'Maslak rezidans daire temizliği fiyatı nasıl hesaplanır?',
+        a: 'Oda sayısı ve kirlilik derecesine göre paket fiyat uygulanır. Online fiyat hesaplama aracıyla tahmini aralığı görebilir, ardından ücretsiz keşif alabilirsiniz.',
+      },
+      {
+        q: 'Maslak–Zekeriyaköy arası aynı gün hizmet mümkün mü?',
+        a: 'Yoğunluğa bağlı olarak Sarıyer hattında aynı gün keşif ve hızlı ekip yönlendirmesi yapabiliyoruz.',
+      },
+    ],
+    featuredServiceSlugs: ['ofis-temizligi', 'ev-temizligi', 'insaat-sonrasi-temizlik', 'cam-temizligi'],
+    calculatorIntentSlug: 'ofis-temizligi',
+  },
+  {
+    districtSlug: 'sariyer',
+    slug: 'tarabya',
+    name: 'Tarabya',
+    districtName: 'Sarıyer',
+    metaTitle: 'Tarabya Temizlik Şirketi | Boğaz Hattı Ev & Villa Temizliği',
+    metaDescription:
+      'Tarabya temizlik: Boğaz hattı konutları, villalar ve yazlıklarda detaylı ev temizliği, cam ve dış cephe temizliği. Ücretsiz keşif, gizlilik odaklı ekip.',
+    intro:
+      'Tarabya ve Boğaz kıyısındaki konutlarda geniş cam yüzeyler, bahçe kenarı alanlar ve yüksek tavanlı salonlar nedeniyle detaylı temizlik ve cam bakımı öne çıkar. Zümrüt Vadi Temizlik olarak Tarabya, Yeniköy ve İstinye hattında düzenli operasyon yapıyoruz.',
+    body: [
+      'Tarabya’daki müstakil konut ve site dairelerinde taşınma öncesi/sonrası, kira teslim ve periyodik bakım temizliği talepleri yoğundur. Cam temizliği ve dış cephe bakımı çoğu işte birlikte planlanır.',
+      'Boğaz hattı konutlarında gizlilik, randevu saati esnekliği ve aynı ekip sürekliliği önceliklidir. Erişim ve otopark koşullarına göre ekip planlaması yapıyoruz.',
+      'Kira teslim veya taşınma temizliği için çözüm sayfalarımızdan süreç rehberine ulaşabilir, fiyat hesaplama aracıyla tahmini bütçenizi görebilirsiniz.',
+    ],
+    highlights: [
+      'Boğaz hattı ev ve villa temizliği',
+      'Cam ve dış cephe bakımı',
+      'Kira teslim & taşınma temizliği',
+      'Gizlilik odaklı çalışma',
+    ],
+    faq: [
+      {
+        q: 'Tarabya’da kira teslim temizliği yapıyor musunuz?',
+        a: 'Evet. Kiracı çıkışı veya mal sahibi teslimi için kontrol listesiyle detay temizlik sunuyoruz. Kapsam keşifte netleşir.',
+      },
+      {
+        q: 'Tarabya cam temizliği ayrı mı alınır?',
+        a: 'Ev temizliği paketine eklenebilir veya ayrı hizmet olarak planlanabilir. Geniş cam yüzeylerde erişim ekipmanı keşifte belirlenir.',
+      },
+      {
+        q: 'Yeniköy ve İstinye’ye de hizmet var mı?',
+        a: 'Evet. Sarıyer Boğaz hattı (Tarabya, Yeniköy, İstinye, Rumelihisarı) aynı operasyon planına dahildir.',
+      },
+    ],
+    featuredServiceSlugs: ['ev-temizligi', 'cam-temizligi', 'dis-cephe-temizligi', 'insaat-sonrasi-temizlik'],
+    calculatorIntentSlug: 'kira-teslim-temizligi',
+  },
+  {
+    districtSlug: 'sariyer',
+    slug: 'bahcekoy',
+    name: 'Bahçeköy',
+    districtName: 'Sarıyer',
+    metaTitle: 'Bahçeköy Temizlik Şirketi | Orman İçi Villa Temizliği',
+    metaDescription:
+      'Bahçeköy temizlik: orman içi villa ve site konutlarında detaylı ev temizliği, inşaat sonrası teslim, cam ve bahçe kenarı temizlik. Zekeriyaköy hattı operasyon.',
+    intro:
+      'Bahçeköy, Belgrad Ormanı çevresindeki villalar ve siteleriyle Sarıyer’in öncelikli hizmet semtlerinden biridir. Zekeriyaköy operasyonumuzun doğal uzantısı olarak Bahçeköy’de detaylı ev, inşaat sonrası ve taşınma temizliği sunuyoruz.',
+    body: [
+      'Bahçeköy’deki müstakil villalarda geniş metrekare, çoklu ıslak hacim ve bahçe/balkon alanları temizlik kapsamını genişletir. Zemin türü ve erişim yollarına göre ekip ve süre planlanır.',
+      'Tadilat ve inşaat sonrası teslim temizliğinde ince toz, boya izleri ve dolap içi detay önceliklidir. Taşınma öncesi/sonrası paketlerde aynı gün keşif mümkündür.',
+      'Zekeriyaköy, Kilyos ve Demirciköy çevresiyle birlikte Sarıyer orman içi hattında rota planlı operasyon yapıyoruz.',
+    ],
+    highlights: [
+      'Orman içi villa detay temizliği',
+      'İnşaat/tadilat sonrası teslim',
+      'Taşınma öncesi & sonrası paket',
+      'Zekeriyaköy hattı operasyon',
+    ],
+    faq: [
+      {
+        q: 'Bahçeköy villa temizliği ne kadar sürer?',
+        a: 'Metrekare, oda sayısı ve kirlilik derecesine göre değişir. Keşif sonrası net süre ve fiyat paylaşıyoruz; çoğu villa işi 1–2 günde tamamlanır.',
+      },
+      {
+        q: 'Bahçeköy ile Zekeriyaköy aynı ekip mi gelir?',
+        a: 'Sarıyer orman içi hattında aynı operasyon ekibimiz planlanır; semt ve erişim koşullarına göre slot ayarlanır.',
+      },
+      {
+        q: 'Bahçeköy inşaat sonrası temizlik fiyatı?',
+        a: 'm² ve kirlilik seviyesine göre 45–120 TL/m² bandında tahmin verilir. Kesin fiyat ücretsiz keşif sonrası netleşir.',
+      },
+    ],
+    featuredServiceSlugs: [
+      'ev-temizligi',
+      'insaat-sonrasi-temizlik',
+      'cam-temizligi',
+      'dis-cephe-temizligi',
+    ],
+    calculatorIntentSlug: 'insaat-sonrasi-temizlik',
   },
 ];
 
@@ -452,6 +574,39 @@ export function getNeighborhoodLanding(
 
 export function allNeighborhoodLandingPaths(): string[] {
   return NEIGHBORHOOD_LANDINGS.map((n) => `/bolgeler/${n.districtSlug}/${n.slug}`);
+}
+
+/** Mahalle adından semt landing slug'ı (Türkçe karakter dönüşümü) */
+export function neighborhoodNameToSlug(name: string): string {
+  return name
+    .trim()
+    .toLowerCase()
+    .replace(/ğ/g, 'g')
+    .replace(/ü/g, 'u')
+    .replace(/ş/g, 's')
+    .replace(/ı/g, 'i')
+    .replace(/ö/g, 'o')
+    .replace(/ç/g, 'c')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
+export function findNeighborhoodLandingForDistrictNeighborhood(
+  districtSlug: string,
+  neighborhoodDisplayName: string
+): NeighborhoodLanding | null {
+  const slug = neighborhoodNameToSlug(neighborhoodDisplayName);
+  return (
+    NEIGHBORHOOD_LANDINGS.find(
+      (n) =>
+        n.districtSlug === districtSlug &&
+        (n.slug === slug || n.name === neighborhoodDisplayName)
+    ) ?? null
+  );
+}
+
+export function getNeighborhoodLandingsForDistrict(districtSlug: string): NeighborhoodLanding[] {
+  return NEIGHBORHOOD_LANDINGS.filter((n) => n.districtSlug === districtSlug);
 }
 
 const HERO_TEMPLATES = [

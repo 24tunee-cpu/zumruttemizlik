@@ -22,6 +22,7 @@ import { BlogPost, BlogSection } from '@/components/site/BlogSection';
 import { BookOpen, ArrowRight, Search, Calculator, Sparkles } from 'lucide-react';
 import { PremiumPageHero } from '@/components/site/PremiumPageHero';
 import { SeoPriorityStrip } from '@/components/site/SeoPriorityStrip';
+import { BlogSiloNav } from '@/components/site/BlogSiloNav';
 import { canonicalUrl } from '@/lib/seo';
 import { keywordsForPage } from '@/lib/seo-keywords';
 
@@ -306,6 +307,8 @@ export default async function BlogPage({ searchParams }: PageProps) {
               </Link>
             </div>
           </PremiumPageHero>
+
+          <BlogSiloNav />
 
           {/* Search + filters */}
           <section className="border-b border-slate-800 py-8">

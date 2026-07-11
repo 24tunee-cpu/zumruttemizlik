@@ -80,9 +80,10 @@ const FOOTER_LINKS: FooterLinkGroup = {
   ],
   bolgeler: [
     { label: 'Sarıyer Temizlik', href: '/bolgeler/sariyer' },
-    { label: 'Zekeriyaköy Temizlik', href: '/bolgeler/sariyer/zekeriyakoy' },
-    { label: 'Beşiktaş Temizlik', href: '/bolgeler/besiktas' },
-    { label: 'Şişli Temizlik', href: '/bolgeler/sisli' },
+    { label: 'Zekeriyaköy', href: '/bolgeler/sariyer/zekeriyakoy' },
+    { label: 'Maslak', href: '/bolgeler/sariyer/maslak' },
+    { label: 'Tarabya', href: '/bolgeler/sariyer/tarabya' },
+    { label: 'Bahçeköy', href: '/bolgeler/sariyer/bahcekoy' },
     { label: 'Tüm Bölgeler', href: '/bolgeler' },
   ],
   kurumsal: [
