@@ -85,6 +85,11 @@
 - `/harita-ve-yorumlar`: Google Maps kaynaklı AggregateRating + Review (MapReviewSnapshot).
 - `/referanslar`: self-serving yıldız snippet riski nedeniyle aggregateRating eklenmez.
 
+## Fiyat Hesaplama & GA4 (Faz 4)
+- Niyet-aware URL: `/fiyat-hesaplama?intent={niyet-slug}&district={ilce-slug}` (district opsiyonel).
+- Intent slug → hesaplayıcı modu: inşaat sonrası → m² inşaat; ofis → m² ofis; taşınma/kira/boş ev → ev oda paketi.
+- GA4 event'leri: `price_calculator_view`, `price_calculated`, `generate_lead` (WhatsApp), plus intent-specific: `lead_insaat_sonrasi`, `lead_tasinma`, `lead_kira_teslim`, `lead_bos_ev`, `lead_ofis`.
+
 ## Hizmet Taksonomisi
 - Çekirdek hizmet kümeleri: ofis temizliği, inşaat sonrası temizlik, ev temizliği, koltuk yıkama, halı temizliği, cam temizliği, dış cephe temizliği.
 - Hizmet sunumu, hem genel katalog hem tekil hizmet sayfası modelinde kurgulanır.
