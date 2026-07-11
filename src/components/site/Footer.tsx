@@ -42,6 +42,7 @@ interface FooterLink {
 /** Footer link grubu tipi */
 interface FooterLinkGroup {
   hizmetler: FooterLink[];
+  cozumler: FooterLink[];
   bolgeler: FooterLink[];
   kurumsal: FooterLink[];
 }
@@ -68,6 +69,14 @@ const FOOTER_LINKS: FooterLinkGroup = {
     { label: 'Halı Temizliği', href: '/hizmetler/hali-temizligi' },
     { label: 'Cam Temizliği', href: '/hizmetler/cam-temizligi' },
     { label: 'Dış Cephe Temizliği', href: '/hizmetler/dis-cephe-temizligi' },
+  ],
+  cozumler: [
+    { label: 'İnşaat Sonrası Temizlik', href: '/cozumler/insaat-sonrasi-temizlik' },
+    { label: 'Taşınma Temizliği', href: '/cozumler/tasinma-temizligi' },
+    { label: 'Kira Teslim Temizliği', href: '/cozumler/kira-teslim-temizligi' },
+    { label: 'Boş Ev Temizliği', href: '/cozumler/bos-ev-temizligi' },
+    { label: 'Ofis Temizliği', href: '/cozumler/ofis-temizligi' },
+    { label: 'Tüm Çözümler', href: '/cozumler' },
   ],
   bolgeler: [
     { label: 'Sarıyer Temizlik', href: '/bolgeler/sariyer' },
@@ -258,7 +267,7 @@ export function Footer() {
           </div>
         </motion.div>
 
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
           {/* Brand */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2 group" aria-label={`${settings.siteName} - Ana sayfa`}>
@@ -317,6 +326,23 @@ export function Footer() {
             <h3 className="mb-4 text-lg font-semibold text-white">Hizmetlerimiz</h3>
             <ul className="space-y-2.5">
               {FOOTER_LINKS.hizmetler.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-slate-400 transition-all hover:text-emerald-400 hover:translate-x-1 inline-block"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* Çözümler */}
+          <nav aria-label="Footer çözümler">
+            <h3 className="mb-4 text-lg font-semibold text-white">Çözümler</h3>
+            <ul className="space-y-2.5">
+              {FOOTER_LINKS.cozumler.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}

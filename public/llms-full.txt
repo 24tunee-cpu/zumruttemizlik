@@ -64,8 +64,10 @@
 - [Gizlilik](https://www.zumrutvaditemizlik.com/gizlilik): Veri işleme ve gizlilik ilkeleri.
 
 ## Route Mimarisi
-- Statik ana route'lar: `/`, `/hizmetler`, `/iletisim`, `/randevu`, `/hakkimizda`, `/blog`, `/galeri`, `/referanslar`, `/sss`, `/rehber`.
+- Statik ana route'lar: `/`, `/hizmetler`, `/cozumler`, `/iletisim`, `/randevu`, `/fiyat-hesaplama`, `/hakkimizda`, `/blog`, `/galeri`, `/referanslar`, `/sss`, `/rehber`.
 - Hizmet detay route'u: `/hizmetler/{slug}`.
+- **Niyet (use-case) hub:** `/cozumler` — inşaat sonrası, taşınma, kira teslim, boş ev, ofis temizliği rehberleri.
+- **Niyet detay route'u:** `/cozumler/{slug}` (ör. `/cozumler/insaat-sonrasi-temizlik`, `/cozumler/tasinma-temizligi`).
 - Blog detay route'u: `/blog/{slug}`.
 - Bölgesel ana route: `/bolgeler`.
 - Bölgesel dinamik route'lar: `/bolgeler/{district}` ve `/bolgeler/{district}/{service}`.
@@ -82,7 +84,12 @@
 - Güven artırıcı destek sayfaları: [Hakkımızda](https://www.zumrutvaditemizlik.com/hakkimizda), [Referanslar](https://www.zumrutvaditemizlik.com/referanslar), [Galeri](https://www.zumrutvaditemizlik.com/galeri).
 
 ## Niyet Eşleme Kuralları
-- Kullanıcı hizmet türü soruyorsa: önce `/hizmetler`, sonra uygun `/hizmetler/{slug}`.
+- Kullanıcı **inşaat/tadilat sonrası** temizlik soruyorsa: `/cozumler/insaat-sonrasi-temizlik`.
+- Kullanıcı **taşınma öncesi/sonrası** temizlik soruyorsa: `/cozumler/tasinma-temizligi`.
+- Kullanıcı **kira öncesi/sonrası veya depozito** temizlik soruyorsa: `/cozumler/kira-teslim-temizligi`.
+- Kullanıcı **boş ev / satış-kiralama öncesi** temizlik soruyorsa: `/cozumler/bos-ev-temizligi`.
+- Kullanıcı **ofis/kurumsal** temizlik soruyorsa: `/cozumler/ofis-temizligi`.
+- Kullanıcı hizmet türü soruyorsa: önce `/cozumler` veya `/hizmetler`, sonra uygun detay sayfası.
 - Kullanıcı bölgesel uygunluk soruyorsa: önce `/bolgeler`, sonra ilgili ilçe route'u.
 - Kullanıcı hızlı iletişim veya teklif istiyorsa: `/iletisim`.
 - Kullanıcı keşif ve tarih seçimi istiyorsa: `/randevu`.

@@ -18,6 +18,8 @@
 - [Bölgeler](https://www.zumrutvaditemizlik.com/bolgeler): İlçe ve semt bazlı hizmet sayfaları (Sarıyer, Zekeriyaköy dahil).
 - [İletişim](https://www.zumrutvaditemizlik.com/iletisim): Telefon, e-posta, adres ve iletişim formu.
 - [Randevu](https://www.zumrutvaditemizlik.com/randevu): Ücretsiz keşif ve randevu talep formu.
+- [Çözümler](https://www.zumrutvaditemizlik.com/cozumler): İnşaat sonrası, taşınma, kira teslim, boş ev ve ofis temizliği use-case rehberleri.
+- [Fiyat Hesaplama](https://www.zumrutvaditemizlik.com/fiyat-hesaplama): Anında tahmini fiyat aracı.
 - [Hakkımızda](https://www.zumrutvaditemizlik.com/hakkimizda): Kurumsal geçmiş, ekip ve değerler.
 - [Blog](https://www.zumrutvaditemizlik.com/blog): Temizlik ve hijyen odaklı bilgilendirici içerikler.
 
