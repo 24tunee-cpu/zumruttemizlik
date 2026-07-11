@@ -48,7 +48,7 @@ export function CookieConsent() {
         <button
           type="button"
           onClick={accept}
-          className="shrink-0 rounded-lg bg-emerald-700 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-emerald-800 dark:bg-emerald-700 dark:hover:bg-emerald-800"
+          className="touch-target shrink-0 rounded-lg bg-emerald-700 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-emerald-800 dark:bg-emerald-700 dark:hover:bg-emerald-800"
         >
           Anladım
         </button>

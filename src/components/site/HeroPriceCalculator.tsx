@@ -9,7 +9,6 @@
 'use client';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { motion } from 'framer-motion';
 import {
   Home,
   Building2,
@@ -193,14 +192,9 @@ export function HeroPriceCalculator({
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.3, duration: 0.6 }}
-      className="relative w-full"
-    >
+    <div className="hero-enter hero-enter-delay-3 relative w-full">
       <div
-        className="absolute -inset-3 -z-10 rounded-3xl bg-gradient-to-br from-emerald-500/20 to-emerald-700/10 blur-2xl"
+        className="absolute -inset-3 -z-10 rounded-3xl bg-gradient-to-br from-emerald-500/20 to-emerald-700/10 blur-2xl max-lg:hidden"
         aria-hidden="true"
       />
 
@@ -385,7 +379,7 @@ export function HeroPriceCalculator({
           WhatsApp&apos;tan Randevu Al
         </a>
       </div>
-    </motion.div>
+    </div>
   );
 }
 

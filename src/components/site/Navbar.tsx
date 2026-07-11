@@ -11,6 +11,7 @@
 
 import { useState, useEffect, useCallback, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X, Phone, ChevronDown } from 'lucide-react';
 import { useSiteSettings } from '@/context/SiteSettingsContext';
@@ -187,8 +188,18 @@ export function Navbar() {
       >
         <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between gap-2 sm:h-20">
-            {/* Logo (yazı tabanlı wordmark) */}
-            <Link href="/" className="group flex shrink-0 flex-col justify-center leading-none">
+            {/* Logo — next/image (CLS sabit boyut) + wordmark */}
+            <Link href="/" className="group flex shrink-0 items-center gap-2.5 sm:gap-3">
+              <Image
+                src="/logo.webp"
+                alt="Zümrüt Vadi Temizlik"
+                width={40}
+                height={40}
+                className="h-9 w-9 shrink-0 rounded-lg object-contain sm:h-10 sm:w-10"
+                priority
+                sizes="40px"
+              />
+              <span className="flex min-w-0 flex-col justify-center leading-none">
               <span className="whitespace-nowrap text-base font-extrabold tracking-tight transition-transform group-hover:-translate-y-px sm:text-2xl">
                 <span className={`transition-colors ${scrolled ? 'text-slate-900' : 'text-white'}`}>
                   Zümrüt Vadi
@@ -203,6 +214,7 @@ export function Navbar() {
                 }`}
               >
                 İstanbul Profesyonel Temizlik
+              </span>
               </span>
             </Link>
 
@@ -304,7 +316,7 @@ export function Navbar() {
             <button
               ref={mobileButtonRef}
               onClick={toggleMenu}
-              className={`rounded-lg p-2 xl:hidden ${scrolled ? 'text-slate-700' : 'text-white'}`}
+              className={`touch-target rounded-lg p-2 xl:hidden ${scrolled ? 'text-slate-700' : 'text-white'}`}
               aria-expanded={isOpen}
               aria-controls="mobile-menu"
               aria-label={isOpen ? 'Menüyü kapat' : 'Menüyü aç'}
@@ -339,7 +351,7 @@ export function Navbar() {
                 <span className="text-lg font-bold text-slate-900 sm:text-xl">Menü</span>
                 <button
                   onClick={closeMenu}
-                  className="rounded-lg p-2 text-slate-500 hover:bg-slate-100"
+                  className="touch-target rounded-lg p-2 text-slate-500 hover:bg-slate-100"
                   aria-label="Menüyü kapat"
                 >
                   <X size={24} aria-hidden="true" />
@@ -351,7 +363,7 @@ export function Navbar() {
                     key={link.href}
                     href={link.href}
                     onClick={closeMenu}
-                    className="block border-b border-slate-100 py-3.5 text-base font-medium text-slate-700 transition-colors hover:text-emerald-500 sm:py-4 sm:text-lg"
+                    className="flex min-h-[44px] items-center border-b border-slate-100 py-3.5 text-base font-medium text-slate-700 transition-colors hover:text-emerald-500 sm:py-4 sm:text-lg"
                   >
                     {link.label}
                   </Link>

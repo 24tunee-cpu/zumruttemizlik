@@ -14,8 +14,8 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Script from "next/script";
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+import { DeferredDexterWidget } from "@/components/site/DeferredDexterWidget";
+import VercelMonitoring from "@/components/analytics/VercelMonitoring";
 import { CoreWebVitalsOptimizer } from "@/lib/core-web-vitals";
 import { Providers } from "./providers";
 import { getSiteIconHref } from "@/lib/site-branding";
@@ -59,11 +59,11 @@ const rootMetadataBase: Metadata = {
     siteName: "Zümrüt Vadi Temizlik",
     images: [
       {
-        url: canonicalUrl("/logo.png"),
+        url: canonicalUrl("/og-image.jpg"),
         width: 1200,
         height: 630,
         alt: "Zümrüt Vadi Temizlik - İstanbul Profesyonel Temizlik Hizmetleri",
-        type: "image/png",
+        type: "image/jpeg",
       },
     ],
   },
@@ -71,7 +71,7 @@ const rootMetadataBase: Metadata = {
     card: "summary_large_image",
     title: 'Zümrüt Vadi Temizlik | İstanbul Profesyonel Temizlik Hizmetleri',
     description: "Profesyonel temizlik hizmetleri. 7/24 hizmet, ücretsiz keşif!",
-    images: [canonicalUrl("/logo.png")],
+    images: [canonicalUrl("/og-image.jpg")],
     creator: "@zumrutvaditemizlik",
     site: "@zumrutvaditemizlik",
   },
@@ -155,19 +155,13 @@ export default async function RootLayout({ children }: RootLayoutProps) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: rootSchemaJsonLd }}
         />
-        <Script
-          id="dexter-widget"
-          src="https://apiv4.dextergpt.com/api/v1/dexterWidget"
-          data-token={DEXTER_WIDGET_TOKEN}
-          strategy="afterInteractive"
-        />
       </head>
       <body className="min-h-screen bg-white dark:bg-slate-900 transition-colors">
+        <DeferredDexterWidget token={DEXTER_WIDGET_TOKEN} />
         <Providers gaMeasurementId={GA_MEASUREMENT_ID}>
           {children}
         </Providers>
-        <Analytics />
-        <SpeedInsights />
+        <VercelMonitoring />
         <CoreWebVitalsOptimizer />
       </body>
     </html>
