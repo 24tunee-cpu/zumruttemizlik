@@ -38,6 +38,7 @@ const navLinks: NavLink[] = [
 ];
 
 const resourcesNavLinks: NavLink[] = [
+  { href: '/cozumler', label: 'Çözümler' },
   { href: '/galeri', label: 'Galeri' },
   { href: '/ara', label: 'Ara' },
   { href: '/rehber', label: 'Rehber' },

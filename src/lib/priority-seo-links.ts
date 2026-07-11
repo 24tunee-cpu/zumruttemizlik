@@ -74,6 +74,11 @@ export const PRIORITY_BLOG_LINKS: PrioritySeoLink[] = [
  * Sitenin ticari dönüşüm odaklı ana URL kümeleri.
  */
 export const PRIORITY_CONVERSION_LINKS: PrioritySeoLink[] = [
+  { href: '/cozumler', label: 'Temizlik Çözümleri Hub' },
+  { href: '/cozumler/insaat-sonrasi-temizlik', label: 'İnşaat Sonrası Temizlik' },
+  { href: '/cozumler/tasinma-temizligi', label: 'Taşınma Temizliği' },
+  { href: '/cozumler/kira-teslim-temizligi', label: 'Kira Teslim Temizliği' },
+  { href: '/cozumler/ofis-temizligi', label: 'Ofis Temizliği Çözümü' },
   { href: '/fiyat-hesaplama', label: 'Fiyat Hesaplama' },
   { href: '/randevu', label: 'Randevu Oluştur' },
   { href: '/hizmetler', label: 'Tüm Hizmetler' },

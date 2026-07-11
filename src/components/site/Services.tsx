@@ -373,6 +373,13 @@ export function Services({ limit = 7 }: ServicesProps) {
             Anında Fiyat Hesapla
           </Link>
           <Link
+            href="/cozumler"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-600 bg-slate-800/60 px-7 py-3.5 text-sm font-semibold text-slate-200 transition hover:border-emerald-500/40 hover:text-emerald-300 sm:w-auto"
+          >
+            Temizlik Çözümleri
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </Link>
+          <Link
             href="/bolgeler/sariyer/zekeriyakoy"
             className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-600 bg-slate-800/60 px-7 py-3.5 text-sm font-semibold text-slate-200 transition hover:border-slate-500 hover:bg-slate-800 sm:w-auto"
           >

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { getSiteUrl } from '@/lib/seo';
 import { allProgrammaticLandingPaths, allNeighborhoodLandingPaths } from '@/config/programmatic-seo';
+import { allIntentPaths } from '@/config/intent-seo';
 import { SERVICE_SEED_DATA } from '@/lib/seed-services';
 
 type StaticEntry = {
@@ -16,7 +17,7 @@ const STATIC_PAGES: StaticEntry[] = [
   { path: '/llms-full.txt', changeFrequency: 'weekly', priority: 0.9 },
   { path: '/hizmetler', changeFrequency: 'weekly', priority: 0.9 },
   { path: '/bolgeler', changeFrequency: 'weekly', priority: 0.9 },
-  { path: '/fiyat-hesaplama', changeFrequency: 'weekly', priority: 0.92 },
+  { path: '/cozumler', changeFrequency: 'weekly', priority: 0.94 },
   { path: '/iletisim', changeFrequency: 'monthly', priority: 0.9 },
   { path: '/randevu', changeFrequency: 'weekly', priority: 0.88 },
   { path: '/rehber', changeFrequency: 'monthly', priority: 0.82 },
@@ -78,7 +79,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.9,
     }));
 
-    return [...staticEntries, ...programmaticEntries, ...serviceEntries, ...neighborhoodEntries];
+    const intentEntries: MetadataRoute.Sitemap = allIntentPaths()
+      .filter((p) => p !== '/cozumler')
+      .map((path) => ({
+        url: toAbsoluteUrl(base, path),
+        lastModified: now,
+        changeFrequency: 'weekly' as const,
+        priority: 0.93,
+      }));
+
+    return [...staticEntries, ...intentEntries, ...programmaticEntries, ...serviceEntries, ...neighborhoodEntries];
   } catch {
     // Her durumda çalışır: en azından temel URL'leri döndür.
     const fallbackBase = 'https://www.zumrutvaditemizlik.com';
