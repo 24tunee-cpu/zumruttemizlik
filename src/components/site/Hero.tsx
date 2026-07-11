@@ -4,7 +4,6 @@
  * LCP için h1/CTA sunucuda render; animasyon/dekor/hesaplayıcı ayrı chunk'larda.
  */
 
-import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import {
   ArrowRight,
@@ -16,29 +15,11 @@ import {
   Star,
   CheckCircle2,
 } from 'lucide-react';
-
-const HeroDecorations = dynamic(
-  () => import('@/components/site/HeroDecorations').then((mod) => mod.HeroDecorations),
-  { ssr: false }
-);
-
-const HeroCalculatorSection = dynamic(
-  () => import('@/components/site/HeroCalculatorSection').then((mod) => mod.HeroCalculatorSection),
-  {
-    ssr: false,
-    loading: () => (
-      <div
-        className="h-[22rem] rounded-3xl border border-slate-700/40 bg-slate-800/40 animate-pulse lg:h-[28rem]"
-        aria-hidden="true"
-      />
-    ),
-  }
-);
-
-const HeroScrollIndicator = dynamic(
-  () => import('@/components/site/HeroScrollIndicator').then((mod) => mod.HeroScrollIndicator),
-  { ssr: false }
-);
+import {
+  HeroDecorations,
+  HeroCalculatorSection,
+  HeroScrollIndicator,
+} from '@/components/site/HeroClientParts';
 
 const HERO_STATS = [
   { icon: Award, value: '5000+', label: 'Mutlu Müşteri' },
