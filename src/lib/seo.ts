@@ -291,8 +291,10 @@ export function generateServiceSchema(service: {
   slug: string;
   image?: string;
   priceRange?: string;
+  url?: string;
+  areaServed?: string | Record<string, unknown>;
 }): Record<string, unknown> {
-  const fullUrl = `${SITE_URL}/hizmetler/${service.slug}`;
+  const fullUrl = service.url ?? `${SITE_URL}/hizmetler/${service.slug}`;
   const fullImage = service.image
     ? service.image.startsWith('http')
       ? service.image
@@ -312,8 +314,65 @@ export function generateServiceSchema(service: {
     url: fullUrl,
     image: fullImage,
     ...(service.priceRange && { priceRange: service.priceRange }),
-    areaServed: 'İstanbul',
+    areaServed: service.areaServed ?? 'İstanbul',
     serviceType: 'Temizlik Hizmetleri',
+  };
+}
+
+/**
+ * HowTo schema — süreç adımları için zengin sonuç potansiyeli
+ */
+export function generateHowToSchema(params: {
+  name: string;
+  description: string;
+  url?: string;
+  steps: { name: string; text: string }[];
+  totalTime?: string;
+}): Record<string, unknown> {
+  if (params.steps.length === 0) return {};
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: params.name,
+    description: params.description,
+    ...(params.url && { url: params.url }),
+    totalTime: params.totalTime ?? 'PT2H',
+    step: params.steps.map((step, index) => ({
+      '@type': 'HowToStep',
+      position: index + 1,
+      name: step.name,
+      text: step.text,
+    })),
+  };
+}
+
+/**
+ * Offer schema — fiyat aralığı / teklif sinyali (Service.offers ile birlikte)
+ */
+export function generateOfferSchema(params: {
+  name: string;
+  description: string;
+  url: string;
+  priceHint: string;
+}): Record<string, unknown> {
+  return {
+    '@type': 'Offer',
+    name: params.name,
+    description: params.description,
+    url: params.url,
+    priceCurrency: 'TRY',
+    availability: 'https://schema.org/InStock',
+    priceSpecification: {
+      '@type': 'PriceSpecification',
+      priceCurrency: 'TRY',
+      description: params.priceHint,
+    },
+    seller: {
+      '@type': 'LocalBusiness',
+      name: SITE_CONFIG.name,
+      '@id': SITE_URL,
+    },
   };
 }
 

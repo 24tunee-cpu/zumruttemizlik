@@ -42,6 +42,8 @@ export default function robots(): MetadataRoute.Robots {
           '/llms.txt',
           '/llms-full.txt',
           '/sitemap.xml',
+          '/cozumler/sitemap.xml',
+          '/bolgeler/sitemap.xml',
           '/blog/sitemap.xml',
           '/hizmetler',
           '/bolgeler',
@@ -50,7 +52,12 @@ export default function robots(): MetadataRoute.Robots {
         crawlDelay: 2, // LLM botlar için daha yavaş
       },
     ],
-    sitemap: [`${base}/sitemap.xml`, `${base}/blog/sitemap.xml`],
+    sitemap: [
+      `${base}/sitemap.xml`,
+      `${base}/cozumler/sitemap.xml`,
+      `${base}/bolgeler/sitemap.xml`,
+      `${base}/blog/sitemap.xml`,
+    ],
     host: base,
   };
 }

@@ -1,7 +1,5 @@
 import type { MetadataRoute } from 'next';
 import { getSiteUrl } from '@/lib/seo';
-import { allProgrammaticLandingPaths, allNeighborhoodLandingPaths } from '@/config/programmatic-seo';
-import { allIntentPaths, allIntentDistrictPaths } from '@/config/intent-seo';
 import { SERVICE_SEED_DATA } from '@/lib/seed-services';
 
 type StaticEntry = {
@@ -10,14 +8,14 @@ type StaticEntry = {
   priority: number;
 };
 
-/** Herkese açık sayfalar (admin / auth hariç). */
+/** Ana sitemap — çekirdek statik sayfalar + hizmet detayları. */
 const STATIC_PAGES: StaticEntry[] = [
   { path: '', changeFrequency: 'weekly', priority: 1 },
   { path: '/llms.txt', changeFrequency: 'weekly', priority: 0.95 },
   { path: '/llms-full.txt', changeFrequency: 'weekly', priority: 0.9 },
   { path: '/hizmetler', changeFrequency: 'weekly', priority: 0.9 },
-  { path: '/bolgeler', changeFrequency: 'weekly', priority: 0.9 },
   { path: '/cozumler', changeFrequency: 'weekly', priority: 0.94 },
+  { path: '/bolgeler', changeFrequency: 'weekly', priority: 0.9 },
   { path: '/iletisim', changeFrequency: 'monthly', priority: 0.9 },
   { path: '/randevu', changeFrequency: 'weekly', priority: 0.88 },
   { path: '/rehber', changeFrequency: 'monthly', priority: 0.82 },
@@ -31,6 +29,7 @@ const STATIC_PAGES: StaticEntry[] = [
   { path: '/sss', changeFrequency: 'monthly', priority: 0.8 },
   { path: '/gizlilik', changeFrequency: 'yearly', priority: 0.4 },
   { path: '/kullanim-kosullari', changeFrequency: 'yearly', priority: 0.4 },
+  { path: '/fiyat-hesaplama', changeFrequency: 'weekly', priority: 0.87 },
 ];
 
 function toAbsoluteUrl(base: string, path: string): string {
@@ -39,65 +38,34 @@ function toAbsoluteUrl(base: string, path: string): string {
 }
 
 /**
- * Sitemap — statik sayfalar + aktif hizmet detayları + programatik landing URL'leri.
- * Blog URL'leri `app/blog/sitemap.ts` içinde ayrı üretilir.
- * @see https://nextjs.org/docs/app/api-reference/file-conventions/metadata/sitemap
+ * Ana sitemap — statik sayfalar + aktif hizmet detayları.
+ * Çözümler: `/cozumler/sitemap.xml` · Bölgeler: `/bolgeler/sitemap.xml` · Blog: `/blog/sitemap.xml`
  */
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   try {
     const base = getSiteUrl();
     const now = new Date();
 
-    const staticEntries: MetadataRoute.Sitemap = STATIC_PAGES.map(({ path, changeFrequency, priority }) => ({
-      url: toAbsoluteUrl(base, path),
-      lastModified: now,
-      changeFrequency,
-      priority,
-    }));
-
-    const programmaticEntries: MetadataRoute.Sitemap = allProgrammaticLandingPaths()
-      .filter((p) => p !== '/bolgeler')
-      .map((path) => ({
+    const staticEntries: MetadataRoute.Sitemap = STATIC_PAGES.map(
+      ({ path, changeFrequency, priority }) => ({
         url: toAbsoluteUrl(base, path),
         lastModified: now,
-        changeFrequency: 'weekly' as const,
-        priority: 0.8,
-      }));
+        changeFrequency,
+        priority,
+      })
+    );
 
-    const serviceEntries: MetadataRoute.Sitemap = SERVICE_SEED_DATA.filter((s) => s.isActive !== false).map((s) => ({
+    const serviceEntries: MetadataRoute.Sitemap = SERVICE_SEED_DATA.filter(
+      (s) => s.isActive !== false
+    ).map((s) => ({
       url: `${base}/hizmetler/${s.slug}`,
       lastModified: now,
       changeFrequency: 'weekly' as const,
       priority: 0.85,
     }));
 
-    // Öncelikli semt sayfaları (ör. Zekeriyaköy)
-    const neighborhoodEntries: MetadataRoute.Sitemap = allNeighborhoodLandingPaths().map((path) => ({
-      url: toAbsoluteUrl(base, path),
-      lastModified: now,
-      changeFrequency: 'weekly' as const,
-      priority: 0.9,
-    }));
-
-    const intentEntries: MetadataRoute.Sitemap = allIntentPaths()
-      .filter((p) => p !== '/cozumler')
-      .map((path) => ({
-        url: toAbsoluteUrl(base, path),
-        lastModified: now,
-        changeFrequency: 'weekly' as const,
-        priority: 0.93,
-      }));
-
-    const intentDistrictEntries: MetadataRoute.Sitemap = allIntentDistrictPaths().map((path) => ({
-      url: toAbsoluteUrl(base, path),
-      lastModified: now,
-      changeFrequency: 'weekly' as const,
-      priority: 0.91,
-    }));
-
-    return [...staticEntries, ...intentEntries, ...intentDistrictEntries, ...programmaticEntries, ...serviceEntries, ...neighborhoodEntries];
+    return [...staticEntries, ...serviceEntries];
   } catch {
-    // Her durumda çalışır: en azından temel URL'leri döndür.
     const fallbackBase = 'https://www.zumrutvaditemizlik.com';
     return [
       { url: `${fallbackBase}/`, lastModified: new Date(), changeFrequency: 'weekly', priority: 1 },

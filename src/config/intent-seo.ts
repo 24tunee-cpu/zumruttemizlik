@@ -340,6 +340,11 @@ export function allIntentPaths(): string[] {
   return ['/cozumler', ...INTENT_LANDINGS.map((i) => `/cozumler/${i.slug}`)];
 }
 
+/** Faz 3 sitemap segmentasyonu — hub + niyet + niyet×ilçe */
+export function allCozumlerSitemapPaths(): string[] {
+  return [...allIntentPaths(), ...allIntentDistrictPaths()];
+}
+
 export function getRelatedIntents(slugs: string[]): IntentLanding[] {
   return slugs
     .map((s) => getIntentBySlug(s))
