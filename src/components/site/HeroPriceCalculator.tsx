@@ -3,13 +3,12 @@
  * @description Ana sayfa hero bölümünde yer alan anlık fiyat hesaplama ve
  * WhatsApp üzerinden randevu/iletişim aracı.
  *
- * Fiyatlar İstanbul piyasası (orta–üst segment, 2026) baz alınarak belirlenmiştir.
- * Bunlar TAHMİNÎ aralıklardır; kesin fiyat ücretsiz keşif sonrası netleşir.
+ * Faz 4: URL ?intent=&district= ile niyet-aware mod + GA4 intent event'leri.
  */
 
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   Home,
@@ -21,6 +20,7 @@ import {
   MessageCircle,
   Sparkles,
   Check,
+  MapPin,
 } from 'lucide-react';
 import { SITE_CONTACT } from '@/config/site-contact';
 import {
@@ -37,10 +37,8 @@ import {
   type PriceRange,
   type ExtraId,
 } from '@/config/pricing';
-
-// ============================================
-// İKON EŞLEMESİ (mekan tipi id -> ikon)
-// ============================================
+import type { CalculatorIntentContext } from '@/lib/intent-analytics';
+import { trackGa4Event } from '@/lib/ga4-client';
 
 const SPACE_TYPE_ICONS: Record<SpaceTypeId, React.ComponentType<{ className?: string }>> = {
   ev: Home,
@@ -50,20 +48,53 @@ const SPACE_TYPE_ICONS: Record<SpaceTypeId, React.ComponentType<{ className?: st
   discephe: Building,
 };
 
-// ============================================
-// BİLEŞEN
-// ============================================
+export type HeroPriceCalculatorProps = {
+  initialSpaceType?: SpaceTypeId;
+  initialRoom?: string;
+  initialArea?: number;
+  intentContext?: CalculatorIntentContext | null;
+};
 
-export function HeroPriceCalculator() {
-  const [spaceType, setSpaceType] = useState<SpaceTypeId>('ev');
-  const [room, setRoom] = useState<string>('2+1');
-  const [area, setArea] = useState<number>(100);
+function buildAnalyticsPayload(
+  spaceType: SpaceTypeId,
+  room: string,
+  area: number,
+  range: PriceRange,
+  intentContext?: CalculatorIntentContext | null
+) {
+  return {
+    lead_source: 'price_calculator',
+    space_type: spaceType,
+    room_type: spaceType === 'ev' ? room : undefined,
+    area_m2: spaceType !== 'ev' ? area : undefined,
+    value: range[0],
+    value_max: range[1],
+    currency: 'TRY',
+    intent_slug: intentContext?.intentSlug,
+    intent_name: intentContext?.intentName,
+    district_slug: intentContext?.districtSlug,
+    district_name: intentContext?.districtName,
+  };
+}
+
+export function HeroPriceCalculator({
+  initialSpaceType = 'ev',
+  initialRoom = '2+1',
+  initialArea = 100,
+  intentContext = null,
+}: HeroPriceCalculatorProps) {
+  const [spaceType, setSpaceType] = useState<SpaceTypeId>(initialSpaceType);
+  const [room, setRoom] = useState<string>(initialRoom);
+  const [area, setArea] = useState<number>(initialArea);
   const [extras, setExtras] = useState<Record<ExtraId, boolean>>({
     cam: false,
     beyazesya: false,
     balkon: false,
     koltuk: false,
   });
+
+  const hasTrackedView = useRef(false);
+  const lastCalculatedKey = useRef('');
 
   const activeType = useMemo(
     () => SPACE_TYPES.find((t) => t.id === spaceType)!,
@@ -100,6 +131,24 @@ export function HeroPriceCalculator() {
     return [roundTo(min), roundTo(max)];
   }, [activeType.mode, room, area, spaceType, selectedExtras]);
 
+  useEffect(() => {
+    if (hasTrackedView.current) return;
+    hasTrackedView.current = true;
+    trackGa4Event('price_calculator_view', buildAnalyticsPayload(spaceType, room, area, range, intentContext));
+  }, [spaceType, room, area, range, intentContext]);
+
+  useEffect(() => {
+    const key = `${spaceType}|${room}|${area}|${selectedExtras.map((e) => e.id).join(',')}|${range[0]}-${range[1]}`;
+    if (key === lastCalculatedKey.current) return;
+    lastCalculatedKey.current = key;
+
+    const timer = window.setTimeout(() => {
+      trackGa4Event('price_calculated', buildAnalyticsPayload(spaceType, room, area, range, intentContext));
+    }, 600);
+
+    return () => window.clearTimeout(timer);
+  }, [spaceType, room, area, range, selectedExtras, intentContext]);
+
   const toggleExtra = (id: ExtraId) =>
     setExtras((prev) => ({ ...prev, [id]: !prev[id] }));
 
@@ -109,6 +158,12 @@ export function HeroPriceCalculator() {
         ? `${room} ${activeType.label} temizliği`
         : `${activeType.label} temizliği (${area || 0} m²)`;
 
+    const intentLine = intentContext
+      ? intentContext.districtName
+        ? `Niyet: ${intentContext.intentName} (${intentContext.districtName})\n`
+        : `Niyet: ${intentContext.intentName}\n`
+      : '';
+
     const extrasText = selectedExtras.length
       ? `\nEkstralar: ${selectedExtras
           .map((e) => (e.free ? `${e.label} (hediye)` : e.label))
@@ -117,12 +172,25 @@ export function HeroPriceCalculator() {
 
     const message =
       `Merhaba, web sitenizden fiyat hesapladım.\n` +
+      intentLine +
       `Hizmet: ${serviceDesc}\n` +
       `Tahmini fiyat: ${nf.format(range[0])} – ${nf.format(range[1])} TL${extrasText}\n` +
       `Randevu almak istiyorum.`;
 
     return `https://wa.me/${SITE_CONTACT.whatsappDigits}?text=${encodeURIComponent(message)}`;
-  }, [activeType, room, area, selectedExtras, range]);
+  }, [activeType, room, area, selectedExtras, range, intentContext]);
+
+  const handleWhatsappClick = () => {
+    const payload = buildAnalyticsPayload(spaceType, room, area, range, intentContext);
+    trackGa4Event('generate_lead', {
+      ...payload,
+      form_id: 'price_calculator_whatsapp',
+      form_destination: '/fiyat-hesaplama',
+    });
+    if (intentContext?.ga4LeadEvent) {
+      trackGa4Event(intentContext.ga4LeadEvent, payload);
+    }
+  };
 
   return (
     <motion.div
@@ -131,25 +199,41 @@ export function HeroPriceCalculator() {
       transition={{ delay: 0.3, duration: 0.6 }}
       className="relative w-full"
     >
-      {/* Glow */}
       <div
         className="absolute -inset-3 -z-10 rounded-3xl bg-gradient-to-br from-emerald-500/20 to-emerald-700/10 blur-2xl"
         aria-hidden="true"
       />
 
       <div className="rounded-3xl border border-slate-700/60 bg-slate-800/60 p-5 shadow-2xl backdrop-blur-xl sm:p-6">
-        {/* Başlık */}
+        {intentContext && (
+          <div className="mb-4 rounded-xl border border-emerald-500/25 bg-emerald-950/40 px-4 py-3">
+            <p className="text-xs font-semibold uppercase tracking-wide text-emerald-400">
+              Niyet modu
+            </p>
+            <p className="mt-1 text-sm font-medium text-white">{intentContext.intentName}</p>
+            {intentContext.districtName && (
+              <p className="mt-1 flex items-center gap-1.5 text-xs text-slate-400">
+                <MapPin className="h-3.5 w-3.5 text-emerald-400" aria-hidden="true" />
+                {intentContext.districtName}
+              </p>
+            )}
+          </div>
+        )}
+
         <div className="mb-5 flex items-center gap-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/15 text-emerald-400">
             <Calculator className="h-5 w-5" />
           </div>
           <div>
             <h2 className="text-lg font-bold text-white">Anında Fiyat Hesapla</h2>
-            <p className="text-xs text-slate-400">Birkaç saniyede tahmini fiyatını gör</p>
+            <p className="text-xs text-slate-400">
+              {intentContext
+                ? `${intentContext.intentName} için tahmini fiyat`
+                : 'Birkaç saniyede tahmini fiyatını gör'}
+            </p>
           </div>
         </div>
 
-        {/* Adım 1 — Mekan tipi */}
         <fieldset className="mb-4">
           <legend className="mb-2 text-xs font-semibold uppercase tracking-wide text-emerald-400">
             1. Mekan tipi
@@ -178,7 +262,6 @@ export function HeroPriceCalculator() {
           </div>
         </fieldset>
 
-        {/* Adım 2 — Oda sayısı veya metrekare */}
         {activeType.mode === 'room' ? (
           <fieldset className="mb-4">
             <legend className="mb-2 text-xs font-semibold uppercase tracking-wide text-emerald-400">
@@ -235,7 +318,6 @@ export function HeroPriceCalculator() {
           </fieldset>
         )}
 
-        {/* Adım 3 — Ekstralar */}
         {showExtras && (
           <fieldset className="mb-5">
             <legend className="mb-2 text-xs font-semibold uppercase tracking-wide text-emerald-400">
@@ -279,7 +361,6 @@ export function HeroPriceCalculator() {
           </fieldset>
         )}
 
-        {/* Sonuç */}
         <div className="rounded-2xl border border-emerald-500/30 bg-gradient-to-br from-emerald-500/10 to-emerald-600/5 p-4">
           <div className="flex items-center gap-1.5 text-xs font-medium text-emerald-400">
             <Sparkles className="h-3.5 w-3.5" />
@@ -293,11 +374,11 @@ export function HeroPriceCalculator() {
           </p>
         </div>
 
-        {/* CTA */}
         <a
           href={whatsappHref}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={handleWhatsappClick}
           className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-emerald-500/30 transition-all hover:shadow-emerald-500/50 sm:text-base"
         >
           <MessageCircle className="h-5 w-5" />

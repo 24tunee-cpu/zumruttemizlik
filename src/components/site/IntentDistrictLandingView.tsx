@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import type { IntentDistrictPage } from '@/config/intent-seo';
 import { getRelatedIntents, getOtherIntentDistricts } from '@/config/intent-seo';
+import { buildCalculatorHref } from '@/lib/intent-analytics';
 import { formatDistrictSide } from '@/config/programmatic-seo';
 import { SITE_CONTACT, toTelHref } from '@/config/site-contact';
 
@@ -75,7 +76,7 @@ export function IntentDistrictLandingView({ page }: IntentDistrictLandingViewPro
                 Ücretsiz Keşif
               </Link>
               <Link
-                href="/fiyat-hesaplama"
+                href={buildCalculatorHref({ intent: intent.slug, district: district.slug })}
                 className="inline-flex items-center gap-2 rounded-xl border border-slate-600 bg-slate-800 px-5 py-2.5 text-sm font-medium text-slate-200 transition hover:border-emerald-500/50"
               >
                 <Calculator className="h-4 w-4" aria-hidden="true" />
@@ -284,7 +285,7 @@ export function IntentDistrictLandingView({ page }: IntentDistrictLandingViewPro
                 Randevu Oluştur
               </Link>
               <Link
-                href="/fiyat-hesaplama"
+                href={buildCalculatorHref({ intent: intent.slug, district: district.slug })}
                 className="rounded-xl border border-white/50 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
               >
                 Fiyat Hesapla

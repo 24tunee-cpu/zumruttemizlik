@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import SiteLayout from '../site/layout';
-import { HeroPriceCalculator } from '@/components/site/HeroPriceCalculator';
+import { FiyatHesaplamaCalculator } from '@/components/site/FiyatHesaplamaCalculator';
 import {
   SPACE_TYPES,
   ROOM_PRICES,
@@ -136,7 +136,7 @@ export default function FiyatHesaplamaPage() {
             </ul>
           </div>
           <div>
-            <HeroPriceCalculator />
+            <FiyatHesaplamaCalculator />
           </div>
         </div>
       </section>
