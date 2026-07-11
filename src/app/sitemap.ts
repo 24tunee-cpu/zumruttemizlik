@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { getSiteUrl } from '@/lib/seo';
 import { allProgrammaticLandingPaths, allNeighborhoodLandingPaths } from '@/config/programmatic-seo';
-import { allIntentPaths } from '@/config/intent-seo';
+import { allIntentPaths, allIntentDistrictPaths } from '@/config/intent-seo';
 import { SERVICE_SEED_DATA } from '@/lib/seed-services';
 
 type StaticEntry = {
@@ -88,7 +88,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.93,
       }));
 
-    return [...staticEntries, ...intentEntries, ...programmaticEntries, ...serviceEntries, ...neighborhoodEntries];
+    const intentDistrictEntries: MetadataRoute.Sitemap = allIntentDistrictPaths().map((path) => ({
+      url: toAbsoluteUrl(base, path),
+      lastModified: now,
+      changeFrequency: 'weekly' as const,
+      priority: 0.91,
+    }));
+
+    return [...staticEntries, ...intentEntries, ...intentDistrictEntries, ...programmaticEntries, ...serviceEntries, ...neighborhoodEntries];
   } catch {
     // Her durumda çalışır: en azından temel URL'leri döndür.
     const fallbackBase = 'https://www.zumrutvaditemizlik.com';

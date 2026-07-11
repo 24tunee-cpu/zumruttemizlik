@@ -1,7 +1,14 @@
 /**
- * Niyet (use-case) bazlı SEO siloları — /cozumler/{slug}
- * Faz 1: Hub + 5 ticari niyet landing (ilçe varyantları Faz 2).
+ * Niyet (use-case) bazlı SEO siloları — /cozumler/{slug} ve /cozumler/{slug}/{district}
+ * Faz 1: Hub + 5 ticari niyet landing
+ * Faz 2: Niyet × ilçe programatik sayfalar
  */
+
+import {
+  getDistrictBySlug,
+  formatDistrictSide,
+  type DistrictLanding,
+} from './programmatic-seo';
 
 export type IntentFaq = { q: string; a: string };
 
@@ -337,4 +344,105 @@ export function getRelatedIntents(slugs: string[]): IntentLanding[] {
   return slugs
     .map((s) => getIntentBySlug(s))
     .filter((i): i is IntentLanding => i !== undefined);
+}
+
+/** Faz 2: niyet×ilçe kombinasyonları için hedef ilçeler (5×8 = 40 URL) */
+export const INTENT_DISTRICT_SLUGS = [
+  'sariyer',
+  'besiktas',
+  'sisli',
+  'kagithane',
+  'kadikoy',
+  'bakirkoy',
+  'atasehir',
+  'umraniye',
+] as const;
+
+export type IntentDistrictSlug = (typeof INTENT_DISTRICT_SLUGS)[number];
+
+export type IntentDistrictPage = {
+  intent: IntentLanding;
+  district: DistrictLanding;
+  metaTitle: string;
+  metaDescription: string;
+  keywords: string[];
+  heroTitle: string;
+  heroDescription: string;
+  faq: IntentFaq[];
+  localBlurb: string;
+};
+
+function isIntentDistrictSlug(slug: string): slug is IntentDistrictSlug {
+  return (INTENT_DISTRICT_SLUGS as readonly string[]).includes(slug);
+}
+
+function buildDistrictKeywords(intent: IntentLanding, district: DistrictLanding): string[] {
+  const districtLower = district.name.toLowerCase();
+  const intentLower = intent.name.toLowerCase();
+  return [
+    `${districtLower} ${intentLower}`,
+    `${district.name} ${intent.name}`,
+    ...intent.keywords.slice(0, 4).map((k) =>
+      k.includes('istanbul') ? k.replace(/istanbul/gi, districtLower) : `${districtLower} ${k}`
+    ),
+  ];
+}
+
+export function buildIntentDistrictPage(
+  intentSlug: string,
+  districtSlug: string
+): IntentDistrictPage | undefined {
+  const intent = getIntentBySlug(intentSlug);
+  const district = getDistrictBySlug(districtSlug);
+  if (!intent || !district || !isIntentDistrictSlug(districtSlug)) return undefined;
+
+  const side = formatDistrictSide(district);
+  const sideNote = side ? ` ${side}.` : '';
+  const localBlurb =
+    district.regionBlurb ??
+    `${district.name} ve çevresinde ${intent.name.toLowerCase()} için yerel ekip ve hızlı keşif.`;
+
+  const metaDescription = `${district.name} bölgesinde ${intent.name.toLowerCase()}.${sideNote} Ücretsiz keşif, şeffaf fiyat (${intent.priceHint}). Aynı gün geri dönüş.`;
+
+  return {
+    intent,
+    district,
+    metaTitle: `${district.name} ${intent.name} | Ücretsiz Keşif | İstanbul`,
+    metaDescription,
+    keywords: buildDistrictKeywords(intent, district),
+    heroTitle: `${district.name} ${intent.name}`,
+    heroDescription: `${district.name} bölgesinde ${intent.name.toLowerCase()} — ${localBlurb} Tahmini fiyat: ${intent.priceHint}.`,
+    faq: [
+      {
+        q: `${district.name} bölgesinde ${intent.name.toLowerCase()} ne kadar sürer?`,
+        a: `Metrekare ve kirlilik derecesine göre değişir. ${district.name} için keşif sonrası net süre ve fiyat paylaşıyoruz; çoğu iş 1–3 gün içinde tamamlanır.`,
+      },
+      {
+        q: `${district.name} için ücretsiz keşif yapıyor musunuz?`,
+        a: `Evet. ${district.name} ve çevresinde ücretsiz keşif veya WhatsApp üzerinden fotoğrafla ön teklif sunuyoruz.`,
+      },
+      ...intent.faq.slice(0, 3),
+    ],
+    localBlurb,
+  };
+}
+
+export function allIntentDistrictParams(): { slug: string; district: string }[] {
+  return INTENT_LANDINGS.flatMap((intent) =>
+    INTENT_DISTRICT_SLUGS.map((district) => ({ slug: intent.slug, district }))
+  );
+}
+
+export function allIntentDistrictPaths(): string[] {
+  return allIntentDistrictParams().map((p) => `/cozumler/${p.slug}/${p.district}`);
+}
+
+export function getOtherIntentDistricts(
+  intentSlug: string,
+  currentDistrictSlug: string
+): IntentDistrictLink[] {
+  return INTENT_DISTRICT_SLUGS.filter((slug) => slug !== currentDistrictSlug)
+    .map((slug) => getDistrictBySlug(slug))
+    .filter((d): d is DistrictLanding => d !== undefined)
+    .map((d) => ({ slug: d.slug, name: d.name }));
 }

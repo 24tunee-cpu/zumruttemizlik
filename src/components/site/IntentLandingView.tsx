@@ -9,7 +9,7 @@ import {
   Sparkles,
 } from 'lucide-react';
 import type { IntentLanding } from '@/config/intent-seo';
-import { getRelatedIntents } from '@/config/intent-seo';
+import { getRelatedIntents, INTENT_DISTRICT_SLUGS } from '@/config/intent-seo';
 import { SITE_CONTACT, toTelHref } from '@/config/site-contact';
 
 interface IntentLandingViewProps {
@@ -142,16 +142,23 @@ export function IntentLandingView({ intent }: IntentLandingViewProps) {
             Sarıyer ve Zekeriyaköy başta olmak üzere İstanbul genelinde {intent.name.toLowerCase()} hizmeti.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            {intent.priorityDistricts.map((d) => (
-              <Link
-                key={d.slug}
-                href={`/bolgeler/${d.slug}/${intent.serviceSlug}`}
-                className="inline-flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-800/60 px-4 py-2.5 text-sm text-slate-200 transition hover:border-emerald-500/40 hover:text-emerald-300"
-              >
-                <MapPin className="h-4 w-4 text-emerald-400" aria-hidden="true" />
-                {d.name} {intent.name}
-              </Link>
-            ))}
+            {intent.priorityDistricts.map((d) => {
+              const hasIntentDistrict = (INTENT_DISTRICT_SLUGS as readonly string[]).includes(d.slug);
+              return (
+                <Link
+                  key={d.slug}
+                  href={
+                    hasIntentDistrict
+                      ? `/cozumler/${intent.slug}/${d.slug}`
+                      : `/bolgeler/${d.slug}/${intent.serviceSlug}`
+                  }
+                  className="inline-flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-800/60 px-4 py-2.5 text-sm text-slate-200 transition hover:border-emerald-500/40 hover:text-emerald-300"
+                >
+                  <MapPin className="h-4 w-4 text-emerald-400" aria-hidden="true" />
+                  {d.name} {intent.name}
+                </Link>
+              );
+            })}
             <Link
               href="/bolgeler/sariyer/zekeriyakoy"
               className="inline-flex items-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-950/30 px-4 py-2.5 text-sm font-medium text-emerald-300 transition hover:bg-emerald-950/50"
