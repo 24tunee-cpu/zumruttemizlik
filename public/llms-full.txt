@@ -90,6 +90,11 @@
 - Intent slug → hesaplayıcı modu: inşaat sonrası → m² inşaat; ofis → m² ofis; taşınma/kira/boş ev → ev oda paketi.
 - GA4 event'leri: `price_calculator_view`, `price_calculated`, `generate_lead` (WhatsApp), plus intent-specific: `lead_insaat_sonrasi`, `lead_tasinma`, `lead_kira_teslim`, `lead_bos_ev`, `lead_ofis`.
 
+## Semt Landing & Blog Siloları (Faz 5)
+- **Semt sayfaları:** `/bolgeler/sariyer/{semt}` — Zekeriyaköy, Maslak, Tarabya, Bahçeköy (özel içerik + FAQ + schema).
+- **Blog silo hub:** `/blog/silo/{slug}` — 5 konu silosu: `insaat-sonrasi`, `tasinma`, `kira-teslim`, `bos-ev`, `ofis-kurumsal`.
+- Her silo: pillar `/cozumler/{intent}` + cluster blog yazıları + semt linkleri + fiyat hesaplama CTA.
+
 ## Hizmet Taksonomisi
 - Çekirdek hizmet kümeleri: ofis temizliği, inşaat sonrası temizlik, ev temizliği, koltuk yıkama, halı temizliği, cam temizliği, dış cephe temizliği.
 - Hizmet sunumu, hem genel katalog hem tekil hizmet sayfası modelinde kurgulanır.
