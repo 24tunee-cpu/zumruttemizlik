@@ -1,7 +1,12 @@
 import type { Metadata } from 'next';
 import { SITE_CONTACT } from '@/config/site-contact';
 import SiteLayout from '../site/layout';
-import { canonicalUrl } from '@/lib/seo';
+import { canonicalUrl, generateWebPageSchema, serializeSchemaGraph } from '@/lib/seo';
+import {
+  buildGoogleMapsReviewSchemaGraph,
+  computeGoogleReviewAggregate,
+  fetchGoogleMapReviewsForSeo,
+} from '@/lib/map-reviews-seo';
 
 const address = SITE_CONTACT.addressLine;
 // Kullanıcının doğrudan Google işletme linkleri
@@ -35,9 +40,14 @@ const directionsHref = withUtm(
 
 export const revalidate = 3600;
 
-export function generateMetadata(): Metadata {
+export async function generateMetadata(): Promise<Metadata> {
+  const googleReviews = await fetchGoogleMapReviewsForSeo();
+  const agg = computeGoogleReviewAggregate(googleReviews);
   const title = 'Google Harita ve Müşteri Yorumları | İstanbul | Zümrüt Vadi';
-  const description = `${SITE_CONTACT.addressLocality} konumumuzu haritada görüntüleyin, gerçek müşteri yorumlarını inceleyin ve doğrudan yol tarifi alın.`;
+  const description =
+    agg && agg.reviewCount > 0
+      ? `${SITE_CONTACT.addressLocality} konumumuzu haritada görüntüleyin. Google'da ${agg.ratingValue}/5 ortalama (${agg.reviewCount} yorum). Yol tarifi ve yorum yazın.`
+      : `${SITE_CONTACT.addressLocality} konumumuzu haritada görüntüleyin, gerçek müşteri yorumlarını inceleyin ve doğrudan yol tarifi alın.`;
   const canonical = canonicalUrl('/harita-ve-yorumlar');
 
   return {
@@ -55,39 +65,33 @@ export function generateMetadata(): Metadata {
   };
 }
 
-export default function MapsAndReviewsPage() {
+export default async function MapsAndReviewsPage() {
   const telHref = `tel:${SITE_CONTACT.phoneE164}`;
   const whatsappHref = `https://wa.me/${SITE_CONTACT.whatsappDigits}`;
-  const localBusinessSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: SITE_CONTACT.companyName,
-    url: canonicalUrl('/'),
-    image: canonicalUrl('/logo.png'),
-    telephone: SITE_CONTACT.phoneE164,
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: SITE_CONTACT.addressLine,
-      addressLocality: SITE_CONTACT.addressLocality,
-      addressRegion: SITE_CONTACT.addressRegion,
-      postalCode: SITE_CONTACT.postalCode,
-      addressCountry: 'TR',
-    },
-    hasMap: mapsOpenHref,
-    sameAs: [mapsOpenHref, reviewHref],
-    areaServed: 'İstanbul',
-  };
+  const googleReviews = await fetchGoogleMapReviewsForSeo();
+  const agg = computeGoogleReviewAggregate(googleReviews);
+
+  const jsonLd = serializeSchemaGraph([
+    generateWebPageSchema({
+      path: '/harita-ve-yorumlar',
+      title: 'Google Harita ve Müşteri Yorumları | İstanbul | Zümrüt Vadi',
+      description: 'Zümrüt Vadi Temizlik Google Harita konumu, müşteri yorumları ve yol tarifi.',
+    }),
+    buildGoogleMapsReviewSchemaGraph(googleReviews),
+  ]);
 
   return (
     <SiteLayout>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} />
       <div className="min-h-screen bg-slate-900 pb-16 pt-28 text-white">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <header>
             <h1 className="text-3xl font-bold sm:text-4xl">İstanbul Temizlik Hizmet Bölgelerimiz - Kağıthane Harita ve Yorumlar</h1>
+            {agg && agg.reviewCount > 0 && (
+              <p className="mt-3 inline-flex items-center rounded-full border border-amber-500/30 bg-amber-500/10 px-4 py-1.5 text-sm font-medium text-amber-200">
+                Google ortalama {agg.ratingValue}/5 · {agg.reviewCount} yorum
+              </p>
+            )}
             <p className="mt-4 max-w-3xl text-slate-300 leading-relaxed">
               Zümrüt Vadi Temizlik olarak Kağıthane ve İstanbul genelinde profesyonel temizlik hizmetleri sunuyoruz.
               Ev temizliği, ofis temizliği, inşaat sonrası temizlik ve derzul temizliği alanlarında uzman ekibimizle

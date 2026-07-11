@@ -2,18 +2,9 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import SiteLayout from '../../site/layout';
 import { IntentLandingView } from '@/components/site/IntentLandingView';
-import {
-  getIntentBySlug,
-  allIntentSlugs,
-} from '@/config/intent-seo';
-import {
-  canonicalUrl,
-  generateBreadcrumbSchema,
-  generateFAQSchema,
-  generateServiceSchema,
-  generateWebPageSchema,
-  serializeSchemaGraph,
-} from '@/lib/seo';
+import { getIntentBySlug, allIntentSlugs } from '@/config/intent-seo';
+import { buildIntentLandingSchemaGraph } from '@/lib/intent-schema';
+import { canonicalUrl } from '@/lib/seo';
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -68,30 +59,19 @@ export default async function IntentLandingPage({ params }: Props) {
 
   const path = `/cozumler/${intent.slug}`;
 
-  const serviceSchema = generateServiceSchema({
-    title: intent.name,
-    description: intent.metaDescription,
-    slug: intent.serviceSlug,
-    priceRange: intent.priceHint,
-  });
-  serviceSchema.url = canonicalUrl(path);
-
-  const jsonLd = serializeSchemaGraph([
-    generateWebPageSchema({
-      path,
-      title: intent.metaTitle,
-      description: intent.metaDescription,
-    }),
-    generateBreadcrumbSchema([
+  const jsonLd = await buildIntentLandingSchemaGraph({
+    path,
+    intent,
+    pageTitle: intent.metaTitle,
+    pageDescription: intent.metaDescription,
+    breadcrumbs: [
       { name: 'Ana Sayfa', url: '/' },
       { name: 'Çözümler', url: '/cozumler' },
       { name: intent.name, url: path },
-    ]) as Record<string, unknown>,
-    generateFAQSchema(
-      intent.faq.map((f) => ({ question: f.q, answer: f.a }))
-    ) as Record<string, unknown>,
-    serviceSchema as Record<string, unknown>,
-  ]);
+    ],
+    faq: intent.faq.map((f) => ({ question: f.q, answer: f.a })),
+    howToTotalTime: intent.slug === 'ofis-temizligi' ? 'P1W' : 'P2D',
+  });
 
   return (
     <SiteLayout>

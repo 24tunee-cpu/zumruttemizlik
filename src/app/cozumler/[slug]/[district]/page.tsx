@@ -2,18 +2,9 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import SiteLayout from '../../../site/layout';
 import { IntentDistrictLandingView } from '@/components/site/IntentDistrictLandingView';
-import {
-  buildIntentDistrictPage,
-  allIntentDistrictParams,
-} from '@/config/intent-seo';
-import {
-  canonicalUrl,
-  generateBreadcrumbSchema,
-  generateFAQSchema,
-  generateServiceSchema,
-  generateWebPageSchema,
-  serializeSchemaGraph,
-} from '@/lib/seo';
+import { buildIntentDistrictPage, allIntentDistrictParams } from '@/config/intent-seo';
+import { buildIntentLandingSchemaGraph } from '@/lib/intent-schema';
+import { canonicalUrl } from '@/lib/seo';
 
 type Props = {
   params: Promise<{ slug: string; district: string }>;
@@ -68,35 +59,24 @@ export default async function IntentDistrictLandingPage({ params }: Props) {
 
   const path = `/cozumler/${slug}/${district}`;
 
-  const serviceSchema = generateServiceSchema({
-    title: `${page.district.name} ${page.intent.name}`,
-    description: page.metaDescription,
-    slug: page.intent.serviceSlug,
-    priceRange: page.intent.priceHint,
-  });
-  serviceSchema.url = canonicalUrl(path);
-  serviceSchema.areaServed = {
-    '@type': 'AdministrativeArea',
-    name: `${page.district.name}, İstanbul`,
-  };
-
-  const jsonLd = serializeSchemaGraph([
-    generateWebPageSchema({
-      path,
-      title: page.metaTitle,
-      description: page.metaDescription,
-    }),
-    generateBreadcrumbSchema([
+  const jsonLd = await buildIntentLandingSchemaGraph({
+    path,
+    intent: page.intent,
+    pageTitle: page.metaTitle,
+    pageDescription: page.metaDescription,
+    breadcrumbs: [
       { name: 'Ana Sayfa', url: '/' },
       { name: 'Çözümler', url: '/cozumler' },
       { name: page.intent.name, url: `/cozumler/${page.intent.slug}` },
       { name: page.district.name, url: path },
-    ]) as Record<string, unknown>,
-    generateFAQSchema(
-      page.faq.map((f) => ({ question: f.q, answer: f.a }))
-    ) as Record<string, unknown>,
-    serviceSchema as Record<string, unknown>,
-  ]);
+    ],
+    faq: page.faq.map((f) => ({ question: f.q, answer: f.a })),
+    areaServed: {
+      '@type': 'AdministrativeArea',
+      name: `${page.district.name}, İstanbul`,
+    },
+    howToTotalTime: page.intent.slug === 'ofis-temizligi' ? 'P1W' : 'P2D',
+  });
 
   return (
     <SiteLayout>
