@@ -245,13 +245,12 @@ export function CertificatesSection({
         </motion.header>
 
         {/* Certificates Grid */}
-        <div
-          className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
-          role="list"
+        <ul
+          className="grid list-none gap-8 p-0 sm:grid-cols-2 lg:grid-cols-3"
           aria-label="Sertifika listesi"
         >
           {certificates.map((cert, index) => (
-            <motion.article
+            <motion.li
               key={cert.id}
               initial={{ opacity: 0, y: shouldReduceMotion ? 20 : 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -263,8 +262,7 @@ export function CertificatesSection({
               }}
               onMouseEnter={() => handleMouseEnter(cert.id)}
               onMouseLeave={handleMouseLeave}
-              className="group relative"
-              role="listitem"
+              className="group relative list-none transform-gpu"
               aria-label={`${cert.title} - ${cert.organization}`}
             >
               <div className="relative bg-white rounded-3xl overflow-hidden shadow-lg shadow-slate-200/50 border border-slate-100 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-emerald-500/10 group-hover:-translate-y-2">
@@ -362,9 +360,9 @@ export function CertificatesSection({
                   />
                 </div>
               </div>
-            </motion.article>
+            </motion.li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

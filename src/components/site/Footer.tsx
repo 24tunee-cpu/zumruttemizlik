@@ -202,7 +202,7 @@ export function Footer() {
                   E-Bülten
                 </span>
                 <h3 className="mt-3 text-2xl font-bold mb-2">E-Bültenimize Katılın</h3>
-                <p className="text-slate-400">
+                <p className="text-slate-300">
                   2026 fiyat rehberleri, temizlik ipuçları ve Sarıyer–Zekeriyaköy kampanyalarından haberdar olun.
                 </p>
               </div>
@@ -234,7 +234,7 @@ export function Footer() {
                       required
                       disabled={submitting}
                       autoComplete="email"
-                      className="min-h-11 min-w-0 w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-3 text-base text-white placeholder:text-slate-500 transition-colors focus:border-emerald-500 focus:outline-none disabled:opacity-60"
+                      className="min-h-11 min-w-0 w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-3 text-base text-white placeholder:text-slate-300 transition-colors focus:border-emerald-500 focus:outline-none disabled:opacity-60"
                       aria-label="E-posta adresi"
                       aria-required="true"
                       aria-invalid={!!subscribeError}
@@ -298,7 +298,7 @@ export function Footer() {
               )}
               <span className="text-xl font-bold group-hover:text-emerald-400 transition-colors">{settings.siteName}</span>
             </Link>
-            <p className="text-slate-400 text-sm leading-relaxed">
+            <p className="text-slate-300 text-sm leading-relaxed">
               {settings.siteDescription ||
                 'Sarıyer, Zekeriyaköy ve İstanbul Avrupa Yakası\'nda profesyonel temizlik hizmetleri. Ücretsiz keşif, şeffaf fiyatlandırma ve deneyimli ekip.'}
             </p>
@@ -312,7 +312,7 @@ export function Footer() {
                     rel="noopener noreferrer"
                     whileHover={shouldReduceMotion ? {} : { scale: 1.1, y: -2 }}
                     whileTap={shouldReduceMotion ? {} : { scale: 0.9 }}
-                    className={`flex h-10 w-10 items-center justify-center rounded-full bg-slate-800 text-slate-400 transition-all ${social.color} hover:text-white`}
+                    className={`flex h-10 w-10 items-center justify-center rounded-full bg-slate-800 text-slate-300 transition-all ${social.color} hover:text-white`}
                     aria-label={social.label}
                   >
                     <social.icon size={18} />
@@ -330,7 +330,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-slate-400 transition-all hover:text-emerald-400 hover:translate-x-1 inline-block"
+                    className="text-sm text-slate-300 transition-all hover:text-emerald-400 hover:translate-x-1 inline-block"
                   >
                     {link.label}
                   </Link>
@@ -347,7 +347,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-slate-400 transition-all hover:text-emerald-400 hover:translate-x-1 inline-block"
+                    className="text-sm text-slate-300 transition-all hover:text-emerald-400 hover:translate-x-1 inline-block"
                   >
                     {link.label}
                   </Link>
@@ -364,7 +364,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-slate-400 transition-all hover:text-emerald-400 hover:translate-x-1 inline-block"
+                    className="text-sm text-slate-300 transition-all hover:text-emerald-400 hover:translate-x-1 inline-block"
                   >
                     {link.label}
                   </Link>
@@ -381,7 +381,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-slate-400 transition-all hover:text-emerald-400 hover:translate-x-1 inline-block"
+                    className="text-sm text-slate-300 transition-all hover:text-emerald-400 hover:translate-x-1 inline-block"
                   >
                     {link.label}
                   </Link>
@@ -396,7 +396,7 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 group">
                 <MapPin className="mt-1 h-5 w-5 shrink-0 text-emerald-500 group-hover:scale-110 transition-transform" />
-                <span className="text-slate-400 whitespace-pre-line">
+                <span className="text-slate-300 whitespace-pre-line">
                   {settings.address?.trim() || SITE_CONTACT.addressLine}
                 </span>
               </li>
@@ -404,7 +404,7 @@ export function Footer() {
                 <Phone className="h-5 w-5 shrink-0 text-emerald-500 group-hover:scale-110 transition-transform" aria-hidden="true" />
                 <a
                   href={toTelHref(settings.phone)}
-                  className="text-slate-400 hover:text-emerald-400 transition-colors"
+                  className="text-slate-300 hover:text-emerald-400 transition-colors"
                   aria-label={`Telefon: ${settings.phone}`}
                 >
                   {settings.phone}
@@ -414,7 +414,7 @@ export function Footer() {
                 <Mail className="h-5 w-5 shrink-0 text-emerald-500 group-hover:scale-110 transition-transform" aria-hidden="true" />
                 <a
                   href={`mailto:${settings.email}`}
-                  className="text-slate-400 hover:text-emerald-400 transition-colors"
+                  className="text-slate-300 hover:text-emerald-400 transition-colors"
                   aria-label={`E-posta: ${settings.email}`}
                 >
                   {settings.email}
@@ -428,7 +428,7 @@ export function Footer() {
           <h3 className="text-sm font-semibold uppercase tracking-wide text-emerald-300">
             Öne Çıkan Bloglar
           </h3>
-          <p className="mt-1 text-xs text-slate-500">
+          <p className="mt-1 text-xs text-slate-300">
             2026 fiyat rehberleri ve İstanbul temizlik ipuçları
           </p>
           <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
@@ -446,14 +446,14 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-12 border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-slate-500">
+          <p className="text-sm text-slate-300">
             © {currentYear} {settings.siteName}. Tüm hakları saklıdır.
           </p>
           <div className="flex items-center gap-6">
-            <Link href="/gizlilik" className="text-sm text-slate-500 hover:text-emerald-400 transition-colors">
+            <Link href="/gizlilik" className="text-sm text-slate-300 hover:text-emerald-400 transition-colors">
               Gizlilik Politikası
             </Link>
-            <Link href="/kullanim-kosullari" className="text-sm text-slate-500 hover:text-emerald-400 transition-colors">
+            <Link href="/kullanim-kosullari" className="text-sm text-slate-300 hover:text-emerald-400 transition-colors">
               Kullanım Koşulları
             </Link>
             <motion.button

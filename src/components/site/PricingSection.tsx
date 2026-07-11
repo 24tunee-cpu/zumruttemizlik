@@ -265,13 +265,12 @@ export function PricingSection({
         </motion.header>
 
         {/* Pricing Cards */}
-        <div
-          className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
-          role="list"
+        <ul
+          className="grid list-none gap-8 p-0 md:grid-cols-2 lg:grid-cols-3"
           aria-label="Fiyat paketleri"
         >
           {pricing.map((item, index) => (
-            <motion.article
+            <motion.li
               key={item.id}
               initial={{ opacity: 0, y: shouldReduceMotion ? 20 : 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -281,10 +280,9 @@ export function PricingSection({
                 duration: shouldReduceMotion ? 0.2 : 0.6,
                 ease: [0.22, 1, 0.36, 1]
               }}
-              className={`relative group ${item.isPopular ? 'lg:scale-105 lg:-my-4' : ''}`}
-              role="listitem"
-              aria-label={`${item.serviceName} - ${item.basePrice} TL`}
+              className={`relative group list-none transform-gpu ${item.isPopular ? 'lg:scale-105 lg:-my-4' : ''}`}
             >
+              <article aria-label={`${item.serviceName} - ${item.basePrice} TL`}>
               {/* Popular Badge */}
               {item.isPopular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
@@ -367,9 +365,10 @@ export function PricingSection({
                     }`} aria-hidden="true" />
                 </button>
               </div>
-            </motion.article>
+              </article>
+            </motion.li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

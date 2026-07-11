@@ -12,11 +12,27 @@ export function CookieConsent() {
 
   useEffect(() => {
     if (isLoading) return;
-    try {
-      if (!localStorage.getItem(storageKey)) setVisible(true);
-    } catch {
-      setVisible(true);
-    }
+
+    let cancelled = false;
+    const showIfNeeded = () => {
+      if (cancelled) return;
+      try {
+        if (!localStorage.getItem(storageKey)) setVisible(true);
+      } catch {
+        setVisible(true);
+      }
+    };
+
+    // LCP'yi etkilememek için banner'ı ilk boyamadan sonra göster
+    const delayMs = 3500;
+    const idle = window.requestIdleCallback?.(() => showIfNeeded(), { timeout: delayMs });
+    const timer = idle === undefined ? window.setTimeout(showIfNeeded, delayMs) : undefined;
+
+    return () => {
+      cancelled = true;
+      if (idle !== undefined) window.cancelIdleCallback(idle);
+      if (timer !== undefined) window.clearTimeout(timer);
+    };
   }, [isLoading, storageKey]);
 
   const accept = useCallback(() => {
@@ -38,7 +54,7 @@ export function CookieConsent() {
       className="fixed inset-x-0 bottom-[calc(5.5rem+env(safe-area-inset-bottom,0px))] z-[110] border-t border-slate-200 bg-white/95 px-4 py-3 shadow-[0_-8px_30px_rgba(0,0,0,0.08)] backdrop-blur-md dark:border-slate-700 dark:bg-slate-900/95 lg:bottom-0"
     >
       <div className="mx-auto flex max-w-4xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm text-slate-600 dark:text-slate-300">
+        <p className="text-sm text-slate-700 dark:text-slate-200">
           Deneyimi geliştirmek ve trafiği ölçmek için çerez ve benzeri teknolojiler kullanıyoruz. Devam ederek{' '}
           <Link href="/gizlilik" className="font-medium text-emerald-600 underline-offset-2 hover:underline dark:text-emerald-400">
             gizlilik politikamızı

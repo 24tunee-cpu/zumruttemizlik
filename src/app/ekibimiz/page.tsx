@@ -272,17 +272,13 @@ export default function TeamPage() {
           ) : error ? (
             <ErrorState error={error} onRetry={fetchTeam} />
           ) : members.length > 0 ? (
-            <div
-              className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
-              role="list"
-              aria-label="Ekip üyeleri listesi"
-            >
+            <ul className="grid list-none gap-8 p-0 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" aria-label="Ekip üyeleri listesi">
               {members.map((member, index) => (
-                <div key={member.id} role="listitem">
+                <li key={member.id} className="list-none">
                   <TeamCard member={member} index={index} />
-                </div>
+                </li>
               ))}
-            </div>
+            </ul>
           ) : (
             <EmptyState />
           )}
