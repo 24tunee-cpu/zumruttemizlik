@@ -4,6 +4,11 @@ import SiteLayout from '@/app/site/layout';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useReducedMotion } from 'framer-motion';
+import { useState } from 'react';
+import {
+  getDefaultServiceImage,
+  pickServiceImage,
+} from '@/lib/service-images';
 import {
   Sparkles,
   ArrowRight,
@@ -57,29 +62,38 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
   const shouldReduceMotion = useReducedMotion();
   const seo = getSeo(service.slug);
   const Icon = getServiceIcon(service.slug);
+  const fallbackImage = getDefaultServiceImage(service.slug);
+  const [imageSrc, setImageSrc] = useState<string | null>(() =>
+    pickServiceImage(service.slug, service.image)
+  );
+  const skipInitialAnimation = shouldReduceMotion || index < 3;
 
   return (
-    <motion.article
-      role="listitem"
-      initial={{ opacity: 0, y: shouldReduceMotion ? 12 : 28 }}
+    <motion.li
+      initial={skipInitialAnimation ? false : { opacity: 0, y: 28 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
       transition={{ delay: shouldReduceMotion ? 0 : index * 0.08, duration: shouldReduceMotion ? 0.2 : 0.45 }}
+      className="list-none transform-gpu"
     >
-      <div className="group relative h-full">
+      <article className="group relative h-full">
         <div
           className="absolute -inset-px rounded-2xl bg-gradient-to-br from-emerald-400/40 via-emerald-500/20 to-transparent opacity-0 blur-sm transition duration-500 group-hover:opacity-100"
           aria-hidden="true"
         />
         <div className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-700/80 bg-slate-800/60 shadow-xl backdrop-blur-xl transition duration-500 group-hover:-translate-y-1 group-hover:border-emerald-500/40">
-          {service.image ? (
+          {imageSrc ? (
             <div className="relative h-40 w-full overflow-hidden">
               <Image
-                src={service.image}
+                src={imageSrc}
                 alt={`${service.title} — İstanbul profesyonel temizlik hizmeti`}
                 fill
                 className="object-cover transition duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                onError={() => {
+                  if (fallbackImage && imageSrc !== fallbackImage) setImageSrc(fallbackImage);
+                  else setImageSrc(null);
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent" />
               <div className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-slate-900/70 text-emerald-400 backdrop-blur-md">
@@ -129,18 +143,18 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
               <span className="text-slate-600" aria-hidden="true">·</span>
-              <Link href={`/blog/${seo.blogSlug}`} className="text-sm text-slate-400 transition hover:text-white">
+              <Link href={`/blog/${seo.blogSlug}`} className="text-sm text-slate-300 transition hover:text-white">
                 Fiyat rehberi
               </Link>
               <span className="text-slate-600" aria-hidden="true">·</span>
-              <Link href={`/bolgeler/sariyer/${service.slug}`} className="text-sm text-slate-400 transition hover:text-white">
+              <Link href={`/bolgeler/sariyer/${service.slug}`} className="text-sm text-slate-300 transition hover:text-white">
                 Sarıyer
               </Link>
             </div>
           </div>
         </div>
-      </div>
-    </motion.article>
+      </article>
+    </motion.li>
   );
 }
 
@@ -203,11 +217,11 @@ export default function ServicesPageClient({ services }: Props) {
                 <h2 className="text-xl font-semibold text-white">Henüz hizmet bulunmuyor</h2>
               </div>
             ) : (
-              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3" role="list" aria-label="Mevcut hizmetler">
+              <ul className="grid list-none gap-8 p-0 md:grid-cols-2 lg:grid-cols-3" aria-label="Mevcut hizmetler">
                 {services.map((service, index) => (
                   <ServiceCard key={service.id} service={service} index={index} />
                 ))}
-              </div>
+              </ul>
             )}
           </div>
         </section>

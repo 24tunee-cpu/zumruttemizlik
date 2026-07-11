@@ -413,12 +413,11 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                 <h2 className="mb-6 text-2xl font-bold text-slate-900 dark:text-white">
                   Hizmet Özellikleri
                 </h2>
-                <ul className="space-y-4" role="list">
+                <ul className="space-y-4">
                   {service.features.map((feature: string, index: number) => (
                     <li
                       key={index}
                       className="flex items-start gap-3"
-                      role="listitem"
                     >
                       <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-900/50">
                         <Check className="h-4 w-4 text-emerald-600 dark:text-emerald-400" aria-hidden="true" />

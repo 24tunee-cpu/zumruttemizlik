@@ -10,6 +10,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion, useReducedMotion } from 'framer-motion';
 import {
+  getDefaultServiceImage,
+  pickServiceImage,
+} from '@/lib/service-images';
+import {
   ArrowRight,
   Sparkles,
   Home,
@@ -80,17 +84,21 @@ function ServiceCard({ service, seo, index, featured }: ServiceCardProps) {
   const shouldReduceMotion = useReducedMotion();
   const Icon = getServiceIcon(service.slug);
   const delay = shouldReduceMotion ? 0 : index * 0.08;
+  const fallbackImage = getDefaultServiceImage(service.slug);
+  const [imageSrc, setImageSrc] = useState<string | null>(() =>
+    pickServiceImage(service.slug, service.image)
+  );
+  const skipInitialAnimation = shouldReduceMotion || index < 3;
 
   return (
-    <motion.article
-      role="listitem"
-      initial={{ opacity: 0, y: shouldReduceMotion ? 12 : 28 }}
+    <motion.li
+      initial={skipInitialAnimation ? false : { opacity: 0, y: 28 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
       transition={{ delay, duration: shouldReduceMotion ? 0.2 : 0.45 }}
-      className={featured ? 'md:col-span-2 lg:col-span-1 lg:row-span-1' : undefined}
+      className={`list-none transform-gpu ${featured ? 'md:col-span-2 lg:col-span-1 lg:row-span-1' : ''}`}
     >
-      <div className="group relative h-full">
+      <article className="group relative h-full">
         {/* Hover glow */}
         <div
           className="absolute -inset-px rounded-2xl bg-gradient-to-br from-emerald-400/40 via-emerald-500/20 to-transparent opacity-0 blur-sm transition duration-500 group-hover:opacity-100"
@@ -99,14 +107,21 @@ function ServiceCard({ service, seo, index, featured }: ServiceCardProps) {
 
         <div className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-700/80 bg-slate-800/60 shadow-xl backdrop-blur-xl transition duration-500 group-hover:-translate-y-1 group-hover:border-emerald-500/40 group-hover:shadow-emerald-500/10">
           {/* Görsel bandı */}
-          {service.image && (
+          {imageSrc ? (
             <div className="relative h-36 w-full overflow-hidden sm:h-40">
               <Image
-                src={service.image}
+                src={imageSrc}
                 alt={`${service.title} — İstanbul profesyonel temizlik hizmeti`}
                 fill
                 className="object-cover transition duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                onError={() => {
+                  if (fallbackImage && imageSrc !== fallbackImage) {
+                    setImageSrc(fallbackImage);
+                  } else {
+                    setImageSrc(null);
+                  }
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent" />
               <div className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-slate-900/70 text-emerald-400 backdrop-blur-md">
@@ -116,10 +131,10 @@ function ServiceCard({ service, seo, index, featured }: ServiceCardProps) {
                 {seo.priceBadge}
               </span>
             </div>
-          )}
+          ) : null}
 
           <div className="flex flex-1 flex-col p-5 sm:p-6">
-            {!service.image && (
+            {!imageSrc && (
               <div className="mb-4 flex items-start justify-between gap-3">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500/20 to-emerald-600/10 text-emerald-400 ring-1 ring-emerald-500/20">
                   <Icon className="h-6 w-6" aria-hidden="true" />
@@ -172,7 +187,7 @@ function ServiceCard({ service, seo, index, featured }: ServiceCardProps) {
               </span>
               <Link
                 href={`/blog/${seo.blogSlug}`}
-                className="text-sm font-medium text-slate-400 transition hover:text-white"
+                className="text-sm font-medium text-slate-300 transition hover:text-white"
               >
                 Fiyat rehberi
               </Link>
@@ -181,15 +196,15 @@ function ServiceCard({ service, seo, index, featured }: ServiceCardProps) {
               </span>
               <Link
                 href={`/bolgeler/sariyer/${service.slug}`}
-                className="text-sm font-medium text-slate-400 transition hover:text-white"
+                className="text-sm font-medium text-slate-300 transition hover:text-white"
               >
                 Sarıyer
               </Link>
             </div>
           </div>
         </div>
-      </div>
-    </motion.article>
+      </article>
+    </motion.li>
   );
 }
 
@@ -311,7 +326,7 @@ export function Services({ limit = 7 }: ServicesProps) {
           </p>
 
           {/* Trust strip */}
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-3 text-xs font-medium text-slate-400 sm:text-sm">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3 text-xs font-medium text-slate-300 sm:text-sm">
             {['7/24 Destek', 'Sigortalı Ekip', '5000+ Mutlu Müşteri', 'Aynı Gün Randevu'].map((t) => (
               <span
                 key={t}
@@ -332,9 +347,9 @@ export function Services({ limit = 7 }: ServicesProps) {
             ))}
           </div>
         ) : services.length === 0 ? (
-          <p className="text-center text-slate-400">Hizmet bilgisi yüklenemedi.</p>
+          <p className="text-center text-slate-300">Hizmet bilgisi yüklenemedi.</p>
         ) : (
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3" role="list" aria-label="Temizlik hizmetleri listesi">
+          <ul className="grid list-none gap-5 p-0 sm:grid-cols-2 lg:grid-cols-3" aria-label="Temizlik hizmetleri listesi">
             {services.map((service, index) => {
               const seo = HOME_SERVICE_SEO[service.slug] ?? DEFAULT_HOME_SERVICE_SEO;
               return (
@@ -347,7 +362,7 @@ export function Services({ limit = 7 }: ServicesProps) {
                 />
               );
             })}
-          </div>
+          </ul>
         )}
 
         {/* Bottom CTAs */}

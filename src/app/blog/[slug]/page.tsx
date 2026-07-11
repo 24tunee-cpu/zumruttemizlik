@@ -479,18 +479,18 @@ export default async function BlogPostPage({ params }: PageProps) {
                   <h2 className="mb-4 text-lg font-semibold text-white">
                     Etiketler
                   </h2>
-                  <div className="flex flex-wrap gap-2" role="list" aria-label="Etiketler">
+                <ul className="flex list-none flex-wrap gap-2 p-0" aria-label="Etiketler">
                     {post.tags.map((tag: string) => (
+                      <li key={tag}>
                       <Link
-                        key={tag}
                         href={`/blog?tag=${encodeURIComponent(tag)}`}
                         className="rounded-full border border-slate-600 bg-slate-800/80 px-4 py-2 text-sm text-slate-200"
-                        role="listitem"
                       >
                         #{tag}
                       </Link>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 </footer>
               )}
 

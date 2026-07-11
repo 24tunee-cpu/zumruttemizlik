@@ -227,13 +227,12 @@ export function TeamSection({ limit, department }: TeamSectionProps = {}) {
         </motion.div>
 
         {/* Team Grid */}
-        <div
-          className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
-          role="list"
+        <ul
+          className="grid list-none gap-8 p-0 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
           aria-label="Ekip üyeleri listesi"
         >
           {displayMembers.map((member, index) => (
-            <motion.article
+            <motion.li
               key={member.id}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -247,8 +246,7 @@ export function TeamSection({ limit, department }: TeamSectionProps = {}) {
               onMouseLeave={handleMouseLeave}
               onFocus={() => handleFocus(member.id)}
               onBlur={handleBlur}
-              className="group relative"
-              role="listitem"
+              className="group relative list-none transform-gpu"
               tabIndex={0}
               aria-label={`${member.name}, ${member.position}`}
             >
@@ -358,9 +356,9 @@ export function TeamSection({ limit, department }: TeamSectionProps = {}) {
                   )}
                 </div>
               </div>
-            </motion.article>
+            </motion.li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );
