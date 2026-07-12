@@ -18,6 +18,7 @@
     "llms:sync": "node scripts/sync-llms.mjs",
     "optimize:images": "node scripts/optimize-brand-images.mjs",
     "perf:audit": "node scripts/perf-audit.mjs",
+    "seed:blogs-v2": "tsx scripts/seed-scheduled-blogs-v2.ts",
     "perf:check": "npm run perf:audit && npm run type-check",
     "seo:gsc:generate-meta": "tsx scripts/seo-meta-from-gsc.ts",
     "predeploy:check": "tsx scripts/predeploy-check.ts"
