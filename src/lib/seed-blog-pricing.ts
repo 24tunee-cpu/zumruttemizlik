@@ -16,7 +16,7 @@ const IMG_CALC = 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=12
 
 type PriceRow = { label: string; range: string; note?: string };
 
-type PricingGuideConfig = {
+export type PricingGuideConfig = {
   slug: string;
   title: string;
   metaTitle: string;
@@ -36,7 +36,7 @@ type PricingGuideConfig = {
   extraSections?: { heading: string; paragraphs: string[] }[];
 };
 
-function buildPricingHtml(cfg: PricingGuideConfig): string {
+export function buildPricingHtml(cfg: PricingGuideConfig): string {
   const priceTable = cfg.priceRows
     .map(
       (r) =>
@@ -110,7 +110,7 @@ ${faqHtml}
   `.trim();
 }
 
-function makePost(cfg: PricingGuideConfig): BlogSeedPost {
+export function makePricingPost(cfg: PricingGuideConfig): BlogSeedPost {
   return {
     slug: cfg.slug,
     title: cfg.title,
@@ -645,4 +645,4 @@ const GUIDES: PricingGuideConfig[] = [
   },
 ];
 
-export const PRICING_BLOG_POSTS: BlogSeedPost[] = GUIDES.map(makePost);
+export const PRICING_BLOG_POSTS: BlogSeedPost[] = GUIDES.map(makePricingPost);
