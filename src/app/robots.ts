@@ -30,26 +30,19 @@ export default function robots(): MetadataRoute.Robots {
         crawlDelay: 1,
       },
       {
-        // LLM crawler'lar için kritik referans dosyalarına açık erişim sinyali
+        // GEO: AI crawler'lar tüm public içeriğe erişebilir (admin/api hariç)
         userAgent: [
           'GPTBot',
           'ChatGPT-User',
+          'OAI-SearchBot',
           'ClaudeBot',
+          'anthropic-ai',
           'Google-Extended',
           'PerplexityBot',
         ],
-        allow: [
-          '/llms.txt',
-          '/llms-full.txt',
-          '/sitemap.xml',
-          '/cozumler/sitemap.xml',
-          '/bolgeler/sitemap.xml',
-          '/blog/sitemap.xml',
-          '/hizmetler',
-          '/bolgeler',
-        ],
+        allow: '/',
         disallow,
-        crawlDelay: 2, // LLM botlar için daha yavaş
+        crawlDelay: 2,
       },
     ],
     sitemap: [
@@ -57,6 +50,7 @@ export default function robots(): MetadataRoute.Robots {
       `${base}/cozumler/sitemap.xml`,
       `${base}/bolgeler/sitemap.xml`,
       `${base}/blog/sitemap.xml`,
+      `${base}/geo-sss/sitemap.xml`,
     ],
     host: base,
   };

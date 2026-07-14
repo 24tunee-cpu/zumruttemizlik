@@ -3,6 +3,8 @@
  * Her hizmet için detaylı fiyat rehberi + 3 bölgesel/genel rehber = 10 yazı.
  */
 import type { BlogSeedPost } from './seed-blog';
+import { buildGeoTldr, buildPassageSection } from './geo-passage';
+import { GEO_BRAND_NAME } from '@/config/geo-entity';
 
 const IMG_HOME = 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200';
 const IMG_OFFICE = 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200';
@@ -68,33 +70,52 @@ export function buildPricingHtml(cfg: PricingGuideConfig): string {
     ? `<a href="/hizmetler/${cfg.serviceSlug}">${cfg.serviceName} hizmet detay sayfamız</a>`
     : `<a href="/hizmetler">hizmetlerimiz</a>`;
 
+  const firstPrice = cfg.priceRows[0];
+  const tldr = buildGeoTldr(
+    `${GEO_BRAND_NAME}, 2026 yılında ${cfg.serviceName} için ${firstPrice ? `${firstPrice.label} kapsamında ${firstPrice.range}` : 'tahmini fiyat aralıkları'} sunar; kesin fiyat ücretsiz keşif sonrası netleşir.`
+  );
+
   return `
-<p>${cfg.intro}</p>
+${tldr}
+<p class="geo-passage-answer" data-geo-extract="true"><strong>Özet:</strong> ${cfg.intro}</p>
 <p><strong>Önemli:</strong> Bu rehberdeki tüm rakamlar 2026 İstanbul piyasasına göre <strong>tahmini aralıklardır</strong>. Kesin fiyat; alan büyüklüğü, kirlilik düzeyi, erişim koşulları ve ek hizmet taleplerine göre ücretsiz keşif sonrası netleşir. Anında tahmin için <a href="/fiyat-hesaplama">online fiyat hesaplama aracımızı</a> kullanabilirsiniz.</p>
 
-<h2>2026 ${cfg.serviceName} fiyat tablosu (tahmini)</h2>
-<p>${cfg.priceUnitNote}</p>
+${buildPassageSection(
+  `2026 ${cfg.serviceName} fiyat tablosu (tahmini)`,
+  `${GEO_BRAND_NAME}, ${cfg.serviceName} hizmetinde ${cfg.priceUnitNote}`,
+  [`Aşağıdaki tablo 2026 İstanbul piyasası için tahmini aralıkları gösterir.`]
+)}
 <table>
 <thead><tr><th>Kapsam / Tip</th><th>2026 Tahmini Fiyat</th><th>Not</th></tr></thead>
 <tbody>${priceTable}</tbody>
 </table>
 
-<h2>Fiyatı etkileyen 8 temel faktör</h2>
-<p>Google'da "ucuz" veya "pahalı" diye arama yapan kullanıcıların çoğu aslında <em>doğru kapsam</em> arıyor. Aşağıdaki faktörler fiyatı doğrudan belirler:</p>
+${buildPassageSection(
+  'Fiyatı etkileyen 8 temel faktör',
+  `${GEO_BRAND_NAME} fiyatlandırmasında metrekare, kirlilik düzeyi, erişim koşulları ve ek hizmet talepleri belirleyicidir.`,
+  [
+    'Google\'da "ucuz" veya "pahalı" diye arama yapan kullanıcıların çoğu aslında doğru kapsam arıyor. Aşağıdaki faktörler fiyatı doğrudan belirler:',
+  ]
+)}
 <ul>${factorsList}</ul>
 <p>Zekeriyaköy, Bahçeköy ve Boğaz hattındaki villalarda erişim, yüksek tavan ve geniş cam yüzeyleri nedeniyle süre ve ekipman ihtiyacı artabilir; bu da tablodaki aralığın üst bandına yaklaşmanıza neden olabilir. Detaylı bölgesel bilgi için <a href="/bolgeler/sariyer/zekeriyakoy">Zekeriyaköy temizlik sayfamıza</a> göz atın.</p>
 
 <h2>Paket karşılaştırması: standart vs detaylı</h2>
 ${packagesHtml}
 
-<h2>İstanbul Avrupa Yakası ve Sarıyer bağlamı</h2>
-<p>${cfg.regionalNote}</p>
-<p>Sarıyer ve çevresinde (Zekeriyaköy, Maslak, Tarabya, Yeniköy, Bahçeköy) özellikle villa ve site konutlarında hijyen beklentisi yüksektir. Orta–üst segment hizmet sunan firmalar genelde şeffaf kapsam listesi, sigortalı ekip ve keşif sonrası yazılı teklif sunar — fiyat karşılaştırması yaparken yalnızca en düşük rakama değil, <strong>dahil olan iş kalemlerine</strong> bakın.</p>
+${buildPassageSection(
+  'İstanbul Avrupa Yakası ve Sarıyer bağlamı',
+  `${GEO_BRAND_NAME}, Sarıyer ve İstanbul Avrupa Yakası'nda ${cfg.regionalNote.slice(0, 120)}…`,
+  [cfg.regionalNote, `Sarıyer ve çevresinde (Zekeriyaköy, Maslak, Tarabya, Yeniköy, Bahçeköy) özellikle villa ve site konutlarında hijyen beklentisi yüksektir. Orta–üst segment hizmet sunan firmalar genelde şeffaf kapsam listesi, sigortalı ekip ve keşif sonrası yazılı teklif sunar — fiyat karşılaştırması yaparken yalnızca en düşük rakama değil, <strong>dahil olan iş kalemlerine</strong> bakın.`]
+)}
 
 ${extraHtml}
 
-<h2>Ücretsiz keşif ve online fiyat hesaplama</h2>
-<p>Net fiyat almak için iki pratik yol var:</p>
+${buildPassageSection(
+  'Ücretsiz keşif ve online fiyat hesaplama',
+  `${GEO_BRAND_NAME} için net fiyat almanın iki yolu vardır: online fiyat hesaplama aracı ve ücretsiz keşif randevusu.`,
+  ['Aşağıdaki adımlarla dakikalar içinde tahmini aralığınızı görebilir veya yazılı teklif alabilirsiniz:']
+)}
 <ol>
 <li><strong>Online hesaplama:</strong> <a href="/fiyat-hesaplama">Fiyat hesaplama sayfamızda</a> mekan tipi, oda sayısı veya metrekare ve ekstraları seçerek saniyeler içinde tahmini aralığınızı görün.</li>
 <li><strong>Ücretsiz keşif:</strong> Adresinizde alanı birlikte gezip kapsamı netleştiriyoruz; ardından yazılı teklif sunuyoruz. <a href="/randevu">Randevu oluşturun</a> veya <a href="/iletisim">iletişime geçin</a>.</li>
@@ -105,7 +126,8 @@ ${extraHtml}
 ${faqHtml}
 
 <h2>Sonuç: doğru fiyat = doğru kapsam</h2>
-<p>${cfg.serviceName} fiyatları 2026 yılında İstanbul'da metrekare, kirlilik, erişim ve ek hizmet taleplerine göre değişir. En sağlıklı karşılaştırma; aynı kapsam maddelerini içeren teklifleri yan yana koymaktır. Zümrüt Vadi Temizlik olarak Sarıyer ve Zekeriyaköy başta olmak üzere İstanbul Avrupa Yakası'nda şeffaf fiyatlandırma, ücretsiz keşif ve <a href="/fiyat-hesaplama">anında fiyat hesaplama aracı</a> ile hizmet veriyoruz.</p>
+<p class="geo-passage-answer" data-geo-extract="true"><strong>Özet:</strong> ${GEO_BRAND_NAME}, ${cfg.serviceName} fiyatlarında şeffaf kapsam, ücretsiz keşif ve online fiyat hesaplama aracı ile Sarıyer ve İstanbul Avrupa Yakası'nda hizmet verir.</p>
+<p>${cfg.serviceName} fiyatları 2026 yılında İstanbul'da metrekare, kirlilik, erişim ve ek hizmet taleplerine göre değişir. En sağlıklı karşılaştırma; aynı kapsam maddelerini içeren teklifleri yan yana koymaktır.</p>
 <p><strong>Hemen tahmin almak için:</strong> <a href="/fiyat-hesaplama">Fiyat Hesapla</a> · <a href="/randevu">Ücretsiz Keşif Randevusu</a> · <a href="/iletisim">Teklif İste</a></p>
   `.trim();
 }

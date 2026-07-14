@@ -21,6 +21,7 @@ import {
   CalendarClock,
   ScrollText,
   Megaphone,
+  Bot,
 } from 'lucide-react';
 
 /** Alt menü satırı (site dışı için external) */
@@ -94,6 +95,7 @@ export const ADMIN_MENU_GROUPS: AdminMenuGroup[] = [
       { href: '/admin/ebulten', label: 'E-bülten', icon: Mail, ariaLabel: 'Bülten aboneleri' },
       { href: '/admin/pazarlama-analitik', label: 'Pazarlama analitik', icon: BarChart3, ariaLabel: 'Pazarlama performansı' },
       { href: '/admin/seo-otomasyon', label: 'SEO otomasyon', icon: WandSparkles, ariaLabel: 'Programatik SEO otomasyon' },
+      { href: '/admin/geo', label: 'GEO / AI görünürlük', icon: Bot, ariaLabel: 'Generative Engine Optimization paneli' },
     ],
   },
   {

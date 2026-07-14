@@ -12,7 +12,11 @@ import {
   findNeighborhoodLandingForDistrictNeighborhood,
   getNeighborhoodLandingsForDistrict,
 } from '@/config/programmatic-seo';
-import { canonicalUrl } from '@/lib/seo';
+import { canonicalUrl, generateFAQSchema, serializeSchemaGraph } from '@/lib/seo';
+import {
+  getDistrictGeoFaqs,
+  getDistrictGeoPassageLead,
+} from '@/config/geo-district-faqs';
 
 type Props = {
   params: Promise<{ district: string }>;
@@ -63,6 +67,12 @@ export default async function DistrictPage({ params }: Props) {
   const operationalSignals = getDistrictOperationalSignals(districtData);
   const districtDeepDive = getDistrictDeepDive(districtData);
 
+  const districtFaqs = getDistrictGeoFaqs(districtData.slug, districtData.name);
+  const faqSchema = generateFAQSchema(
+    districtFaqs.map((f) => ({ question: f.question, answer: f.answer }))
+  );
+  const passageLead = getDistrictGeoPassageLead(districtData.name);
+
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -82,7 +92,9 @@ export default async function DistrictPage({ params }: Props) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: serializeSchemaGraph([breadcrumbSchema, faqSchema]),
+        }}
       />
       <SiteLayout>
         <div className="min-h-screen bg-slate-900 pb-16 pt-28 text-white">
@@ -95,6 +107,10 @@ export default async function DistrictPage({ params }: Props) {
                 </span>
               )}
             </div>
+            <aside className="mt-4 max-w-3xl rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4">
+              <p className="text-sm font-medium text-emerald-200">Özet</p>
+              <p className="mt-2 text-sm text-emerald-50">{passageLead}</p>
+            </aside>
             <p className="mt-4 max-w-3xl text-slate-300">
               {districtData.regionBlurb ? (
                 <>
@@ -210,6 +226,23 @@ export default async function DistrictPage({ params }: Props) {
                   <p className="mt-1 text-sm text-slate-400">{service.shortPitch}</p>
                 </Link>
               ))}
+            </section>
+
+            <section className="mt-8 rounded-xl border border-slate-700 bg-slate-800/40 p-5">
+              <h2 className="text-xl font-semibold text-white">Sık sorulan sorular — {districtData.name}</h2>
+              <div className="mt-4 space-y-4">
+                {districtFaqs.map((f) => (
+                  <div key={f.question}>
+                    <h3 className="text-base font-medium text-emerald-300">{f.question}</h3>
+                    <p className="mt-1 text-sm text-slate-300">{f.answer}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-4">
+                <Link href="/geo-sss" className="text-sm text-emerald-400 hover:underline">
+                  {districtData.name} GEO SSS sayfaları →
+                </Link>
+              </div>
             </section>
 
             <section className="mt-8 rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-5">
