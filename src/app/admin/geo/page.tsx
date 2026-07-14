@@ -30,6 +30,8 @@ type GeoDashboard = {
       nextBatchAt: string | null;
       nextSlugs: string[];
     };
+    blogsWithAutoInternalLinks?: number;
+    indexNow?: { configured: boolean; keyLocation: string | null };
   };
   lastRun: {
     status: string;
@@ -248,6 +250,20 @@ export default function AdminGeoPage() {
                   <p className="mt-2 text-xs text-slate-400">
                     Cron: her gün 08:00 TR · Vercel&apos;de CRON_SECRET zorunlu
                   </p>
+                  <dl className="mt-3 grid gap-2 border-t border-blue-500/20 pt-3 text-sm sm:grid-cols-2">
+                    <div>
+                      <dt className="text-slate-400">Otomatik iç link</dt>
+                      <dd className="text-white">
+                        {data.stats.blogsWithAutoInternalLinks ?? 0} yayında
+                      </dd>
+                    </div>
+                    <div>
+                      <dt className="text-slate-400">IndexNow</dt>
+                      <dd className={data.stats.indexNow?.configured ? 'text-emerald-400' : 'text-amber-400'}>
+                        {data.stats.indexNow?.configured ? 'Aktif' : 'INDEXNOW_KEY gerekli'}
+                      </dd>
+                    </div>
+                  </dl>
                 </section>
               )}
             </div>

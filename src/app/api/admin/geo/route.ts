@@ -11,6 +11,8 @@ import {
   GEO_REVIEW_REQUEST_TEMPLATES,
 } from '@/config/geo-entity';
 import { getBlogScheduleHealth } from '@/lib/blog-schedule-preserve';
+import { getIndexNowKey, getIndexNowKeyLocation } from '@/lib/indexnow';
+import { AUTO_INTERNAL_LINKS_MARKER } from '@/lib/blog-publish-internal-links';
 
 export async function GET(request: NextRequest) {
   const denied = await requireAdminAuth(request);
@@ -26,6 +28,10 @@ export async function GET(request: NextRequest) {
     where: { published: true, content: { contains: 'geo-passage-answer' } },
   });
   const blogSchedule = await getBlogScheduleHealth(prisma);
+  const blogsWithAutoInternalLinks = await prisma.blogPost.count({
+    where: { published: true, content: { contains: AUTO_INTERNAL_LINKS_MARKER } },
+  });
+  const indexNowKey = getIndexNowKey();
 
   return NextResponse.json({
     nap: GEO_NAP,
@@ -42,6 +48,11 @@ export async function GET(request: NextRequest) {
       geoPassageBlogs,
       geoSssPages: 75,
       blogSchedule,
+      blogsWithAutoInternalLinks,
+      indexNow: {
+        configured: Boolean(indexNowKey),
+        keyLocation: indexNowKey ? getIndexNowKeyLocation() : null,
+      },
     },
     lastRun: lastRun
       ? {

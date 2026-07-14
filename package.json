@@ -5,7 +5,7 @@
   "scripts": {
     "postinstall": "prisma generate",
     "dev": "next dev",
-    "build": "npm run llms:sync && prisma generate && next build",
+    "build": "npm run llms:sync && npm run indexnow:sync && prisma generate && next build",
     "build:analyze": "cross-env ANALYZE=true next build",
     "start": "next start",
     "lint": "eslint",
@@ -16,6 +16,8 @@
     "prisma:studio": "prisma studio",
     "prisma:seed": "tsx prisma/seed.ts",
     "llms:sync": "node scripts/sync-llms.mjs",
+    "indexnow:sync": "node scripts/sync-indexnow-key.mjs",
+    "blogs:enrich-links": "tsx scripts/enrich-published-blog-links.ts",
     "optimize:images": "node scripts/optimize-brand-images.mjs",
     "perf:audit": "node scripts/perf-audit.mjs",
     "seed:blogs-v2": "tsx scripts/seed-scheduled-blogs-v2.ts",
