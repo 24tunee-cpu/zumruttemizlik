@@ -4,6 +4,7 @@
 import { unstable_cache } from 'next/cache';
 import { prisma } from '@/lib/prisma';
 import { SITE_CONTACT } from '@/config/site-contact';
+import { GEO_NAP, getGeoSameAsUrls } from '@/config/geo-entity';
 import { getSiteUrl, serializeSchemaGraph } from '@/lib/seo';
 
 function toAbsoluteUrl(base: string, pathOrUrl: string | null | undefined): string | undefined {
@@ -68,15 +69,34 @@ export async function buildRootSchemaGraphJson(): Promise<string> {
   const lat = Number(process.env.NEXT_PUBLIC_BUSINESS_LAT ?? '41.1669');
   const lng = Number(process.env.NEXT_PUBLIC_BUSINESS_LNG ?? '29.0577');
 
-  const sameAs = [
-    settings?.facebook,
-    settings?.instagram,
-    settings?.twitter,
-    settings?.linkedin,
-    settings?.youtube,
-  ]
-    .map((u) => u?.trim())
-    .filter((u): u is string => Boolean(u && /^https?:\/\//i.test(u)));
+  const sameAs = getGeoSameAsUrls(base).concat(
+    [settings?.facebook, settings?.instagram, settings?.twitter, settings?.linkedin, settings?.youtube]
+      .map((u) => u?.trim())
+      .filter((u): u is string => Boolean(u && /^https?:\/\//i.test(u)))
+  );
+  const uniqueSameAs = [...new Set(sameAs)];
+
+  const organization: Record<string, unknown> = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': `${base}/#organization`,
+    name: siteName,
+    url: base,
+    logo: logoUrl,
+    email,
+    telephone,
+    description,
+    foundingDate: '2010',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: GEO_NAP.streetAddress,
+      addressLocality: GEO_NAP.addressLocality,
+      addressRegion: GEO_NAP.addressRegion,
+      postalCode: GEO_NAP.postalCode,
+      addressCountry: GEO_NAP.addressCountry,
+    },
+    ...(uniqueSameAs.length > 0 ? { sameAs: uniqueSameAs } : {}),
+  };
 
   const localBusiness: Record<string, unknown> = {
     '@context': 'https://schema.org',
@@ -89,6 +109,7 @@ export async function buildRootSchemaGraphJson(): Promise<string> {
     telephone,
     email,
     description,
+    parentOrganization: { '@id': `${base}/#organization` },
     address: {
       '@type': 'PostalAddress',
       streetAddress: addressLine,
@@ -127,8 +148,8 @@ export async function buildRootSchemaGraphJson(): Promise<string> {
     hasMap: `https://www.google.com/maps?q=${encodeURIComponent(addressLine)}`,
   };
 
-  if (sameAs.length > 0) {
-    localBusiness.sameAs = sameAs;
+  if (uniqueSameAs.length > 0) {
+    localBusiness.sameAs = uniqueSameAs;
   }
 
   const webSite: Record<string, unknown> = {
@@ -140,9 +161,7 @@ export async function buildRootSchemaGraphJson(): Promise<string> {
     description: settings?.siteDescription?.trim() || description,
     inLanguage: 'tr-TR',
     publisher: {
-      '@type': 'Organization',
-      name: siteName,
-      url: base,
+      '@id': `${base}/#organization`,
     },
     potentialAction: {
       '@type': 'SearchAction',
@@ -154,5 +173,5 @@ export async function buildRootSchemaGraphJson(): Promise<string> {
     },
   };
 
-  return serializeSchemaGraph([localBusiness, webSite]);
+  return serializeSchemaGraph([organization, localBusiness, webSite]);
 }

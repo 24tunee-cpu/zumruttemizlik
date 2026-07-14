@@ -36,9 +36,11 @@ import { keywordsForPage } from '@/lib/seo-keywords';
 import {
   canonicalUrl,
   generateBreadcrumbSchema,
+  generateFAQSchema,
   getSiteUrl,
   serializeSchemaGraph,
 } from '@/lib/seo';
+import { extractFaqsFromBlogHtml } from '@/lib/geo-passage';
 import { createEnhancedArticleSchema } from '@/lib/enhanced-schema';
 import {
   generateTopicClusterLinks,
@@ -361,10 +363,16 @@ export default async function BlogPostPage({ params }: PageProps) {
     { name: 'Blog', url: '/blog' },
     { name: post.title, url: `/blog/${post.slug}` },
   ]);
-  const schemaGraphJson = serializeSchemaGraph([
-    articleSchema as Record<string, unknown>,
-    breadcrumbSchema,
-  ]);
+  const faqItems = extractFaqsFromBlogHtml(post.content);
+  const faqSchema =
+    faqItems.length > 0
+      ? generateFAQSchema(faqItems.map((f) => ({ question: f.question, answer: f.answer })))
+      : null;
+  const schemaGraphJson = serializeSchemaGraph(
+    [articleSchema as Record<string, unknown>, breadcrumbSchema, faqSchema].filter(
+      (s): s is Record<string, unknown> => Boolean(s && Object.keys(s).length > 0)
+    )
+  );
 
   // Calculate reading time (approximate)
   const wordCount = getWordCount(post.content);

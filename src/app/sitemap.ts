@@ -30,6 +30,7 @@ const STATIC_PAGES: StaticEntry[] = [
   { path: '/gizlilik', changeFrequency: 'yearly', priority: 0.4 },
   { path: '/kullanim-kosullari', changeFrequency: 'yearly', priority: 0.4 },
   { path: '/fiyat-hesaplama', changeFrequency: 'weekly', priority: 0.87 },
+  { path: '/geo-sss', changeFrequency: 'weekly', priority: 0.78 },
 ];
 
 function toAbsoluteUrl(base: string, path: string): string {
