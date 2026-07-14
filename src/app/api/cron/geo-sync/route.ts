@@ -1,19 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { runFullGeoSync } from '@/lib/geo-citation';
+import { authorizeCronRequest, cronUnauthorizedResponse } from '@/lib/cron-auth';
 
 export const dynamic = 'force-dynamic';
 
-/** Haftalık GEO sync: audit + citation coverage + llms blog envanteri */
+/** Manuel GEO sync (haftalık otomasyon: Pazartesi publish-blogs cron içinde) */
 export async function GET(request: NextRequest) {
-  const secret = process.env.CRON_SECRET?.trim();
-  if (!secret) {
-    return NextResponse.json({ error: 'Cron secret is not configured' }, { status: 500 });
-  }
-
-  const auth = request.headers.get('authorization');
-  if (auth !== `Bearer ${secret}`) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  const auth = authorizeCronRequest(request);
+  if (!auth.ok) {
+    return cronUnauthorizedResponse(auth.reason);
   }
 
   try {

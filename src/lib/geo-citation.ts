@@ -70,15 +70,18 @@ export async function runGeoCitationCoverage(prisma: PrismaClient): Promise<GeoC
 
     for (const p of postIndex) {
       const hits = tokens.filter((t) => p.blob.includes(t)).length;
-      if (hits >= Math.max(2, Math.ceil(tokens.length * 0.4))) {
+      const threshold = Math.max(3, Math.ceil(tokens.length * 0.55));
+      if (hits >= threshold) {
         matchingSlugs.push(p.slug);
       }
     }
 
     for (const g of GEO_SSS_PAGES) {
-      const gBlob = `${g.title} ${g.directAnswer} ${g.districtName}`.toLowerCase();
+      const gBlob = `${g.title} ${g.directAnswer} ${g.districtName} ${g.districtSlug}`.toLowerCase();
       const hits = tokens.filter((t) => gBlob.includes(t)).length;
-      if (hits >= 2) matchingGeoSss.push(g.slug);
+      if (hits >= Math.max(2, Math.ceil(tokens.length * 0.45))) {
+        matchingGeoSss.push(g.slug);
+      }
     }
 
     for (const comp of GEO_COMPETITOR_NAMES) {

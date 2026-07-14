@@ -2,38 +2,55 @@ import { NextRequest, NextResponse } from 'next/server';
 import { publishScheduledBlogPosts } from '@/lib/publish-scheduled-posts';
 import { prisma } from '@/lib/prisma';
 import { syncPublishedBlogsToLlmsFull } from '@/lib/geo-llms-sync';
+import { authorizeCronRequest, cronUnauthorizedResponse } from '@/lib/cron-auth';
+import { getBlogScheduleHealth } from '@/lib/blog-schedule-preserve';
+import { runFullGeoSync } from '@/lib/geo-citation';
 
 export const dynamic = 'force-dynamic';
+export const maxDuration = 60;
+
+function isMondayUtc(): boolean {
+  return new Date().getUTCDay() === 1;
+}
 
 /**
  * Günlük otomatik blog yayını — günde en fazla 5 zamanlanmış yazı.
- * Yayın sonrası llms-full.txt blog envanteri güncellenir (GEO).
+ * Pazartesi: GEO sync de çalışır (ayrı cron gerekmez — Hobby 2 cron limiti).
  * Vercel Cron: 05:00 UTC = 08:00 Türkiye (UTC+3)
  */
 export async function GET(request: NextRequest) {
-  const secret = process.env.CRON_SECRET?.trim();
-  if (!secret) {
-    return NextResponse.json({ error: 'Cron secret is not configured' }, { status: 500 });
-  }
-
-  const auth = request.headers.get('authorization');
-  if (auth !== `Bearer ${secret}`) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  const auth = authorizeCronRequest(request);
+  if (!auth.ok) {
+    return cronUnauthorizedResponse(auth.reason);
   }
 
   try {
+    const healthBefore = await getBlogScheduleHealth(prisma);
     const result = await publishScheduledBlogPosts();
+    const healthAfter = await getBlogScheduleHealth(prisma);
+
     let llmsSync: { blogCount: number; updated: boolean } | null = null;
     if (result.published > 0) {
       llmsSync = await syncPublishedBlogsToLlmsFull(prisma);
     }
+
+    let geoSync: Awaited<ReturnType<typeof runFullGeoSync>> | null = null;
+    if (isMondayUtc()) {
+      geoSync = await runFullGeoSync(prisma, 'cron');
+    }
+
     return NextResponse.json({
       ok: true,
+      authVia: auth.via,
       ...result,
+      healthBefore,
+      healthAfter,
       llmsSync,
+      geoSync: geoSync ? { auditScore: geoSync.audit.score, citationScore: geoSync.citation.overallScore } : null,
       publishedAt: new Date().toISOString(),
     });
-  } catch {
-    return NextResponse.json({ error: 'Blog publish failed' }, { status: 500 });
+  } catch (e) {
+    const message = e instanceof Error ? e.message : 'Blog publish failed';
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }

@@ -1,23 +1,18 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { runGoogleMapsSync } from '@/lib/google-maps-sync';
 import { prisma } from '@/lib/prisma';
+import { authorizeCronRequest, cronUnauthorizedResponse } from '@/lib/cron-auth';
 
 export const dynamic = 'force-dynamic';
 
 /**
  * Zamanlanmış Google Haritalar / GBP önbellek senkronu.
- * Blog yayını ayrı cron: /api/cron/publish-blogs
+ * Blog yayını: /api/cron/publish-blogs
  */
 export async function GET(request: NextRequest) {
-  const secret = process.env.CRON_SECRET?.trim() || process.env.MAPS_CRON_SECRET?.trim();
-  if (!secret) {
-    return NextResponse.json({ error: 'Cron secret is not configured' }, { status: 500 });
-  }
-
-  const auth = request.headers.get('authorization');
-  const okSecret = auth === `Bearer ${secret}`;
-  if (!okSecret) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  const auth = authorizeCronRequest(request);
+  if (!auth.ok) {
+    return cronUnauthorizedResponse(auth.reason);
   }
 
   const conn = await prisma.mapOAuthConnection.findUnique({ where: { provider: 'google' } });

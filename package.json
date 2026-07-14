@@ -20,6 +20,9 @@
     "perf:audit": "node scripts/perf-audit.mjs",
     "seed:blogs-v2": "tsx scripts/seed-scheduled-blogs-v2.ts",
     "geo:sync": "tsx scripts/geo-sync.ts",
+    "blogs:repair-schedule": "tsx scripts/repair-blog-schedule.ts",
+    "blogs:publish-due": "tsx scripts/publish-due-blogs.ts",
+    "blogs:check-schedule": "tsx scripts/check-blog-schedule.ts",
     "perf:check": "npm run perf:audit && npm run type-check",
     "seo:gsc:generate-meta": "tsx scripts/seo-meta-from-gsc.ts",
     "predeploy:check": "tsx scripts/predeploy-check.ts"
