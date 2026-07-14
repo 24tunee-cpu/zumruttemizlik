@@ -42,7 +42,11 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({
       ok: true,
       authVia: auth.via,
-      ...result,
+      published: result.published,
+      slugs: result.slugs,
+      remainingScheduled: result.remainingScheduled,
+      internalLinksAdded: result.internalLinksAdded,
+      indexNow: result.indexNow,
       healthBefore,
       healthAfter,
       llmsSync,
