@@ -10,6 +10,7 @@ import {
   GEO_NAP,
   GEO_REVIEW_REQUEST_TEMPLATES,
 } from '@/config/geo-entity';
+import { getBlogScheduleHealth } from '@/lib/blog-schedule-preserve';
 
 export async function GET(request: NextRequest) {
   const denied = await requireAdminAuth(request);
@@ -24,6 +25,7 @@ export async function GET(request: NextRequest) {
   const geoPassageBlogs = await prisma.blogPost.count({
     where: { published: true, content: { contains: 'geo-passage-answer' } },
   });
+  const blogSchedule = await getBlogScheduleHealth(prisma);
 
   return NextResponse.json({
     nap: GEO_NAP,
@@ -39,6 +41,7 @@ export async function GET(request: NextRequest) {
       publishedBlogs,
       geoPassageBlogs,
       geoSssPages: 75,
+      blogSchedule,
     },
     lastRun: lastRun
       ? {

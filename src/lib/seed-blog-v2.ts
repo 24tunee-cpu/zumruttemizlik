@@ -4,6 +4,7 @@ import {
   assignPublishSchedule,
   buildMixedPublishQueue,
   BLOG_PUBLISH_PER_DAY,
+  BLOG_SCHEDULE_ANCHOR_ISO,
 } from './blog-schedule';
 import { generateAllV2Posts } from './seed-blog-v2-content';
 import { resolveBlogMetaDesc, resolveBlogMetaTitle } from './blog-meta';
@@ -22,7 +23,8 @@ export type UpsertV2Result = {
 
 /**
  * 100 yeni blog yazısını taslak + zamanlanmış olarak upsert eder.
- * Zaten yayınlanmış slug'lara dokunmaz; taslak olanların içeriğini günceller.
+ * Yayınlanmış slug'lara dokunmaz.
+ * Mevcut taslakların scheduledPublishAt değerini korur (re-seed takvimi sıfırlamaz).
  */
 export async function upsertScheduledBlogV2(prisma: PrismaClient): Promise<UpsertV2Result> {
   const { seo, pricing } = generateAllV2Posts();
@@ -41,13 +43,15 @@ export async function upsertScheduledBlogV2(prisma: PrismaClient): Promise<Upser
     throw new Error(`Kuyruk boyutu hatalı: ${queue.length}/100`);
   }
 
-  const scheduled = assignPublishSchedule(queue);
+  const anchor = new Date(BLOG_SCHEDULE_ANCHOR_ISO);
+  const scheduled = assignPublishSchedule(queue, { anchor });
   let skippedExisting = 0;
 
-  for (const post of scheduled) {
+  for (let i = 0; i < scheduled.length; i++) {
+    const post = scheduled[i];
     const existing = await prisma.blogPost.findUnique({
       where: { slug: post.slug },
-      select: { published: true },
+      select: { published: true, scheduledPublishAt: true },
     });
 
     if (existing?.published) {
@@ -55,44 +59,43 @@ export async function upsertScheduledBlogV2(prisma: PrismaClient): Promise<Upser
       continue;
     }
 
-    const enrichedExcerpt = post.excerpt;
-    const enrichedContent = post.content;
+    const scheduledPublishAt =
+      existing?.scheduledPublishAt ?? post.scheduledPublishAt;
+
     const resolvedTitle = resolveBlogMetaTitle(post.title, post.metaTitle ?? null);
-    const resolvedDesc = resolveBlogMetaDesc(enrichedExcerpt, post.metaDesc ?? null);
+    const resolvedDesc = resolveBlogMetaDesc(post.excerpt, post.metaDesc ?? null);
     const normalizedTags = [
       ...new Set([...post.tags, 'istanbul', 'zümrüt vadi temizlik blog', 'otomatik yayın v2']),
     ].slice(0, 12);
 
-    await prisma.blogPost.upsert({
-      where: { slug: post.slug },
-      create: {
-        slug: post.slug,
-        title: post.title,
-        content: enrichedContent,
-        excerpt: enrichedExcerpt,
-        image: post.image ?? null,
-        category: post.category,
-        tags: normalizedTags,
-        author: 'Zümrüt Vadi Temizlik',
-        published: false,
-        scheduledPublishAt: post.scheduledPublishAt,
-        views: 0,
-        metaTitle: resolvedTitle,
-        metaDesc: resolvedDesc,
-      },
-      update: {
-        title: post.title,
-        content: enrichedContent,
-        excerpt: enrichedExcerpt,
-        image: post.image ?? null,
-        category: post.category,
-        tags: normalizedTags,
-        published: false,
-        scheduledPublishAt: post.scheduledPublishAt,
-        metaTitle: resolvedTitle,
-        metaDesc: resolvedDesc,
-      },
-    });
+    const contentFields = {
+      title: post.title,
+      content: post.content,
+      excerpt: post.excerpt,
+      image: post.image ?? null,
+      category: post.category,
+      tags: normalizedTags,
+      metaTitle: resolvedTitle,
+      metaDesc: resolvedDesc,
+      scheduledPublishAt,
+    };
+
+    if (existing) {
+      await prisma.blogPost.update({
+        where: { slug: post.slug },
+        data: contentFields,
+      });
+    } else {
+      await prisma.blogPost.create({
+        data: {
+          slug: post.slug,
+          ...contentFields,
+          author: 'Zümrüt Vadi Temizlik',
+          published: false,
+          views: 0,
+        },
+      });
+    }
   }
 
   return {

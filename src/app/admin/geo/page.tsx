@@ -20,7 +20,17 @@ type GeoDashboard = {
   citationPrompts: { id: string; prompt: string; category: string }[];
   competitors: string[];
   directories: { id: string; name: string; priority: string; configured: boolean }[];
-  stats: { publishedBlogs: number; geoPassageBlogs: number; geoSssPages: number };
+  stats: {
+    publishedBlogs: number;
+    geoPassageBlogs: number;
+    geoSssPages: number;
+    blogSchedule?: {
+      overdue: number;
+      dueToday: number;
+      nextBatchAt: string | null;
+      nextSlugs: string[];
+    };
+  };
   lastRun: {
     status: string;
     message: string | null;
@@ -211,6 +221,33 @@ export default function AdminGeoPage() {
                       </li>
                     ))}
                   </ul>
+                </section>
+              )}
+
+              {data.stats.blogSchedule && (
+                <section className="rounded-xl border border-blue-500/30 bg-blue-500/10 p-5">
+                  <h2 className="font-semibold text-white">Blog Otomasyon Durumu</h2>
+                  <dl className="mt-3 grid gap-2 text-sm sm:grid-cols-2">
+                    <div>
+                      <dt className="text-slate-400">Gecikmiş (due)</dt>
+                      <dd className="text-white">{data.stats.blogSchedule.overdue}</dd>
+                    </div>
+                    <div>
+                      <dt className="text-slate-400">Bugün due</dt>
+                      <dd className="text-white">{data.stats.blogSchedule.dueToday}</dd>
+                    </div>
+                    <div className="sm:col-span-2">
+                      <dt className="text-slate-400">Sonraki batch</dt>
+                      <dd className="text-white">
+                        {data.stats.blogSchedule.nextBatchAt
+                          ? new Date(data.stats.blogSchedule.nextBatchAt).toLocaleString('tr-TR')
+                          : '—'}
+                      </dd>
+                    </div>
+                  </dl>
+                  <p className="mt-2 text-xs text-slate-400">
+                    Cron: her gün 08:00 TR · Vercel&apos;de CRON_SECRET zorunlu
+                  </p>
                 </section>
               )}
             </div>
