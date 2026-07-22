@@ -1,6 +1,7 @@
 import { cache } from 'react';
 import { prisma } from '@/lib/prisma';
 import { getSiteUrl } from '@/lib/seo';
+import type { GoogleMapsPublicLinks } from '@/lib/google-maps-public-links';
 
 export type GoogleMapReviewRow = {
   starRating: number | null;
@@ -44,7 +45,10 @@ export function computeGoogleReviewAggregate(rows: { starRating: number | null }
 }
 
 /** Google Maps kaynaklı yorumlar — harita sayfası LocalBusiness schema için */
-export function buildGoogleMapsReviewSchemaGraph(rows: GoogleMapReviewRow[]) {
+export function buildGoogleMapsReviewSchemaGraph(
+  rows: GoogleMapReviewRow[],
+  mapsLinks: Pick<GoogleMapsPublicLinks, 'mapsOpenUrl' | 'reviewUrl'>
+) {
   const base = getSiteUrl();
   const agg = computeGoogleReviewAggregate(rows);
 
@@ -55,8 +59,8 @@ export function buildGoogleMapsReviewSchemaGraph(rows: GoogleMapReviewRow[]) {
     name: 'Zümrüt Vadi Temizlik',
     url: `${base}/harita-ve-yorumlar`,
     image: [`${base}/logo.png`, `${base}/og-image.jpg`],
-    hasMap: 'https://maps.app.goo.gl/Q2Sp2mRcEdFQMnog7',
-    sameAs: ['https://g.page/r/CS2Mx2c1UpqwEBM/review'],
+    hasMap: mapsLinks.mapsOpenUrl,
+    sameAs: [mapsLinks.reviewUrl],
   };
 
   if (agg && agg.reviewCount >= 1) {
