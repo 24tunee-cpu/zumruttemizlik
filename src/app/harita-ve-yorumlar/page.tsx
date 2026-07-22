@@ -8,35 +8,7 @@ import {
   computeGoogleReviewAggregate,
   fetchGoogleMapReviewsForSeo,
 } from '@/lib/map-reviews-seo';
-
-const address = SITE_CONTACT.addressLine;
-// Kullanıcının doğrudan Google işletme linkleri
-const GOOGLE_MAPS_PLACE = 'https://maps.app.goo.gl/Q2Sp2mRcEdFQMnog7';
-const GOOGLE_REVIEW_URL = 'https://g.page/r/CS2Mx2c1UpqwEBM/review';
-
-const utmBase = {
-  utm_source: 'website',
-  utm_medium: 'gmb',
-};
-
-function withUtm(path: string, extra: Record<string, string>) {
-  const params = new URLSearchParams({ ...utmBase, ...extra });
-  return `${path}?${params.toString()}`;
-}
-
-// Embed: Google My Maps — yalnızca kullanıcı "Etkileşimli Harita" seçince yüklenir
-const mapsEmbedSrc =
-  'https://www.google.com/maps/d/u/0/embed?mid=16qrblTON7mA6kRhhSsi8boG1m_Wt1aM&ehbc=2E312F';
-// Haritada Aç: kullanıcıdan gelen Google Maps kısa linki
-const mapsOpenHref = withUtm(GOOGLE_MAPS_PLACE, { utm_campaign: 'gmb-harita' });
-
-// Yorum Yaz: doğrudan Google yorum isteme linki
-const reviewHref = withUtm(GOOGLE_REVIEW_URL, { utm_campaign: 'gmb-yorum' });
-
-const directionsHref = withUtm(
-  `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address)}`,
-  { utm_campaign: 'gmb-yol-tarifi' }
-);
+import { getGoogleMapsPublicLinks, withGmbUtm } from '@/lib/google-maps-public-links';
 
 export const revalidate = 3600;
 
@@ -66,6 +38,14 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function MapsAndReviewsPage() {
+  const mapsLinks = await getGoogleMapsPublicLinks();
+  const mapsOpenHref = withGmbUtm(mapsLinks.mapsOpenUrl, 'gmb-harita');
+  const reviewHref = withGmbUtm(mapsLinks.reviewUrl, 'gmb-yorum');
+  const directionsHref = withGmbUtm(
+    `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(SITE_CONTACT.addressLine)}`,
+    'gmb-yol-tarifi'
+  );
+
   const telHref = `tel:${SITE_CONTACT.phoneE164}`;
   const whatsappHref = `https://wa.me/${SITE_CONTACT.whatsappDigits}`;
   const googleReviews = await fetchGoogleMapReviewsForSeo();
@@ -77,7 +57,7 @@ export default async function MapsAndReviewsPage() {
       title: 'Google Harita ve Müşteri Yorumları | İstanbul | Zümrüt Vadi',
       description: 'Zümrüt Vadi Temizlik Google Harita konumu, müşteri yorumları ve yol tarifi.',
     }),
-    buildGoogleMapsReviewSchemaGraph(googleReviews),
+    buildGoogleMapsReviewSchemaGraph(googleReviews, mapsLinks),
   ]);
 
   return (
@@ -86,28 +66,30 @@ export default async function MapsAndReviewsPage() {
       <div className="min-h-screen bg-slate-900 pb-16 pt-28 text-white">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <header>
-            <h1 className="text-3xl font-bold sm:text-4xl">İstanbul Temizlik Hizmet Bölgelerimiz - Kağıthane Harita ve Yorumlar</h1>
+            <h1 className="text-3xl font-bold sm:text-4xl">
+              İstanbul Temizlik Hizmet Bölgelerimiz — {SITE_CONTACT.addressLocality} Harita ve Yorumlar
+            </h1>
             {agg && agg.reviewCount > 0 && (
               <p className="mt-3 inline-flex items-center rounded-full border border-amber-500/30 bg-amber-500/10 px-4 py-1.5 text-sm font-medium text-amber-200">
                 Google ortalama {agg.ratingValue}/5 · {agg.reviewCount} yorum
               </p>
             )}
             <p className="mt-4 max-w-3xl text-slate-300 leading-relaxed">
-              Zümrüt Vadi Temizlik olarak Kağıthane ve İstanbul genelinde profesyonel temizlik hizmetleri sunuyoruz.
-              Ev temizliği, ofis temizliği, inşaat sonrası temizlik ve derzul temizliği alanlarında uzman ekibimizle
-              hizmetinizdeyiz. Yerel temizlik firması olarak müşteri memnuniyetini ön planda tutuyor,
-              güvenilir ve kaliteli hizmet anlayışımızla her projede en iyi sonuçları elde etmeyi hedefliyoruz.
-              Kağıthane temizlik şirketleri arasında öne çıkan firmamız, 7/24 hizmet vermektedir.
-              Haritadan Kağıthane ofis konumumuzu görüntüleyebilir, müşteri yorumlarını okuyarak
-              hakkımızda detaylı bilgi edinebilir ve deneyimlerinizi Google üzerinden paylaşabilirsiniz.
-              İstanbul temizlik hizmetleri için hemen iletişime geçin, ücretsiz keşif ve fiyat teklifi alın.
+              {SITE_CONTACT.companyName} olarak {SITE_CONTACT.addressLocality} ve İstanbul genelinde profesyonel
+              temizlik hizmetleri sunuyoruz. Ev temizliği, ofis temizliği, inşaat sonrası temizlik ve derin temizlik
+              alanlarında uzman ekibimizle hizmetinizdeyiz. Yerel temizlik firması olarak müşteri memnuniyetini ön
+              planda tutuyor, güvenilir ve kaliteli hizmet anlayışımızla her projede en iyi sonuçları elde etmeyi
+              hedefliyoruz. Haritadan {SITE_CONTACT.addressLocality} ofis konumumuzu görüntüleyebilir, müşteri
+              yorumlarını okuyarak hakkımızda detaylı bilgi edinebilir ve deneyimlerinizi Google üzerinden
+              paylaşabilirsiniz. İstanbul temizlik hizmetleri için hemen iletişime geçin, ücretsiz keşif ve fiyat
+              teklifi alın.
             </p>
           </header>
 
           <MapsLazySection
-            embedSrc={mapsEmbedSrc}
+            embedSrc={mapsLinks.mapsEmbedUrl}
             mapsOpenHref={mapsOpenHref}
-            title="Zümrüt Vadi Temizlik Google My Maps"
+            title="Zümrüt Vadi Temizlik Google Harita"
           />
 
           <section className="mt-8 rounded-2xl border border-slate-800 bg-white/5 p-5">
@@ -178,4 +160,3 @@ export default async function MapsAndReviewsPage() {
     </SiteLayout>
   );
 }
-
