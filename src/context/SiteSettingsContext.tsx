@@ -98,10 +98,6 @@ export interface SiteSettings {
   consentPolicyVersion?: string;
 }
 
-// ============================================
-// DEFAULT SETTINGS
-// ============================================
-
 const defaultSettings: SiteSettings = {
   siteName: 'Zümrüt Vadi Temizlik',
   siteDescription: "İstanbul'un en güvenilir profesyonel temizlik şirketi",
@@ -143,6 +139,29 @@ const defaultSettings: SiteSettings = {
   customJs: '',
   maintenanceMode: false,
 };
+
+const SOCIAL_SETTING_KEYS: (keyof SiteSettings)[] = [
+  'facebook',
+  'instagram',
+  'twitter',
+  'linkedin',
+  'youtube',
+];
+
+/** API null/boş değerleri varsayılan sosyal linklerin üzerine yazmasın */
+function mergeSettings(base: SiteSettings, patch: Partial<SiteSettings>): SiteSettings {
+  const merged = { ...base };
+  for (const [key, value] of Object.entries(patch) as [keyof SiteSettings, SiteSettings[keyof SiteSettings]][]) {
+    if (SOCIAL_SETTING_KEYS.includes(key)) {
+      if (value === null || value === undefined) continue;
+      if (typeof value === 'string' && !value.trim()) continue;
+    }
+    if (value !== undefined && value !== null) {
+      (merged as Record<string, unknown>)[key as string] = value;
+    }
+  }
+  return merged;
+}
 
 // ============================================
 // VALIDATION
@@ -256,7 +275,7 @@ export function SiteSettingsProvider({ children }: { children: React.ReactNode }
         const response = await fetch('/api/settings');
         if (response.ok) {
           const data = await response.json();
-          const merged = { ...defaultSettings, ...data };
+          const merged = mergeSettings(defaultSettings, data);
           setSettings(merged);
           setSavedSettings(merged);
           console.log('Settings loaded from API');
@@ -273,7 +292,7 @@ export function SiteSettingsProvider({ children }: { children: React.ReactNode }
         if (stored) {
           try {
             const parsed = JSON.parse(stored);
-            const merged = { ...defaultSettings, ...parsed };
+            const merged = mergeSettings(defaultSettings, parsed);
             setSettings(merged);
             setSavedSettings(merged);
           } catch {

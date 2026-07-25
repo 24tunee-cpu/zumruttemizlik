@@ -2,15 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import SiteLayout from '../site/layout';
 import { FiyatHesaplamaCalculator } from '@/components/site/FiyatHesaplamaCalculator';
-import {
-  SPACE_TYPES,
-  ROOM_PRICES,
-  ROOM_OPTIONS,
-  M2_RATES,
-  EXTRAS,
-  formatTL,
-  type SpaceTypeId,
-} from '@/config/pricing';
+import { PricingTablesSection } from '@/components/site/PricingTablesSection';
 import {
   canonicalUrl,
   generateBreadcrumbSchema,
@@ -103,8 +95,6 @@ const jsonLd = serializeSchemaGraph([
   generateFAQSchema(FAQ_ITEMS) as Record<string, unknown>,
 ]);
 
-const m2Types = SPACE_TYPES.filter((t) => t.mode === 'm2');
-
 export default function FiyatHesaplamaPage() {
   return (
     <SiteLayout>
@@ -149,96 +139,12 @@ export default function FiyatHesaplamaPage() {
           </h2>
           <p className="mt-3 text-slate-600 dark:text-slate-300">
             Aşağıdaki aralıklar orta–üst segment hizmet için 2026 piyasa değerleridir. Kesin fiyat,
-            ücretsiz keşif sonrası netleşir.
+            ücretsiz keşif sonrası netleşir.{' '}
+            <Link href="/fiyatlar" className="font-medium text-emerald-600 hover:underline dark:text-emerald-400">
+              Tam fiyat listesi →
+            </Link>
           </p>
-
-          {/* Ev - oda paketi */}
-          <h3 className="mt-8 text-xl font-semibold text-slate-900 dark:text-white">
-            Ev / Daire Temizliği (oda paketi)
-          </h3>
-          <div className="mt-3 overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700">
-            <table className="w-full text-left text-sm">
-              <thead className="bg-slate-50 text-slate-600 dark:bg-slate-800 dark:text-slate-300">
-                <tr>
-                  <th className="px-4 py-3 font-semibold">Daire Tipi</th>
-                  <th className="px-4 py-3 font-semibold">Tahmini Fiyat Aralığı</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100 dark:divide-slate-700">
-                {ROOM_OPTIONS.map((opt) => (
-                  <tr key={opt} className="text-slate-800 dark:text-slate-200">
-                    <td className="px-4 py-3 font-medium">{opt} Daire</td>
-                    <td className="px-4 py-3">
-                      {formatTL(ROOM_PRICES[opt][0])} – {formatTL(ROOM_PRICES[opt][1])}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          {/* m² bazlı */}
-          <h3 className="mt-8 text-xl font-semibold text-slate-900 dark:text-white">
-            Ofis, İşyeri, İnşaat Sonrası ve Dış Cephe (metrekare bazlı)
-          </h3>
-          <div className="mt-3 overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700">
-            <table className="w-full text-left text-sm">
-              <thead className="bg-slate-50 text-slate-600 dark:bg-slate-800 dark:text-slate-300">
-                <tr>
-                  <th className="px-4 py-3 font-semibold">Hizmet Tipi</th>
-                  <th className="px-4 py-3 font-semibold">Birim Fiyat (TL/m²)</th>
-                  <th className="px-4 py-3 font-semibold">Başlangıç (taban)</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100 dark:divide-slate-700">
-                {m2Types.map((t) => {
-                  const rate = M2_RATES[t.id as Exclude<SpaceTypeId, 'ev'>];
-                  return (
-                    <tr key={t.id} className="text-slate-800 dark:text-slate-200">
-                      <td className="px-4 py-3 font-medium">{t.label}</td>
-                      <td className="px-4 py-3">
-                        {rate.min} – {rate.max} TL/m²
-                      </td>
-                      <td className="px-4 py-3">
-                        {formatTL(rate.floorMin)} – {formatTL(rate.floorMax)}
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
-
-          {/* Ekstralar */}
-          <h3 className="mt-8 text-xl font-semibold text-slate-900 dark:text-white">
-            Ekstralar
-          </h3>
-          <div className="mt-3 overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700">
-            <table className="w-full text-left text-sm">
-              <thead className="bg-slate-50 text-slate-600 dark:bg-slate-800 dark:text-slate-300">
-                <tr>
-                  <th className="px-4 py-3 font-semibold">Ekstra Hizmet</th>
-                  <th className="px-4 py-3 font-semibold">Ek Ücret</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100 dark:divide-slate-700">
-                {EXTRAS.map((e) => (
-                  <tr key={e.id} className="text-slate-800 dark:text-slate-200">
-                    <td className="px-4 py-3 font-medium">{e.label}</td>
-                    <td className="px-4 py-3">
-                      {e.free ? (
-                        <span className="font-semibold text-emerald-600 dark:text-emerald-400">
-                          Ücretsiz (Hediye)
-                        </span>
-                      ) : (
-                        `+${formatTL(e.min)} – ${formatTL(e.max)}`
-                      )}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <PricingTablesSection />
         </div>
       </section>
 
