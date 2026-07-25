@@ -1,12 +1,23 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
-import { buildMetaSuggestions, parseGscCsv } from '@/lib/gsc-meta';
+import {
+  analyzeGscImport,
+  applyGscSuggestions,
+  mergeGscCsvTexts,
+  type BlogSuggestion,
+  type GscImportReport,
+  type ProgrammaticSuggestion,
+} from '@/lib/gsc-import-engine';
 import { requireAdminAuth } from '@/lib/security';
 
 type ImportBody = {
   csv?: string;
+  /** Birden fazla GSC export dosyası — birleştirilir */
+  csvFiles?: string[];
   apply?: boolean;
-  limit?: number;
+  /** apply=true iken analiz sonucundan gelen öneriler */
+  programmatic?: ProgrammaticSuggestion[];
+  blog?: BlogSuggestion[];
 };
 
 export async function POST(request: NextRequest) {
@@ -14,42 +25,53 @@ export async function POST(request: NextRequest) {
   if (authError) return authError;
 
   const body = (await request.json().catch(() => ({}))) as ImportBody;
-  const csv = body.csv?.trim();
-  if (!csv) {
-    return NextResponse.json({ error: 'CSV metni zorunlu.' }, { status: 400 });
+  const sources = [
+    ...(body.csv?.trim() ? [body.csv.trim()] : []),
+    ...(Array.isArray(body.csvFiles) ? body.csvFiles.map((c) => c.trim()).filter(Boolean) : []),
+  ];
+
+  if (sources.length === 0 && !body.apply) {
+    return NextResponse.json({ error: 'CSV metni veya dosya zorunlu.' }, { status: 400 });
   }
 
-  const rows = parseGscCsv(csv);
-  const suggestions = buildMetaSuggestions(rows);
-  const limit = Math.min(200, Math.max(1, Number(body.limit || 80)));
-  const limited = suggestions.slice(0, limit);
-
   if (body.apply) {
-    await Promise.all(
-      limited.map((s) =>
-        prisma.programmaticMetaOverride.upsert({
-          where: { key: s.key },
-          create: {
-            key: s.key,
-            district: s.district,
-            service: s.service,
-            title: s.title,
-            description: s.description,
-            isActive: true,
-          },
-          update: {
-            title: s.title,
-            description: s.description,
-            isActive: true,
-          },
-        })
-      )
-    );
+    const programmatic = Array.isArray(body.programmatic) ? body.programmatic : [];
+    const blog = Array.isArray(body.blog) ? body.blog : [];
+    if (programmatic.length === 0 && blog.length === 0) {
+      return NextResponse.json({ error: 'Uygulanacak öneri yok. Önce analiz çalıştırın.' }, { status: 400 });
+    }
+
+    const result = await applyGscSuggestions(programmatic, blog, prisma);
+
+    await prisma.seoAutomationSyncLog.create({
+      data: {
+        source: 'gsc_csv_apply',
+        status: result.errors.length ? 'partial' : 'success',
+        message: `GSC CSV uygulandı: ${result.programmaticApplied} bölge, ${result.blogApplied} blog`,
+        finishedAt: new Date(),
+        stats: result,
+      },
+    });
+
+    return NextResponse.json({
+      applied: true,
+      ...result,
+      totalApplied: result.programmaticApplied + result.blogApplied,
+    });
+  }
+
+  let report: GscImportReport;
+  try {
+    const rows = mergeGscCsvTexts(sources);
+    report = analyzeGscImport(rows);
+  } catch (e) {
+    const message = e instanceof Error ? e.message : 'CSV parse hatası';
+    return NextResponse.json({ error: message }, { status: 400 });
   }
 
   return NextResponse.json({
-    parsedRows: rows.length,
-    suggestions: limited,
-    applied: !!body.apply,
+    applied: false,
+    fileCount: sources.length,
+    ...report,
   });
 }
