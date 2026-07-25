@@ -41,6 +41,12 @@ import {
   serializeSchemaGraph,
 } from '@/lib/seo';
 import { extractFaqsFromBlogHtml } from '@/lib/geo-passage';
+import { injectFeaturedSnippetIfMissing } from '@/lib/blog-snippet-enrich';
+import {
+  resolveBlogCanonicalUrl,
+  isCannibalDuplicate,
+} from '@/config/seo-cannibalization';
+import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
 import { createEnhancedArticleSchema } from '@/lib/enhanced-schema';
 import {
   generateTopicClusterLinks,
@@ -49,9 +55,7 @@ import {
 } from '@/lib/topic-cluster-links';
 import { enhanceContent, calculateContentUpgradeScore } from '@/lib/content-upgrade';
 import {
-  MobileFloatingActionBar,
   MobileQuickActions,
-  MobileStickyHeader,
   MobileContactCard
 } from '@/lib/mobile-optimizations';
 
@@ -146,7 +150,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: metaDesc,
       keywords: keywordsForPage('blog', post.tags),
       alternates: {
-        canonical: canonicalUrl(`/blog/${post.slug}`),
+        canonical: resolveBlogCanonicalUrl(post.slug),
       },
       openGraph: {
         title: metaTitle,
@@ -167,10 +171,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         description: metaDesc,
         images: ogImage ? [ogImage] : undefined,
       },
-      robots: {
-        index: true,
-        follow: true,
-      },
+      robots: isCannibalDuplicate(post.slug)
+        ? { index: false, follow: true }
+        : { index: true, follow: true },
     };
   } catch (error) {
     return {
@@ -349,6 +352,12 @@ export default async function BlogPostPage({ params }: PageProps) {
     }
   }
 
+  enhancedPostContent = injectFeaturedSnippetIfMissing(
+    post.slug,
+    post.title,
+    enhancedPostContent
+  );
+
   // Update view counter (fire and forget)
   prisma.blogPost.update({
     where: { id: post.id },
@@ -389,7 +398,7 @@ export default async function BlogPostPage({ params }: PageProps) {
       />
 
       <SiteLayout>
-        <div className="flex min-h-full flex-1 flex-col bg-slate-900">
+        <div className="flex min-h-full flex-1 flex-col bg-slate-900 pb-28">
           {/* Article Header */}
           <header
             className="bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900 pt-24 pb-12 sm:pt-28 sm:pb-14 md:pt-32 md:pb-16"
@@ -619,11 +628,10 @@ export default async function BlogPostPage({ params }: PageProps) {
             </article>
           </main>
 
-          {/* Mobile Optimizations */}
-          <MobileFloatingActionBar phone="0532 123 45 67" />
-          <MobileStickyHeader
-            phone="0532 123 45 67"
-            whatsappPhone="0532 123 45 67"
+          {/* Sticky SEO CTA — mobil + masaüstü */}
+          <StickySeoCtaBar
+            contextLabel={post.title.replace(/\s*\|.*$/, '').slice(0, 80)}
+            sourcePrefix="blog-sticky-cta"
           />
         </div>
       </SiteLayout>

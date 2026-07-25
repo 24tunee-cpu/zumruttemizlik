@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import SiteLayout from '../../site/layout';
+import { prisma } from '@/lib/prisma';
 import {
   DISTRICT_LANDINGS,
   SERVICE_LANDINGS,
@@ -17,6 +18,10 @@ import {
   getDistrictGeoFaqs,
   getDistrictGeoPassageLead,
 } from '@/config/geo-district-faqs';
+import { DistrictBreadcrumb } from '@/components/site/DistrictBreadcrumb';
+import { DistrictHubLinks } from '@/components/site/DistrictHubLinks';
+import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
+import { SITE_CONTACT } from '@/config/site-contact';
 
 type Props = {
   params: Promise<{ district: string }>;
@@ -47,7 +52,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: canonicalUrl(`/bolgeler/${districtData.slug}`),
       type: 'website',
       locale: 'tr_TR',
-      siteName: 'Zümrüt Vadi Temizlik',
+      siteName: SITE_CONTACT.companyName,
     },
     twitter: {
       card: 'summary_large_image',
@@ -73,6 +78,15 @@ export default async function DistrictPage({ params }: Props) {
   );
   const passageLead = getDistrictGeoPassageLead(districtData.name);
 
+  const publishedDistrictBlogs = await prisma.blogPost.findMany({
+    where: {
+      published: true,
+      slug: { startsWith: `${districtData.slug}-` },
+    },
+    select: { slug: true },
+    take: 8,
+  });
+
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -97,8 +111,16 @@ export default async function DistrictPage({ params }: Props) {
         }}
       />
       <SiteLayout>
-        <div className="min-h-screen bg-slate-900 pb-16 pt-28 text-white">
+        <div className="min-h-screen bg-slate-900 pb-28 pt-28 text-white">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <DistrictBreadcrumb
+              items={[
+                { label: 'Ana Sayfa', href: '/' },
+                { label: 'Bölgeler', href: '/bolgeler' },
+                { label: districtData.name },
+              ]}
+            />
+
             <div className="flex flex-wrap items-center gap-2">
               <h1 className="text-3xl font-bold sm:text-4xl">{districtData.name} Temizlik Hizmetleri</h1>
               {formatDistrictSide(districtData) && (
@@ -228,6 +250,12 @@ export default async function DistrictPage({ params }: Props) {
               ))}
             </section>
 
+            <DistrictHubLinks
+              districtSlug={districtData.slug}
+              districtName={districtData.name}
+              blogSlugs={publishedDistrictBlogs.map((b) => b.slug)}
+            />
+
             <section className="mt-8 rounded-xl border border-slate-700 bg-slate-800/40 p-5">
               <h2 className="text-xl font-semibold text-white">Sık sorulan sorular — {districtData.name}</h2>
               <div className="mt-4 space-y-4">
@@ -248,7 +276,7 @@ export default async function DistrictPage({ params }: Props) {
             <section className="mt-8 rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-5">
               <h2 className="text-lg font-semibold text-emerald-200">Google Harita & Yorumlar</h2>
               <p className="mt-2 text-sm text-emerald-100/80">
-                Kağıthane ve İstanbul genelindeki konumumuzu haritada görün, yorumlarınızı okuyun.
+                {SITE_CONTACT.addressLocality} ve İstanbul genelindeki konumumuzu haritada görün, yorumlarınızı okuyun.
               </p>
               <div className="mt-4">
                 <Link
@@ -260,6 +288,11 @@ export default async function DistrictPage({ params }: Props) {
               </div>
             </section>
           </div>
+
+          <StickySeoCtaBar
+            contextLabel={`${districtData.name} temizlik`}
+            sourcePrefix="district-sticky-cta"
+          />
         </div>
       </SiteLayout>
     </>

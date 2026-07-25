@@ -3,7 +3,7 @@
  * Her hizmet için detaylı fiyat rehberi + 3 bölgesel/genel rehber = 10 yazı.
  */
 import type { BlogSeedPost } from './seed-blog';
-import { buildGeoTldr, buildPassageSection } from './geo-passage';
+import { buildGeoTldr, buildPassageSection, buildFeaturedSnippetBlock } from './geo-passage';
 import { GEO_BRAND_NAME } from '@/config/geo-entity';
 
 const IMG_HOME = 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200';
@@ -75,8 +75,13 @@ export function buildPricingHtml(cfg: PricingGuideConfig): string {
     `${GEO_BRAND_NAME}, 2026 yılında ${cfg.serviceName} için ${firstPrice ? `${firstPrice.label} kapsamında ${firstPrice.range}` : 'tahmini fiyat aralıkları'} sunar; kesin fiyat ücretsiz keşif sonrası netleşir.`
   );
 
+  const snippetQuestion = cfg.title.replace(/\s*\|.*$/, '').trim();
+  const snippetAnswer = `${GEO_BRAND_NAME}, 2026 yılında ${cfg.serviceName} için ${firstPrice ? `${firstPrice.label} kapsamında ${firstPrice.range}` : 'tahmini fiyat aralıkları'} sunar; kesin fiyat ücretsiz keşif sonrası netleşir.`;
+  const featuredSnippet = buildFeaturedSnippetBlock(snippetQuestion, snippetAnswer);
+
   return `
 ${tldr}
+${featuredSnippet}
 <p class="geo-passage-answer" data-geo-extract="true"><strong>Özet:</strong> ${cfg.intro}</p>
 <p><strong>Önemli:</strong> Bu rehberdeki tüm rakamlar 2026 İstanbul piyasasına göre <strong>tahmini aralıklardır</strong>. Kesin fiyat; alan büyüklüğü, kirlilik düzeyi, erişim koşulları ve ek hizmet taleplerine göre ücretsiz keşif sonrası netleşir. Anında tahmin için <a href="/fiyat-hesaplama">online fiyat hesaplama aracımızı</a> kullanabilirsiniz.</p>
 

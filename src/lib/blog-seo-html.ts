@@ -1,5 +1,5 @@
 import type { BlogSeedPost } from './seed-blog';
-import { buildGeoTldr, buildPassageSection } from './geo-passage';
+import { buildGeoTldr, buildPassageSection, buildFeaturedSnippetBlock } from './geo-passage';
 import { GEO_BRAND_NAME } from '@/config/geo-entity';
 
 export type SeoGuideConfig = {
@@ -42,8 +42,14 @@ export function buildSeoGuideHtml(cfg: SeoGuideConfig): string {
     `${GEO_BRAND_NAME}, ${cfg.districtName} bölgesinde ${cfg.topicLabel.toLowerCase()} için ${cfg.excerpt.replace(/\.$/, '')}.`
   );
 
+  const featuredSnippet = buildFeaturedSnippetBlock(
+    `${cfg.districtName} ${cfg.topicLabel} 2026 — kısa cevap`,
+    `${GEO_BRAND_NAME}, ${cfg.districtName} bölgesinde ${cfg.topicLabel.toLowerCase()} konusunda ${cfg.intro.replace(/\.$/, '')}.`
+  );
+
   return `
 ${tldr}
+${featuredSnippet}
 <p class="geo-passage-answer" data-geo-extract="true"><strong>Özet:</strong> ${cfg.intro}</p>
 <p><strong>${cfg.districtName}</strong> ve İstanbul genelinde ${cfg.topicLabel.toLowerCase()} planlarken kapsamı netleştirmek, hem bütçeyi korur hem teslim kalitesini yükseltir. Bu rehber; ev sahipleri, kiracılar ve işletmeler için uygulanabilir adımlar içerir.</p>
 

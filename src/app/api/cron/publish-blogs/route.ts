@@ -5,6 +5,7 @@ import { syncPublishedBlogsToLlmsFull } from '@/lib/geo-llms-sync';
 import { authorizeCronRequest, cronUnauthorizedResponse } from '@/lib/cron-auth';
 import { getBlogScheduleHealth } from '@/lib/blog-schedule-preserve';
 import { runFullGeoSync } from '@/lib/geo-citation';
+import { runSeoChecklistAutoSync } from '@/lib/gsc-sync';
 
 export const dynamic = 'force-dynamic';
 export const maxDuration = 60;
@@ -35,8 +36,10 @@ export async function GET(request: NextRequest) {
     }
 
     let geoSync: Awaited<ReturnType<typeof runFullGeoSync>> | null = null;
+    let seoSync: Awaited<ReturnType<typeof runSeoChecklistAutoSync>> | null = null;
     if (isMondayUtc()) {
       geoSync = await runFullGeoSync(prisma, 'cron');
+      seoSync = await runSeoChecklistAutoSync('cron');
     }
 
     return NextResponse.json({
@@ -51,6 +54,13 @@ export async function GET(request: NextRequest) {
       healthAfter,
       llmsSync,
       geoSync: geoSync ? { auditScore: geoSync.audit.score, citationScore: geoSync.citation.overallScore } : null,
+      seoSync: seoSync
+        ? {
+            ok: seoSync.ok,
+            metaAbProgrammatic: seoSync.stats.metaAbProgrammatic,
+            metaAbBlog: seoSync.stats.metaAbBlog,
+          }
+        : null,
       publishedAt: new Date().toISOString(),
     });
   } catch (e) {
