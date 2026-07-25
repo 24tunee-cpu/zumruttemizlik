@@ -132,6 +132,7 @@ export default function SeoAutomationPage() {
 
   const [csv, setCsv] = useState('');
   const [csvFileNames, setCsvFileNames] = useState<string[]>([]);
+  const [csvSources, setCsvSources] = useState<string[]>([]);
   const [gscReport, setGscReport] = useState<GscAnalysisReport | null>(null);
   const [importLoading, setImportLoading] = useState(false);
   const [importMsg, setImportMsg] = useState<string | null>(null);
@@ -260,7 +261,8 @@ export default function SeoAutomationPage() {
       texts.push(await file.text());
       names.push(file.name);
     }
-    setCsv(texts.join('\n'));
+    setCsv(texts.join('\n\n'));
+    setCsvSources(texts);
     setCsvFileNames(names);
     setGscReport(null);
     const totalKb = Array.from(files).reduce((a, f) => a + f.size, 0);
@@ -276,7 +278,9 @@ export default function SeoAutomationPage() {
         method: 'POST',
         credentials: 'include',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ csv }),
+        body: JSON.stringify({
+          csvFiles: csvSources.length > 0 ? csvSources : csv.trim() ? [csv.trim()] : [],
+        }),
       });
       const body = (await res.json()) as GscAnalysisReport & { error?: string; fileCount?: number };
       if (!res.ok) throw new Error(body.error || `Analiz hatası (${res.status})`);
@@ -333,7 +337,10 @@ export default function SeoAutomationPage() {
 
   const loadSampleCsv = () => {
     setCsv(SAMPLE_GSC_CSV);
-    setImportMsg('Örnek CSV dolduruldu. Önizleme üret ile akışı test edebilirsiniz.');
+    setCsvSources([SAMPLE_GSC_CSV]);
+    setCsvFileNames(['ornek-gsc.csv']);
+    setGscReport(null);
+    setImportMsg('Örnek CSV dolduruldu. Analiz et ile test edebilirsiniz.');
   };
 
   const toggleChecklist = async (row: ChecklistRow, completed: boolean) => {
@@ -537,7 +544,8 @@ export default function SeoAutomationPage() {
             <ol className="mt-3 list-decimal space-y-1 pl-5 text-xs text-slate-500 dark:text-slate-400">
               <li>Search Console → Performans → Son 28 gün</li>
               <li>Tablo: Sorgu + Sayfa (veya ayrı ayrı 2 export)</li>
-              <li>Dışa aktar → CSV — birden fazla dosyayı aynı anda seçebilirsiniz</li>
+              <li>Dışa aktar → ZIP açın → <strong>Queries.csv</strong> ve <strong>Pages.csv</strong> dosyalarını birlikte seçin</li>
+              <li>Performans tablosunda Sorgu+Sayfa birlikte seçiliyse tek CSV de olur</li>
             </ol>
             <div className="mt-4 flex flex-wrap items-center gap-2">
               <label className="inline-flex cursor-pointer items-center gap-2 rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-950 dark:hover:bg-slate-800">
@@ -560,6 +568,7 @@ export default function SeoAutomationPage() {
               value={csv}
               onChange={(e) => {
                 setCsv(e.target.value);
+                setCsvSources([e.target.value]);
                 setGscReport(null);
               }}
               rows={5}
