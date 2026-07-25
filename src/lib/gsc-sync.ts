@@ -3,6 +3,8 @@ import type { Prisma } from '@prisma/client';
 import { DISTRICT_LANDINGS, SERVICE_LANDINGS } from '@/config/programmatic-seo';
 import { prisma } from '@/lib/prisma';
 import { ensureSeoChecklistSeedRows } from '@/lib/seo-checklist';
+import { applyLowCtrMetaAb, upsertGscBlogMetrics } from '@/lib/gsc-meta-ab';
+import { BLOG_CANNIBAL_CANONICAL } from '@/config/seo-cannibalization';
 
 type SyncSource = 'manual' | 'cron';
 
@@ -197,6 +199,13 @@ export async function runSeoChecklistAutoSync(source: SyncSource): Promise<SyncR
     }
     stats.metricsUpserted = upsertedMetrics;
 
+    if (!gsc.skipped) {
+      stats.blogMetricsUpserted = await upsertGscBlogMetrics(gsc.rows);
+      const metaAb = await applyLowCtrMetaAb();
+      stats.metaAbProgrammatic = metaAb.programmaticUpdated;
+      stats.metaAbBlog = metaAb.blogUpdated;
+    }
+
     const metrics = [...agg.entries()].map(([key, v]) => ({
       key,
       impressions: v.impressions,
@@ -276,8 +285,6 @@ export async function runSeoChecklistAutoSync(source: SyncSource): Promise<SyncR
     const semiManual = [
       'post24h-inspect-5-urls',
       'post24h-rich-results-clean',
-      'weekly-internal-link-boost',
-      'monthly-cannibalization-review',
     ];
     for (const key of semiManual) {
       await prisma.seoChecklistStatus.update({
@@ -287,6 +294,24 @@ export async function runSeoChecklistAutoSync(source: SyncSource): Promise<SyncR
         },
       });
     }
+
+    await prisma.seoChecklistStatus.update({
+      where: { key: 'weekly-internal-link-boost' },
+      data: {
+        completed: true,
+        completedAt: new Date(),
+        note: 'Otomasyon: ilçe hub iç linkleri + blog otomatik iç link aktif.',
+      },
+    });
+
+    await prisma.seoChecklistStatus.update({
+      where: { key: 'monthly-cannibalization-review' },
+      data: {
+        completed: Object.keys(BLOG_CANNIBAL_CANONICAL).length > 0,
+        completedAt: Object.keys(BLOG_CANNIBAL_CANONICAL).length > 0 ? new Date() : null,
+        note: `Otomasyon: ${Object.keys(BLOG_CANNIBAL_CANONICAL).length} blog cannibalization canonical kuralı.`,
+      },
+    });
 
     await prisma.seoAutomationSyncLog.update({
       where: { id: log.id },

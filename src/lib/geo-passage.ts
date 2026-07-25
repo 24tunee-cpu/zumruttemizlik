@@ -22,6 +22,18 @@ export function buildPassageSection(
   return `<h2>${heading}</h2><p class="geo-passage-answer" data-geo-extract="true"><strong>Özet:</strong> ${directAnswer}</p>${details}${bulletsHtml}`;
 }
 
+/** Featured snippet / AI Overview için doğrudan cevap bloğu */
+export function buildFeaturedSnippetBlock(question: string, answer: string): string {
+  const q = question.trim();
+  const a = answer.trim();
+  return `<div class="featured-snippet-answer mb-6 rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4" data-snippet-extract="true" itemscope itemtype="https://schema.org/Question">
+<p class="text-sm font-medium text-emerald-200" itemprop="name">${q}</p>
+<div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+<p class="mt-2 text-base leading-relaxed text-white" itemprop="text">${a}</p>
+</div>
+</div>`;
+}
+
 /** Marka adını net kullanarak cevap cümlesi üret */
 export function brandPassageAnswer(
   districtName: string,
