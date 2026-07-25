@@ -11,7 +11,6 @@
 
 import { useState, useEffect, useCallback, useRef } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X, Phone, ChevronDown } from 'lucide-react';
 import { useSiteSettings } from '@/context/SiteSettingsContext';
@@ -188,38 +187,23 @@ export function Navbar() {
       >
         <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between gap-2 sm:h-20">
-            {/* Logo — next/image (CLS sabit boyut) + wordmark */}
-            <Link href="/" className="group flex shrink-0 items-center gap-2.5 sm:gap-3">
-              <Image
-                src="/logo.webp"
-                alt="Zümrüt Vadi Temizlik"
-                width={40}
-                height={40}
-                className="h-9 w-9 shrink-0 rounded-lg object-contain sm:h-10 sm:w-10"
-                priority
-                sizes="40px"
-              />
-              <span className="flex min-w-0 flex-col justify-center leading-none">
-              <span className="whitespace-nowrap text-base font-extrabold tracking-tight transition-transform group-hover:-translate-y-px sm:text-2xl">
-                <span className={`transition-colors ${scrolled ? 'text-slate-900' : 'text-white'}`}>
-                  Zümrüt Vadi
-                </span>
-                <span className="bg-gradient-to-r from-emerald-500 to-emerald-400 bg-clip-text text-transparent">
-                  {' '}Temizlik
-                </span>
+            {/* Marka — yalnızca metin (logo görseli menü alanı için kaldırıldı) */}
+            <Link
+              href="/"
+              className="group shrink-0 whitespace-nowrap text-base font-extrabold tracking-tight transition-transform group-hover:-translate-y-px sm:text-lg lg:text-xl"
+              aria-label="Zümrüt Vadi Temizlik — Ana sayfa"
+            >
+              <span className={`transition-colors ${scrolled ? 'text-slate-900' : 'text-white'}`}>
+                Zümrüt Vadi
               </span>
-              <span
-                className={`mt-1 hidden text-[10px] font-semibold uppercase tracking-[0.22em] transition-colors sm:block ${
-                  scrolled ? 'text-slate-400' : 'text-white/50'
-                }`}
-              >
-                İstanbul Profesyonel Temizlik
-              </span>
+              <span className="bg-gradient-to-r from-emerald-500 to-emerald-400 bg-clip-text text-transparent">
+                {' '}
+                Temizlik
               </span>
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden min-w-0 items-center gap-4 xl:flex 2xl:gap-6">
+            <div className="hidden min-w-0 flex-1 items-center justify-center gap-3 lg:flex xl:gap-5">
               {navLinks.map((link) => {
                 const active =
                   link.href === '/' ? pathname === '/' : pathname.startsWith(link.href);
@@ -292,11 +276,11 @@ export function Navbar() {
             </div>
 
             {/* CTA Button */}
-            <div className="hidden shrink-0 items-center gap-2 xl:flex 2xl:gap-3">
+            <div className="hidden shrink-0 items-center gap-2 lg:flex 2xl:gap-3">
               <a
                 href={telHref}
                 data-source="navbar-desktop"
-                className={`inline-flex items-center gap-2 whitespace-nowrap rounded-full px-3 py-2 text-sm font-semibold transition-colors ${
+                className={`hidden items-center gap-2 whitespace-nowrap rounded-full px-2 py-2 text-sm font-semibold transition-colors 2xl:inline-flex ${
                   scrolled ? 'text-slate-800 hover:bg-slate-100' : 'text-white hover:bg-white/10'
                 }`}
                 aria-label={`Telefon: ${phoneDisplay}`}
@@ -316,7 +300,7 @@ export function Navbar() {
             <button
               ref={mobileButtonRef}
               onClick={toggleMenu}
-              className={`touch-target rounded-lg p-2 xl:hidden ${scrolled ? 'text-slate-700' : 'text-white'}`}
+              className={`touch-target rounded-lg p-2 lg:hidden ${scrolled ? 'text-slate-700' : 'text-white'}`}
               aria-expanded={isOpen}
               aria-controls="mobile-menu"
               aria-label={isOpen ? 'Menüyü kapat' : 'Menüyü aç'}
@@ -332,7 +316,7 @@ export function Navbar() {
       {isOpen && (
         <div
             ref={mobileMenuRef}
-            className="fixed inset-0 z-[70] xl:hidden"
+            className="fixed inset-0 z-[70] lg:hidden"
             role="dialog"
             aria-modal="true"
             aria-label="Mobil menü"
