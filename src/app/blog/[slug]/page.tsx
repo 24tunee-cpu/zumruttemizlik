@@ -23,6 +23,7 @@ import SiteLayout from '../../site/layout';
 import { formatDate } from '@/lib/utils';
 import { Calendar, User, ArrowLeft, Clock } from 'lucide-react';
 import Link from 'next/link';
+import { SITE_CONTACT } from '@/config/site-contact';
 import { BlogShareButton } from '@/components/site/BlogShareButton';
 import {
   resolveBlogMetaDesc,
@@ -546,8 +547,8 @@ export default async function BlogPostPage({ params }: PageProps) {
 
                 {/* Mobile Quick Actions - Mobil kullanıcılar için */}
                 <MobileQuickActions
-                  phone="0532 123 45 67"
-                  whatsappPhone="0532 123 45 67"
+                  phone={SITE_CONTACT.phoneDisplay}
+                  whatsappPhone={SITE_CONTACT.phoneDisplay}
                   className="mt-6"
                 />
               </section>
