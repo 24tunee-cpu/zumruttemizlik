@@ -31,19 +31,46 @@ type OverrideRow = {
   isActive: boolean;
 };
 
-type Suggestion = {
-  key: string;
-  district: string;
-  service: string;
-  title: string;
-  description: string;
-  reason: string;
-  score: number;
-  query: string;
-  clicks: number;
-  impressions: number;
-  ctr: number;
-  position: number;
+type GscAnalysisReport = {
+  parsedRows: number;
+  uniquePages: number;
+  fileCount?: number;
+  stats: {
+    programmatic: number;
+    blog: number;
+    skippedUnknown: number;
+    skippedDuplicateCannibal: number;
+  };
+  programmatic: Array<{
+    id: string;
+    key: string;
+    pagePath: string;
+    title: string;
+    description: string;
+    variant: string;
+    query: string;
+    impressions: number;
+    ctr: number;
+    position: number;
+    reason: string;
+  }>;
+  blog: Array<{
+    id: string;
+    slug: string;
+    pagePath: string;
+    title: string;
+    description: string;
+    variant: string;
+    query: string;
+    impressions: number;
+    ctr: number;
+    position: number;
+    reason: string;
+  }>;
+  cannibalization: Array<{ query: string; pages: string[]; recommendation: string }>;
+  lowCtr: Array<{ pagePath: string; query: string; impressions: number; ctr: number; position: number; hint: string }>;
+  quickWins: Array<{ pagePath: string; query: string; impressions: number; ctr: number; position: number; hint: string }>;
+  skippedSamples: string[];
 };
 
 type ChecklistRow = {
@@ -104,7 +131,8 @@ export default function SeoAutomationPage() {
   const [saving, setSaving] = useState(false);
 
   const [csv, setCsv] = useState('');
-  const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
+  const [csvFileNames, setCsvFileNames] = useState<string[]>([]);
+  const [gscReport, setGscReport] = useState<GscAnalysisReport | null>(null);
   const [importLoading, setImportLoading] = useState(false);
   const [importMsg, setImportMsg] = useState<string | null>(null);
   const [checklistSavingKey, setChecklistSavingKey] = useState<string | null>(null);
@@ -210,28 +238,37 @@ export default function SeoAutomationPage() {
     await load();
   };
 
-  const applySuggestionToForm = (suggestion: Suggestion) => {
-    const [district, service] = suggestion.key.split('/');
+  const applySuggestionToForm = (key: string, title: string, description: string) => {
+    const [district, service] = key.split('/');
     if (!district || !service) return;
     setForm({
       district,
       service,
-      title: suggestion.title,
-      description: suggestion.description,
+      title,
+      description,
     });
     setTab('kontrol');
-    setImportMsg(`${suggestion.key} önerisi manuel forma alındı.`);
+    setImportMsg(`${key} önerisi manuel forma alındı.`);
   };
 
   const onCsvFileChange = async (event: ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (!file) return;
-    const text = await file.text();
-    setCsv(text);
-    setImportMsg(`${file.name} yüklendi (${Math.round(file.size / 1024)} KB).`);
+    const files = event.target.files;
+    if (!files?.length) return;
+    const texts: string[] = [];
+    const names: string[] = [];
+    for (const file of Array.from(files)) {
+      texts.push(await file.text());
+      names.push(file.name);
+    }
+    setCsv(texts.join('\n'));
+    setCsvFileNames(names);
+    setGscReport(null);
+    const totalKb = Array.from(files).reduce((a, f) => a + f.size, 0);
+    setImportMsg(`${files.length} dosya yüklendi (${Math.round(totalKb / 1024)} KB). Analiz et ile devam edin.`);
+    event.target.value = '';
   };
 
-  const runImport = async (apply: boolean) => {
+  const runGscAnalyze = async () => {
     try {
       setImportLoading(true);
       setImportMsg(null);
@@ -239,24 +276,56 @@ export default function SeoAutomationPage() {
         method: 'POST',
         credentials: 'include',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ csv, apply, limit: 80 }),
+        body: JSON.stringify({ csv }),
+      });
+      const body = (await res.json()) as GscAnalysisReport & { error?: string; fileCount?: number };
+      if (!res.ok) throw new Error(body.error || `Analiz hatası (${res.status})`);
+      setGscReport(body);
+      setImportMsg(
+        `${body.parsedRows} satır · ${body.stats.programmatic} bölge + ${body.stats.blog} blog önerisi · ${body.cannibalization.length} cannibalization uyarısı`
+      );
+      setTab('kontrol');
+    } catch (e) {
+      setImportMsg(e instanceof Error ? e.message : 'Analiz hatası');
+    } finally {
+      setImportLoading(false);
+    }
+  };
+
+  const runGscApplyAll = async () => {
+    if (!gscReport) return;
+    const total = gscReport.programmatic.length + gscReport.blog.length;
+    const ok = window.confirm(
+      `${total} meta güncellemesi uygulanacak (${gscReport.programmatic.length} ilçe+hizmet, ${gscReport.blog.length} blog). Devam?`
+    );
+    if (!ok) return;
+    try {
+      setImportLoading(true);
+      const res = await fetch('/api/admin/seo-gsc-import', {
+        method: 'POST',
+        credentials: 'include',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          apply: true,
+          programmatic: gscReport.programmatic,
+          blog: gscReport.blog,
+        }),
       });
       const body = (await res.json()) as {
-        parsedRows?: number;
-        suggestions?: Suggestion[];
         error?: string;
-        applied?: boolean;
+        programmaticApplied?: number;
+        blogApplied?: number;
+        totalApplied?: number;
+        errors?: string[];
       };
-      if (!res.ok) throw new Error(body.error || `Import hatası (${res.status})`);
-      setSuggestions(body.suggestions || []);
+      if (!res.ok) throw new Error(body.error || `Uygulama hatası (${res.status})`);
       setImportMsg(
-        apply
-          ? `${body.suggestions?.length || 0} öneri uygulandı.`
-          : `${body.parsedRows || 0} satır parse edildi, ${body.suggestions?.length || 0} öneri üretildi.`
+        `Uygulandı: ${body.programmaticApplied ?? 0} bölge, ${body.blogApplied ?? 0} blog` +
+          (body.errors?.length ? ` · ${body.errors.length} uyarı` : '')
       );
-      if (apply) await load();
+      await load();
     } catch (e) {
-      setImportMsg(e instanceof Error ? e.message : 'Import hatası');
+      setImportMsg(e instanceof Error ? e.message : 'Uygulama hatası');
     } finally {
       setImportLoading(false);
     }
@@ -459,56 +528,80 @@ export default function SeoAutomationPage() {
             </div>
           </section>
 
+          <section className="rounded-xl border-2 border-blue-200/80 bg-gradient-to-br from-blue-50/80 to-white p-5 dark:border-blue-900/40 dark:from-blue-950/20 dark:to-slate-900">
+            <h2 className="text-lg font-semibold text-slate-900 dark:text-white">Search Console — tam CSV analizi</h2>
+            <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
+              GSC Performans → <strong>Sorgu + Sayfa</strong> boyutlu export (veya birden fazla CSV) yükleyin.
+              Tüm satırlar analiz edilir: ilçe sayfaları, blog, A/B meta (düşük CTR → CTA), cannibalization uyarıları.
+            </p>
+            <ol className="mt-3 list-decimal space-y-1 pl-5 text-xs text-slate-500 dark:text-slate-400">
+              <li>Search Console → Performans → Son 28 gün</li>
+              <li>Tablo: Sorgu + Sayfa (veya ayrı ayrı 2 export)</li>
+              <li>Dışa aktar → CSV — birden fazla dosyayı aynı anda seçebilirsiniz</li>
+            </ol>
+            <div className="mt-4 flex flex-wrap items-center gap-2">
+              <label className="inline-flex cursor-pointer items-center gap-2 rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-950 dark:hover:bg-slate-800">
+                <FileUp className="h-4 w-4" />
+                CSV seç (çoklu)
+                <input type="file" accept=".csv,text/csv" multiple onChange={onCsvFileChange} className="hidden" />
+              </label>
+              <button
+                type="button"
+                onClick={loadSampleCsv}
+                className="rounded-lg border border-slate-300 px-3 py-2 text-sm hover:bg-slate-50 dark:border-slate-700 dark:hover:bg-slate-800"
+              >
+                Örnek CSV
+              </button>
+              {csvFileNames.length > 0 && (
+                <span className="text-xs text-slate-500">{csvFileNames.join(', ')}</span>
+              )}
+            </div>
+            <textarea
+              value={csv}
+              onChange={(e) => {
+                setCsv(e.target.value);
+                setGscReport(null);
+              }}
+              rows={5}
+              placeholder="query,page,clicks,impressions,ctr,position — veya GSC Türkçe export"
+              className="mt-3 w-full rounded-lg border border-slate-300 bg-white p-3 font-mono text-xs dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
+            />
+            <div className="mt-3 flex flex-wrap gap-2">
+              <button
+                type="button"
+                disabled={importLoading || !csv.trim()}
+                onClick={() => void runGscAnalyze()}
+                className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-blue-700 disabled:opacity-50"
+              >
+                <Upload className="h-4 w-4" />
+                {importLoading ? 'Analiz…' : 'Analiz et'}
+              </button>
+              <button
+                type="button"
+                disabled={importLoading || !gscReport}
+                onClick={() => void runGscApplyAll()}
+                className="inline-flex items-center gap-2 rounded-lg bg-emerald-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-emerald-700 disabled:opacity-50"
+              >
+                <Save className="h-4 w-4" />
+                Hepsini uygula
+              </button>
+            </div>
+            {gscReport && (
+              <p className="mt-2 text-xs text-blue-700 dark:text-blue-300">
+                Hazır: {gscReport.stats.programmatic + gscReport.stats.blog} öneri — Kontrol sekmesinde detaylı rapor
+              </p>
+            )}
+          </section>
+
           <details className="group rounded-xl border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900">
             <summary className="flex cursor-pointer list-none items-center justify-between gap-2 p-4 text-sm font-semibold text-slate-800 dark:text-slate-200">
-              <span>Search Console CSV ile iyileştir (isteğe bağlı)</span>
+              <span>Eski: yalnızca checklist otomasyonu (GSC API gerekmez)</span>
               <ChevronDown className="h-4 w-4 shrink-0 transition-transform group-open:rotate-180" />
             </summary>
             <div className="border-t border-slate-200 p-4 dark:border-slate-700">
               <p className="text-sm text-slate-600 dark:text-slate-400">
-                GSC’den dışa aktarılan sorgu + sayfa CSV’si ile başlık/açıklamayı gerçek arama verisine göre güncellersiniz.
+                GSC CSV kullanmadan eksik meta doldurma ve checklist senkronu.
               </p>
-              <div className="mt-3 flex flex-wrap items-center gap-2">
-                <label className="inline-flex cursor-pointer items-center gap-2 rounded-lg border border-slate-300 px-3 py-2 text-sm hover:bg-slate-50 dark:border-slate-700 dark:hover:bg-slate-800">
-                  <FileUp className="h-4 w-4" />
-                  CSV seç
-                  <input type="file" accept=".csv,text/csv" onChange={onCsvFileChange} className="hidden" />
-                </label>
-                <button
-                  type="button"
-                  onClick={loadSampleCsv}
-                  className="rounded-lg border border-slate-300 px-3 py-2 text-sm hover:bg-slate-50 dark:border-slate-700 dark:hover:bg-slate-800"
-                >
-                  Örnek CSV
-                </button>
-              </div>
-              <textarea
-                value={csv}
-                onChange={(e) => setCsv(e.target.value)}
-                rows={6}
-                placeholder="query,page,clicks,impressions,ctr,position ..."
-                className="mt-3 w-full rounded-lg border border-slate-300 bg-white p-3 text-sm dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
-              />
-              <div className="mt-3 flex flex-wrap gap-2">
-                <button
-                  type="button"
-                  disabled={importLoading || !csv.trim()}
-                  onClick={() => void runImport(false)}
-                  className="inline-flex items-center gap-2 rounded-lg border border-slate-300 px-3 py-2 text-sm hover:bg-slate-50 disabled:opacity-50 dark:border-slate-700 dark:hover:bg-slate-800"
-                >
-                  <Upload className="h-4 w-4" />
-                  Önizleme
-                </button>
-                <button
-                  type="button"
-                  disabled={importLoading || !csv.trim()}
-                  onClick={() => void runImport(true)}
-                  className="inline-flex items-center gap-2 rounded-lg bg-emerald-500 px-3 py-2 text-sm font-medium text-white hover:bg-emerald-600 disabled:opacity-50"
-                >
-                  <Save className="h-4 w-4" />
-                  Uygula
-                </button>
-              </div>
             </div>
           </details>
         </div>
@@ -810,41 +903,118 @@ export default function SeoAutomationPage() {
             )}
           </section>
 
-          {suggestions.length > 0 && (
-            <section className="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-900">
-              <h2 className="text-sm font-semibold text-slate-800 dark:text-slate-200">GSC önizleme</h2>
-              <div className="mt-3 max-h-[360px] overflow-auto">
-                <table className="w-full text-left text-sm">
-                  <thead>
-                    <tr className="border-b border-slate-200 dark:border-slate-700">
-                      <th className="px-2 py-2">Key</th>
+          {gscReport && (
+            <section className="space-y-4 rounded-xl border border-blue-200 bg-blue-50/50 p-4 dark:border-blue-900/40 dark:bg-blue-950/20">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <h2 className="text-sm font-semibold text-slate-900 dark:text-white">GSC analiz raporu</h2>
+                <button
+                  type="button"
+                  disabled={importLoading}
+                  onClick={() => void runGscApplyAll()}
+                  className="rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-emerald-700 disabled:opacity-50"
+                >
+                  {gscReport.stats.programmatic + gscReport.stats.blog} öneriyi uygula
+                </button>
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                <div className="rounded-lg bg-white p-3 dark:bg-slate-900">
+                  <p className="text-xs text-slate-500">Parse edilen satır</p>
+                  <p className="text-lg font-bold">{gscReport.parsedRows}</p>
+                </div>
+                <div className="rounded-lg bg-white p-3 dark:bg-slate-900">
+                  <p className="text-xs text-slate-500">Bölge + hizmet</p>
+                  <p className="text-lg font-bold text-emerald-600">{gscReport.stats.programmatic}</p>
+                </div>
+                <div className="rounded-lg bg-white p-3 dark:bg-slate-900">
+                  <p className="text-xs text-slate-500">Blog meta</p>
+                  <p className="text-lg font-bold text-emerald-600">{gscReport.stats.blog}</p>
+                </div>
+                <div className="rounded-lg bg-white p-3 dark:bg-slate-900">
+                  <p className="text-xs text-slate-500">Cannibalization</p>
+                  <p className="text-lg font-bold text-amber-600">{gscReport.cannibalization.length}</p>
+                </div>
+              </div>
+
+              {gscReport.cannibalization.length > 0 && (
+                <div className="rounded-lg border border-amber-200 bg-amber-50/80 p-3 dark:border-amber-900/40 dark:bg-amber-950/20">
+                  <h3 className="text-xs font-semibold uppercase text-amber-800 dark:text-amber-300">Cannibalization</h3>
+                  <ul className="mt-2 max-h-40 space-y-2 overflow-auto text-xs">
+                    {gscReport.cannibalization.slice(0, 15).map((c) => (
+                      <li key={c.query}>
+                        <strong>{c.query}</strong> → {c.pages.length} sayfa. {c.recommendation}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {gscReport.quickWins.length > 0 && (
+                <div className="rounded-lg border border-emerald-200 bg-emerald-50/50 p-3 dark:border-emerald-900/40">
+                  <h3 className="text-xs font-semibold uppercase text-emerald-800 dark:text-emerald-300">
+                    Hızlı kazanım (konum 4–15)
+                  </h3>
+                  <ul className="mt-2 max-h-32 space-y-1 overflow-auto text-xs text-slate-700 dark:text-slate-300">
+                    {gscReport.quickWins.slice(0, 10).map((q) => (
+                      <li key={`${q.pagePath}-${q.query}`}>
+                        {q.pagePath} · {q.query} · {q.impressions} gösterim · #{q.position.toFixed(1)}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              <div className="max-h-[420px] overflow-auto rounded-lg border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900">
+                <table className="w-full text-left text-xs">
+                  <thead className="sticky top-0 bg-slate-100 dark:bg-slate-800">
+                    <tr>
+                      <th className="px-2 py-2">Tip</th>
+                      <th className="px-2 py-2">URL / Key</th>
+                      <th className="px-2 py-2">A/B</th>
                       <th className="px-2 py-2">Query</th>
                       <th className="px-2 py-2">Title</th>
-                      <th className="px-2 py-2">Desc</th>
+                      <th className="px-2 py-2">Gösterim</th>
                       <th className="px-2 py-2" />
                     </tr>
                   </thead>
                   <tbody>
-                    {suggestions.map((s) => (
-                      <tr key={s.key} className="border-b border-slate-100 dark:border-slate-800">
-                        <td className="px-2 py-2">{s.key}</td>
-                        <td className="px-2 py-2">{s.query}</td>
-                        <td className="px-2 py-2">{s.title}</td>
-                        <td className="px-2 py-2">{s.description}</td>
+                    {[...gscReport.programmatic.map((s) => ({ ...s, tip: 'Bölge' as const, idKey: s.key })), ...gscReport.blog.map((s) => ({ ...s, tip: 'Blog' as const, idKey: s.slug, key: s.slug }))].map((s) => (
+                      <tr key={s.id} className="border-t border-slate-100 dark:border-slate-800">
+                        <td className="px-2 py-2">{s.tip}</td>
+                        <td className="max-w-[120px] truncate px-2 py-2" title={s.pagePath}>
+                          {s.idKey}
+                        </td>
                         <td className="px-2 py-2">
-                          <button
-                            type="button"
-                            onClick={() => applySuggestionToForm(s)}
-                            className="rounded-md border border-slate-300 px-2 py-1 text-xs hover:bg-slate-50 dark:border-slate-700 dark:hover:bg-slate-800"
-                          >
-                            Forma al
-                          </button>
+                          <span className={s.variant === 'cta' ? 'text-amber-600' : 'text-blue-600'}>
+                            {s.variant}
+                          </span>
+                        </td>
+                        <td className="max-w-[100px] truncate px-2 py-2">{s.query}</td>
+                        <td className="max-w-[180px] truncate px-2 py-2" title={s.title}>
+                          {s.title}
+                        </td>
+                        <td className="px-2 py-2">{s.impressions}</td>
+                        <td className="px-2 py-2">
+                          {s.tip === 'Bölge' && (
+                            <button
+                              type="button"
+                              onClick={() => applySuggestionToForm(s.key, s.title, s.description)}
+                              className="rounded border border-slate-300 px-1.5 py-0.5 hover:bg-slate-50 dark:border-slate-600"
+                            >
+                              Form
+                            </button>
+                          )}
                         </td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
+              {gscReport.skippedSamples.length > 0 && (
+                <p className="text-xs text-slate-500">
+                  Atlanan URL örnekleri ({gscReport.stats.skippedUnknown}):{' '}
+                  {gscReport.skippedSamples.slice(0, 5).join(', ')}
+                </p>
+              )}
             </section>
           )}
         </div>

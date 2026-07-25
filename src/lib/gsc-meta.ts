@@ -66,27 +66,38 @@ export function parseGscCsv(csv: string): GscRow[] {
 
   const headers = parseCsvLine(lines[0]).map(normalizeHeader);
   const idx = {
-    query: headers.findIndex((h) => ['query', 'queries', 'top queries', 'sorgu'].includes(h)),
-    page: headers.findIndex((h) => ['page', 'pages', 'top pages', 'sayfa'].includes(h)),
-    clicks: headers.findIndex((h) => ['clicks', 'tıklamalar'].includes(h)),
-    impressions: headers.findIndex((h) => ['impressions', 'gösterimler'].includes(h)),
-    ctr: headers.findIndex((h) => ['ctr'].includes(h)),
-    position: headers.findIndex((h) => ['position', 'ortalama konum'].includes(h)),
+    query: headers.findIndex((h) =>
+      ['query', 'queries', 'top queries', 'sorgu', 'en çok yapılan sorgular', 'en cok yapilan sorgular', 'arama sorgusu'].includes(h)
+    ),
+    page: headers.findIndex((h) =>
+      ['page', 'pages', 'top pages', 'sayfa', 'hedef sayfa', 'landing page', 'url'].includes(h)
+    ),
+    clicks: headers.findIndex((h) => ['clicks', 'tıklamalar', 'tiklamalar', 'tıklama'].includes(h)),
+    impressions: headers.findIndex((h) => ['impressions', 'gösterimler', 'gosterimler', 'görüntülenme'].includes(h)),
+    ctr: headers.findIndex((h) => ['ctr', 'tıklama oranı', 'tiklanma orani'].includes(h)),
+    position: headers.findIndex((h) => ['position', 'ortalama konum', 'konum', 'sıra', 'sira'].includes(h)),
   };
 
-  if (idx.query === -1 || idx.page === -1) {
-    throw new Error('CSV içinde en az query/sorgu ve page/sayfa kolonları olmalı.');
+  const pageOnly = idx.query === -1 && idx.page !== -1;
+  const queryOnly = idx.query !== -1 && idx.page === -1;
+
+  if (idx.query === -1 && idx.page === -1) {
+    throw new Error(
+      'CSV içinde sayfa veya sorgu kolonu bulunamadı. GSC: Performans → Dışa aktar (Sorgu + Sayfa birlikte en iyi sonuç verir).'
+    );
   }
 
   const rows: GscRow[] = [];
   for (let i = 1; i < lines.length; i++) {
     const cols = parseCsvLine(lines[i]);
-    const query = (cols[idx.query] ?? '').trim();
-    const page = (cols[idx.page] ?? '').trim();
-    if (!query || !page) continue;
+    const query = idx.query === -1 ? '' : (cols[idx.query] ?? '').trim();
+    const page = idx.page === -1 ? '' : (cols[idx.page] ?? '').trim();
+    if (pageOnly && !page) continue;
+    if (queryOnly && !query) continue;
+    if (!pageOnly && !queryOnly && (!query || !page)) continue;
     rows.push({
-      query,
-      page,
+      query: query || (pageOnly ? '(sayfa raporu)' : query),
+      page: page || '/',
       clicks: idx.clicks === -1 ? 0 : parseNumber(cols[idx.clicks] ?? '0'),
       impressions: idx.impressions === -1 ? 0 : parseNumber(cols[idx.impressions] ?? '0'),
       ctr: idx.ctr === -1 ? 0 : parseNumber(cols[idx.ctr] ?? '0'),
