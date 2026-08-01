@@ -21,6 +21,7 @@
     "optimize:images": "node scripts/optimize-brand-images.mjs",
     "perf:audit": "node scripts/perf-audit.mjs",
     "seed:blogs-v2": "tsx scripts/seed-scheduled-blogs-v2.ts",
+    "seed:blogs-v3": "tsx scripts/seed-scheduled-blogs-v3.ts",
     "geo:sync": "tsx scripts/geo-sync.ts",
     "blogs:repair-schedule": "tsx scripts/repair-blog-schedule.ts",
     "blogs:publish-due": "tsx scripts/publish-due-blogs.ts",

@@ -4,64 +4,68 @@ import {
   assignPublishSchedule,
   buildMixedPublishQueue,
   BLOG_PUBLISH_PER_DAY,
-  BLOG_SCHEDULE_ANCHOR_ISO,
-  BLOG_V2_PRICING_PER_DAY,
-  BLOG_V2_SEO_PER_DAY,
+  BLOG_V3_SCHEDULE_ANCHOR_ISO,
 } from './blog-schedule';
 import { generateAllV2Posts } from './seed-blog-v2-content';
+import { generateAllV3Posts } from './seed-blog-v3-content';
 import { resolveBlogMetaDesc, resolveBlogMetaTitle } from './blog-meta';
 
-const EXISTING_SLUGS = new Set(BLOG_SEED_POSTS.map((p) => p.slug));
+const EXISTING_SLUGS = new Set([
+  ...BLOG_SEED_POSTS.map((p) => p.slug),
+  ...generateAllV2Posts().seo.map((p) => p.slug),
+  ...generateAllV2Posts().pricing.map((p) => p.slug),
+]);
 
-export type UpsertV2Result = {
+export type UpsertV3Result = {
   total: number;
   seo: number;
   pricing: number;
   days: number;
   skippedExisting: number;
+  skippedPublished: number;
   firstPublishAt: string;
   lastPublishAt: string;
 };
 
 /**
- * 100 yeni blog yazısını taslak + zamanlanmış olarak upsert eder.
- * Yayınlanmış slug'lara dokunmaz.
- * Mevcut taslakların scheduledPublishAt değerini korur (re-seed takvimi sıfırlamaz).
+ * 100 yeni Avrupa Yakası blog yazısını taslak + zamanlanmış olarak upsert eder.
+ * Yayınlanmış slug'lara dokunmaz; mevcut taslak takvimini korur.
  */
-export async function upsertScheduledBlogV2(prisma: PrismaClient): Promise<UpsertV2Result> {
-  const { seo, pricing } = generateAllV2Posts();
+export async function upsertScheduledBlogV3(prisma: PrismaClient): Promise<UpsertV3Result> {
+  const { seo, pricing } = generateAllV3Posts();
 
   const freshSeo = seo.filter((p) => !EXISTING_SLUGS.has(p.slug));
   const freshPricing = pricing.filter((p) => !EXISTING_SLUGS.has(p.slug));
 
   if (freshSeo.length !== 50 || freshPricing.length !== 50) {
     throw new Error(
-      `V2 slug çakışması: seo=${freshSeo.length}/50 pricing=${freshPricing.length}/50`
+      `V3 slug çakışması: seo=${freshSeo.length}/50 pricing=${freshPricing.length}/50`
     );
   }
 
-  const queue = buildMixedPublishQueue(freshSeo, freshPricing, {
-    seoPerDay: BLOG_V2_SEO_PER_DAY,
-    pricingPerDay: BLOG_V2_PRICING_PER_DAY,
-  });
+  const queue = buildMixedPublishQueue(freshSeo, freshPricing);
   if (queue.length !== 100) {
-    throw new Error(`Kuyruk boyutu hatalı: ${queue.length}/100`);
+    throw new Error(`V3 kuyruk boyutu hatalı: ${queue.length}/100`);
   }
 
-  const anchor = new Date(BLOG_SCHEDULE_ANCHOR_ISO);
+  const anchor = new Date(BLOG_V3_SCHEDULE_ANCHOR_ISO);
   const scheduled = assignPublishSchedule(queue, { anchor });
   let skippedExisting = 0;
+  let skippedPublished = 0;
 
-  for (let i = 0; i < scheduled.length; i++) {
-    const post = scheduled[i];
+  for (const post of scheduled) {
     const existing = await prisma.blogPost.findUnique({
       where: { slug: post.slug },
       select: { published: true, scheduledPublishAt: true },
     });
 
     if (existing?.published) {
-      skippedExisting += 1;
+      skippedPublished += 1;
       continue;
+    }
+
+    if (existing) {
+      skippedExisting += 1;
     }
 
     const scheduledPublishAt =
@@ -70,7 +74,13 @@ export async function upsertScheduledBlogV2(prisma: PrismaClient): Promise<Upser
     const resolvedTitle = resolveBlogMetaTitle(post.title, post.metaTitle ?? null);
     const resolvedDesc = resolveBlogMetaDesc(post.excerpt, post.metaDesc ?? null);
     const normalizedTags = [
-      ...new Set([...post.tags, 'istanbul', 'zümrüt vadi temizlik blog', 'otomatik yayın v2']),
+      ...new Set([
+        ...post.tags,
+        'istanbul',
+        'avrupa yakası',
+        'zümrüt vadi temizlik blog',
+        'otomatik yayın v3',
+      ]),
     ].slice(0, 12);
 
     const contentFields = {
@@ -109,6 +119,7 @@ export async function upsertScheduledBlogV2(prisma: PrismaClient): Promise<Upser
     pricing: freshPricing.length,
     days: Math.ceil(scheduled.length / BLOG_PUBLISH_PER_DAY),
     skippedExisting,
+    skippedPublished,
     firstPublishAt: scheduled[0].scheduledPublishAt.toISOString(),
     lastPublishAt: scheduled[scheduled.length - 1].scheduledPublishAt.toISOString(),
   };
