@@ -5,6 +5,8 @@ import { useEffect, useRef } from 'react';
 
 const VISITOR_KEY = 'zv_visitor_id';
 const SESSION_KEY = 'zv_session_id';
+/** Canlı oturum için yeterli; 30sn yerine 2dk — CPU/DB yükünü ~4x azaltır */
+const HEARTBEAT_MS = 120_000;
 
 function shouldTrack(pathname: string): boolean {
   if (pathname.startsWith('/admin')) return false;
@@ -78,9 +80,7 @@ export default function VisitorAnalyticsTracker() {
   const pageEngagedMs = useRef(0);
   const sessionEngagedMs = useRef(0);
   const maxScroll = useRef(0);
-  const scrollMilestones = useRef(new Set<number>());
   const lastPath = useRef<string | null>(null);
-  const lastTitle = useRef<string | null>(null);
   const visitorKey = useRef('');
   const sessionKey = useRef('');
   const utmRef = useRef(readUtmFromLocation());
@@ -103,7 +103,12 @@ export default function VisitorAnalyticsTracker() {
   const engagedSec = () =>
     Math.max(
       0,
-      Math.round((sessionEngagedMs.current + pageEngagedMs.current + (visibleSince.current ? Date.now() - visibleSince.current : 0)) / 1000)
+      Math.round(
+        (sessionEngagedMs.current +
+          pageEngagedMs.current +
+          (visibleSince.current ? Date.now() - visibleSince.current : 0)) /
+          1000
+      )
     );
 
   const basePayload = (path: string) => ({
@@ -126,16 +131,13 @@ export default function VisitorAnalyticsTracker() {
     scrollPct: maxScroll.current,
   });
 
-  const sendPageExit = (path: string) => {
-    if (!trackingEnabled.current) return;
+  const pageExitFields = () => {
     flushPageEngaged();
-    const timeOnPageSec = Math.max(0, Math.round((Date.now() - pageEnteredAt.current) / 1000));
-    postTrack({
-      ...basePayload(path),
-      kind: 'page_exit',
-      timeOnPageSec,
-    });
-    commitPageEngaged();
+    return {
+      timeOnPageSec: Math.max(0, Math.round((Date.now() - pageEnteredAt.current) / 1000)),
+      scrollPct: maxScroll.current,
+      engagedSec: engagedSec(),
+    };
   };
 
   useEffect(() => {
@@ -154,19 +156,22 @@ export default function VisitorAnalyticsTracker() {
       pageEnteredAt.current = Date.now();
       visibleSince.current = document.visibilityState === 'visible' ? Date.now() : null;
       lastPath.current = pathname;
-      lastTitle.current = document.title;
       postTrack({ ...basePayload(pathname), kind: 'session_start' });
       return;
     }
 
     if (lastPath.current && lastPath.current !== pathname) {
-      sendPageExit(lastPath.current);
+      const prev = lastPath.current;
+      postTrack({
+        ...basePayload(prev),
+        kind: 'page_exit',
+        ...pageExitFields(),
+      });
+      commitPageEngaged();
       maxScroll.current = 0;
-      scrollMilestones.current = new Set();
       pageEnteredAt.current = Date.now();
       visibleSince.current = document.visibilityState === 'visible' ? Date.now() : null;
       lastPath.current = pathname;
-      lastTitle.current = document.title;
       postTrack({ ...basePayload(pathname), kind: 'page_view' });
     }
   }, [pathname]);
@@ -178,14 +183,8 @@ export default function VisitorAnalyticsTracker() {
 
     const onScroll = () => {
       const pct = scrollDepthPct();
-      if (pct <= maxScroll.current) return;
-      maxScroll.current = pct;
-      for (const milestone of [25, 50, 75, 100]) {
-        if (pct >= milestone && !scrollMilestones.current.has(milestone)) {
-          scrollMilestones.current.add(milestone);
-          postTrack({ ...basePayload(currentPath()), kind: 'scroll', scrollPct: milestone });
-        }
-      }
+      if (pct > maxScroll.current) maxScroll.current = pct;
+      // Scroll yalnızca yerelde tutulur; sunucuya ayrı event gönderilmez
     };
 
     const onClick = (event: MouseEvent) => {
@@ -217,19 +216,24 @@ export default function VisitorAnalyticsTracker() {
     };
 
     const heartbeat = window.setInterval(() => {
+      if (document.visibilityState === 'hidden') return;
       postTrack({ ...basePayload(currentPath()), kind: 'heartbeat' });
-    }, 30_000);
+    }, HEARTBEAT_MS);
 
     const onLeave = () => {
-      sendPageExit(currentPath());
-      postTrack({ ...basePayload(currentPath()), kind: 'session_end' });
+      const path = currentPath();
+      postTrack({
+        ...basePayload(path),
+        kind: 'session_end',
+        ...pageExitFields(),
+      });
+      commitPageEngaged();
     };
 
     window.addEventListener('scroll', onScroll, { passive: true });
     document.addEventListener('click', onClick, { capture: true });
     document.addEventListener('visibilitychange', onVisibility);
     window.addEventListener('pagehide', onLeave);
-    window.addEventListener('beforeunload', onLeave);
 
     return () => {
       window.clearInterval(heartbeat);
@@ -237,7 +241,6 @@ export default function VisitorAnalyticsTracker() {
       document.removeEventListener('click', onClick, { capture: true });
       document.removeEventListener('visibilitychange', onVisibility);
       window.removeEventListener('pagehide', onLeave);
-      window.removeEventListener('beforeunload', onLeave);
     };
   }, [pathname]);
 

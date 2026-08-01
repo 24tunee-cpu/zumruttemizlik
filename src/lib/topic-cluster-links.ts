@@ -115,7 +115,7 @@ const getRelatedBlogPosts = unstable_cache(
     return posts;
   },
   ['related-blog-posts'],
-  { revalidate: 300 }
+  { revalidate: 3600 }
 );
 
 /**

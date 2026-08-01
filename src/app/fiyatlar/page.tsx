@@ -13,7 +13,9 @@ import {
 import { Calculator, Calendar, MessageCircle } from 'lucide-react';
 import { SITE_CONTACT } from '@/config/site-contact';
 
-export const revalidate = 3600;
+import { ISR_PROGRAMMATIC_SEC } from '@/lib/isr-config';
+
+export const revalidate = ISR_PROGRAMMATIC_SEC;
 
 const pageTitle = 'Temizlik Fiyatları 2026 | İstanbul Fiyat Listesi | Zümrüt Vadi';
 const pageDescription =

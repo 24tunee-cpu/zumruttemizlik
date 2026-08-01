@@ -24,7 +24,7 @@ export default function VisitorAnalyticsSummary() {
 
   const load = useCallback(async () => {
     try {
-      const res = await fetch('/api/admin/visitor-analytics?days=7', { cache: 'no-store' });
+      const res = await fetch('/api/admin/visitor-analytics?days=7&summary=1', { cache: 'no-store' });
       if (!res.ok) throw new Error('fail');
       setData(await res.json());
     } catch {

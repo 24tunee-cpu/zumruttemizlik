@@ -59,6 +59,9 @@ import {
   MobileQuickActions,
   MobileContactCard
 } from '@/lib/mobile-optimizations';
+import { ISR_BLOG_POST_SEC } from '@/lib/isr-config';
+
+export const revalidate = ISR_BLOG_POST_SEC;
 
 // ============================================
 // TYPES

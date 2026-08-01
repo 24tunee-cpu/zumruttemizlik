@@ -44,7 +44,7 @@ const getCachedSiteSettingsForSchema = unstable_cache(
       },
     }),
   ['root-seo-site-settings'],
-  { revalidate: 300 }
+  { revalidate: 3600 }
 );
 
 export async function buildRootSchemaGraphJson(): Promise<string> {

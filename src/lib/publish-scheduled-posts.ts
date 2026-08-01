@@ -1,4 +1,5 @@
 import { prisma } from '@/lib/prisma';
+import { revalidatePath } from 'next/cache';
 import { enrichBlogContentWithInternalLinks } from '@/lib/blog-publish-internal-links';
 import { submitIndexNowBlogSlugs, type IndexNowResult } from '@/lib/indexnow';
 
@@ -66,6 +67,14 @@ export async function publishScheduledBlogPosts(): Promise<PublishScheduledResul
   }
 
   const indexNow = await submitIndexNowBlogSlugs(publishedSlugs);
+
+  if (publishedSlugs.length > 0) {
+    revalidatePath('/blog');
+    revalidatePath('/feed.xml');
+    for (const slug of publishedSlugs) {
+      revalidatePath(`/blog/${slug}`);
+    }
+  }
 
   const remainingScheduled = await prisma.blogPost.count({
     where: { published: false, scheduledPublishAt: { not: null } },

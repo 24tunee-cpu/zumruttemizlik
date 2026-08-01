@@ -74,6 +74,9 @@ export async function POST(request: NextRequest) {
     }
 
     const result = await processVisitorTrackEvent(payload, request, ip);
+    if (result.skipped) {
+      return new NextResponse(null, { status: 204, headers });
+    }
     return NextResponse.json(result, { status: result.created ? 201 : 200, headers });
   } catch (e) {
     if (e instanceof Error && e.message === 'SESSION_NOT_FOUND') {

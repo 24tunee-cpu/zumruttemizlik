@@ -511,8 +511,18 @@ export default function VisitorAnalyticsHub() {
 
   useEffect(() => { load(); }, [load]);
   useEffect(() => {
-    const t = window.setInterval(() => load(true), 30_000);
-    return () => window.clearInterval(t);
+    const tick = () => {
+      if (document.visibilityState === 'visible') load(true);
+    };
+    const t = window.setInterval(tick, 120_000);
+    const onVis = () => {
+      if (document.visibilityState === 'visible') load(true);
+    };
+    document.addEventListener('visibilitychange', onVis);
+    return () => {
+      window.clearInterval(t);
+      document.removeEventListener('visibilitychange', onVis);
+    };
   }, [load]);
 
   const activeSessions = useMemo(
