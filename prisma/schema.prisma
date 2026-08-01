@@ -560,10 +560,24 @@ model VisitorSession {
   referrer      String?
   landingPath   String?
   exitPath      String?
+  landingUrl    String?
+  referrerHost  String?
+  trafficChannel String?
+  trafficSource  String?
+  searchQuery    String?
+  utmSource      String?
+  utmMedium      String?
+  utmCampaign    String?
+  utmTerm        String?
+  utmContent     String?
   pageViews     Int            @default(0)
   durationSec   Int            @default(0)
+  engagedSec    Int            @default(0)
   maxScrollPct  Int            @default(0)
   clickCount    Int            @default(0)
+  conversionCount Int          @default(0)
+  isBot         Boolean        @default(false)
+  isBounce      Boolean?
   userAgent     String?
   ipHash        String?
   isActive      Boolean        @default(true)
@@ -578,6 +592,10 @@ model VisitorSession {
   @@index([countryCode, city])
   @@index([deviceType])
   @@index([visitorKey])
+  @@index([trafficChannel])
+  @@index([searchQuery])
+  @@index([isBot, startedAt])
+  @@index([conversionCount])
   @@map("visitor_sessions")
 }
 

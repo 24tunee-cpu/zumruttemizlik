@@ -35,6 +35,29 @@ function postTrack(payload: Record<string, unknown>) {
   });
 }
 
+function readUtmFromLocation(): {
+  utmSource?: string;
+  utmMedium?: string;
+  utmCampaign?: string;
+  utmTerm?: string;
+  utmContent?: string;
+  landingUrl: string;
+} {
+  if (typeof window === 'undefined') {
+    return { landingUrl: '' };
+  }
+  const url = new URL(window.location.href);
+  const pick = (k: string) => url.searchParams.get(k)?.trim().slice(0, 120) || undefined;
+  return {
+    landingUrl: url.href.slice(0, 2000),
+    utmSource: pick('utm_source'),
+    utmMedium: pick('utm_medium'),
+    utmCampaign: pick('utm_campaign'),
+    utmTerm: pick('utm_term'),
+    utmContent: pick('utm_content'),
+  };
+}
+
 function scrollDepthPct(): number {
   const doc = document.documentElement;
   const maxScroll = doc.scrollHeight - window.innerHeight;
@@ -43,67 +66,115 @@ function scrollDepthPct(): number {
 }
 
 /**
- * Ziyaretçi oturumu, sayfa geçişi, tıklama ve süre takibi.
+ * Ziyaretçi oturumu, sayfa geçişi, etkileşim süresi, dönüşüm ve çıkış takibi.
  * Konum/cihaz sunucuda Vercel header + UA ile çözülür.
  */
 export default function VisitorAnalyticsTracker() {
   const pathname = usePathname();
   const sessionStarted = useRef(false);
-  const startedAt = useRef(Date.now());
+  const sessionStartedAt = useRef(Date.now());
+  const pageEnteredAt = useRef(Date.now());
+  const visibleSince = useRef<number | null>(Date.now());
+  const pageEngagedMs = useRef(0);
+  const sessionEngagedMs = useRef(0);
   const maxScroll = useRef(0);
   const scrollMilestones = useRef(new Set<number>());
   const lastPath = useRef<string | null>(null);
+  const lastTitle = useRef<string | null>(null);
   const visitorKey = useRef('');
   const sessionKey = useRef('');
+  const utmRef = useRef(readUtmFromLocation());
+  const trackingEnabled = useRef(true);
+
+  const flushPageEngaged = () => {
+    if (visibleSince.current != null) {
+      pageEngagedMs.current += Date.now() - visibleSince.current;
+      visibleSince.current = null;
+    }
+  };
+
+  const commitPageEngaged = () => {
+    flushPageEngaged();
+    sessionEngagedMs.current += pageEngagedMs.current;
+    pageEngagedMs.current = 0;
+    visibleSince.current = document.visibilityState === 'visible' ? Date.now() : null;
+  };
+
+  const engagedSec = () =>
+    Math.max(
+      0,
+      Math.round((sessionEngagedMs.current + pageEngagedMs.current + (visibleSince.current ? Date.now() - visibleSince.current : 0)) / 1000)
+    );
+
+  const basePayload = (path: string) => ({
+    sessionKey: sessionKey.current,
+    visitorKey: visitorKey.current,
+    path,
+    pageTitle: (document.title || '').trim().slice(0, 200) || undefined,
+    language: navigator.language.slice(0, 16),
+    screenWidth: window.screen.width,
+    screenHeight: window.screen.height,
+    referrer: document.referrer ? document.referrer.slice(0, 500) : undefined,
+    landingUrl: utmRef.current.landingUrl || undefined,
+    utmSource: utmRef.current.utmSource,
+    utmMedium: utmRef.current.utmMedium,
+    utmCampaign: utmRef.current.utmCampaign,
+    utmTerm: utmRef.current.utmTerm,
+    utmContent: utmRef.current.utmContent,
+    durationSec: Math.max(0, Math.round((Date.now() - sessionStartedAt.current) / 1000)),
+    engagedSec: engagedSec(),
+    scrollPct: maxScroll.current,
+  });
+
+  const sendPageExit = (path: string) => {
+    if (!trackingEnabled.current) return;
+    flushPageEngaged();
+    const timeOnPageSec = Math.max(0, Math.round((Date.now() - pageEnteredAt.current) / 1000));
+    postTrack({
+      ...basePayload(path),
+      kind: 'page_exit',
+      timeOnPageSec,
+    });
+    commitPageEngaged();
+  };
 
   useEffect(() => {
-    if (!shouldTrack(pathname)) return;
+    if (!shouldTrack(pathname)) {
+      trackingEnabled.current = false;
+      return;
+    }
+    trackingEnabled.current = true;
 
     visitorKey.current = getOrCreateId(localStorage, VISITOR_KEY);
     sessionKey.current = getOrCreateId(sessionStorage, SESSION_KEY);
 
-    const payload = () => ({
-      sessionKey: sessionKey.current,
-      visitorKey: visitorKey.current,
-      path: pathname,
-      language: navigator.language.slice(0, 16),
-      screenWidth: window.screen.width,
-      screenHeight: window.screen.height,
-      referrer: document.referrer ? document.referrer.slice(0, 500) : undefined,
-      durationSec: Math.max(0, Math.round((Date.now() - startedAt.current) / 1000)),
-      scrollPct: maxScroll.current,
-    });
-
     if (!sessionStarted.current) {
       sessionStarted.current = true;
-      startedAt.current = Date.now();
-      postTrack({ ...payload(), kind: 'session_start' });
+      sessionStartedAt.current = Date.now();
+      pageEnteredAt.current = Date.now();
+      visibleSince.current = document.visibilityState === 'visible' ? Date.now() : null;
       lastPath.current = pathname;
+      lastTitle.current = document.title;
+      postTrack({ ...basePayload(pathname), kind: 'session_start' });
       return;
     }
 
-    if (lastPath.current !== pathname) {
-      lastPath.current = pathname;
+    if (lastPath.current && lastPath.current !== pathname) {
+      sendPageExit(lastPath.current);
       maxScroll.current = 0;
       scrollMilestones.current = new Set();
-      postTrack({ ...payload(), kind: 'page_view' });
+      pageEnteredAt.current = Date.now();
+      visibleSince.current = document.visibilityState === 'visible' ? Date.now() : null;
+      lastPath.current = pathname;
+      lastTitle.current = document.title;
+      postTrack({ ...basePayload(pathname), kind: 'page_view' });
     }
   }, [pathname]);
 
   useEffect(() => {
     if (!shouldTrack(pathname)) return;
 
-    const payload = () => ({
-      sessionKey: sessionKey.current,
-      visitorKey: visitorKey.current,
-      path: pathname,
-      language: navigator.language.slice(0, 16),
-      screenWidth: window.screen.width,
-      screenHeight: window.screen.height,
-      referrer: document.referrer ? document.referrer.slice(0, 500) : undefined,
-      durationSec: Math.max(0, Math.round((Date.now() - startedAt.current) / 1000)),
-      scrollPct: maxScroll.current,
-    });
+    const currentPath = () => lastPath.current || pathname;
 
     const onScroll = () => {
       const pct = scrollDepthPct();
@@ -112,7 +183,7 @@ export default function VisitorAnalyticsTracker() {
       for (const milestone of [25, 50, 75, 100]) {
         if (pct >= milestone && !scrollMilestones.current.has(milestone)) {
           scrollMilestones.current.add(milestone);
-          postTrack({ ...payload(), kind: 'scroll', scrollPct: milestone });
+          postTrack({ ...basePayload(currentPath()), kind: 'scroll', scrollPct: milestone });
         }
       }
     };
@@ -129,7 +200,7 @@ export default function VisitorAnalyticsTracker() {
       const source = (anchor?.dataset.source || el.dataset.source || undefined)?.slice(0, 80);
 
       postTrack({
-        ...payload(),
+        ...basePayload(currentPath()),
         kind: 'click',
         clickLabel: label || undefined,
         clickUrl: href,
@@ -137,16 +208,26 @@ export default function VisitorAnalyticsTracker() {
       });
     };
 
+    const onVisibility = () => {
+      if (document.visibilityState === 'hidden') {
+        flushPageEngaged();
+      } else {
+        visibleSince.current = Date.now();
+      }
+    };
+
     const heartbeat = window.setInterval(() => {
-      postTrack({ ...payload(), kind: 'heartbeat' });
+      postTrack({ ...basePayload(currentPath()), kind: 'heartbeat' });
     }, 30_000);
 
     const onLeave = () => {
-      postTrack({ ...payload(), kind: 'session_end' });
+      sendPageExit(currentPath());
+      postTrack({ ...basePayload(currentPath()), kind: 'session_end' });
     };
 
     window.addEventListener('scroll', onScroll, { passive: true });
     document.addEventListener('click', onClick, { capture: true });
+    document.addEventListener('visibilitychange', onVisibility);
     window.addEventListener('pagehide', onLeave);
     window.addEventListener('beforeunload', onLeave);
 
@@ -154,6 +235,7 @@ export default function VisitorAnalyticsTracker() {
       window.clearInterval(heartbeat);
       window.removeEventListener('scroll', onScroll);
       document.removeEventListener('click', onClick, { capture: true });
+      document.removeEventListener('visibilitychange', onVisibility);
       window.removeEventListener('pagehide', onLeave);
       window.removeEventListener('beforeunload', onLeave);
     };

@@ -25,7 +25,7 @@ import {
   CircleAlert,
 } from 'lucide-react';
 import Link from 'next/link';
-import VisitorAnalyticsPanel from '@/components/admin/VisitorAnalyticsPanel';
+import VisitorAnalyticsSummary from '@/components/admin/VisitorAnalyticsSummary';
 
 // ============================================
 // TYPES (API /api/admin/dashboard ile uyumlu)
@@ -319,7 +319,7 @@ export default function AdminDashboardPage() {
             Kontrol paneli
           </h1>
           <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
-            Site içeriği, talepler ve ziyaretçi analitiği — canlı veritabanı özetiniz.
+            Site içeriği, talepler ve özet metrikler — canlı veritabanı özeti.
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-2">
@@ -525,7 +525,7 @@ export default function AdminDashboardPage() {
         </div>
       </motion.div>
 
-      <VisitorAnalyticsPanel />
+      <VisitorAnalyticsSummary />
 
       <p className="text-center text-xs text-slate-400 dark:text-slate-500">
         Özet verisi:{' '}

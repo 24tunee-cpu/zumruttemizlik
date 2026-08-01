@@ -22,6 +22,7 @@ import {
   ScrollText,
   Megaphone,
   Bot,
+  LineChart,
 } from 'lucide-react';
 
 /** Alt menü satırı (site dışı için external) */
@@ -59,6 +60,12 @@ export const ADMIN_MENU_GROUPS: AdminMenuGroup[] = [
       },
       { href: '/admin/talepler', label: 'Müşteri talepleri', icon: MessageSquare, ariaLabel: 'İletişim talepleri' },
       { href: '/admin/randevular', label: 'Randevu talepleri', icon: CalendarClock, ariaLabel: 'Keşif ve randevu' },
+      {
+        href: '/admin/ziyaretciler',
+        label: 'Ziyaretçi analitiği',
+        icon: LineChart,
+        ariaLabel: 'Site ziyaretçileri, trafik kaynağı ve arama sorguları',
+      },
     ],
   },
   {
