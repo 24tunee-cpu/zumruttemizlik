@@ -5,6 +5,8 @@ import {
   buildMixedPublishQueue,
   BLOG_PUBLISH_PER_DAY,
   BLOG_SCHEDULE_ANCHOR_ISO,
+  BLOG_V2_PRICING_PER_DAY,
+  BLOG_V2_SEO_PER_DAY,
 } from './blog-schedule';
 import { generateAllV2Posts } from './seed-blog-v2-content';
 import { resolveBlogMetaDesc, resolveBlogMetaTitle } from './blog-meta';
@@ -38,7 +40,10 @@ export async function upsertScheduledBlogV2(prisma: PrismaClient): Promise<Upser
     );
   }
 
-  const queue = buildMixedPublishQueue(freshSeo, freshPricing);
+  const queue = buildMixedPublishQueue(freshSeo, freshPricing, {
+    seoPerDay: BLOG_V2_SEO_PER_DAY,
+    pricingPerDay: BLOG_V2_PRICING_PER_DAY,
+  });
   if (queue.length !== 100) {
     throw new Error(`Kuyruk boyutu hatalı: ${queue.length}/100`);
   }

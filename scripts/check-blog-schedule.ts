@@ -28,6 +28,15 @@ async function main() {
     const v2Published = await prisma.blogPost.count({
       where: { published: true, tags: { has: 'otomatik yayın v2' } },
     });
+    const v3Drafts = await prisma.blogPost.count({
+      where: {
+        published: false,
+        tags: { has: 'otomatik yayın v3' },
+      },
+    });
+    const v3Published = await prisma.blogPost.count({
+      where: { published: true, tags: { has: 'otomatik yayın v3' } },
+    });
     console.log(
       JSON.stringify(
         {
@@ -37,6 +46,8 @@ async function main() {
           noSchedule,
           v2Drafts,
           v2Published,
+          v3Drafts,
+          v3Published,
           nextDue: nextDue.map((p) => ({
             slug: p.slug,
             at: p.scheduledPublishAt?.toISOString(),

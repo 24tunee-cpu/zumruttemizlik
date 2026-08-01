@@ -50,7 +50,7 @@ export async function getBlogScheduleHealth(prisma: PrismaClient): Promise<BlogS
   const nextBatch = await prisma.blogPost.findMany({
     where: { published: false, scheduledPublishAt: { not: null } },
     orderBy: { scheduledPublishAt: 'asc' },
-    take: 5,
+    take: BLOG_PUBLISH_PER_DAY,
     select: { slug: true, scheduledPublishAt: true },
   });
 

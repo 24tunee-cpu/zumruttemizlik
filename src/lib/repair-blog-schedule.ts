@@ -3,6 +3,8 @@ import {
   assignPublishSchedule,
   buildMixedPublishQueue,
   BLOG_SCHEDULE_ANCHOR_ISO,
+  BLOG_V2_PRICING_PER_DAY,
+  BLOG_V2_SEO_PER_DAY,
 } from './blog-schedule';
 import { generateAllV2Posts } from './seed-blog-v2-content';
 import { BLOG_SEED_POSTS } from './seed-blog';
@@ -20,7 +22,8 @@ export async function repairV2BlogSchedule(prisma: PrismaClient): Promise<{
   const { seo, pricing } = generateAllV2Posts();
   const queue = buildMixedPublishQueue(
     seo.filter((p) => !EXISTING_SLUGS.has(p.slug)),
-    pricing.filter((p) => !EXISTING_SLUGS.has(p.slug))
+    pricing.filter((p) => !EXISTING_SLUGS.has(p.slug)),
+    { seoPerDay: BLOG_V2_SEO_PER_DAY, pricingPerDay: BLOG_V2_PRICING_PER_DAY }
   );
   const anchor = new Date(BLOG_SCHEDULE_ANCHOR_ISO);
   const scheduled = assignPublishSchedule(queue, { anchor });
