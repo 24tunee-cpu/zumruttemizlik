@@ -9,6 +9,8 @@ export const BLOG_CANNIBAL_CANONICAL: Record<string, string> = {
     '/blog/ev-temizligi-fiyatlari-2026-istanbul',
   'istanbul-ev-temizlik-fiyatlari-2026-bolge-bolge-karsilastirma':
     '/blog/ev-temizligi-fiyatlari-2026-istanbul',
+  /** İlçe landing birincil — blog ile çakışmayı önler (GSC duplicate canonical) */
+  'zeytinburnu-ev-temizligi-sanayi-lojistik-konut': '/bolgeler/zeytinburnu',
 };
 
 /** İlçe fiyat blogu → ilgili landing (hizmet sayfası birincil dönüşüm hedefi) */

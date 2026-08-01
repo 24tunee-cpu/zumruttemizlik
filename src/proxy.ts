@@ -1,8 +1,16 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
+import { resolveLegacyRedirect } from '@/lib/legacy-url-redirects';
 
 export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  const legacy = resolveLegacyRedirect(pathname);
+  if (legacy) {
+    const target = new URL(legacy.to, request.nextUrl.origin).toString();
+    return NextResponse.redirect(target, legacy.permanent ? 308 : 307);
+  }
+
   const isSitemapPath = pathname === '/sitemap.xml' || pathname.endsWith('/sitemap.xml');
   if (
     pathname.startsWith('/_next') ||

@@ -502,6 +502,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                       <li key={tag}>
                       <Link
                         href={`/blog?tag=${encodeURIComponent(tag)}`}
+                        rel="nofollow"
                         className="rounded-full border border-slate-600 bg-slate-800/80 px-4 py-2 text-sm text-slate-200"
                       >
                         #{tag}

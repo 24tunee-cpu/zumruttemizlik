@@ -210,6 +210,15 @@ const nextConfig: NextConfig = {
           },
         ],
       },
+      // llms dosyaları arama indeksine dahil edilmez (GEO / AI crawler)
+      {
+        source: '/llms.txt',
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
+      },
+      {
+        source: '/llms-full.txt',
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
+      },
     ];
   },
 

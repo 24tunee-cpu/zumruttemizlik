@@ -13,8 +13,9 @@ import { SeoPriorityStrip } from '@/components/site/SeoPriorityStrip';
 import { SITE_CONTACT, toTelHref } from '@/config/site-contact';
 import { canonicalUrl, getSiteUrl } from '@/lib/seo';
 import { keywordsForPage } from '@/lib/seo-keywords';
+import { metadataForParamAwarePage } from '@/lib/param-page-metadata';
 
-export const metadata: Metadata = {
+const BASE_METADATA: Metadata = {
   title: 'İletişim | Sarıyer & Zekeriyaköy Temizlik Teklif Hattı',
   description: `Zekeriyaköy, Sarıyer ve İstanbul Avrupa Yakası temizlik teklifi: ${SITE_CONTACT.phoneDisplay}. Ücretsiz keşif, online fiyat hesaplama ve aynı gün geri dönüş.`,
   keywords: keywordsForPage('iletisim'),
@@ -37,6 +38,15 @@ export const metadata: Metadata = {
     images: [canonicalUrl('/logo.png')],
   },
 };
+
+type PageProps = {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+};
+
+export async function generateMetadata({ searchParams }: PageProps): Promise<Metadata> {
+  const sp = await searchParams;
+  return metadataForParamAwarePage('/iletisim', BASE_METADATA, sp);
+}
 
 const contactStructuredData = {
   '@context': 'https://schema.org',

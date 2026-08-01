@@ -7,6 +7,23 @@ import { GEO_BRAND_NAME } from '@/config/geo-entity';
 export type GeoDistrictFaq = { question: string; answer: string };
 
 export function getDistrictGeoFaqs(districtSlug: string, districtName: string): GeoDistrictFaq[] {
+  if (districtSlug === 'zeytinburnu') {
+    return [
+      {
+        question: 'Zeytinburnu bölgesinde ev ve işyeri temizliği nasıl planlanır?',
+        answer: `${GEO_BRAND_NAME}, Zeytinburnu’da sanayi, lojistik ve konut alanlarına göre esnek vardiya ile ev temizliği, atölye/işyeri ve inşaat sonrası temizlik sunar; Kazlıçeşme, Veliefendi ve Merkezefendi hatlarında hızlı ekip yönlendirmesi yapılır.`,
+      },
+      {
+        question: 'Zeytinburnu temizlik fiyatları 2026 ne kadar?',
+        answer: `${GEO_BRAND_NAME}, Zeytinburnu bölgesinde 2026 yılında 1+1 daire ev temizliği için yaklaşık 750–1.200 TL, 3+1 daireler için 1.400–2.000 TL tahmini aralık sunar; işyeri ve inşaat sonrası temizlik m² bazlı keşifle netleşir.`,
+      },
+      {
+        question: 'Zeytinburnu ile Maltepe (Anadolu Yakası) karışır mı?',
+        answer: 'Hayır. Zeytinburnu Avrupa Yakası’ndadır; sitedeki Zeytinburnu içeriği yalnızca bu ilçeyi hedefler. Anadolu Yakası Maltepe ilçesi için ayrı bölge sayfamız vardır.',
+      },
+    ];
+  }
+
   return [
     {
       question: `${districtName} bölgesinde ev temizliği fiyatları ne kadar?`,

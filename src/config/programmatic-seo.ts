@@ -208,7 +208,7 @@ export const DISTRICT_LANDINGS: DistrictLanding[] = [
     populationNote: 'sanayi, lojistik ve konut iç içe',
     regionBlurb:
       'İşyeri, atölye ve konut temizliklerinde esnek vardiya ve hızlı teklif süreci.',
-    neighborhoods: ['Maltepe', 'Veliefendi', 'Kazlıçeşme', 'Merkezefendi', 'Telsiz', 'Yeşiltepe'],
+    neighborhoods: ['Maltepe (Zeytinburnu)', 'Veliefendi', 'Kazlıçeşme', 'Merkezefendi', 'Telsiz', 'Yeşiltepe'],
   },
   {
     slug: 'fatih',

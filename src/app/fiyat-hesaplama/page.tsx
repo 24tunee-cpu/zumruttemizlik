@@ -10,12 +10,13 @@ import {
   generateFAQSchema,
   serializeSchemaGraph,
 } from '@/lib/seo';
+import { metadataForParamAwarePage } from '@/lib/param-page-metadata';
 
 const pageTitle = 'Temizlik Fiyatları 2026 & Anında Fiyat Hesaplama | İstanbul';
 const pageDescription =
   'İstanbul temizlik fiyatları 2026: ev, ofis, inşaat sonrası ve dış cephe temizliği için güncel fiyat aralıkları. Anında fiyat hesaplama aracıyla saniyeler içinde tahmini fiyatınızı görün, ücretsiz keşif alın. Sarıyer, Zekeriyaköy ve İstanbul Avrupa Yakası.';
 
-export const metadata: Metadata = {
+const BASE_METADATA: Metadata = {
   title: { absolute: pageTitle },
   description: pageDescription,
   keywords: [
@@ -53,6 +54,15 @@ export const metadata: Metadata = {
     images: [canonicalUrl('/logo.png')],
   },
 };
+
+type PageProps = {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+};
+
+export async function generateMetadata({ searchParams }: PageProps): Promise<Metadata> {
+  const sp = await searchParams;
+  return metadataForParamAwarePage('/fiyat-hesaplama', BASE_METADATA, sp);
+}
 
 const FAQ_ITEMS = [
   {

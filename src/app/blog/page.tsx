@@ -65,13 +65,8 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<Met
       ? `"${q}" araması için blog sonuçları ve uzman içerikler.`
       : 'Zekeriyaköy, Sarıyer ve İstanbul için 2026 fiyat rehberleri, ev-ofis temizliği ipuçları ve profesyonel hijyen önerileri.';
 
-  const query = new URLSearchParams();
-  if (page > 1) query.set('page', String(page));
-  if (tag) query.set('tag', tag);
-  if (q) query.set('q', q);
-  const canonical = query.toString()
-    ? `${canonicalUrl('/blog')}?${query.toString()}`
-    : canonicalUrl('/blog');
+  /** Filtreli liste sayfaları indekslenmez; kanonik her zaman /blog */
+  const canonical = canonicalUrl('/blog');
   const shouldIndexListing = page === 1 && !tag && !q;
 
   return {
@@ -343,6 +338,7 @@ export default async function BlogPage({ searchParams }: PageProps) {
                   <Link
                     key={t}
                     href={`/blog?tag=${encodeURIComponent(t)}`}
+                    rel="nofollow"
                     className={`rounded-full border px-3 py-1.5 transition ${
                       tag === t ? 'border-emerald-500/60 bg-emerald-500/10 text-emerald-300' : 'border-slate-700 text-slate-300 hover:border-slate-600'
                     }`}
