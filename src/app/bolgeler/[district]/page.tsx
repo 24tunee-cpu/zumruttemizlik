@@ -27,9 +27,8 @@ type Props = {
   params: Promise<{ district: string }>;
 };
 
-import { ISR_PROGRAMMATIC_SEC } from '@/lib/isr-config';
-
-export const revalidate = ISR_PROGRAMMATIC_SEC;
+/** ISR: 24 saat — bkz. src/lib/isr-config.ts */
+export const revalidate = 86400;
 
 export function generateStaticParams() {
   return DISTRICT_LANDINGS.map((district) => ({ district: district.slug }));
