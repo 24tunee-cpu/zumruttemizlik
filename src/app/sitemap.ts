@@ -11,8 +11,6 @@ type StaticEntry = {
 /** Ana sitemap — çekirdek statik sayfalar + hizmet detayları. */
 const STATIC_PAGES: StaticEntry[] = [
   { path: '', changeFrequency: 'weekly', priority: 1 },
-  { path: '/llms.txt', changeFrequency: 'weekly', priority: 0.95 },
-  { path: '/llms-full.txt', changeFrequency: 'weekly', priority: 0.9 },
   { path: '/hizmetler', changeFrequency: 'weekly', priority: 0.9 },
   { path: '/cozumler', changeFrequency: 'weekly', priority: 0.94 },
   { path: '/bolgeler', changeFrequency: 'weekly', priority: 0.9 },

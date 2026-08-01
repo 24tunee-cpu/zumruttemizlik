@@ -7,7 +7,7 @@ import { getSiteUrl } from '@/lib/seo';
  */
 export default function robots(): MetadataRoute.Robots {
   const base = getSiteUrl();
-  const disallow = ['/admin/', '/api/', '/login'];
+  const disallow = ['/admin/', '/api/', '/login', '/blog?', '/fiyat-hesaplama?', '/iletisim?'];
 
   return {
     rules: [

@@ -104,6 +104,7 @@ export default function ProgrammaticCtaExperiment({
         {variant === 'A' ? (
           <Link
             href={`/iletisim?district=${districtSlug}&service=${serviceSlug}&variant=${variant}`}
+            rel="nofollow"
             data-source={`programmatic-cta-${variant.toLowerCase()}-form`}
             className="rounded-lg border border-slate-500 px-5 py-2.5 font-medium text-slate-100 transition-colors hover:bg-slate-800"
           >
