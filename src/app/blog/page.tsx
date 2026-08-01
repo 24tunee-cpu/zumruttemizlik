@@ -25,9 +25,8 @@ import { SeoPriorityStrip } from '@/components/site/SeoPriorityStrip';
 import { BlogSiloNav } from '@/components/site/BlogSiloNav';
 import { canonicalUrl } from '@/lib/seo';
 import { keywordsForPage } from '@/lib/seo-keywords';
-import { ISR_BLOG_INDEX_SEC } from '@/lib/isr-config';
-
-export const revalidate = ISR_BLOG_INDEX_SEC;
+/** ISR: 1 saat — bkz. src/lib/isr-config.ts ISR_BLOG_INDEX_SEC */
+export const revalidate = 3600;
 
 // ============================================
 // METADATA (SEO)

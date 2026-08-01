@@ -1,4 +1,7 @@
-/** Programatik SEO sayfaları — saatlik yenileme ISR write patlamasına yol açar */
+/**
+ * ISR süreleri — tek kaynak (dokümantasyon).
+ * Next.js segment config yalnızca literal kabul eder; page.tsx dosyalarında aynı sayıyı yazın.
+ */
 export const ISR_PROGRAMMATIC_SEC = 86_400;
 
 /** Blog yazıları — cron ile on-demand revalidatePath tetiklenir */

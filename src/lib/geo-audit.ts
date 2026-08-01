@@ -30,7 +30,7 @@ function scoreChecks(checks: GeoAuditCheck[]): number {
 
 export async function runGeoTechnicalAudit(prisma: PrismaClient): Promise<GeoAuditResult> {
   const checks: GeoAuditCheck[] = [];
-  const root = process.cwd();
+  const root = path.join(/* turbopackIgnore: true */ process.cwd(), '.');
 
   for (const f of ['llms.txt', 'llms-full.txt']) {
     const exists = fs.existsSync(path.join(root, f)) && fs.existsSync(path.join(root, 'public', f));

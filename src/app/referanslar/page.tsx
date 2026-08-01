@@ -19,11 +19,10 @@ import {
 import { canonicalUrl } from '@/lib/seo';
 import { Star, Users, Award } from 'lucide-react';
 
-import { ISR_TESTIMONIALS_SEC } from '@/lib/isr-config';
-
 const getTestimonials = cache(fetchPublicTestimonialsForSeo);
 
-export const revalidate = ISR_TESTIMONIALS_SEC;
+/** ISR: 24 saat — bkz. src/lib/isr-config.ts */
+export const revalidate = 86400;
 
 export async function generateMetadata(): Promise<Metadata> {
   const rows = await getTestimonials();
