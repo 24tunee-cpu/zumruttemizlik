@@ -25,7 +25,9 @@ type Props = {
   params: Promise<{ district: string; service: string }>;
 };
 
-export const revalidate = 3600;
+import { ISR_PROGRAMMATIC_SEC } from '@/lib/isr-config';
+
+export const revalidate = ISR_PROGRAMMATIC_SEC;
 
 function clampMetaDescription(input: string, max = 160): string {
   const value = input.trim();

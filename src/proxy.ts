@@ -26,6 +26,7 @@ export async function proxy(request: NextRequest) {
     url.searchParams.set('path', pathname);
     const res = await fetch(url.toString(), {
       headers: { 'x-middleware-fetch': '1' },
+      next: { revalidate: 300 },
     });
     if (!res.ok) return NextResponse.next();
     const data = (await res.json()) as { redirect?: string | null; permanent?: boolean };

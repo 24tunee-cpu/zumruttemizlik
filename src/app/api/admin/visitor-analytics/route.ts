@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { unstable_cache } from 'next/cache';
 import { prisma } from '@/lib/prisma';
 import { requireAdminAuth } from '@/lib/security';
 import { locationLabel } from '@/lib/visitor-geo';
@@ -9,6 +10,8 @@ import {
 } from '@/lib/visitor-attribution';
 
 const ACTIVE_MS = 5 * 60 * 1000;
+/** Admin panel tekrarlı sorgularını azaltır — CPU tasarrufu */
+const ANALYTICS_CACHE_SEC = 90;
 
 export async function GET(request: NextRequest) {
   const denied = await requireAdminAuth(request);
@@ -20,6 +23,7 @@ export async function GET(request: NextRequest) {
   const channelFilter = url.searchParams.get('channel')?.trim() || '';
   const searchFilter = url.searchParams.get('q')?.trim().toLowerCase() || '';
   const includeBots = url.searchParams.get('bots') === 'include';
+  const summaryOnly = url.searchParams.get('summary') === '1';
 
   try {
     if (sessionId) {
@@ -40,6 +44,92 @@ export async function GET(request: NextRequest) {
       });
     }
 
+    if (summaryOnly) {
+      const payload = await loadSummaryAnalytics(days, includeBots);
+      return NextResponse.json(payload, {
+        headers: { 'Cache-Control': `private, max-age=${ANALYTICS_CACHE_SEC}` },
+      });
+    }
+
+    const useCache = !searchFilter;
+    const payload = useCache
+      ? await getCachedFullAnalytics(days, channelFilter, includeBots)
+      : await loadFullAnalytics(days, channelFilter, includeBots, searchFilter);
+
+    return NextResponse.json(payload, {
+      headers: useCache ? { 'Cache-Control': `private, max-age=${ANALYTICS_CACHE_SEC}` } : undefined,
+    });
+  } catch {
+    return NextResponse.json({ error: 'Analytics load failed' }, { status: 500 });
+  }
+}
+
+async function loadSummaryAnalytics(days: number, includeBots: boolean) {
+  const from = new Date(Date.now() - days * 24 * 60 * 60 * 1000);
+  const activeSince = new Date(Date.now() - ACTIVE_MS);
+  const sessionWhere = {
+    startedAt: { gte: from },
+    ...(includeBots ? {} : { isBot: false }),
+  };
+
+  const [totalSessions, activeNow, totalPageViews, channelGroupsRaw, conversionAgg] =
+    await Promise.all([
+      prisma.visitorSession.count({ where: sessionWhere }),
+      prisma.visitorSession.count({
+        where: {
+          isActive: true,
+          lastSeenAt: { gte: activeSince },
+          ...(includeBots ? {} : { isBot: false }),
+        },
+      }),
+      prisma.visitorSession.aggregate({
+        where: sessionWhere,
+        _sum: { pageViews: true },
+      }),
+      prisma.visitorSession.groupBy({
+        by: ['trafficChannel'],
+        where: sessionWhere,
+        _count: { _all: true },
+      }),
+      prisma.visitorSession.aggregate({
+        where: sessionWhere,
+        _sum: { conversionCount: true },
+      }),
+    ]);
+
+  const channelGroups = channelGroupsRaw.map((g) => ({
+    channel: g.trafficChannel || 'other',
+    count: g._count._all,
+  }));
+  const organicCount = channelGroups.find((c) => c.channel === 'organic')?.count ?? 0;
+  const totalConversions = conversionAgg._sum.conversionCount ?? 0;
+
+  return {
+    generatedAt: new Date().toISOString(),
+    rangeDays: days,
+    summary: {
+      totalSessions,
+      activeNow,
+      totalPageViews: totalPageViews._sum.pageViews ?? 0,
+      totalConversions,
+      organicPct: totalSessions ? Math.round((organicCount / totalSessions) * 100) : 0,
+    },
+  };
+}
+
+const getCachedFullAnalytics = unstable_cache(
+  async (days: number, channelFilter: string, includeBots: boolean) =>
+    loadFullAnalytics(days, channelFilter, includeBots, ''),
+  ['visitor-analytics-full'],
+  { revalidate: ANALYTICS_CACHE_SEC, tags: ['visitor-analytics'] }
+);
+
+async function loadFullAnalytics(
+  days: number,
+  channelFilter: string,
+  includeBots: boolean,
+  searchFilter: string
+) {
     const from = new Date(Date.now() - days * 24 * 60 * 60 * 1000);
     const activeSince = new Date(Date.now() - ACTIVE_MS);
 
@@ -247,7 +337,7 @@ export async function GET(request: NextRequest) {
     const organicCount =
       channelGroups.find((c) => c.channel === 'organic')?.count ?? 0;
 
-    return NextResponse.json({
+    return {
       generatedAt: new Date().toISOString(),
       rangeDays: days,
       filters: { channel: channelFilter || null, q: searchFilter || null, includeBots },
@@ -300,10 +390,7 @@ export async function GET(request: NextRequest) {
         ...serialized,
         recentEvents: events.map(serializeEvent),
       })),
-    });
-  } catch {
-    return NextResponse.json({ error: 'Analytics load failed' }, { status: 500 });
-  }
+    };
 }
 
 function enrichChannelGroups(

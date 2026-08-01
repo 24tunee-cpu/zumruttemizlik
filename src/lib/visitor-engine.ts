@@ -140,7 +140,7 @@ export async function processVisitorTrackEvent(
   payload: TrackPayload,
   request: NextRequest,
   ip: string
-): Promise<{ ok: true; created?: boolean }> {
+): Promise<{ ok: true; created?: boolean; skipped?: boolean }> {
   let session = await prisma.visitorSession.findUnique({
     where: { sessionKey: payload.sessionKey },
   });
@@ -209,6 +209,29 @@ export async function processVisitorTrackEvent(
       session.pageViews <= 1 &&
       (session.conversionCount ?? 0) === 0 &&
       !conversionType;
+    if (payload.timeOnPageSec != null) {
+      updateData.durationSec = payload.durationSec ?? session.durationSec;
+    }
+  }
+
+  if (kind === 'scroll') {
+    await prisma.visitorSession.update({
+      where: { id: session.id },
+      data: updateData,
+    });
+    return { ok: true };
+  }
+
+  if (kind === 'heartbeat') {
+    const lastSeenMs = session.lastSeenAt.getTime();
+    if (now.getTime() - lastSeenMs < 90_000) {
+      return { ok: true, skipped: true };
+    }
+    await prisma.visitorSession.update({
+      where: { id: session.id },
+      data: updateData,
+    });
+    return { ok: true };
   }
 
   await prisma.visitorSession.update({
@@ -261,17 +284,6 @@ export async function processVisitorTrackEvent(
     }
   }
 
-  if (kind === 'scroll') {
-    await prisma.visitorEvent.create({
-      data: {
-        sessionDbId: session.id,
-        kind: 'scroll',
-        path: payload.path,
-        metadata: jsonMeta({ scrollPct: payload.scrollPct }),
-      },
-    });
-  }
-
   if (kind === 'conversion' && payload.conversionType) {
     await prisma.visitorEvent.create({
       data: {
@@ -284,7 +296,6 @@ export async function processVisitorTrackEvent(
     });
   }
 
-  // Heartbeat: yalnızca oturum güncellenir — event spam yok
   if (kind === 'session_end') {
     await prisma.visitorEvent.create({
       data: {
@@ -294,6 +305,8 @@ export async function processVisitorTrackEvent(
         metadata: jsonMeta({
           durationSec: payload.durationSec,
           engagedSec: payload.engagedSec,
+          ...(payload.timeOnPageSec != null ? { timeOnPageSec: payload.timeOnPageSec } : {}),
+          ...(payload.scrollPct != null ? { scrollPct: payload.scrollPct } : {}),
         }),
       },
     });

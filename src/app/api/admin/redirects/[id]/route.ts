@@ -3,6 +3,7 @@ import type { Prisma } from '@prisma/client';
 import { prisma } from '@/lib/prisma';
 import { requireAdminOnly } from '@/lib/security';
 import { writeAuditLog } from '@/lib/audit-log';
+import { invalidateRedirectCache } from '@/lib/redirect-resolve-cache';
 import { getToken } from 'next-auth/jwt';
 import { getNextAuthJwtSecret } from '@/lib/auth-secret';
 
@@ -50,6 +51,7 @@ export async function PUT(request: NextRequest, { params }: Params) {
       metadata: data,
       ip: request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? null,
     });
+    invalidateRedirectCache();
     return NextResponse.json(row);
   } catch {
     return NextResponse.json(
@@ -65,6 +67,7 @@ export async function DELETE(request: NextRequest, { params }: Params) {
   const { id } = await params;
   try {
     await prisma.redirectRule.delete({ where: { id } });
+    invalidateRedirectCache();
     const secret = getNextAuthJwtSecret();
     const token = await getToken({ req: request, secret });
     await writeAuditLog({

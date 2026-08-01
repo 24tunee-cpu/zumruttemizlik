@@ -10,7 +10,9 @@ import {
 } from '@/lib/map-reviews-seo';
 import { getGoogleMapsPublicLinks, withGmbUtm } from '@/lib/google-maps-public-links';
 
-export const revalidate = 3600;
+import { ISR_PROGRAMMATIC_SEC } from '@/lib/isr-config';
+
+export const revalidate = ISR_PROGRAMMATIC_SEC;
 
 export async function generateMetadata(): Promise<Metadata> {
   const googleReviews = await fetchGoogleMapReviewsForSeo();

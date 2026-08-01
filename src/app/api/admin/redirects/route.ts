@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { requireAdminAuth, requireAdminOnly, sanitizeInput } from '@/lib/security';
 import { writeAuditLog } from '@/lib/audit-log';
+import { invalidateRedirectCache } from '@/lib/redirect-resolve-cache';
 import { getToken } from 'next-auth/jwt';
 import { getNextAuthJwtSecret } from '@/lib/auth-secret';
 
@@ -46,6 +47,7 @@ export async function POST(request: NextRequest) {
         active: body.active !== false,
       },
     });
+    invalidateRedirectCache();
     const secret = getNextAuthJwtSecret();
     const token = await getToken({ req: request, secret });
     await writeAuditLog({
