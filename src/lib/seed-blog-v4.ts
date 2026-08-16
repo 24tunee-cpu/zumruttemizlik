@@ -1,10 +1,5 @@
 import type { PrismaClient } from '@prisma/client';
 import { BLOG_SEED_POSTS } from './seed-blog';
-import {
-  assignPublishSchedule,
-  BLOG_V4_PUBLISH_PER_DAY,
-  BLOG_V4_SCHEDULE_ANCHOR_ISO,
-} from './blog-schedule';
 import { generateAllV2Posts } from './seed-blog-v2-content';
 import { generateAllV3Posts } from './seed-blog-v3-content';
 import { generateAllV4Posts } from './seed-blog-v4-content';
@@ -20,16 +15,13 @@ const EXISTING_SLUGS = new Set([
 
 export type UpsertV4Result = {
   total: number;
-  days: number;
   skippedExisting: number;
   skippedPublished: number;
-  firstPublishAt: string;
-  lastPublishAt: string;
 };
 
 /**
- * 100 yeni İstanbul yaşam / etkileşim blog yazısını taslak + zamanlanmış olarak upsert eder.
- * Yayınlanmış slug'lara dokunmaz; mevcut taslak takvimini korur.
+ * 100 yeni İstanbul yaşam / etkileşim blog yazısını taslak olarak upsert eder.
+ * Zamanlama reschedule-engagement-blogs.ts ile yapılır (scheduledPublishAt: null).
  */
 export async function upsertScheduledBlogV4(prisma: PrismaClient): Promise<UpsertV4Result> {
   const allPosts = generateAllV4Posts();
@@ -39,23 +31,13 @@ export async function upsertScheduledBlogV4(prisma: PrismaClient): Promise<Upser
     throw new Error(`V4 slug çakışması veya eksik içerik: fresh=${fresh.length}/100`);
   }
 
-  const anchor = new Date(BLOG_V4_SCHEDULE_ANCHOR_ISO);
-  const scheduled = assignPublishSchedule(fresh, {
-    anchor,
-    postsPerDay: BLOG_V4_PUBLISH_PER_DAY,
-  });
-
-  if (scheduled.length !== 100) {
-    throw new Error(`V4 kuyruk boyutu hatalı: ${scheduled.length}/100`);
-  }
-
   let skippedExisting = 0;
   let skippedPublished = 0;
 
-  for (const post of scheduled) {
+  for (const post of fresh) {
     const existing = await prisma.blogPost.findUnique({
       where: { slug: post.slug },
-      select: { published: true, scheduledPublishAt: true },
+      select: { published: true },
     });
 
     if (existing?.published) {
@@ -66,9 +48,6 @@ export async function upsertScheduledBlogV4(prisma: PrismaClient): Promise<Upser
     if (existing) {
       skippedExisting += 1;
     }
-
-    const scheduledPublishAt =
-      existing?.scheduledPublishAt ?? post.scheduledPublishAt;
 
     const resolvedTitle = resolveBlogMetaTitle(post.title, post.metaTitle ?? null);
     const resolvedDesc = resolveBlogMetaDesc(post.excerpt, post.metaDesc ?? null);
@@ -91,7 +70,7 @@ export async function upsertScheduledBlogV4(prisma: PrismaClient): Promise<Upser
       tags: normalizedTags,
       metaTitle: resolvedTitle,
       metaDesc: resolvedDesc,
-      scheduledPublishAt,
+      scheduledPublishAt: null as Date | null,
     };
 
     if (existing) {
@@ -113,11 +92,8 @@ export async function upsertScheduledBlogV4(prisma: PrismaClient): Promise<Upser
   }
 
   return {
-    total: scheduled.length,
-    days: Math.ceil(scheduled.length / BLOG_V4_PUBLISH_PER_DAY),
+    total: fresh.length,
     skippedExisting,
     skippedPublished,
-    firstPublishAt: scheduled[0].scheduledPublishAt.toISOString(),
-    lastPublishAt: scheduled[scheduled.length - 1].scheduledPublishAt.toISOString(),
   };
 }

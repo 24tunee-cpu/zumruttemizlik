@@ -57,6 +57,8 @@ async function main() {
           v2Published,
           v3Drafts,
           v3Published,
+          v4Drafts,
+          v4Published,
           nextDue: nextDue.map((p) => ({
             slug: p.slug,
             at: p.scheduledPublishAt?.toISOString(),
