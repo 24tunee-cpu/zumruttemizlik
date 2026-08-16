@@ -3,8 +3,8 @@ import { revalidatePath } from 'next/cache';
 import { enrichBlogContentWithInternalLinks } from '@/lib/blog-publish-internal-links';
 import { submitIndexNowBlogSlugs, type IndexNowResult } from '@/lib/indexnow';
 
-/** Günlük otomatik blog yayın limiti (v3: 10/gün) */
-export const BLOG_DAILY_PUBLISH_LIMIT = 10;
+/** Günlük otomatik blog yayın limiti (v4: 5/gün) */
+export const BLOG_DAILY_PUBLISH_LIMIT = 5;
 
 export type PublishScheduledResult = {
   published: number;

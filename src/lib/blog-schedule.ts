@@ -6,6 +6,12 @@ export const BLOG_SCHEDULE_ANCHOR_ISO = '2026-07-13T00:00:00.000Z';
 /** V3 kuyruk başlangıcı — v2 bittikten sonra (2 Ağu 2026) */
 export const BLOG_V3_SCHEDULE_ANCHOR_ISO = '2026-08-02T00:00:00.000Z';
 
+/** V4 kuyruk başlangıcı — v3 tamamlandıktan sonra (17 Ağu 2026) */
+export const BLOG_V4_SCHEDULE_ANCHOR_ISO = '2026-08-17T00:00:00.000Z';
+
+/** v4 etkileşim içerikleri — günde 5 yayın */
+export const BLOG_V4_PUBLISH_PER_DAY = 5;
+
 /** Günlük otomatik yayın adedi (v3+) */
 export const BLOG_SEO_PER_DAY = 5;
 export const BLOG_PRICING_PER_DAY = 5;
@@ -63,14 +69,15 @@ export function buildMixedPublishQueue(
  */
 export function assignPublishSchedule(
   posts: BlogSeedPost[],
-  options?: { startFrom?: Date; anchor?: Date }
+  options?: { startFrom?: Date; anchor?: Date; postsPerDay?: number }
 ): ScheduledBlogPost[] {
+  const perDay = options?.postsPerDay ?? BLOG_PUBLISH_PER_DAY;
   const base = options?.anchor ?? options?.startFrom ?? new Date(BLOG_SCHEDULE_ANCHOR_ISO);
   const anchor = new Date(base);
   anchor.setUTCHours(BLOG_SCHEDULE_DUE_HOUR_UTC, 0, 0, 0);
 
   return posts.map((post, index) => {
-    const dayOffset = Math.floor(index / BLOG_PUBLISH_PER_DAY);
+    const dayOffset = Math.floor(index / perDay);
     const scheduled = new Date(anchor);
     scheduled.setUTCDate(scheduled.getUTCDate() + dayOffset);
     return {
