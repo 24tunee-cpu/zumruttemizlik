@@ -26,6 +26,7 @@
     "seed:blogs-v5": "tsx scripts/seed-scheduled-blogs-v5.ts",
     "seo:autopilot:bootstrap": "tsx scripts/bootstrap-seo-autopilot.ts",
     "seo:autopilot:validate": "tsx scripts/validate-autopilot-slugs.ts",
+    "seo:autopilot:run": "tsx scripts/run-seo-autopilot.ts",
     "geo:sync": "tsx scripts/geo-sync.ts",
     "blogs:repair-schedule": "tsx scripts/repair-blog-schedule.ts",
     "blogs:publish-due": "tsx scripts/publish-due-blogs.ts",

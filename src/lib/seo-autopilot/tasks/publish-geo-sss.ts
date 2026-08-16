@@ -1,5 +1,5 @@
 import type { PrismaClient } from '@prisma/client';
-import { revalidatePath } from 'next/cache';
+import { safeRevalidatePath } from '@/lib/safe-revalidate';
 import { AUTOPILOT_LIMITS } from '../constants';
 
 export async function publishScheduledGeoSss(
@@ -23,12 +23,12 @@ export async function publishScheduledGeoSss(
       data: { published: true, scheduledPublishAt: null },
     });
     slugs.push(row.slug);
-    revalidatePath(`/geo-sss/${row.slug}`);
+    safeRevalidatePath(`/geo-sss/${row.slug}`);
   }
 
   if (slugs.length > 0) {
-    revalidatePath('/geo-sss');
-    revalidatePath('/geo-sss/sitemap.xml');
+    safeRevalidatePath('/geo-sss');
+    safeRevalidatePath('/geo-sss/sitemap.xml');
   }
 
   return { published: slugs.length, slugs };
