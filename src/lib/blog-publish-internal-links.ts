@@ -150,6 +150,18 @@ export function buildAutoInternalLinks(params: {
 }): InternalLinkItem[] {
   const district = extractDistrictFromSlug(params.slug);
   if (!district) {
+    const isEngagement =
+      params.slug.startsWith('istanbul-') &&
+      !params.slug.includes('temizlik') &&
+      !params.slug.includes('fiyatlari');
+    if (isEngagement) {
+      return dedupeLinks([
+        { href: '/blog', label: 'Tüm blog yazıları' },
+        { href: '/rehber', label: 'Temizlik ve ev bakım rehberi' },
+        { href: '/randevu', label: 'Randevu / keşif' },
+        { href: '/iletisim', label: 'İletişim' },
+      ]);
+    }
     return dedupeLinks([
       { href: '/fiyat-hesaplama', label: 'Online fiyat hesaplama' },
       { href: '/randevu', label: 'Ücretsiz keşif randevusu' },

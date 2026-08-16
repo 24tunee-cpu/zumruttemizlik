@@ -37,6 +37,15 @@ async function main() {
     const v3Published = await prisma.blogPost.count({
       where: { published: true, tags: { has: 'otomatik yayın v3' } },
     });
+    const v4Drafts = await prisma.blogPost.count({
+      where: {
+        published: false,
+        tags: { has: 'otomatik yayın v4' },
+      },
+    });
+    const v4Published = await prisma.blogPost.count({
+      where: { published: true, tags: { has: 'otomatik yayın v4' } },
+    });
     console.log(
       JSON.stringify(
         {
