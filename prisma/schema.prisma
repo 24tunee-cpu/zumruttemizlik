@@ -111,6 +111,39 @@ model BlogPost {
   @@map("blogposts")
 }
 
+/// SEO Autopilot — zamanlanmış geo-sss drip (statik GEO_SSS_PAGES'e ek)
+model GeoSssContent {
+  id                 String    @id @default(auto()) @map("_id") @db.ObjectId
+  slug               String    @unique
+  districtSlug       String
+  districtName       String
+  title              String
+  directAnswer       String
+  details            String[]
+  relatedLinksJson   Json
+  published          Boolean   @default(false)
+  scheduledPublishAt DateTime?
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+
+  @@index([published, scheduledPublishAt])
+  @@index([districtSlug])
+  @@map("geo_sss_content")
+}
+
+/// SEO Autopilot günlük koşu özeti
+model SeoAutopilotRun {
+  id         String    @id @default(auto()) @map("_id") @db.ObjectId
+  status     String    @default("running")
+  results    Json?
+  error      String?
+  startedAt  DateTime  @default(now())
+  finishedAt DateTime?
+
+  @@index([startedAt])
+  @@map("seo_autopilot_runs")
+}
+
 model ContactRequest {
   id               String    @id @default(auto()) @map("_id") @db.ObjectId
   name             String

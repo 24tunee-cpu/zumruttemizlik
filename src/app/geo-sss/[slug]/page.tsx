@@ -2,10 +2,8 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import SiteLayout from '../../site/layout';
-import {
-  GEO_SSS_PAGES,
-  getGeoSssBySlug,
-} from '@/config/geo-district-faqs';
+import { GEO_SSS_PAGES } from '@/config/geo-district-faqs';
+import { getGeoSssBySlugAsync } from '@/lib/geo-sss-resolver';
 import {
   canonicalUrl,
   generateBreadcrumbSchema,
@@ -15,13 +13,16 @@ import {
 
 type Props = { params: Promise<{ slug: string }> };
 
+export const dynamicParams = true;
+export const revalidate = 86400;
+
 export function generateStaticParams() {
   return GEO_SSS_PAGES.map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const page = getGeoSssBySlug(slug);
+  const page = await getGeoSssBySlugAsync(slug);
   if (!page) return { title: 'Sayfa Bulunamadı' };
 
   const title = `${page.title} | Zümrüt Vadi Temizlik`;
@@ -37,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function GeoSssPage({ params }: Props) {
   const { slug } = await params;
-  const page = getGeoSssBySlug(slug);
+  const page = await getGeoSssBySlugAsync(slug);
   if (!page) notFound();
 
   const faqSchema = generateFAQSchema([

@@ -43,7 +43,8 @@ function parseProgrammaticKey(key: string): { district: string; service: string 
 }
 
 export async function applyLowCtrMetaAb(
-  db: PrismaClient = prisma
+  db: PrismaClient = prisma,
+  maxUpdates: number = MAX_UPDATES_PER_RUN
 ): Promise<{ programmaticUpdated: number; blogUpdated: number; skipped: boolean }> {
   const metrics = await db.gscLandingMetric.findMany({
     where: { date: { gte: new Date(Date.now() - 35 * 24 * 60 * 60 * 1000) } },
@@ -63,7 +64,7 @@ export async function applyLowCtrMetaAb(
   let blogUpdated = 0;
 
   for (const [key, m] of latestByKey.entries()) {
-    if (programmaticUpdated + blogUpdated >= MAX_UPDATES_PER_RUN) break;
+    if (programmaticUpdated + blogUpdated >= maxUpdates) break;
 
     if (m.impressions >= MIN_IMPRESSIONS_PROGRAMMATIC && m.ctr < MAX_CTR_PROGRAMMATIC) {
       const parsed = parseProgrammaticKey(key);
@@ -104,11 +105,11 @@ export async function applyLowCtrMetaAb(
       ctr: { lt: MAX_CTR_BLOG },
     },
     orderBy: { impressions: 'desc' },
-    take: MAX_UPDATES_PER_RUN,
+    take: maxUpdates,
   });
 
   for (const m of blogMetrics) {
-    if (blogUpdated >= MAX_UPDATES_PER_RUN) break;
+    if (programmaticUpdated + blogUpdated >= maxUpdates) break;
     const slug = m.key.replace(/^blog:/, '');
     if (!slug) continue;
 

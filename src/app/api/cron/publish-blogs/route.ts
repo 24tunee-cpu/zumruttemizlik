@@ -1,23 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { publishScheduledBlogPosts } from '@/lib/publish-scheduled-posts';
 import { prisma } from '@/lib/prisma';
-import { syncPublishedBlogsToLlmsFull } from '@/lib/geo-llms-sync';
 import { authorizeCronRequest, cronUnauthorizedResponse } from '@/lib/cron-auth';
 import { getBlogScheduleHealth } from '@/lib/blog-schedule-preserve';
-import { runFullGeoSync } from '@/lib/geo-citation';
-import { runSeoChecklistAutoSync } from '@/lib/gsc-sync';
+import { runSeoAutopilot } from '@/lib/seo-autopilot';
 
 export const dynamic = 'force-dynamic';
 export const maxDuration = 60;
 
-function isMondayUtc(): boolean {
-  return new Date().getUTCDay() === 1;
-}
-
 /**
- * Günlük otomatik blog yayını — günde en fazla 5 zamanlanmış yazı.
- * Pazartesi: GEO sync de çalışır (ayrı cron gerekmez — Hobby 2 cron limiti).
- * Vercel Cron: 05:00 UTC = 08:00 Türkiye (UTC+3)
+ * Günlük SEO Autopilot — blog + geo-sss + GSC + refresh + mevsim + IndexNow.
+ * Vercel Cron: 05:00 UTC = 08:00 Türkiye
  */
 export async function GET(request: NextRequest) {
   const auth = authorizeCronRequest(request);
@@ -27,44 +19,40 @@ export async function GET(request: NextRequest) {
 
   try {
     const healthBefore = await getBlogScheduleHealth(prisma);
-    const result = await publishScheduledBlogPosts();
+    const autopilot = await runSeoAutopilot(prisma);
     const healthAfter = await getBlogScheduleHealth(prisma);
-
-    let llmsSync: { blogCount: number; updated: boolean } | null = null;
-    if (result.published > 0) {
-      llmsSync = await syncPublishedBlogsToLlmsFull(prisma);
-    }
-
-    let geoSync: Awaited<ReturnType<typeof runFullGeoSync>> | null = null;
-    let seoSync: Awaited<ReturnType<typeof runSeoChecklistAutoSync>> | null = null;
-    if (isMondayUtc()) {
-      geoSync = await runFullGeoSync(prisma, 'cron');
-      seoSync = await runSeoChecklistAutoSync('cron');
-    }
 
     return NextResponse.json({
       ok: true,
       authVia: auth.via,
-      published: result.published,
-      slugs: result.slugs,
-      remainingScheduled: result.remainingScheduled,
-      internalLinksAdded: result.internalLinksAdded,
-      indexNow: result.indexNow,
+      skipped: autopilot.skipped ?? false,
+      reason: autopilot.reason,
+      warnings: autopilot.warnings,
+      autopilot: {
+        blogPublished: autopilot.blog.published,
+        blogSlugs: autopilot.blog.slugs,
+        geoSssPublished: autopilot.geoSss.published,
+        geoSssSlugs: autopilot.geoSss.slugs,
+        gscDraftsCreated: autopilot.gscDrafts.created,
+        blogsRefreshed: autopilot.blogRefresh.refreshed,
+        seasonalCreated: autopilot.seasonal.created,
+        testimonialsSynced: autopilot.testimonials.synced,
+        metaAb: autopilot.metaAb,
+        indexNow: autopilot.indexNow,
+        llmsSync: autopilot.llmsSync,
+        geoSync: autopilot.geoSync
+          ? { auditScore: autopilot.geoSync.audit.score, citationScore: autopilot.geoSync.citation.overallScore }
+          : null,
+        seoSync: autopilot.seoSync
+          ? { ok: autopilot.seoSync.ok, stats: autopilot.seoSync.stats }
+          : null,
+      },
       healthBefore,
       healthAfter,
-      llmsSync,
-      geoSync: geoSync ? { auditScore: geoSync.audit.score, citationScore: geoSync.citation.overallScore } : null,
-      seoSync: seoSync
-        ? {
-            ok: seoSync.ok,
-            metaAbProgrammatic: seoSync.stats.metaAbProgrammatic,
-            metaAbBlog: seoSync.stats.metaAbBlog,
-          }
-        : null,
       publishedAt: new Date().toISOString(),
     });
   } catch (e) {
-    const message = e instanceof Error ? e.message : 'Blog publish failed';
+    const message = e instanceof Error ? e.message : 'SEO Autopilot failed';
     return NextResponse.json({ error: message }, { status: 500 });
   }
 }

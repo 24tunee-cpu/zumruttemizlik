@@ -5,6 +5,8 @@ const cases: Array<{ path: string; expect: string | null }> = [
   { path: '/blog/beylikduzu-avrupa-tasinma-temizligi-fiyatlari-2026', expect: null },
   { path: '/blog/ev-temizligi-fiyatlari-2026-istanbul', expect: null },
   { path: '/blog/istanbul-kart-marmaray-bakiye-2026', expect: null },
+  { path: '/blog/insaat-tozu-evde-vs-endustriyel-vakum-2026', expect: null },
+  { path: '/blog/profesyonel-vs-kendi-basina-ev-temizligi-2026', expect: null },
   { path: '/blog/eski-yazi-2', expect: '/blog/eski-yazi' },
   { path: '/blog/eski-yazi-3', expect: '/blog/eski-yazi' },
   { path: '/blog/foo-1', expect: null },

@@ -1,8 +1,10 @@
 import Link from 'next/link';
 import SiteLayout from '../site/layout';
-import { GEO_SSS_PAGES } from '@/config/geo-district-faqs';
 import type { Metadata } from 'next';
 import { canonicalUrl } from '@/lib/seo';
+import { listAllGeoSssPagesForIndex } from '@/lib/geo-sss-resolver';
+
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: { absolute: 'GEO SSS Rehberleri | Zümrüt Vadi Temizlik' },
@@ -11,9 +13,11 @@ export const metadata: Metadata = {
   alternates: { canonical: canonicalUrl('/geo-sss') },
 };
 
-export default function GeoSssIndexPage() {
-  const byDistrict = new Map<string, typeof GEO_SSS_PAGES>();
-  for (const p of GEO_SSS_PAGES) {
+export default async function GeoSssIndexPage() {
+  const pages = await listAllGeoSssPagesForIndex();
+  const byDistrict = new Map<string, typeof pages>();
+
+  for (const p of pages) {
     const list = byDistrict.get(p.districtName) ?? [];
     list.push(p);
     byDistrict.set(p.districtName, list);
@@ -29,11 +33,11 @@ export default function GeoSssIndexPage() {
             yapabileceği format.
           </p>
           <div className="mt-10 space-y-8">
-            {[...byDistrict.entries()].map(([district, pages]) => (
+            {[...byDistrict.entries()].map(([district, districtPages]) => (
               <section key={district}>
                 <h2 className="text-xl font-semibold text-emerald-300">{district}</h2>
                 <ul className="mt-3 space-y-2">
-                  {pages.map((p) => (
+                  {districtPages.map((p) => (
                     <li key={p.slug}>
                       <Link
                         href={`/geo-sss/${p.slug}`}

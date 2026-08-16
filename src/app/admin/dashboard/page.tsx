@@ -26,6 +26,7 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import VisitorAnalyticsSummary from '@/components/admin/VisitorAnalyticsSummary';
+import SeoAutopilotPanel from '@/components/admin/SeoAutopilotPanel';
 
 // ============================================
 // TYPES (API /api/admin/dashboard ile uyumlu)
@@ -523,6 +524,15 @@ export default function AdminDashboardPage() {
             </Link>
           ))}
         </div>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.18 }}
+        className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-700 dark:bg-slate-800 sm:p-5"
+      >
+        <SeoAutopilotPanel compact />
       </motion.div>
 
       <VisitorAnalyticsSummary />
