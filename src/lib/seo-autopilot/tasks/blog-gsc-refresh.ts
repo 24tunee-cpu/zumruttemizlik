@@ -1,5 +1,5 @@
 import type { PrismaClient } from '@prisma/client';
-import { revalidatePath } from 'next/cache';
+import { safeRevalidatePath } from '@/lib/safe-revalidate';
 import { makeEngagementGuidePost } from '@/lib/blog-engagement-html';
 import { AUTOPILOT_LIMITS, AUTOPILOT_TAGS } from '../constants';
 import { isAsciiSlug } from '../slug-guard';
@@ -37,11 +37,11 @@ export async function refreshStaleBlogs(
       },
     });
     slugs.push(post.slug);
-    revalidatePath(`/blog/${post.slug}`);
+    safeRevalidatePath(`/blog/${post.slug}`);
   }
 
   if (slugs.length > 0) {
-    revalidatePath('/blog');
+    safeRevalidatePath('/blog');
   }
 
   return { refreshed: slugs.length, slugs };
