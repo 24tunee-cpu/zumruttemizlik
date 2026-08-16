@@ -1,9 +1,11 @@
 import type { MetadataRoute } from 'next';
-import { GEO_SSS_PAGES } from '@/config/geo-district-faqs';
+import { listPublishedGeoSssSlugs } from '@/lib/geo-sss-resolver';
 import { getSiteUrl } from '@/lib/seo';
 
-export default function geoSssSitemap(): MetadataRoute.Sitemap {
+export default async function geoSssSitemap(): Promise<MetadataRoute.Sitemap> {
   const base = getSiteUrl();
+  const slugs = await listPublishedGeoSssSlugs();
+
   return [
     {
       url: `${base}/geo-sss`,
@@ -11,8 +13,8 @@ export default function geoSssSitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.7,
     },
-    ...GEO_SSS_PAGES.map((p) => ({
-      url: `${base}/geo-sss/${p.slug}`,
+    ...slugs.map((slug) => ({
+      url: `${base}/geo-sss/${slug}`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.6,
