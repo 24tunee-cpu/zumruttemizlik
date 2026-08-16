@@ -3878,7 +3878,7 @@ const LEAD_GENERATION_POSTS: BlogSeedPost[] = [
     tags: ['dubleks', 'villa', 'temizlik', 'fiyat'],
   },
   {
-    slug: 'esyalı-ev-temizligi-bos-ev-temizligi-fiyat-farklari',
+    slug: 'esyali-ev-temizligi-bos-ev-temizligi-fiyat-farklari',
     title: 'Eşyalı Ev Temizliği ile Boş Ev Temizliği Arasındaki Fiyat Farkları Nelerdir?',
     excerpt: 'Eşyalı ev temizliği ile boş ev temizliği arasındaki fiyat farkları nelerdir? Eşya durumu, temizlik süresi ve ekstra işlemleri inceledik.',
     content: `<h2>Eşyalı ve Boş Ev Temizliği Farkları</h2>
@@ -4084,7 +4084,7 @@ const LEAD_GENERATION_POSTS: BlogSeedPost[] = [
     tags: ['yeni bina', 'tasinma', 'temizlik adimlari', 'hijyen'],
   },
   {
-    slug: 'insaat-sonrasi-camlardaki-inatci-bant-harç-lekeleri-temizlik',
+    slug: 'insaat-sonrasi-camlardaki-inatci-bant-harc-lekeleri-temizlik',
     title: 'İnşaat Sonrası Camlardaki İnatçı Bant ve Harç Lekeleri Nasıl Temizlenir?',
     excerpt: 'İnşaat sonrası camlardaki inatçı bant ve harç lekeleri nasıl temizlenir? Doğru ürünler ve tekniklerle camları kusursuz hale getirin.',
     content: `<h2>İnşaat Sonrası Cam Temizliği</h2>
@@ -4345,7 +4345,7 @@ const LEAD_GENERATION_POSTS: BlogSeedPost[] = [
     tags: ['bahar temizligi', 'istanbul', 'rehber', 'detayli temizlik'],
   },
   {
-    slug: 'kisa-hazirlik-temizligi-evini-soğuk-aylara-nasil-hazirlarsiniz',
+    slug: 'kisa-hazirlik-temizligi-evini-soguk-aylara-nasil-hazirlarsiniz',
     title: 'Kışa Hazırlık Temizliği: Evinizi Soğuk Aylara Nasıl Hazırlarsınız?',
     excerpt: 'Kışa hazırlık temizliği ile evinizi soğuk aylara hazırlayın. Isı yalıtımı ve hijyen için ipuçları.',
     content: `<h2>Kışa Hazırlık Temizliği</h2>
