@@ -200,6 +200,7 @@ export function buildSiteHubStripLinks(): SeoLinkItem[] {
     { href: '/bolgeler', label: 'Bölgeler' },
     { href: '/bolgeler/sariyer', label: 'Sarıyer' },
     { href: '/bolgeler/sariyer/zekeriyakoy', label: 'Zekeriyaköy' },
+    { href: '/bolgeler/sariyer/uskumrukoy', label: 'Uskumruköy' },
     { href: '/cozumler', label: 'Çözümler' },
     { href: '/rehber', label: 'Rehber' },
     { href: '/blog', label: 'Blog' },

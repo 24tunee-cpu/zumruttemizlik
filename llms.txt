@@ -19,6 +19,7 @@
 - [Bölgeler](https://www.zumrutvaditemizlik.com/bolgeler): İlçe ve semt bazlı hizmet sayfaları (Sarıyer, Zekeriyaköy dahil).
 - [Sarıyer](https://www.zumrutvaditemizlik.com/bolgeler/sariyer): Öncelikli ilçe hub.
 - [Zekeriyaköy](https://www.zumrutvaditemizlik.com/bolgeler/sariyer/zekeriyakoy): Öncelikli semt landing.
+- [Uskumruköy](https://www.zumrutvaditemizlik.com/bolgeler/sariyer/uskumrukoy): Zekeriyaköy–Kilyos hattı semt landing.
 - [Fiyat Hesaplama](https://www.zumrutvaditemizlik.com/fiyat-hesaplama): Tahmini fiyat aralığı (kesin fiyat keşif sonrası).
 - [Harita ve Yorumlar](https://www.zumrutvaditemizlik.com/harita-ve-yorumlar): Google konum ve gerçek müşteri yorumları.
 - [GEO SSS](https://www.zumrutvaditemizlik.com/geo-sss): İlçe/niyet soru-cevap passage’ları.

@@ -143,15 +143,25 @@ export const DISTRICT_LANDINGS: DistrictLanding[] = [
     populationNote: 'Zekeriyaköy başta olmak üzere villa, site ve yüksek gelir segmentinde detay beklentisi',
     regionBlurb:
       'Zekeriyaköy, Bahçeköy ve Boğaz hattındaki villa ve sitelerde hijyen ve güven odaklı, titiz temizlik uyguluyoruz. Sarıyer, öncelikli hizmet bölgemizdir.',
-    neighborhoods: ['Zekeriyaköy', 'Bahçeköy', 'Maslak', 'Tarabya', 'Yeniköy', 'Rumelihisarı', 'Kilyos', 'İstinye'],
+    neighborhoods: [
+      'Zekeriyaköy',
+      'Bahçeköy',
+      'Uskumruköy',
+      'Maslak',
+      'Tarabya',
+      'Yeniköy',
+      'Rumelihisarı',
+      'Kilyos',
+      'İstinye',
+    ],
     localSignals: [
-      'Zekeriyaköy ve Bahçeköy’deki müstakil villa ve sitelerde detaylı ev temizliği ile taşınma öncesi/sonrası temizlik talepleri yoğundur.',
-      'Boğaz hattı yerleşimlerinde cam, dış cephe ve bahçe kenarı yüzey temizliği sık talep edilir.',
+      'Zekeriyaköy, Bahçeköy ve Uskumruköy hattındaki müstakil villa ve sitelerde detaylı ev temizliği ile taşınma öncesi/sonrası temizlik talepleri yoğundur.',
+      'Boğaz hattı yerleşimlerinde cam, dış cephe ve bahçe kenarı yüzey temizliği sık talep edilir; bahçe peyzaj/düzenleme ayrı bir hizmet değildir.',
       'Yüksek segment konutlarda aynı gün ücretsiz keşif ve gizlilik odaklı çalışma önceliklidir.',
     ],
     deepDive: [
       'Zekeriyaköy, Zümrüt Vadi Temizlik için öncelikli hizmet bölgesidir. Bölgedeki müstakil villalar, kapalı siteler ve orman içi yerleşimlerde detaylı ev temizliği, inşaat sonrası teslim temizliği ve periyodik bakım paketlerinde hızlı ekip yönlendirmesi yapıyoruz.',
-      'Bahçeköy, Maslak ve Boğaz hattındaki (Tarabya, Yeniköy, İstinye) konutlarda geniş cam yüzeyleri, yüksek tavanlar ve bahçeli yapılar nedeniyle cam temizliği, dış cephe ve detay temizlik sıklıkla birlikte planlanır. Alanı; zemin türü, cam yüzeyi, ıslak hacim ve erişim koşullarına göre başlıklara ayırıp uyguluyoruz.',
+      'Bahçeköy, Uskumruköy, Maslak ve Boğaz hattındaki (Tarabya, Yeniköy, İstinye) konutlarda geniş cam yüzeyleri, yüksek tavanlar ve bahçeli yapılar nedeniyle cam temizliği, dış cephe ve detay temizlik sıklıkla birlikte planlanır. Alanı; zemin türü, cam yüzeyi, ıslak hacim ve erişim koşullarına göre başlıklara ayırıp uyguluyoruz.',
       'Sarıyer genelinde ana sayfamızdaki Anında Fiyat Hesaplama aracıyla mekan tipi, oda sayısı veya metrekare ve ekstralara göre tahmini fiyat aralığınızı saniyeler içinde görebilir, ardından WhatsApp üzerinden ücretsiz keşif randevusu oluşturabilirsiniz.',
     ],
   },
@@ -564,6 +574,53 @@ export const NEIGHBORHOOD_LANDINGS: NeighborhoodLanding[] = [
       'dis-cephe-temizligi',
     ],
     calculatorIntentSlug: 'insaat-sonrasi-temizlik',
+  },
+  {
+    districtSlug: 'sariyer',
+    slug: 'uskumrukoy',
+    name: 'Uskumruköy',
+    districtName: 'Sarıyer',
+    metaTitle: 'Uskumruköy Temizlik Şirketi | Villa & Site Temizliği',
+    metaDescription:
+      'Uskumruköy temizlik: villa ve site dairelerinde detaylı ev, inşaat sonrası, cam. Zekeriyaköy–Kilyos hattı operasyon. Ücretsiz keşif.',
+    intro:
+      'Uskumruköy, Zekeriyaköy–Kilyos hattındaki villa ve site yerleşimleriyle Sarıyer orman içi operasyonumuzun parçasıdır. Zümrüt Vadi Temizlik olarak Uskumruköy’de detaylı ev temizliği, taşınma öncesi/sonrası ve inşaat sonrası teslim hizmeti sunuyoruz.',
+    body: [
+      'Uskumruköy’deki müstakil villalar ve kapalı sitelerde geniş metrekare, çoklu ıslak hacim ve bahçe kenarı girişler temizlik planını etkiler. Alanı zemin, cam, mutfak-banyo ve erişim koşullarına göre başlıklara ayırıyoruz; peyzaj/bahçe düzenleme hizmeti vermiyoruz — yalnızca yüzey ve iç mekân temizliği.',
+      'Zekeriyaköy ve Bahçeköy ile aynı Sarıyer orman içi rota planında çalıştığımız için Uskumruköy taleplerinde ekip yönlendirmesi hızlıdır. Tadilat sonrası ince toz, boya izi ve dolap içi detay en sık eklenen kapsamlardır.',
+      'Tahmini fiyat için Anında Fiyat Hesaplama aracını kullanabilir; kesin fiyatı ücretsiz keşif veya WhatsApp fotoğrafla netleştirebilirsiniz.',
+    ],
+    highlights: [
+      'Villa ve site detaylı ev temizliği',
+      'İnşaat/tadilat sonrası teslim',
+      'Cam ve dış yüzey bakımı',
+      'Zekeriyaköy–Kilyos hattı operasyon',
+    ],
+    faq: [
+      {
+        q: 'Uskumruköy’de villa temizliği yapıyor musunuz?',
+        a: 'Evet. Uskumruköy villa ve sitelerinde detaylı ev temizliği, inşaat sonrası ve cam temizliği sunuyoruz. Kapsam ücretsiz keşifte netleşir.',
+      },
+      {
+        q: 'Uskumruköy ile Zekeriyaköy aynı ekip mi?',
+        a: 'Sarıyer orman içi hattında (Zekeriyaköy, Bahçeköy, Uskumruköy, Kilyos) aynı operasyon planı kullanılır; slot erişime göre ayarlanır.',
+      },
+      {
+        q: 'Bahçe düzenleme / peyzaj da var mı?',
+        a: 'Hayır. Bahçe peyzajı veya bahçe düzenleme hizmeti vermiyoruz. Bahçe kenarı giriş, teras ve dış yüzey temizliği mevcut temizlik paketlerine eklenebilir.',
+      },
+      {
+        q: 'Uskumruköy fiyat nasıl öğrenilir?',
+        a: 'Online fiyat hesaplama ile tahmini aralık; kesin fiyat keşif sonrası. WhatsApp veya randevu formundan ücretsiz keşif alabilirsiniz.',
+      },
+    ],
+    featuredServiceSlugs: [
+      'ev-temizligi',
+      'insaat-sonrasi-temizlik',
+      'cam-temizligi',
+      'dis-cephe-temizligi',
+    ],
+    calculatorIntentSlug: 'tasinma-temizligi',
   },
 ];
 
