@@ -4,6 +4,7 @@ import {
   assignPublishSchedule,
   BLOG_ENGAGEMENT_PUBLISH_PER_DAY,
   BLOG_V4_SCHEDULE_ANCHOR_ISO,
+  BLOG_V6_SCHEDULE_ANCHOR_ISO,
 } from './blog-schedule';
 
 export type RescheduleEngagementResult = {
@@ -13,6 +14,7 @@ export type RescheduleEngagementResult = {
   lastPublishAt: string;
   v4Count: number;
   v5Count: number;
+  v6Count?: number;
 };
 
 type DraftPost = {
@@ -78,11 +80,58 @@ export async function rescheduleEngagementBlogQueue(
 
   return {
     total: queue.length,
-    days: Math.ceil(queue.length / BLOG_ENGAGEMENT_PUBLISH_PER_DAY),
+    days: Math.ceil(queue.length / BLOG_ENGAGEMENT_PUBLISH_PER_DAY) || 0,
     firstPublishAt: scheduled[0]?.scheduledPublishAt.toISOString() ?? '',
     lastPublishAt: scheduled[scheduled.length - 1]?.scheduledPublishAt.toISOString() ?? '',
     v4Count: v4Drafts.length,
     v5Count: v5Drafts.length,
+  };
+}
+
+/**
+ * v6 taslakları — günde 10, BLOG_V6_SCHEDULE_ANCHOR_ISO’dan itibaren.
+ */
+export async function scheduleV6EngagementQueue(
+  prisma: PrismaClient
+): Promise<RescheduleEngagementResult> {
+  const drafts = await prisma.blogPost.findMany({
+    where: {
+      published: false,
+      tags: { has: 'otomatik yayın v6' },
+    },
+    select: { id: true, slug: true, createdAt: true, tags: true },
+    orderBy: { createdAt: 'asc' },
+  });
+
+  const seedPosts: BlogSeedPost[] = drafts.map((d) => ({
+    slug: d.slug,
+    title: d.slug,
+    excerpt: '',
+    content: '',
+    category: 'Gündem',
+    tags: ['istanbul'],
+  }));
+
+  const scheduled = assignPublishSchedule(seedPosts, {
+    anchor: new Date(BLOG_V6_SCHEDULE_ANCHOR_ISO),
+    postsPerDay: BLOG_ENGAGEMENT_PUBLISH_PER_DAY,
+  });
+
+  for (let i = 0; i < drafts.length; i++) {
+    await prisma.blogPost.update({
+      where: { id: drafts[i].id },
+      data: { scheduledPublishAt: scheduled[i].scheduledPublishAt },
+    });
+  }
+
+  return {
+    total: drafts.length,
+    days: Math.ceil(drafts.length / BLOG_ENGAGEMENT_PUBLISH_PER_DAY) || 0,
+    firstPublishAt: scheduled[0]?.scheduledPublishAt.toISOString() ?? '',
+    lastPublishAt: scheduled[scheduled.length - 1]?.scheduledPublishAt.toISOString() ?? '',
+    v4Count: 0,
+    v5Count: 0,
+    v6Count: drafts.length,
   };
 }
 

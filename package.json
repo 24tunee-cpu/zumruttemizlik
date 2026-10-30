@@ -25,6 +25,7 @@
     "seed:blogs-v3": "tsx scripts/seed-scheduled-blogs-v3.ts",
     "seed:blogs-v4": "tsx scripts/seed-scheduled-blogs-v4.ts",
     "seed:blogs-v5": "tsx scripts/seed-scheduled-blogs-v5.ts",
+    "seed:blogs-v6": "tsx scripts/seed-scheduled-blogs-v6.ts",
     "seo:autopilot:bootstrap": "tsx scripts/bootstrap-seo-autopilot.ts",
     "seo:autopilot:validate": "tsx scripts/validate-autopilot-slugs.ts",
     "seo:autopilot:run": "tsx scripts/run-seo-autopilot.ts",
