@@ -132,12 +132,19 @@ export default function RegionsPageClient() {
                 />
               ))}
             </div>
-            <div className="mt-6 text-center">
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-center">
               <Link
                 href="/bolgeler/sariyer/zekeriyakoy"
                 className="inline-flex items-center gap-2 text-sm font-medium text-emerald-400 transition hover:text-emerald-300"
               >
-                Zekeriyaköy özel semt sayfası
+                Zekeriyaköy semt sayfası
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+              <Link
+                href="/bolgeler/sariyer/uskumrukoy"
+                className="inline-flex items-center gap-2 text-sm font-medium text-emerald-400 transition hover:text-emerald-300"
+              >
+                Uskumruköy semt sayfası
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
             </div>

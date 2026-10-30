@@ -164,6 +164,36 @@ export default async function FiyatlarPage() {
         </div>
       </section>
 
+      <section className="border-t border-slate-200 bg-white py-14 dark:border-slate-800 dark:bg-slate-900">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
+            İlçe bazlı fiyat rotası
+          </h2>
+          <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+            Ayrı ince “ilçe fiyat” sayfası üretmiyoruz; her ilçe hub’ında fiyat CTA’sı ve hesaplama
+            aracı var. Öncelik bölgeler:
+          </p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {[
+              { href: '/bolgeler/sariyer', label: 'Sarıyer fiyat / hub' },
+              { href: '/bolgeler/sariyer/zekeriyakoy', label: 'Zekeriyaköy' },
+              { href: '/bolgeler/sariyer/uskumrukoy', label: 'Uskumruköy' },
+              { href: '/bolgeler/kagithane', label: 'Kağıthane' },
+              { href: '/bolgeler/besiktas', label: 'Beşiktaş' },
+              { href: '/fiyat-hesaplama', label: 'Anında hesapla' },
+            ].map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                className="rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3 py-1.5 text-sm font-medium text-emerald-800 transition-colors hover:bg-emerald-500/20 dark:text-emerald-200"
+              >
+                {l.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="bg-slate-50 py-14 dark:bg-slate-950">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white">Sık Sorulan Sorular</h2>

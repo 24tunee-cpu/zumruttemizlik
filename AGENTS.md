@@ -67,7 +67,7 @@ scripts/          # seed, bootstrap, validate, audit yardımcıları
 |-----|-----|-------------|
 | Hizmet | `/hizmetler`, `/hizmetler/[slug]` | seed: 7 hizmet |
 | Programatik ilçe | `/bolgeler/[district]` | 18 ilçe |
-| İlçe×hizmet + semt | `/bolgeler/[district]/[service]` | 18×7 + 4 semt (zekeriyakoy, maslak, tarabya, bahcekoy) |
+| İlçe×hizmet + semt | `/bolgeler/[district]/[service]` | 18×7 + 5 semt (zekeriyakoy, maslak, tarabya, bahcekoy, uskumrukoy) |
 | Legacy redirect | `/[district]`, `/[district]/[service]` | → `/bolgeler/...` |
 | Çözümler | `/cozumler`, `/cozumler/[slug]`, `/[slug]/[district]` | intent landings |
 | Blog | `/blog`, `/blog/[slug]`, `/blog/silo/[slug]` | DB + drip kuyruk |
@@ -210,12 +210,12 @@ Her öneride: fayda · risk · efor · öncelik. Trafik/sıralama garantisi yok.
 | A1 | ~~P1~~ | ~~llmsSync EROFS~~ → düzeltildi (skip + `/llms-inventory.txt`) |
 | A2 | P1 | NAP/adres: kod “Sarıyer Merkez” vs schema varsayılan lat/lng Zekeriyaköy — GBP ile hizala |
 | A3 | P1 | GSC/IndexNow/GBP env’lerinin prod’da dolu olduğu doğrulanmalı (yerelde IndexNow key eksikliği görülmüştü) |
-| A4 | P2 | Uskumruköy: owner niyeti var, `NEIGHBORHOOD_LANDINGS`’te yok |
+| A4 | ~~P2~~ | ~~Uskumruköy landing~~ → eklendi (`/bolgeler/sariyer/uskumrukoy`) |
 | A5 | P2 | Semt×hizmet derin sayfalar yok; kopya üretmeden özgün semt önceliği |
 | A6 | P2 | SSS tek sayfa; snippet için hizmet/niyet parçalama değerlendir |
 | A7 | P2 | Citation/backlink tracker yok (yalnızca config checklist) |
-| A8 | P3 | İlçe fiyat landing, galeri SEO sayfaları, video schema |
-| A9 | P3 | README sürüm drift (14 vs 16) |
+| A8 | ~~P3~~ | İlçe fiyat: hub CTA (thin URL yok) + galeri SEO; video schema yok (içerik yok) |
+| A9 | ~~P3~~ | ~~README 14 vs 16~~ → Next.js 16 notu |
 
 ---
 
@@ -223,10 +223,10 @@ Her öneride: fayda · risk · efor · öncelik. Trafik/sıralama garantisi yok.
 
 1. GBP canlı NAP, kategoriler, saatler, yorum skoru (panel yok)  
 2. Gerçek hizmet verilen / verilmeyen ilçeler listesi (18 ilçe geniş; operasyonel gerçek?)  
-3. Uskumruköy resmi kapsamda mı?  
-4. Tam adres satırı (sokak no) var mı yoksa yalnızca ilçe merkezi mi?  
-5. Canlı GSC tıklama/gösterim ve Core Web Vitals field data (bu auditte API çağrılmadı)  
-6. Bahçe düzenleme hizmeti owner metninde var; `SERVICE_SEED_DATA` / `SERVICE_LANDINGS`’te yok — bilinçli mi?  
+3. ~~Uskumruköy resmi kapsamda mı?~~ → Evet; Sarıyer orman içi hattı semt landing eklendi (2026-10-30). 
+4. Tam adres satırı (sokak no) var mı yoksa yalnızca ilçe merkezi mi? — GBP panel doğrulaması bekleniyor 
+5. Canlı GSC tıklama/gösterim ve Core Web Vitals field data (bu auditte API çağrılmadı) 
+6. ~~Bahçe düzenleme ayrı hizmet mi?~~ → Hayır; peyzaj yok. Bahçe kenarı yüzey temizliği villa/dış cephe paketlerine eklenebilir (Uskumruköy FAQ + Sarıyer localSignals). 
 7. Site/bina temizliği ayrı hizmet mi yoksa ofis/site altında mı?
 
 ---
@@ -243,6 +243,7 @@ Her öneride: fayda · risk · efor · öncelik. Trafik/sıralama garantisi yok.
 | 2026-10-30 | Faz 1 iç link: `RelatedSeoLinks` + `internal-seo-links` (hizmet↔ilçe, programmatic, geo-sss, hub strip) |
 | 2026-10-30 | Faz 2: `meta-clamp`, emoji CTR kapatma, Sarıyer/semt derinliği, hizmet content pack |
 | 2026-10-30 | Faz 3 GEO/AEO+CRO: NAP schema hizası, `WhyChooseZvt`, sticky Ara/WA/Keşif, harita↔hub, SSS AEO strip, citation tracker notları |
+| 2026-10-30 | P3 kapanış: Uskumruköy landing, ilçe fiyat CTA bloğu, galeri SEO, README 16, bahçe=peyzaj değil kararı |
 
 **Talimat dosyaları:** `CLAUDE.md` → `@AGENTS.md`. `.cursorrules` / `.cursor/rules` projede yok. Tek ana anayasa: bu dosya.
 

@@ -1,6 +1,6 @@
 # Zümrüt Vadi Temizlik - Profesyonel Temizlik Hizmetleri Web Sitesi
 
-Next.js 14, Prisma, MongoDB ve Tailwind CSS ile geli?tirilmi? kurumsal web sitesi.
+Next.js 16 (App Router), React 19, Prisma, MongoDB ve Tailwind CSS 4 ile geliştirilmiş kurumsal web sitesi.
 
 ## Kurulum Rehberi
 

@@ -173,7 +173,7 @@ export default async function MapsAndReviewsPage() {
                 links: [
                   { href: '/bolgeler/sariyer', label: 'Sarıyer temizlik' },
                   { href: '/bolgeler/sariyer/zekeriyakoy', label: 'Zekeriyaköy temizlik' },
-                  { href: '/bolgeler/sariyer/maslak', label: 'Maslak temizlik' },
+                  { href: '/bolgeler/sariyer/uskumrukoy', label: 'Uskumruköy temizlik' },
                   { href: '/bolgeler', label: 'Tüm bölgeler' },
                 ],
               },

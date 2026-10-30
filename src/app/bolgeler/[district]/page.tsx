@@ -225,6 +225,37 @@ export default async function DistrictPage({ params }: Props) {
               </section>
             )}
 
+            <section className="mt-8 rounded-xl border border-amber-500/30 bg-amber-500/10 p-5">
+              <h2 className="text-xl font-semibold text-amber-100">
+                {districtData.name} temizlik fiyatı nasıl hesaplanır?
+              </h2>
+              <p className="mt-2 text-sm text-amber-50/90">
+                {districtData.name} için fiyat; metrekare, oda/ıslak hacim, kirlilik ve erişime göre değişir.
+                Aşağıdaki araç tahmini aralık verir — kesin fiyat ücretsiz keşif sonrası netleşir. Liste
+                referansı için genel fiyat sayfamızı da kullanabilirsiniz.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                <Link
+                  href={`/fiyat-hesaplama?district=${districtData.slug}`}
+                  className="rounded-lg bg-amber-500 px-4 py-2 text-sm font-semibold text-slate-900 hover:bg-amber-400"
+                >
+                  {districtData.name} fiyat hesapla
+                </Link>
+                <Link
+                  href="/fiyatlar"
+                  className="rounded-lg border border-amber-400/40 px-4 py-2 text-sm font-medium text-amber-100 hover:bg-amber-500/20"
+                >
+                  2026 fiyat listesi
+                </Link>
+                <Link
+                  href="/randevu"
+                  className="rounded-lg border border-amber-400/40 px-4 py-2 text-sm font-medium text-amber-100 hover:bg-amber-500/20"
+                >
+                  Ücretsiz keşif
+                </Link>
+              </div>
+            </section>
+
             <section className="mt-8 rounded-xl border border-slate-700 bg-slate-800/40 p-5">
               <h2 className="text-xl font-semibold text-white">Bölgesel operasyon notları</h2>
               <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-slate-300">

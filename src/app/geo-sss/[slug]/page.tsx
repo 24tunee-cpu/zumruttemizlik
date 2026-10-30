@@ -95,7 +95,11 @@ export default async function GeoSssPage({ params }: Props) {
                 .find(Boolean);
               const serviceFromPair = page.relatedLinks
                 .map((l) => l.href.match(/^\/bolgeler\/[^/]+\/([^/?#]+)/)?.[1])
-                .find((s) => s && !['zekeriyakoy', 'maslak', 'tarabya', 'bahcekoy'].includes(s));
+                .find(
+                  (s) =>
+                    s &&
+                    !['zekeriyakoy', 'maslak', 'tarabya', 'bahcekoy', 'uskumrukoy'].includes(s)
+                );
               const links = buildGeoSssSeoLinks({
                 districtSlug: page.districtSlug,
                 districtName: page.districtName,
