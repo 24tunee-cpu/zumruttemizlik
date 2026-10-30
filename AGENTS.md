@@ -244,6 +244,7 @@ Her öneride: fayda · risk · efor · öncelik. Trafik/sıralama garantisi yok.
 | 2026-10-30 | Faz 2: `meta-clamp`, emoji CTR kapatma, Sarıyer/semt derinliği, hizmet content pack |
 | 2026-10-30 | Faz 3 GEO/AEO+CRO: NAP schema hizası, `WhyChooseZvt`, sticky Ara/WA/Keşif, harita↔hub, SSS AEO strip, citation tracker notları |
 | 2026-10-30 | P3 kapanış: Uskumruköy landing, ilçe fiyat CTA bloğu, galeri SEO, README 16, bahçe=peyzaj değil kararı |
+| 2026-10-30 | Blog v6: 100 viral/CTR gündem yazısı, 10/gün drip (31 Eki–9 Kas 2026), tag `otomatik yayın v6` |
 
 **Talimat dosyaları:** `CLAUDE.md` → `@AGENTS.md`. `.cursorrules` / `.cursor/rules` projede yok. Tek ana anayasa: bu dosya.
 

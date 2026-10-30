@@ -9,6 +9,9 @@ export const BLOG_V3_SCHEDULE_ANCHOR_ISO = '2026-08-02T00:00:00.000Z';
 /** V4 kuyruk başlangıcı — v3 tamamlandıktan sonra (17 Ağu 2026) */
 export const BLOG_V4_SCHEDULE_ANCHOR_ISO = '2026-08-17T00:00:00.000Z';
 
+/** V6 kuyruk — v4+v5 bitti; yarın (31 Eki 2026) 10/gün */
+export const BLOG_V6_SCHEDULE_ANCHOR_ISO = '2026-10-31T00:00:00.000Z';
+
 /** v4 etkileşim içerikleri (geriye dönük) */
 export const BLOG_V4_PUBLISH_PER_DAY = 5;
 
