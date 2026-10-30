@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import Link from 'next/link';
 import SiteLayout from '../../site/layout';
 import { GEO_SSS_PAGES } from '@/config/geo-district-faqs';
 import { getGeoSssBySlugAsync } from '@/lib/geo-sss-resolver';
+import RelatedSeoLinks from '@/components/site/RelatedSeoLinks';
+import { buildGeoSssSeoLinks } from '@/lib/internal-seo-links';
 import {
   canonicalUrl,
   generateBreadcrumbSchema,
@@ -84,20 +85,30 @@ export default async function GeoSssPage({ params }: Props) {
               ))}
             </div>
 
-            <section className="mt-10">
-              <h2 className="text-lg font-semibold">İlgili sayfalar</h2>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {page.relatedLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="rounded-full border border-slate-600 px-4 py-2 text-sm text-slate-200 hover:border-emerald-500/50"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
-            </section>
+            {(() => {
+              const serviceFromLink = page.relatedLinks
+                .map((l) => l.href.match(/^\/hizmetler\/([^/?#]+)/)?.[1])
+                .find(Boolean);
+              const serviceFromPair = page.relatedLinks
+                .map((l) => l.href.match(/^\/bolgeler\/[^/]+\/([^/?#]+)/)?.[1])
+                .find((s) => s && !['zekeriyakoy', 'maslak', 'tarabya', 'bahcekoy'].includes(s));
+              const links = buildGeoSssSeoLinks({
+                districtSlug: page.districtSlug,
+                districtName: page.districtName,
+                serviceSlug: serviceFromLink || serviceFromPair,
+                existing: page.relatedLinks,
+              });
+              return (
+                <RelatedSeoLinks
+                  tone="dark"
+                  heading="İlgili sayfalar"
+                  intro="Kısa SSS cevabından sonra detaylı hizmet ve bölge sayfalarına geçin."
+                  groups={[
+                    { title: 'Bağlantılar', links },
+                  ]}
+                />
+              );
+            })()}
           </div>
         </article>
       </SiteLayout>

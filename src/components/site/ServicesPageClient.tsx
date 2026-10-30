@@ -25,6 +25,7 @@ import {
 } from 'lucide-react';
 import { PremiumPageHero } from '@/components/site/PremiumPageHero';
 import { SeoPriorityStrip } from '@/components/site/SeoPriorityStrip';
+import SiteHubLinkStrip from '@/components/site/SiteHubLinkStrip';
 import {
   HOME_SERVICE_SEO,
   DEFAULT_HOME_SERVICE_SEO,
@@ -187,22 +188,7 @@ export default function ServicesPageClient({ services }: Props) {
               Ücretsiz Keşif
             </Link>
           </div>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-2">
-            {[
-              { href: '/bolgeler/sariyer', label: 'Sarıyer' },
-              { href: '/bolgeler/sariyer/zekeriyakoy', label: 'Zekeriyaköy' },
-              { href: '/bolgeler/besiktas', label: 'Beşiktaş' },
-              { href: '/bolgeler/sisli', label: 'Şişli' },
-            ].map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="rounded-full border border-slate-700 bg-slate-800/60 px-3 py-1 text-xs font-medium text-slate-300 transition hover:border-emerald-500/40 hover:text-emerald-300"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
+          <SiteHubLinkStrip tone="dark" className="mt-6 justify-center" />
         </PremiumPageHero>
 
         <section className="relative border-t border-slate-800 py-16 sm:py-20" aria-label="Hizmetler listesi">

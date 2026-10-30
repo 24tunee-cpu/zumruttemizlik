@@ -6,6 +6,7 @@ import { MapPin, ArrowRight, Star, Sparkles, Calculator } from 'lucide-react';
 import SiteLayout from '@/app/site/layout';
 import { PremiumPageHero } from '@/components/site/PremiumPageHero';
 import { SeoPriorityStrip } from '@/components/site/SeoPriorityStrip';
+import SiteHubLinkStrip from '@/components/site/SiteHubLinkStrip';
 import { DISTRICT_LANDINGS, SERVICE_LANDINGS } from '@/config/programmatic-seo';
 
 const PRIORITY_DISTRICT_SLUGS = ['sariyer', 'besiktas', 'sisli', 'kagithane', 'bakirkoy'];
@@ -100,6 +101,7 @@ export default function RegionsPageClient() {
               Fiyat Hesapla
             </Link>
           </div>
+          <SiteHubLinkStrip tone="dark" className="mt-6 justify-center" />
         </PremiumPageHero>
 
         <div className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">

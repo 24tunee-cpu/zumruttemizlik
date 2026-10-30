@@ -18,8 +18,10 @@ import {
 } from '@/config/programmatic-seo';
 import ProgrammaticCtaExperiment from '@/components/site/ProgrammaticCtaExperiment';
 import NeighborhoodLanding from '@/components/site/NeighborhoodLanding';
+import RelatedSeoLinks from '@/components/site/RelatedSeoLinks';
 import { SITE_CONTACT, toTelHref } from '@/config/site-contact';
 import { canonicalUrl, getSiteUrl } from '@/lib/seo';
+import { buildProgrammaticPairSeoLinks } from '@/lib/internal-seo-links';
 
 type Props = {
   params: Promise<{ district: string; service: string }>;
@@ -319,6 +321,23 @@ export default async function ProgrammaticLandingPage({ params }: Props) {
               serviceName={serviceData.name}
               serviceSlug={serviceData.slug}
             />
+
+            {(() => {
+              const seo = buildProgrammaticPairSeoLinks(districtData.slug, serviceData.slug);
+              return (
+                <RelatedSeoLinks
+                  tone="dark"
+                  heading="Bu sayfadan devam edin"
+                  intro="Aynı ilçedeki diğer hizmetler, semt sayfaları ve ticari hub’lar."
+                  groups={[
+                    { title: 'Diğer hizmetler', links: seo.otherServices },
+                    { title: 'Semt sayfaları', links: seo.neighborhoods },
+                    { title: 'Hub’lar', links: seo.hubs },
+                    { title: 'Teklif / randevu', links: seo.cta },
+                  ]}
+                />
+              );
+            })()}
 
             <section className="mt-8 rounded-2xl border border-slate-700 bg-slate-800/30 p-6">
               <h2 className="text-xl font-semibold">Yakın Bölge Sayfaları</h2>
