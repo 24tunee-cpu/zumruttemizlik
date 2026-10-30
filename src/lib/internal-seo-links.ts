@@ -130,6 +130,42 @@ export function buildProgrammaticPairSeoLinks(
   };
 }
 
+/** Semt landing → hizmetler, komşu semtler, hub + CTA */
+export function buildNeighborhoodSeoLinks(districtSlug: string, neighborhoodSlug: string): {
+  services: SeoLinkItem[];
+  siblings: SeoLinkItem[];
+  hubs: SeoLinkItem[];
+  cta: SeoLinkItem[];
+} {
+  const district = getDistrictBySlug(districtSlug);
+  const siblings = getNeighborhoodLandingsForDistrict(districtSlug)
+    .filter((n) => n.slug !== neighborhoodSlug)
+    .map((n) => ({
+      href: `/bolgeler/${n.districtSlug}/${n.slug}`,
+      label: `${n.name} temizlik`,
+    }));
+
+  const services = SERVICE_LANDINGS.slice(0, 6).map((s) => ({
+    href: `/bolgeler/${districtSlug}/${s.slug}`,
+    label: `${district?.name ?? 'Bölge'} ${s.name}`,
+  }));
+
+  const hubs: SeoLinkItem[] = [
+    { href: `/bolgeler/${districtSlug}`, label: `${district?.name ?? 'Bölge'} temizlik` },
+    { href: '/bolgeler', label: 'Tüm bölgeler' },
+    { href: '/hizmetler', label: 'Tüm hizmetler' },
+    { href: '/cozumler', label: 'Çözüm rehberleri' },
+    { href: '/geo-sss', label: 'GEO SSS' },
+  ];
+
+  return {
+    services: dedupeSeoLinks(services),
+    siblings: dedupeSeoLinks(siblings),
+    hubs: dedupeSeoLinks(hubs),
+    cta: CTA_LINKS,
+  };
+}
+
 /** Geo-sss → bölge + hizmet + CTA (mevcut relatedLinks ile birleşir) */
 export function buildGeoSssSeoLinks(params: {
   districtSlug: string;

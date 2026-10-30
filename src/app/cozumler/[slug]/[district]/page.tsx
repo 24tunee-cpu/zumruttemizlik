@@ -5,6 +5,7 @@ import { IntentDistrictLandingView } from '@/components/site/IntentDistrictLandi
 import { buildIntentDistrictPage, allIntentDistrictParams } from '@/config/intent-seo';
 import { buildIntentLandingSchemaGraph } from '@/lib/intent-schema';
 import { canonicalUrl } from '@/lib/seo';
+import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
 
 type Props = {
   params: Promise<{ slug: string; district: string }>;
@@ -16,27 +17,23 @@ export function generateStaticParams() {
   return allIntentDistrictParams();
 }
 
-function clampMetaDescription(input: string, max = 160): string {
-  const value = input.trim();
-  if (value.length <= max) return value;
-  return `${value.slice(0, Math.max(0, max - 1)).trimEnd()}…`;
-}
-
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug, district } = await params;
   const page = buildIntentDistrictPage(slug, district);
   if (!page) return { title: 'Sayfa Bulunamadı' };
 
   const canonical = canonicalUrl(`/cozumler/${slug}/${district}`);
+  const title = clampMetaTitle(page.metaTitle);
+  const description = clampMetaDescription(page.metaDescription);
 
   return {
-    title: { absolute: page.metaTitle },
-    description: clampMetaDescription(page.metaDescription),
+    title: { absolute: title },
+    description,
     keywords: page.keywords,
     alternates: { canonical },
     openGraph: {
-      title: page.metaTitle,
-      description: page.metaDescription,
+      title,
+      description,
       url: canonical,
       type: 'website',
       locale: 'tr_TR',
@@ -45,8 +42,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: 'summary_large_image',
-      title: page.metaTitle,
-      description: page.metaDescription,
+      title,
+      description,
       images: [canonicalUrl('/logo.png')],
     },
   };

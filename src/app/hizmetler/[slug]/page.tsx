@@ -35,6 +35,7 @@ import {
 } from '@/lib/seo';
 import { keywordsForPage } from '@/lib/seo-keywords';
 import { serviceFaqFromFeatures, serviceKeywordsFromTitleAndSlug } from '@/lib/service-seo-targets';
+import { clampMetaDescription, clampMetaTitle, stripMetaEmoji } from '@/lib/meta-clamp';
 
 // ============================================
 // TYPES
@@ -142,6 +143,78 @@ const SERVICE_CONTENT_PACKS: Record<string, ServiceContentPack> = {
       'Teslim checklisti ile net kapanış',
     ],
   },
+  'koltuk-yikama': {
+    idealFor: [
+      'Leke, koku veya yoğun kullanım sonrası kanepe ve koltuk yenilemesinde',
+      'Çocuk/evcil hayvanlı evlerde düzenli döşeme bakımında',
+      'Ofis bekleme alanlarında profesyonel görünüm gerektiğinde',
+    ],
+    process: [
+      'Kumaş/deri tipi ve leke profili belirlenir.',
+      'Ön işlem, ekstraksiyon yıkama ve kurutma adımları uygulanır.',
+      'Son kontrol ile koku ve leke durumu değerlendirilir.',
+    ],
+    equipment: ['Ekstraksiyon yıkama makinesi', 'Kumaş tipine uygun ürünler', 'Hızlı kurutma ekipmanı'],
+    standards: [
+      'Kumaş güvenliği öncelikli ürün seçimi',
+      'Leke tipine göre ön işlem',
+      'Kullanım öncesi kuruluk kontrolü',
+    ],
+  },
+  'hali-temizligi': {
+    idealFor: [
+      'Salon ve oda halılarında derin kir ve toz birikiminde',
+      'Taşınma veya mevsim geçişi sonrası genel yenilemede',
+      'Alerjen ve koku kontrolü istenen hanelerde',
+    ],
+    process: [
+      'Halı tipi ve kirlilik seviyesi değerlendirilir.',
+      'Kuru toz alma + ıslak yıkama/kurutma sırası uygulanır.',
+      'Teslim öncesi görünüm ve koku kontrolü yapılır.',
+    ],
+    equipment: ['Profesyonel halı yıkama ünitesi', 'Lif dostu deterjanlar', 'Hızlı kurutma desteği'],
+    standards: [
+      'Lif ve renk koruma önceliği',
+      'Derin toz ve alerjen azaltma',
+      'Kuruluk sonrası teslim',
+    ],
+  },
+  'cam-temizligi': {
+    idealFor: [
+      'Geniş cam yüzeyli villa, ofis ve plaza katlarında',
+      'Yağmur izi ve şehir kirliliği sonrası görünürlük kaybında',
+      'Periyodik bakım veya teslim öncesi parlaklık istenen projelerde',
+    ],
+    process: [
+      'Erişim ve güvenlik koşulları belirlenir.',
+      'İç/dış cam, çerçeve ve pervaz sırayla temizlenir.',
+      'Leke ve iz kontrolü ile süreç kapatılır.',
+    ],
+    equipment: ['Profesyonel silecek seti', 'Uzatma/erişim aparatları', 'İz bırakmayan cam ürünleri'],
+    standards: [
+      'Güvenli erişim önceliği',
+      'Çerçeve ve conta detayına dikkat',
+      'İz bırakmayan bitiş',
+    ],
+  },
+  'dis-cephe-temizligi': {
+    idealFor: [
+      'Villa, site ve işyeri dış yüzeylerinde kir ve yosun birikiminde',
+      'Teslim veya satış öncesi dış görünüm yenilemesinde',
+      'Cam + cephe kombine bakım gerektiğinde',
+    ],
+    process: [
+      'Cephe malzemesi ve erişim yöntemi belirlenir.',
+      'Uygun basınç/ürün ile yüzey temizliği yapılır.',
+      'Çevre koruma ve son görünüm kontrolü tamamlanır.',
+    ],
+    equipment: ['Yüzeye uygun basınçlı yıkama', 'Cephe dostu kimyasallar', 'Güvenli erişim ekipmanı'],
+    standards: [
+      'Malzeme uyumlu uygulama',
+      'Çevre ve komşu koruması',
+      'Güvenlik protokolü',
+    ],
+  },
 };
 
 function toAbsoluteUrl(pathOrUrl: string | null | undefined): string | undefined {
@@ -152,16 +225,11 @@ function toAbsoluteUrl(pathOrUrl: string | null | undefined): string | undefined
   return `${base}${input.startsWith('/') ? input : `/${input}`}`;
 }
 
-function clampTitle(input: string, max = 60): string {
-  const value = input.trim();
-  if (value.length <= max) return value;
-  return `${value.slice(0, Math.max(0, max - 1)).trimEnd()}…`;
-}
-
 function normalizeMetaTitle(input: string): string {
-  return input
+  return stripMetaEmoji(input)
     .replace(/(\s*\|\s*G[uü]nen Temizlik\s*)+$/iu, '')
     .replace(/(\s*\|\s*G[uü]nen\s*)+$/iu, '')
+    .replace(/(\s*\|\s*Zümrüt Vadi Temizlik\s*)+$/iu, '')
     .trim();
 }
 
@@ -190,8 +258,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     }
 
     const rawTitle = normalizeMetaTitle(service.metaTitle?.trim() || `${service.title} İstanbul`);
-    const title = clampTitle(rawTitle, 60);
-    const description = service.metaDesc || service.shortDesc;
+    const title = clampMetaTitle(rawTitle);
+    const description = clampMetaDescription(service.metaDesc || service.shortDesc);
     const canonical = canonicalUrl(`/hizmetler/${service.slug}`);
     const imageUrl = toAbsoluteUrl(service.image) ?? canonicalUrl('/logo.png');
     const derivedKeywords = serviceKeywordsFromTitleAndSlug(`${service.title} ${service.slug}`);

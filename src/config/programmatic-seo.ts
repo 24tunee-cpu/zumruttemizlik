@@ -404,11 +404,12 @@ export const NEIGHBORHOOD_LANDINGS: NeighborhoodLanding[] = [
     districtName: 'Sarıyer',
     metaTitle: 'Zekeriyaköy Temizlik Şirketi | Villa & Ev Temizliği',
     metaDescription:
-      'Zekeriyaköy temizlik şirketi: villa, site ve daire için detaylı ev temizliği, inşaat sonrası, cam ve dış cephe temizliği. Ücretsiz keşif, aynı gün randevu. Anında fiyat hesaplama.',
+      'Zekeriyaköy villa, site ve daire temizliği: detaylı ev, inşaat sonrası, cam ve dış cephe. Ücretsiz keşif, aynı gün randevu. Anında fiyat hesaplama.',
     intro:
       'Zekeriyaköy, Zümrüt Vadi Temizlik’in öncelikli hizmet bölgesidir. Bölgedeki villalar, kapalı siteler ve orman içi konutlarda detaylı ev temizliği, inşaat sonrası teslim temizliği, cam ve dış cephe temizliğinde hızlı ve güvenilir ekip yönlendirmesi yapıyoruz.',
     body: [
       'Zekeriyaköy’deki müstakil villalar ve bahçeli konutlarda geniş cam yüzeyleri, yüksek tavanlar ve çok sayıda ıslak hacim nedeniyle temizlik detay ve deneyim gerektirir. Alanı; zemin türü, cam yüzeyi, dolap içi toz birikimi ve erişim koşullarına göre başlıklara ayırarak planlıyoruz.',
+      'Operasyon sırası tipik olarak şöyle ilerler: önce ince toz ve yüzey güvenliği, ardından ıslak hacim ve mutfak detayı, en sonda cam/pervaz ve teslim kontrol listesi. Villa işlerinde bahçe kenarı girişler ve otopark erişimi keşifte not edilir; ekip ve ekipman buna göre ayarlanır.',
       'Taşınma öncesi ve sonrası, tadilat/inşaat sonrası teslim ve periyodik bakım paketlerinde aynı gün ücretsiz keşif ve gizlilik odaklı çalışma önceliğimizdir. Bahçeköy, Kilyos, Demirciköy ve Boğaz hattı (Tarabya, Yeniköy, İstinye) dahil çevre semtlerde de hizmet veriyoruz.',
       'Fiyatınızı önceden görmek için ana sayfamızdaki Anında Fiyat Hesaplama aracını kullanabilir; mekan tipi, oda sayısı veya metrekare ve ekstralara göre tahmini aralığı saniyeler içinde öğrenip WhatsApp üzerinden randevu oluşturabilirsiniz.',
     ],
@@ -422,6 +423,10 @@ export const NEIGHBORHOOD_LANDINGS: NeighborhoodLanding[] = [
       {
         q: 'Zekeriyaköy’de villa temizliği yapıyor musunuz?',
         a: 'Evet. Zekeriyaköy’deki müstakil villalar ve sitelerde detaylı ev temizliği, inşaat sonrası ve cam/dış cephe temizliği hizmeti veriyoruz. Kapsam ücretsiz keşifte netleşir.',
+      },
+      {
+        q: 'Zekeriyaköy villa temizliği ne kadar sürer?',
+        a: 'Metrekare, oda/ıslak hacim sayısı ve kirlilik seviyesine göre değişir. Tipik villa işi 1–2 günde tamamlanır; kesin süre ücretsiz keşif sonrası netleşir.',
       },
       {
         q: 'Zekeriyaköy için fiyat nasıl öğrenebilirim?',
@@ -447,11 +452,12 @@ export const NEIGHBORHOOD_LANDINGS: NeighborhoodLanding[] = [
     districtName: 'Sarıyer',
     metaTitle: 'Maslak Temizlik Şirketi | Ofis & Rezidans Temizliği',
     metaDescription:
-      'Maslak temizlik: plaza, ofis katı ve rezidans daireleri için kurumsal ve detaylı temizlik. İnşaat sonrası teslim, cam temizliği. Ücretsiz keşif, aynı gün randevu.',
+      'Maslak plaza, ofis ve rezidans temizliği: kurumsal hijyen, inşaat sonrası teslim, cam. Ücretsiz keşif, aynı gün randevu.',
     intro:
       'Maslak, İstanbul’un kurumsal ve rezidans yoğunluklu merkezlerinden biridir. Plaza ofisleri, yeni rezidans kuleleri ve karma kullanım binalarında ofis temizliği, taşınma öncesi/sonrası daire temizliği ve inşaat sonrası teslim hizmeti sunuyoruz.',
     body: [
       'Maslak’taki ofis katlarında mesai dışı veya hafta sonu temizlik planı; rezidans dairelerinde ise detaylı ev temizliği ve cam yüzey bakımı sık talep edilir. Metrekare, personel yoğunluğu ve erişim saatlerine göre kapsamı netleştiriyoruz.',
+      'Kurumsal plaza katlarında ortak alan, mutfakette ve toplantı odası hijyeni ile çalışma masası çevresi ayrı checklist’lerle yürür. Erişim kartı / güvenlik prosedürü keşifte not edilir; ekip buna göre planlanır.',
       'Yeni teslim edilen rezidans ve ofis projelerinde inşaat sonrası detay temizlik, boya-toz ve cam iç yüzey teslimi önceliklidir. Maslak–Levent hattında hızlı ekip yönlendirmesi yapıyoruz.',
       'Tahmini fiyat için niyet modlu fiyat hesaplama aracımızı kullanabilir; ofis veya inşaat sonrası moduyla saniyeler içinde aralık görebilirsiniz.',
     ],

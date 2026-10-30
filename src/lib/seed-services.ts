@@ -135,7 +135,7 @@ Endüstriyel süpürgeler, yüzey uyumlu kimyasallar ve detay fırçaları ile f
     priceRange: '600 TL – 6.000 TL (metrekare ve kirliliğe göre)',
     order: 5,
     isActive: true,
-    metaTitle: 'İnşaat Sonrası Temizlik İstanbul | Tadilat Sonrası Detaylı Temizlik',
+    metaTitle: 'İnşaat Sonrası Temizlik İstanbul | Tadilat Detay Temizlik',
     metaDesc:
       'İstanbul inşaat sonrası temizlik ve tadilat temizliği. Toz, boya ve inşaat artığı giderme; profesyonel ekip, net teslim. Keşif için arayın.',
   },
