@@ -4,6 +4,8 @@ import {
   type NeighborhoodLanding as NeighborhoodLandingData,
   getServiceBySlug,
 } from '@/config/programmatic-seo';
+import RelatedSeoLinks from '@/components/site/RelatedSeoLinks';
+import { buildNeighborhoodSeoLinks } from '@/lib/internal-seo-links';
 import { buildCalculatorHref } from '@/lib/intent-analytics';
 import { SITE_CONTACT, toTelHref } from '@/config/site-contact';
 import { canonicalUrl, getSiteUrl } from '@/lib/seo';
@@ -137,6 +139,23 @@ export default function NeighborhoodLanding({ data }: { data: NeighborhoodLandin
                 ))}
               </div>
             </section>
+
+            {(() => {
+              const seo = buildNeighborhoodSeoLinks(data.districtSlug, data.slug);
+              return (
+                <RelatedSeoLinks
+                  tone="dark"
+                  heading={`${data.name} için ilgili sayfalar`}
+                  intro="Bölge, hizmet ve çözüm sayfalarına geçerek doğru teklif rotasını seçin."
+                  groups={[
+                    { title: 'Hizmet × bölge', links: seo.services },
+                    { title: 'Yakın semtler', links: seo.siblings },
+                    { title: 'Hub & rehber', links: seo.hubs },
+                    { title: 'Hemen başla', links: seo.cta },
+                  ]}
+                />
+              );
+            })()}
 
             <div className="mt-10 flex flex-wrap gap-3">
               <Link

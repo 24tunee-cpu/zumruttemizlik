@@ -22,6 +22,7 @@ import { DistrictBreadcrumb } from '@/components/site/DistrictBreadcrumb';
 import { DistrictHubLinks } from '@/components/site/DistrictHubLinks';
 import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
 import { SITE_CONTACT } from '@/config/site-contact';
+import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
 
 type Props = {
   params: Promise<{ district: string }>;
@@ -42,9 +43,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const descBase =
     districtData.regionBlurb ||
     `${districtData.name} bölgesinde ofis temizliği, inşaat sonrası temizlik, koltuk yıkama ve daha fazlası için hızlı teklif alın.`;
-  const description =
-    descBase.length > 158 ? `${descBase.slice(0, 155).trimEnd()}…` : descBase;
-  const pageTitle = `${districtData.name} Temizlik Hizmetleri | İstanbul`;
+  const description = clampMetaDescription(descBase);
+  const pageTitle = clampMetaTitle(`${districtData.name} Temizlik Hizmetleri | İstanbul`);
 
   return {
     title: { absolute: pageTitle },
@@ -234,9 +234,11 @@ export default async function DistrictPage({ params }: Props) {
               </ul>
             </section>
 
-            {districtData.slug === 'kagithane' && (
+            {districtDeepDive.length > 0 && (
               <section className="mt-8 rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-5">
-                <h2 className="text-xl font-semibold text-emerald-200">Kağıthane özel operasyon yaklaşımımız</h2>
+                <h2 className="text-xl font-semibold text-emerald-200">
+                  {districtData.name} özel operasyon yaklaşımımız
+                </h2>
                 <div className="mt-3 space-y-3 text-sm leading-6 text-emerald-100/90">
                   {districtDeepDive.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>

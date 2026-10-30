@@ -43,7 +43,7 @@ export const INTENT_LANDINGS: IntentLanding[] = [
   {
     slug: 'insaat-sonrasi-temizlik',
     name: 'İnşaat Sonrası Temizlik',
-    metaTitle: 'İnşaat Sonrası Temizlik İstanbul | Teslim Öncesi Detay Temizlik',
+    metaTitle: 'İnşaat Sonrası Temizlik İstanbul | Teslim Öncesi Detay',
     metaDescription:
       'İstanbul inşaat ve tadilat sonrası detay temizlik: ince toz, boya izleri, cam ve zemin teslim hazırlığı. Sarıyer, Zekeriyaköy ve Avrupa Yakası. Ücretsiz keşif.',
     keywords: [
@@ -407,12 +407,22 @@ export function buildIntentDistrictPage(
     district.regionBlurb ??
     `${district.name} ve çevresinde ${intent.name.toLowerCase()} için yerel ekip ve hızlı keşif.`;
 
-  const metaDescription = `${district.name} bölgesinde ${intent.name.toLowerCase()}.${sideNote} Ücretsiz keşif, şeffaf fiyat (${intent.priceHint}). Aynı gün geri dönüş.`;
+  let metaDescription = `${district.name} bölgesinde ${intent.name.toLowerCase()}.${sideNote} Ücretsiz keşif, şeffaf fiyat (${intent.priceHint}). Aynı gün geri dönüş.`;
+  if (metaDescription.length > 158) {
+    metaDescription = `${metaDescription.slice(0, 157).trimEnd()}…`;
+  }
+  let metaTitle = `${district.name} ${intent.name} | Ücretsiz Keşif | İstanbul`;
+  if (metaTitle.length > 60) {
+    metaTitle = `${district.name} ${intent.name} | İstanbul`;
+  }
+  if (metaTitle.length > 60) {
+    metaTitle = `${metaTitle.slice(0, 59).trimEnd()}…`;
+  }
 
   return {
     intent,
     district,
-    metaTitle: `${district.name} ${intent.name} | Ücretsiz Keşif | İstanbul`,
+    metaTitle,
     metaDescription,
     keywords: buildDistrictKeywords(intent, district),
     heroTitle: `${district.name} ${intent.name}`,

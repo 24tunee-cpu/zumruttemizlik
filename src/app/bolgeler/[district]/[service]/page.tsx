@@ -22,6 +22,8 @@ import RelatedSeoLinks from '@/components/site/RelatedSeoLinks';
 import { SITE_CONTACT, toTelHref } from '@/config/site-contact';
 import { canonicalUrl, getSiteUrl } from '@/lib/seo';
 import { buildProgrammaticPairSeoLinks } from '@/lib/internal-seo-links';
+import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
+import { buildSmartMetaForPair } from '@/lib/programmatic-smart-meta';
 
 type Props = {
   params: Promise<{ district: string; service: string }>;
@@ -29,18 +31,6 @@ type Props = {
 
 /** ISR: 24 saat — bkz. src/lib/isr-config.ts ISR_PROGRAMMATIC_SEC */
 export const revalidate = 86400;
-
-function clampMetaDescription(input: string, max = 160): string {
-  const value = input.trim();
-  if (value.length <= max) return value;
-  return `${value.slice(0, Math.max(0, max - 1)).trimEnd()}…`;
-}
-
-function clampMetaTitle(input: string, max = 60): string {
-  const value = input.trim();
-  if (value.length <= max) return value;
-  return `${value.slice(0, Math.max(0, max - 1)).trimEnd()}…`;
-}
 
 export function generateStaticParams() {
   const serviceCombos = DISTRICT_LANDINGS.flatMap((district) =>
@@ -66,9 +56,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const neighborhood = getNeighborhoodLanding(district, service);
     if (neighborhood) {
       const canonical = canonicalUrl(`/bolgeler/${neighborhood.districtSlug}/${neighborhood.slug}`);
+      const title = clampMetaTitle(neighborhood.metaTitle);
+      const description = clampMetaDescription(neighborhood.metaDescription);
       return {
-        title: { absolute: neighborhood.metaTitle },
-        description: neighborhood.metaDescription,
+        title: { absolute: title },
+        description,
         keywords: [
           `${neighborhood.name} temizlik`,
           `${neighborhood.name} temizlik şirketi`,
@@ -77,8 +69,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         ],
         alternates: { canonical },
         openGraph: {
-          title: neighborhood.metaTitle,
-          description: neighborhood.metaDescription,
+          title,
+          description,
           url: canonical,
           type: 'website',
           locale: 'tr_TR',
@@ -86,8 +78,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         },
         twitter: {
           card: 'summary_large_image',
-          title: neighborhood.metaTitle,
-          description: neighborhood.metaDescription,
+          title,
+          description,
         },
       };
     }
@@ -102,14 +94,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     where: { key },
     select: { title: true, description: true, isActive: true },
   });
+  const smart = buildSmartMetaForPair(districtData, serviceData);
   const rawTitle =
-    (override?.isActive && override?.title?.trim()) ||
-    `${districtData.name} ${serviceData.name} | İstanbul`;
-  const title = clampMetaTitle(rawTitle, 60);
+    (override?.isActive && override?.title?.trim()) || smart.title;
+  const title = clampMetaTitle(rawTitle);
   const rawDescription =
-    (override?.isActive && override?.description?.trim()) ||
-    `${districtData.name} bölgesinde ${serviceData.name.toLowerCase()} hizmeti için hızlı teklif alın. ${serviceData.shortPitch}`;
-  const description = clampMetaDescription(rawDescription, 160);
+    (override?.isActive && override?.description?.trim()) || smart.description;
+  const description = clampMetaDescription(rawDescription);
   const canonical = canonicalUrl(`/bolgeler/${districtData.slug}/${serviceData.slug}`);
 
   return {
@@ -292,9 +283,11 @@ export default async function ProgrammaticLandingPage({ params }: Props) {
               </ul>
             </section>
 
-            {districtData.slug === 'kagithane' && (
+            {districtDeepDive.length > 0 && (
               <section className="mt-8 rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-6">
-                <h2 className="text-xl font-semibold text-emerald-200">Kağıthane için özel not</h2>
+                <h2 className="text-xl font-semibold text-emerald-200">
+                  {districtData.name} için yerel operasyon notu
+                </h2>
                 <div className="mt-3 space-y-3 text-sm leading-6 text-emerald-100/90">
                   {districtDeepDive.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>

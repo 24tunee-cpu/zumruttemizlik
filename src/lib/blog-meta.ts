@@ -1,22 +1,24 @@
 /**
  * Blog yazıları için meta başlık ve açıklama (SEO).
  * Özel meta yoksa başlık + marka ve özetten güvenli uzunlukta türetilir.
- * CTR optimizasyonu ile clickbait + profesyonel yaklaşım.
  */
+
+import { clampMetaDescription, clampMetaTitle, stripMetaEmoji } from './meta-clamp';
 
 const TITLE_MAX = 58;
 const DESC_MAX = 155;
 const TITLE_SUFFIX = ' | Zümrüt Vadi Temizlik Blog';
 
 function truncateChars(s: string, max: number): string {
-  const t = s.trim();
+  const t = stripMetaEmoji(s);
   if (t.length <= max) return t;
   return `${t.slice(0, Math.max(0, max - 1)).trimEnd()}…`;
 }
 
 function normalizeTitleBrand(input: string): string {
-  return input
+  return stripMetaEmoji(input)
     .replace(/(\s*\|\s*G[uü]nen Temizlik(?: Blog)?\s*)+$/iu, '')
+    .replace(/(\s*\|\s*Zümrüt Vadi Temizlik(?: Blog)?\s*)+$/iu, '')
     .trim();
 }
 
@@ -29,7 +31,7 @@ export function resolveBlogMetaTitle(
   storedMeta: string | null | undefined
 ): string {
   const custom = storedMeta?.trim();
-  if (custom) return truncateChars(normalizeTitleBrand(custom), 60);
+  if (custom) return clampMetaTitle(normalizeTitleBrand(custom), 60);
 
   const base = normalizeTitleBrand(title.trim());
   const suffix = TITLE_SUFFIX;
@@ -37,7 +39,7 @@ export function resolveBlogMetaTitle(
 
   const maxBase = TITLE_MAX - suffix.length - 1;
   const shortened = base.slice(0, Math.max(8, maxBase)).trimEnd();
-  return `${shortened}…${suffix}`;
+  return clampMetaTitle(`${shortened}…${suffix}`, 60);
 }
 
 /**
@@ -49,48 +51,29 @@ export function resolveBlogMetaDesc(
   storedMeta: string | null | undefined
 ): string {
   const custom = storedMeta?.trim();
-  if (custom) return truncateChars(custom, 160);
+  if (custom) return clampMetaDescription(custom, 160);
 
   const plain = excerpt.replace(/\s+/g, ' ').trim();
-  return truncateChars(plain, DESC_MAX);
+  return clampMetaDescription(plain, DESC_MAX);
 }
 
-// ============================================
-// CTR OPTIMIZASYON FONKSİYONLARI
-// ============================================
-
-import { generateCTROptimizedBlogMeta } from './ctr-optimized-meta';
-
 /**
- * CTR optimize edilmiş blog meta başlığı
- * Mevcut sistemi korurken CTR artışı sağlar
+ * Eski CTR yolları — emoji/random başlık yok; kanonik blog meta.
  */
 export function resolveCTROptimizedBlogTitle(
   title: string,
   storedMeta: string | null | undefined,
-  category: string,
-  content: string
+  _category: string,
+  _content: string
 ): string {
-  const custom = storedMeta?.trim();
-  if (custom) return truncateChars(normalizeTitleBrand(custom), 60);
-
-  const optimized = generateCTROptimizedBlogMeta(title, '', category, content, custom);
-  return truncateChars(normalizeTitleBrand(optimized.title), 60);
+  return resolveBlogMetaTitle(title, storedMeta);
 }
 
-/**
- * CTR optimize edilmiş blog meta açıklaması
- * Mevcut sistemi korurken CTR artışı sağlar
- */
 export function resolveCTROptimizedBlogDesc(
   excerpt: string,
   storedMeta: string | null | undefined,
-  title: string,
-  category: string
+  _title: string,
+  _category: string
 ): string {
-  const custom = storedMeta?.trim();
-  if (custom) return truncateChars(custom, 160);
-
-  const optimized = generateCTROptimizedBlogMeta(title, excerpt, category, excerpt, null, custom);
-  return truncateChars(optimized.description, DESC_MAX);
+  return resolveBlogMetaDesc(excerpt, storedMeta);
 }

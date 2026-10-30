@@ -5,6 +5,7 @@ import { IntentLandingView } from '@/components/site/IntentLandingView';
 import { getIntentBySlug, allIntentSlugs } from '@/config/intent-seo';
 import { buildIntentLandingSchemaGraph } from '@/lib/intent-schema';
 import { canonicalUrl } from '@/lib/seo';
+import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -16,27 +17,23 @@ export function generateStaticParams() {
   return allIntentSlugs().map((slug) => ({ slug }));
 }
 
-function clampMetaDescription(input: string, max = 160): string {
-  const value = input.trim();
-  if (value.length <= max) return value;
-  return `${value.slice(0, Math.max(0, max - 1)).trimEnd()}…`;
-}
-
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const intent = getIntentBySlug(slug);
   if (!intent) return { title: 'Sayfa Bulunamadı' };
 
   const canonical = canonicalUrl(`/cozumler/${intent.slug}`);
+  const title = clampMetaTitle(intent.metaTitle);
+  const description = clampMetaDescription(intent.metaDescription);
 
   return {
-    title: { absolute: intent.metaTitle },
-    description: clampMetaDescription(intent.metaDescription),
+    title: { absolute: title },
+    description,
     keywords: intent.keywords,
     alternates: { canonical },
     openGraph: {
-      title: intent.metaTitle,
-      description: intent.metaDescription,
+      title,
+      description,
       url: canonical,
       type: 'website',
       locale: 'tr_TR',
@@ -45,8 +42,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: 'summary_large_image',
-      title: intent.metaTitle,
-      description: intent.metaDescription,
+      title,
+      description,
       images: [canonicalUrl('/logo.png')],
     },
   };

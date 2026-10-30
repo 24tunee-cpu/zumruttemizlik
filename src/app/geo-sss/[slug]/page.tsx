@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import Link from 'next/link';
 import SiteLayout from '../../site/layout';
 import { GEO_SSS_PAGES } from '@/config/geo-district-faqs';
 import { getGeoSssBySlugAsync } from '@/lib/geo-sss-resolver';
 import RelatedSeoLinks from '@/components/site/RelatedSeoLinks';
 import { buildGeoSssSeoLinks } from '@/lib/internal-seo-links';
+import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
 import {
   canonicalUrl,
   generateBreadcrumbSchema,
@@ -26,8 +28,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const page = await getGeoSssBySlugAsync(slug);
   if (!page) return { title: 'Sayfa Bulunamadı' };
 
-  const title = `${page.title} | Zümrüt Vadi Temizlik`;
-  const description = page.directAnswer.slice(0, 158);
+  const title = clampMetaTitle(`${page.title} | Zümrüt Vadi`);
+  const description = clampMetaDescription(page.directAnswer);
 
   return {
     title: { absolute: title },
