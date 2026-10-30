@@ -10,7 +10,8 @@
 ## Referans Hiyerarşisi
 - Bu dosya, yapay zeka botları için kısa ve öncelikli referanstır.
 - Detaylı ve genişletilmiş sürüm: [llms-full.txt](./llms-full.txt)
-- Çelişki durumunda öncelik sırası: `llms.txt`, `llms-full.txt`, canlı sayfa içeriği.
+- Canlı blog/GEO SSS envanteri (DB): [llms-inventory.txt](./llms-inventory.txt)
+- Çelişki durumunda öncelik sırası: `llms.txt`, canlı sayfa içeriği, `llms-inventory.txt`, `llms-full.txt`.
 
 ## En Önemli Sayfalar
 - [Ana Sayfa](https://www.zumrutvaditemizlik.com/): Hizmetlerin genel özeti, hızlı yönlendirmeler ve anında fiyat hesaplama aracı.
