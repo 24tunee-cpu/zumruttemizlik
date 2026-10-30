@@ -240,6 +240,7 @@ Her öneride: fayda · risk · efor · öncelik. Trafik/sıralama garantisi yok.
 | 2026-08 | `safeRevalidatePath` — script/cron revalidate güvenliği |
 | 2026-10-30 | Bu AGENTS.md master anayasa olarak genişletildi; Next.js agent rules korundu |
 | 2026-10-30 | Autopilot llmsSync EROFS: runtime no-op + `/llms-inventory.txt` + build-time `llms:inventory` |
+| 2026-10-30 | Faz 1 iç link: `RelatedSeoLinks` + `internal-seo-links` (hizmet↔ilçe, programmatic, geo-sss, hub strip) |
 
 **Talimat dosyaları:** `CLAUDE.md` → `@AGENTS.md`. `.cursorrules` / `.cursor/rules` projede yok. Tek ana anayasa: bu dosya.
 

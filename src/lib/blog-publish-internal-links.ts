@@ -4,6 +4,7 @@
  */
 import type { PrismaClient } from '@prisma/client';
 import { V2_DISTRICTS } from '@/lib/seed-blog-v2-content';
+import { buildEngagementBlogBridgeLinks } from '@/lib/internal-seo-links';
 
 export const AUTO_INTERNAL_LINKS_MARKER = 'data-auto-internal-links="v1"';
 
@@ -155,12 +156,7 @@ export function buildAutoInternalLinks(params: {
       !params.slug.includes('temizlik') &&
       !params.slug.includes('fiyatlari');
     if (isEngagement) {
-      return dedupeLinks([
-        { href: '/blog', label: 'Tüm blog yazıları' },
-        { href: '/rehber', label: 'Temizlik ve ev bakım rehberi' },
-        { href: '/randevu', label: 'Randevu / keşif' },
-        { href: '/iletisim', label: 'İletişim' },
-      ]);
+      return dedupeLinks(buildEngagementBlogBridgeLinks());
     }
     return dedupeLinks([
       { href: '/fiyat-hesaplama', label: 'Online fiyat hesaplama' },

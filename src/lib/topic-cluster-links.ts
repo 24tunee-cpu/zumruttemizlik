@@ -6,33 +6,35 @@
 
 import { unstable_cache } from 'next/cache';
 import { prisma } from '@/lib/prisma';
+import { getDistrictBySlug } from '@/config/programmatic-seo';
 
 // Topic cluster tanımları
+/** Yalnızca gerçek /bolgeler ve /hizmetler slug'ları */
 const TOPIC_CLUSTERS = {
-  'temizlik': {
+  temizlik: {
     pillar: 'temizlik',
     keywords: ['temizlik', 'hijyen', 'dezenfeksiyon', 'sterilizasyon'],
     relatedServices: ['ev-temizligi', 'ofis-temizligi', 'insaat-sonrasi-temizlik'],
-    relatedDistricts: ['kadikoy', 'uskudar', 'ataşehir', 'besiktas']
+    relatedDistricts: ['sariyer', 'kadikoy', 'uskudar', 'besiktas'],
   },
-  'hizmetler': {
+  hizmetler: {
     pillar: 'hizmetler',
     keywords: ['hizmet', 'servis', 'destek', 'çözüm'],
-    relatedServices: ['koltuk-yikama', 'hali-yikama', 'cam-temizligi'],
-    relatedDistricts: ['sariyer', 'beykoz', 'maltepe', 'pendik']
+    relatedServices: ['koltuk-yikama', 'hali-temizligi', 'cam-temizligi'],
+    relatedDistricts: ['sariyer', 'sisli', 'maltepe', 'pendik'],
   },
-  'fiyatlar': {
+  fiyatlar: {
     pillar: 'fiyatlar',
     keywords: ['fiyat', 'ücret', 'maliyet', 'bedel'],
-    relatedServices: ['fiyat', 'ucret-fiyat'],
-    relatedDistricts: ['fatih', 'eminönü', 'beyoglu', 'sisli']
+    relatedServices: ['ev-temizligi', 'ofis-temizligi', 'insaat-sonrasi-temizlik'],
+    relatedDistricts: ['sariyer', 'fatih', 'sisli', 'bakirkoy'],
   },
-  'bolgeler': {
+  bolgeler: {
     pillar: 'bolgeler',
     keywords: ['bölge', 'ilçe', 'semt', 'mahalle'],
-    relatedServices: ['bolgeler', 'harita-ve-yorumlar'],
-    relatedDistricts: ['istanbul', 'avrupa-yakasi', 'anadolu-yakasi']
-  }
+    relatedServices: ['ev-temizligi', 'ofis-temizligi', 'dis-cephe-temizligi'],
+    relatedDistricts: ['sariyer', 'kadikoy', 'besiktas', 'atasehir'],
+  },
 };
 
 interface RelatedContent {
@@ -181,15 +183,17 @@ export async function generateTopicClusterLinks(
     });
   }
 
-  // 3. Bölge sayfaları (topic cluster'a göre)
+  // 3. Bölge sayfaları (topic cluster'a göre — yalnızca geçerli slug)
   for (const district of clusterData.relatedDistricts.slice(0, 3)) {
+    const d = getDistrictBySlug(district);
+    if (!d) continue;
     links.push({
       type: 'district',
-      title: `${district.charAt(0).toUpperCase() + district.slice(1)} Temizlik`,
-      href: `/bolgeler/${district}`,
-      description: `${district} bölgesinde profesyonel temizlik hizmetleri`,
+      title: `${d.name} Temizlik`,
+      href: `/bolgeler/${d.slug}`,
+      description: `${d.name} bölgesinde profesyonel temizlik hizmetleri`,
       priority: 6,
-      relevanceScore: 0.7
+      relevanceScore: 0.7,
     });
   }
 

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import SiteLayout from '../site/layout';
 import { INTENT_LANDINGS } from '@/config/intent-seo';
 import { canonicalUrl, generateBreadcrumbSchema, generateWebPageSchema, serializeSchemaGraph } from '@/lib/seo';
+import SiteHubLinkStrip from '@/components/site/SiteHubLinkStrip';
 import { ArrowRight, Sparkles, Calculator, CalendarDays } from 'lucide-react';
 
 const pageTitle = 'Temizlik Çözümleri | İnşaat, Taşınma, Kira & Ofis | İstanbul';
@@ -89,6 +90,7 @@ export default function CozumlerHubPage() {
                 Ücretsiz Keşif
               </Link>
             </div>
+            <SiteHubLinkStrip tone="dark" className="mt-6 justify-center" />
           </div>
         </section>
 

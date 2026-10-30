@@ -3,6 +3,7 @@ import SiteLayout from '../site/layout';
 import type { Metadata } from 'next';
 import { canonicalUrl } from '@/lib/seo';
 import { listAllGeoSssPagesForIndex } from '@/lib/geo-sss-resolver';
+import SiteHubLinkStrip from '@/components/site/SiteHubLinkStrip';
 
 export const revalidate = 3600;
 
@@ -32,10 +33,23 @@ export default async function GeoSssIndexPage() {
             İlçe bazlı kısa soru-cevap sayfaları — yapay zeka arama sistemlerinin doğrudan alıntı
             yapabileceği format.
           </p>
+          <SiteHubLinkStrip tone="dark" className="mt-6" />
           <div className="mt-10 space-y-8">
-            {[...byDistrict.entries()].map(([district, districtPages]) => (
+            {[...byDistrict.entries()].map(([district, districtPages]) => {
+              const districtSlug = districtPages[0]?.districtSlug;
+              return (
               <section key={district}>
-                <h2 className="text-xl font-semibold text-emerald-300">{district}</h2>
+                <div className="flex flex-wrap items-baseline justify-between gap-2">
+                  <h2 className="text-xl font-semibold text-emerald-300">{district}</h2>
+                  {districtSlug ? (
+                    <Link
+                      href={`/bolgeler/${districtSlug}`}
+                      className="text-sm text-slate-400 underline-offset-2 hover:text-emerald-300 hover:underline"
+                    >
+                      {district} temizlik hub →
+                    </Link>
+                  ) : null}
+                </div>
                 <ul className="mt-3 space-y-2">
                   {districtPages.map((p) => (
                     <li key={p.slug}>
@@ -49,7 +63,8 @@ export default async function GeoSssIndexPage() {
                   ))}
                 </ul>
               </section>
-            ))}
+            );
+            })}
           </div>
         </div>
       </div>

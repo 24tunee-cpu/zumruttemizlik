@@ -24,6 +24,8 @@ import { Sparkles, Check, ArrowRight, Phone, Clock, Shield } from 'lucide-react'
 import Link from 'next/link';
 import { DISTRICT_LANDINGS, getServiceBySlug } from '@/config/programmatic-seo';
 import { SITE_CONTACT } from '@/config/site-contact';
+import RelatedSeoLinks from '@/components/site/RelatedSeoLinks';
+import { buildServicePageSeoLinks } from '@/lib/internal-seo-links';
 import {
   canonicalUrl,
   generateBreadcrumbSchema,
@@ -499,6 +501,23 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                 ))}
               </div>
             </section>
+
+            {(() => {
+              const seo = buildServicePageSeoLinks(service.slug, service.title);
+              return (
+                <RelatedSeoLinks
+                  tone="light"
+                  heading={`${service.title} — bölgeler ve ilgili sayfalar`}
+                  intro="İstanbul’da bu hizmeti ilçe bazında inceleyin; Sarıyer ve Zekeriyaköy öncelikli operasyon bölgelerimizdir."
+                  groups={[
+                    { title: 'İlçe sayfaları', links: seo.districts },
+                    { title: 'Hub ve rehberler', links: seo.hubs },
+                    { title: 'Çözüm niyetleri', links: seo.intents },
+                    { title: 'Teklif / randevu', links: seo.cta },
+                  ]}
+                />
+              );
+            })()}
 
             {relatedBlogs.length > 0 && (
               <section className="mt-12 rounded-xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-700 dark:bg-slate-800/40">
