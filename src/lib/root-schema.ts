@@ -4,7 +4,7 @@
 import { unstable_cache } from 'next/cache';
 import { prisma } from '@/lib/prisma';
 import { SITE_CONTACT } from '@/config/site-contact';
-import { GEO_NAP, getGeoSameAsUrls } from '@/config/geo-entity';
+import { GEO_AREA_SERVED_PRIORITY, GEO_NAP, getGeoSameAsUrls } from '@/config/geo-entity';
 import { getSiteUrl, serializeSchemaGraph } from '@/lib/seo';
 
 function toAbsoluteUrl(base: string, pathOrUrl: string | null | undefined): string | undefined {
@@ -59,13 +59,13 @@ export async function buildRootSchemaGraphJson(): Promise<string> {
   const phoneDisplay = settings?.phone?.trim() || SITE_CONTACT.phoneDisplay;
   const telephone =
     guessE164FromDisplay(phoneDisplay) || SITE_CONTACT.phoneE164;
-  const addressLine =
-    settings?.address?.trim() || SITE_CONTACT.addressLine;
+  // NAP tek kaynak: GEO_NAP (site-contact). DB address serbest metin olabilir — schema'ya uydurma sokak no yok.
+  const addressLine = GEO_NAP.streetAddress;
 
   const logoUrl = toAbsoluteUrl(base, settings?.logo) ?? `${base}/logo.png`;
   const ogUrl = toAbsoluteUrl(base, settings?.ogImage) ?? `${base}/og-image.jpg`;
 
-  // Varsayılan koordinat: Sarıyer / Zekeriyaköy (İstanbul Avrupa Yakası)
+  // Varsayılan: Zekeriyaköy hattı centroid — GBP pin ile hizalamak için env override
   const lat = Number(process.env.NEXT_PUBLIC_BUSINESS_LAT ?? '41.1669');
   const lng = Number(process.env.NEXT_PUBLIC_BUSINESS_LNG ?? '29.0577');
 
@@ -112,11 +112,11 @@ export async function buildRootSchemaGraphJson(): Promise<string> {
     parentOrganization: { '@id': `${base}/#organization` },
     address: {
       '@type': 'PostalAddress',
-      streetAddress: addressLine,
-      addressLocality: SITE_CONTACT.addressLocality,
-      addressRegion: SITE_CONTACT.addressRegion,
-      postalCode: SITE_CONTACT.postalCode,
-      addressCountry: 'TR',
+      streetAddress: GEO_NAP.streetAddress,
+      addressLocality: GEO_NAP.addressLocality,
+      addressRegion: GEO_NAP.addressRegion,
+      postalCode: GEO_NAP.postalCode,
+      addressCountry: GEO_NAP.addressCountry,
     },
     geo: {
       '@type': 'GeoCoordinates',
@@ -131,17 +131,13 @@ export async function buildRootSchemaGraphJson(): Promise<string> {
         closes: '23:59',
       },
     ],
-    areaServed: [
-      'Sarıyer',
-      'Zekeriyaköy',
-      'İstanbul Avrupa Yakası',
-      'İstanbul',
-      'Beşiktaş',
-      'Şişli',
-      'Kağıthane',
-      'Eyüpsultan',
-      'Bakırköy',
-      'Fatih',
+    areaServed: [...GEO_AREA_SERVED_PRIORITY],
+    knowsAbout: [
+      'Sarıyer temizlik',
+      'Zekeriyaköy villa temizliği',
+      'İnşaat sonrası temizlik',
+      'Ofis temizliği',
+      'Ev temizliği',
     ],
     priceRange: '₺₺',
     foundingDate: '2010',

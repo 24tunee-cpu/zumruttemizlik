@@ -4,7 +4,7 @@
 ## Doküman Kimliği
 - Doküman adı: `llms.txt`
 - Sürüm: 3.0
-- Son güncelleme: 2026-07-09
+- Son güncelleme: 2026-10-30
 - Doküman rolü: Kısa ve birincil yapay zeka referansı
 
 ## Referans Hiyerarşisi
@@ -17,6 +17,11 @@
 - [Ana Sayfa](https://www.zumrutvaditemizlik.com/): Hizmetlerin genel özeti, hızlı yönlendirmeler ve anında fiyat hesaplama aracı.
 - [Hizmetlerimiz](https://www.zumrutvaditemizlik.com/hizmetler): Aktif hizmetlerin ana listeleme sayfası.
 - [Bölgeler](https://www.zumrutvaditemizlik.com/bolgeler): İlçe ve semt bazlı hizmet sayfaları (Sarıyer, Zekeriyaköy dahil).
+- [Sarıyer](https://www.zumrutvaditemizlik.com/bolgeler/sariyer): Öncelikli ilçe hub.
+- [Zekeriyaköy](https://www.zumrutvaditemizlik.com/bolgeler/sariyer/zekeriyakoy): Öncelikli semt landing.
+- [Fiyat Hesaplama](https://www.zumrutvaditemizlik.com/fiyat-hesaplama): Tahmini fiyat aralığı (kesin fiyat keşif sonrası).
+- [Harita ve Yorumlar](https://www.zumrutvaditemizlik.com/harita-ve-yorumlar): Google konum ve gerçek müşteri yorumları.
+- [GEO SSS](https://www.zumrutvaditemizlik.com/geo-sss): İlçe/niyet soru-cevap passage’ları.
 - [İletişim](https://www.zumrutvaditemizlik.com/iletisim): Telefon, e-posta, adres ve iletişim formu.
 - [Randevu](https://www.zumrutvaditemizlik.com/randevu): Ücretsiz keşif ve randevu talep formu.
 - [Hakkımızda](https://www.zumrutvaditemizlik.com/hakkimizda): Kurumsal geçmiş, ekip ve değerler.

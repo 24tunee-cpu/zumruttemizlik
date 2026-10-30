@@ -241,6 +241,8 @@ Her öneride: fayda · risk · efor · öncelik. Trafik/sıralama garantisi yok.
 | 2026-10-30 | Bu AGENTS.md master anayasa olarak genişletildi; Next.js agent rules korundu |
 | 2026-10-30 | Autopilot llmsSync EROFS: runtime no-op + `/llms-inventory.txt` + build-time `llms:inventory` |
 | 2026-10-30 | Faz 1 iç link: `RelatedSeoLinks` + `internal-seo-links` (hizmet↔ilçe, programmatic, geo-sss, hub strip) |
+| 2026-10-30 | Faz 2: `meta-clamp`, emoji CTR kapatma, Sarıyer/semt derinliği, hizmet content pack |
+| 2026-10-30 | Faz 3 GEO/AEO+CRO: NAP schema hizası, `WhyChooseZvt`, sticky Ara/WA/Keşif, harita↔hub, SSS AEO strip, citation tracker notları |
 
 **Talimat dosyaları:** `CLAUDE.md` → `@AGENTS.md`. `.cursorrules` / `.cursor/rules` projede yok. Tek ana anayasa: bu dosya.
 

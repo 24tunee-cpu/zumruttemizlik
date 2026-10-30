@@ -5,6 +5,8 @@ import {
   getServiceBySlug,
 } from '@/config/programmatic-seo';
 import RelatedSeoLinks from '@/components/site/RelatedSeoLinks';
+import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
+import { WhyChooseZvt } from '@/components/site/WhyChooseZvt';
 import { buildNeighborhoodSeoLinks } from '@/lib/internal-seo-links';
 import { buildCalculatorHref } from '@/lib/intent-analytics';
 import { SITE_CONTACT, toTelHref } from '@/config/site-contact';
@@ -140,6 +142,12 @@ export default function NeighborhoodLanding({ data }: { data: NeighborhoodLandin
               </div>
             </section>
 
+            <WhyChooseZvt
+              tone="dark"
+              contextLabel={`${data.name} temizlik`}
+              sourcePrefix="neighborhood-why-zvt"
+            />
+
             {(() => {
               const seo = buildNeighborhoodSeoLinks(data.districtSlug, data.slug);
               return (
@@ -184,6 +192,10 @@ export default function NeighborhoodLanding({ data }: { data: NeighborhoodLandin
               </Link>
             </div>
           </div>
+          <StickySeoCtaBar
+            contextLabel={`${data.name} temizlik`}
+            sourcePrefix="neighborhood-sticky"
+          />
         </div>
       </SiteLayout>
     </>

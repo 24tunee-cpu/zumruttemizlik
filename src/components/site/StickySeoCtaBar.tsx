@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { Calculator, Calendar, MessageCircle } from 'lucide-react';
+import { Calendar, MessageCircle, Phone } from 'lucide-react';
 import { useSiteSettings } from '@/context/SiteSettingsContext';
-import { SITE_CONTACT } from '@/config/site-contact';
+import { SITE_CONTACT, toTelHref } from '@/config/site-contact';
 
 type StickySeoCtaBarProps = {
   /** WhatsApp mesajına eklenecek bağlam (ör. ilçe veya yazı konusu) */
@@ -28,6 +28,8 @@ export function StickySeoCtaBar({
   }, []);
 
   const waDigits = (settings.whatsapp?.trim() || SITE_CONTACT.whatsappDigits).replace(/\D/g, '');
+  const phoneDisplay = settings.phone?.trim() || SITE_CONTACT.phoneDisplay;
+  const callHref = toTelHref(settings.phone?.trim() || SITE_CONTACT.phoneE164);
   const context = contextLabel?.trim();
   const waText = context
     ? `Merhaba, ${context} için ücretsiz keşif ve fiyat teklifi almak istiyorum.`
@@ -56,14 +58,15 @@ export function StickySeoCtaBar({
           <MessageCircle className="h-4 w-4 shrink-0" aria-hidden />
           <span>WhatsApp</span>
         </a>
-        <Link
-          href="/fiyat-hesaplama"
-          data-source={`${sourcePrefix}-fiyat`}
+        <a
+          href={callHref}
+          data-source={`${sourcePrefix}-call`}
           className="flex min-h-[44px] flex-col items-center justify-center gap-0.5 rounded-xl bg-amber-600 px-2 py-2 text-center text-xs font-semibold text-white transition-colors hover:bg-amber-500 sm:flex-row sm:gap-1.5 sm:text-sm"
+          aria-label={`Ara: ${phoneDisplay}`}
         >
-          <Calculator className="h-4 w-4 shrink-0" aria-hidden />
-          <span>Fiyat Al</span>
-        </Link>
+          <Phone className="h-4 w-4 shrink-0" aria-hidden />
+          <span>Ara</span>
+        </a>
         <Link
           href="/randevu"
           data-source={`${sourcePrefix}-kesif`}
