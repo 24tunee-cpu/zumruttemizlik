@@ -19,6 +19,8 @@ import {
 import ProgrammaticCtaExperiment from '@/components/site/ProgrammaticCtaExperiment';
 import NeighborhoodLanding from '@/components/site/NeighborhoodLanding';
 import RelatedSeoLinks from '@/components/site/RelatedSeoLinks';
+import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
+import { WhyChooseZvt } from '@/components/site/WhyChooseZvt';
 import { SITE_CONTACT, toTelHref } from '@/config/site-contact';
 import { canonicalUrl, getSiteUrl } from '@/lib/seo';
 import { buildProgrammaticPairSeoLinks } from '@/lib/internal-seo-links';
@@ -308,6 +310,12 @@ export default async function ProgrammaticLandingPage({ params }: Props) {
               </div>
             </section>
 
+            <WhyChooseZvt
+              tone="dark"
+              contextLabel={`${districtData.name} ${serviceData.name}`}
+              sourcePrefix="pair-why-zvt"
+            />
+
             <ProgrammaticCtaExperiment
               districtName={districtData.name}
               districtSlug={districtData.slug}
@@ -403,6 +411,10 @@ export default async function ProgrammaticLandingPage({ params }: Props) {
               </Link>
             </div>
           </div>
+          <StickySeoCtaBar
+            contextLabel={`${districtData.name} ${serviceData.name}`}
+            sourcePrefix="pair-sticky"
+          />
         </div>
       </SiteLayout>
     </>

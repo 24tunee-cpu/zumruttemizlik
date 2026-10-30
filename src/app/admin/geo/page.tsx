@@ -19,7 +19,14 @@ type GeoDashboard = {
   reviewTemplates: { id: string; label: string; text: string }[];
   citationPrompts: { id: string; prompt: string; category: string }[];
   competitors: string[];
-  directories: { id: string; name: string; priority: string; configured: boolean }[];
+  directories: {
+    id: string;
+    name: string;
+    priority: string;
+    configured: boolean;
+    trackerStatus?: string;
+    trackerNote?: string;
+  }[];
   stats: {
     publishedBlogs: number;
     geoPassageBlogs: number;
@@ -193,17 +200,30 @@ export default function AdminGeoPage() {
               </section>
 
               <section className="rounded-xl border border-slate-700 bg-slate-800/40 p-5">
-                <h2 className="font-semibold text-white">Dizin Durumu</h2>
-                <ul className="mt-3 space-y-2">
+                <h2 className="font-semibold text-white">Citation / dizin tracker</h2>
+                <p className="mt-1 text-xs text-slate-400">
+                  Otomasyon yok — env URL + manuel GBP/dizin doğrulama. Spam citation yok.
+                </p>
+                <ul className="mt-3 space-y-3">
                   {data.directories.map((d) => (
-                    <li key={d.id} className="flex items-center gap-2 text-sm">
-                      {d.configured ? (
-                        <CheckCircle2 className="h-4 w-4 text-emerald-400" />
-                      ) : (
-                        <AlertTriangle className="h-4 w-4 text-amber-400" />
-                      )}
-                      <span className="text-white">{d.name}</span>
-                      <span className="text-slate-500">({d.priority})</span>
+                    <li key={d.id} className="text-sm">
+                      <div className="flex flex-wrap items-center gap-2">
+                        {d.configured ? (
+                          <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-400" />
+                        ) : (
+                          <AlertTriangle className="h-4 w-4 shrink-0 text-amber-400" />
+                        )}
+                        <span className="font-medium text-white">{d.name}</span>
+                        <span className="text-slate-500">({d.priority})</span>
+                        {'trackerStatus' in d && d.trackerStatus ? (
+                          <span className="rounded border border-slate-600 px-1.5 py-0.5 text-[10px] uppercase text-slate-400">
+                            {String(d.trackerStatus)}
+                          </span>
+                        ) : null}
+                      </div>
+                      {'trackerNote' in d && d.trackerNote ? (
+                        <p className="mt-1 pl-6 text-xs text-slate-400">{String(d.trackerNote)}</p>
+                      ) : null}
                     </li>
                   ))}
                 </ul>

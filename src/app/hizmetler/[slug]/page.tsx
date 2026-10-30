@@ -25,6 +25,8 @@ import Link from 'next/link';
 import { DISTRICT_LANDINGS, getServiceBySlug } from '@/config/programmatic-seo';
 import { SITE_CONTACT } from '@/config/site-contact';
 import RelatedSeoLinks from '@/components/site/RelatedSeoLinks';
+import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
+import { WhyChooseZvt } from '@/components/site/WhyChooseZvt';
 import { buildServicePageSeoLinks } from '@/lib/internal-seo-links';
 import {
   canonicalUrl,
@@ -611,6 +613,12 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               </section>
             )}
 
+            <WhyChooseZvt
+              tone="light"
+              contextLabel={service.title}
+              sourcePrefix="service-why-zvt"
+            />
+
             {/* CTA Buttons */}
             <nav
               className="mt-12 flex flex-col gap-4 sm:flex-row"
@@ -641,6 +649,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             </nav>
           </article>
         </main>
+        <StickySeoCtaBar contextLabel={service.title} sourcePrefix="service-sticky" />
       </SiteLayout>
     </>
   );

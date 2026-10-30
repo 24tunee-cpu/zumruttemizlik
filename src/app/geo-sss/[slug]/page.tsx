@@ -5,6 +5,8 @@ import SiteLayout from '../../site/layout';
 import { GEO_SSS_PAGES } from '@/config/geo-district-faqs';
 import { getGeoSssBySlugAsync } from '@/lib/geo-sss-resolver';
 import RelatedSeoLinks from '@/components/site/RelatedSeoLinks';
+import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
+import { WhyChooseZvt } from '@/components/site/WhyChooseZvt';
 import { buildGeoSssSeoLinks } from '@/lib/internal-seo-links';
 import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
 import {
@@ -111,7 +113,14 @@ export default async function GeoSssPage({ params }: Props) {
                 />
               );
             })()}
+
+            <WhyChooseZvt
+              tone="dark"
+              contextLabel={page.title}
+              sourcePrefix="geo-sss-why-zvt"
+            />
           </div>
+          <StickySeoCtaBar contextLabel={page.title} sourcePrefix="geo-sss-sticky" />
         </article>
       </SiteLayout>
     </>

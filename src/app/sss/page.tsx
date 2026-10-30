@@ -19,6 +19,9 @@ import { Suspense } from 'react';
 import Link from 'next/link';
 import SiteLayout from '../site/layout';
 import { FAQSection } from '../../components/site/FAQSection';
+import RelatedSeoLinks from '@/components/site/RelatedSeoLinks';
+import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
+import { WhyChooseZvt } from '@/components/site/WhyChooseZvt';
 import { faqPageJsonLdObject } from '@/lib/seed-faq';
 import { canonicalUrl } from '@/lib/seo';
 import { keywordsForPage } from '@/lib/seo-keywords';
@@ -125,6 +128,42 @@ export default function FAQPage() {
           </Suspense>
         </div>
 
+        <div className="mx-auto w-full max-w-3xl px-4 pb-8 sm:px-6 lg:px-8">
+          <RelatedSeoLinks
+            tone="dark"
+            heading="Niyete göre devam edin (AEO)"
+            intro="Genel SSS burada; ilçe/soru ve çözüm niyetleri ayrı sayfalarda — kopya FAQ şişirme yok."
+            groups={[
+              {
+                title: 'İlçe GEO SSS',
+                links: [
+                  { href: '/geo-sss', label: 'GEO SSS listesi' },
+                  { href: '/bolgeler/sariyer', label: 'Sarıyer temizlik' },
+                  { href: '/bolgeler/sariyer/zekeriyakoy', label: 'Zekeriyaköy' },
+                ],
+              },
+              {
+                title: 'Çözüm niyetleri',
+                links: [
+                  { href: '/cozumler/insaat-sonrasi-temizlik', label: 'İnşaat sonrası' },
+                  { href: '/cozumler/tasinma-temizligi', label: 'Taşınma temizliği' },
+                  { href: '/cozumler/kira-teslim-temizligi', label: 'Kira teslim' },
+                  { href: '/cozumler', label: 'Tüm çözümler' },
+                ],
+              },
+              {
+                title: 'Teklif',
+                links: [
+                  { href: '/fiyat-hesaplama', label: 'Fiyat hesapla' },
+                  { href: '/randevu', label: 'Ücretsiz keşif' },
+                  { href: '/harita-ve-yorumlar', label: 'Harita & yorumlar' },
+                ],
+              },
+            ]}
+          />
+          <WhyChooseZvt tone="dark" contextLabel="SSS sonrası temizlik teklifi" sourcePrefix="sss-why-zvt" />
+        </div>
+
         {/* Additional CTA */}
         <section className="flex-1 border-t border-slate-800 bg-slate-900 py-16">
           <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
@@ -142,6 +181,7 @@ export default function FAQPage() {
             </Link>
           </div>
         </section>
+        <StickySeoCtaBar contextLabel="SSS" sourcePrefix="sss-sticky" />
         </div>
       </SiteLayout>
     </>

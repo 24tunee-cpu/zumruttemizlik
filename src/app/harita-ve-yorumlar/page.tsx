@@ -1,7 +1,11 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { SITE_CONTACT } from '@/config/site-contact';
 import SiteLayout from '../site/layout';
 import { MapsLazySection } from '@/components/site/MapsLazySection';
+import RelatedSeoLinks from '@/components/site/RelatedSeoLinks';
+import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
+import { WhyChooseZvt } from '@/components/site/WhyChooseZvt';
 import { canonicalUrl, generateWebPageSchema, serializeSchemaGraph } from '@/lib/seo';
 import {
   buildGoogleMapsReviewSchemaGraph,
@@ -156,7 +160,57 @@ export default async function MapsAndReviewsPage() {
               24 saat açık
             </p>
           </section>
+
+          <WhyChooseZvt tone="dark" contextLabel="Google Harita üzerinden temizlik" sourcePrefix="maps-why-zvt" />
+
+          <RelatedSeoLinks
+            tone="dark"
+            heading="Hizmet ve bölge sayfalarına geçin"
+            intro="Yorumlardan sonra doğru landing’e yönelin — Sarıyer / Zekeriyaköy öncelikli."
+            groups={[
+              {
+                title: 'Öncelik bölgeler',
+                links: [
+                  { href: '/bolgeler/sariyer', label: 'Sarıyer temizlik' },
+                  { href: '/bolgeler/sariyer/zekeriyakoy', label: 'Zekeriyaköy temizlik' },
+                  { href: '/bolgeler/sariyer/maslak', label: 'Maslak temizlik' },
+                  { href: '/bolgeler', label: 'Tüm bölgeler' },
+                ],
+              },
+              {
+                title: 'Ana hizmetler',
+                links: [
+                  { href: '/hizmetler/ev-temizligi', label: 'Ev temizliği' },
+                  { href: '/hizmetler/ofis-temizligi', label: 'Ofis temizliği' },
+                  { href: '/hizmetler/insaat-sonrasi-temizlik', label: 'İnşaat sonrası temizlik' },
+                  { href: '/hizmetler', label: 'Tüm hizmetler' },
+                ],
+              },
+              {
+                title: 'Teklif',
+                links: [
+                  { href: '/fiyat-hesaplama', label: 'Fiyat hesapla' },
+                  { href: '/randevu', label: 'Ücretsiz keşif' },
+                  { href: '/geo-sss', label: 'GEO SSS' },
+                  { href: '/iletisim', label: 'İletişim' },
+                ],
+              },
+            ]}
+          />
+
+          <p className="mt-6 text-center text-sm text-slate-400">
+            Detaylı sorular için{' '}
+            <Link href="/sss" className="text-emerald-300 hover:underline">
+              SSS
+            </Link>{' '}
+            veya{' '}
+            <Link href="/geo-sss" className="text-emerald-300 hover:underline">
+              ilçe GEO SSS
+            </Link>
+            .
+          </p>
         </div>
+        <StickySeoCtaBar contextLabel="Harita ve yorumlar" sourcePrefix="maps-sticky" />
       </div>
     </SiteLayout>
   );

@@ -37,7 +37,7 @@ export function getGeoSameAsUrls(siteUrl: string): string[] {
   return [...new Set([...fromEnv, ...defaults])];
 }
 
-/** Bing / dizin GEO kayıtları — admin panelde referans */
+/** Bing / dizin GEO kayıtları — admin panelde referans + manuel citation tracker */
 export const GEO_DIRECTORY_TARGETS = [
   {
     id: 'google-business',
@@ -45,6 +45,9 @@ export const GEO_DIRECTORY_TARGETS = [
     envKey: 'NEXT_PUBLIC_GBP_URL',
     priority: 'critical' as const,
     platform: 'google_ai',
+    /** Manuel takip — panel erişimi olmadan otomasyon yok */
+    trackerStatus: 'verify_in_gbp' as const,
+    trackerNote: 'NAP, kategori, saatler, fotoğraf, Q&A site ile birebir doğrulanmalı',
   },
   {
     id: 'bing-places',
@@ -52,6 +55,8 @@ export const GEO_DIRECTORY_TARGETS = [
     envKey: 'NEXT_PUBLIC_BING_PLACES_URL',
     priority: 'high' as const,
     platform: 'chatgpt_bing',
+    trackerStatus: 'pending_manual' as const,
+    trackerNote: 'Kayıt varsa NEXT_PUBLIC_BING_PLACES_URL doldur; yoksa oluştur',
   },
   {
     id: 'apple-maps',
@@ -59,6 +64,8 @@ export const GEO_DIRECTORY_TARGETS = [
     envKey: 'NEXT_PUBLIC_APPLE_MAPS_URL',
     priority: 'medium' as const,
     platform: 'apple_intelligence',
+    trackerStatus: 'pending_manual' as const,
+    trackerNote: 'Apple Business Connect profil URL’si eklenecek',
   },
   {
     id: 'yandex',
@@ -66,7 +73,30 @@ export const GEO_DIRECTORY_TARGETS = [
     envKey: 'NEXT_PUBLIC_YANDEX_BUSINESS_URL',
     priority: 'medium' as const,
     platform: 'yandex',
+    trackerStatus: 'pending_manual' as const,
+    trackerNote: 'İstanbul yerel görünürlük için opsiyonel',
   },
+] as const;
+
+/**
+ * Schema areaServed önceliği — Sarıyer/Zekeriyaköy önde.
+ * Koordinat varsayılanı Zekeriyaköy hattı (NEXT_PUBLIC_BUSINESS_LAT/LNG ile override).
+ * Adres satırı “Sarıyer Merkez” — GBP ile sokak no doğrulanana kadar uydurma yok.
+ */
+export const GEO_AREA_SERVED_PRIORITY = [
+  'Sarıyer',
+  'Zekeriyaköy',
+  'Maslak',
+  'Tarabya',
+  'Bahçeköy',
+  'İstanbul Avrupa Yakası',
+  'İstanbul',
+  'Beşiktaş',
+  'Şişli',
+  'Kağıthane',
+  'Eyüpsultan',
+  'Bakırköy',
+  'Fatih',
 ] as const;
 
 /** GBP GEO checklist — site tarafı rehber (harici panelde uygulanır) */
