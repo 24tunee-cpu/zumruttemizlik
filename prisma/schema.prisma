@@ -655,3 +655,29 @@ enum Role {
   ADMIN
   EDITOR
 }
+
+/// AI visibility — manual mention scorecard (ChatGPT, Perplexity, Gemini, AI Overviews)
+model GeoMentionCheck {
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  /// GEO_CITATION_PROMPTS id or custom
+  promptId        String
+  promptText      String
+  /// chatgpt | perplexity | gemini | ai_overviews | other
+  engine          String
+  checkedAt       DateTime @default(now())
+  /// none | competitor | wrong_info | brand_mention | cited_with_url
+  outcome         String
+  brandMentioned  Boolean  @default(false)
+  urlCited        Boolean  @default(false)
+  citedUrl        String?
+  competitorNames String[]
+  notes           String?
+  snippet         String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([engine, checkedAt])
+  @@index([promptId, checkedAt])
+  @@index([outcome, checkedAt])
+  @@map("geo_mention_checks")
+}

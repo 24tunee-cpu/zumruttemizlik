@@ -30,6 +30,7 @@
     "seo:autopilot:validate": "tsx scripts/validate-autopilot-slugs.ts",
     "seo:autopilot:run": "tsx scripts/run-seo-autopilot.ts",
     "geo:sync": "tsx scripts/geo-sync.ts",
+    "geo:validate-llms": "tsx scripts/validate-llms-nap.ts",
     "blogs:repair-schedule": "tsx scripts/repair-blog-schedule.ts",
     "blogs:publish-due": "tsx scripts/publish-due-blogs.ts",
     "blogs:check-schedule": "tsx scripts/check-blog-schedule.ts",

@@ -1,0 +1,35 @@
+{
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "CleaningService"],
+  "name": "Zümrüt Vadi Temizlik",
+  "url": "https://www.zumrutvaditemizlik.com/",
+  "telephone": "+905519250943",
+  "email": "vedatgunenn@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Sarıyer Merkez, Sarıyer/İstanbul",
+    "addressLocality": "Sarıyer",
+    "addressRegion": "İstanbul",
+    "postalCode": "34450",
+    "addressCountry": "TR"
+  },
+  "areaServed": [
+    "Sarıyer",
+    "Zekeriyaköy",
+    "Maslak",
+    "Tarabya",
+    "Bahçeköy",
+    "İstanbul Avrupa Yakası",
+    "İstanbul"
+  ],
+  "sameAs": [
+    "https://www.zumrutvaditemizlik.com/"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+905519250943",
+    "contactType": "customer service",
+    "areaServed": "TR",
+    "availableLanguage": ["tr"]
+  }
+}
