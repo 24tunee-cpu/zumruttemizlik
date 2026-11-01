@@ -6,7 +6,9 @@
     "postinstall": "prisma generate",
     "dev": "next dev",
     "build": "prisma generate && npm run llms:inventory && npm run llms:sync && npm run indexnow:sync && next build",
+    "build:app": "prisma generate && next build",
     "build:analyze": "cross-env ANALYZE=true next build",
+    "ci": "npm run type-check && npm run predeploy:check",
     "start": "next start",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
@@ -73,7 +75,6 @@
     "zustand": "^5.0.12"
   },
   "devDependencies": {
-    "@netlify/plugin-nextjs": "^5.15.9",
     "@next/bundle-analyzer": "^16.2.4",
     "@types/bcryptjs": "^2.4.6",
     "cross-env": "^10.1.0",

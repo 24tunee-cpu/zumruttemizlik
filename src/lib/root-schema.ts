@@ -122,7 +122,7 @@ export async function buildRootSchemaGraphJson(): Promise<string> {
 
   const localBusiness: Record<string, unknown> = {
     '@context': 'https://schema.org',
-    '@type': ['LocalBusiness', 'CleaningService'],
+    '@type': ['LocalBusiness', 'HomeAndConstructionBusiness'],
     additionalType: 'https://schema.org/HouseCleaner',
     '@id': `${base}/#business`,
     name: siteName,

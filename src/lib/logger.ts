@@ -118,7 +118,29 @@ export class Logger {
       environment: process.env.NODE_ENV,
     };
 
-    // Remote logging only - NO console output
+    // Server: Vercel log drain için structured console (browser'da sessiz)
+    if (!IS_BROWSER) {
+      const line = JSON.stringify({
+        ts: entry.timestamp,
+        level: entry.level,
+        source: entry.source,
+        msg: entry.message,
+        correlationId: entry.correlationId,
+        duration: entry.duration,
+        ...(entry.context ? { context: entry.context } : {}),
+        ...(entry.error
+          ? { err: { name: entry.error.name, message: entry.error.message } }
+          : {}),
+      });
+      if (level === 'error' || level === 'fatal') {
+        console.error(line);
+      } else if (level === 'warn') {
+        console.warn(line);
+      } else if (!IS_PRODUCTION || level === 'info') {
+        console.log(line);
+      }
+    }
+
     if (this.enableRemote && this.remoteHandler) {
       try {
         await this.remoteHandler(entry);

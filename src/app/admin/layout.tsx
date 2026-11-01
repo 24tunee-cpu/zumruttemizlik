@@ -1,50 +1,28 @@
-'use client';
+import { getServerSession } from 'next-auth';
+import { redirect } from 'next/navigation';
+import { authOptions } from '@/lib/auth';
+import { AUTH_LOGIN_PATH } from '@/lib/auth-paths';
+import { AdminShell } from './AdminShell';
 
-import { useEffect } from 'react';
-import { Sidebar } from '@/components/admin/Sidebar';
-import { AdminHeader } from '@/components/admin/Header';
-import { ProtectedRoute } from '@/components/admin/ProtectedRoute';
-import { ToastContainer } from '@/components/ui/Toast';
-import { initAdminStore, useAdminStore } from '@/store/adminStore';
-import { initTheme } from '@/store/themeStore';
-import { cn } from '@/lib/utils';
-import { SessionProvider } from 'next-auth/react';
-
-export default function AdminLayout({
+/**
+ * Server-side admin gate + client shell.
+ * API route'ları ayrıca requireAdminAuth ile korunur.
+ */
+export default async function AdminLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const { sidebarOpen } = useAdminStore();
+  const session = await getServerSession(authOptions);
+  const role = session?.user?.role;
 
-  useEffect(() => {
-    void useAdminStore.persist.rehydrate();
-    const cleanupAdminStore = initAdminStore();
-    initTheme();
-    return cleanupAdminStore;
-  }, []);
+  if (!session?.user) {
+    redirect(`${AUTH_LOGIN_PATH}?callbackUrl=${encodeURIComponent('/admin/dashboard')}`);
+  }
 
-  return (
-    <SessionProvider>
-      <ProtectedRoute requiredRole="ADMIN">
-        <div className="min-h-screen overflow-x-hidden bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
-          <ToastContainer />
-          <Sidebar />
-          <AdminHeader />
-          <main
-            className={cn(
-              'min-h-screen min-w-0 pt-14 transition-[margin,width] duration-300 sm:pt-16',
-              /* w-full + margin-left taşır; lg’de genişlik sidebar kadar düşürülür */
-              'ml-0 w-full max-w-full',
-              sidebarOpen
-                ? 'lg:ml-[280px] lg:w-[calc(100%-280px)] lg:max-w-[calc(100%-280px)]'
-                : 'lg:ml-20 lg:w-[calc(100%-5rem)] lg:max-w-[calc(100%-5rem)]'
-            )}
-          >
-            <div className="min-w-0 max-w-full p-4 sm:p-6">{children}</div>
-          </main>
-        </div>
-      </ProtectedRoute>
-    </SessionProvider>
-  );
+  if (role !== 'ADMIN' && role !== 'EDITOR') {
+    redirect(`${AUTH_LOGIN_PATH}?error=unauthorized`);
+  }
+
+  return <AdminShell>{children}</AdminShell>;
 }

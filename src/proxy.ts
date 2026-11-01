@@ -2,6 +2,10 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { resolveLegacyRedirect } from '@/lib/legacy-url-redirects';
 
+/**
+ * Edge proxy — Prisma Edge'de yok; DB redirect kuralları Node API üzerinden çözülür.
+ * Resolve endpoint yalnızca x-middleware-fetch ile çağrılır.
+ */
 export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
@@ -16,7 +20,8 @@ export async function proxy(request: NextRequest) {
     pathname.startsWith('/_next') ||
     pathname.startsWith('/api') ||
     pathname === '/robots.txt' ||
-    isSitemapPath
+    isSitemapPath ||
+    /\.[a-zA-Z0-9]{1,8}$/.test(pathname)
   ) {
     return NextResponse.next();
   }
@@ -25,7 +30,10 @@ export async function proxy(request: NextRequest) {
     const url = new URL('/api/redirects/resolve', request.nextUrl.origin);
     url.searchParams.set('path', pathname);
     const res = await fetch(url.toString(), {
-      headers: { 'x-middleware-fetch': '1' },
+      headers: {
+        'x-middleware-fetch': '1',
+        'x-internal-redirect': process.env.CRON_SECRET?.trim() || '1',
+      },
       next: { revalidate: 300 },
     });
     if (!res.ok) return NextResponse.next();

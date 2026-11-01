@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { revalidatePath } from 'next/cache';
 import { prisma } from '@/lib/prisma';
 import { authorizeCronRequest, cronUnauthorizedResponse } from '@/lib/cron-auth';
+import { safeRevalidatePath } from '@/lib/safe-revalidate';
 
 export const dynamic = 'force-dynamic';
 export const maxDuration = 60;
@@ -22,11 +22,11 @@ export async function GET(request: NextRequest) {
       select: { slug: true },
     });
 
-    revalidatePath('/blog');
-    revalidatePath('/feed.xml');
+    safeRevalidatePath('/blog');
+    safeRevalidatePath('/feed.xml');
 
     for (const { slug } of posts) {
-      revalidatePath(`/blog/${slug}`);
+      safeRevalidatePath(`/blog/${slug}`);
     }
 
     return NextResponse.json({

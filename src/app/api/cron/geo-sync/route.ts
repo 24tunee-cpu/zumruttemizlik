@@ -4,8 +4,9 @@ import { runFullGeoSync } from '@/lib/geo-citation';
 import { authorizeCronRequest, cronUnauthorizedResponse } from '@/lib/cron-auth';
 
 export const dynamic = 'force-dynamic';
+export const maxDuration = 120;
 
-/** Manuel GEO sync (haftalık otomasyon: Pazartesi publish-blogs cron içinde) */
+/** Günlük GEO audit/citation sync (vercel.json cron 04:30 UTC) */
 export async function GET(request: NextRequest) {
   const auth = authorizeCronRequest(request);
   if (!auth.ok) {

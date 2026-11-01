@@ -1,6 +1,6 @@
 {
   "@context": "https://schema.org",
-  "@type": ["LocalBusiness", "CleaningService"],
+  "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
   "name": "Zümrüt Vadi Temizlik",
   "url": "https://www.zumrutvaditemizlik.com/",
   "telephone": "+905519250943",

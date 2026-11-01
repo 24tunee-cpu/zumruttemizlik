@@ -11,7 +11,7 @@
 
 'use client';
 
-import { useEffect, useState, useCallback, useRef } from 'react';
+import { useEffect, useState, useCallback, useRef, useMemo } from 'react';
 import { useSession } from 'next-auth/react';
 import { useRouter, usePathname } from 'next/navigation';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
@@ -38,10 +38,20 @@ interface SessionUser {
 interface ProtectedRouteProps {
   /** Render edilecek içerik */
   children: React.ReactNode;
-  /** Gerekli kullanıcı rolü */
+  /** Gerekli kullanıcı rolü (tekil) */
   requiredRole?: UserRole;
+  /** İzin verilen roller (ADMIN her zaman tüm admin paneline girebilir diye ayrıca listededir) */
+  requiredRoles?: UserRole[];
   /** Yetkisiz erişimde gösterilecek fallback */
   fallback?: React.ReactNode;
+}
+
+function resolveAllowedRoles(
+  requiredRole?: UserRole,
+  requiredRoles?: UserRole[]
+): UserRole[] {
+  if (requiredRoles && requiredRoles.length > 0) return requiredRoles;
+  return [requiredRole ?? 'ADMIN'];
 }
 
 /** Auth state tipi */
@@ -71,12 +81,17 @@ const logger = createLogger('admin/protected-route');
 export function ProtectedRoute({
   children,
   requiredRole = 'ADMIN',
+  requiredRoles,
   fallback
 }: ProtectedRouteProps) {
   const { data: session, status } = useSession();
   const router = useRouter();
   const pathname = usePathname();
   const shouldReduceMotion = useReducedMotion();
+  const allowedRoles = useMemo(
+    () => resolveAllowedRoles(requiredRole, requiredRoles),
+    [requiredRole, requiredRoles]
+  );
 
   const [authState, setAuthState] = useState<AuthState>({
     isAuthorized: false,
@@ -93,7 +108,7 @@ export function ProtectedRoute({
     loggerRef.current.info('Checking authentication', {
       path: pathname,
       status,
-      requiredRole
+      allowedRoles,
     });
 
     // Auth durumu loading ise bekle
@@ -113,16 +128,15 @@ export function ProtectedRoute({
     if (status === 'authenticated' && session?.user) {
       const userRole = (session.user as SessionUser).role;
 
-      if (userRole !== requiredRole) {
+      if (!allowedRoles.includes(userRole) && userRole !== 'ADMIN') {
         loggerRef.current.error('Unauthorized access attempt - insufficient role', {
           path: pathname,
           userRole,
-          requiredRole,
+          allowedRoles,
           userId: (session.user as SessionUser).id,
           email: session.user.email,
         });
 
-        // Yetkisiz erişim - login'e yönlendir
         setAuthState({ isAuthorized: false, isChecking: false });
         router.push(`${AUTH_LOGIN_PATH}?error=unauthorized`);
         return;
@@ -141,7 +155,7 @@ export function ProtectedRoute({
     }
 
     setAuthState(prev => ({ ...prev, isChecking: false }));
-  }, [status, session, router, pathname, requiredRole]);
+  }, [status, session, router, pathname, allowedRoles]);
 
   // ============================================
   // EFFECTS
