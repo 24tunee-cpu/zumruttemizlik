@@ -75,7 +75,14 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<Met
     title,
     description,
     keywords: keywordsForPage('blog', [tag, q].filter(Boolean)),
-    alternates: { canonical },
+    alternates: {
+      canonical,
+      types: {
+        'application/rss+xml': canonicalUrl('/feed.xml'),
+        'application/atom+xml': canonicalUrl('/atom.xml'),
+        'application/feed+json': canonicalUrl('/feed.json'),
+      },
+    },
     openGraph: {
       title,
       description,
@@ -306,6 +313,21 @@ export default async function BlogPage({ searchParams }: PageProps) {
           </PremiumPageHero>
 
           <BlogSiloNav />
+
+          <div className="border-b border-slate-800/80 py-3">
+            <p className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-4 gap-y-1 px-4 text-xs text-slate-500 sm:px-6 lg:px-8">
+              <span>Abone / makine feed:</span>
+              <Link href="/feed.xml" className="text-emerald-400/90 hover:text-emerald-300">
+                RSS
+              </Link>
+              <Link href="/atom.xml" className="text-emerald-400/90 hover:text-emerald-300">
+                Atom
+              </Link>
+              <Link href="/feed.json" className="text-emerald-400/90 hover:text-emerald-300">
+                JSON Feed
+              </Link>
+            </p>
+          </div>
 
           {/* Search + filters */}
           <section className="border-b border-slate-800 py-8">

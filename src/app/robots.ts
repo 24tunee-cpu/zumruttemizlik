@@ -61,6 +61,9 @@ export default function robots(): MetadataRoute.Robots {
       `${base}/bolgeler/sitemap.xml`,
       `${base}/blog/sitemap.xml`,
       `${base}/geo-sss/sitemap.xml`,
+      // Google: RSS/Atom recent-URL keşfi (tam sitemap yerine değil, ek kanal)
+      `${base}/feed.xml`,
+      `${base}/atom.xml`,
     ],
     host: base,
   };
