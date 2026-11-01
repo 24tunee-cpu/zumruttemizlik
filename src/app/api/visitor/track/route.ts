@@ -1,12 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getClientIp, sanitizeInput, checkRateLimit } from '@/lib/security';
+import { getClientIp, sanitizeInput } from '@/lib/security';
+import { checkDistributedRateLimit } from '@/lib/rate-limit';
+import { publicCorsHeaders } from '@/lib/cors';
 import { processVisitorTrackEvent, TRACK_KINDS, type TrackPayload } from '@/lib/visitor-engine';
-
-const CORS = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Methods': 'POST, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type',
-};
 
 function str(body: Record<string, unknown>, key: string, max: number): string | null {
   const v = body[key];
@@ -54,14 +50,17 @@ function parseBody(body: Record<string, unknown>): TrackPayload | null {
   };
 }
 
-export async function OPTIONS() {
-  return NextResponse.json({}, { headers: CORS });
+export async function OPTIONS(request: NextRequest) {
+  return NextResponse.json(
+    {},
+    { headers: publicCorsHeaders(request.headers.get('origin')) }
+  );
 }
 
 export async function POST(request: NextRequest) {
-  const headers = { ...CORS };
+  const headers = publicCorsHeaders(request.headers.get('origin'));
   const ip = getClientIp(request);
-  const limit = checkRateLimit(`visitor-track:${ip}`, 180, 60_000);
+  const limit = await checkDistributedRateLimit(`visitor-track:${ip}`, 180, 60_000);
   if (!limit.allowed) {
     return NextResponse.json({ error: 'Too many requests' }, { status: 429, headers });
   }

@@ -212,9 +212,9 @@ export const authOptions: NextAuthOptions = {
           return null;
         }
 
-        // Sadece admin kullanıcılar
-        if (user.role !== 'ADMIN') {
-          logAuthEvent(email, false, 'Not an admin user');
+        // Admin paneli: ADMIN veya EDITOR
+        if (user.role !== 'ADMIN' && user.role !== 'EDITOR') {
+          logAuthEvent(email, false, 'Not an admin/editor user');
           return null;
         }
 

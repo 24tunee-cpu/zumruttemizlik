@@ -29,15 +29,10 @@ import {
   sanitizeInput,
   isValidEmail,
   isValidPhone,
+  getClientIp,
 } from '@/lib/security';
-// ============================================
-// CONFIGURATION
-// ============================================
-
-/** Logger instance */
-
-/** Rate limiting map (IP -> timestamp array) */
-const rateLimitMap = new Map<string, number[]>();
+import { checkDistributedRateLimit } from '@/lib/rate-limit';
+import { publicCorsHeaders } from '@/lib/cors';
 
 /** Rate limit window for POST: 5 minutes */
 const RATE_LIMIT_WINDOW_POST = 5 * 60 * 1000;
@@ -60,68 +55,6 @@ const MAX_LENGTHS = {
   service: 50,
 } as const;
 
-// ============================================
-// CORS HEADERS
-// ============================================
-
-const CORS_HEADERS = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-};
-
-// ============================================
-// UTILITY FUNCTIONS
-// ============================================
-
-/**
- * Check rate limit for IP address
- * @param ip Client IP address
- * @param maxRequests Max requests allowed
- * @param window Time window in milliseconds
- * @returns boolean - true if rate limited
- */
-function checkRateLimit(ip: string, maxRequests: number, window: number): boolean {
-  const now = Date.now();
-  const timestamps = rateLimitMap.get(ip) || [];
-
-  // Filter out old timestamps outside the window
-  const validTimestamps = timestamps.filter(
-    (timestamp) => now - timestamp < window
-  );
-
-  // Check if limit exceeded
-  if (validTimestamps.length >= maxRequests) {
-    return true;
-  }
-
-  // Add current timestamp
-  validTimestamps.push(now);
-  rateLimitMap.set(ip, validTimestamps);
-
-  return false;
-}
-
-/**
- * Get client IP from request headers
- * @param request NextRequest object
- * @returns Client IP address
- */
-function getClientIp(request: NextRequest): string {
-  const forwarded = request.headers.get('x-forwarded-for');
-  const realIp = request.headers.get('x-real-ip');
-
-  if (forwarded) {
-    return forwarded.split(',')[0].trim();
-  }
-
-  if (realIp) {
-    return realIp;
-  }
-
-  return 'unknown';
-}
-
 function isMongoObjectId(value: string): boolean {
   return /^[a-f\d]{24}$/i.test(value);
 }
@@ -133,8 +66,11 @@ function isMongoObjectId(value: string): boolean {
 /**
  * OPTIONS handler for CORS preflight
  */
-export async function OPTIONS() {
-  return NextResponse.json({}, { headers: CORS_HEADERS });
+export async function OPTIONS(request: NextRequest) {
+  return NextResponse.json(
+    {},
+    { headers: publicCorsHeaders(request.headers.get('origin')) }
+  );
 }
 
 /**
@@ -142,7 +78,7 @@ export async function OPTIONS() {
  * Basitleştirilmiş versiyon: auth geçtiyse, hata olsa bile en kötü boş dizi döner.
  */
 export async function GET(request: NextRequest) {
-  const headers = { ...CORS_HEADERS };
+  const headers = publicCorsHeaders(request.headers.get('origin'));
   const ip = getClientIp(request);
 
   // Admin authentication
@@ -152,9 +88,13 @@ export async function GET(request: NextRequest) {
     return authError;
   }
 
-  // Rate limiting
-  if (checkRateLimit(ip, MAX_REQUESTS_GET, RATE_LIMIT_WINDOW_GET)) {
-    console.warn('Rate limit exceeded on GET contact', { ip });
+  const limit = await checkDistributedRateLimit(
+    `contact-get:${ip}`,
+    MAX_REQUESTS_GET,
+    RATE_LIMIT_WINDOW_GET
+  );
+  if (!limit.allowed) {
+    console.warn('Rate limit exceeded on GET contact', { ip, backend: limit.backend });
     return NextResponse.json(
       { error: 'Çok fazla istek. Lütfen 1 dakika bekleyin.' },
       { status: 429, headers }
@@ -228,12 +168,16 @@ export async function GET(request: NextRequest) {
  * @returns Created contact request JSON
  */
 export async function POST(request: NextRequest) {
-  const headers = { ...CORS_HEADERS };
+  const headers = publicCorsHeaders(request.headers.get('origin'));
   const ip = getClientIp(request);
 
-  // Rate limiting for public endpoint (3 requests per 5 minutes)
-  if (checkRateLimit(ip, MAX_REQUESTS_POST, RATE_LIMIT_WINDOW_POST)) {
-    console.warn('Rate limit exceeded on POST contact', { ip });
+  const postLimit = await checkDistributedRateLimit(
+    `contact-post:${ip}`,
+    MAX_REQUESTS_POST,
+    RATE_LIMIT_WINDOW_POST
+  );
+  if (!postLimit.allowed) {
+    console.warn('Rate limit exceeded on POST contact', { ip, backend: postLimit.backend });
     return NextResponse.json(
       { error: 'Çok fazla mesaj gönderdiniz. Lütfen 5 dakika sonra tekrar deneyin.' },
       { status: 429, headers }

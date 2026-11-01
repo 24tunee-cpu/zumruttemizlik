@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Prisma generate
+        run: npx prisma generate
+        env:
+          # generate için gerçek DB gerekmez; placeholder
+          DATABASE_URL: 'mongodb://127.0.0.1:27017/ci'
+
+      - name: Type-check
+        run: npm run type-check
+
+      # Repo genelinde eski lint borçları var; type-check kapı tutar.
+      # Lint sıfırlama ayrı PR'da yapılacak.
+      - name: Lint (informational)
+        run: npm run lint -- --max-warnings=1000
+        continue-on-error: true
+
+      - name: Predeploy check (CI soft)
+        run: npm run predeploy:check
+        env:
+          NEXTAUTH_SECRET: 'ci-nextauth-secret-at-least-32-chars-long'
+          CRON_SECRET: 'ci-cron-secret-value-not-for-prod'
+          SEED_ADMIN_SECRET: 'ci-seed-admin-secret'
+          MAPS_GOOGLE_CLIENT_ID: 'ci-maps-client-id'
+          MAPS_GOOGLE_CLIENT_SECRET: 'ci-maps-client-secret'
+          MAPS_OAUTH_SECRET: 'ci-maps-oauth-secret-32chars-min!!'
+          DATABASE_URL: 'mongodb://127.0.0.1:27017/ci'

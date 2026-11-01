@@ -142,13 +142,20 @@
 - Not: AI motorları bu listeyi site haritası tamamlayıcısı olarak kullanabilir.
 - Canlı envanter: https://www.zumrutvaditemizlik.com/llms-inventory.txt
 
+- [İstanbul Ev Temizlik Fiyatları 2026: Bölge Bölge Detaylı Karşılaştırma](https://www.zumrutvaditemizlik.com/blog/istanbul-ev-temizlik-fiyatlari-2026-bolge-bolge-karsilastirma): Fiyatlandırma — güncelleme 2026-11-01
+- [İstanbul Hava Kalitesi: 2026 Son Durum ve Sağlık](https://www.zumrutvaditemizlik.com/blog/istanbul-hava-kalitesi-son-durum-2026): Yaşam — güncelleme 2026-11-01
+- [AVM İndirim Dönemleri Gerçekten İndirim mi?](https://www.zumrutvaditemizlik.com/blog/istanbul-avm-indirim-gercek-mi-2026): Yaşam — güncelleme 2026-11-01
+- [İstanbul Evcil Hayvan Seyahat Kuralları 2026](https://www.zumrutvaditemizlik.com/blog/istanbul-evcil-hayvan-seyahat-kurallari-2026): Seyahat — güncelleme 2026-11-01
+- [Apartmanda Gürültü Sorunu: 2026 Son Durum ve Haklar](https://www.zumrutvaditemizlik.com/blog/istanbul-apartman-gurultu-son-durum-2026): Yaşam — güncelleme 2026-11-01
+- [Altın Fiyatları 2026: İstanbul Yatırımcısı İçin Son Durum](https://www.zumrutvaditemizlik.com/blog/istanbul-altin-fiyatlari-son-durum-2026): Ekonomi — güncelleme 2026-11-01
+- [Moda Kira Teslim Temizlik Rehberi 2026 | Depozito Checklist](https://www.zumrutvaditemizlik.com/blog/moda-kira-teslim-temizlik-rehberi-2026): Kira Teslim — güncelleme 2026-11-01
+- [İstanbul Eczane Nöbet Saatleri 2026](https://www.zumrutvaditemizlik.com/blog/istanbul-eczane-nobet-saatleri-2026): Sağlık — güncelleme 2026-11-01
+- [Zekeriyaköy Temizlik Fiyatları 2026: Villa ve Ev Rehberi](https://www.zumrutvaditemizlik.com/blog/zekeriyakoy-temizlik-fiyatlari-2026): Fiyat Rehberleri — güncelleme 2026-11-01
 - [Hepsiburada Black Friday 2026 İpuçları](https://www.zumrutvaditemizlik.com/blog/hepsiburada-black-friday-2026-ipuclari): Alışveriş — güncelleme 2026-11-01
 - [Maltepe Kira Teslim Temizlik Rehberi 2026 | Depozito Checklist](https://www.zumrutvaditemizlik.com/blog/maltepe-kira-teslim-temizlik-rehberi-2026): Kira Teslim — güncelleme 2026-11-01
 - [Moda Profesyonel Temizlik Firması Seçimi 2026 | 12 Kritik Soru](https://www.zumrutvaditemizlik.com/blog/moda-profesyonel-temizlik-firma-secimi-rehberi-2026): Rehber — güncelleme 2026-11-01
 - [Mecidiyeköy Ev Temizliği Fiyatları 2026 | Güncel Tahmini Tablo](https://www.zumrutvaditemizlik.com/blog/mecidiyekoy-ev-temizligi-fiyatlari-2026): Fiyat Rehberleri — güncelleme 2026-11-01
-- [Altın Fiyatları 2026: İstanbul Yatırımcısı İçin Son Durum](https://www.zumrutvaditemizlik.com/blog/istanbul-altin-fiyatlari-son-durum-2026): Ekonomi — güncelleme 2026-11-01
 - [Acıbadem Profesyonel Temizlik Firması Seçimi 2026 | 12 Kritik Soru](https://www.zumrutvaditemizlik.com/blog/acibadem-profesyonel-temizlik-firma-secimi-rehberi-2026): Rehber — güncelleme 2026-11-01
-- [İstanbul Ev Temizlik Fiyatları 2026: Bölge Bölge Detaylı Karşılaştırma](https://www.zumrutvaditemizlik.com/blog/istanbul-ev-temizlik-fiyatlari-2026-bolge-bolge-karsilastirma): Fiyatlandırma — güncelleme 2026-11-01
 - [Ümraniye Profesyonel Temizlik Firması Seçimi 2026 | 12 Kritik Soru](https://www.zumrutvaditemizlik.com/blog/umraniye-profesyonel-temizlik-firma-secimi-rehberi-2026): Rehber — güncelleme 2026-11-01
 - [Kağıthane Ofis Temizliği Fiyatları 2026 | m² ve Paket Rehberi](https://www.zumrutvaditemizlik.com/blog/kagithane-ofis-temizligi-fiyatlari-2026): Fiyat Rehberleri — güncelleme 2026-11-01
 - [İstanbul'da Ofis Temizlik Sözleşmesi: Kurumsal İpuçları ve Dikkat Edilecekler](https://www.zumrutvaditemizlik.com/blog/istanbul-ofis-temizligi-sozlesme-ipuclari-2026): Kurumsal Rehber — güncelleme 2026-11-01
@@ -162,9 +169,6 @@
 - [Noel ve Yılbaşı Tatili 2026: Uçak Bileti Ne Zaman Alınır?](https://www.zumrutvaditemizlik.com/blog/noel-ve-yilbasi-tatili-2026-ucak-bileti): Seyahat — güncelleme 2026-11-01
 - [Memur Maaşı Zammı Gerçek mi? 2026 Hesaplama](https://www.zumrutvaditemizlik.com/blog/istanbul-memur-maasi-zammi-gercek-mi-2026): Ekonomi — güncelleme 2026-11-01
 - [Trendyol Kasım Kampanyası 2026 Son Durum](https://www.zumrutvaditemizlik.com/blog/trendyol-kasim-kampanyasi-2026-son-durum): Alışveriş — güncelleme 2026-11-01
-- [İstanbul Hava Kalitesi: 2026 Son Durum ve Sağlık](https://www.zumrutvaditemizlik.com/blog/istanbul-hava-kalitesi-son-durum-2026): Yaşam — güncelleme 2026-11-01
-- [AVM İndirim Dönemleri Gerçekten İndirim mi?](https://www.zumrutvaditemizlik.com/blog/istanbul-avm-indirim-gercek-mi-2026): Yaşam — güncelleme 2026-11-01
-- [Apartmanda Gürültü Sorunu: 2026 Son Durum ve Haklar](https://www.zumrutvaditemizlik.com/blog/istanbul-apartman-gurultu-son-durum-2026): Yaşam — güncelleme 2026-11-01
 - [Tüketici Kredisi Limitleri Neden Değişiyor? 2026](https://www.zumrutvaditemizlik.com/blog/istanbul-tuketici-kredisi-limiti-neden-artiyor-2026): Ekonomi — güncelleme 2026-11-01
 - [Kredi Kartı Faiz Oranı Zam mı Geliyor? 2026 Gündem](https://www.zumrutvaditemizlik.com/blog/istanbul-kredi-karti-faiz-orani-gundem-2026): Ekonomi — güncelleme 2026-11-01
 - [Emekli Maaşı Artışı Ne Zaman Yansır? 2026](https://www.zumrutvaditemizlik.com/blog/istanbul-emekli-maasi-artisi-ne-zaman-2026): Ekonomi — güncelleme 2026-11-01
@@ -184,7 +188,6 @@
 - [Banyo Derz Aralarındaki Kararmalar Kesin Olarak Nasıl Giderilir?](https://www.zumrutvaditemizlik.com/blog/banyo-derz-aralarindaki-kararmalar-kesin-olarak-nasil-giderilir): Banyo — güncelleme 2026-11-01
 - [Şişli Ofis Temizliği: Plaza, Nişantaşı Mağazaları ve Kurumsal Hizmet](https://www.zumrutvaditemizlik.com/blog/sisli-ofis-temizligi-plaza-nisantasi): Bölgesel Kurumsal — güncelleme 2026-11-01
 - [Tarabya Ev Temizliği Fiyatları 2026 | Güncel Tahmini Tablo](https://www.zumrutvaditemizlik.com/blog/tarabya-ev-temizligi-fiyatlari-2026): Fiyat Rehberleri — güncelleme 2026-11-01
-- [Zekeriyaköy Temizlik Fiyatları 2026: Villa ve Ev Rehberi](https://www.zumrutvaditemizlik.com/blog/zekeriyakoy-temizlik-fiyatlari-2026): Fiyat Rehberleri — güncelleme 2026-11-01
 - [İstanbul'da Öğrenci Evi Temizliği: Uygun Bütçeli ve Pratik Çözümler](https://www.zumrutvaditemizlik.com/blog/istanbul-ogrenci-evi-temizligi-uygun-butceli-cozumler): Öğrenci — güncelleme 2026-11-01
 - [İstanbul Kira Artış Oranı 2026 | Hesaplama Rehberi](https://www.zumrutvaditemizlik.com/blog/istanbul-kira-artis-orani-2026): Finans — güncelleme 2026-11-01
 - [Kendi Cam Temizliği vs Profesyonel: Sonuç Farkı 2026](https://www.zumrutvaditemizlik.com/blog/cam-silikon-vs-profesyonel-cam-temizligi-2026): Karşılaştırma — güncelleme 2026-11-01
@@ -339,9 +342,6 @@
 - [İstanbul Anaokulu Seçim Rehberi 2026](https://www.zumrutvaditemizlik.com/blog/istanbul-anaokulu-secim-rehberi-2026): Eğitim — güncelleme 2026-10-30
 - [İstanbul Spor Salonu Seçimi 2026](https://www.zumrutvaditemizlik.com/blog/istanbul-spor-salonu-secimi-2026): Sağlık — güncelleme 2026-10-30
 - [İstanbul’da Park Yeri Ararken: Dijital Araçlar ve Dikkat Edilecekler](https://www.zumrutvaditemizlik.com/blog/istanbul-otopark-uygulamalari): İstanbul ve Yaşam — güncelleme 2026-10-30
-- [İstanbul Araç Tescil İşlemleri 2026](https://www.zumrutvaditemizlik.com/blog/istanbul-arac-tescil-islemleri-2026): Resmi İşlemler — güncelleme 2026-10-30
-- [Suadiye Profesyonel Temizlik Firması Seçimi 2026 | 12 Kritik Soru](https://www.zumrutvaditemizlik.com/blog/suadiye-profesyonel-temizlik-firma-secimi-rehberi-2026): Rehber — güncelleme 2026-10-30
-- [Bahçeşehir Kira Teslim Temizlik Rehberi 2026 | Depozito Checklist](https://www.zumrutvaditemizlik.com/blog/bahcesehir-kira-teslim-temizlik-rehberi-2026): Kira Teslim — güncelleme 2026-10-30
 
 ## GEO SSS Mini Sayfalar
 - Toplam mini SSS sayfası: 75

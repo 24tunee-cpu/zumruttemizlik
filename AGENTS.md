@@ -246,6 +246,7 @@ Her öneride: fayda · risk · efor · öncelik. Trafik/sıralama garantisi yok.
 | 2026-10-30 | P3 kapanış: Uskumruköy landing, ilçe fiyat CTA bloğu, galeri SEO, README 16, bahçe=peyzaj değil kararı |
 | 2026-10-30 | Blog v6: 100 viral/CTR gündem yazısı, 10/gün drip (31 Eki–9 Kas 2026), tag `otomatik yayın v6` |
 | 2026-11-01 | AI backlog: GeoMentionCheck skor kartı, CleaningService schema, TL;DR extract, prompt bank genişleme, v6 köprü sertleştirme, llms↔NAP validate, identity.json |
+| 2026-11-02 | Infra hardening: cron timing-safe auth, CI, admin server gate, Upstash rate-limit opsiyonel, health, HSTS/CORS, HomeAndConstructionBusiness schema, Netlify dep kaldırıldı |
 
 **Talimat dosyaları:** `CLAUDE.md` → `@AGENTS.md`. `.cursorrules` / `.cursor/rules` projede yok. Tek ana anayasa: bu dosya.
 

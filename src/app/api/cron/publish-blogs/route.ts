@@ -5,7 +5,8 @@ import { getBlogScheduleHealth } from '@/lib/blog-schedule-preserve';
 import { runSeoAutopilot } from '@/lib/seo-autopilot';
 
 export const dynamic = 'force-dynamic';
-export const maxDuration = 60;
+/** Pro planda 300sn; Hobby'de platform 60sn ile sınırlar */
+export const maxDuration = 300;
 
 /**
  * Günlük SEO Autopilot — blog + geo-sss + GSC + refresh + mevsim + IndexNow.
