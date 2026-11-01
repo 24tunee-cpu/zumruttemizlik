@@ -24,6 +24,8 @@ export async function GET(request: NextRequest) {
 
     safeRevalidatePath('/blog');
     safeRevalidatePath('/feed.xml');
+    safeRevalidatePath('/atom.xml');
+    safeRevalidatePath('/feed.json');
 
     for (const { slug } of posts) {
       safeRevalidatePath(`/blog/${slug}`);

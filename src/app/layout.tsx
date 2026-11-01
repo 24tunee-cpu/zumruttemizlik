@@ -49,6 +49,11 @@ const rootMetadataBase: Metadata = {
     languages: {
       "tr-TR": canonicalUrl("/"),
     },
+    types: {
+      "application/rss+xml": canonicalUrl("/feed.xml"),
+      "application/atom+xml": canonicalUrl("/atom.xml"),
+      "application/feed+json": canonicalUrl("/feed.json"),
+    },
   },
   openGraph: {
     title: 'Zümrüt Vadi Temizlik | İstanbul Profesyonel Temizlik Hizmetleri',

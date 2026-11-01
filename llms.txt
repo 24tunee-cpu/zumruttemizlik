@@ -28,6 +28,9 @@
 - [Randevu](https://www.zumrutvaditemizlik.com/randevu): Ücretsiz keşif ve randevu talep formu.
 - [Hakkımızda](https://www.zumrutvaditemizlik.com/hakkimizda): Kurumsal geçmiş, ekip ve değerler.
 - [Blog](https://www.zumrutvaditemizlik.com/blog): Temizlik ve hijyen odaklı bilgilendirici içerikler.
+- [RSS](https://www.zumrutvaditemizlik.com/feed.xml): Son blog yazıları (RSS 2.0).
+- [Atom](https://www.zumrutvaditemizlik.com/atom.xml): Son blog yazıları (Atom 1.0).
+- [JSON Feed](https://www.zumrutvaditemizlik.com/feed.json): Makine okunur blog feed.
 
 ## Kritik Gerçekler
 - Marka adı: Zümrüt Vadi Temizlik.

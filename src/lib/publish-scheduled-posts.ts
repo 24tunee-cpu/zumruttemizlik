@@ -71,6 +71,8 @@ export async function publishScheduledBlogPosts(): Promise<PublishScheduledResul
   if (publishedSlugs.length > 0) {
     revalidatePath('/blog');
     revalidatePath('/feed.xml');
+    revalidatePath('/atom.xml');
+    revalidatePath('/feed.json');
     for (const slug of publishedSlugs) {
       revalidatePath(`/blog/${slug}`);
     }
