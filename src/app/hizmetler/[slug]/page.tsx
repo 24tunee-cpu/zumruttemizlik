@@ -27,6 +27,10 @@ import { SITE_CONTACT } from '@/config/site-contact';
 import RelatedSeoLinks from '@/components/site/RelatedSeoLinks';
 import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
 import { WhyChooseZvt } from '@/components/site/WhyChooseZvt';
+import {
+  GeoExtractAnswer,
+  buildServiceExtractAnswer,
+} from '@/components/site/GeoExtractAnswer';
 import { buildServicePageSeoLinks } from '@/lib/internal-seo-links';
 import {
   canonicalUrl,
@@ -430,6 +434,15 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-300">
               {service.shortDesc}
             </p>
+            <div className="mx-auto mt-6 max-w-2xl">
+              <GeoExtractAnswer
+                label="Kısa cevap"
+                answer={buildServiceExtractAnswer({
+                  serviceName: service.title,
+                  shortDesc: service.shortDesc,
+                })}
+              />
+            </div>
           </div>
         </section>
 

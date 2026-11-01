@@ -210,16 +210,48 @@ export function buildSiteHubStripLinks(): SeoLinkItem[] {
   ]);
 }
 
+/** Engagement / viral (v4–v6) blog → zorunlu temizlik hub köprüleri */
+export const REQUIRED_ENGAGEMENT_BRIDGE_HREFS = [
+  '/hizmetler/ev-temizligi',
+  '/hizmetler/ofis-temizligi',
+  '/bolgeler/sariyer',
+  '/bolgeler/sariyer/zekeriyakoy',
+  '/fiyat-hesaplama',
+  '/randevu',
+] as const;
+
 export function buildEngagementBlogBridgeLinks(): SeoLinkItem[] {
   return dedupeSeoLinks([
-    { href: '/rehber', label: 'Temizlik ve ev bakım rehberi' },
     { href: '/hizmetler/ev-temizligi', label: 'Ev temizliği hizmeti' },
+    { href: '/hizmetler/ofis-temizligi', label: 'Ofis temizliği hizmeti' },
+    { href: '/hizmetler/insaat-sonrasi-temizlik', label: 'İnşaat sonrası temizlik' },
     { href: '/bolgeler/sariyer', label: 'Sarıyer temizlik' },
     { href: '/bolgeler/sariyer/zekeriyakoy', label: 'Zekeriyaköy temizlik' },
+    { href: '/bolgeler/sariyer/uskumrukoy', label: 'Uskumruköy temizlik' },
     { href: '/fiyat-hesaplama', label: 'Online fiyat hesaplama' },
     { href: '/randevu', label: 'Ücretsiz keşif' },
+    { href: '/rehber', label: 'Temizlik ve ev bakım rehberi' },
     { href: '/blog', label: 'Tüm blog yazıları' },
   ]);
+}
+
+/** v4/v5/v6 kuyruk veya viral engagement slug */
+export function isEngagementBlogPost(slug: string, tags: string[] = []): boolean {
+  const tagHit = tags.some(
+    (t) =>
+      /otomatik\s*yay[iı]n\s*v[456]/i.test(t) ||
+      /engagement/i.test(t) ||
+      /viral/i.test(t)
+  );
+  if (tagHit) return true;
+  if (
+    slug.startsWith('istanbul-') &&
+    !slug.includes('temizlik') &&
+    !slug.includes('fiyatlari')
+  ) {
+    return true;
+  }
+  return false;
 }
 
 /** Geçerli programmatic ilçe slug seti */

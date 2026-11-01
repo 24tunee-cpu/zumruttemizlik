@@ -4,7 +4,11 @@
  */
 import type { PrismaClient } from '@prisma/client';
 import { V2_DISTRICTS } from '@/lib/seed-blog-v2-content';
-import { buildEngagementBlogBridgeLinks } from '@/lib/internal-seo-links';
+import {
+  buildEngagementBlogBridgeLinks,
+  isEngagementBlogPost,
+  REQUIRED_ENGAGEMENT_BRIDGE_HREFS,
+} from '@/lib/internal-seo-links';
 
 export const AUTO_INTERNAL_LINKS_MARKER = 'data-auto-internal-links="v1"';
 
@@ -147,20 +151,27 @@ export async function fetchRelatedPublishedBlogLinks(
 
 export function buildAutoInternalLinks(params: {
   slug: string;
+  tags?: string[];
   relatedBlogLinks?: InternalLinkItem[];
 }): InternalLinkItem[] {
+  if (isEngagementBlogPost(params.slug, params.tags ?? [])) {
+    const bridges = buildEngagementBlogBridgeLinks();
+    const hrefSet = new Set(bridges.map((l) => l.href));
+    for (const href of REQUIRED_ENGAGEMENT_BRIDGE_HREFS) {
+      if (!hrefSet.has(href)) {
+        bridges.push({ href, label: href });
+      }
+    }
+    return dedupeLinks(bridges).slice(0, 12);
+  }
+
   const district = extractDistrictFromSlug(params.slug);
   if (!district) {
-    const isEngagement =
-      params.slug.startsWith('istanbul-') &&
-      !params.slug.includes('temizlik') &&
-      !params.slug.includes('fiyatlari');
-    if (isEngagement) {
-      return dedupeLinks(buildEngagementBlogBridgeLinks());
-    }
     return dedupeLinks([
       { href: '/fiyat-hesaplama', label: 'Online fiyat hesaplama' },
       { href: '/randevu', label: 'Ücretsiz keşif randevusu' },
+      { href: '/hizmetler/ev-temizligi', label: 'Ev temizliği' },
+      { href: '/bolgeler/sariyer', label: 'Sarıyer temizlik' },
       { href: '/blog', label: 'Tüm blog yazıları' },
     ]);
   }
@@ -182,18 +193,32 @@ export function appendAutoInternalLinksSection(
 
 export async function enrichBlogContentWithInternalLinks(
   prisma: PrismaClient,
-  post: { slug: string; content: string }
+  post: { slug: string; content: string; tags?: string[] }
 ): Promise<{ content: string; linksAdded: number }> {
   if (hasAutoInternalLinks(post.content)) {
     return { content: post.content, linksAdded: 0 };
   }
 
-  const district = extractDistrictFromSlug(post.slug);
-  const relatedBlogLinks = district
-    ? await fetchRelatedPublishedBlogLinks(prisma, district.slug, post.slug)
-    : [];
+  let tags = post.tags;
+  if (!tags) {
+    const row = await prisma.blogPost.findUnique({
+      where: { slug: post.slug },
+      select: { tags: true },
+    });
+    tags = row?.tags ?? [];
+  }
 
-  const links = buildAutoInternalLinks({ slug: post.slug, relatedBlogLinks });
+  const district = extractDistrictFromSlug(post.slug);
+  const relatedBlogLinks =
+    district && !isEngagementBlogPost(post.slug, tags)
+      ? await fetchRelatedPublishedBlogLinks(prisma, district.slug, post.slug)
+      : [];
+
+  const links = buildAutoInternalLinks({
+    slug: post.slug,
+    tags,
+    relatedBlogLinks,
+  });
   const content = appendAutoInternalLinksSection(post.content, links);
 
   return {

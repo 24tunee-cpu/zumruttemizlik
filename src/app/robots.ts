@@ -3,11 +3,19 @@ import { getSiteUrl } from '@/lib/seo';
 
 /**
  * Dinamik robots.txt — ortam URL’si ve sitemap adresi `getSiteUrl()` ile uyumludur.
+ * Not: Crawl-delay Google tarafından yok sayılır (zararsız gürültü); Bing vb. için tutulur.
+ * IndexNow anahtarı yoksa autopilot uyarı verir — robots bunu engellemez.
  * @see https://nextjs.org/docs/app/api-reference/file-conventions/metadata/robots
  */
 export default function robots(): MetadataRoute.Robots {
   const base = getSiteUrl();
   const disallow = ['/admin/', '/api/', '/login', '/blog?', '/fiyat-hesaplama?', '/iletisim?'];
+  const indexNowConfigured = Boolean(process.env.INDEXNOW_KEY?.trim());
+  if (!indexNowConfigured && process.env.VERCEL_ENV === 'production') {
+    console.warn(
+      '[robots] INDEXNOW_KEY production’da tanımlı değil — Bing/Yandex ping atlanır (P1 doğrulama)'
+    );
+  }
 
   return {
     rules: [
@@ -15,22 +23,20 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: '*',
         allow: '/',
         disallow,
-        crawlDelay: 1, // 1 saniye bekle - server'ı yormaz
+        crawlDelay: 1,
       },
       {
-        // Google için özel ayar - daha hızlı ama kontrollü
         userAgent: 'Googlebot',
         allow: '/',
-        crawlDelay: 0.5, // 500ms - Google için optimize
+        crawlDelay: 0.5,
       },
       {
-        // Diğer major botlar
         userAgent: ['Bingbot', 'Slurp', 'DuckDuckBot'],
         allow: '/',
         crawlDelay: 1,
       },
       {
-        // GEO: AI crawler'lar tüm public içeriğe erişebilir (admin/api hariç)
+        // GEO/AEO: AI crawler’lar public içeriğe erişebilir (admin/api hariç)
         userAgent: [
           'GPTBot',
           'ChatGPT-User',
@@ -39,6 +45,10 @@ export default function robots(): MetadataRoute.Robots {
           'anthropic-ai',
           'Google-Extended',
           'PerplexityBot',
+          'Applebot-Extended',
+          'Bytespider',
+          'CCBot',
+          'meta-externalagent',
         ],
         allow: '/',
         disallow,

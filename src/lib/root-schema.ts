@@ -5,6 +5,7 @@ import { unstable_cache } from 'next/cache';
 import { prisma } from '@/lib/prisma';
 import { SITE_CONTACT } from '@/config/site-contact';
 import { GEO_AREA_SERVED_PRIORITY, GEO_NAP, getGeoSameAsUrls } from '@/config/geo-entity';
+import { SERVICE_LANDINGS } from '@/config/programmatic-seo';
 import { getSiteUrl, serializeSchemaGraph } from '@/lib/seo';
 
 function toAbsoluteUrl(base: string, pathOrUrl: string | null | undefined): string | undefined {
@@ -98,9 +99,31 @@ export async function buildRootSchemaGraphJson(): Promise<string> {
     ...(uniqueSameAs.length > 0 ? { sameAs: uniqueSameAs } : {}),
   };
 
+  const areaServed = GEO_AREA_SERVED_PRIORITY.map((name) => {
+    const isAdmin =
+      name === 'İstanbul' || name.includes('Yakası') || name === 'İstanbul Avrupa Yakası';
+    return {
+      '@type': isAdmin ? 'AdministrativeArea' : 'City',
+      name,
+    };
+  });
+
+  const makesOffer = SERVICE_LANDINGS.map((s) => ({
+    '@type': 'Offer',
+    itemOffered: {
+      '@type': 'Service',
+      name: s.name,
+      description: s.shortPitch,
+      url: `${base}/hizmetler/${s.slug}`,
+      areaServed: areaServed.slice(0, 5),
+      provider: { '@id': `${base}/#business` },
+    },
+  }));
+
   const localBusiness: Record<string, unknown> = {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
+    '@type': ['LocalBusiness', 'CleaningService'],
+    additionalType: 'https://schema.org/HouseCleaner',
     '@id': `${base}/#business`,
     name: siteName,
     url: base,
@@ -131,13 +154,15 @@ export async function buildRootSchemaGraphJson(): Promise<string> {
         closes: '23:59',
       },
     ],
-    areaServed: [...GEO_AREA_SERVED_PRIORITY],
+    areaServed,
+    makesOffer,
     knowsAbout: [
       'Sarıyer temizlik',
       'Zekeriyaköy villa temizliği',
       'İnşaat sonrası temizlik',
       'Ofis temizliği',
       'Ev temizliği',
+      'Uskumruköy temizlik',
     ],
     priceRange: '₺₺',
     foundingDate: '2010',

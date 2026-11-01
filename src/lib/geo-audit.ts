@@ -6,6 +6,7 @@ import path from 'node:path';
 import type { PrismaClient } from '@prisma/client';
 import { GEO_NAP, GEO_BRAND_NAME, GEO_DIRECTORY_TARGETS } from '@/config/geo-entity';
 import { GEO_SSS_PAGES } from '@/config/geo-district-faqs';
+import { getIndexNowKey } from '@/lib/indexnow';
 
 export type GeoAuditCheck = {
   id: string;
@@ -101,11 +102,51 @@ export async function runGeoTechnicalAudit(prisma: PrismaClient): Promise<GeoAud
   }
 
   const llms = fs.readFileSync(path.join(root, 'llms.txt'), 'utf8');
+  const llmsDigits = llms.replace(/\D/g, '');
+  const napPhoneOkLlms = llmsDigits.includes(GEO_NAP.telephone.replace(/\D/g, '').slice(-10));
+  const napEmailOkLlms = llms.toLowerCase().includes(GEO_NAP.email.toLowerCase());
   checks.push({
     id: 'llms-brand',
     label: 'llms.txt marka kimliği',
     status: llms.includes(GEO_BRAND_NAME) ? 'pass' : 'fail',
     detail: llms.includes(GEO_BRAND_NAME) ? 'Marka adı mevcut' : 'Marka adı eksik',
+  });
+  checks.push({
+    id: 'llms-nap-phone-email',
+    label: 'llms.txt ↔ NAP telefon/e-posta',
+    status: napPhoneOkLlms && napEmailOkLlms ? 'pass' : 'fail',
+    detail:
+      napPhoneOkLlms && napEmailOkLlms
+        ? 'Telefon ve e-posta GEO_NAP ile uyumlu'
+        : `Tel OK=${napPhoneOkLlms}, E-posta OK=${napEmailOkLlms}`,
+  });
+
+  const identityPath = path.join(root, 'public', 'identity.json');
+  checks.push({
+    id: 'identity-json',
+    label: 'public/identity.json',
+    status: fs.existsSync(identityPath) ? 'pass' : 'warn',
+    detail: fs.existsSync(identityPath) ? 'Machine-readable entity mevcut' : 'identity.json yok',
+  });
+
+  const indexNowKey = getIndexNowKey();
+  checks.push({
+    id: 'indexnow-key',
+    label: 'IndexNow anahtarı',
+    status: indexNowKey ? 'pass' : 'warn',
+    detail: indexNowKey
+      ? 'INDEXNOW_KEY tanımlı'
+      : 'INDEXNOW_KEY yok — Bing/Yandex ping atlanır (P1 prod doğrulama)',
+  });
+
+  const robotsHasApple = robotsSrc.includes('Applebot-Extended');
+  checks.push({
+    id: 'robots-extra-ai',
+    label: 'robots ek AI botları',
+    status: robotsHasApple ? 'pass' : 'warn',
+    detail: robotsHasApple
+      ? 'Applebot-Extended vb. tanımlı'
+      : 'Applebot-Extended eksik olabilir',
   });
 
   const score = scoreChecks(checks);

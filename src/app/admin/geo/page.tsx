@@ -11,6 +11,7 @@ import {
   MessageSquare,
   Target,
   Users,
+  ClipboardList,
 } from 'lucide-react';
 
 type GeoDashboard = {
@@ -46,13 +47,46 @@ type GeoDashboard = {
     startedAt: string;
     stats: {
       audit?: { score: number; checks: { label: string; status: string; detail: string }[] };
-      citation?: { overallScore: number; brandMentionPages: number; promptResults: {
-        prompt: string;
-        brandCoverageScore: number;
-        recommendation: string;
-      }[] };
+      citation?: {
+        overallScore: number;
+        brandMentionPages: number;
+        promptResults: {
+          prompt: string;
+          brandCoverageScore: number;
+          recommendation: string;
+        }[];
+      };
     };
   } | null;
+};
+
+type MentionScorecard = {
+  totalChecks: number;
+  last30Days: number;
+  brandMentionRate: number;
+  urlCitationRate: number;
+  avgScore: number;
+  byEngine: Array<{
+    engine: string;
+    checks: number;
+    brandMentions: number;
+    urlCitations: number;
+    avgScore: number;
+  }>;
+  byOutcome: Array<{ outcome: string; count: number }>;
+  recentPromptCoverage: number;
+};
+
+type MentionCheck = {
+  id: string;
+  promptId: string;
+  promptText: string;
+  engine: string;
+  outcome: string;
+  brandMentioned: boolean;
+  urlCited: boolean;
+  checkedAt: string;
+  notes?: string | null;
 };
 
 export default function AdminGeoPage() {
@@ -60,7 +94,25 @@ export default function AdminGeoPage() {
   const [loading, setLoading] = useState(true);
   const [syncing, setSyncing] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [tab, setTab] = useState<'overview' | 'citation' | 'gbp' | 'reviews' | 'competitors'>('overview');
+  const [tab, setTab] = useState<
+    'overview' | 'citation' | 'mentions' | 'gbp' | 'reviews' | 'competitors'
+  >('overview');
+
+  const [scorecard, setScorecard] = useState<MentionScorecard | null>(null);
+  const [checks, setChecks] = useState<MentionCheck[]>([]);
+  const [engines, setEngines] = useState<{ id: string; label: string }[]>([]);
+  const [outcomes, setOutcomes] = useState<{ id: string; label: string }[]>([]);
+  const [prompts, setPrompts] = useState<{ id: string; prompt: string; category: string }[]>([]);
+  const [mentionLoading, setMentionLoading] = useState(false);
+  const [saving, setSaving] = useState(false);
+  const [form, setForm] = useState({
+    promptId: '',
+    promptText: '',
+    engine: 'chatgpt',
+    outcome: 'none',
+    notes: '',
+    citedUrl: '',
+  });
 
   const load = useCallback(async () => {
     try {
@@ -73,6 +125,32 @@ export default function AdminGeoPage() {
       setError(e instanceof Error ? e.message : 'Hata');
     } finally {
       setLoading(false);
+    }
+  }, []);
+
+  const loadMentions = useCallback(async () => {
+    try {
+      setMentionLoading(true);
+      const res = await fetch('/api/admin/geo/mentions?limit=100', { credentials: 'include' });
+      if (!res.ok) throw new Error('Mention skor kartı yüklenemedi');
+      const json = await res.json();
+      setScorecard(json.scorecard);
+      setChecks(json.checks ?? []);
+      setEngines(json.engines ?? []);
+      setOutcomes(json.outcomes ?? []);
+      setPrompts(json.prompts ?? []);
+      setForm((f) => {
+        if (f.promptId || !json.prompts?.[0]) return f;
+        return {
+          ...f,
+          promptId: json.prompts[0].id,
+          promptText: json.prompts[0].prompt,
+        };
+      });
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Mention yükleme hatası');
+    } finally {
+      setMentionLoading(false);
     }
   }, []);
 
@@ -90,9 +168,56 @@ export default function AdminGeoPage() {
     }
   };
 
+  const saveMention = async () => {
+    try {
+      setSaving(true);
+      setError(null);
+      const res = await fetch('/api/admin/geo/mentions', {
+        method: 'POST',
+        credentials: 'include',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          promptId: form.promptId,
+          promptText: form.promptText,
+          engine: form.engine,
+          outcome: form.outcome,
+          notes: form.notes || null,
+          citedUrl: form.citedUrl || null,
+        }),
+      });
+      if (!res.ok) {
+        const j = await res.json().catch(() => ({}));
+        throw new Error(j.error || 'Kayıt başarısız');
+      }
+      setForm((f) => ({ ...f, notes: '', citedUrl: '', outcome: 'none' }));
+      await loadMentions();
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Kayıt hatası');
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const deleteMention = async (id: string) => {
+    if (!confirm('Bu kaydı silmek istiyor musunuz?')) return;
+    const res = await fetch(`/api/admin/geo/mentions?id=${encodeURIComponent(id)}`, {
+      method: 'DELETE',
+      credentials: 'include',
+    });
+    if (!res.ok) {
+      setError('Silme başarısız');
+      return;
+    }
+    await loadMentions();
+  };
+
   useEffect(() => {
     void load();
   }, [load]);
+
+  useEffect(() => {
+    if (tab === 'mentions') void loadMentions();
+  }, [tab, loadMentions]);
 
   const runStats = data?.lastRun?.stats as Record<string, unknown> | undefined;
   const audit = runStats?.audit as GeoDashboard['lastRun'] extends null
@@ -111,6 +236,7 @@ export default function AdminGeoPage() {
   const tabs = [
     { id: 'overview' as const, label: 'Genel', icon: Sparkles },
     { id: 'citation' as const, label: 'AI Citation', icon: Target },
+    { id: 'mentions' as const, label: 'Mention Skor', icon: ClipboardList },
     { id: 'gbp' as const, label: 'GBP Checklist', icon: MapPin },
     { id: 'reviews' as const, label: 'Yorum Şablonları', icon: MessageSquare },
     { id: 'competitors' as const, label: 'Rakipler', icon: Users },
@@ -164,8 +290,14 @@ export default function AdminGeoPage() {
               </p>
             </div>
             <div className="rounded-xl border border-slate-700 bg-slate-800/50 p-4">
-              <p className="text-xs text-slate-400">GEO SSS Sayfaları</p>
-              <p className="mt-1 text-2xl font-bold text-white">{data.stats.geoSssPages}</p>
+              <p className="text-xs text-slate-400">IndexNow</p>
+              <p
+                className={`mt-1 text-2xl font-bold ${
+                  data.stats.indexNow?.configured ? 'text-emerald-400' : 'text-amber-400'
+                }`}
+              >
+                {data.stats.indexNow?.configured ? 'Aktif' : 'Eksik'}
+              </p>
             </div>
           </div>
 
@@ -192,10 +324,22 @@ export default function AdminGeoPage() {
               <section className="rounded-xl border border-slate-700 bg-slate-800/40 p-5">
                 <h2 className="font-semibold text-white">NAP (Kanonik)</h2>
                 <dl className="mt-3 grid gap-2 text-sm sm:grid-cols-2">
-                  <div><dt className="text-slate-400">Marka</dt><dd className="text-white">{data.nap.name}</dd></div>
-                  <div><dt className="text-slate-400">Telefon</dt><dd className="text-white">{data.nap.telephoneDisplay}</dd></div>
-                  <div><dt className="text-slate-400">E-posta</dt><dd className="text-white">{data.nap.email}</dd></div>
-                  <div><dt className="text-slate-400">Adres</dt><dd className="text-white">{data.nap.streetAddress}</dd></div>
+                  <div>
+                    <dt className="text-slate-400">Marka</dt>
+                    <dd className="text-white">{data.nap.name}</dd>
+                  </div>
+                  <div>
+                    <dt className="text-slate-400">Telefon</dt>
+                    <dd className="text-white">{data.nap.telephoneDisplay}</dd>
+                  </div>
+                  <div>
+                    <dt className="text-slate-400">E-posta</dt>
+                    <dd className="text-white">{data.nap.email}</dd>
+                  </div>
+                  <div>
+                    <dt className="text-slate-400">Adres</dt>
+                    <dd className="text-white">{data.nap.streetAddress}</dd>
+                  </div>
                 </dl>
               </section>
 
@@ -278,10 +422,8 @@ export default function AdminGeoPage() {
                       </dd>
                     </div>
                     <div>
-                      <dt className="text-slate-400">IndexNow</dt>
-                      <dd className={data.stats.indexNow?.configured ? 'text-emerald-400' : 'text-amber-400'}>
-                        {data.stats.indexNow?.configured ? 'Aktif' : 'INDEXNOW_KEY gerekli'}
-                      </dd>
+                      <dt className="text-slate-400">GEO SSS</dt>
+                      <dd className="text-white">{data.stats.geoSssPages}</dd>
                     </div>
                   </dl>
                 </section>
@@ -291,16 +433,20 @@ export default function AdminGeoPage() {
 
           {tab === 'citation' && (
             <section className="rounded-xl border border-slate-700 bg-slate-800/40 p-5">
-              <h2 className="font-semibold text-white">Prompt Bank Kapsamı</h2>
+              <h2 className="font-semibold text-white">Prompt Bank Kapsamı (içerik)</h2>
               <p className="mt-1 text-sm text-slate-400">
-                Marka mention sayfası: {citation?.brandMentionPages ?? 0}
+                Site içeriğinde marka mention: {citation?.brandMentionPages ?? 0} — canlı AI
+                yanıtları için Mention Skor sekmesini kullanın.
               </p>
               <div className="mt-4 space-y-3">
-                {(citation?.promptResults ?? data.citationPrompts.map((p) => ({
-                  prompt: p.prompt,
-                  brandCoverageScore: 0,
-                  recommendation: 'GEO Sync çalıştırın',
-                }))).map((p) => (
+                {(
+                  citation?.promptResults ??
+                  data.citationPrompts.map((p) => ({
+                    prompt: p.prompt,
+                    brandCoverageScore: 0,
+                    recommendation: 'GEO Sync çalıştırın',
+                  }))
+                ).map((p) => (
                   <div key={p.prompt} className="rounded-lg border border-slate-600 bg-slate-900/50 p-3">
                     <p className="text-sm font-medium text-white">{p.prompt}</p>
                     <p className="mt-1 text-xs text-emerald-400">Skor: {p.brandCoverageScore}%</p>
@@ -309,6 +455,173 @@ export default function AdminGeoPage() {
                 ))}
               </div>
             </section>
+          )}
+
+          {tab === 'mentions' && (
+            <div className="space-y-4">
+              {mentionLoading && <p className="text-slate-400">Mention verisi yükleniyor…</p>}
+              {scorecard && (
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                  <div className="rounded-xl border border-slate-700 bg-slate-800/50 p-4">
+                    <p className="text-xs text-slate-400">Toplam kontrol</p>
+                    <p className="mt-1 text-2xl font-bold text-white">{scorecard.totalChecks}</p>
+                  </div>
+                  <div className="rounded-xl border border-slate-700 bg-slate-800/50 p-4">
+                    <p className="text-xs text-slate-400">Marka mention %</p>
+                    <p className="mt-1 text-2xl font-bold text-emerald-400">
+                      {scorecard.brandMentionRate}%
+                    </p>
+                  </div>
+                  <div className="rounded-xl border border-slate-700 bg-slate-800/50 p-4">
+                    <p className="text-xs text-slate-400">URL atıf %</p>
+                    <p className="mt-1 text-2xl font-bold text-emerald-400">
+                      {scorecard.urlCitationRate}%
+                    </p>
+                  </div>
+                  <div className="rounded-xl border border-slate-700 bg-slate-800/50 p-4">
+                    <p className="text-xs text-slate-400">Prompt kapsama (30g)</p>
+                    <p className="mt-1 text-2xl font-bold text-white">
+                      {scorecard.recentPromptCoverage}%
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              <section className="rounded-xl border border-slate-700 bg-slate-800/40 p-5">
+                <h2 className="font-semibold text-white">Yeni manuel kontrol</h2>
+                <p className="mt-1 text-xs text-slate-400">
+                  ChatGPT / Perplexity / Gemini / AI Overviews’ta prompt’u çalıştırıp sonucu kaydedin.
+                  Otomatik scraping yok.
+                </p>
+                <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                  <label className="text-sm text-slate-300">
+                    Prompt
+                    <select
+                      className="mt-1 w-full rounded-lg border border-slate-600 bg-slate-900 px-3 py-2 text-white"
+                      value={form.promptId}
+                      onChange={(e) => {
+                        const p = prompts.find((x) => x.id === e.target.value);
+                        setForm((f) => ({
+                          ...f,
+                          promptId: e.target.value,
+                          promptText: p?.prompt ?? f.promptText,
+                        }));
+                      }}
+                    >
+                      {prompts.map((p) => (
+                        <option key={p.id} value={p.id}>
+                          {p.prompt}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                  <label className="text-sm text-slate-300">
+                    Motor
+                    <select
+                      className="mt-1 w-full rounded-lg border border-slate-600 bg-slate-900 px-3 py-2 text-white"
+                      value={form.engine}
+                      onChange={(e) => setForm((f) => ({ ...f, engine: e.target.value }))}
+                    >
+                      {engines.map((e) => (
+                        <option key={e.id} value={e.id}>
+                          {e.label}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                  <label className="text-sm text-slate-300">
+                    Sonuç
+                    <select
+                      className="mt-1 w-full rounded-lg border border-slate-600 bg-slate-900 px-3 py-2 text-white"
+                      value={form.outcome}
+                      onChange={(e) => setForm((f) => ({ ...f, outcome: e.target.value }))}
+                    >
+                      {outcomes.map((o) => (
+                        <option key={o.id} value={o.id}>
+                          {o.label}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                  <label className="text-sm text-slate-300">
+                    Atıf URL (opsiyonel)
+                    <input
+                      className="mt-1 w-full rounded-lg border border-slate-600 bg-slate-900 px-3 py-2 text-white"
+                      value={form.citedUrl}
+                      onChange={(e) => setForm((f) => ({ ...f, citedUrl: e.target.value }))}
+                      placeholder="https://..."
+                    />
+                  </label>
+                  <label className="sm:col-span-2 text-sm text-slate-300">
+                    Not
+                    <textarea
+                      className="mt-1 w-full rounded-lg border border-slate-600 bg-slate-900 px-3 py-2 text-white"
+                      rows={2}
+                      value={form.notes}
+                      onChange={(e) => setForm((f) => ({ ...f, notes: e.target.value }))}
+                    />
+                  </label>
+                </div>
+                <button
+                  type="button"
+                  disabled={saving || !form.promptId}
+                  onClick={() => void saveMention()}
+                  className="mt-4 rounded-lg bg-emerald-600 px-4 py-2 text-sm font-medium text-white hover:bg-emerald-500 disabled:opacity-50"
+                >
+                  {saving ? 'Kaydediliyor…' : 'Kontrolü kaydet'}
+                </button>
+              </section>
+
+              {scorecard && scorecard.byEngine.length > 0 && (
+                <section className="rounded-xl border border-slate-700 bg-slate-800/40 p-5">
+                  <h2 className="font-semibold text-white">Motor bazlı özet</h2>
+                  <ul className="mt-3 space-y-2 text-sm">
+                    {scorecard.byEngine.map((e) => (
+                      <li
+                        key={e.engine}
+                        className="flex flex-wrap gap-3 rounded-lg border border-slate-600 bg-slate-900/40 px-3 py-2 text-slate-300"
+                      >
+                        <span className="font-medium text-white">{e.engine}</span>
+                        <span>{e.checks} kontrol</span>
+                        <span>marka {e.brandMentions}</span>
+                        <span>URL {e.urlCitations}</span>
+                        <span>ort. skor {e.avgScore}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              )}
+
+              <section className="rounded-xl border border-slate-700 bg-slate-800/40 p-5">
+                <h2 className="font-semibold text-white">Son kayıtlar</h2>
+                <ul className="mt-3 space-y-2">
+                  {checks.length === 0 && (
+                    <li className="text-sm text-slate-400">Henüz kayıt yok — ilk baseline’ı girin.</li>
+                  )}
+                  {checks.map((c) => (
+                    <li
+                      key={c.id}
+                      className="flex flex-wrap items-start justify-between gap-2 rounded-lg border border-slate-600 bg-slate-900/40 p-3 text-sm"
+                    >
+                      <div>
+                        <p className="text-white">{c.promptText}</p>
+                        <p className="mt-1 text-xs text-slate-400">
+                          {c.engine} · {c.outcome} ·{' '}
+                          {new Date(c.checkedAt).toLocaleString('tr-TR')}
+                        </p>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => void deleteMention(c.id)}
+                        className="text-xs text-red-300 hover:text-red-200"
+                      >
+                        Sil
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            </div>
           )}
 
           {tab === 'gbp' && (
@@ -341,7 +654,9 @@ export default function AdminGeoPage() {
               <h2 className="font-semibold text-white">İzlenen Rakipler</h2>
               <ul className="mt-4 space-y-2">
                 {data.competitors.map((c) => (
-                  <li key={c} className="text-sm text-slate-300">{c}</li>
+                  <li key={c} className="text-sm text-slate-300">
+                    {c}
+                  </li>
                 ))}
               </ul>
               <p className="mt-4 text-xs text-slate-500">

@@ -29,6 +29,8 @@ export function getGeoSameAsUrls(siteUrl: string): string[] {
     process.env.NEXT_PUBLIC_LINKEDIN_URL,
     process.env.NEXT_PUBLIC_YOUTUBE_URL,
     process.env.NEXT_PUBLIC_BING_PLACES_URL,
+    process.env.NEXT_PUBLIC_APPLE_MAPS_URL,
+    process.env.NEXT_PUBLIC_YANDEX_BUSINESS_URL,
   ]
     .map((u) => u?.trim())
     .filter((u): u is string => Boolean(u && /^https?:\/\//i.test(u)));
@@ -132,16 +134,27 @@ export const GEO_REVIEW_REQUEST_TEMPLATES = [
   },
 ] as const;
 
-/** AI citation test prompt bank — haftalık izleme */
+/**
+ * AI citation / mention test prompt bank — haftalık manuel izleme.
+ * Admin GEO → Mention Skor kartı ile outcome kaydı.
+ */
 export const GEO_CITATION_PROMPTS = [
   { id: 'sariyer-ev', prompt: 'Sarıyer ev temizliği güvenilir firma önerisi', category: 'local' },
   { id: 'zekeriyakoy', prompt: 'Zekeriyaköy temizlik şirketi tavsiye', category: 'local' },
+  { id: 'uskumrukoy', prompt: 'Uskumruköy villa temizliği hangi firma', category: 'local' },
   { id: 'maslak-ofis', prompt: 'Maslak ofis temizliği fiyatları 2026', category: 'pricing' },
+  { id: 'tarabya-ev', prompt: 'Tarabya ev temizliği önerilen şirket', category: 'local' },
+  { id: 'bahcekoy', prompt: 'Bahçeköy temizlik firması önerisi', category: 'local' },
   { id: 'kira-teslim', prompt: 'İstanbul kira teslim temizliği ne kadar sürer', category: 'info' },
   { id: 'insaat-sonrasi', prompt: 'Sarıyer inşaat sonrası temizlik firması', category: 'local' },
+  { id: 'koltuk-yikama', prompt: 'Sarıyer koltuk yıkama yerinde hizmet', category: 'local' },
   { id: 'firma-secimi', prompt: 'İstanbul profesyonel temizlik firması nasıl seçilir', category: 'info' },
   { id: 'besiktas', prompt: 'Beşiktaş ev temizliği fiyatları', category: 'pricing' },
+  { id: 'sisli-ofis', prompt: 'Şişli düzenli ofis temizliği şirketi', category: 'local' },
   { id: 'genel-istanbul', prompt: 'İstanbul Avrupa Yakası temizlik şirketi önerisi', category: 'local' },
+  { id: 'zumrut-vadi', prompt: 'Zümrüt Vadi Temizlik güvenilir mi telefon', category: 'brand' },
+  { id: 'acik-fiyat', prompt: 'İstanbul temizlik ücretsiz keşif fiyat hesaplama', category: 'pricing' },
+  { id: '7-24', prompt: 'İstanbul 7/24 acil temizlik şirketi Sarıyer', category: 'local' },
 ] as const;
 
 /** Rakip izleme — AI yanıtlarında karşılaştırma için */

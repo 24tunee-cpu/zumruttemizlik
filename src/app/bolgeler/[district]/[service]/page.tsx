@@ -21,6 +21,10 @@ import NeighborhoodLanding from '@/components/site/NeighborhoodLanding';
 import RelatedSeoLinks from '@/components/site/RelatedSeoLinks';
 import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
 import { WhyChooseZvt } from '@/components/site/WhyChooseZvt';
+import {
+  GeoExtractAnswer,
+  buildPairExtractAnswer,
+} from '@/components/site/GeoExtractAnswer';
 import { SITE_CONTACT, toTelHref } from '@/config/site-contact';
 import { canonicalUrl, getSiteUrl } from '@/lib/seo';
 import { buildProgrammaticPairSeoLinks } from '@/lib/internal-seo-links';
@@ -238,6 +242,16 @@ export default async function ProgrammaticLandingPage({ params }: Props) {
               <p className="mt-2 text-sm text-slate-400">{districtData.regionBlurb}</p>
             )}
             <p className="mt-4 text-slate-300">{contentVariant.heroLead}</p>
+            <div className="mt-5">
+              <GeoExtractAnswer
+                label="Kısa cevap"
+                answer={buildPairExtractAnswer({
+                  districtName: districtData.name,
+                  serviceName: serviceData.name,
+                  heroLead: contentVariant.heroLead,
+                })}
+              />
+            </div>
 
             <section className="mt-6 rounded-2xl border border-slate-700 bg-slate-800/30 p-5">
               <h2 className="text-lg font-semibold text-white">Mahalle ve semt kapsamı</h2>
