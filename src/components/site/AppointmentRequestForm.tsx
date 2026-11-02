@@ -5,6 +5,8 @@ import { motion } from 'framer-motion';
 import { Calendar, Loader2, Send } from 'lucide-react';
 import { toast } from '@/store/toastStore';
 import { trackGa4Event } from '@/lib/ga4-client';
+import { getPublicReviewUrl, withGmbUtm, getPublicMapsUrl } from '@/lib/gbp-links';
+import { SITE_CONTACT } from '@/config/site-contact';
 
 const SLOTS = [
   { value: 'morning', label: '09:00–12:00' },
@@ -33,6 +35,12 @@ export function AppointmentRequestForm({ embedded = false }: { embedded?: boolea
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const minDate = useMemo(() => new Date().toISOString().slice(0, 10), []);
+  const reviewHref = useMemo(
+    () =>
+      getPublicReviewUrl() ||
+      withGmbUtm(getPublicMapsUrl(), 'post-randevu-review', { content: 'appointment-form' }),
+    []
+  );
 
   const submit = useCallback(
     async (e: React.FormEvent) => {
@@ -108,8 +116,29 @@ export function AppointmentRequestForm({ embedded = false }: { embedded?: boolea
         </>
       )}
       {submitted ? (
-        <div className="rounded-lg border border-emerald-500/30 bg-emerald-950/40 px-3 py-2 text-sm text-emerald-300">
-          Talebiniz alındı. Müsaitlik kontrolünden sonra sizinle iletişime geçeceğiz.
+        <div className="space-y-2 rounded-lg border border-emerald-500/30 bg-emerald-950/40 px-3 py-3 text-sm text-emerald-300">
+          <p>Talebiniz alındı. Müsaitlik kontrolünden sonra sizinle iletişime geçeceğiz.</p>
+          <p className="text-emerald-100/80">
+            Daha önce hizmet aldıysanız Google yorumunuz yerel görünürlüğe yardımcı olur:{' '}
+            <a
+              href={reviewHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-emerald-200 underline underline-offset-2 hover:text-white"
+              onClick={() =>
+                trackGa4Event('review_cta_click', { source: 'appointment_success' })
+              }
+            >
+              Yorum bırakın
+            </a>
+            {' · '}
+            <a
+              href={`https://wa.me/${SITE_CONTACT.whatsappDigits}`}
+              className="underline underline-offset-2 hover:text-white"
+            >
+              WhatsApp
+            </a>
+          </p>
         </div>
       ) : null}
       <div className="grid gap-3 sm:grid-cols-2">

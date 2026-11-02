@@ -56,6 +56,7 @@ export const GEO_DIRECTORY_TARGETS = [
     /** Manuel takip — panel erişimi olmadan otomasyon yok */
     trackerStatus: 'verify_in_gbp' as const,
     trackerNote: 'NAP, kategori, saatler, fotoğraf, Q&A site ile birebir doğrulanmalı',
+    signupUrl: 'https://business.google.com/',
   },
   {
     id: 'bing-places',
@@ -64,7 +65,9 @@ export const GEO_DIRECTORY_TARGETS = [
     priority: 'high' as const,
     platform: 'chatgpt_bing',
     trackerStatus: 'pending_manual' as const,
-    trackerNote: 'Kayıt varsa NEXT_PUBLIC_BING_PLACES_URL doldur; yoksa oluştur',
+    trackerNote:
+      'Hesap yoksa oluştur → URL’yi NEXT_PUBLIC_BING_PLACES_URL + Admin GEO citation’a yaz',
+    signupUrl: 'https://www.bingplaces.com/',
   },
   {
     id: 'apple-maps',
@@ -73,7 +76,8 @@ export const GEO_DIRECTORY_TARGETS = [
     priority: 'medium' as const,
     platform: 'apple_intelligence',
     trackerStatus: 'pending_manual' as const,
-    trackerNote: 'Apple Business Connect profil URL’si eklenecek',
+    trackerNote: 'Profil URL’sini NEXT_PUBLIC_APPLE_MAPS_URL + citation tracker’a ekle',
+    signupUrl: 'https://businessconnect.apple.com/',
   },
   {
     id: 'yandex',
@@ -83,6 +87,7 @@ export const GEO_DIRECTORY_TARGETS = [
     platform: 'yandex',
     trackerStatus: 'pending_manual' as const,
     trackerNote: 'İstanbul yerel görünürlük için opsiyonel',
+    signupUrl: 'https://business.yandex.com/',
   },
 ] as const;
 
@@ -111,14 +116,16 @@ export const GEO_AREA_SERVED_PRIORITY = [
 export const GEO_GBP_CHECKLIST = [
   'Birincil kategori: Temizlik Hizmetleri (doğrulandı 2026-11-02)',
   'İkincil: Ev / Halı / Cam / Döşeme temizliği — Ofis + İnşaat sonrası ekle',
+  'Predefined + custom services: gbp-services-copy.ts metinlerini yapıştır (peyza/tekne yok)',
   'KALDIR: Peyzaj Mimarı (peyzaj hizmeti yok) · Tekne temizliği yoksa kaldır',
   'Açıklamadan “bahçe peyzaj” çıkar; bahçe = yüzey temizliği',
   'NAP site ile birebir: Ferahevler, Şen Aydın Sok. No:10, 34457 · 0551 925 09 43',
   'Çalışma saatleri: 24 saat açık (GBP = site schema)',
-  'En az 20 güncel fotoğraf (önce/sonra, ekip) — stok azalt',
-  'Haftalık Post + yorum yanıtı (semt + hizmet)',
-  'Yorum hızı: 12 yorumdan düzenli artış hedefle',
-  'Randevu / fiyat hesaplama linki açıklamada + UTM',
+  'En az 20 güncel fotoğraf (önce/sonra, ekip) — stok azalt; site: public/images/services/',
+  'Haftalık Post + yorum yanıtı (semt + hizmet) — GEO_REVIEW_RESPONSE_TEMPLATES',
+  'Yorum hızı: 12 yorumdan düzenli artış hedefle (burst spam yok)',
+  'Randevu / fiyat hesaplama linki açıklamada + UTM (gbp-links)',
+  'Citation: Bing Places + Apple Business Connect URL → env + Admin GEO tracker',
 ] as const;
 
 /** GEO odaklı Google yorum istek şablonları — {reviewLink} Place ID / env ile doldurulur */
@@ -126,17 +133,46 @@ export const GEO_REVIEW_REQUEST_TEMPLATES = [
   {
     id: 'whatsapp-short',
     label: 'WhatsApp kısa',
-    text: 'Merhaba {name}, Zümrüt Vadi Temizlik olarak {service} hizmetimizden memnun kaldıysanız Google yorumunuz bize çok yardımcı olur: {reviewLink} Lütfen yorumda "{district}" ve "{service}" ifadelerini geçirmeniz yeterli. Teşekkürler!',
+    text: 'Merhaba {name}, Zümrüt Vadi Temizlik olarak {service} hizmetimizden memnun kaldıysanız Google yorumunuz bize çok yardımcı olur: {reviewLink} İsterseniz "{district}" ve aldığınız hizmeti kısaca yazmanız yeterli. Teşekkürler!',
   },
   {
     id: 'whatsapp-detailed',
-    label: 'WhatsApp detaylı (GEO)',
-    text: 'Sayın {name}, {district} bölgesinde verdiğimiz {service} hizmeti hakkında Google\'da kısa bir yorum bırakabilir misiniz? {reviewLink} AI arama sistemleri yorum metnini okuduğu için şunları yazmanız ideal: hangi hizmeti aldınız, hangi semt/ilçe, sonuçtan memnuniyet. Zümrüt Vadi Temizlik — teşekkürler!',
+    label: 'WhatsApp detaylı (yerel)',
+    text: 'Sayın {name}, {district} bölgesinde verdiğimiz {service} hizmeti hakkında Google\'da kısa bir yorum bırakabilir misiniz? {reviewLink} Yorumda hangi hizmeti aldığınızı, semt/ilçeyi ve memnuniyetinizi kendi cümlelerinizle yazmanız yeterli. Zümrüt Vadi Temizlik — teşekkürler!',
   },
   {
     id: 'email-formal',
     label: 'E-posta resmi',
     text: 'Sayın {name},\n\n{service} hizmetimiz için teşekkür ederiz. Google Business Profile üzerinden deneyiminizi paylaşmanız, {district} bölgesinde hizmet arayan müşterilerin bizi bulmasına yardımcı olur.\n\nYorum linki: {reviewLink}\n\nZümrüt Vadi Temizlik',
+  },
+  {
+    id: 'post-job-sms',
+    label: 'İş sonrası kısa SMS',
+    text: 'Merhaba {name}, {district} {service} tamamlandı. Memnunsanız Google yorumunuz yeter: {reviewLink} — Zümrüt Vadi Temizlik',
+  },
+] as const;
+
+/** GBP yorum yanıtı taslakları — manipülasyon yok; onaylı kullan */
+export const GEO_REVIEW_RESPONSE_TEMPLATES = [
+  {
+    id: 'positive-short',
+    label: 'Kısa olumlu',
+    text: 'Merhaba {name}, {district} bölgesindeki {service} geri bildiriminiz için teşekkürler. Tekrar ihtiyaç olursa 0551 925 09 43.',
+  },
+  {
+    id: 'zekeriyakoy-villa',
+    label: 'Villa / Zekeriyaköy',
+    text: '{name}, Zekeriyaköy’deki ev/villa temizliğiniz için teşekkür ederiz. Memnuniyetiniz ekibimizi motive ediyor.',
+  },
+  {
+    id: 'maslak-ofis',
+    label: 'Ofis / Maslak',
+    text: '{name}, Maslak ofis hijyeni hakkındaki yorumunuz için teşekkürler. Mesai dışı planlamada yine yanınızdayız.',
+  },
+  {
+    id: 'negative-recover',
+    label: 'Olumsuz — çözüm',
+    text: '{name}, deneyiminiz için üzgünüz. Eksik kalan noktayı netleştirmek için 0551 925 09 43 veya WhatsApp’tan yazın; aynı gün dönüş yapalım.',
   },
 ] as const;
 

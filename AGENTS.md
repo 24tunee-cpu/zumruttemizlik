@@ -237,7 +237,7 @@ Her öneride: fayda · risk · efor · öncelik. Trafik/sıralama garantisi yok.
 |----|---------|------|
 | A1 | ~~P1~~ | ~~llmsSync EROFS~~ → düzeltildi (skip + `/llms-inventory.txt`) |
 | A2 | ~~P1~~ | ~~NAP/adres~~ → GBP Ferahevler No:10 + pin + sameAs hizalandı (2026-11-02) |
-| A3 | P1 | GSC/IndexNow/GBP env’lerinin prod’da dolu olduğu doğrulanmalı (yerelde IndexNow key eksikliği görülmüştü) |
+| A3 | P1 | Vercel prod (2026-11-02): INDEXNOW + GBP Place/URL/lat-lng + CRON dolu; **eksik:** GSC_*, MAPS_GOOGLE_*, Bing/Apple URL env — `npm run seo:verify-env` |
 | A4 | ~~P2~~ | ~~Uskumruköy landing~~ → eklendi (`/bolgeler/sariyer/uskumrukoy`) |
 | A5 | ~~P2~~ | ~~Semt×hizmet~~ → `zekeriyakoy-ev-temizligi` + `maslak-ofis-temizligi` (özgün; 2026-11-02) |
 | A6 | ~~P2~~ | ~~SSS tek sayfa~~ → `/sss/[topic]` niyet parçalama + hub şerit (2026-11-02) |
@@ -286,6 +286,7 @@ Her öneride: fayda · risk · efor · öncelik. Trafik/sıralama garantisi yok.
 | 2026-11-02 | SEO Beast OS: `.cursor/skills/zvt-seo-beast` + guardrails rule + `trust-signals.ts`; AGENTS §0 hiyerarşi güncellendi |
 | 2026-11-02 | Peak skill pack: progressive refs (verified-facts, AEO/GEO, discovery), `zvt-garrett-dispatch`, `zvt-programmatic-landing`, local GBP/citation/review refs |
 | 2026-11-02 | Skill pack **smart**: decision-tree, systems-map (Google local+AI+spam), anti-patterns, money-page, CWV; swap-city gate; Whitespark≠AGENTS (GBP name keyword yasak) |
+| 2026-11-02 | Gap pass: `gbp-services-copy` + Admin GEO yapıştır, review yanıt/istek, engagement money bridges, `seo:verify-env` / stock-image report, randevu review CTA; A3 kısmi (IndexNow/GBP OK, GSC/Maps/Bing/Apple eksik) |
 
 **Talimat dosyaları:** `CLAUDE.md` → `@AGENTS.md`. Skill indeks: `.cursor/skills/README.md`. User-global: Garrett pack + mirrored `zvt-*`. Tek ana anayasa: bu dosya.
 

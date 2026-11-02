@@ -16,12 +16,13 @@ Sektör anketi (Whitespark LSRF 2026) **gözlem**; AGENTS çatışmasında AGENT
 
 - [ ] Birincil: Temizlik Hizmetleri  
 - [ ] İkincil: Ofis, İnşaat sonrası, Ev, Cam, Halı, Koltuk (yalnız gerçek hizmetler)  
-- [ ] Predefined + custom **services** doldur (gerçek paketler)  
+- [ ] Predefined + custom **services** doldur — `gbp-services-copy.ts` / Admin GEO → GBP  
 - [ ] Saat: 24 saat (= site schema)  
 - [ ] Web: `https://www.zumrutvaditemizlik.com` (+ UTM opsiyonel `gbp-links`)  
 - [ ] Telefon / adres = `site-contact` (HTML NAP match)  
 - [ ] Pin doğru (Ferahevler); pin taşıma ile “distance hack” yok  
-- [ ] Hizmet alanı: Sarıyer öncelik + Avrupa Yakası (hibrit; adresi gizleme)
+- [ ] Hizmet alanı: Sarıyer öncelik + Avrupa Yakası (hibrit; adresi gizleme)  
+- [ ] Bing Places + Apple Business Connect → URL env + Admin GEO citation
 
 ## P2 — Prominence operasyon
 

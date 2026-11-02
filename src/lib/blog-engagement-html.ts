@@ -1,5 +1,6 @@
 import type { BlogSeedPost } from './seed-blog';
 import { buildFeaturedSnippetBlock, buildGeoTldr, buildPassageSection } from './geo-passage';
+import { buildEngagementBlogBridgeLinks } from './internal-seo-links';
 
 export type EngagementGuideConfig = {
   slug: string;
@@ -36,6 +37,11 @@ export function buildEngagementGuideHtml(cfg: EngagementGuideConfig): string {
     cfg.intro
   );
 
+  const moneyLinks = buildEngagementBlogBridgeLinks()
+    .slice(0, 8)
+    .map((l) => `<a href="${l.href}">${l.label}</a>`)
+    .join(' · ');
+
   return `
 ${tldr}
 ${featuredSnippet}
@@ -55,6 +61,7 @@ ${faqHtml}
 <h2>Özet</h2>
 <p class="geo-passage-answer" data-geo-extract="true"><strong>Özet:</strong> ${cfg.keyword} hakkında temel adımları uyguladığınızda hem zaman hem gereksiz masraftan kaçınabilirsiniz. Güncel bilgi için resmi kanalları takip edin.</p>
 <p><a href="/blog">Tüm rehberler</a> · <a href="/rehber">Temizlik rehberi</a> · <a href="/iletisim">Bize ulaşın</a></p>
+<p class="engagement-money-bridges"><strong>Hizmet ve bölge:</strong> ${moneyLinks}</p>
 <p><em>Zümrüt Vadi Temizlik</em>, İstanbul genelinde ev ve ofis yaşamına dair rehberler sunarken profesyonel temizlik hizmeti de sağlar.</p>
   `.trim();
 }
