@@ -33,6 +33,13 @@ jobs:
       - name: Type-check
         run: npm run type-check
 
+      # SEO Beast gates — slug + llms NAP; soft (DB/env yoksa fail olmasın diye continue)
+      - name: SEO gates (autopilot slug + llms NAP)
+        run: npm run seo:gates
+        continue-on-error: true
+        env:
+          DATABASE_URL: 'mongodb://127.0.0.1:27017/ci'
+
       # Repo genelinde eski lint borçları var; type-check kapı tutar.
       # Lint sıfırlama ayrı PR'da yapılacak.
       - name: Lint (informational)

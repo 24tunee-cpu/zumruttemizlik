@@ -1,0 +1,26 @@
+---
+description: SEO tripwire — NAP, fake metrics, discovery stack, homepage. Load zvt-seo-beast before edits.
+globs: src/app/page.tsx,src/components/site/Hero.tsx,src/components/site/DeferredHomeSections.tsx,src/config/site-contact.ts,src/config/geo-entity.ts,src/config/trust-signals.ts,src/config/programmatic-seo.ts,src/config/seo-cannibalization.ts,src/config/home-services-seo.ts,src/lib/meta-clamp.ts,src/lib/seo.ts,src/lib/root-schema.ts,src/lib/gbp-links.ts,src/lib/feeds.ts,src/lib/websub.ts,src/lib/sitemap-lastmod.ts,src/app/**/page.tsx,src/app/**/sitemap.ts
+alwaysApply: false
+---
+
+# ZVT SEO Guardrails (tripwire)
+
+Before editing matching files, read:
+
+1. `AGENTS.md` (§0 hierarchy)
+2. `.cursor/skills/zvt-seo-beast/SKILL.md` + `checklist.md`
+3. GBP/local work → also `.cursor/skills/zvt-local-seo/SKILL.md`
+
+## Hard stops
+
+- NAP only via `src/config/site-contact.ts` (DB footer override = risk)
+- Trust numbers only via `src/config/trust-signals.ts` or live Maps sync — no `5000+` / fake `5.0`
+- No peyzaj service; no fake reviews/branches
+- Do not delete/break feeds, WebSub, IndexNow, honest `sitemap-lastmod`
+- Indexing API not for cleaning URLs; IndexNow ≠ “Google ping”
+- No push/deploy/paid MCP without explicit user request
+- New neighborhood URL requires özgün `NEIGHBORHOOD_LANDINGS` content
+- Public metadata must use `meta-clamp` helpers (no emoji in title/desc)
+
+Homepage: one H1; local intent Sarıyer/Zekeriyaköy; use StickySeoCtaBar + verified GBP rating.

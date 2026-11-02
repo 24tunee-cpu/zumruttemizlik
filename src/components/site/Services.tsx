@@ -327,7 +327,7 @@ export function Services({ limit = 7 }: ServicesProps) {
 
           {/* Trust strip */}
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3 text-xs font-medium text-slate-300 sm:text-sm">
-            {['7/24 Destek', 'Sigortalı Ekip', '5000+ Mutlu Müşteri', 'Aynı Gün Randevu'].map((t) => (
+            {['7/24 Destek', 'Sigortalı Ekip', 'Google 4.9', 'Aynı Gün Randevu'].map((t) => (
               <span
                 key={t}
                 className="inline-flex items-center gap-1.5 rounded-full border border-slate-700/80 bg-slate-800/50 px-3 py-1.5"
