@@ -63,7 +63,7 @@ export const FAQ_SEED_DATA: FaqSeedRow[] = [
     seedKey: 'zumrutvadi-faq-06',
     question: 'Hangi İstanbul bölgelerinde hizmet veriyorsunuz?',
     answer:
-      'Avrupa ve Anadolu yakasındaki tüm ilçelerde planlı hizmet veriyoruz: Kadıköy, Üsküdar, Ataşehir, Beşiktaş, Şişli, Bakırköy, Bahçelievler, Pendik ve çevre ilçeler dahil. Yoğun trafik ve park koşullarına göre randevu saatini birlikte netleştiriyoruz.',
+      'Öncelik hattımız Sarıyer (Zekeriyaköy, Maslak, Tarabya, Bahçeköy, Uskumruköy) ve Avrupa Yakası yakın ilçelerdir. Beşiktaş, Şişli, Kağıthane ve komşu bölgelerde düzenli ekip yönlendirmesi yapıyoruz; Anadolu yakası ve daha uzak ilçe taleplerini kapasite/rota planına göre değerlendiririz. Kesin hizmet onayı ücretsiz keşif sonrasındadır — “her adres / her gün aynı gün” garantisi vermiyoruz.',
     category: 'Bölge',
     order: 6,
     isActive: true,

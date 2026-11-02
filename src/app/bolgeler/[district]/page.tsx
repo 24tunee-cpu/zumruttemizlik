@@ -12,6 +12,7 @@ import {
   getDistrictOperationalSignals,
   findNeighborhoodLandingForDistrictNeighborhood,
   getNeighborhoodLandingsForDistrict,
+  districtCoverageDisclaimer,
 } from '@/config/programmatic-seo';
 import { canonicalUrl, generateFAQSchema, serializeSchemaGraph } from '@/lib/seo';
 import {
@@ -151,10 +152,13 @@ export default async function DistrictPage({ params }: Props) {
                 </>
               ) : (
                 <>
-                  {districtData.name} için {districtData.populationNote} odağında hizmet veriyoruz.
+                  {districtData.name} için {districtData.populationNote} odağında hizmet planlarız.
                 </>
               )}{' '}
-              Aşağıdaki hizmet sayfalarından doğrudan teklif alabilirsiniz.
+              Aşağıdaki hizmet sayfalarından teklif alabilirsiniz.
+            </p>
+            <p className="mt-3 max-w-3xl text-sm text-slate-400">
+              {districtCoverageDisclaimer(districtData)}
             </p>
 
             <div className="mt-6 rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4">

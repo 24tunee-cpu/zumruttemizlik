@@ -10,9 +10,12 @@ import {
   GEO_NAP,
   GEO_REVIEW_REQUEST_TEMPLATES,
 } from '@/config/geo-entity';
+import { platformForDirectoryId } from '@/config/citation-tracker';
 import { getBlogScheduleHealth } from '@/lib/blog-schedule-preserve';
 import { getIndexNowKey, getIndexNowKeyLocation } from '@/lib/indexnow';
 import { AUTO_INTERNAL_LINKS_MARKER } from '@/lib/blog-publish-internal-links';
+import { fillReviewTemplate, getPublicReviewUrl, withGmbUtm, getPublicMapsUrl } from '@/lib/gbp-links';
+import { getGoogleMapsPublicLinks } from '@/lib/google-maps-public-links';
 
 export async function GET(request: NextRequest) {
   const denied = await requireAdminAuth(request);
@@ -33,16 +36,55 @@ export async function GET(request: NextRequest) {
   });
   const indexNowKey = getIndexNowKey();
 
+  const listings = await prisma.mapPlatformListing.findMany({
+    select: {
+      platform: true,
+      listingUrl: true,
+      connectionStatus: true,
+      externalPlaceId: true,
+      lastManualSyncAt: true,
+      internalNotes: true,
+    },
+  });
+  const byPlatform = new Map(listings.map((l) => [l.platform, l]));
+
+  const mapsLinks = await getGoogleMapsPublicLinks();
+  const reviewLink =
+    getPublicReviewUrl() ||
+    (mapsLinks.placeId
+      ? mapsLinks.reviewUrl
+      : withGmbUtm(getPublicMapsUrl(), 'review-ask'));
+
   return NextResponse.json({
     nap: GEO_NAP,
     gbpChecklist: GEO_GBP_CHECKLIST,
-    reviewTemplates: GEO_REVIEW_REQUEST_TEMPLATES,
+    reviewTemplates: GEO_REVIEW_REQUEST_TEMPLATES.map((t) => ({
+      ...t,
+      preview: fillReviewTemplate(t.text, {
+        name: 'Ayşe',
+        service: 'ev temizliği',
+        district: 'Zekeriyaköy',
+        reviewLink,
+      }),
+    })),
+    reviewLink,
     citationPrompts: GEO_CITATION_PROMPTS,
     competitors: GEO_COMPETITOR_NAMES,
-    directories: GEO_DIRECTORY_TARGETS.map((d) => ({
-      ...d,
-      configured: Boolean(process.env[d.envKey]?.trim()),
-    })),
+    directories: GEO_DIRECTORY_TARGETS.map((d) => {
+      const platform = platformForDirectoryId(d.id);
+      const row = platform ? byPlatform.get(platform) : undefined;
+      const envUrl = process.env[d.envKey]?.trim() || null;
+      return {
+        ...d,
+        configured: Boolean(envUrl || row?.listingUrl || row?.connectionStatus === 'connected'),
+        platform,
+        connectionStatus: row?.connectionStatus ?? 'not_connected',
+        listingUrl: row?.listingUrl ?? envUrl,
+        externalPlaceId: row?.externalPlaceId ?? null,
+        lastManualSyncAt: row?.lastManualSyncAt?.toISOString() ?? null,
+        internalNotes: row?.internalNotes ?? null,
+      };
+    }),
     stats: {
       publishedBlogs,
       geoPassageBlogs,
@@ -53,6 +95,7 @@ export async function GET(request: NextRequest) {
         configured: Boolean(indexNowKey),
         keyLocation: indexNowKey ? getIndexNowKeyLocation() : null,
       },
+      placeIdConfigured: Boolean(mapsLinks.placeId),
     },
     lastRun: lastRun
       ? {

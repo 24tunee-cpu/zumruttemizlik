@@ -1,15 +1,21 @@
 /**
  * Harita / yorum sayfası — Google Maps URL'leri.
- * Öncelik: admin MapPlatformListing → env → Zümrüt Vadi adres araması (eski sabit link yok).
+ * Öncelik: admin MapPlatformListing → env Place ID / URL → SITE_CONTACT GBP → adres araması.
  */
 import { cache } from 'react';
 import { prisma } from '@/lib/prisma';
 import { SITE_CONTACT } from '@/config/site-contact';
+import {
+  getPublicPlaceId,
+  reviewUrlFromPlaceId,
+  withGmbUtm,
+} from '@/lib/gbp-links';
 
 export type GoogleMapsPublicLinks = {
   mapsOpenUrl: string;
   reviewUrl: string;
   mapsEmbedUrl: string;
+  placeId: string | null;
   source: 'db' | 'env' | 'fallback';
 };
 
@@ -35,10 +41,6 @@ function buildFallbackEmbedUrl(): string {
   return `https://maps.google.com/maps?q=${encodeURIComponent(query)}&z=15&output=embed`;
 }
 
-function reviewUrlFromPlaceId(placeId: string): string {
-  return `https://search.google.com/local/writereview?placeid=${encodeURIComponent(placeId.trim())}`;
-}
-
 export const getGoogleMapsPublicLinks = cache(async (): Promise<GoogleMapsPublicLinks> => {
   let listing: {
     listingUrl: string | null;
@@ -58,6 +60,9 @@ export const getGoogleMapsPublicLinks = cache(async (): Promise<GoogleMapsPublic
   const envMaps = process.env.NEXT_PUBLIC_GBP_URL?.trim();
   const envReview = process.env.NEXT_PUBLIC_GBP_REVIEW_URL?.trim();
   const envEmbed = process.env.NEXT_PUBLIC_GBP_MAPS_EMBED_URL?.trim();
+  const envPlaceId = getPublicPlaceId();
+  const dbPlaceId = listing?.externalPlaceId?.trim() || null;
+  const placeId = dbPlaceId || envPlaceId;
 
   const mapsOpenUrl =
     firstValidUrl(listing?.listingUrl, envMaps, SITE_CONTACT.gbpMapsUrl) ??
@@ -65,9 +70,7 @@ export const getGoogleMapsPublicLinks = cache(async (): Promise<GoogleMapsPublic
 
   const reviewUrl =
     firstValidUrl(envReview) ??
-    (listing?.externalPlaceId?.trim()
-      ? reviewUrlFromPlaceId(listing.externalPlaceId)
-      : null) ??
+    (placeId ? reviewUrlFromPlaceId(placeId) : null) ??
     mapsOpenUrl;
 
   const mapsEmbedUrl =
@@ -79,17 +82,7 @@ export const getGoogleMapsPublicLinks = cache(async (): Promise<GoogleMapsPublic
       ? 'env'
       : 'fallback';
 
-  return { mapsOpenUrl, reviewUrl, mapsEmbedUrl, source };
+  return { mapsOpenUrl, reviewUrl, mapsEmbedUrl, placeId, source };
 });
 
-export function withGmbUtm(url: string, campaign: string): string {
-  try {
-    const parsed = new URL(url);
-    parsed.searchParams.set('utm_source', 'website');
-    parsed.searchParams.set('utm_medium', 'gmb');
-    parsed.searchParams.set('utm_campaign', campaign);
-    return parsed.toString();
-  } catch {
-    return url;
-  }
-}
+export { withGmbUtm, reviewUrlFromPlaceId };

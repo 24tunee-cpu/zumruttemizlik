@@ -25,6 +25,7 @@ import { WhyChooseZvt } from '@/components/site/WhyChooseZvt';
 import { faqPageJsonLdObject } from '@/lib/seed-faq';
 import { canonicalUrl } from '@/lib/seo';
 import { keywordsForPage } from '@/lib/seo-keywords';
+import { SSS_TOPICS } from '@/config/sss-topics';
 import { HelpCircle } from 'lucide-react';
 
 // ============================================
@@ -118,6 +119,20 @@ export default function FAQPage() {
               Aklınıza takılan soruların cevaplarını burada bulabilirsiniz.
               Başka sorularınız için bize ulaşmaktan çekinmeyin.
             </p>
+            <nav
+              aria-label="SSS konuları"
+              className="mx-auto mt-8 flex max-w-3xl flex-wrap justify-center gap-2"
+            >
+              {SSS_TOPICS.map((t) => (
+                <Link
+                  key={t.slug}
+                  href={`/sss/${t.slug}`}
+                  className="rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3 py-1.5 text-xs font-medium text-emerald-100 transition-colors hover:bg-emerald-500/20"
+                >
+                  {t.title.replace(/ SSS$/, '')}
+                </Link>
+              ))}
+            </nav>
           </div>
         </section>
 
@@ -141,6 +156,13 @@ export default function FAQPage() {
                   { href: '/bolgeler/sariyer', label: 'Sarıyer temizlik' },
                   { href: '/bolgeler/sariyer/zekeriyakoy', label: 'Zekeriyaköy' },
                 ],
+              },
+              {
+                title: 'Konu SSS (AEO)',
+                links: SSS_TOPICS.slice(0, 6).map((t) => ({
+                  href: `/sss/${t.slug}`,
+                  label: t.title,
+                })),
               },
               {
                 title: 'Çözüm niyetleri',

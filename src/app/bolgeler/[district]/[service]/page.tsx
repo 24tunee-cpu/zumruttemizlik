@@ -15,6 +15,8 @@ import {
   getDistrictOperationalSignals,
   getServiceBySlug,
   getNeighborhoodLanding,
+  buildLocalizedPairFaqs,
+  districtCoverageDisclaimer,
 } from '@/config/programmatic-seo';
 import ProgrammaticCtaExperiment from '@/components/site/ProgrammaticCtaExperiment';
 import NeighborhoodLanding from '@/components/site/NeighborhoodLanding';
@@ -173,10 +175,13 @@ export default async function ProgrammaticLandingPage({ params }: Props) {
     },
   });
   const callHref = toTelHref(SITE_CONTACT.phoneE164);
+  const pairFaqs = buildLocalizedPairFaqs(districtData, serviceData);
+  const coverageNote = districtCoverageDisclaimer(districtData);
 
   const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
+    additionalType: 'https://schema.org/CleaningService',
     name: `${districtData.name} ${serviceData.name}`,
     serviceType: serviceData.name,
     areaServed: districtData.name,
@@ -184,6 +189,7 @@ export default async function ProgrammaticLandingPage({ params }: Props) {
       '@type': 'LocalBusiness',
       name: 'Zümrüt Vadi Temizlik',
       url: siteRoot,
+      telephone: SITE_CONTACT.phoneE164,
     },
     url: canonical,
     description: `${districtData.name} bölgesinde ${contentVariant.heroLead}`,
@@ -192,9 +198,9 @@ export default async function ProgrammaticLandingPage({ params }: Props) {
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: serviceData.faq.map((item) => ({
+    mainEntity: pairFaqs.map((item) => ({
       '@type': 'Question',
-      name: `${districtData.name} ${item.q}`,
+      name: item.q,
       acceptedAnswer: { '@type': 'Answer', text: item.a },
     })),
   };
@@ -242,6 +248,7 @@ export default async function ProgrammaticLandingPage({ params }: Props) {
               <p className="mt-2 text-sm text-slate-400">{districtData.regionBlurb}</p>
             )}
             <p className="mt-4 text-slate-300">{contentVariant.heroLead}</p>
+            <p className="mt-3 text-sm text-slate-400">{coverageNote}</p>
             <div className="mt-5">
               <GeoExtractAnswer
                 label="Kısa cevap"
@@ -256,8 +263,8 @@ export default async function ProgrammaticLandingPage({ params }: Props) {
             <section className="mt-6 rounded-2xl border border-slate-700 bg-slate-800/30 p-5">
               <h2 className="text-lg font-semibold text-white">Mahalle ve semt kapsamı</h2>
               <p className="mt-2 text-sm text-slate-400">
-                {districtData.name} içinde özellikle şu bölgelerde düzenli ekip yönlendirmesi yapıyoruz; liste
-                genişleyebilir — keşifde netleştiririz.
+                {districtData.name} içinde özellikle şu bölgelerde ekip yönlendirmesi planlanır; liste
+                keşifte netleşir — her adres veya aynı gün garanti edilmez.
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {districtData.neighborhoods.map((n) => (
@@ -315,7 +322,7 @@ export default async function ProgrammaticLandingPage({ params }: Props) {
             <section className="mt-8 rounded-2xl border border-slate-700 bg-slate-800/40 p-6">
               <h2 className="text-xl font-semibold">Sık Sorulan Sorular</h2>
               <div className="mt-4 space-y-4">
-                {serviceData.faq.map((faq) => (
+                {pairFaqs.map((faq) => (
                   <div key={faq.q}>
                     <h3 className="font-medium text-white">{faq.q}</h3>
                     <p className="mt-1 text-sm text-slate-300">{faq.a}</p>

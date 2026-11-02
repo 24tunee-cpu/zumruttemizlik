@@ -237,9 +237,9 @@ Her öneride: fayda · risk · efor · öncelik. Trafik/sıralama garantisi yok.
 | A2 | ~~P1~~ | ~~NAP/adres~~ → GBP Ferahevler No:10 + pin + sameAs hizalandı (2026-11-02) |
 | A3 | P1 | GSC/IndexNow/GBP env’lerinin prod’da dolu olduğu doğrulanmalı (yerelde IndexNow key eksikliği görülmüştü) |
 | A4 | ~~P2~~ | ~~Uskumruköy landing~~ → eklendi (`/bolgeler/sariyer/uskumrukoy`) |
-| A5 | P2 | Semt×hizmet derin sayfalar yok; kopya üretmeden özgün semt önceliği |
-| A6 | P2 | SSS tek sayfa; snippet için hizmet/niyet parçalama değerlendir |
-| A7 | P2 | Citation/backlink tracker yok (yalnızca config checklist) |
+| A5 | ~~P2~~ | ~~Semt×hizmet~~ → `zekeriyakoy-ev-temizligi` + `maslak-ofis-temizligi` (özgün; 2026-11-02) |
+| A6 | ~~P2~~ | ~~SSS tek sayfa~~ → `/sss/[topic]` niyet parçalama + hub şerit (2026-11-02) |
+| A7 | ~~P2~~ | ~~Citation tracker~~ → admin GEO dizin durumu + MapPlatformListing PATCH (2026-11-02) |
 | A8 | ~~P3~~ | İlçe fiyat: hub CTA (thin URL yok) + galeri SEO; video schema yok (içerik yok) |
 | A9 | ~~P3~~ | ~~README 14 vs 16~~ → Next.js 16 notu |
 
@@ -279,6 +279,7 @@ Her öneride: fayda · risk · efor · öncelik. Trafik/sıralama garantisi yok.
 | 2026-11-02 | Keşif sertleştirme: dürüst sitemap lastmod (`sitemap-lastmod`), WebSub hub+ping, galeri image sitemap, IndexNow proxy yedek, discovery-notify |
 | 2026-11-02 | Local SEO Skills (Garrett) user-global kuruldu; §0 hiyerarşi + `.cursor/skills/zvt-local-seo` köprü — AGENTS üstün, ücretli MCP varsayılan kapalı |
 | 2026-11-02 | A2 kapanış: NAP=GBP Ferahevler Şen Aydın No:10/34457, pin, sameAs Maps URL, llms/identity; Peyzaj kategorisi GBP’de kaldırılacak |
+| 2026-11-02 | Local SEO kod paketi: `gbp-links` UTM + Place ID yorum, sticky/footer Harita, citation tracker UI, SSS topic A6, A5 semt×hizmet, soft district claim + localized pair FAQ |
 
 **Talimat dosyaları:** `CLAUDE.md` → `@AGENTS.md`. Proje skill: `.cursor/skills/zvt-local-seo`. User-global: `~/.agents/skills` + `~/.cursor/skills` (Garrett pack). Tek ana anayasa: bu dosya.
 

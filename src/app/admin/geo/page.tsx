@@ -14,20 +14,35 @@ import {
   ClipboardList,
 } from 'lucide-react';
 
+type DirectoryRow = {
+  id: string;
+  name: string;
+  priority: string;
+  configured: boolean;
+  trackerStatus?: string;
+  trackerNote?: string;
+  connectionStatus?: string;
+  listingUrl?: string | null;
+  externalPlaceId?: string | null;
+  lastManualSyncAt?: string | null;
+  platform?: string | null;
+};
+
 type GeoDashboard = {
-  nap: { name: string; telephoneDisplay: string; email: string; streetAddress: string };
+  nap: {
+    name: string;
+    telephoneDisplay: string;
+    email: string;
+    streetAddress: string;
+    addressDisplay?: string;
+    postalCode?: string;
+  };
   gbpChecklist: string[];
-  reviewTemplates: { id: string; label: string; text: string }[];
+  reviewTemplates: { id: string; label: string; text: string; preview?: string }[];
+  reviewLink?: string;
   citationPrompts: { id: string; prompt: string; category: string }[];
   competitors: string[];
-  directories: {
-    id: string;
-    name: string;
-    priority: string;
-    configured: boolean;
-    trackerStatus?: string;
-    trackerNote?: string;
-  }[];
+  directories: DirectoryRow[];
   stats: {
     publishedBlogs: number;
     geoPassageBlogs: number;
@@ -40,6 +55,7 @@ type GeoDashboard = {
     };
     blogsWithAutoInternalLinks?: number;
     indexNow?: { configured: boolean; keyLocation: string | null };
+    placeIdConfigured?: boolean;
   };
   lastRun: {
     status: string;
@@ -113,6 +129,10 @@ export default function AdminGeoPage() {
     notes: '',
     citedUrl: '',
   });
+  const [dirDrafts, setDirDrafts] = useState<
+    Record<string, { connectionStatus: string; listingUrl: string; externalPlaceId: string }>
+  >({});
+  const [dirSaving, setDirSaving] = useState<string | null>(null);
 
   const load = useCallback(async () => {
     try {
@@ -120,13 +140,52 @@ export default function AdminGeoPage() {
       setError(null);
       const res = await fetch('/api/admin/geo', { credentials: 'include' });
       if (!res.ok) throw new Error('GEO verisi yüklenemedi');
-      setData(await res.json());
+      const json = (await res.json()) as GeoDashboard;
+      setData(json);
+      const drafts: typeof dirDrafts = {};
+      for (const d of json.directories) {
+        drafts[d.id] = {
+          connectionStatus: d.connectionStatus ?? 'not_connected',
+          listingUrl: d.listingUrl ?? '',
+          externalPlaceId: d.externalPlaceId ?? '',
+        };
+      }
+      setDirDrafts(drafts);
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Hata');
     } finally {
       setLoading(false);
     }
   }, []);
+
+  const saveDirectory = async (directoryId: string) => {
+    const draft = dirDrafts[directoryId];
+    if (!draft) return;
+    try {
+      setDirSaving(directoryId);
+      setError(null);
+      const res = await fetch('/api/admin/geo/directories', {
+        method: 'PATCH',
+        credentials: 'include',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          directoryId,
+          connectionStatus: draft.connectionStatus,
+          listingUrl: draft.listingUrl.trim() || null,
+          externalPlaceId: draft.externalPlaceId.trim() || null,
+        }),
+      });
+      if (!res.ok) {
+        const j = await res.json().catch(() => ({}));
+        throw new Error(j.error || 'Dizin kaydı başarısız');
+      }
+      await load();
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Dizin kayıt hatası');
+    } finally {
+      setDirSaving(null);
+    }
+  };
 
   const loadMentions = useCallback(async () => {
     try {
@@ -338,38 +397,120 @@ export default function AdminGeoPage() {
                   </div>
                   <div>
                     <dt className="text-slate-400">Adres</dt>
-                    <dd className="text-white">{data.nap.streetAddress}</dd>
+                    <dd className="text-white">
+                      {data.nap.addressDisplay || data.nap.streetAddress}
+                      {data.nap.postalCode ? ` · ${data.nap.postalCode}` : ''}
+                    </dd>
                   </div>
                 </dl>
+                <p className="mt-3 text-xs text-slate-500">
+                  Place ID / yorum deep-link:{' '}
+                  {data.stats.placeIdConfigured ? (
+                    <span className="text-emerald-400">yapılandırıldı</span>
+                  ) : (
+                    <span className="text-amber-400">
+                      eksik — admin Haritalar’da Place ID veya NEXT_PUBLIC_GBP_PLACE_ID
+                    </span>
+                  )}
+                </p>
               </section>
 
               <section className="rounded-xl border border-slate-700 bg-slate-800/40 p-5">
                 <h2 className="font-semibold text-white">Citation / dizin tracker</h2>
                 <p className="mt-1 text-xs text-slate-400">
-                  Otomasyon yok — env URL + manuel GBP/dizin doğrulama. Spam citation yok.
+                  Manuel takip — durum + URL DB’ye yazılır. Spam citation / otomatik scraping yok.
                 </p>
-                <ul className="mt-3 space-y-3">
-                  {data.directories.map((d) => (
-                    <li key={d.id} className="text-sm">
-                      <div className="flex flex-wrap items-center gap-2">
-                        {d.configured ? (
-                          <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-400" />
-                        ) : (
-                          <AlertTriangle className="h-4 w-4 shrink-0 text-amber-400" />
-                        )}
-                        <span className="font-medium text-white">{d.name}</span>
-                        <span className="text-slate-500">({d.priority})</span>
-                        {'trackerStatus' in d && d.trackerStatus ? (
-                          <span className="rounded border border-slate-600 px-1.5 py-0.5 text-[10px] uppercase text-slate-400">
-                            {String(d.trackerStatus)}
-                          </span>
+                <ul className="mt-4 space-y-5">
+                  {data.directories.map((d) => {
+                    const draft = dirDrafts[d.id] ?? {
+                      connectionStatus: d.connectionStatus ?? 'not_connected',
+                      listingUrl: d.listingUrl ?? '',
+                      externalPlaceId: d.externalPlaceId ?? '',
+                    };
+                    return (
+                      <li
+                        key={d.id}
+                        className="rounded-lg border border-slate-600/80 bg-slate-900/40 p-4 text-sm"
+                      >
+                        <div className="flex flex-wrap items-center gap-2">
+                          {d.configured || draft.connectionStatus === 'connected' ? (
+                            <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-400" />
+                          ) : (
+                            <AlertTriangle className="h-4 w-4 shrink-0 text-amber-400" />
+                          )}
+                          <span className="font-medium text-white">{d.name}</span>
+                          <span className="text-slate-500">({d.priority})</span>
+                        </div>
+                        {d.trackerNote ? (
+                          <p className="mt-1 text-xs text-slate-400">{d.trackerNote}</p>
                         ) : null}
-                      </div>
-                      {'trackerNote' in d && d.trackerNote ? (
-                        <p className="mt-1 pl-6 text-xs text-slate-400">{String(d.trackerNote)}</p>
-                      ) : null}
-                    </li>
-                  ))}
+                        <div className="mt-3 grid gap-2 sm:grid-cols-2">
+                          <label className="text-xs text-slate-400">
+                            Durum
+                            <select
+                              className="mt-1 w-full rounded-lg border border-slate-600 bg-slate-900 px-2 py-1.5 text-sm text-white"
+                              value={draft.connectionStatus}
+                              onChange={(e) =>
+                                setDirDrafts((prev) => ({
+                                  ...prev,
+                                  [d.id]: { ...draft, connectionStatus: e.target.value },
+                                }))
+                              }
+                            >
+                              <option value="not_connected">Bağlı değil</option>
+                              <option value="in_progress">Devam ediyor</option>
+                              <option value="connected">Bağlı / doğrulandı</option>
+                            </select>
+                          </label>
+                          <label className="text-xs text-slate-400">
+                            Profil URL
+                            <input
+                              className="mt-1 w-full rounded-lg border border-slate-600 bg-slate-900 px-2 py-1.5 text-sm text-white"
+                              value={draft.listingUrl}
+                              onChange={(e) =>
+                                setDirDrafts((prev) => ({
+                                  ...prev,
+                                  [d.id]: { ...draft, listingUrl: e.target.value },
+                                }))
+                              }
+                              placeholder="https://..."
+                            />
+                          </label>
+                          {d.id === 'google-business' ? (
+                            <label className="sm:col-span-2 text-xs text-slate-400">
+                              Google Place ID (yorum deep-link)
+                              <input
+                                className="mt-1 w-full rounded-lg border border-slate-600 bg-slate-900 px-2 py-1.5 text-sm text-white"
+                                value={draft.externalPlaceId}
+                                onChange={(e) =>
+                                  setDirDrafts((prev) => ({
+                                    ...prev,
+                                    [d.id]: { ...draft, externalPlaceId: e.target.value },
+                                  }))
+                                }
+                                placeholder="ChIJ..."
+                              />
+                            </label>
+                          ) : null}
+                        </div>
+                        <div className="mt-3 flex flex-wrap items-center gap-3">
+                          <button
+                            type="button"
+                            disabled={dirSaving === d.id}
+                            onClick={() => void saveDirectory(d.id)}
+                            className="rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-medium text-white hover:bg-emerald-500 disabled:opacity-50"
+                          >
+                            {dirSaving === d.id ? 'Kaydediliyor…' : 'Kaydet'}
+                          </button>
+                          {d.lastManualSyncAt ? (
+                            <span className="text-[11px] text-slate-500">
+                              Son kayıt: {new Date(d.lastManualSyncAt).toLocaleString('tr-TR')}
+                            </span>
+                          ) : null}
+                        </div>
+                      </li>
+                    );
+                  })}
                 </ul>
               </section>
 
@@ -637,12 +778,19 @@ export default function AdminGeoPage() {
 
           {tab === 'reviews' && (
             <section className="space-y-4">
+              {data.reviewLink ? (
+                <p className="rounded-lg border border-amber-500/30 bg-amber-500/10 px-3 py-2 text-xs text-amber-100">
+                  Aktif yorum linki: {data.reviewLink}
+                </p>
+              ) : null}
               {data.reviewTemplates.map((t) => (
                 <div key={t.id} className="rounded-xl border border-slate-700 bg-slate-800/40 p-5">
                   <h3 className="font-medium text-emerald-300">{t.label}</h3>
-                  <p className="mt-2 whitespace-pre-wrap text-sm text-slate-300">{t.text}</p>
+                  <p className="mt-2 whitespace-pre-wrap text-sm text-slate-300">
+                    {t.preview || t.text}
+                  </p>
                   <p className="mt-2 text-xs text-slate-500">
-                    Değişkenler: {'{name}'}, {'{service}'}, {'{district}'}
+                    Değişkenler: {'{name}'}, {'{service}'}, {'{district}'}, {'{reviewLink}'}
                   </p>
                 </div>
               ))}
