@@ -3,9 +3,9 @@ name: zvt-garrett-dispatch
 description: >-
   Routes Zümrüt Vadi local SEO requests to at most 2–3 Garrett skills plus
   project skills. Use when user asks for GBP, map pack, reviews, citations,
-  keyword strategy, local audit, or when Garrett dispatch/localseodata would
-  otherwise load. Classifies intent, blocks paid MCP by default, rejects
-  stuffed GBP names and fake reviews; defers to AGENTS.md.
+  competitor analysis, rakip, keyword strategy, local audit, or when Garrett
+  dispatch/localseodata would otherwise load. Classifies intent, blocks paid
+  MCP by default, rejects stuffed GBP names and fake reviews; defers to AGENTS.md.
 ---
 
 # ZVT Garrett Dispatch (v2026-11-smart)
@@ -32,9 +32,11 @@ Garrett pack = playbook. Bu skill = **router + güvenlik filtresi**. 39 skill’
 | Keyword / strateji | beast inventory | `local-keyword-research` → `local-content-strategy` |
 | Brief → kod | beast + programmatic-landing | `local-content-briefs` (yalnız brief) |
 | Audit | beast checklist + GSC | `local-seo-audit` |
+| Rakip / neden önde | **`zvt-competitor-intel`** | `local-competitor-analysis` (+ isteğe `local-seo-audit`) |
 | SAB / hybrid | local-seo + AGENTS | `service-area-seo` |
 | AI / AEO | beast `aeo-geo.md` | `ai-local-search` (strateji only) |
 | Semt sayfa | `zvt-programmatic-landing` | `local-landing-pages` advisory |
+| Geogrid / heatmap | competitor-intel notu | `geogrid-analysis` (ücretli tool onaysız yok) |
 
 ## Asla varsayılan açma
 

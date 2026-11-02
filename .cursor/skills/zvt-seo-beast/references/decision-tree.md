@@ -20,6 +20,7 @@ Her SEO isteğinde bu ağacı uygula. Skill’leri rastgele yükleme.
 | Blog / autopilot seed | `blog` | beast `autopilot-and-blog` |
 | “#1 ol / 100 puan / garanti” | `expectation` | Reddet; systems-map + dürüst çerçeve |
 | Keyword / brief / audit (strateji) | `strategy` | dispatch → max 2 Garrett + beast implement |
+| Rakip, neden önde, competitive gap | `competitors` | **`zvt-competitor-intel`** (+ Garrett playbook, ücretli tool yok) |
 
 Bir istek birden fazla sınıf taşıyorsa: **önce riskli olan** (NAP/spam/trust), sonra CRO.
 
@@ -46,6 +47,7 @@ Sadece ilgili reference’ı oku (hepsini değil):
 | site-seo | meta-and-trust · schema-contract · money-page-playbook |
 | programmatic | inventory · neighborhood-gate · anti-patterns |
 | local-ops | gbp-panel-checklist · systems-map §1 |
+| competitors | `zvt-competitor-intel` matrix + hard-stops · systems-map §1 |
 | AEO | aeo-geo |
 | keşif | discovery-stack |
 | şüpheli taktik | anti-patterns |

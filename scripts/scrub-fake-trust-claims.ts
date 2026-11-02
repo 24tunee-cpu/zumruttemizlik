@@ -31,8 +31,12 @@ const REPLACEMENTS: Array<{ re: RegExp; to: string }> = [
     to: 'Google doğrulanmış puan',
   },
   {
-    re: /binlerce\s+(olumlu\s+)?m[uü][sş]teri\s+yorumuna\s+sahibiz/gi,
-    to: 'doğrulanmış Google yorumlarımız vardır — harita & yorumlar sayfasında görebilirsiniz',
+    re: /binlerce\s+(olumlu\s+)?m[uü][sş]teri\s+yorumuna\s+sahibiz\.?/gi,
+    to: 'doğrulanmış Google yorumlarımız vardır — harita & yorumlar sayfasında görebilirsiniz.',
+  },
+  {
+    re: /binlerce\s+olumlu\s+m[uü][sş]teri\s+yorumu/gi,
+    to: 'doğrulanmış Google yorumları',
   },
   {
     re: /binlerce\s+mutlu\s+m[uü][sş]teri(?:miz)?/gi,
@@ -41,6 +45,10 @@ const REPLACEMENTS: Array<{ re: RegExp; to: string }> = [
   {
     re: /Binlerce\s+mutlu\s+m[uü][sş]terimiz\s+var\.?/gi,
     to: 'Güncel Google puan ve yorumlarımız için harita & yorumlar sayfasına bakın.',
+  },
+  {
+    re: /15\+\s*y[ıi]l\s+[İi]stanbul'?da\s+profesyonel\s+temizlik/gi,
+    to: 'Google doğrulanmış puan · profesyonel temizlik',
   },
 ];
 

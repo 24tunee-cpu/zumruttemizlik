@@ -91,7 +91,12 @@ function main() {
       '  present: INDEXNOW_KEY, CRON_SECRET, NEXT_PUBLIC_GBP_*, NEXT_PUBLIC_BUSINESS_LAT/LNG, DATABASE_URL, NEXTAUTH_*',
       '  not in project env list: GSC_*, MAPS_GOOGLE_*, NEXT_PUBLIC_BING/APPLE/YANDEX URLs',
       '  note: MAPS_* may exist locally but still missing on Vercel — sync intentionally',
-      '  action: add GSC + Maps OAuth + Bing/Apple listing URLs in Vercel; Admin GEO citation tracker',
+      '  action: Vercel Dashboard → Project → Settings → Environment Variables:',
+      '    - GSC_SERVICE_ACCOUNT_JSON (veya EMAIL+PRIVATE_KEY) + GSC_SITE_URL',
+      '    - MAPS_GOOGLE_CLIENT_ID / SECRET (+ MAPS_OAUTH_SECRET) — localde olabilir, prod’a kopyala',
+      '    - NEXT_PUBLIC_BING_PLACES_URL / NEXT_PUBLIC_APPLE_MAPS_URL (listing URL sonrası)',
+      '    - NEXT_PUBLIC_GBP_* zaten prod’da; local .env.local’e mirror önerilir',
+      '  Admin GEO → citation tracker durumlarını manuel işaretle',
     ].join('\n')
   );
 
