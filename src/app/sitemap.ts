@@ -7,6 +7,7 @@ import {
   withHonestLastmod,
   maxSitemapDate,
 } from '@/lib/sitemap-lastmod';
+import { allSssTopicPaths } from '@/config/sss-topics';
 
 type StaticEntry = {
   path: string;
@@ -124,7 +125,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       );
     }
 
-    return [...staticEntries, ...serviceEntries];
+    const sssTopicRevision = revisionDate('core');
+    const sssTopicEntries: MetadataRoute.Sitemap = allSssTopicPaths().map((path) =>
+      withHonestLastmod(
+        {
+          url: `${base}${path}`,
+          changeFrequency: 'monthly' as const,
+          priority: 0.72,
+        },
+        sssTopicRevision
+      )
+    );
+
+    return [...staticEntries, ...serviceEntries, ...sssTopicEntries];
   } catch {
     const fallbackBase = 'https://www.zumrutvaditemizlik.com';
     const core = revisionDate('core');

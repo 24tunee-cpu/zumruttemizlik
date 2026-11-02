@@ -422,6 +422,7 @@ export const NEIGHBORHOOD_LANDINGS: NeighborhoodLanding[] = [
       'Operasyon sırası tipik olarak şöyle ilerler: önce ince toz ve yüzey güvenliği, ardından ıslak hacim ve mutfak detayı, en sonda cam/pervaz ve teslim kontrol listesi. Villa işlerinde bahçe kenarı girişler ve otopark erişimi keşifte not edilir; ekip ve ekipman buna göre ayarlanır.',
       'Taşınma öncesi ve sonrası, tadilat/inşaat sonrası teslim ve periyodik bakım paketlerinde aynı gün ücretsiz keşif ve gizlilik odaklı çalışma önceliğimizdir. Bahçeköy, Kilyos, Demirciköy ve Boğaz hattı (Tarabya, Yeniköy, İstinye) dahil çevre semtlerde de hizmet veriyoruz.',
       'Fiyatınızı önceden görmek için ana sayfamızdaki Anında Fiyat Hesaplama aracını kullanabilir; mekan tipi, oda sayısı veya metrekare ve ekstralara göre tahmini aralığı saniyeler içinde öğrenip WhatsApp üzerinden randevu oluşturabilirsiniz.',
+      'Yalnızca ev temizliği niyeti için derin sayfamız: Zekeriyaköy Ev Temizliği (/bolgeler/sariyer/zekeriyakoy-ev-temizligi).',
     ],
     highlights: [
       'Villa ve site odaklı detaylı ev temizliği',
@@ -432,7 +433,7 @@ export const NEIGHBORHOOD_LANDINGS: NeighborhoodLanding[] = [
     faq: [
       {
         q: 'Zekeriyaköy’de villa temizliği yapıyor musunuz?',
-        a: 'Evet. Zekeriyaköy’deki müstakil villalar ve sitelerde detaylı ev temizliği, inşaat sonrası ve cam/dış cephe temizliği hizmeti veriyoruz. Kapsam ücretsiz keşifte netleşir.',
+        a: 'Evet. Zekeriyaköy’deki müstakil villalar ve sitelerde detaylı ev temizliği, inşaat sonrası ve cam/dış cephe temizliği hizmeti veriyoruz. Kapsam ücretsiz keşifte netleşir. Ev odaklı detay için Zekeriyaköy Ev Temizliği sayfamıza bakın.',
       },
       {
         q: 'Zekeriyaköy villa temizliği ne kadar sürer?',
@@ -470,6 +471,7 @@ export const NEIGHBORHOOD_LANDINGS: NeighborhoodLanding[] = [
       'Kurumsal plaza katlarında ortak alan, mutfakette ve toplantı odası hijyeni ile çalışma masası çevresi ayrı checklist’lerle yürür. Erişim kartı / güvenlik prosedürü keşifte not edilir; ekip buna göre planlanır.',
       'Yeni teslim edilen rezidans ve ofis projelerinde inşaat sonrası detay temizlik, boya-toz ve cam iç yüzey teslimi önceliklidir. Maslak–Levent hattında hızlı ekip yönlendirmesi yapıyoruz.',
       'Tahmini fiyat için niyet modlu fiyat hesaplama aracımızı kullanabilir; ofis veya inşaat sonrası moduyla saniyeler içinde aralık görebilirsiniz.',
+      'Yalnızca ofis/plaza niyeti için derin sayfamız: Maslak Ofis Temizliği (/bolgeler/sariyer/maslak-ofis-temizligi).',
     ],
     highlights: [
       'Plaza ve ofis katı temizliği',
@@ -480,7 +482,7 @@ export const NEIGHBORHOOD_LANDINGS: NeighborhoodLanding[] = [
     faq: [
       {
         q: 'Maslak’ta ofis temizliği mesai dışı yapılır mı?',
-        a: 'Evet. Kurumsal müşterilerimizde mesai dışı veya hafta sonu slot planlaması yapıyoruz. Personel sayısı ve m² keşif sonrası netleşir.',
+        a: 'Evet. Kurumsal müşterilerimizde mesai dışı veya hafta sonu slot planlaması yapıyoruz. Personel sayısı ve m² keşif sonrası netleşir. Ofis odaklı detay için Maslak Ofis Temizliği sayfamıza bakın.',
       },
       {
         q: 'Maslak rezidans daire temizliği fiyatı nasıl hesaplanır?',
@@ -622,6 +624,93 @@ export const NEIGHBORHOOD_LANDINGS: NeighborhoodLanding[] = [
     ],
     calculatorIntentSlug: 'tasinma-temizligi',
   },
+  // ——— A5: özgün semt × hizmet derinlik sayfaları (kopya mahalle şişirmesi yok) ———
+  {
+    districtSlug: 'sariyer',
+    slug: 'zekeriyakoy-ev-temizligi',
+    name: 'Zekeriyaköy Ev Temizliği',
+    districtName: 'Sarıyer',
+    metaTitle: 'Zekeriyaköy Ev Temizliği | Villa & Daire',
+    metaDescription:
+      'Zekeriyaköy ev temizliği: villa ve site dairelerinde detaylı mutfak-banyo, cam ve periyodik paket. Ücretsiz keşif, gizlilik odaklı ekip.',
+    intro:
+      'Zekeriyaköy ev temizliği, Zümrüt Vadi Temizlik’in birincil operasyon odağıdır. Müstakil villalar ve kapalı sitelerde metrekare, ıslak hacim ve cam yüzeylerine göre checklist’li detay temizlik planlarız; peyzaj veya bahçe düzenleme hizmeti vermiyoruz.',
+    body: [
+      'Zekeriyaköy’de ev temizliği talepleri çoğunlukla iki tipte gelir: (1) geniş villa — çoklu banyo, yüksek tavan, panaromik cam; (2) site dairesi — düzenli periyodik veya taşınma/kira teslim. Her iki tipte de önce keşif veya WhatsApp fotoğraf ile kapsam başlıklarını ayırıyoruz: zemin, mutfak, banyo, cam/pervaz, dolap içi (opsiyonel).',
+      'Villa işlerinde bahçe kenarı giriş, otopark ve site güvenlik prosedürü ekip planını etkiler. Operasyon sırası tipik olarak ince toz → ıslak hacim → mutfak → cam/pervaz → teslim kontrol listesidir. Aynı ekip sürekliliği gizlilik bekleyen ailelerde özellikle tercih edilir.',
+      'Periyodik ev temizliği (haftalık / iki haftada bir) Zekeriyaköy–Bahçeköy–Uskumruköy rotasında planlanabilir. Tek seferlik derin temizlik veya inşaat sonrası teslim ayrı paketlerdir; fiyat hesaplama aracında ev niyetiyle tahmini aralık görebilirsiniz.',
+      'Genel Zekeriyaköy hub sayfamız semt genelini anlatır; bu sayfa yalnızca ev temizliği niyetine odaklanır. Ofis/plaza için Maslak ofis temizliği sayfamıza bakın.',
+    ],
+    highlights: [
+      'Villa & site dairesi ev temizliği checklist’i',
+      'Periyodik paket veya tek seferlik derin temizlik',
+      'Cam / pervaz ve ıslak hacim detayı',
+      'Gizlilik ve aynı ekip sürekliliği',
+    ],
+    faq: [
+      {
+        q: 'Zekeriyaköy ev temizliği fiyatı nasıl hesaplanır?',
+        a: 'Oda/ıslak hacim sayısı, m² ve kirlilik derecesi fiyatı belirler. Online araç tahmini aralık verir; kesin fiyat ücretsiz keşif sonrası netleşir.',
+      },
+      {
+        q: 'Zekeriyaköy’de düzenli ev temizliği yapılır mı?',
+        a: 'Evet. Haftalık veya iki haftada bir paketler sunuyoruz; Sarıyer orman içi rotasında aynı ekip mümkün olduğunca korunur.',
+      },
+      {
+        q: 'Villa ev temizliği ile site dairesi aynı paket mi?',
+        a: 'Hayır. Villa genelde daha geniş cam ve çoklu banyo içerir; keşifte ayrı checklist çıkarılır. Site dairesinde erişim ve asansör saatleri not edilir.',
+      },
+      {
+        q: 'Zekeriyaköy ev temizliği ile genel semt sayfası farkı nedir?',
+        a: 'Bu sayfa yalnızca ev temizliği niyetinedir. Semt hub’ı villa/inşaat/cam genelini kapsar; ofis için Maslak ofis sayfasına bakın.',
+      },
+    ],
+    featuredServiceSlugs: ['ev-temizligi', 'cam-temizligi', 'insaat-sonrasi-temizlik'],
+    calculatorIntentSlug: 'tasinma-temizligi',
+  },
+  {
+    districtSlug: 'sariyer',
+    slug: 'maslak-ofis-temizligi',
+    name: 'Maslak Ofis Temizliği',
+    districtName: 'Sarıyer',
+    metaTitle: 'Maslak Ofis Temizliği | Plaza & Kurumsal',
+    metaDescription:
+      'Maslak ofis temizliği: plaza katı, mesai dışı hijyen, toplantı odası ve mutfakette. Sözleşmeli veya tek seferlik. Ücretsiz keşif.',
+    intro:
+      'Maslak ofis temizliği; plaza katları, butik ofisler ve karma kullanım binalarında mesai dışı veya hafta sonu hijyen planı demektir. Zümrüt Vadi Temizlik olarak erişim kartı, güvenlik prosedürü ve personel yoğunluğuna göre checklist’li kurumsal temizlik sunuyoruz.',
+    body: [
+      'Maslak’ta ofis temizliği talebi genelde üç başlıkta toplanır: günlük/haftalık periyodik plaza katı, taşınma veya tadilat sonrası ofis teslimi, cam/vitrin bakımı. Bu sayfa ofis niyetine odaklanır; rezidans daire detayı için genel Maslak semt sayfasını kullanın.',
+      'Kurumsal checklist tipik olarak şunları içerir: çalışma masası çevresi, toplantı odası, mutfakette, tuvalet/lavabo, ortak koridor ve giriş. Hassas belge veya IT ekipmanı olan alanlar keşifte “elleme / kapalı” olarak işaretlenir.',
+      'Mesai dışı slot (akşam veya hafta sonu) Maslak–Levent hattında sık tercih edilir. Sözleşmeli hizmette aynı ekip ve sabit gün planı kurulabilir; tek seferlik derin temizlik ayrı tekliflenir.',
+      'Tahmini bütçe için fiyat hesaplamada ofis niyetini seçin; kesin fiyat m², personel sayısı ve frekans sonrası netleşir. Ev/villa için Zekeriyaköy ev temizliği sayfamıza bakın.',
+    ],
+    highlights: [
+      'Plaza katı & butik ofis checklist’i',
+      'Mesai dışı / hafta sonu operasyon',
+      'Sözleşmeli periyodik veya tek seferlik',
+      'Güvenlik ve erişim prosedürüne uyum',
+    ],
+    faq: [
+      {
+        q: 'Maslak ofis temizliği mesai dışında yapılır mı?',
+        a: 'Evet. Çoğu kurumsal müşteride akşam veya hafta sonu slot planlanır. Güvenlik ve kart erişimi keşifte netleşir.',
+      },
+      {
+        q: 'Maslak plaza için sözleşmeli temizlik var mı?',
+        a: 'Evet. Haftalık/aylık periyot ve sabit ekip ile sözleşme kurulabilir. Kapsam m² ve kat planına göre yazılır.',
+      },
+      {
+        q: 'Ofis taşınma temizliği Maslak’ta yapılır mı?',
+        a: 'Evet. Boşaltma öncesi/sonrası ofis teslim checklist’i uygulanır; inşaat tozu varsa inşaat sonrası paket önerilir.',
+      },
+      {
+        q: 'Maslak ofis ile genel Maslak sayfası farkı nedir?',
+        a: 'Bu sayfa yalnızca ofis/plaza niyetinedir. Rezidans daire ve genel semt anlatımı Maslak hub’dadır; villa ev temizliği için Zekeriyaköy ev sayfasına bakın.',
+      },
+    ],
+    featuredServiceSlugs: ['ofis-temizligi', 'cam-temizligi', 'insaat-sonrasi-temizlik'],
+    calculatorIntentSlug: 'ofis-temizligi',
+  },
 ];
 
 export function getNeighborhoodLanding(
@@ -670,6 +759,61 @@ export function findNeighborhoodLandingForDistrictNeighborhood(
 
 export function getNeighborhoodLandingsForDistrict(districtSlug: string): NeighborhoodLanding[] {
   return NEIGHBORHOOD_LANDINGS.filter((n) => n.districtSlug === districtSlug);
+}
+
+/**
+ * Öncelik ilçeler — soft claim: expansion ilçelerde “her adres her gün” iddiası yok.
+ * AGENTS yerel SEO: Sarıyer + Boğaz/Avrupa yakın hattı.
+ */
+export const PRIORITY_SERVICE_DISTRICT_SLUGS = new Set([
+  'sariyer',
+  'besiktas',
+  'sisli',
+  'kagithane',
+  'eyupsultan',
+  'bakirkoy',
+  'fatih',
+]);
+
+export function districtCoverageTone(
+  slug: string
+): 'priority' | 'expansion' {
+  return PRIORITY_SERVICE_DISTRICT_SLUGS.has(slug) ? 'priority' : 'expansion';
+}
+
+/** İlçe hub / pair sayfalarında görünür kapsam notu */
+export function districtCoverageDisclaimer(district: DistrictLanding): string {
+  if (districtCoverageTone(district.slug) === 'priority') {
+    return `${district.name}, öncelikli hizmet hattımızdadır. Ücretsiz keşif ile kapsam, erişim ve randevu netleşir.`;
+  }
+  return `${district.name} taleplerini kapasite ve rota planına göre değerlendiriyoruz. Kesin hizmet onayı ücretsiz keşif sonrasındadır; her adres veya aynı gün garanti edilmez.`;
+}
+
+/** Pair sayfa FAQ — ilçe adı ile özelleştirilmiş, thin kopya değil */
+export function buildLocalizedPairFaqs(
+  district: DistrictLanding,
+  service: ServiceLanding
+): Array<{ q: string; a: string }> {
+  const tone = districtCoverageTone(district.slug);
+  const coverage =
+    tone === 'priority'
+      ? `${district.name} öncelik hattımızda; keşif sonrası net plan çıkarırız.`
+      : `${district.name} için kapasite uygunsa planlarız; onay keşif sonrasıdır.`;
+
+  const localized = service.faq.map((item) => ({
+    q: item.q.includes(district.name) ? item.q : `${district.name} — ${item.q}`,
+    a: `${item.a} ${coverage}`,
+  }));
+
+  localized.push({
+    q: `${district.name} ${service.name.toLowerCase()} için aynı gün randevu var mı?`,
+    a:
+      tone === 'priority'
+        ? `Yoğunluğa göre ${district.name} hattında aynı gün keşif veya hızlı ekip yönlendirmesi mümkün olabilir. Kesin slot telefon/WhatsApp ile teyit edilir.`
+        : `${district.name} için aynı gün her zaman mümkün olmayabilir; rota ve ekip müsaitliğine göre en yakın uygun slotu öneririz.`,
+  });
+
+  return localized;
 }
 
 const HERO_TEMPLATES = [

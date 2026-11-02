@@ -17,6 +17,7 @@ export default function NeighborhoodLanding({ data }: { data: NeighborhoodLandin
   const siteRoot = getSiteUrl();
   const callHref = toTelHref(SITE_CONTACT.phoneE164);
   const intentSlug = data.calculatorIntentSlug ?? 'tasinma-temizligi';
+  const pageHeading = /temizlik/i.test(data.name) ? data.name : `${data.name} Temizlik`;
 
   const featuredServices = data.featuredServiceSlugs
     .map((slug) => getServiceBySlug(slug))
@@ -25,7 +26,8 @@ export default function NeighborhoodLanding({ data }: { data: NeighborhoodLandin
   const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: `${data.name} Temizlik`,
+    additionalType: 'https://schema.org/CleaningService',
+    name: pageHeading,
     serviceType: 'Temizlik Hizmeti',
     areaServed: [data.name, data.districtName, 'İstanbul'],
     provider: {
@@ -33,6 +35,14 @@ export default function NeighborhoodLanding({ data }: { data: NeighborhoodLandin
       name: 'Zümrüt Vadi Temizlik',
       url: siteRoot,
       telephone: SITE_CONTACT.phoneE164,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: SITE_CONTACT.addressStreet,
+        addressLocality: SITE_CONTACT.addressLocality,
+        addressRegion: SITE_CONTACT.addressRegion,
+        postalCode: SITE_CONTACT.postalCode,
+        addressCountry: SITE_CONTACT.addressCountry,
+      },
     },
     url: canonical,
     description: data.metaDescription,
@@ -73,7 +83,7 @@ export default function NeighborhoodLanding({ data }: { data: NeighborhoodLandin
         <div className="min-h-screen bg-slate-900 pb-16 pt-28 text-white">
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
             <div className="flex flex-wrap items-center gap-2">
-              <h1 className="text-3xl font-bold sm:text-4xl">{data.name} Temizlik</h1>
+              <h1 className="text-3xl font-bold sm:text-4xl">{pageHeading}</h1>
               <span className="rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-300">
                 {data.districtName} · Avrupa Yakası
               </span>

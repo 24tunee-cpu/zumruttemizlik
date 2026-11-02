@@ -121,22 +121,22 @@ export const GEO_GBP_CHECKLIST = [
   'Randevu / fiyat hesaplama linki açıklamada + UTM',
 ] as const;
 
-/** GEO odaklı Google yorum istek şablonları */
+/** GEO odaklı Google yorum istek şablonları — {reviewLink} Place ID / env ile doldurulur */
 export const GEO_REVIEW_REQUEST_TEMPLATES = [
   {
     id: 'whatsapp-short',
     label: 'WhatsApp kısa',
-    text: 'Merhaba {name}, Zümrüt Vadi Temizlik olarak {service} hizmetimizden memnun kaldıysanız Google yorumunuz bize çok yardımcı olur. Lütfen yorumda "{district}" ve "{service}" ifadelerini geçirmeniz yeterli. Teşekkürler!',
+    text: 'Merhaba {name}, Zümrüt Vadi Temizlik olarak {service} hizmetimizden memnun kaldıysanız Google yorumunuz bize çok yardımcı olur: {reviewLink} Lütfen yorumda "{district}" ve "{service}" ifadelerini geçirmeniz yeterli. Teşekkürler!',
   },
   {
     id: 'whatsapp-detailed',
     label: 'WhatsApp detaylı (GEO)',
-    text: 'Sayın {name}, {district} bölgesinde verdiğimiz {service} hizmeti hakkında Google\'da kısa bir yorum bırakabilir misiniz? AI arama sistemleri yorum metnini okuduğu için şunları yazmanız ideal: hangi hizmeti aldınız, hangi semt/ilçe, sonuçtan memnuniyet. Zümrüt Vadi Temizlik — teşekkürler!',
+    text: 'Sayın {name}, {district} bölgesinde verdiğimiz {service} hizmeti hakkında Google\'da kısa bir yorum bırakabilir misiniz? {reviewLink} AI arama sistemleri yorum metnini okuduğu için şunları yazmanız ideal: hangi hizmeti aldınız, hangi semt/ilçe, sonuçtan memnuniyet. Zümrüt Vadi Temizlik — teşekkürler!',
   },
   {
     id: 'email-formal',
     label: 'E-posta resmi',
-    text: 'Sayın {name},\n\n{service} hizmetimiz için teşekkür ederiz. Google Business Profile üzerinden deneyiminizi paylaşmanız, {district} bölgesinde hizmet arayan müşterilerin bizi bulmasına yardımcı olur.\n\nZümrüt Vadi Temizlik',
+    text: 'Sayın {name},\n\n{service} hizmetimiz için teşekkür ederiz. Google Business Profile üzerinden deneyiminizi paylaşmanız, {district} bölgesinde hizmet arayan müşterilerin bizi bulmasına yardımcı olur.\n\nYorum linki: {reviewLink}\n\nZümrüt Vadi Temizlik',
   },
 ] as const;
 

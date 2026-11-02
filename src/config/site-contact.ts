@@ -37,6 +37,11 @@ export const SITE_CONTACT = {
   /** Doğrulanmış GBP genel bağlantılar */
   gbpMapsUrl: 'https://maps.app.goo.gl/bdbJ7VSdWcWYcKmV7',
   gbpShareUrl: 'https://share.google/HlN1m0SZOleCgw6ZO',
+  /**
+   * Google Place ID — yorum deep-link (doğrulandı 2026-11-02).
+   * Override: NEXT_PUBLIC_GBP_PLACE_ID veya admin Haritalar externalPlaceId
+   */
+  gbpPlaceId: 'ChIJoybfFnu1yhQRnhFEAf9KbAQ',
 
   /** GBP ile uyumlu: 24 saat açık */
   openingHours: {

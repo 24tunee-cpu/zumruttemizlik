@@ -25,6 +25,11 @@ import { useState, useCallback, useMemo } from 'react';
 import { useSiteSettings } from '@/context/SiteSettingsContext';
 import { SITE_CONTACT, toTelHref } from '@/config/site-contact';
 import { PRIORITY_BLOG_LINKS } from '@/lib/priority-seo-links';
+import {
+  getPublicMapsUrl,
+  getPublicReviewUrl,
+  withGmbUtm,
+} from '@/lib/gbp-links';
 
 // ============================================
 // TYPES
@@ -137,9 +142,9 @@ const FOOTER_LINKS: FooterLinkGroup = {
   bolgeler: [
     { label: 'Sarıyer Temizlik', href: '/bolgeler/sariyer' },
     { label: 'Zekeriyaköy', href: '/bolgeler/sariyer/zekeriyakoy' },
-    { label: 'Maslak', href: '/bolgeler/sariyer/maslak' },
+    { label: 'Zekeriyaköy Ev', href: '/bolgeler/sariyer/zekeriyakoy-ev-temizligi' },
+    { label: 'Maslak Ofis', href: '/bolgeler/sariyer/maslak-ofis-temizligi' },
     { label: 'Tarabya', href: '/bolgeler/sariyer/tarabya' },
-    { label: 'Bahçeköy', href: '/bolgeler/sariyer/bahcekoy' },
     { label: 'Tüm Bölgeler', href: '/bolgeler' },
   ],
   kurumsal: [
@@ -147,6 +152,7 @@ const FOOTER_LINKS: FooterLinkGroup = {
     { label: 'Temizlik Fiyatları', href: '/fiyatlar' },
     { label: 'Fiyat Hesaplama', href: '/fiyat-hesaplama' },
     { label: 'Randevu', href: '/randevu' },
+    { label: 'Harita & Yorumlar', href: '/harita-ve-yorumlar' },
     { label: 'Referanslar', href: '/referanslar' },
     { label: 'Blog', href: '/blog' },
     { label: 'İletişim', href: '/iletisim' },
@@ -479,6 +485,36 @@ export function Footer() {
                 >
                   {settings.email}
                 </a>
+              </li>
+              <li className="flex flex-wrap items-center gap-x-3 gap-y-1 pl-8 text-sm">
+                <a
+                  href={withGmbUtm(getPublicMapsUrl(), 'footer-maps', { content: 'nap' })}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-source="footer-gmb-maps"
+                  className="text-emerald-400 hover:text-emerald-300 transition-colors"
+                >
+                  Google Harita
+                </a>
+                {getPublicReviewUrl() ? (
+                  <a
+                    href={withGmbUtm(getPublicReviewUrl()!, 'footer-review', { content: 'nap' })}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-source="footer-gmb-review"
+                    className="text-amber-300 hover:text-amber-200 transition-colors"
+                  >
+                    Yorum yaz
+                  </a>
+                ) : (
+                  <Link
+                    href="/harita-ve-yorumlar"
+                    data-source="footer-harita-page"
+                    className="text-amber-300 hover:text-amber-200 transition-colors"
+                  >
+                    Yorumlar
+                  </Link>
+                )}
               </li>
             </ul>
           </address>

@@ -2,20 +2,28 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { Calendar, MessageCircle, Phone } from 'lucide-react';
+import { Calendar, MapPin, MessageCircle, Phone, Star } from 'lucide-react';
 import { useSiteSettings } from '@/context/SiteSettingsContext';
 import { SITE_CONTACT, toTelHref } from '@/config/site-contact';
+import {
+  getPublicMapsUrl,
+  getPublicReviewUrl,
+  withGmbUtm,
+} from '@/lib/gbp-links';
 
 type StickySeoCtaBarProps = {
   /** WhatsApp mesajına eklenecek bağlam (ör. ilçe veya yazı konusu) */
   contextLabel?: string;
   /** data-source öneki — analitik ayrımı */
   sourcePrefix?: string;
+  /** Harita / yorum CTA (varsayılan: açık) */
+  showMapsCta?: boolean;
 };
 
 export function StickySeoCtaBar({
   contextLabel,
   sourcePrefix = 'sticky-seo-cta',
+  showMapsCta = true,
 }: StickySeoCtaBarProps) {
   const { settings } = useSiteSettings();
   const [visible, setVisible] = useState(false);
@@ -36,7 +44,24 @@ export function StickySeoCtaBar({
     : 'Merhaba, temizlik hizmeti için ücretsiz keşif ve fiyat teklifi almak istiyorum.';
   const waHref = `https://wa.me/${waDigits}?text=${encodeURIComponent(waText)}`;
 
+  const reviewUrl = getPublicReviewUrl();
+  const mapsHref = withGmbUtm(getPublicMapsUrl(), `${sourcePrefix}-maps`, {
+    content: 'sticky',
+  });
+  const reviewHref = reviewUrl
+    ? withGmbUtm(reviewUrl, `${sourcePrefix}-review`, { content: 'sticky' })
+    : null;
+
   if (!visible) return null;
+
+  const mapsEnabled = showMapsCta;
+  const colCount = mapsEnabled ? (reviewHref ? 5 : 4) : 3;
+  const gridClass =
+    colCount >= 5
+      ? 'grid-cols-3 sm:grid-cols-5'
+      : colCount === 4
+        ? 'grid-cols-2 sm:grid-cols-4'
+        : 'grid-cols-3';
 
   return (
     <div
@@ -47,7 +72,7 @@ export function StickySeoCtaBar({
       <p className="mb-2 text-center text-xs text-slate-400">
         Ücretsiz keşif · Genelde 30 dk içinde dönüş
       </p>
-      <div className="mx-auto grid max-w-3xl grid-cols-3 gap-2">
+      <div className={`mx-auto grid max-w-3xl gap-2 ${gridClass}`}>
         <a
           href={waHref}
           target="_blank"
@@ -75,6 +100,30 @@ export function StickySeoCtaBar({
           <Calendar className="h-4 w-4 shrink-0" aria-hidden />
           <span>Keşif</span>
         </Link>
+        {mapsEnabled ? (
+          <a
+            href={mapsHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-source={`${sourcePrefix}-maps`}
+            className="flex min-h-[44px] flex-col items-center justify-center gap-0.5 rounded-xl border border-slate-500/50 bg-slate-800/80 px-2 py-2 text-center text-xs font-semibold text-slate-100 transition-colors hover:bg-slate-700 sm:flex-row sm:gap-1.5 sm:text-sm"
+          >
+            <MapPin className="h-4 w-4 shrink-0" aria-hidden />
+            <span>Harita</span>
+          </a>
+        ) : null}
+        {mapsEnabled && reviewHref ? (
+          <a
+            href={reviewHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-source={`${sourcePrefix}-review`}
+            className="flex min-h-[44px] flex-col items-center justify-center gap-0.5 rounded-xl border border-amber-500/40 bg-amber-500/15 px-2 py-2 text-center text-xs font-semibold text-amber-100 transition-colors hover:bg-amber-500/25 sm:flex-row sm:gap-1.5 sm:text-sm"
+          >
+            <Star className="h-4 w-4 shrink-0" aria-hidden />
+            <span>Yorum</span>
+          </a>
+        ) : null}
       </div>
     </div>
   );
