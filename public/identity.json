@@ -7,11 +7,16 @@
   "email": "vedatgunenn@gmail.com",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Sarıyer Merkez, Sarıyer/İstanbul",
+    "streetAddress": "Ferahevler, Şen Aydın Sok. No:10",
     "addressLocality": "Sarıyer",
     "addressRegion": "İstanbul",
-    "postalCode": "34450",
+    "postalCode": "34457",
     "addressCountry": "TR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 41.1307,
+    "longitude": 29.0416
   },
   "areaServed": [
     "Sarıyer",
@@ -23,6 +28,8 @@
     "İstanbul"
   ],
   "sameAs": [
+    "https://maps.app.goo.gl/bdbJ7VSdWcWYcKmV7",
+    "https://share.google/HlN1m0SZOleCgw6ZO",
     "https://www.zumrutvaditemizlik.com/"
   ],
   "contactPoint": {

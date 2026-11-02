@@ -1,23 +1,33 @@
 import type { MetadataRoute } from 'next';
-import { listPublishedGeoSssSlugs } from '@/lib/geo-sss-resolver';
+import { listPublishedGeoSssSitemapEntries } from '@/lib/geo-sss-resolver';
 import { getSiteUrl } from '@/lib/seo';
+import { revisionDate, withHonestLastmod, maxSitemapDate } from '@/lib/sitemap-lastmod';
 
 export default async function geoSssSitemap(): Promise<MetadataRoute.Sitemap> {
   const base = getSiteUrl();
-  const slugs = await listPublishedGeoSssSlugs();
+  const entries = await listPublishedGeoSssSitemapEntries();
+  const hubLastmod =
+    maxSitemapDate(...entries.map((e) => e.lastModified), revisionDate('geoSssStatic')) ??
+    revisionDate('geoSssStatic');
 
   return [
-    {
-      url: `${base}/geo-sss`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    ...slugs.map((slug) => ({
-      url: `${base}/geo-sss/${slug}`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    })),
+    withHonestLastmod(
+      {
+        url: `${base}/geo-sss`,
+        changeFrequency: 'weekly' as const,
+        priority: 0.7,
+      },
+      hubLastmod
+    ),
+    ...entries.map((entry) =>
+      withHonestLastmod(
+        {
+          url: `${base}/geo-sss/${entry.slug}`,
+          changeFrequency: 'monthly' as const,
+          priority: 0.6,
+        },
+        entry.lastModified
+      )
+    ),
   ];
 }

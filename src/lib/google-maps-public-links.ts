@@ -60,7 +60,8 @@ export const getGoogleMapsPublicLinks = cache(async (): Promise<GoogleMapsPublic
   const envEmbed = process.env.NEXT_PUBLIC_GBP_MAPS_EMBED_URL?.trim();
 
   const mapsOpenUrl =
-    firstValidUrl(listing?.listingUrl, envMaps) ?? buildFallbackMapsSearchUrl();
+    firstValidUrl(listing?.listingUrl, envMaps, SITE_CONTACT.gbpMapsUrl) ??
+    buildFallbackMapsSearchUrl();
 
   const reviewUrl =
     firstValidUrl(envReview) ??

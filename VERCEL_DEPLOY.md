@@ -35,9 +35,10 @@ DATABASE_URL=mongodb+srv://<kullanici>:<sifre>@<cluster>.mongodb.net/zumrutvadit
 NEXT_PUBLIC_GA_MEASUREMENT_ID=G-20PLCYV15H
 # Google Search Console "HTML etiketi" yönteminin content değeri (yedek doğrulama):
 NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=<GSC HTML tag content değeri>
-# İşletme konumu (harita/schema); varsayılan Sarıyer/Zekeriyaköy'dür:
-NEXT_PUBLIC_BUSINESS_LAT=41.1669
-NEXT_PUBLIC_BUSINESS_LNG=29.0577
+# İşletme konumu (harita/schema); varsayılan GBP Ferahevler pin:
+NEXT_PUBLIC_BUSINESS_LAT=41.1307
+NEXT_PUBLIC_BUSINESS_LNG=29.0416
+NEXT_PUBLIC_GBP_URL=https://maps.app.goo.gl/bdbJ7VSdWcWYcKmV7
 ```
 
 ### Google Search Console & Analytics Doğrulama

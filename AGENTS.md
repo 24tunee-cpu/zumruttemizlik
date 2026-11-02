@@ -8,7 +8,31 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 > Kalıcı çalışma kuralları. Tahmin yazma; doğrulanmamış bilgiyi “açık soru” olarak işaretle.
 > Hassas bilgi (şifre, token, `.env` içeriği) bu dosyaya konmaz.
-> Son anayasa güncellemesi: 2026-10-30 (yalnızca audit + bu dosya; site kodu değiştirilmedi).
+> Son anayasa güncellemesi: 2026-11-02 (local SEO skill hiyerarşisi + keşif/feed notları).
+
+---
+
+## 0. Talimat hiyerarşisi (çatışma çözümü)
+
+Bu dosya **tek ana anayasadır**. Üçüncü taraf Agent Skills (ör. `garrettjsmith/localseoskills`: gbp-optimization, service-area-seo, review-management, …) **yardımcı playbook**tır; öneri üretir, anayasayı **geçersiz kılmaz**.
+
+| Öncelik | Kaynak | Rol |
+|--------|--------|-----|
+| 1 | Bu `AGENTS.md` + `src/config/site-contact.ts` | NAP, yasaklar, mimari, deploy |
+| 2 | Proje skill `zvt-local-seo` (varsa) | ZVT’ye özel local SEO köprüsü |
+| 3 | Local SEO Skills (Garrett vb.) | Genel GBP/SAB/yorum/citation rehberi |
+| 4 | Genel SEO tavsiyesi | En düşük |
+
+**Skill’ler şunları YAPAMAZ / agent uygulamaz:**
+- Sahte şube, sahte yorum, uydurma referans, keyword-stuffed işletme adı
+- İnce/kopya mahalle veya 18 ilçeye template spam sayfa
+- NAP’ı `site-contact` / GBP doğrulaması dışında değiştirme
+- Indexing API’yi temizlik URL’leri için önerme; IndexNow’u “Google’a ping” diye sunma
+- Çalışan feed/sitemap/WebSub/IndexNow/keşif kodunu “gereksiz” diye silme veya bozma
+- Kullanıcı istemeden push, deploy, ücretli MCP (`LocalSEOData` vb.) bağlama veya kredi harcama
+- Peyzaj/bahçe düzenleme hizmeti uydurma; bahçe = yüzey temizliği (peyzaj değil)
+
+**Skill’ler şunları YAPABİLİR:** GBP checklist, yorum yanıt taslağı (onaylı), citation listesi, SAB hizmet alanı stratejisi, semt×hizmet için *özgün* brief — uygulama yine anayasa + onay ile.
 
 ---
 
@@ -20,12 +44,14 @@ This version has breaking changes — APIs, conventions, and file structure may 
 | Site | https://www.zumrutvaditemizlik.com |
 | Telefon / WA | 0551 925 09 43 (`+905519250943`) — `src/config/site-contact.ts` |
 | E-posta | vedatgunenn@gmail.com |
-| Adres (kod) | `Sarıyer Merkez, Sarıyer/İstanbul` · PL: 34450 |
+| Adres (GBP=kod) | `Ferahevler, Şen Aydın Sok. No:10, 34457 Sarıyer/İstanbul` — `site-contact.ts` |
+| Maps | `https://maps.app.goo.gl/bdbJ7VSdWcWYcKmV7` |
 | Öncelik bölge (içerik) | Sarıyer / Zekeriyaköy ağırlıklı; Avrupa Yakası + İstanbul geneli hizmet anlatımı |
+| GBP birincil kategori | Temizlik Hizmetleri · saat: 24 saat açık · skor: 4.9 (12 yorum, 2026-11-02) |
 
-**Doğrulanması gereken:** Fiziksel işyeri vs. hizmet bölgesi ayrımı; Uskumruköy’ün resmi hizmet listesinde olup olmadığı; GBP kategori/saat/adres ile site NAP birebir eşleşmesi (GBP panel erişimi bu auditte yok).
-
-Sahte şube, sahte yorum, uydurma referans veya adres **üretilmez**.
+**Doğrulandı (2026-11-02):** İşyeri adresi + telefon + 7/24 GBP ile site hizalı.  
+**GBP panelinde manuel:** Peyzaj Mimarı ve (yoksa) Tekne temizliği kategorilerini kaldır; açıklamadan peyzaj çıkar.  
+Sahte şube, sahte yorum, uydurma referans veya adres **üretilmez**. Peyzaj hizmeti **yok**.
 
 ---
 
@@ -208,7 +234,7 @@ Her öneride: fayda · risk · efor · öncelik. Trafik/sıralama garantisi yok.
 | ID | Öncelik | Konu |
 |----|---------|------|
 | A1 | ~~P1~~ | ~~llmsSync EROFS~~ → düzeltildi (skip + `/llms-inventory.txt`) |
-| A2 | P1 | NAP/adres: kod “Sarıyer Merkez” vs schema varsayılan lat/lng Zekeriyaköy — GBP ile hizala |
+| A2 | ~~P1~~ | ~~NAP/adres~~ → GBP Ferahevler No:10 + pin + sameAs hizalandı (2026-11-02) |
 | A3 | P1 | GSC/IndexNow/GBP env’lerinin prod’da dolu olduğu doğrulanmalı (yerelde IndexNow key eksikliği görülmüştü) |
 | A4 | ~~P2~~ | ~~Uskumruköy landing~~ → eklendi (`/bolgeler/sariyer/uskumrukoy`) |
 | A5 | P2 | Semt×hizmet derin sayfalar yok; kopya üretmeden özgün semt önceliği |
@@ -221,13 +247,15 @@ Her öneride: fayda · risk · efor · öncelik. Trafik/sıralama garantisi yok.
 
 ## 14. Doğrulanmamış bilgiler / açık sorular
 
-1. GBP canlı NAP, kategoriler, saatler, yorum skoru (panel yok)  
+1. ~~GBP NAP/kategori/saat~~ → Doğrulandı 2026-11-02; kategori temizliği (Peyzaj/Tekne) panelde bekliyor  
 2. Gerçek hizmet verilen / verilmeyen ilçeler listesi (18 ilçe geniş; operasyonel gerçek?)  
 3. ~~Uskumruköy resmi kapsamda mı?~~ → Evet; Sarıyer orman içi hattı semt landing eklendi (2026-10-30). 
-4. Tam adres satırı (sokak no) var mı yoksa yalnızca ilçe merkezi mi? — GBP panel doğrulaması bekleniyor 
+4. ~~Tam adres~~ → Ferahevler, Şen Aydın Sok. No:10, 34457 (GBP)  
 5. Canlı GSC tıklama/gösterim ve Core Web Vitals field data (bu auditte API çağrılmadı) 
-6. ~~Bahçe düzenleme ayrı hizmet mi?~~ → Hayır; peyzaj yok. Bahçe kenarı yüzey temizliği villa/dış cephe paketlerine eklenebilir (Uskumruköy FAQ + Sarıyer localSignals). 
+6. ~~Bahçe düzenleme ayrı hizmet mi?~~ → Hayır; peyzaj yok. Bahçe kenarı yüzey temizliği villa/dış cephe paketlerine eklenebilir. GBP’den Peyzaj Mimarı kaldırılmalı. 
 7. Site/bina temizliği ayrı hizmet mi yoksa ofis/site altında mı?
+8. Admin `SiteSettings.address` DB alanı eski “Sarıyer Merkez” ise footer’da override eder — admin ayarlardan GBP adresine çek  
+9. Tekne temizliği gerçek hizmet mi? (GBP’de kategori var; sitede yok)
 
 ---
 
@@ -248,8 +276,11 @@ Her öneride: fayda · risk · efor · öncelik. Trafik/sıralama garantisi yok.
 | 2026-11-01 | AI backlog: GeoMentionCheck skor kartı, CleaningService schema, TL;DR extract, prompt bank genişleme, v6 köprü sertleştirme, llms↔NAP validate, identity.json |
 | 2026-11-02 | Infra hardening: cron timing-safe auth, CI, admin server gate, Upstash rate-limit opsiyonel, health, HSTS/CORS, HomeAndConstructionBusiness schema, Netlify dep kaldırıldı |
 | 2026-11-02 | Feed stack: RSS 2.0 + Atom 1.0 + JSON Feed 1.1 (`/feed.xml`, `/atom.xml`, `/feed.json`), autodiscovery, robots sitemap keşfi |
+| 2026-11-02 | Keşif sertleştirme: dürüst sitemap lastmod (`sitemap-lastmod`), WebSub hub+ping, galeri image sitemap, IndexNow proxy yedek, discovery-notify |
+| 2026-11-02 | Local SEO Skills (Garrett) user-global kuruldu; §0 hiyerarşi + `.cursor/skills/zvt-local-seo` köprü — AGENTS üstün, ücretli MCP varsayılan kapalı |
+| 2026-11-02 | A2 kapanış: NAP=GBP Ferahevler Şen Aydın No:10/34457, pin, sameAs Maps URL, llms/identity; Peyzaj kategorisi GBP’de kaldırılacak |
 
-**Talimat dosyaları:** `CLAUDE.md` → `@AGENTS.md`. `.cursorrules` / `.cursor/rules` projede yok. Tek ana anayasa: bu dosya.
+**Talimat dosyaları:** `CLAUDE.md` → `@AGENTS.md`. Proje skill: `.cursor/skills/zvt-local-seo`. User-global: `~/.agents/skills` + `~/.cursor/skills` (Garrett pack). Tek ana anayasa: bu dosya.
 
 ---
 
@@ -261,3 +292,6 @@ Her öneride: fayda · risk · efor · öncelik. Trafik/sıralama garantisi yok.
 - [ ] Autopilot partial → önce EROFS/llmsSync  
 - [ ] Mahalle sayfası = özgün içerik zorunlu  
 - [ ] Secret / PII çıktıya yok  
+- [ ] Üçüncü taraf local SEO skill ≠ anayasa; çatışmada AGENTS  
+- [ ] LocalSEOData / ücretli MCP onaysız çağırma / kredi harcama yok  
+- [ ] Mevcut feed/sitemap/WebSub/IndexNow yığınını “temizlik” bahanesiyle bozma  

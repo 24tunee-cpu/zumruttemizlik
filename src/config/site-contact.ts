@@ -1,13 +1,21 @@
 /**
- * Kanonik iletişim bilgileri — site ayarları yüklenene kadar ve SEO / structured data için.
+ * Kanonik iletişim / NAP — GBP (2026-11-02) ile birebir.
+ * Schema, footer, llms, identity bu dosyadan beslenir.
  * WhatsApp: wa.me/{whatsappDigits}
  */
 export const SITE_CONTACT = {
   companyName: 'Zümrüt Vadi Temizlik',
-  addressLine: 'Sarıyer Merkez, Sarıyer/İstanbul',
+
+  /**
+   * Görünen tam adres — Google Business Profile ile aynı string.
+   * Kaynak: GBP · Ferahevler, Şen Aydın Sok. No:10, 34457 Sarıyer/İstanbul
+   */
+  addressLine: 'Ferahevler, Şen Aydın Sok. No:10, 34457 Sarıyer/İstanbul',
+  /** Schema.org streetAddress (ilçe/ülke ayrı alanlarda) */
+  addressStreet: 'Ferahevler, Şen Aydın Sok. No:10',
   addressLocality: 'Sarıyer',
   addressRegion: 'İstanbul',
-  postalCode: '34450',
+  postalCode: '34457',
   addressCountry: 'TR',
 
   phoneDisplay: '0551 925 09 43',
@@ -16,6 +24,34 @@ export const SITE_CONTACT = {
   /** wa.me yolu (ülke kodu + numara, başında + yok) */
   whatsappDigits: '905519250943',
   email: 'vedatgunenn@gmail.com',
+
+  /**
+   * İşyeri pin — Ferahevler / Şen Aydın hattı (GBP).
+   * Override: NEXT_PUBLIC_BUSINESS_LAT / NEXT_PUBLIC_BUSINESS_LNG
+   */
+  geo: {
+    latitude: 41.1307,
+    longitude: 29.0416,
+  },
+
+  /** Doğrulanmış GBP genel bağlantılar */
+  gbpMapsUrl: 'https://maps.app.goo.gl/bdbJ7VSdWcWYcKmV7',
+  gbpShareUrl: 'https://share.google/HlN1m0SZOleCgw6ZO',
+
+  /** GBP ile uyumlu: 24 saat açık */
+  openingHours: {
+    days: [
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+      'Sunday',
+    ] as const,
+    opens: '00:00',
+    closes: '23:59',
+  },
 } as const;
 
 /** tel: bağlantısı — yalnızca rakam ve + */

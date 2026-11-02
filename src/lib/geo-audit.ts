@@ -139,6 +139,43 @@ export async function runGeoTechnicalAudit(prisma: PrismaClient): Promise<GeoAud
       : 'INDEXNOW_KEY yok — Bing/Yandex ping atlanır (P1 prod doğrulama)',
   });
 
+  const feedsSrc = fs.readFileSync(path.join(root, 'src/lib/feeds.ts'), 'utf8');
+  const webSubSrcExists = fs.existsSync(path.join(root, 'src/lib/websub.ts'));
+  const hasHubLink =
+    webSubSrcExists &&
+    (feedsSrc.includes('rel="hub"') || feedsSrc.includes("rel='hub'"));
+  checks.push({
+    id: 'websub-hub',
+    label: 'WebSub hub (RSS/Atom)',
+    status: hasHubLink ? 'pass' : 'warn',
+    detail: hasHubLink
+      ? 'Feed’lerde hub link + ping modülü mevcut'
+      : 'WebSub hub linki eksik — recent URL push yok',
+  });
+
+  const hasGaleriSitemap = robotsSrc.includes('/galeri/sitemap.xml');
+  const hasFeedSitemap =
+    robotsSrc.includes('/feed.xml') && robotsSrc.includes('/atom.xml');
+  checks.push({
+    id: 'discovery-sitemaps',
+    label: 'Keşif sitemap envanteri',
+    status: hasGaleriSitemap && hasFeedSitemap ? 'pass' : 'warn',
+    detail:
+      hasGaleriSitemap && hasFeedSitemap
+        ? 'XML + galeri + RSS/Atom robots’ta'
+        : 'robots sitemap listesi eksik olabilir',
+  });
+
+  const lastmodHelper = fs.existsSync(path.join(root, 'src/lib/sitemap-lastmod.ts'));
+  checks.push({
+    id: 'honest-lastmod',
+    label: 'Dürüst sitemap lastmod',
+    status: lastmodHelper ? 'pass' : 'warn',
+    detail: lastmodHelper
+      ? 'sitemap-lastmod helper mevcut (build-time new Date yok)'
+      : 'lastmod helper yok — Google lastmod güvenini kaybedebilir',
+  });
+
   const robotsHasApple = robotsSrc.includes('Applebot-Extended');
   checks.push({
     id: 'robots-extra-ai',

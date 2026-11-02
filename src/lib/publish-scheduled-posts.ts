@@ -1,7 +1,9 @@
 import { prisma } from '@/lib/prisma';
-import { revalidatePath } from 'next/cache';
 import { enrichBlogContentWithInternalLinks } from '@/lib/blog-publish-internal-links';
-import { submitIndexNowBlogSlugs, type IndexNowResult } from '@/lib/indexnow';
+import { notifyContentDiscovery } from '@/lib/discovery-notify';
+import type { IndexNowResult } from '@/lib/indexnow';
+import type { WebSubResult } from '@/lib/websub';
+import { safeRevalidatePath } from '@/lib/safe-revalidate';
 
 /** Günlük otomatik blog yayın limiti (v4+v5 birleşik: 10/gün) */
 export const BLOG_DAILY_PUBLISH_LIMIT = 10;
@@ -12,11 +14,13 @@ export type PublishScheduledResult = {
   remainingScheduled: number;
   internalLinksAdded: number;
   indexNow: IndexNowResult;
+  webSub: WebSubResult | null;
 };
 
 /**
  * Zamanı gelmiş taslakları açar — en fazla BLOG_DAILY_PUBLISH_LIMIT adet (FIFO).
- * Her yazıya deterministik iç link bloğu eklenir; IndexNow ping gönderilir.
+ * Her yazıya deterministik iç link bloğu eklenir;
+ * IndexNow + WebSub keşif ping’i + feed/sitemap revalidate.
  */
 export async function publishScheduledBlogPosts(): Promise<PublishScheduledResult> {
   const now = new Date();
@@ -41,6 +45,7 @@ export async function publishScheduledBlogPosts(): Promise<PublishScheduledResul
       remainingScheduled,
       internalLinksAdded: 0,
       indexNow: { ok: true, submitted: 0, skipped: true, reason: 'no-posts' },
+      webSub: null,
     };
   }
 
@@ -66,16 +71,15 @@ export async function publishScheduledBlogPosts(): Promise<PublishScheduledResul
     publishedSlugs.push(post.slug);
   }
 
-  const indexNow = await submitIndexNowBlogSlugs(publishedSlugs);
+  const paths = publishedSlugs.map((slug) => `/blog/${slug}`);
+  const discovery = await notifyContentDiscovery({
+    paths,
+    pingFeeds: true,
+    extraRevalidate: ['/blog', '/blog/sitemap.xml'],
+  });
 
-  if (publishedSlugs.length > 0) {
-    revalidatePath('/blog');
-    revalidatePath('/feed.xml');
-    revalidatePath('/atom.xml');
-    revalidatePath('/feed.json');
-    for (const slug of publishedSlugs) {
-      revalidatePath(`/blog/${slug}`);
-    }
+  for (const slug of publishedSlugs) {
+    safeRevalidatePath(`/blog/${slug}`);
   }
 
   const remainingScheduled = await prisma.blogPost.count({
@@ -87,6 +91,7 @@ export async function publishScheduledBlogPosts(): Promise<PublishScheduledResul
     slugs: publishedSlugs,
     remainingScheduled,
     internalLinksAdded,
-    indexNow,
+    indexNow: discovery.indexNow,
+    webSub: discovery.webSub,
   };
 }

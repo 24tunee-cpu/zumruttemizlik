@@ -9,7 +9,7 @@ export const GEO_BRAND_NAME = SITE_CONTACT.companyName;
 /** Kanonik NAP — tüm schema ve llms ile birebir aynı olmalı */
 export const GEO_NAP = {
   name: GEO_BRAND_NAME,
-  streetAddress: SITE_CONTACT.addressLine,
+  streetAddress: SITE_CONTACT.addressStreet,
   addressLocality: SITE_CONTACT.addressLocality,
   addressRegion: SITE_CONTACT.addressRegion,
   postalCode: SITE_CONTACT.postalCode,
@@ -18,9 +18,11 @@ export const GEO_NAP = {
   telephoneDisplay: SITE_CONTACT.phoneDisplay,
   email: SITE_CONTACT.email,
   whatsapp: SITE_CONTACT.whatsappDigits,
+  /** Footer / görünür NAP satırı */
+  addressDisplay: SITE_CONTACT.addressLine,
 } as const;
 
-/** Harici profil URL'leri — env ile genişletilebilir */
+/** Harici profil URL'leri — GBP kanonik + env */
 export function getGeoSameAsUrls(siteUrl: string): string[] {
   const fromEnv = [
     process.env.NEXT_PUBLIC_GBP_URL,
@@ -35,7 +37,11 @@ export function getGeoSameAsUrls(siteUrl: string): string[] {
     .map((u) => u?.trim())
     .filter((u): u is string => Boolean(u && /^https?:\/\//i.test(u)));
 
-  const defaults = [`${siteUrl.replace(/\/$/, '')}/`];
+  const defaults = [
+    SITE_CONTACT.gbpMapsUrl,
+    SITE_CONTACT.gbpShareUrl,
+    `${siteUrl.replace(/\/$/, '')}/`,
+  ];
   return [...new Set([...fromEnv, ...defaults])];
 }
 
@@ -82,8 +88,8 @@ export const GEO_DIRECTORY_TARGETS = [
 
 /**
  * Schema areaServed önceliği — Sarıyer/Zekeriyaköy önde.
- * Koordinat varsayılanı Zekeriyaköy hattı (NEXT_PUBLIC_BUSINESS_LAT/LNG ile override).
- * Adres satırı “Sarıyer Merkez” — GBP ile sokak no doğrulanana kadar uydurma yok.
+ * İşyeri pin: Ferahevler (GBP); hizmet önceliği Zekeriyaköy/Boğaz hattı.
+ * Koordinat override: NEXT_PUBLIC_BUSINESS_LAT/LNG.
  */
 export const GEO_AREA_SERVED_PRIORITY = [
   'Sarıyer',
@@ -103,16 +109,16 @@ export const GEO_AREA_SERVED_PRIORITY = [
 
 /** GBP GEO checklist — site tarafı rehber (harici panelde uygulanır) */
 export const GEO_GBP_CHECKLIST = [
-  'Birincil kategori: Temizlik şirketi / Cleaning service',
-  'İkincil kategoriler: Ofis temizliği, Ev temizliği, İnşaat sonrası temizlik',
-  'İşletme açıklaması 750 karakter — Sarıyer/Zekeriyaköy vurgusu',
-  'Tüm hizmetler ayrı ayrı tanımlı (ev, ofis, inşaat sonrası, koltuk, halı, cam)',
-  'En az 20 güncel fotoğraf (önce/sonra, ekip, ekipman)',
-  'Q&A bölümünde en az 10 soru-cevap (fiyat, kapsam, bölge)',
-  'Haftalık Google yorum yanıtı — hizmet + semt anahtar kelimeleri',
-  'NAP site ile birebir: telefon, adres, web sitesi',
-  'Çalışma saatleri: 7/24 veya gerçek program',
-  'Randevu / fiyat hesaplama linki açıklamada',
+  'Birincil kategori: Temizlik Hizmetleri (doğrulandı 2026-11-02)',
+  'İkincil: Ev / Halı / Cam / Döşeme temizliği — Ofis + İnşaat sonrası ekle',
+  'KALDIR: Peyzaj Mimarı (peyzaj hizmeti yok) · Tekne temizliği yoksa kaldır',
+  'Açıklamadan “bahçe peyzaj” çıkar; bahçe = yüzey temizliği',
+  'NAP site ile birebir: Ferahevler, Şen Aydın Sok. No:10, 34457 · 0551 925 09 43',
+  'Çalışma saatleri: 24 saat açık (GBP = site schema)',
+  'En az 20 güncel fotoğraf (önce/sonra, ekip) — stok azalt',
+  'Haftalık Post + yorum yanıtı (semt + hizmet)',
+  'Yorum hızı: 12 yorumdan düzenli artış hedefle',
+  'Randevu / fiyat hesaplama linki açıklamada + UTM',
 ] as const;
 
 /** GEO odaklı Google yorum istek şablonları */

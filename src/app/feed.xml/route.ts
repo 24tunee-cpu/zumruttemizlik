@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import {
   buildRssXml,
   emptyFeedFallback,
-  feedCacheHeaders,
+  feedResponseHeaders,
   fetchFeedPosts,
 } from '@/lib/feeds';
 
@@ -14,14 +14,14 @@ export async function GET() {
     const posts = await fetchFeedPosts();
     return new NextResponse(buildRssXml(posts), {
       status: 200,
-      headers: feedCacheHeaders.rss,
+      headers: feedResponseHeaders('rss'),
     });
   } catch (error) {
     console.error('[feed.xml]', error instanceof Error ? error.message : error);
     return new NextResponse(emptyFeedFallback('rss'), {
       status: 200,
       headers: {
-        ...feedCacheHeaders.rss,
+        ...feedResponseHeaders('rss'),
         'Cache-Control': 'public, max-age=60',
         'X-Feed-Degraded': '1',
       },
