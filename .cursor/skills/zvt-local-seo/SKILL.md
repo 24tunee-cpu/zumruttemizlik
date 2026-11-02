@@ -44,3 +44,8 @@ description: >-
 ## Kod NAP
 
 Değişiklik yalnızca `site-contact.ts` üzerinden; footer DB `SiteSettings.address` eskiyse admin’den GBP adresine çek.
+
+## Site / anasayfa / meta
+
+Kod, H1, trust metrikleri, sitemap/feed, programmatic landing → **`zvt-seo-beast`** skill (+ `checklist.md`).
+Doğrulanmış rating: `src/config/trust-signals.ts` (GBP 4.9 / 12 — uydurma 5000+ yasak).

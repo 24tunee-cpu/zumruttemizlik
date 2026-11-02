@@ -33,6 +33,8 @@
     "seo:autopilot:run": "tsx scripts/run-seo-autopilot.ts",
     "geo:sync": "tsx scripts/geo-sync.ts",
     "geo:validate-llms": "tsx scripts/validate-llms-nap.ts",
+    "seo:audit-meta": "tsx scripts/audit-meta-lengths.ts",
+    "seo:gates": "npm run seo:autopilot:validate && npm run geo:validate-llms",
     "blogs:repair-schedule": "tsx scripts/repair-blog-schedule.ts",
     "blogs:publish-due": "tsx scripts/publish-due-blogs.ts",
     "blogs:check-schedule": "tsx scripts/check-blog-schedule.ts",

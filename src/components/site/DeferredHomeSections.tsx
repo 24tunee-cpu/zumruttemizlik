@@ -6,8 +6,8 @@ import { Suspense } from 'react';
 const Testimonials = dynamic(
   () => import('@/components/site/Testimonials').then((mod) => mod.Testimonials),
   {
-    ssr: false,
-    loading: () => <div className="h-96 bg-slate-900 animate-pulse" />,
+    ssr: true,
+    loading: () => <div className="h-96 animate-pulse bg-slate-900" />,
   }
 );
 
@@ -15,7 +15,7 @@ const BlogSection = dynamic(
   () => import('@/components/site/BlogSection').then((mod) => mod.BlogSection),
   {
     ssr: false,
-    loading: () => <div className="h-96 bg-slate-950 animate-pulse" />,
+    loading: () => <div className="h-96 animate-pulse bg-slate-950" />,
   }
 );
 
@@ -23,23 +23,38 @@ const ContactForm = dynamic(
   () => import('@/components/site/ContactForm').then((mod) => mod.ContactForm),
   {
     ssr: false,
-    loading: () => <div className="h-[640px] bg-slate-900 animate-pulse" />,
+    loading: () => <div className="h-[640px] animate-pulse bg-slate-900" />,
   }
 );
 
+type HomeTestimonial = {
+  id: string;
+  name: string;
+  location: string;
+  rating: number;
+  content: string;
+  avatar?: string;
+  service?: string;
+  isActive: boolean;
+};
+
 function SectionLoading({ height = 'h-96' }: { height?: string }) {
   return (
-    <div className={`${height} flex items-center justify-center bg-slate-900 animate-pulse`}>
+    <div className={`${height} flex items-center justify-center animate-pulse bg-slate-900`}>
       <span className="sr-only">Yükleniyor...</span>
     </div>
   );
 }
 
-export default function DeferredHomeSections() {
+export default function DeferredHomeSections({
+  initialTestimonials = [],
+}: {
+  initialTestimonials?: HomeTestimonial[];
+}) {
   return (
     <>
       <Suspense fallback={<SectionLoading height="h-96" />}>
-        <Testimonials />
+        <Testimonials initialTestimonials={initialTestimonials} />
       </Suspense>
 
       <Suspense fallback={<SectionLoading height="h-96" />}>
