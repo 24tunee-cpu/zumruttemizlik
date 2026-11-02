@@ -19,10 +19,11 @@ Bu dosya **tek ana anayasadır**. Üçüncü taraf Agent Skills (ör. `garrettjs
 | Öncelik | Kaynak | Rol |
 |--------|--------|-----|
 | 1 | Bu `AGENTS.md` + `src/config/site-contact.ts` | NAP, yasaklar, mimari, deploy |
-| 2 | Proje skill `zvt-seo-beast` + `.cursor/rules/zvt-seo-guardrails.mdc` | Site SEO OS: homepage, meta, trust, keşif stack |
-| 3 | Proje skill `zvt-local-seo` | GBP / citation / yorum köprüsü |
-| 4 | Local SEO Skills (Garrett vb.) | Genel GBP/SAB/yorum/citation playbook |
-| 5 | Genel SEO tavsiyesi | En düşük |
+| 2 | `zvt-seo-beast` + SEO/local guardrail rules | Site SEO OS + verified-facts |
+| 3 | `zvt-local-seo` + `zvt-garrett-dispatch` | GBP/citation + Garrett router (ücretli MCP kapalı) |
+| 4 | `zvt-programmatic-landing` | Semt / ilçe×hizmet kapısı |
+| 5 | Local SEO Skills (Garrett) | Playbook only — indeks: `.cursor/skills/README.md` |
+| 6 | Genel SEO tavsiyesi | En düşük |
 
 **Skill’ler şunları YAPAMAZ / agent uygulamaz:**
 - Sahte şube, sahte yorum, uydurma referans, keyword-stuffed işletme adı
@@ -282,8 +283,9 @@ Her öneride: fayda · risk · efor · öncelik. Trafik/sıralama garantisi yok.
 | 2026-11-02 | A2 kapanış: NAP=GBP Ferahevler Şen Aydın No:10/34457, pin, sameAs Maps URL, llms/identity; Peyzaj kategorisi GBP’de kaldırılacak |
 | 2026-11-02 | Local SEO kod paketi: `gbp-links` UTM + Place ID yorum, sticky/footer Harita, citation tracker UI, SSS topic A6, A5 semt×hizmet, soft district claim + localized pair FAQ |
 | 2026-11-02 | SEO Beast OS: `.cursor/skills/zvt-seo-beast` + guardrails rule + `trust-signals.ts`; AGENTS §0 hiyerarşi güncellendi |
+| 2026-11-02 | Peak skill pack: progressive refs (verified-facts, AEO/GEO, discovery), `zvt-garrett-dispatch`, `zvt-programmatic-landing`, local GBP/citation/review refs |
 
-**Talimat dosyaları:** `CLAUDE.md` → `@AGENTS.md`. Proje skill: `.cursor/skills/zvt-local-seo`. User-global: `~/.agents/skills` + `~/.cursor/skills` (Garrett pack). Tek ana anayasa: bu dosya.
+**Talimat dosyaları:** `CLAUDE.md` → `@AGENTS.md`. Skill indeks: `.cursor/skills/README.md`. User-global: Garrett pack + mirrored `zvt-*`. Tek ana anayasa: bu dosya.
 
 ---
 
@@ -291,7 +293,8 @@ Her öneride: fayda · risk · efor · öncelik. Trafik/sıralama garantisi yok.
 
 - [ ] Site kodu / deploy / push yalnızca açık talepte  
 - [ ] NAP ve hizmet iddiası `site-contact` + seed ile uyumlu  
-- [ ] Homepage / meta / trust → `zvt-seo-beast` + `trust-signals.ts` (uydurma 5000+/5.0 yok)  
+- [ ] Homepage / meta / trust → `zvt-seo-beast` + `verified-facts.md` + `trust-signals.ts`  
+- [ ] Local SEO isteği → `zvt-garrett-dispatch` (ücretli MCP onaysız yok)  
 - [ ] Yeni blog/geo slug ASCII + validate (`seo:gates`)  
 - [ ] Autopilot partial → önce EROFS/llmsSync  
 - [ ] Mahalle sayfası = özgün içerik zorunlu  

@@ -1,11 +1,12 @@
 /**
  * @fileoverview Home Page
- * @description Ana sayfa — yerel niyet, doğrulanmış trust, SSR yorum.
+ * @description Ana sayfa — yerel niyet, doğrulanmış trust, SSR yorum + hizmet, AEO FAQ.
  */
 
 import type { Metadata } from 'next';
 import { Suspense, cache } from 'react';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 import SiteLayout from './site/layout';
 import { Hero } from '@/components/site/Hero';
 import { canonicalUrl, serializeSchemaGraph } from '@/lib/seo';
@@ -67,6 +68,8 @@ export const metadata: Metadata = {
   },
 };
 
+const activeServices = SERVICE_SEED_DATA.filter((s) => s.isActive !== false);
+
 const homeServicesItemListJson = serializeSchemaGraph([
   {
     '@context': 'https://schema.org',
@@ -74,7 +77,7 @@ const homeServicesItemListJson = serializeSchemaGraph([
     name: 'Zümrüt Vadi Temizlik Hizmetleri',
     description:
       'İstanbul Avrupa Yakası, Sarıyer ve Zekeriyaköy ev, ofis, inşaat sonrası, koltuk, halı, cam ve dış cephe temizlik hizmetleri.',
-    itemListElement: SERVICE_SEED_DATA.filter((s) => s.isActive !== false).map((s, i) => ({
+    itemListElement: activeServices.map((s, i) => ({
       '@type': 'ListItem',
       position: i + 1,
       name: s.title,
@@ -82,6 +85,47 @@ const homeServicesItemListJson = serializeSchemaGraph([
     })),
   },
 ]);
+
+/** AEO — kısa, doğrulanmış cevaplar (FAQ rich spam değil) */
+const HOME_AEO_FAQS = [
+  {
+    q: 'Sarıyer ve Zekeriyaköy’de temizlik hizmeti veriyor musunuz?',
+    a: 'Evet. Öncelik hattımız Sarıyer (Zekeriyaköy, Maslak, Tarabya, Bahçeköy, Uskumruköy). Avrupa Yakası ve İstanbul geneli talepleri rota/kapasiteye göre planlıyoruz; kesin onay ücretsiz keşif sonrasındadır.',
+  },
+  {
+    q: 'İstanbul temizlik fiyatı nasıl netleşir?',
+    a: 'Metrekare, kirlilik, hizmet türü ve ekip süresi fiyatı etkiler. Online hesaplayıcı tahmini verir; kesin teklif ücretsiz keşif veya kısa bilgi sonrası netleşir.',
+  },
+  {
+    q: 'Google yorumlarınız nerede?',
+    a: `${formatGoogleTrustLine()}. Güncel puan ve yorumlar için /harita-ve-yorumlar sayfasına bakın; uydurma müşteri sayısı kullanmıyoruz.`,
+  },
+  {
+    q: 'Aynı gün randevu mümkün mü?',
+    a: 'Kapasite uygunsa aynı gün keşif/randevu açılabilir. 7/24 destek hattımızdan veya randevu formundan yazın.',
+  },
+] as const;
+
+const homeFaqJson = serializeSchemaGraph([
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: HOME_AEO_FAQS.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a },
+    })),
+  },
+]);
+
+const initialHomeServices = activeServices.map((s) => ({
+  id: `seed-${s.slug}`,
+  title: s.title,
+  slug: s.slug,
+  shortDesc: s.shortDesc,
+  image: typeof s.image === 'string' ? s.image : null,
+  icon: typeof s.icon === 'string' ? s.icon : null,
+}));
 
 function SectionLoading({ height = 'h-96' }: { height?: string }) {
   return (
@@ -113,13 +157,17 @@ export default async function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: homeServicesItemListJson }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: homeFaqJson }}
+      />
       <SiteLayout>
         <Suspense fallback={<SectionLoading height="h-screen" />}>
           <Hero />
         </Suspense>
 
         <Suspense fallback={<SectionLoading height="h-96" />}>
-          <Services />
+          <Services initialServices={initialHomeServices} />
         </Suspense>
 
         <div className="bg-slate-900 px-4 py-10 sm:px-6 lg:px-8">
@@ -168,6 +216,34 @@ export default async function HomePage() {
                 },
               ]}
             />
+
+            <section className="mt-10" aria-labelledby="home-aeo-faq-heading">
+              <h2 id="home-aeo-faq-heading" className="text-xl font-semibold text-white">
+                Sık sorulanlar
+              </h2>
+              <p className="mt-2 text-sm text-slate-400">
+                Kısa cevaplar — detay için{' '}
+                <Link href="/sss" className="text-emerald-400 underline-offset-2 hover:underline">
+                  SSS
+                </Link>{' '}
+                veya{' '}
+                <Link href="/geo-sss" className="text-emerald-400 underline-offset-2 hover:underline">
+                  GEO SSS
+                </Link>
+                .
+              </p>
+              <dl className="mt-6 space-y-4">
+                {HOME_AEO_FAQS.map((item) => (
+                  <div
+                    key={item.q}
+                    className="rounded-xl border border-slate-700/80 bg-slate-800/40 px-4 py-3"
+                  >
+                    <dt className="font-medium text-emerald-200">{item.q}</dt>
+                    <dd className="mt-2 text-sm leading-relaxed text-slate-300">{item.a}</dd>
+                  </div>
+                ))}
+              </dl>
+            </section>
           </div>
         </div>
 

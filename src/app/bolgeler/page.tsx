@@ -2,19 +2,28 @@ import type { Metadata } from 'next';
 import RegionsPageClient from '@/components/site/RegionsPageClient';
 import { canonicalUrl } from '@/lib/seo';
 import { keywordsForPage } from '@/lib/seo-keywords';
+import { ConversionSeoAside } from '@/components/site/ConversionSeoAside';
+import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
+import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
+
+const bolgelerTitle = clampMetaTitle('İstanbul İlçe Bazlı Temizlik Hizmetleri | Sarıyer & Zekeriyaköy');
+const bolgelerDescription = clampMetaDescription(
+  "Zekeriyaköy, Sarıyer, Beşiktaş, Şişli ve İstanbul'un 18 ilçesinde ev, ofis, inşaat sonrası temizlik. İlçe bazlı landing sayfaları ve ücretsiz keşif."
+);
+const bolgelerOgDescription = clampMetaDescription(
+  'Zekeriyaköy ve Sarıyer öncelikli İstanbul ilçe temizlik sayfaları. Ev, ofis, inşaat sonrası ve halı-koltuk hizmetleri.'
+);
 
 export const metadata: Metadata = {
-  title: 'İstanbul İlçe Bazlı Temizlik Hizmetleri | Sarıyer & Zekeriyaköy',
-  description:
-    'Zekeriyaköy, Sarıyer, Beşiktaş, Şişli ve İstanbul\'un 20 ilçesinde ev, ofis, inşaat sonrası temizlik. İlçe bazlı landing sayfaları ve ücretsiz keşif.',
+  title: bolgelerTitle,
+  description: bolgelerDescription,
   keywords: keywordsForPage('bolgeler'),
   alternates: {
     canonical: canonicalUrl('/bolgeler'),
   },
   openGraph: {
     title: 'İstanbul İlçe Bazlı Temizlik | Zümrüt Vadi Temizlik',
-    description:
-      'Zekeriyaköy ve Sarıyer öncelikli İstanbul ilçe temizlik sayfaları. Ev, ofis, inşaat sonrası ve halı-koltuk hizmetleri.',
+    description: bolgelerOgDescription,
     url: canonicalUrl('/bolgeler'),
     type: 'website',
     locale: 'tr_TR',
@@ -31,7 +40,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'İstanbul İlçe Bazlı Temizlik | Zümrüt Vadi',
-    description: 'Zekeriyaköy, Sarıyer ve İstanbul ilçelerinde profesyonel temizlik.',
+    description: clampMetaDescription('Zekeriyaköy, Sarıyer ve İstanbul ilçelerinde profesyonel temizlik.'),
     images: [canonicalUrl('/logo.png')],
   },
 };
@@ -58,7 +67,14 @@ export default function RegionsHubPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <RegionsPageClient />
+      <RegionsPageClient>
+        <ConversionSeoAside
+          contextLabel="Bölgeler hub temizlik teklifi"
+          sourcePrefix="bolgeler-aside"
+          tone="dark"
+        />
+        <StickySeoCtaBar contextLabel="Bölgeler" sourcePrefix="bolgeler-sticky" />
+      </RegionsPageClient>
     </>
   );
 }

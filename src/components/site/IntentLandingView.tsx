@@ -12,6 +12,8 @@ import type { IntentLanding } from '@/config/intent-seo';
 import { getRelatedIntents, INTENT_DISTRICT_SLUGS } from '@/config/intent-seo';
 import { buildCalculatorHref } from '@/lib/intent-analytics';
 import { SITE_CONTACT, toTelHref } from '@/config/site-contact';
+import { ConversionSeoAside } from '@/components/site/ConversionSeoAside';
+import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
 
 interface IntentLandingViewProps {
   intent: IntentLanding;
@@ -258,6 +260,16 @@ export function IntentLandingView({ intent }: IntentLandingViewProps) {
           </div>
         </div>
       </section>
+
+      <ConversionSeoAside
+        contextLabel={`${intent.name} teklif`}
+        sourcePrefix={`cozum-${intent.slug}-aside`}
+        tone="dark"
+      />
+      <StickySeoCtaBar
+        contextLabel={intent.name}
+        sourcePrefix={`cozum-${intent.slug}-sticky`}
+      />
     </div>
   );
 }

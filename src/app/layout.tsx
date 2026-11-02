@@ -22,6 +22,9 @@ import { getSiteIconHref } from "@/lib/site-branding";
 import { canonicalUrl, getSiteUrl } from "@/lib/seo";
 import { buildRootSchemaGraphJson } from "@/lib/root-schema";
 import { keywordsForPage } from "@/lib/seo-keywords";
+import { clampMetaDescription, clampMetaTitle } from "@/lib/meta-clamp";
+import { formatGoogleTrustLine } from "@/config/trust-signals";
+import { SITE_CONTACT } from "@/config/site-contact";
 
 /** Google Analytics 4 — `NEXT_PUBLIC_GA_MEASUREMENT_ID` ile değiştirilebilir */
 const GA_MEASUREMENT_ID =
@@ -32,17 +35,23 @@ const DEXTER_WIDGET_TOKEN =
 
 const siteRoot = getSiteUrl();
 
+const rootDefaultTitle = clampMetaTitle(
+  `${SITE_CONTACT.companyName} | Sarıyer & İstanbul Temizlik`
+);
+const rootDescription = clampMetaDescription(
+  `Sarıyer / Zekeriyaköy ev, ofis, inşaat sonrası temizlik. ${formatGoogleTrustLine()}. Ücretsiz keşif, 7/24 destek. ${SITE_CONTACT.phoneDisplay}.`
+);
+
 const rootMetadataBase: Metadata = {
   title: {
-    default: 'Zümrüt Vadi Temizlik | İstanbul Temizlik Hizmetleri',
-    template: "%s | Zümrüt Vadi Temizlik",
+    default: rootDefaultTitle,
+    template: `%s | ${SITE_CONTACT.companyName}`,
   },
-  description:
-    "İstanbul'un önde gelen profesyonel temizlik şirketi. İnşaat sonrası, ofis, ev, koltuk yıkama, halı temizliği. 15+ yıl deneyim, şeffaf süreç ve ücretsiz keşif. Hemen iletişime geçin.",
+  description: rootDescription,
   keywords: keywordsForPage("root"),
-  authors: [{ name: "Zümrüt Vadi Temizlik" }],
-  creator: "Zümrüt Vadi Temizlik",
-  publisher: "Zümrüt Vadi Temizlik",
+  authors: [{ name: SITE_CONTACT.companyName }],
+  creator: SITE_CONTACT.companyName,
+  publisher: SITE_CONTACT.companyName,
   metadataBase: new URL(siteRoot),
   alternates: {
     canonical: canonicalUrl("/"),
@@ -56,26 +65,26 @@ const rootMetadataBase: Metadata = {
     },
   },
   openGraph: {
-    title: 'Zümrüt Vadi Temizlik | İstanbul Profesyonel Temizlik Hizmetleri',
-    description: "15+ yıl deneyimli profesyonel temizlik ekibi. İnşaat sonrası, ofis, ev temizliği, koltuk yıkama. Ücretsiz keşif, uygun fiyatlar!",
+    title: rootDefaultTitle,
+    description: rootDescription,
     type: "website",
     locale: "tr_TR",
     url: canonicalUrl("/"),
-    siteName: "Zümrüt Vadi Temizlik",
+    siteName: SITE_CONTACT.companyName,
     images: [
       {
         url: canonicalUrl("/og-image.jpg"),
         width: 1200,
         height: 630,
-        alt: "Zümrüt Vadi Temizlik - İstanbul Profesyonel Temizlik Hizmetleri",
+        alt: "Zümrüt Vadi Temizlik - Sarıyer Zekeriyaköy Temizlik",
         type: "image/jpeg",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: 'Zümrüt Vadi Temizlik | İstanbul Profesyonel Temizlik Hizmetleri',
-    description: "Profesyonel temizlik hizmetleri. 7/24 hizmet, ücretsiz keşif!",
+    title: rootDefaultTitle,
+    description: rootDescription,
     images: [canonicalUrl("/og-image.jpg")],
     creator: "@zumrutvaditemizlik",
     site: "@zumrutvaditemizlik",

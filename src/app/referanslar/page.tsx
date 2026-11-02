@@ -18,6 +18,9 @@ import {
 } from '@/lib/testimonials-seo';
 import { canonicalUrl } from '@/lib/seo';
 import { Star, Users, Award } from 'lucide-react';
+import { ConversionSeoAside } from '@/components/site/ConversionSeoAside';
+import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
+import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
 
 const getTestimonials = cache(fetchPublicTestimonialsForSeo);
 
@@ -28,13 +31,15 @@ export async function generateMetadata(): Promise<Metadata> {
   const rows = await getTestimonials();
   const n = rows.length;
   const agg = computeTestimonialAggregate(rows);
-  const description =
+  const description = clampMetaDescription(
     n > 0 && agg
       ? `${n} gerçek müşteri yorumu; ortalama ${agg.ratingValue.toFixed(1)}/5. İstanbul temizlik referansları, ofis ve ev hizmeti deneyimleri — Zümrüt Vadi Temizlik.`
-      : 'Zümrüt Vadi Temizlik müşteri yorumları ve İstanbul temizlik referansları. Profesyonel temizlik hizmeti geri bildirimleri.';
+      : 'Zümrüt Vadi Temizlik müşteri yorumları ve İstanbul temizlik referansları. Profesyonel temizlik hizmeti geri bildirimleri.'
+  );
+  const title = clampMetaTitle('Müşteri Yorumları ve Referanslar | İstanbul');
 
   return {
-    title: 'Müşteri Yorumları ve Referanslar | İstanbul',
+    title,
     description,
     keywords: [
       'Zümrüt Vadi Temizlik yorumları',
@@ -49,7 +54,7 @@ export async function generateMetadata(): Promise<Metadata> {
       canonical: canonicalUrl('/referanslar'),
     },
     openGraph: {
-      title: 'Müşteri Yorumları ve Referanslar | İstanbul',
+      title,
       description,
       url: canonicalUrl('/referanslar'),
       type: 'website',
@@ -66,7 +71,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'Müşteri Yorumları ve Referanslar | İstanbul',
+      title,
       description,
       images: [canonicalUrl('/logo.png')],
     },
@@ -77,7 +82,7 @@ function StatsSection({ reviewCount, avgDisplay }: { reviewCount: number; avgDis
   const stats = [
     { icon: Users, value: reviewCount > 0 ? String(reviewCount) : '—', label: 'Yayında yorum' },
     { icon: Star, value: avgDisplay, label: 'Ortalama puan (5 üzerinden)' },
-    { icon: Award, value: '15+', label: 'Yıllık deneyim' },
+    { icon: Award, value: '7/24', label: 'Destek hattı' },
   ] as const;
 
   return (
@@ -186,6 +191,13 @@ export default async function ReferencesPage() {
             </Link>
           </div>
         </section>
+
+        <ConversionSeoAside
+          contextLabel="Referanslar sonrası teklif"
+          sourcePrefix="referanslar-aside"
+          tone="light"
+        />
+        <StickySeoCtaBar contextLabel="Referanslar" sourcePrefix="referanslar-sticky" />
       </SiteLayout>
     </>
   );

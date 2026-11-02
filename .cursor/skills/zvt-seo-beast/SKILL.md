@@ -1,112 +1,61 @@
 ---
 name: zvt-seo-beast
 description: >-
-  ZVT site SEO operating system. MUST use before homepage, meta, schema, NAP,
-  sitemaps/feeds, programmatic landings, blog SEO, or trust/metrics edits.
-  Prevents fake claims, NAP drift, thin pages, discovery-stack breakage.
-  Complements zvt-local-seo (GBP/citations) and AGENTS.md (supreme).
+  ZVT site SEO operating system for homepage, meta, schema, NAP, trust metrics,
+  sitemaps/feeds, programmatic landings, blog SEO, AEO/GEO on-page. MUST use
+  before those edits. Prevents fake claims, NAP drift, thin pages, discovery
+  breakage. Complements zvt-local-seo and zvt-garrett-dispatch. AGENTS.md wins.
 ---
 
-# ZVT SEO Beast (site işletim sistemi)
+# ZVT SEO Beast
 
-Garrett Local SEO Skills strateji verir; **bu skill kod + içerik + doğrulanmış iddia** kuralıdır.
-Ajanı hafifletir: tahmin yasak, checklist zorunlu, komut matrisi hazır.
+Kod + içerik + doğrulanmış iddia OS. Tahmin yasak. Sıralama **garantisi yok**.
 
-## 0. Otorite (ezberleme)
+## Progressive disclosure
 
-| Öncelik | Kaynak |
-|--------|--------|
-| 1 | `AGENTS.md` |
-| 2 | Bu skill (`zvt-seo-beast`) |
-| 3 | `zvt-local-seo` (GBP / citation / yorum ops) |
-| 4 | Garrett pack (`dispatch` → 2–3 skill) |
-| 5 | Genel SEO tavsiyesi |
+| Dosya | Ne zaman oku |
+|-------|----------------|
+| [verified-facts.md](references/verified-facts.md) | Her SEO işi — önce |
+| [repo-seo-map.md](references/repo-seo-map.md) | Dosya yolu / komut |
+| [programmatic-inventory.md](references/programmatic-inventory.md) | İlçe/semt/hizmet |
+| [neighborhood-gate.md](references/neighborhood-gate.md) | Yeni semt URL |
+| [meta-and-trust-patterns.md](references/meta-and-trust-patterns.md) | Meta / rating UI |
+| [schema-contract.md](references/schema-contract.md) | JSON-LD |
+| [discovery-stack.md](references/discovery-stack.md) | Feed/sitemap/IndexNow |
+| [aeo-geo.md](references/aeo-geo.md) | SSS / AI görünürlük |
+| [internal-linking.md](references/internal-linking.md) | Hub linkleri |
+| [autopilot-and-blog.md](references/autopilot-and-blog.md) | Blog seed |
+| [checklist.md](checklist.md) | Bitirmeden işaretle |
 
-Çatışmada üst kazanır. Sıralama/trafik **garantisi yok**.
+## Otorite
 
-## 1. Garrett ne zaman (özet)
+1 `AGENTS.md` → 2 bu skill → 3 `zvt-local-seo` → 4 `zvt-garrett-dispatch` → 5 Garrett → 6 genel.
 
-```text
-dispatch → (keyword-research) → local-content-strategy → local-content-briefs
-         → [BU SKILL + kod] implement → local-seo-audit / GSC
-GBP ops: gbp-optimization + review-management + gbp-posts (panel manuel)
-```
+## Hallucination stop
 
-- `localseodata-tool` / ücretli MCP: **yalnızca kullanıcı onayı**
-- Homepage CRO / Next.js: Garrett **yazmaz** — bu skill + repo
+1. Sayı/adres/hizmet yazmadan `verified-facts.md` + ilgili TS oku.  
+2. Trust yalnız `trust-signals.ts`.  
+3. GSC/sıralama iddiası = araç çıktısı yoksa “açık soru”.  
+4. FAQ rich result / llms.txt “sihir” iddiası yok (`aeo-geo.md`).
 
-## 2. Pre-flight (değişiklik tipine göre oku)
+## Garrett
 
-| İş | Zorunlu dosyalar |
-|----|------------------|
-| NAP / telefon / adres | `src/config/site-contact.ts`, `geo-entity.ts` |
-| Ana sayfa | `src/app/page.tsx`, `Hero.tsx`, `home-services-seo.ts`, `DeferredHomeSections.tsx`, `trust-signals.ts` |
-| Meta | `meta-clamp.ts` — yeni meta **clamp’siz yazılmaz** |
-| İlçe / semt | `programmatic-seo.ts`, `seo-cannibalization.ts`, `internal-seo-links.ts` |
-| GBP / yorum | `zvt-local-seo`, `gbp-links.ts` |
-| Feed / sitemap | `sitemap-lastmod.ts`, `feeds.ts`, `websub.ts` — **silme / “temizlik” yok** |
+Önce `zvt-garrett-dispatch`. Kod implementasyonu bu skill’de. Ücretli MCP onaysız yok.
 
-Checklist dosyası: `.cursor/skills/zvt-seo-beast/checklist.md` — bitirmeden işaretle.
+## Ana sayfa sözleşmesi
 
-## 3. Doğrulanmış güven (uydurma yasak)
+Tek H1 (Sarıyer/Zekeriyaköy); meta clamp; Sticky + WhyChoose + RelatedSeoLinks; SSR yorum; CTA randevu/fiyat/tel.
 
-Tek kaynak: `src/config/trust-signals.ts` (+ Maps sync varsa API).
+## Komutlar
 
-| İzinli (GBP 2026-11-02) | Yasak örnek |
-|-------------------------|-------------|
-| Google **4.9** / **12** yorum (veya Maps sync gerçek sayı) | `5.0`, `5000+ müşteri`, uydurma yıl/iş adedi |
-| 7/24 hat (GBP saatleri) | Peyzaj / tekne hizmeti |
-| Place ID `site-contact.gbpPlaceId` | Sahte şube / sahte yorum |
+`type-check` · `seo:gates` · `seo:audit-meta` · `geo:validate-llms` · legacy redirect test.
 
-Hero, Services, schema AggregateRating: **yalnızca verified**.
-
-## 4. Ana sayfa sözleşmesi
-
-- **Tek H1**; title ile çelişmesin — birincil yerel niyet: Sarıyer / Zekeriyaköy (+ Avrupa Yakası ikincil).
-- Meta: `clampMetaTitle` / `clampMetaDescription` / emoji yok.
-- Sticky: `StickySeoCtaBar`; güven: `WhyChooseZvt`; hub: `RelatedSeoLinks` (semt×hizmet + geo-sss).
-- Testimonials / kritik metin: mümkünse **SSR** (client-only skeleton = zayıf crawl).
-- CTA: `/randevu` veya tel/WA + `/fiyat-hesaplama`; yalnız `/iletisim` yetmez.
-
-## 5. Programatik / içerik
-
-- Yeni mahalle URL = `NEIGHBORHOOD_LANDINGS` özgün standart; 18 ilçe template spam yok.
-- Blog slug ASCII; `npm run seo:autopilot:validate`.
-- Cannibalization: `seo-cannibalization.ts` + admin GSC.
-- Soft claim: `districtCoverageDisclaimer` — expansion ilçede “her adres her gün” yok.
-
-## 6. Komut matrisi
-
-| Değişiklik | Çalıştır |
-|------------|----------|
-| TS/TSX | `npm run type-check` |
-| NAP / llms | `npm run geo:validate-llms` |
-| Autopilot / blog seed | `npm run seo:autopilot:validate` |
-| Meta uzunluk | `npm run seo:audit-meta` |
-| URL / 301 | `npx tsx scripts/test-legacy-redirects.ts` |
-
-Push / deploy / ücretli MCP: **kullanıcı istemeden yok**.
-
-## 7. Yasaklar (kısa)
-
-- Sahte NAP, yorum, metrik, şube
-- Keyword-stuffed işletme adı / H1 stuffing
-- Indexing API’yi temizlik URL’sine önerme; IndexNow ≠ Google ping
-- Feed/WebSub/IndexNow/sitemap-lastmod bozma
-- Peyzaj hizmeti uydurma
-
-## 8. Exit raporu (zorunlu)
+## Exit raporu
 
 ```text
 Değişen: …
-Doğrulanan: type-check / llms / meta / …
-Verified metrics kaynağı: trust-signals | Maps sync
+References okunan: …
+Doğrulanan: …
 Açık soru: …
-Garanti yok: sıralama/trafik iddiası yok
+Garanti yok
 ```
-
-## 9. Sonraki kod işleri (backlog — skill tetikler)
-
-P1 anasayfa: H1 yerel + trust-signals + SSR yorum + sticky/WhyChoose/RelatedSeoLinks.  
-P2: Services SSR seed; home AEO 3 SSS; meta emoji temiz.  
-Ops: admin `SiteSettings.address` = GBP satırı.

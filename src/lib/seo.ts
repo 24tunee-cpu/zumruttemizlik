@@ -78,7 +78,8 @@ const DEFAULT_OG_IMAGE = '/og-image.jpg';
 /** Site bilgileri */
 const SITE_CONFIG = {
   name: 'Zümrüt Vadi Temizlik',
-  description: 'İstanbul\'un önde gelen profesyonel temizlik şirketi',
+  description:
+    'Sarıyer / Zekeriyaköy ev, ofis ve inşaat sonrası temizlik. Google doğrulanmış puan, ücretsiz keşif.',
   locale: 'tr_TR',
   language: 'tr',
   telephone: SITE_CONTACT.phoneE164,

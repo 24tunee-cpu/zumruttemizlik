@@ -335,12 +335,13 @@ export default async function BlogPostPage({ params }: PageProps) {
         post.content,
         post.category,
         {
-          addVideoSection: true,
-          addBeforeAfter: true,
-          addFAQ: true,
-          addHowTo: true,
-          addStatistics: true,
-          targetWordCount: 1500
+          addVideoSection: false,
+          addBeforeAfter: false,
+          addFAQ: false,
+          addHowTo: false,
+          /** Sahte 5000+/15+ enjekte etme — yalnızca verified stats şablonu gerekirse true */
+          addStatistics: false,
+          targetWordCount: 1500,
         }
       );
 
@@ -465,24 +466,6 @@ export default async function BlogPostPage({ params }: PageProps) {
                     : enhancedPostContent
                 }}
               />
-
-              {/* Content Upgrade Info - Production'da aktif */}
-              {useTopicCluster && contentUpgradeInfo && (
-                <section className="mt-8 rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4">
-                  <h2 className="text-base font-semibold text-emerald-200">✨ İçerik Zenginleştirildi</h2>
-                  <div className="mt-2 space-y-1">
-                    <p className="text-sm text-emerald-100/90">
-                      <strong>Kelime Sayısı:</strong> {contentUpgradeInfo.wordCount} (Hedef: 1500+)
-                    </p>
-                    <p className="text-sm text-emerald-100/90">
-                      <strong>Eklenen Bölümler:</strong> {contentUpgradeInfo.addedSections.join(', ')}
-                    </p>
-                    <p className="text-sm text-emerald-100/90">
-                      <strong>Kalite Skoru:</strong> {contentUpgradeInfo.upgradeScore}/100
-                    </p>
-                  </div>
-                </section>
-              )}
 
               {!useTopicCluster && wordCount < MIN_INDEXABLE_WORD_COUNT && (
                 <section className="mt-8 rounded-xl border border-amber-500/30 bg-amber-500/10 p-4">

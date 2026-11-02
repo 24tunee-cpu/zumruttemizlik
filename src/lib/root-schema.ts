@@ -55,7 +55,7 @@ export async function buildRootSchemaGraphJson(): Promise<string> {
   const siteName = settings?.siteName?.trim() || 'Zümrüt Vadi Temizlik';
   const description =
     settings?.siteDescription?.trim() ||
-    "İstanbul'un önde gelen profesyonel temizlik şirketi. İnşaat sonrası, ofis, ev temizliği ve koltuk yıkama hizmetleri.";
+    'Sarıyer / Zekeriyaköy ev, ofis, inşaat sonrası ve koltuk/halı temizliği. Google doğrulanmış puan, ücretsiz keşif, 7/24 destek.';
   const email = settings?.email?.trim() || SITE_CONTACT.email;
   const phoneDisplay = settings?.phone?.trim() || SITE_CONTACT.phoneDisplay;
   const telephone =

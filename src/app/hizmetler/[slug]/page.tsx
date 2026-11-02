@@ -42,6 +42,7 @@ import {
 import { keywordsForPage } from '@/lib/seo-keywords';
 import { serviceFaqFromFeatures, serviceKeywordsFromTitleAndSlug } from '@/lib/service-seo-targets';
 import { clampMetaDescription, clampMetaTitle, stripMetaEmoji } from '@/lib/meta-clamp';
+import { formatGoogleTrustLine } from '@/config/trust-signals';
 
 // ============================================
 // TYPES
@@ -435,10 +436,15 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               <Sparkles className="h-8 w-8 text-emerald-400 sm:h-10 sm:w-10" aria-hidden="true" />
             </div>
             <h1 className="text-balance break-words text-3xl font-bold text-white sm:text-4xl md:text-5xl">
-              {service.title}
+              {/istanbul/i.test(service.title)
+                ? service.title
+                : `${service.title} — İstanbul`}
             </h1>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-300">
               {service.shortDesc}
+            </p>
+            <p className="mx-auto mt-3 text-sm text-slate-400">
+              {formatGoogleTrustLine()} · ücretsiz keşif · 7/24 destek
             </p>
             <div className="mx-auto mt-6 max-w-2xl">
               <GeoExtractAnswer

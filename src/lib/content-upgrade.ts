@@ -20,29 +20,20 @@ interface EnhancedContent {
   upgradeScore: number;
 }
 
-// Temizlik ile ilgili istatistikler ve veriler
+/** Operasyonel süre/fiyat ipuçları — müşteri sayısı / yıl uydurma YOK (trust-signals). */
 const CLEANING_STATISTICS = {
   evTemizligi: {
     ortalamaSüre: '2-3 saat',
-    fiyatAraligi: '750-2000₺',
-    memnuniyetOrani: '98%',
-    müsteriSayisi: '5000+',
-    yillikDeneyim: '15+ yıl'
+    fiyatAraligi: 'keşif sonrası net',
   },
   ofisTemizligi: {
     ortalamaSüre: '3-6 saat',
-    fiyatAraligi: '1500-5000₺',
-    memnuniyetOrani: '97%',
-    müsteriSayisi: '300+',
-    yillikDeneyim: '15+ yıl'
+    fiyatAraligi: 'keşif sonrası net',
   },
   insaatSonrasi: {
     ortalamaSüre: '1-3 gün',
-    fiyatAraligi: '2000-8000₺',
-    memnuniyetOrani: '99%',
-    müsteriSayisi: '200+',
-    yillikDeneyim: '15+ yıl'
-  }
+    fiyatAraligi: 'keşif sonrası net',
+  },
 };
 
 // Video section şablonları
@@ -54,7 +45,7 @@ const VIDEO_SECTIONS = {
         <div class="text-center">
           <div class="text-6xl mb-4">▶️</div>
           <p class="text-white text-lg">Profesyonel Temizlik Sürecimiz</p>
-          <p class="text-slate-300 mt-2">15 yıllık deneyimimizle nasıl çalıştığımızı görün</p>
+          <p class="text-slate-300 mt-2">Profesyonel ekip sürecimizi görün</p>
           <button class="mt-4 bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-2 rounded-lg transition-colors">
             Videoyu İzle
           </button>
@@ -240,36 +231,34 @@ const HOWTO_SECTIONS = {
   `
 };
 
-// İstatistik section şablonları
+/** Yalnızca doğrulanmış GBP sinyalleri — uydurma 5000+/15+ yok */
 const STATISTICS_SECTIONS = {
   temizlik: `
     <section class="statistics-section bg-slate-800/50 rounded-xl p-6 my-8">
-      <h2 class="text-2xl font-bold text-white mb-6">📊 Güven İstatistiklerimiz</h2>
+      <h2 class="text-2xl font-bold text-white mb-6">Doğrulanmış güven</h2>
       <div class="grid md:grid-cols-3 gap-6">
         <div class="stat-card bg-slate-700/50 rounded-lg p-4 text-center">
-          <div class="text-3xl font-bold text-emerald-400 mb-2">98%</div>
-          <p class="text-white font-semibold">Müşteri Memnuniyeti</p>
-          <p class="text-slate-300 text-sm mt-1">15+ yıllık tecrübe</p>
+          <div class="text-3xl font-bold text-emerald-400 mb-2">4.9</div>
+          <p class="text-white font-semibold">Google puan</p>
+          <p class="text-slate-300 text-sm mt-1">GBP doğrulanmış</p>
         </div>
-        
         <div class="stat-card bg-slate-700/50 rounded-lg p-4 text-center">
-          <div class="text-3xl font-bold text-emerald-400 mb-2">5000+</div>
-          <p class="text-white font-semibold">Mutlu Müşteri</p>
-          <p class="text-slate-300 text-sm mt-1">Tüm İstanbul'da</p>
+          <div class="text-3xl font-bold text-emerald-400 mb-2">12</div>
+          <p class="text-white font-semibold">Google yorum</p>
+          <p class="text-slate-300 text-sm mt-1">Harita profili</p>
         </div>
-        
         <div class="stat-card bg-slate-700/50 rounded-lg p-4 text-center">
-          <div class="text-3xl font-bold text-emerald-400 mb-2">24/7</div>
+          <div class="text-3xl font-bold text-emerald-400 mb-2">7/24</div>
           <p class="text-white font-semibold">Destek</p>
-          <p class="text-slate-300 text-sm mt-1">Her zaman ulaşılabilir</p>
+          <p class="text-slate-300 text-sm mt-1">Ücretsiz keşif</p>
         </div>
       </div>
       <p class="text-slate-300 mt-4">
-        15 yıldır sektörde lideriz. 5000'den fazla mutlu müşteri ve %98 memnuniyet oranıyla 
-        İstanbul'un en güvenilir temizlik firmasıyız.
+        Sarıyer / Zekeriyaköy odaklı temizlik. Güncel puan için Google Harita ve site
+        <a href="/harita-ve-yorumlar">harita &amp; yorumlar</a> sayfasına bakın.
       </p>
     </section>
-  `
+  `,
 };
 
 /**
@@ -297,12 +286,12 @@ export function enhanceContent(
   options: Partial<ContentUpgradeOptions> = {}
 ): EnhancedContent {
   const defaultOptions: ContentUpgradeOptions = {
-    addVideoSection: true,
-    addBeforeAfter: true,
-    addFAQ: true,
-    addHowTo: true,
-    addStatistics: true,
-    targetWordCount: 1500
+    addVideoSection: false,
+    addBeforeAfter: false,
+    addFAQ: false,
+    addHowTo: false,
+    addStatistics: false,
+    targetWordCount: 1500,
   };
   
   const opts = { ...defaultOptions, ...options };
@@ -376,28 +365,26 @@ export function enhanceContent(
 /**
  * Ek içerik oluştur
  */
-function generateAdditionalContent(category: string, targetWords: number): string {
-  const stats = CLEANING_STATISTICS[category as keyof typeof CLEANING_STATISTICS] || CLEANING_STATISTICS.evTemizligi;
-  
+function generateAdditionalContent(category: string, _targetWords: number): string {
+  const stats =
+    CLEANING_STATISTICS[category as keyof typeof CLEANING_STATISTICS] ||
+    CLEANING_STATISTICS.evTemizligi;
+
   return `
     <section class="extended-content bg-slate-800/50 rounded-xl p-6 my-8">
-      <h2 class="text-2xl font-bold text-white mb-4">📝 Detaylı Bilgiler</h2>
+      <h2 class="text-2xl font-bold text-white mb-4">Operasyon notları</h2>
       <div class="text-slate-300 space-y-4">
         <p>
-          ${stats.yillikDeneyim} sektör tecrübemizle, İstanbul'un tüm ilçelerinde profesyonel temizlik hizmeti sunuyoruz. 
-          Müşteri memnuniyet oranı ${stats.memnuniyetOrani} olan firmamız, ${stats.müsteriSayisi} mutlu müşteriye hizmet vermiştir.
+          Sarıyer / Zekeriyaköy odaklı çalışıyoruz; Avrupa Yakası ve İstanbul geneli talepleri
+          rota ve kapasiteye göre planlıyoruz. Google Harita puanımız doğrulanmış güven sinyalidir —
+          uydurma müşteri sayısı kullanmıyoruz.
         </p>
         <p>
-          Hizmetlerimiz ortalama ${stats.ortalamaSüre} sürmekte olup, fiyat aralığımız ${stats.fiyatAraligi} arasında değişmektedir. 
-          Tüm ekibimiz profesyonel eğitimli ve sertifikalı personellerden oluşmaktadır.
+          Tipik süre yaklaşık ${stats.ortalamaSüre}; fiyat ${stats.fiyatAraligi}.
+          Eğitimli ekip, yüzey uyumlu ürün ve ücretsiz keşif ile kapsamı netleştiriyoruz.
         </p>
         <p>
-          Kullandığımız tüm temizlik malzemeleri T.C. Sağlık Bakanlığı onaylı olup, insan sağlığına ve çevreye zarar vermez. 
-          Hijyen standartlarımız uluslararası kalite belgeleri ile tescillidir.
-        </p>
-        <p>
-          Randevu ve keşif hizmetlerimiz tamamen ücretsizdir. Hemen bize ulaşın, size özel çözümlerimizi sunalım. 
-          7/24 ulaşılabilir müşteri hizmetlerimizle her zaman yanınızdayız.
+          7/24 destek hattımız ve aynı gün randevu imkânı için randevu veya WhatsApp üzerinden yazın.
         </p>
       </div>
     </section>

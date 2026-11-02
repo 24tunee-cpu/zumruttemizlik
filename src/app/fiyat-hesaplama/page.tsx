@@ -11,10 +11,14 @@ import {
   serializeSchemaGraph,
 } from '@/lib/seo';
 import { metadataForParamAwarePage } from '@/lib/param-page-metadata';
+import { ConversionSeoAside } from '@/components/site/ConversionSeoAside';
+import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
+import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
 
-const pageTitle = 'Temizlik Fiyatları 2026 & Anında Fiyat Hesaplama | İstanbul';
-const pageDescription =
-  'İstanbul temizlik fiyatları 2026: ev, ofis, inşaat sonrası ve dış cephe temizliği için güncel fiyat aralıkları. Anında fiyat hesaplama aracıyla saniyeler içinde tahmini fiyatınızı görün, ücretsiz keşif alın. Sarıyer, Zekeriyaköy ve İstanbul Avrupa Yakası.';
+const pageTitle = clampMetaTitle('Temizlik Fiyatları 2026 & Anında Fiyat Hesaplama | İstanbul');
+const pageDescription = clampMetaDescription(
+  'İstanbul temizlik fiyatları 2026: ev, ofis, inşaat sonrası ve dış cephe temizliği için güncel fiyat aralıkları. Anında fiyat hesaplama aracıyla saniyeler içinde tahmini fiyatınızı görün, ücretsiz keşif alın. Sarıyer, Zekeriyaköy ve İstanbul Avrupa Yakası.'
+);
 
 const BASE_METADATA: Metadata = {
   title: { absolute: pageTitle },
@@ -200,6 +204,13 @@ export default function FiyatHesaplamaPage() {
           </div>
         </div>
       </section>
+
+      <ConversionSeoAside
+        contextLabel="Fiyat hesaplama sonrası keşif"
+        sourcePrefix="fiyat-hesaplama-aside"
+        tone="light"
+      />
+      <StickySeoCtaBar contextLabel="Fiyat hesaplama" sourcePrefix="fiyat-hesaplama-sticky" />
     </SiteLayout>
   );
 }
