@@ -7,6 +7,7 @@ Anayasa: kök `AGENTS.md` (üstün). Skill pack: **2026-11-02 smart** (Google AI
 | `zvt-garrett-dispatch` | Local SEO / Garrett — **önce router** (max 2–3) |
 | `zvt-seo-beast` | Site SEO OS — **önce `decision-tree`** |
 | `zvt-local-seo` | GBP panel, yorum, citation, SAB/hybrid |
+| `zvt-competitor-intel` | Rakip gap — neden öndeler, ne güncellenir (ücretli MCP kapalı) |
 | `zvt-programmatic-landing` | `/bolgeler` semt / ilçe×hizmet (swap-city) |
 
 ## Zirve işletim döngüsü (garanti yok)

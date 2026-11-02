@@ -23,8 +23,10 @@ import { DistrictBreadcrumb } from '@/components/site/DistrictBreadcrumb';
 import { DistrictHubLinks } from '@/components/site/DistrictHubLinks';
 import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
 import { ConversionSeoAside } from '@/components/site/ConversionSeoAside';
-import { SITE_CONTACT } from '@/config/site-contact';
+import { SITE_CONTACT, toTelHref } from '@/config/site-contact';
+import { formatGoogleTrustLine } from '@/config/trust-signals';
 import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
+import { WhyChooseZvt } from '@/components/site/WhyChooseZvt';
 
 type Props = {
   params: Promise<{ district: string }>;
@@ -42,11 +44,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const districtData = getDistrictBySlug(district);
   if (!districtData) return { title: 'Bölge Bulunamadı' };
 
+  const isSariyerHub = districtData.slug === 'sariyer';
   const descBase =
     districtData.regionBlurb ||
     `${districtData.name} bölgesinde ofis temizliği, inşaat sonrası temizlik, koltuk yıkama ve daha fazlası için hızlı teklif alın.`;
-  const description = clampMetaDescription(descBase);
-  const pageTitle = clampMetaTitle(`${districtData.name} Temizlik Hizmetleri | İstanbul`);
+  const description = clampMetaDescription(
+    isSariyerHub
+      ? `${descBase} ${formatGoogleTrustLine()}. Ücretsiz keşif · fiyat hesaplama.`
+      : descBase
+  );
+  const pageTitle = clampMetaTitle(
+    isSariyerHub
+      ? 'Sarıyer Ev Temizliği | Zekeriyaköy Villa & Temizlik'
+      : `${districtData.name} Temizlik Hizmetleri | İstanbul`
+  );
 
   return {
     title: { absolute: pageTitle },
@@ -82,11 +93,20 @@ export default async function DistrictPage({ params }: Props) {
   const operationalSignals = getDistrictOperationalSignals(districtData);
   const districtDeepDive = getDistrictDeepDive(districtData);
 
+  const isSariyerHub = districtData.slug === 'sariyer';
   const districtFaqs = getDistrictGeoFaqs(districtData.slug, districtData.name);
   const faqSchema = generateFAQSchema(
     districtFaqs.map((f) => ({ question: f.question, answer: f.answer }))
   );
-  const passageLead = getDistrictGeoPassageLead(districtData.name);
+  const passageLead = getDistrictGeoPassageLead(districtData.name, districtData.slug);
+  const trustLine = formatGoogleTrustLine();
+  const callHref = toTelHref(SITE_CONTACT.phoneE164);
+  const waHref = `https://wa.me/${SITE_CONTACT.whatsappDigits}?text=${encodeURIComponent(
+    `Merhaba, ${districtData.name} temizlik için ücretsiz keşif ve fiyat teklifi almak istiyorum.`
+  )}`;
+  const h1 = isSariyerHub
+    ? 'Sarıyer Ev Temizliği ve Temizlik Hizmetleri'
+    : `${districtData.name} Temizlik Hizmetleri`;
 
   const publishedDistrictBlogs = await prisma.blogPost.findMany({
     where: {
@@ -132,13 +152,14 @@ export default async function DistrictPage({ params }: Props) {
             />
 
             <div className="flex flex-wrap items-center gap-2">
-              <h1 className="text-3xl font-bold sm:text-4xl">{districtData.name} Temizlik Hizmetleri</h1>
+              <h1 className="text-3xl font-bold sm:text-4xl">{h1}</h1>
               {formatDistrictSide(districtData) && (
                 <span className="rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-300">
                   {formatDistrictSide(districtData)}
                 </span>
               )}
             </div>
+            <p className="mt-2 text-sm text-emerald-200/90">{trustLine}</p>
             <aside className="mt-4 max-w-3xl rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4">
               <p className="text-sm font-medium text-emerald-200">Özet</p>
               <p className="mt-2 text-sm text-emerald-50">{passageLead}</p>
@@ -161,6 +182,74 @@ export default async function DistrictPage({ params }: Props) {
             <p className="mt-3 max-w-3xl text-sm text-slate-400">
               {districtCoverageDisclaimer(districtData)}
             </p>
+
+            <div className="mt-5 flex flex-wrap gap-2">
+              <a
+                href={callHref}
+                className="rounded-lg bg-emerald-500 px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-600"
+              >
+                Ara: {SITE_CONTACT.phoneDisplay}
+              </a>
+              <a
+                href={waHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-lg border border-emerald-400/50 px-4 py-2 text-sm font-medium text-emerald-100 hover:bg-emerald-500/20"
+              >
+                WhatsApp
+              </a>
+              <Link
+                href="/randevu"
+                className="rounded-lg border border-emerald-400/50 px-4 py-2 text-sm font-medium text-emerald-100 hover:bg-emerald-500/20"
+              >
+                Ücretsiz keşif
+              </Link>
+              <Link
+                href={`/fiyat-hesaplama?district=${districtData.slug}`}
+                className="rounded-lg border border-slate-600 px-4 py-2 text-sm font-medium text-slate-200 hover:border-emerald-500/40"
+              >
+                Fiyat hesapla
+              </Link>
+            </div>
+
+            {isSariyerHub ? (
+              <div className="mt-5 flex flex-wrap gap-2 text-sm">
+                <Link
+                  href="/hizmetler/ev-temizligi"
+                  className="text-emerald-300 underline underline-offset-2 hover:text-emerald-200"
+                >
+                  Ev temizliği hizmeti
+                </Link>
+                <span className="text-slate-600">·</span>
+                <Link
+                  href="/bolgeler/sariyer/zekeriyakoy"
+                  className="text-emerald-300 underline underline-offset-2 hover:text-emerald-200"
+                >
+                  Zekeriyaköy
+                </Link>
+                <span className="text-slate-600">·</span>
+                <Link
+                  href="/bolgeler/sariyer/zekeriyakoy-ev-temizligi"
+                  className="text-emerald-300 underline underline-offset-2 hover:text-emerald-200"
+                >
+                  Zekeriyaköy ev temizliği
+                </Link>
+                <span className="text-slate-600">·</span>
+                <Link
+                  href="/bolgeler/sariyer/maslak-ofis-temizligi"
+                  className="text-emerald-300 underline underline-offset-2 hover:text-emerald-200"
+                >
+                  Maslak ofis temizliği
+                </Link>
+                <span className="text-slate-600">·</span>
+                <Link
+                  href="/harita-ve-yorumlar"
+                  className="text-emerald-300 underline underline-offset-2 hover:text-emerald-200"
+                >
+                  Harita & yorumlar
+                </Link>
+              </div>
+            ) : null}
 
             <div className="mt-6 rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4">
               <p className="text-sm font-medium text-emerald-100">Yakın bölgeler</p>
@@ -300,6 +389,12 @@ export default async function DistrictPage({ params }: Props) {
               districtSlug={districtData.slug}
               districtName={districtData.name}
               blogSlugs={publishedDistrictBlogs.map((b) => b.slug)}
+            />
+
+            <WhyChooseZvt
+              contextLabel={`${districtData.name} temizlik`}
+              tone="dark"
+              sourcePrefix={`district-${districtData.slug}-why`}
             />
 
             <section className="mt-8 rounded-xl border border-slate-700 bg-slate-800/40 p-5">

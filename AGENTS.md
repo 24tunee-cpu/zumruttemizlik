@@ -22,6 +22,7 @@ Bu dosya **tek ana anayasadır**. Üçüncü taraf Agent Skills (ör. `garrettjs
 | 2 | `zvt-seo-beast` + SEO/local guardrail rules | Site SEO OS + verified-facts |
 | 3 | `zvt-local-seo` + `zvt-garrett-dispatch` | GBP/citation + Garrett router (ücretli MCP kapalı) |
 | 4 | `zvt-programmatic-landing` | Semt / ilçe×hizmet kapısı |
+| 4b | `zvt-competitor-intel` | Rakip gap (Garrett competitor playbook filtreli) |
 | 5 | Local SEO Skills (Garrett) | Playbook only — indeks: `.cursor/skills/README.md` |
 | 6 | Genel SEO tavsiyesi | En düşük |
 
@@ -287,6 +288,8 @@ Her öneride: fayda · risk · efor · öncelik. Trafik/sıralama garantisi yok.
 | 2026-11-02 | Peak skill pack: progressive refs (verified-facts, AEO/GEO, discovery), `zvt-garrett-dispatch`, `zvt-programmatic-landing`, local GBP/citation/review refs |
 | 2026-11-02 | Skill pack **smart**: decision-tree, systems-map (Google local+AI+spam), anti-patterns, money-page, CWV; swap-city gate; Whitespark≠AGENTS (GBP name keyword yasak) |
 | 2026-11-02 | Gap pass: `gbp-services-copy` + Admin GEO yapıştır, review yanıt/istek, engagement money bridges, `seo:verify-env` / stock-image report, randevu review CTA; A3 kısmi (IndexNow/GBP OK, GSC/Maps/Bing/Apple eksik) |
+| 2026-11-02 | `zvt-competitor-intel` skill: rakip gap matrisi + hard-stops; Garrett `local-competitor-analysis` AGENTS filtresi; ücretli MCP kapalı |
+| 2026-11-02 | Sarıyer hub CRO (ev temizliği H1/meta + CTA + WhyChoose); trust seed scrub; stok görsel kapısı |
 
 **Talimat dosyaları:** `CLAUDE.md` → `@AGENTS.md`. Skill indeks: `.cursor/skills/README.md`. User-global: Garrett pack + mirrored `zvt-*`. Tek ana anayasa: bu dosya.
 

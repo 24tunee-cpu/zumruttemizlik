@@ -175,7 +175,9 @@ async function seed() {
       const trust = siteRow.trustBandItemsJson;
       const trustEmpty = trust == null || (Array.isArray(trust) && trust.length === 0);
       if (trustEmpty) {
-        patch.trustBandItemsJson = ["15+ yıl İstanbul'da profesyonel temizlik · Sigortalı ekip"];
+        patch.trustBandItemsJson = [
+          'Google doğrulanmış puan · Sigortalı ekip · Ücretsiz keşif',
+        ];
       }
       if (Object.keys(patch).length > 0) {
         await prisma.siteSettings.update({ where: { id: siteRow.id }, data: patch });

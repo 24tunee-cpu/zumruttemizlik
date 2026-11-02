@@ -142,7 +142,7 @@ export const DISTRICT_LANDINGS: DistrictLanding[] = [
     side: 'avrupa',
     populationNote: 'Zekeriyaköy başta olmak üzere villa, site ve yüksek gelir segmentinde detay beklentisi',
     regionBlurb:
-      'Zekeriyaköy, Bahçeköy ve Boğaz hattındaki villa ve sitelerde hijyen ve güven odaklı, titiz temizlik uyguluyoruz. Sarıyer, öncelikli hizmet bölgemizdir.',
+      'Sarıyer ev temizliği ve villa/site hijyeninde Zekeriyaköy, Bahçeköy, Uskumruköy ve Boğaz hattında (Maslak, Tarabya, İstinye) titiz temizlik uyguluyoruz. Sarıyer, öncelikli hizmet bölgemizdir — kesin fiyat ücretsiz keşif sonrası netleşir.',
     neighborhoods: [
       'Zekeriyaköy',
       'Bahçeköy',

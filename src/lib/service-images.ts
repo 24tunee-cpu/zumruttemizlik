@@ -1,8 +1,11 @@
 /** Ana sayfa / hizmet kartları için görsel seçici — stok Unsplash geçici yedek. */
 
-/** Gerçek iş fotoğrafı yüklendikçe doldur: `/images/services/{slug}.webp` */
+/**
+ * Gerçek iş fotoğrafı yüklendikçe doldur: `/images/services/{slug}.webp`
+ * Dosya yokken path ekleme (404). Admin Service.image veya Blob URL tercih.
+ */
 export const LOCAL_SERVICE_IMAGES: Partial<Record<string, string>> = {
-  // Örn. 'ev-temizligi': '/images/services/ev-temizligi.webp',
+  // 'ev-temizligi': '/images/services/ev-temizligi.webp',
 };
 
 /** Unsplash / bilinen stok CDN — gerçek fotoğraf gelince bunları ezeriz */

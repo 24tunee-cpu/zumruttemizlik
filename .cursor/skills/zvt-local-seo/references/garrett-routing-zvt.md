@@ -12,8 +12,10 @@ Garrett `dispatch` tüm pack’i açabilir. **ZVT’de max 2–3 Garrett skill**
 | Keyword / strateji | `zvt-seo-beast` inventory | `local-keyword-research` → `local-content-strategy` |
 | Brief → kod | beast + programmatic-landing | `local-content-briefs` (yalnız brief) |
 | Audit | beast checklist + GSC | `local-seo-audit` (panel checklist) |
+| Rakip / gap / “neden önde” | **`zvt-competitor-intel`** | `local-competitor-analysis` (+ `local-seo-audit`) |
 | SAB / hybrid | local-seo + AGENTS | `service-area-seo` |
 | AI / AEO | beast `aeo-geo.md` | `ai-local-search` (strateji only) |
+| Geogrid | competitor-intel | `geogrid-analysis` (ücretli tool onaysız yok) |
 
 ## Asla varsayılan açma
 
