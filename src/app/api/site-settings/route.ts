@@ -53,7 +53,7 @@ function defaultCreateData(): Omit<SiteSettingsRow, 'id' | 'updatedAt'> {
     youtube: null,
     seoTitle: 'Zümrüt Vadi Temizlik | Profesyonel Temizlik Hizmetleri',
     seoDescription:
-      'Ev, ofis ve endüstriyel temizlik. Profesyonel ekip, şeffaf fiyat, memnuniyet garantisi.',
+      'Sarıyer / Zekeriyaköy ev, ofis ve inşaat sonrası temizlik. Google doğrulanmış puan, ücretsiz keşif.',
     seoKeywords: 'temizlik, ofis temizliği, ev temizliği, istanbul temizlik',
     ogImage: '/og-image.jpg',
     twitterHandle: '@zumrutvaditemizlik',
@@ -189,7 +189,8 @@ function publicSubset(row: SiteSettingsRow) {
     accentColor: row.accentColor,
     phone: row.phone,
     email: row.email,
-    address: row.address,
+    /** NAP: her zaman site-contact — DB eski adres sızıntısı yok */
+    address: SITE_CONTACT.addressLine,
     workingHours: row.workingHours,
     whatsapp: row.whatsapp,
     facebook: row.facebook?.trim() || 'https://facebook.com/zumrutvaditemizlik',
@@ -245,6 +246,10 @@ function sanitizeBody(body: Record<string, unknown>): Partial<SiteSettingsRow> {
     if (key === 'email' && !isValidEmail(s)) throw new Error('Geçersiz e-posta');
     if (key === 'phone' && !isValidPhone(s)) throw new Error('Geçersiz telefon (en az 10 rakam)');
     // whatsapp: numara veya wa.me linki — sadece uzunluk
+    // NAP tek kaynak: address her zaman GBP/site-contact satırı
+    if (key === 'address') {
+      s = SITE_CONTACT.addressLine;
+    }
 
     (out as Record<string, string>)[key] = s;
   }

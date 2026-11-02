@@ -463,7 +463,8 @@ export function Footer() {
               <li className="flex items-start gap-3 group">
                 <MapPin className="mt-1 h-5 w-5 shrink-0 text-emerald-500 group-hover:scale-110 transition-transform" />
                 <span className="text-slate-300 whitespace-pre-line">
-                  {settings.address?.trim() || SITE_CONTACT.addressLine}
+                  {/* NAP tek kaynak — DB SiteSettings.address override yok (AGENTS) */}
+                  {SITE_CONTACT.addressLine}
                 </span>
               </li>
               <li className="flex items-center gap-3 group">

@@ -9,17 +9,18 @@ alwaysApply: false
 Before editing matching files:
 
 1. `AGENTS.md` §0  
-2. `.cursor/skills/zvt-seo-beast/SKILL.md` + `checklist.md`  
-3. `references/verified-facts.md` — sayı/adres uydurma  
-4. GBP/local → `zvt-local-seo`; Garrett → `zvt-garrett-dispatch`
+2. `.cursor/skills/zvt-seo-beast/SKILL.md` → **`decision-tree.md`** → `checklist.md`  
+3. `references/verified-facts.md` + `anti-patterns.md` — sayı/adres/spam uydurma  
+4. GBP/local → `zvt-local-seo`; Garrett → `zvt-garrett-dispatch` (max 2–3)
 
 ## Hard stops
 
 - NAP = `site-contact.ts` only  
 - Trust = `trust-signals.ts` (no 5000+ / fake 5.0)  
-- No peyzaj / fake reviews / thin mahalle spam  
+- No peyzaj / fake reviews / thin mahalle / doorway spam  
 - Do not break feeds, WebSub, IndexNow, honest lastmod  
 - Indexing API ≠ cleaning URLs; IndexNow ≠ Google ping  
 - No push/deploy/paid MCP without user request  
 - Meta via `meta-clamp`; FAQ rich / llms “magic ranking” claims forbidden  
-- New neighborhood → `neighborhood-gate.md`
+- New neighborhood → `neighborhood-gate.md` (swap-city)  
+- GBP name keyword stuffing forbidden (even if survey ranks it high)

@@ -256,8 +256,9 @@ Her öneride: fayda · risk · efor · öncelik. Trafik/sıralama garantisi yok.
 5. Canlı GSC tıklama/gösterim ve Core Web Vitals field data (bu auditte API çağrılmadı) 
 6. ~~Bahçe düzenleme ayrı hizmet mi?~~ → Hayır; peyzaj yok. Bahçe kenarı yüzey temizliği villa/dış cephe paketlerine eklenebilir. GBP’den Peyzaj Mimarı kaldırılmalı. 
 7. Site/bina temizliği ayrı hizmet mi yoksa ofis/site altında mı?
-8. Admin `SiteSettings.address` DB alanı eski “Sarıyer Merkez” ise footer’da override eder — admin ayarlardan GBP adresine çek  
-9. Tekne temizliği gerçek hizmet mi? (GBP’de kategori var; sitede yok)
+8. ~~Admin `SiteSettings.address` footer override~~ → Footer + public API NAP = `site-contact` (2026-11-02 scrub) 
+9. Tekne temizliği gerçek hizmet mi? (GBP’de kategori var; sitede yok) 
+10. Kuruluş yılı (`foundingDate`) — doğrulanana kadar schema’da yok
 
 ---
 
@@ -284,6 +285,7 @@ Her öneride: fayda · risk · efor · öncelik. Trafik/sıralama garantisi yok.
 | 2026-11-02 | Local SEO kod paketi: `gbp-links` UTM + Place ID yorum, sticky/footer Harita, citation tracker UI, SSS topic A6, A5 semt×hizmet, soft district claim + localized pair FAQ |
 | 2026-11-02 | SEO Beast OS: `.cursor/skills/zvt-seo-beast` + guardrails rule + `trust-signals.ts`; AGENTS §0 hiyerarşi güncellendi |
 | 2026-11-02 | Peak skill pack: progressive refs (verified-facts, AEO/GEO, discovery), `zvt-garrett-dispatch`, `zvt-programmatic-landing`, local GBP/citation/review refs |
+| 2026-11-02 | Skill pack **smart**: decision-tree, systems-map (Google local+AI+spam), anti-patterns, money-page, CWV; swap-city gate; Whitespark≠AGENTS (GBP name keyword yasak) |
 
 **Talimat dosyaları:** `CLAUDE.md` → `@AGENTS.md`. Skill indeks: `.cursor/skills/README.md`. User-global: Garrett pack + mirrored `zvt-*`. Tek ana anayasa: bu dosya.
 

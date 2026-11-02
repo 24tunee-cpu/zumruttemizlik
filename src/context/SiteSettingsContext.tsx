@@ -100,7 +100,8 @@ export interface SiteSettings {
 
 const defaultSettings: SiteSettings = {
   siteName: 'Zümrüt Vadi Temizlik',
-  siteDescription: "İstanbul'un en güvenilir profesyonel temizlik şirketi",
+  siteDescription:
+    'Sarıyer / Zekeriyaköy odaklı profesyonel temizlik. Google doğrulanmış puan, ücretsiz keşif.',
   siteUrl: getSiteUrl(),
   logo: '/logo.png',
   favicon: '/favicon.ico',
@@ -514,11 +515,11 @@ export function useContactSettings() {
     () => ({
       phone: settings.phone,
       email: settings.email,
-      address: settings.address,
+      address: SITE_CONTACT.addressLine,
       workingHours: settings.workingHours,
       whatsapp: settings.whatsapp,
     }),
-    [settings.phone, settings.email, settings.address, settings.workingHours, settings.whatsapp]
+    [settings.phone, settings.email, settings.workingHours, settings.whatsapp]
   );
 
   const updateContact = useCallback(

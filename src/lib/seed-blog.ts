@@ -4983,7 +4983,7 @@ const LEAD_GENERATION_POSTS: BlogSeedPost[] = [
 <p>Müşteri yorumlarını kontrol ederek şirketin kalitesini doğrulayın. Bu, doğru seçim yapmanıza yardımcı olur.</p>
 
 <h3>Zümrüt Vadi Temizlik Yorumları</h3>
-<p>Zümrüt Vadi Temizlik olarak binlerce olumlu müşteri yorumuna sahibiz. Referanslarımızı inceleyebilirsiniz.</p>
+<p>Doğrulanmış Google yorumlarımızı <a href="/harita-ve-yorumlar">harita &amp; yorumlar</a> sayfasında inceleyebilirsiniz; uydurma müşteri sayısı kullanmıyoruz.</p>
 
 <p><strong>Evinize özel net fiyat ve ücretsiz teklif almak için hemen WhatsApp hattımızdan bize ulaşun veya arayın.</strong></p>
 
