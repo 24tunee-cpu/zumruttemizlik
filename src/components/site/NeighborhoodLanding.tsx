@@ -11,11 +11,16 @@ import { buildNeighborhoodSeoLinks } from '@/lib/internal-seo-links';
 import { buildCalculatorHref } from '@/lib/intent-analytics';
 import { SITE_CONTACT, toTelHref } from '@/config/site-contact';
 import { canonicalUrl, getSiteUrl } from '@/lib/seo';
+import { getPublicMapsUrl, withGmbUtm } from '@/lib/gbp-links';
+import { formatGoogleTrustLine } from '@/config/trust-signals';
 
 export default function NeighborhoodLanding({ data }: { data: NeighborhoodLandingData }) {
   const canonical = canonicalUrl(`/bolgeler/${data.districtSlug}/${data.slug}`);
   const siteRoot = getSiteUrl();
   const callHref = toTelHref(SITE_CONTACT.phoneE164);
+  const mapsHref = withGmbUtm(getPublicMapsUrl(), `neighborhood-${data.slug}`, {
+    content: data.districtSlug,
+  });
   const intentSlug = data.calculatorIntentSlug ?? 'tasinma-temizligi';
   const pageHeading = /temizlik/i.test(data.name) ? data.name : `${data.name} Temizlik`;
 
@@ -89,6 +94,18 @@ export default function NeighborhoodLanding({ data }: { data: NeighborhoodLandin
               </span>
             </div>
             <p className="mt-4 text-slate-300">{data.intro}</p>
+            <p className="mt-3 text-sm text-slate-400">
+              {formatGoogleTrustLine()} ·{' '}
+              <a
+                href={mapsHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-emerald-300 underline-offset-2 hover:underline"
+              >
+                Google Harita
+              </a>{' '}
+              · ücretsiz keşif
+            </p>
 
             <section className="mt-6 rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-6">
               <h2 className="text-lg font-semibold text-emerald-200">Öne çıkan hizmetler</h2>

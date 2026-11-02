@@ -14,17 +14,25 @@ import { SITE_CONTACT, toTelHref } from '@/config/site-contact';
 import { canonicalUrl, getSiteUrl } from '@/lib/seo';
 import { keywordsForPage } from '@/lib/seo-keywords';
 import { metadataForParamAwarePage } from '@/lib/param-page-metadata';
+import { ConversionSeoAside } from '@/components/site/ConversionSeoAside';
+import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
+import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
+
+const iletisimTitle = clampMetaTitle('İletişim | Sarıyer & Zekeriyaköy Temizlik Teklif Hattı');
+const iletisimDescription = clampMetaDescription(
+  `Zekeriyaköy, Sarıyer ve İstanbul Avrupa Yakası temizlik teklifi: ${SITE_CONTACT.phoneDisplay}. Ücretsiz keşif, online fiyat hesaplama ve aynı gün geri dönüş.`
+);
 
 const BASE_METADATA: Metadata = {
-  title: 'İletişim | Sarıyer & Zekeriyaköy Temizlik Teklif Hattı',
-  description: `Zekeriyaköy, Sarıyer ve İstanbul Avrupa Yakası temizlik teklifi: ${SITE_CONTACT.phoneDisplay}. Ücretsiz keşif, online fiyat hesaplama ve aynı gün geri dönüş.`,
+  title: iletisimTitle,
+  description: iletisimDescription,
   keywords: keywordsForPage('iletisim'),
   alternates: {
     canonical: canonicalUrl('/iletisim'),
   },
   openGraph: {
-    title: 'İletişim | Zümrüt Vadi Temizlik — Sarıyer & Zekeriyaköy',
-    description: 'Ücretsiz keşif, teklif ve randevu için hızlı iletişim kanalları.',
+    title: clampMetaTitle('İletişim | Zümrüt Vadi Temizlik — Sarıyer & Zekeriyaköy'),
+    description: clampMetaDescription('Ücretsiz keşif, teklif ve randevu için hızlı iletişim kanalları.'),
     url: canonicalUrl('/iletisim'),
     type: 'website',
     locale: 'tr_TR',
@@ -34,7 +42,7 @@ const BASE_METADATA: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'İletişim | Zümrüt Vadi Temizlik',
-    description: 'Sarıyer & Zekeriyaköy temizlik teklifi ve ücretsiz keşif.',
+    description: clampMetaDescription('Sarıyer & Zekeriyaköy temizlik teklifi ve ücretsiz keşif.'),
     images: [canonicalUrl('/logo.png')],
   },
 };
@@ -251,6 +259,13 @@ export default function ContactPage() {
           <Suspense fallback={<ContactLoading />}>
             <ContactForm variant="dark" />
           </Suspense>
+
+          <ConversionSeoAside
+            contextLabel="İletişim sonrası temizlik teklifi"
+            sourcePrefix="iletisim-aside"
+            tone="dark"
+          />
+          <StickySeoCtaBar contextLabel="İletişim" sourcePrefix="iletisim-sticky" />
         </div>
       </SiteLayout>
     </>

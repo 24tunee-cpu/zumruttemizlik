@@ -14,6 +14,8 @@ import { getRelatedIntents, getOtherIntentDistricts } from '@/config/intent-seo'
 import { buildCalculatorHref } from '@/lib/intent-analytics';
 import { formatDistrictSide } from '@/config/programmatic-seo';
 import { SITE_CONTACT, toTelHref } from '@/config/site-contact';
+import { ConversionSeoAside } from '@/components/site/ConversionSeoAside';
+import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
 
 interface IntentDistrictLandingViewProps {
   page: IntentDistrictPage;
@@ -294,6 +296,16 @@ export function IntentDistrictLandingView({ page }: IntentDistrictLandingViewPro
           </div>
         </div>
       </section>
+
+      <ConversionSeoAside
+        contextLabel={`${district.name} ${intent.name}`}
+        sourcePrefix="intent-district-aside"
+        tone="dark"
+      />
+      <StickySeoCtaBar
+        contextLabel={`${district.name} ${intent.name}`}
+        sourcePrefix="intent-district-sticky"
+      />
     </div>
   );
 }

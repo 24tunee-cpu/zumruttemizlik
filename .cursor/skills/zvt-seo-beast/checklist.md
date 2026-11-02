@@ -1,39 +1,35 @@
 # ZVT SEO Beast — preflight checklist
 
-Agent: her SEO/homepage/NAP/meta işinin sonunda bu listeyi doldur (veya chat’te özetle).
-
 ## Authority
-- [ ] `AGENTS.md` §0 / ilgili bölüm okundu
-- [ ] GBP/local ise `zvt-local-seo` okundu
-- [ ] Garrett skill kullanıldıysa AGENTS ile çelişen öneri **uygulanmadı**
+- [ ] AGENTS §0
+- [ ] `references/verified-facts.md`
+- [ ] Local/GBP ise `zvt-local-seo` + ilgili reference
+- [ ] Garrett ise `zvt-garrett-dispatch` (max 2–3 skill; ücretli MCP kapalı)
 
-## NAP / entity
-- [ ] Değişiklik yalnızca `src/config/site-contact.ts` (veya ondan türeyen)
-- [ ] Komponentte hardcoded telefon/adres yok
-- [ ] Footer/schema: DB `SiteSettings.address` override riski not edildi
+## NAP / trust
+- [ ] `site-contact.ts` / `trust-signals.ts` okundu
+- [ ] Hardcoded tel/adres/5000+/fake 5.0 yok
+- [ ] SiteSettings.address override not edildi (footer)
 
-## Trust
-- [ ] Rating/yorum sayısı `trust-signals.ts` veya Maps sync
-- [ ] `5000+` / uydurma `5.0` / sahte yıl **yok**
+## Homepage / meta
+- [ ] `meta-and-trust-patterns.md`
+- [ ] Tek H1 + clamp meta (emoji yok)
+- [ ] Sticky / WhyChoose / RelatedSeoLinks (hub)
 
-## Homepage (eğer dokunulduysa)
-- [ ] Tek H1; yerel niyet (Sarıyer/Zekeriyaköy) H1 veya hemen alt satırda
-- [ ] Meta clamp + emoji yok
-- [ ] StickySeoCtaBar + WhyChooseZvt ve/veya RelatedSeoLinks
-- [ ] Kritik güven metni SSR mümkün olduğunca
+## Programatik
+- [ ] `programmatic-inventory.md`
+- [ ] Yeni semt → `neighborhood-gate.md` geçti
+- [ ] Soft claim / cannibalization
 
-## Programatik / blog
-- [ ] Yeni semt = özgün `NEIGHBORHOOD_LANDINGS`
-- [ ] `seo-cannibalization` kontrol
-- [ ] `seo:autopilot:validate` (slug işi ise)
+## Schema / AEO
+- [ ] `schema-contract.md` (schema değiştiyse)
+- [ ] `aeo-geo.md` — FAQ rich/llms sihir iddiası yok
 
-## Keşif stack
-- [ ] feeds / websub / sitemap-lastmod / IndexNow **bozulmadı**
+## Keşif / blog
+- [ ] `discovery-stack.md` — bozulmadı
+- [ ] Blog → `autopilot-and-blog.md` + `seo:gates`
 
 ## Verify
 - [ ] `npm run type-check`
-- [ ] İlgili: `geo:validate-llms` / `seo:audit-meta` / legacy redirect test
-
-## Exit
-- [ ] Push/deploy yalnızca istendiyse
-- [ ] Sıralama garantisi verilmedi
+- [ ] İlgili gates / audit-meta / legacy redirects
+- [ ] Exit raporu + “garanti yok”

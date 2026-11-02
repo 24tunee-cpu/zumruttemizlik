@@ -4,13 +4,21 @@ import type { Metadata } from 'next';
 import { canonicalUrl } from '@/lib/seo';
 import { listAllGeoSssPagesForIndex } from '@/lib/geo-sss-resolver';
 import SiteHubLinkStrip from '@/components/site/SiteHubLinkStrip';
+import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
+import { WhyChooseZvt } from '@/components/site/WhyChooseZvt';
+import RelatedSeoLinks from '@/components/site/RelatedSeoLinks';
+import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
 
 export const revalidate = 3600;
 
+const geoSssTitle = clampMetaTitle('GEO SSS | İlçe Temizlik Soruları');
+const geoSssDescription = clampMetaDescription(
+  'İlçe bazlı kısa SSS — Sarıyer / Zekeriyaköy odaklı passage cevaplar. Ücretsiz keşif için randevu.'
+);
+
 export const metadata: Metadata = {
-  title: { absolute: 'GEO SSS Rehberleri | Zümrüt Vadi Temizlik' },
-  description:
-    'İlçe bazlı kısa SSS sayfaları — AI arama motorları için passage-first cevaplar.',
+  title: { absolute: geoSssTitle },
+  description: geoSssDescription,
   alternates: { canonical: canonicalUrl('/geo-sss') },
 };
 
@@ -30,8 +38,8 @@ export default async function GeoSssIndexPage() {
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl font-bold">GEO SSS Rehberleri</h1>
           <p className="mt-4 max-w-2xl text-slate-300">
-            İlçe bazlı kısa soru-cevap sayfaları — yapay zeka arama sistemlerinin doğrudan alıntı
-            yapabileceği format.
+            İlçe bazlı kısa soru-cevap sayfaları — doğrudan alıntılanabilir passage format.
+            Sihirli ranking iddiası yok; faydalı cevap + hub linkleri öncelik.
           </p>
           <SiteHubLinkStrip tone="dark" className="mt-6" />
           <div className="mt-10 space-y-8">
@@ -66,8 +74,38 @@ export default async function GeoSssIndexPage() {
             );
             })}
           </div>
+          <RelatedSeoLinks
+            tone="dark"
+            heading="GEO SSS sonrası teklif"
+            intro="Passage’den para sayfasına — Sarıyer hattı ve keşif."
+            groups={[
+              {
+                title: 'Öncelik',
+                links: [
+                  { href: '/bolgeler/sariyer', label: 'Sarıyer hub' },
+                  { href: '/bolgeler/sariyer/zekeriyakoy', label: 'Zekeriyaköy' },
+                  { href: '/sss/bolge', label: 'Bölge SSS' },
+                  { href: '/sss/fiyat', label: 'Fiyat SSS' },
+                ],
+              },
+              {
+                title: 'Teklif',
+                links: [
+                  { href: '/randevu', label: 'Ücretsiz keşif' },
+                  { href: '/fiyat-hesaplama', label: 'Fiyat hesapla' },
+                  { href: '/harita-ve-yorumlar', label: 'Harita & yorumlar' },
+                ],
+              },
+            ]}
+          />
+          <WhyChooseZvt
+            tone="dark"
+            contextLabel="GEO SSS sonrası temizlik"
+            sourcePrefix="geo-sss-hub-why-zvt"
+          />
         </div>
       </div>
+      <StickySeoCtaBar contextLabel="GEO SSS" sourcePrefix="geo-sss-hub-sticky" />
     </SiteLayout>
   );
 }

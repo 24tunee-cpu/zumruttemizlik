@@ -3,19 +3,28 @@ import ServicesPageClient from '@/components/site/ServicesPageClient';
 import { prisma } from '@/lib/prisma';
 import { canonicalUrl } from '@/lib/seo';
 import { keywordsForPage } from '@/lib/seo-keywords';
+import { ConversionSeoAside } from '@/components/site/ConversionSeoAside';
+import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
+import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
+
+const hizmetlerTitle = clampMetaTitle('İstanbul Temizlik Hizmetleri');
+const hizmetlerDescription = clampMetaDescription(
+  "Zekeriyaköy, Sarıyer ve İstanbul Avrupa Yakası'nda ev, ofis, inşaat sonrası, halı-koltuk yıkama ve dış cephe temizliği. Ücretsiz keşif ve online fiyat hesaplama."
+);
+const hizmetlerOgDescription = clampMetaDescription(
+  'İstanbul genelinde ev, ofis, inşaat sonrası, koltuk-halı ve dış cephe temizlik çözümlerini karşılaştırın.'
+);
 
 export const metadata: Metadata = {
-  title: 'İstanbul Temizlik Hizmetleri',
-  description:
-    'Zekeriyaköy, Sarıyer ve İstanbul Avrupa Yakası\'nda ev, ofis, inşaat sonrası, halı-koltuk yıkama ve dış cephe temizliği. Ücretsiz keşif ve online fiyat hesaplama.',
+  title: hizmetlerTitle,
+  description: hizmetlerDescription,
   keywords: keywordsForPage('hizmetler'),
   alternates: {
     canonical: canonicalUrl('/hizmetler'),
   },
   openGraph: {
-    title: 'İstanbul Temizlik Hizmetleri | Zümrüt Vadi',
-    description:
-      'İstanbul genelinde ev, ofis, inşaat sonrası, koltuk-halı ve dış cephe temizlik çözümlerini karşılaştırın.',
+    title: clampMetaTitle('İstanbul Temizlik Hizmetleri | Zümrüt Vadi'),
+    description: hizmetlerOgDescription,
     url: canonicalUrl('/hizmetler'),
     type: 'website',
     locale: 'tr_TR',
@@ -31,9 +40,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'İstanbul Temizlik Hizmetleri | Zümrüt Vadi',
-    description:
-      'İstanbul genelinde ev, ofis, inşaat sonrası, koltuk-halı ve dış cephe temizlik çözümlerini karşılaştırın.',
+    title: clampMetaTitle('İstanbul Temizlik Hizmetleri | Zümrüt Vadi'),
+    description: hizmetlerOgDescription,
     images: [canonicalUrl('/logo.png')],
   },
 };
@@ -95,7 +103,14 @@ export default async function ServicesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
-      <ServicesPageClient services={services} />
+      <ServicesPageClient services={services}>
+        <ConversionSeoAside
+          contextLabel="Hizmetler hub teklif"
+          sourcePrefix="hizmetler-aside"
+          tone="dark"
+        />
+        <StickySeoCtaBar contextLabel="Hizmetler" sourcePrefix="hizmetler-sticky" />
+      </ServicesPageClient>
     </>
   );
 }

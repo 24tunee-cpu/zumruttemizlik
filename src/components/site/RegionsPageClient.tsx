@@ -74,7 +74,7 @@ function DistrictCard({
   );
 }
 
-export default function RegionsPageClient() {
+export default function RegionsPageClient({ children }: { children?: React.ReactNode }) {
   const districts = sortDistricts();
 
   return (
@@ -84,7 +84,7 @@ export default function RegionsPageClient() {
           badge="İstanbul Bölgeleri"
           badgeIcon="map-pin"
           title="İlçe Bazlı Temizlik Hizmetleri"
-          description="Zekeriyaköy ve Sarıyer öncelikli olmak üzere İstanbul'un 20 ilçesinde ev, ofis, inşaat sonrası ve halı-koltuk temizliği. Her bölge için özel landing sayfaları."
+          description="Zekeriyaköy ve Sarıyer öncelikli olmak üzere İstanbul'un 18 ilçesinde ev, ofis, inşaat sonrası ve halı-koltuk temizliği. Her bölge için özel landing sayfaları."
         >
           <div className="flex flex-wrap items-center justify-center gap-3">
             <Link
@@ -209,6 +209,7 @@ export default function RegionsPageClient() {
           </section>
         </div>
       </div>
+      {children}
     </SiteLayout>
   );
 }

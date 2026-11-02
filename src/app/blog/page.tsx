@@ -25,6 +25,9 @@ import { SeoPriorityStrip } from '@/components/site/SeoPriorityStrip';
 import { BlogSiloNav } from '@/components/site/BlogSiloNav';
 import { canonicalUrl } from '@/lib/seo';
 import { keywordsForPage } from '@/lib/seo-keywords';
+import { ConversionSeoAside } from '@/components/site/ConversionSeoAside';
+import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
+import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
 /** ISR: 1 saat — bkz. src/lib/isr-config.ts ISR_BLOG_INDEX_SEC */
 export const revalidate = 3600;
 
@@ -58,14 +61,18 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<Met
     .filter(Boolean)
     .join(' - ');
 
-  const title = suffix
-    ? `${suffix} | İstanbul Temizlik Blogu`
-    : 'İstanbul Temizlik Blogu | İpuçları ve Rehberler';
-  const description = tag
-    ? `${tag} etiketi için profesyonel temizlik makaleleri ve pratik öneriler.`
-    : q
-      ? `"${q}" araması için blog sonuçları ve uzman içerikler.`
-      : 'Zekeriyaköy, Sarıyer ve İstanbul için 2026 fiyat rehberleri, ev-ofis temizliği ipuçları ve profesyonel hijyen önerileri.';
+  const title = clampMetaTitle(
+    suffix
+      ? `${suffix} | İstanbul Temizlik Blogu`
+      : 'İstanbul Temizlik Blogu | İpuçları ve Rehberler'
+  );
+  const description = clampMetaDescription(
+    tag
+      ? `${tag} etiketi için profesyonel temizlik makaleleri ve pratik öneriler.`
+      : q
+        ? `"${q}" araması için blog sonuçları ve uzman içerikler.`
+        : 'Zekeriyaköy, Sarıyer ve İstanbul için 2026 fiyat rehberleri, ev-ofis temizliği ipuçları ve profesyonel hijyen önerileri.'
+  );
 
   /** Filtreli liste sayfaları indekslenmez; kanonik her zaman /blog */
   const canonical = canonicalUrl('/blog');
@@ -432,6 +439,13 @@ export default async function BlogPage({ searchParams }: PageProps) {
               </div>
             </div>
           </section>
+
+          <ConversionSeoAside
+            contextLabel="Blog okuyucusu temizlik teklifi"
+            sourcePrefix="blog-aside"
+            tone="dark"
+          />
+          <StickySeoCtaBar contextLabel="Blog" sourcePrefix="blog-sticky" />
         </div>
       </SiteLayout>
     </>

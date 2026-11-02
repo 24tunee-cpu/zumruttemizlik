@@ -13,16 +13,27 @@ import {
 import { keywordsForPage } from '@/lib/seo-keywords';
 import { CalendarDays, Clock, Phone, CheckCircle2, ArrowRight } from 'lucide-react';
 import { SITE_CONTACT, toTelHref } from '@/config/site-contact';
+import { ConversionSeoAside } from '@/components/site/ConversionSeoAside';
+import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
+import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
+
+const randevuMetaTitle = clampMetaTitle(
+  'İstanbul Temizlik Randevusu | Ücretsiz Keşif | Sarıyer & Zekeriyaköy'
+);
+const randevuMetaDescription = clampMetaDescription(
+  'Zekeriyaköy, Sarıyer ve İstanbul genelinde ücretsiz keşif randevusu. Ev, ofis, inşaat sonrası temizlik için aynı gün geri dönüş. Online randevu formu.'
+);
 
 export const metadata: Metadata = {
-  title: 'İstanbul Temizlik Randevusu | Ücretsiz Keşif | Sarıyer & Zekeriyaköy',
-  description:
-    'Zekeriyaköy, Sarıyer ve İstanbul genelinde ücretsiz keşif randevusu. Ev, ofis, inşaat sonrası temizlik için aynı gün geri dönüş. Online randevu formu.',
+  title: randevuMetaTitle,
+  description: randevuMetaDescription,
   keywords: keywordsForPage('randevu'),
   alternates: { canonical: canonicalUrl('/randevu') },
   openGraph: {
     title: 'Ücretsiz Keşif Randevusu | Zümrüt Vadi Temizlik',
-    description: 'Sarıyer ve Zekeriyaköy dahil İstanbul genelinde ücretsiz keşif. Aynı gün geri dönüş.',
+    description: clampMetaDescription(
+      'Sarıyer ve Zekeriyaköy dahil İstanbul genelinde ücretsiz keşif. Aynı gün geri dönüş.'
+    ),
     url: canonicalUrl('/randevu'),
     type: 'website',
     locale: 'tr_TR',
@@ -32,7 +43,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Ücretsiz Keşif Randevusu | Zümrüt Vadi',
-    description: 'İstanbul temizlik randevusu — ücretsiz keşif, aynı gün dönüş.',
+    description: clampMetaDescription('İstanbul temizlik randevusu — ücretsiz keşif, aynı gün dönüş.'),
     images: [canonicalUrl('/logo.png')],
   },
 };
@@ -78,7 +89,7 @@ export default function RandevuPage() {
         <PremiumPageHero
           badge="Ücretsiz Keşif"
           badgeIcon="calendar"
-          title="Hızlı Randevu, Aynı Gün Geri Dönüş"
+          title="İstanbul Temizlik Randevusu — Ücretsiz Keşif"
           description="Zekeriyaköy, Sarıyer ve İstanbul Avrupa Yakası'nda ev, ofis ve inşaat sonrası temizlik için formu 1 dakikada doldurun. Operasyon ekibimiz uygunluk ve net saat için sizi arar."
         >
           <div className="flex flex-wrap items-center justify-center gap-3">
@@ -192,6 +203,13 @@ export default function RandevuPage() {
             </Link>
           </div>
         </div>
+
+        <ConversionSeoAside
+          contextLabel="Randevu / ücretsiz keşif"
+          sourcePrefix="randevu-aside"
+          tone="dark"
+        />
+        <StickySeoCtaBar contextLabel="Randevu" sourcePrefix="randevu-sticky" />
       </div>
     </SiteLayout>
   );

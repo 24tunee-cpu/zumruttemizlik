@@ -33,6 +33,7 @@ import {
   DEFAULT_HOME_SERVICE_SEO,
   type HomeServiceSeoMeta,
 } from '@/config/home-services-seo';
+import { formatGoogleTrustLine } from '@/config/trust-signals';
 
 // ============================================
 // TYPES
@@ -56,6 +57,8 @@ interface ServiceCardProps {
 
 interface ServicesProps {
   limit?: number;
+  /** SSR seed — ilk boyamada crawlable HTML; API sonradan tazeler */
+  initialServices?: Service[];
 }
 
 // ============================================
@@ -235,9 +238,13 @@ function ServiceCardSkeleton({ index }: { index: number }) {
 // MAIN
 // ============================================
 
-export function Services({ limit = 7 }: ServicesProps) {
-  const [services, setServices] = useState<Service[]>([]);
-  const [loading, setLoading] = useState(true);
+export function Services({ limit = 7, initialServices }: ServicesProps) {
+  const seeded = useMemo(
+    () => (initialServices ?? []).slice(0, limit),
+    [initialServices, limit]
+  );
+  const [services, setServices] = useState<Service[]>(seeded);
+  const [loading, setLoading] = useState(seeded.length === 0);
   const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
@@ -248,7 +255,8 @@ export function Services({ limit = 7 }: ServicesProps) {
         if (!res.ok) throw new Error('Failed to fetch');
         const data = await res.json();
         if (!cancelled) {
-          setServices(Array.isArray(data) ? data.slice(0, limit) : []);
+          const next = Array.isArray(data) ? data.slice(0, limit) : [];
+          if (next.length > 0) setServices(next);
         }
       } catch (error) {
         logger.error('Error fetching services', {}, error instanceof Error ? error : undefined);
@@ -327,7 +335,12 @@ export function Services({ limit = 7 }: ServicesProps) {
 
           {/* Trust strip */}
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3 text-xs font-medium text-slate-300 sm:text-sm">
-            {['7/24 Destek', 'Sigortalı Ekip', 'Google 4.9', 'Aynı Gün Randevu'].map((t) => (
+            {[
+              '7/24 Destek',
+              'Sigortalı Ekip',
+              formatGoogleTrustLine(),
+              'Aynı Gün Randevu',
+            ].map((t) => (
               <span
                 key={t}
                 className="inline-flex items-center gap-1.5 rounded-full border border-slate-700/80 bg-slate-800/50 px-3 py-1.5"

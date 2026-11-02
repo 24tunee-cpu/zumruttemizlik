@@ -5,10 +5,14 @@ import { INTENT_LANDINGS } from '@/config/intent-seo';
 import { canonicalUrl, generateBreadcrumbSchema, generateWebPageSchema, serializeSchemaGraph } from '@/lib/seo';
 import SiteHubLinkStrip from '@/components/site/SiteHubLinkStrip';
 import { ArrowRight, Sparkles, Calculator, CalendarDays } from 'lucide-react';
+import { ConversionSeoAside } from '@/components/site/ConversionSeoAside';
+import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
+import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
 
-const pageTitle = 'Temizlik Çözümleri | İnşaat, Taşınma, Kira & Ofis | İstanbul';
-const pageDescription =
-  'İnşaat sonrası, taşınma, kira teslim, boş ev ve kurumsal ofis temizliği çözümleri. Sarıyer, Zekeriyaköy ve İstanbul geneli. Ücretsiz keşif ve online fiyat hesaplama.';
+const pageTitle = clampMetaTitle('Temizlik Çözümleri | İnşaat, Taşınma, Kira & Ofis | İstanbul');
+const pageDescription = clampMetaDescription(
+  'İnşaat sonrası, taşınma, kira teslim, boş ev ve kurumsal ofis temizliği çözümleri. Sarıyer, Zekeriyaköy ve İstanbul geneli. Ücretsiz keşif ve online fiyat hesaplama.'
+);
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -121,6 +125,13 @@ export default function CozumlerHubPage() {
             </div>
           </div>
         </section>
+
+        <ConversionSeoAside
+          contextLabel="Çözümler hub teklif"
+          sourcePrefix="cozumler-aside"
+          tone="dark"
+        />
+        <StickySeoCtaBar contextLabel="Çözümler" sourcePrefix="cozumler-sticky" />
       </div>
     </SiteLayout>
   );

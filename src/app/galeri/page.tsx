@@ -19,19 +19,24 @@ import {
 } from '@/lib/seo';
 import { keywordsForPage } from '@/lib/seo-keywords';
 import { SITE_CONTACT } from '@/config/site-contact';
+import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
+import { formatGoogleTrustLine } from '@/config/trust-signals';
+
+const galeriTitle = clampMetaTitle('Temizlik Galeri | Önce/Sonra · İstanbul');
+const galeriDescription = clampMetaDescription(
+  `Ev, ofis, inşaat sonrası önce/sonra örnekler. Sarıyer & Zekeriyaköy. ${formatGoogleTrustLine()}. Ücretsiz keşif.`
+);
 
 export const metadata: Metadata = {
-  title: 'Temizlik Öncesi/Sonrası Galeri | İstanbul',
-  description:
-    'İstanbul temizlik galerisi: ev, ofis ve inşaat sonrası önce/sonra örnekleri. Sarıyer ve Zekeriyaköy odaklı gerçek iş görselleri.',
+  title: { absolute: galeriTitle },
+  description: galeriDescription,
   keywords: keywordsForPage('galeri'),
   alternates: {
     canonical: canonicalUrl('/galeri'),
   },
   openGraph: {
-    title: 'Temizlik Öncesi/Sonrası Galeri | İstanbul',
-    description:
-      'İstanbul genelindeki temizlik uygulamalarımızdan önce/sonra görsellerini inceleyerek hizmet kalitesini değerlendirin.',
+    title: galeriTitle,
+    description: galeriDescription,
     url: canonicalUrl('/galeri'),
     type: 'website',
     locale: 'tr_TR',
@@ -47,8 +52,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Temizlik Öncesi/Sonrası Galeri | İstanbul',
-    description: 'İstanbul temizlik projelerinden önce/sonra görsellerini inceleyin.',
+    title: galeriTitle,
+    description: galeriDescription,
     images: [canonicalUrl('/logo.png')],
   },
 };

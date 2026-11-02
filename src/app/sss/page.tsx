@@ -27,27 +27,28 @@ import { canonicalUrl } from '@/lib/seo';
 import { keywordsForPage } from '@/lib/seo-keywords';
 import { SSS_TOPICS } from '@/config/sss-topics';
 import { HelpCircle } from 'lucide-react';
+import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
+import { SITE_CONTACT } from '@/config/site-contact';
 
-// ============================================
-// METADATA (SEO)
-// ============================================
+const sssTitle = clampMetaTitle('Temizlik SSS | Fiyat · Randevu · Bölge');
+const sssDescription = clampMetaDescription(
+  'İstanbul temizlik SSS: fiyat, süreç, randevu ve Sarıyer / Zekeriyaköy kapsamı. Kısa cevaplar, ücretsiz keşif.'
+);
 
 export const metadata: Metadata = {
-  title: 'Temizlik SSS | İstanbul',
-  description:
-    'İstanbul temizlik hizmetlerinde fiyat, süreç, randevu, ilçe kapsamı ve hizmet detayları hakkında en sık sorulan sorulara net yanıtlar.',
+  title: { absolute: sssTitle },
+  description: sssDescription,
   keywords: keywordsForPage('sss'),
   alternates: {
     canonical: canonicalUrl('/sss'),
   },
   openGraph: {
-    title: 'Temizlik SSS | Zümrüt Vadi Temizlik',
-    description:
-      'İstanbul temizlik fiyatı, hizmet kapsamı, randevu ve ilçe bazlı hizmet akışı hakkında kısa ve net yanıtlar.',
+    title: sssTitle,
+    description: sssDescription,
     url: canonicalUrl('/sss'),
     type: 'website',
     locale: 'tr_TR',
-    siteName: 'Zümrüt Vadi Temizlik',
+    siteName: SITE_CONTACT.companyName,
     images: [
       {
         url: canonicalUrl('/logo.png'),
@@ -59,9 +60,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Temizlik SSS | Zümrüt Vadi Temizlik',
-    description:
-      'İstanbul temizlik fiyatı, hizmet kapsamı, randevu ve ilçe bazlı hizmet akışı hakkında kısa ve net yanıtlar.',
+    title: sssTitle,
+    description: sssDescription,
     images: [canonicalUrl('/logo.png')],
   },
 };

@@ -114,7 +114,7 @@ const defaultSettings: SiteSettings = {
 
   seoTitle: 'Zümrüt Vadi Temizlik | İstanbul Profesyonel Temizlik | 7/24',
   seoDescription:
-    'Profesyonel temizlik hizmetleri. İnşaat sonrası, ofis, ev temizliği, koltuk yıkama. 15+ yıl deneyim, şeffaf süreç. Ücretsiz keşif!',
+    'Sarıyer / Zekeriyaköy ev, ofis, inşaat sonrası temizlik. Google doğrulanmış puan. Ücretsiz keşif, 7/24 destek.',
   seoKeywords:
     'istanbul temizlik şirketi, profesyonel temizlik, ofis temizliği, inşaat sonrası temizlik, koltuk yıkama, halı temizliği, ev temizliği',
   ogImage: '/og-image.jpg',

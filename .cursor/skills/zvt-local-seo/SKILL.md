@@ -1,51 +1,41 @@
 ---
 name: zvt-local-seo
 description: >-
-  Zümrüt Vadi Temizlik local SEO bridge. Use for GBP, Maps pack, SAB service-area,
-  reviews, citations, Bing/Apple Places, neighborhood/service pages, or when
-  third-party local SEO skills (gbp-optimization, service-area-seo, etc.) might
-  conflict with this repo. Always defer to AGENTS.md and site-contact NAP.
+  Zümrüt Vadi GBP, Maps pack, hybrid SAB, reviews, citations, Bing/Apple Places
+  bridge. Use for local pack, review replies, citation tracker, service-area,
+  or when gbp-optimization/review-management/local-citations conflict with this
+  repo. Defers to AGENTS.md and site-contact; site code edits use zvt-seo-beast.
 ---
 
-# ZVT Local SEO (anayasa köprüsü)
+# ZVT Local SEO
+
+GBP / Maps / citation köprüsü. Site kodu → `zvt-seo-beast`. Router → `zvt-garrett-dispatch`.
 
 ## Önce oku
 
-1. Proje kökündeki `AGENTS.md` — **tek ana anayasa** (bölüm 0 hiyerarşi).
-2. NAP tek kaynak: `src/config/site-contact.ts` (+ `src/config/geo-entity.ts`).
-3. Üçüncü taraf Local SEO Skills playbook’tur; bu skill + AGENTS onlarla çelişirse **AGENTS kazanır**.
+1. `AGENTS.md` §0  
+2. [verified-facts](../zvt-seo-beast/references/verified-facts.md) (NAP/rating)  
+3. İlgili reference (aşağı)
 
-## Doğrulanmış GBP (2026-11-02)
+## References
 
-- Ad: Zümrüt Vadi Temizlik
-- Adres: Ferahevler, Şen Aydın Sok. No:10, 34457 Sarıyer/İstanbul
-- Tel: 0551 925 09 43 · 24 saat açık
-- Birincil kategori: Temizlik Hizmetleri
-- Maps: https://maps.app.goo.gl/bdbJ7VSdWcWYcKmV7
-- Skor: 4.9 / 12 yorum (hız artırılmalı)
-- Tip: İşyeri pinli + hizmet alanı (hibrit görünüm); öncelik semt Zekeriyaköy
+| Dosya | Konu |
+|-------|------|
+| [garrett-routing-zvt.md](references/garrett-routing-zvt.md) | Garrett eşleme + MCP kapalı |
+| [gbp-panel-checklist.md](references/gbp-panel-checklist.md) | Panel P0–prominence |
+| [citation-workflow.md](references/citation-workflow.md) | Admin dizin tracker |
+| [review-response-tr.md](references/review-response-tr.md) | Yanıt / istek taslakları |
 
-## Yasaklar (skill ne derse desin)
+## Yasaklar
 
-- Sahte yorum, sahte şube, uydurma referans/adres
-- Keyword-stuffed GBP adı
-- Kopya / ince mahalle sayfası; 18 ilçeye template spam
-- **Peyzaj / bahçe düzenleme hizmeti** (GBP’den Peyzaj Mimarı kaldır)
-- Indexing API (temizlik URL’leri için değil); IndexNow ≠ Google
-- Keşif yığınını bozma; ücretli MCP’yi onaysız çağırma
+Sahte yorum/şube · keyword-stuffed ad · ince mahalle spam · peyzaj · Indexing API · onaysız ücretli MCP · keşif stack silme.
 
-## GBP panel — hâlâ manuel
+## Operasyon özeti (zirve sinyalleri)
 
-1. Kaldır: Peyzaj Mimarı · Tekne (hizmet yoksa)
-2. Açıklamadan peyzaj çıkar
-3. İkincil ekle (yoksa): Ofis temizliği, İnşaat sonrası temizlik
-4. Yorum isteme + yanıt ritmi
+Google: **relevance / distance / prominence**.  
+ZVT kaldıraç: kategori+açıklama tamamlığı, fotoğraf, **yorum velocity + yanıt**, NAP tutarlılığı, site yerel sayfalar (beast).  
+Uzaklık (Sarıyer pin) kontrol edilemez — Zekeriyaköy/Sarıyer içeriği + review ile prominence güçlendir.
 
 ## Kod NAP
 
-Değişiklik yalnızca `site-contact.ts` üzerinden; footer DB `SiteSettings.address` eskiyse admin’den GBP adresine çek.
-
-## Site / anasayfa / meta
-
-Kod, H1, trust metrikleri, sitemap/feed, programmatic landing → **`zvt-seo-beast`** skill (+ `checklist.md`).
-Doğrulanmış rating: `src/config/trust-signals.ts` (GBP 4.9 / 12 — uydurma 5000+ yasak).
+Yalnız `site-contact.ts`. Footer DB override riski → admin ayar. Place ID / UTM → `gbp-links.ts`.

@@ -141,15 +141,16 @@ const createDefaultBlock = (type: RichBlockType): RichContentBlock => {
       return {
         ...baseBlock,
         items: [
-          { value: '98%', label: 'Müşteri Memnuniyeti' },
-          { value: '5000+', label: 'Mutlu Müşteri' },
-          { value: '15+', label: 'Yıllık Tecrübe' },
+          { value: '4.9', label: 'Google puan' },
+          { value: '12', label: 'Google yorum' },
+          { value: '7/24', label: 'Destek' },
         ],
       };
     case 'extendedContent':
       return {
         ...baseBlock,
-        content: '15+ yıllık sektör tecrübemizle... (buraya uzun açıklama ekleyin)',
+        content:
+          'Sarıyer / Zekeriyaköy odaklı temizlik. Google doğrulanmış puan; ücretsiz keşif... (buraya uzun açıklama ekleyin)',
       };
     default:
       return baseBlock;
@@ -590,7 +591,7 @@ export function RichContentBlocks({ blocks, onChange }: RichContentBlocksProps) 
                                   updateBlock(block.id, { items: newItems });
                                 }}
                                 className="w-full text-center text-2xl font-bold text-emerald-500 bg-transparent border-b-2 border-emerald-500/30 focus:border-emerald-500 focus:outline-none py-1"
-                                placeholder="98%"
+                                placeholder="4.9"
                               />
                               <input
                                 type="text"

@@ -22,6 +22,7 @@ import {
 import { DistrictBreadcrumb } from '@/components/site/DistrictBreadcrumb';
 import { DistrictHubLinks } from '@/components/site/DistrictHubLinks';
 import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
+import { ConversionSeoAside } from '@/components/site/ConversionSeoAside';
 import { SITE_CONTACT } from '@/config/site-contact';
 import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
 
@@ -334,6 +335,11 @@ export default async function DistrictPage({ params }: Props) {
             </section>
           </div>
 
+          <ConversionSeoAside
+            contextLabel={`${districtData.name} temizlik teklifi`}
+            sourcePrefix={`district-${districtData.slug}-aside`}
+            tone="dark"
+          />
           <StickySeoCtaBar
             contextLabel={`${districtData.name} temizlik`}
             sourcePrefix="district-sticky-cta"

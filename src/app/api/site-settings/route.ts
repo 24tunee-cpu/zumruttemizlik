@@ -74,7 +74,9 @@ function defaultCreateData(): Omit<SiteSettingsRow, 'id' | 'updatedAt'> {
       ctaHref: '/randevu',
       dismissible: true,
     },
-    trustBandItemsJson: ["15+ yıl İstanbul'da profesyonel temizlik · Sigortalı ekip"],
+    trustBandItemsJson: [
+      'Google doğrulanmış puan · Sigortalı ekip · Ücretsiz keşif',
+    ],
     messageTemplatesJson: null,
     marketingBannerVariant: 'A',
     consentPolicyVersion: '1',

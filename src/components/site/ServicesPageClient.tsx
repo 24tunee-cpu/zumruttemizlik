@@ -161,9 +161,10 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
 
 interface Props {
   services: Service[];
+  children?: React.ReactNode;
 }
 
-export default function ServicesPageClient({ services }: Props) {
+export default function ServicesPageClient({ services, children }: Props) {
   return (
     <SiteLayout>
       <div className="flex min-h-full flex-1 flex-col bg-slate-950">
@@ -236,6 +237,7 @@ export default function ServicesPageClient({ services }: Props) {
           </div>
         </section>
       </div>
+      {children}
     </SiteLayout>
   );
 }

@@ -4909,28 +4909,28 @@ const LEAD_GENERATION_POSTS: BlogSeedPost[] = [
   {
     slug: 'zumrut-vadi-temizlik-referanslar-calisma-prensibi',
     title: 'Zümrüt Vadi Temizlik Olarak Referanslarımız ve Çalışma Prensibimiz',
-    excerpt: 'Zümrüt Vadi Temizlik olarak referanslarımız ve çalışma prensibimiz. 15+ yıl deneyim ve müşteri memnuniyeti.',
+    excerpt: 'Zümrüt Vadi Temizlik referansları ve çalışma prensibi. Google yorumları ve ücretsiz keşif.',
     content: `<h2>Zümrüt Vadi Temizlik Referansları</h2>
-<p>Zümrüt Vadi Temizlik olarak referanslarımız ve çalışma prensibimizi inceledik. 15+ yıl deneyim ve müşteri memnuniyeti önceliğimizdir.</p>
+<p>Referanslarımız Google Harita yorumları ve tamamlanan işlerdir. Sarıyer / Zekeriyaköy odaklı çalışıyoruz; müşteri memnuniyeti önceliğimizdir.</p>
 
 <h3>Referanslarımız</h3>
-<p>Zümrüt Vadi Temizlik olarak 15+ yıldır İstanbul genelinde profesyonel temizlik hizmeti sunuyoruz. Binlerce mutlu müşterimiz var.</p>
+<p>Doğrulanmış Google puan ve yorumlarımızı <a href="/harita-ve-yorumlar">harita &amp; yorumlar</a> sayfasında görebilirsiniz. Uydurma müşteri sayısı kullanmıyoruz.</p>
 
 <h3>Çalışma Prensibimiz</h3>
-<p>Çalışma prensibimiz müşteri memnuniyeti odaklıdır. Kalite garantisi ve şeffaf fiyatlandırma sunuyoruz.</p>
+<p>Çalışma prensibimiz müşteri memnuniyeti odaklıdır. Kalite kontrolü ve şeffaf fiyatlandırma sunuyoruz.</p>
 
 <p><strong>Evinize özel net fiyat ve ücretsiz teklif almak için hemen WhatsApp hattımızdan bize ulaşın veya arayın.</strong></p>
 
-<h3>Deneyim</h3>
-<p>15+ yıl deneyim ile profesyonel hizmet sunuyoruz. Eğitimli ve sigortalı personel çalıştırıyoruz.</p>
+<h3>Operasyon</h3>
+<p>Eğitimli ve sigortalı personel ile hizmet veriyoruz. Ücretsiz keşif sonrası kapsam netleşir.</p>
 
 <h3>Kalite Garantisi</h3>
-<p>Hizmet sonrası kalite garantisi sunuyoruz. Memnun kalmazsanız ücretsiz düzeltme yapıyoruz.</p>
+<p>Hizmet sonrası kalite kontrolü sunuyoruz. Memnun kalmazsanız ücretsiz düzeltme yapıyoruz.</p>
 
 <p><strong>Evinize özel net fiyat ve ücretsiz teklif almak için hemen WhatsApp hattımızdan bize ulaşın veya arayın.</strong></p>
 
 <h2>Özet</h2>
-<p>Zümrüt Vadi Temizlik olarak 15+ yıl deneyim ve müşteri memnuniyeti önceliğimizle hizmet veriyoruz.</p>`,
+<p>Zümrüt Vadi Temizlik: Google doğrulanmış güven sinyali, ücretsiz keşif ve Sarıyer hattı operasyonu.</p>`,
     image: IMG_TECH,
     category: 'Kurumsal',
     tags: ['zümrüt vadi temizlik', 'referans', 'deneyim', 'memnuniyet'],

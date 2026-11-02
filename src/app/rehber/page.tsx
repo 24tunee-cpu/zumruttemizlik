@@ -3,26 +3,33 @@ import Link from 'next/link';
 import SiteLayout from '../site/layout';
 import SiteHubLinkStrip from '@/components/site/SiteHubLinkStrip';
 import RelatedSeoLinks from '@/components/site/RelatedSeoLinks';
+import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
+import { WhyChooseZvt } from '@/components/site/WhyChooseZvt';
 import {
   canonicalUrl,
   generateBreadcrumbSchema,
   generateWebPageSchema,
   serializeSchemaGraph,
 } from '@/lib/seo';
+import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
+import { SITE_CONTACT } from '@/config/site-contact';
+
+const rehberTitle = clampMetaTitle('İstanbul Temizlik Rehberi | Hangi Hizmet Ne Zaman?');
+const rehberDescription = clampMetaDescription(
+  'Ev, ofis, inşaat sonrası ve periyodik temizlik için karar rehberi. Sarıyer / Zekeriyaköy odaklı; ücretsiz keşif.'
+);
 
 export const metadata: Metadata = {
-  title: 'İstanbul Temizlik Rehberi',
-  description:
-    'İstanbul için ev, ofis, inşaat sonrası ve periyodik temizlikte doğru hizmeti seçmek için pratik karar rehberi ve uygulama önerileri.',
+  title: { absolute: rehberTitle },
+  description: rehberDescription,
   alternates: { canonical: canonicalUrl('/rehber') },
   openGraph: {
-    title: 'Hangi temizlik ne zaman? | Zümrüt Vadi Temizlik rehberi',
-    description:
-      'İnşaat sonrası, ofis, derinlemesine ve periyodik temizlik için pratik karar rehberi.',
+    title: rehberTitle,
+    description: rehberDescription,
     url: canonicalUrl('/rehber'),
     type: 'website',
     locale: 'tr_TR',
-    siteName: 'Zümrüt Vadi Temizlik',
+    siteName: SITE_CONTACT.companyName,
     images: [
       {
         url: canonicalUrl('/logo.png'),
@@ -34,16 +41,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hangi temizlik ne zaman? | Zümrüt Vadi Temizlik rehberi',
-    description:
-      'İnşaat sonrası, ofis, derinlemesine ve periyodik temizlik için pratik karar rehberi.',
+    title: rehberTitle,
+    description: rehberDescription,
     images: [canonicalUrl('/logo.png')],
   },
 };
-
-const rehberTitle = 'İstanbul Temizlik Rehberi | Hangi Hizmet Ne Zaman?';
-const rehberDescription =
-  'İstanbul için ev, ofis, inşaat sonrası ve periyodik temizlikte doğru hizmeti seçmek için pratik karar rehberi.';
 
 const rehberJsonLd = serializeSchemaGraph([
   generateWebPageSchema({
@@ -156,8 +158,14 @@ export default function RehberPage() {
               },
             ]}
           />
+          <WhyChooseZvt
+            tone="light"
+            contextLabel="Rehber sonrası temizlik"
+            sourcePrefix="rehber-why-zvt"
+          />
         </div>
       </article>
+      <StickySeoCtaBar contextLabel="Rehber" sourcePrefix="rehber-sticky" />
     </SiteLayout>
   );
 }

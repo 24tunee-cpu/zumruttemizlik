@@ -12,13 +12,17 @@ import {
 } from '@/lib/seo';
 import { Calculator, Calendar, MessageCircle } from 'lucide-react';
 import { SITE_CONTACT } from '@/config/site-contact';
+import { ConversionSeoAside } from '@/components/site/ConversionSeoAside';
+import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
+import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
 
 /** ISR: 24 saat — bkz. src/lib/isr-config.ts */
 export const revalidate = 86400;
 
-const pageTitle = 'Temizlik Fiyatları 2026 | İstanbul Fiyat Listesi | Zümrüt Vadi';
-const pageDescription =
-  'İstanbul temizlik fiyatları 2026: ev, ofis, inşaat sonrası, koltuk ve dış cephe temizliği güncel fiyat listesi. Sarıyer, Zekeriyaköy ve İstanbul geneli. Ücretsiz keşif, şeffaf aralıklar.';
+const pageTitle = clampMetaTitle('Temizlik Fiyatları 2026 | İstanbul Fiyat Listesi | Zümrüt Vadi');
+const pageDescription = clampMetaDescription(
+  'İstanbul temizlik fiyatları 2026: ev, ofis, inşaat sonrası, koltuk ve dış cephe temizliği güncel fiyat listesi. Sarıyer, Zekeriyaköy ve İstanbul geneli. Ücretsiz keşif, şeffaf aralıklar.'
+);
 
 export const metadata: Metadata = {
   title: { absolute: pageTitle },
@@ -212,6 +216,13 @@ export default async function FiyatlarPage() {
           </div>
         </div>
       </section>
+
+      <ConversionSeoAside
+        contextLabel="Fiyat listesi sonrası teklif"
+        sourcePrefix="fiyatlar-aside"
+        tone="light"
+      />
+      <StickySeoCtaBar contextLabel="Fiyatlar" sourcePrefix="fiyatlar-sticky" />
     </SiteLayout>
   );
 }

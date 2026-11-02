@@ -1,0 +1,14 @@
+---
+description: Local/GBP/citation tripwire — NAP and MapPlatformListing edits.
+globs: src/app/api/admin/geo/**/*,src/app/admin/geo/**/*,src/config/citation-tracker.ts,src/lib/gbp-links.ts,src/lib/google-maps-public-links.ts,src/config/geo-entity.ts
+alwaysApply: false
+---
+
+# ZVT Local Guardrails
+
+1. Read `zvt-local-seo` + `garrett-routing-zvt.md`  
+2. NAP string variants forbidden — only `SITE_CONTACT`  
+3. Citation status: do not invent “connected” without user/admin fact  
+4. Place ID only from verified source (`site-contact` / env / admin)  
+5. Paid LocalSEOData MCP off unless user approves  
+6. Site HTML/meta changes still require `zvt-seo-beast`

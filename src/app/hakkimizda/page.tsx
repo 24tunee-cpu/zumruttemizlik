@@ -20,30 +20,43 @@ import Link from 'next/link';
 import SiteLayout from '../site/layout';
 import { TeamSection } from '../../components/site/TeamSection';
 import { SITE_CONTACT } from '@/config/site-contact';
+import {
+  VERIFIED_TRUST,
+  formatGoogleTrustLine,
+} from '@/config/trust-signals';
 import { canonicalUrl, getSiteUrl } from '@/lib/seo';
 import { keywordsForPage } from '@/lib/seo-keywords';
-import { Sparkles, Shield, Users, Award, Clock, Heart, ArrowRight } from 'lucide-react';
+import { Sparkles, Shield, Award, Clock, Heart, ArrowRight } from 'lucide-react';
+import { ConversionSeoAside } from '@/components/site/ConversionSeoAside';
+import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
+import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
 
 // ============================================
 // METADATA (SEO)
 // ============================================
 
+const hakkimizdaTitle = clampMetaTitle('Hakkımızda | Sarıyer & Zekeriyaköy Temizlik');
+const hakkimizdaDescription = clampMetaDescription(
+  `${SITE_CONTACT.companyName}: Sarıyer ve Zekeriyaköy odaklı ev, ofis, inşaat sonrası temizlik. ${formatGoogleTrustLine()}. Ücretsiz keşif, şeffaf kapsam.`
+);
+const hakkimizdaOgDescription = clampMetaDescription(
+  `Sarıyer / Zekeriyaköy temizlik ekibi. ${formatGoogleTrustLine()}. Ücretsiz keşif ve 7/24 destek.`
+);
+
 export const metadata: Metadata = {
-  title: 'Hakkımızda | İstanbul Temizlik Ekibi',
-  description:
-    "15+ yıllık deneyimle İstanbul'un her bölgesinde profesyonel temizlik hizmetleri sunuyoruz. Güvenilir ekip, şeffaf süreç ve tekrarlayan müşteri memnuniyeti odağı.",
+  title: hakkimizdaTitle,
+  description: hakkimizdaDescription,
   keywords: keywordsForPage('hakkimizda'),
   alternates: {
     canonical: canonicalUrl('/hakkimizda'),
   },
   openGraph: {
-    title: 'Hakkımızda | İstanbul Temizlik Ekibi',
-    description:
-      "15+ yıllık deneyim, İstanbul genelinde profesyonel temizlik. Güvenilir ekip ve şeffaf iletişim.",
+    title: hakkimizdaTitle,
+    description: hakkimizdaOgDescription,
     url: canonicalUrl('/hakkimizda'),
     type: 'website',
     locale: 'tr_TR',
-    siteName: 'Zümrüt Vadi Temizlik',
+    siteName: SITE_CONTACT.companyName,
     images: [
       {
         url: canonicalUrl('/logo.png'),
@@ -55,8 +68,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hakkımızda | İstanbul Temizlik Ekibi',
-    description: "15+ yıllık deneyim, İstanbul genelinde profesyonel temizlik.",
+    title: hakkimizdaTitle,
+    description: hakkimizdaOgDescription,
     images: [canonicalUrl('/logo.png')],
   },
 };
@@ -72,14 +85,7 @@ const organizationSchema = {
   "alternateName": "Zümrüt Vadi Temizlik",
   "url": getSiteUrl(),
   "logo": canonicalUrl('/logo.png'),
-  "description": "İstanbul'un önde gelen profesyonel temizlik şirketi. 15+ yıllık deneyim ve kurumsal süreklilik odağı.",
-  "foundingDate": "2009",
-  "founders": [
-    {
-      "@type": "Person",
-      "name": "Zümrüt Vadi Temizlik Kurucuları"
-    }
-  ],
+  "description": `Sarıyer ve Zekeriyaköy odaklı profesyonel temizlik. ${formatGoogleTrustLine()}.`,
   "address": {
     "@type": "PostalAddress",
     "streetAddress": SITE_CONTACT.addressStreet,
@@ -105,12 +111,20 @@ const organizationSchema = {
 // CONSTANTS (Admin'den dinamik çekilebilir)
 // ============================================
 
-/** İstatistikler - Admin panelden güncellenebilir */
+/** Doğrulanmış güven — trust-signals (uydurma 5000+/15+ yok) */
 const STATS_CONFIG = [
-  { value: '15+', label: 'Yıllık Deneyim', id: 'experience' },
-  { value: '5000+', label: 'Mutlu Müşteri', id: 'customers' },
-  { value: '50+', label: 'Profesyonel Ekip', id: 'team' },
-  { value: '24 saat', label: 'Hizmet', id: 'service' },
+  {
+    value: String(VERIFIED_TRUST.googleRating),
+    label: 'Google puan',
+    id: 'google',
+  },
+  {
+    value: String(VERIFIED_TRUST.googleReviewCount),
+    label: 'Google yorum',
+    id: 'reviews',
+  },
+  { value: '7/24', label: 'Destek hattı', id: 'support' },
+  { value: 'Ücretsiz', label: 'Keşif', id: 'discovery' },
 ] as const;
 
 /** Değerler - Admin panelden güncellenebilir */
@@ -167,11 +181,13 @@ export default function AboutPage() {
         >
           <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
             <Sparkles className="mx-auto mb-6 h-14 w-14 text-emerald-400 sm:h-16 sm:w-16" aria-hidden="true" />
-            <h1 className="text-balance text-3xl font-bold text-white sm:text-4xl md:text-5xl">Hakkımızda</h1>
+            <h1 className="text-balance text-3xl font-bold text-white sm:text-4xl md:text-5xl">
+              Sarıyer &amp; Zekeriyaköy temizlik ekibi
+            </h1>
             <p className="mx-auto mt-6 max-w-3xl text-lg text-slate-300">
-              2009 yılından beri İstanbul'un her bölgesinde profesyonel temizlik hizmetleri
-              sunuyoruz. Deneyimli ekibimiz ve modern ekipmanlarımızla evinizi ve
-              iş yerinizi pırıl pırıl yapıyoruz.
+              {SITE_CONTACT.companyName} olarak villa, ev, ofis ve inşaat sonrası temizlikte
+              şeffaf kapsam ve ücretsiz keşif sunuyoruz. {formatGoogleTrustLine()} — Google’da
+              görüntülenebilir.
             </p>
           </div>
         </section>
@@ -201,19 +217,18 @@ export default function AboutPage() {
             </h2>
             <article className="space-y-6 text-lg text-slate-600 dark:text-slate-300">
               <p>
-                Zümrüt Vadi Temizlik, 2009 yılında küçük bir aile işletmesi olarak kuruldu.
-                İlk günden itibaren kaliteli hizmet ve müşteri memnuniyeti odaklı çalışma
-                prensibiyle yolumuza devam ediyoruz.
+                {SITE_CONTACT.companyName}, Sarıyer (Ferahevler) merkezli hibrit bir temizlik
+                ekibidir. Öncelik hattımız Zekeriyaköy, Maslak, Tarabya, Bahçeköy ve Uskumruköy;
+                Avrupa Yakası yakın ilçelerde de planlı hizmet sunuyoruz.
               </p>
               <p>
-                Yıllar içinde ekibimizi ve hizmet yelpazemizi genişleterek, bugün İstanbul genelinde
-                kurumsal ve konut müşterileri tarafından sık tercih edilen temizlik ekiplerinden biri
-                olduk. Binlerce tamamlanan operasyon ve tekrarlayan randevu talepleriyle sürekliliğimizi
-                sürdürüyoruz.
+                Ev, ofis, inşaat sonrası, cam, koltuk ve halı temizliği paketlerimiz keşif sonrası
+                netleşir — sürpriz kapsam dili kullanmayız. Peyzaj veya bahçe düzenleme hizmeti
+                vermiyoruz; bahçe kenarı yalnızca yüzey temizliği olarak eklenebilir.
               </p>
               <p>
-                Profesyonel ekibimiz, modern ekipmanlarımız ve çevre dostu ürünlerimizle
-                her zaman tutarlı kalite ve şeffaf iletişimle hizmet vermek için çalışıyoruz.
+                Teklif için {SITE_CONTACT.phoneDisplay}, WhatsApp veya ücretsiz keşif formu yeterlidir.
+                Güncel Google puanımız: {formatGoogleTrustLine()}.
               </p>
             </article>
           </div>
@@ -268,6 +283,13 @@ export default function AboutPage() {
             </Link>
           </div>
         </section>
+
+        <ConversionSeoAside
+          contextLabel="Hakkımızda sonrası teklif"
+          sourcePrefix="hakkimizda-aside"
+          tone="light"
+        />
+        <StickySeoCtaBar contextLabel="Hakkımızda" sourcePrefix="hakkimizda-sticky" />
       </SiteLayout>
     </>
   );
