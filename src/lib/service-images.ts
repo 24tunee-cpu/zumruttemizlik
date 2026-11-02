@@ -1,4 +1,11 @@
-/** Ana sayfa / hizmet kartları için güvenilir görsel yedekleri (404 önleme). */
+/** Ana sayfa / hizmet kartları için görsel seçici — stok Unsplash geçici yedek. */
+
+/** Gerçek iş fotoğrafı yüklendikçe doldur: `/images/services/{slug}.webp` */
+export const LOCAL_SERVICE_IMAGES: Partial<Record<string, string>> = {
+  // Örn. 'ev-temizligi': '/images/services/ev-temizligi.webp',
+};
+
+/** Unsplash / bilinen stok CDN — gerçek fotoğraf gelince bunları ezeriz */
 export const DEFAULT_SERVICE_IMAGES: Record<string, string> = {
   'ev-temizligi': 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
   'ofis-temizligi': 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',
@@ -9,12 +16,33 @@ export const DEFAULT_SERVICE_IMAGES: Record<string, string> = {
   'dis-cephe-temizligi': 'https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?w=800&q=80',
 };
 
-export function getDefaultServiceImage(slug: string): string | undefined {
-  return DEFAULT_SERVICE_IMAGES[slug];
+export function isStockImageUrl(url?: string | null): boolean {
+  if (!url?.trim()) return true;
+  try {
+    const host = new URL(url.trim()).hostname.toLowerCase();
+    return (
+      host.includes('unsplash.com') ||
+      host.includes('images.unsplash.com') ||
+      host.includes('plus.unsplash.com')
+    );
+  } catch {
+    // relative /images/... = site varlığı, stok değil
+    return false;
+  }
 }
 
+export function getDefaultServiceImage(slug: string): string | undefined {
+  return LOCAL_SERVICE_IMAGES[slug] ?? DEFAULT_SERVICE_IMAGES[slug];
+}
+
+/**
+ * Öncelik: DB’de stok olmayan URL → local brand asset → DB (stok dahil) → Unsplash yedek.
+ */
 export function pickServiceImage(slug: string, image?: string | null): string | null {
   const trimmed = image?.trim();
+  if (trimmed && !isStockImageUrl(trimmed)) return trimmed;
+  const local = LOCAL_SERVICE_IMAGES[slug];
+  if (local) return local;
   if (trimmed) return trimmed;
   return getDefaultServiceImage(slug) ?? null;
 }

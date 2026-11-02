@@ -9,7 +9,9 @@ import {
   GEO_GBP_CHECKLIST,
   GEO_NAP,
   GEO_REVIEW_REQUEST_TEMPLATES,
+  GEO_REVIEW_RESPONSE_TEMPLATES,
 } from '@/config/geo-entity';
+import { GBP_SERVICES_COPY } from '@/config/gbp-services-copy';
 import { platformForDirectoryId } from '@/config/citation-tracker';
 import { getBlogScheduleHealth } from '@/lib/blog-schedule-preserve';
 import { getIndexNowKey, getIndexNowKeyLocation } from '@/lib/indexnow';
@@ -58,7 +60,17 @@ export async function GET(request: NextRequest) {
   return NextResponse.json({
     nap: GEO_NAP,
     gbpChecklist: GEO_GBP_CHECKLIST,
+    gbpServices: GBP_SERVICES_COPY,
     reviewTemplates: GEO_REVIEW_REQUEST_TEMPLATES.map((t) => ({
+      ...t,
+      preview: fillReviewTemplate(t.text, {
+        name: 'Ayşe',
+        service: 'ev temizliği',
+        district: 'Zekeriyaköy',
+        reviewLink,
+      }),
+    })),
+    reviewResponseTemplates: GEO_REVIEW_RESPONSE_TEMPLATES.map((t) => ({
       ...t,
       preview: fillReviewTemplate(t.text, {
         name: 'Ayşe',

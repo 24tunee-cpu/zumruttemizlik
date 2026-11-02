@@ -21,6 +21,7 @@ type DirectoryRow = {
   configured: boolean;
   trackerStatus?: string;
   trackerNote?: string;
+  signupUrl?: string;
   connectionStatus?: string;
   listingUrl?: string | null;
   externalPlaceId?: string | null;
@@ -38,7 +39,9 @@ type GeoDashboard = {
     postalCode?: string;
   };
   gbpChecklist: string[];
+  gbpServices?: { slug: string; name: string; description: string; sitePath: string }[];
   reviewTemplates: { id: string; label: string; text: string; preview?: string }[];
+  reviewResponseTemplates?: { id: string; label: string; text: string; preview?: string }[];
   reviewLink?: string;
   citationPrompts: { id: string; prompt: string; category: string }[];
   competitors: string[];
@@ -444,6 +447,16 @@ export default function AdminGeoPage() {
                         {d.trackerNote ? (
                           <p className="mt-1 text-xs text-slate-400">{d.trackerNote}</p>
                         ) : null}
+                        {d.signupUrl ? (
+                          <a
+                            href={d.signupUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-1 inline-block text-xs text-emerald-400 underline underline-offset-2"
+                          >
+                            Kayıt / panel aç
+                          </a>
+                        ) : null}
                         <div className="mt-3 grid gap-2 sm:grid-cols-2">
                           <label className="text-xs text-slate-400">
                             Durum
@@ -766,14 +779,38 @@ export default function AdminGeoPage() {
           )}
 
           {tab === 'gbp' && (
-            <section className="rounded-xl border border-slate-700 bg-slate-800/40 p-5">
-              <h2 className="font-semibold text-white">Google Business Profile Checklist</h2>
-              <ol className="mt-4 list-decimal space-y-2 pl-5 text-sm text-slate-300">
-                {data.gbpChecklist.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ol>
-            </section>
+            <div className="space-y-4">
+              <section className="rounded-xl border border-slate-700 bg-slate-800/40 p-5">
+                <h2 className="font-semibold text-white">Google Business Profile Checklist</h2>
+                <ol className="mt-4 list-decimal space-y-2 pl-5 text-sm text-slate-300">
+                  {data.gbpChecklist.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ol>
+              </section>
+              {data.gbpServices && data.gbpServices.length > 0 ? (
+                <section className="rounded-xl border border-slate-700 bg-slate-800/40 p-5">
+                  <h2 className="font-semibold text-white">GBP hizmet yapıştır metinleri</h2>
+                  <p className="mt-1 text-xs text-slate-400">
+                    Panel → Services. Peyzaj / tekne ekleme. Fiyat veya harici link koyma.
+                  </p>
+                  <ul className="mt-4 space-y-4">
+                    {data.gbpServices.map((s) => (
+                      <li
+                        key={s.slug}
+                        className="rounded-lg border border-slate-600/80 bg-slate-900/40 p-3 text-sm"
+                      >
+                        <p className="font-medium text-emerald-300">{s.name}</p>
+                        <p className="mt-1 text-slate-300">{s.description}</p>
+                        <p className="mt-1 text-xs text-slate-500">
+                          Site: {s.sitePath}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              ) : null}
+            </div>
           )}
 
           {tab === 'reviews' && (
@@ -783,6 +820,7 @@ export default function AdminGeoPage() {
                   Aktif yorum linki: {data.reviewLink}
                 </p>
               ) : null}
+              <h2 className="text-sm font-semibold text-white">Yorum istek şablonları</h2>
               {data.reviewTemplates.map((t) => (
                 <div key={t.id} className="rounded-xl border border-slate-700 bg-slate-800/40 p-5">
                   <h3 className="font-medium text-emerald-300">{t.label}</h3>
@@ -794,6 +832,22 @@ export default function AdminGeoPage() {
                   </p>
                 </div>
               ))}
+              {data.reviewResponseTemplates && data.reviewResponseTemplates.length > 0 ? (
+                <>
+                  <h2 className="pt-2 text-sm font-semibold text-white">GBP yorum yanıt taslakları</h2>
+                  {data.reviewResponseTemplates.map((t) => (
+                    <div
+                      key={t.id}
+                      className="rounded-xl border border-slate-700 bg-slate-800/40 p-5"
+                    >
+                      <h3 className="font-medium text-sky-300">{t.label}</h3>
+                      <p className="mt-2 whitespace-pre-wrap text-sm text-slate-300">
+                        {t.preview || t.text}
+                      </p>
+                    </div>
+                  ))}
+                </>
+              ) : null}
             </section>
           )}
 
