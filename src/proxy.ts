@@ -6,6 +6,10 @@ import { resolveLegacyRedirect } from '@/lib/legacy-url-redirects';
  * Edge proxy — Prisma Edge'de yok; DB redirect kuralları Node API üzerinden çözülür.
  * Resolve endpoint yalnızca x-middleware-fetch ile çağrılır.
  */
+function sanitizeIndexNowKey(raw: string): string {
+  return raw.trim().replace(/[^a-zA-Z0-9-]/g, '');
+}
+
 export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
@@ -13,6 +17,27 @@ export async function proxy(request: NextRequest) {
   if (legacy) {
     const target = new URL(legacy.to, request.nextUrl.origin).toString();
     return NextResponse.redirect(target, legacy.permanent ? 308 : 307);
+  }
+
+  /**
+   * IndexNow sahiplik dosyası — public/{key}.txt yoksa bile env ile sun.
+   * build: `npm run indexnow:sync` dosyayı da yazar; bu katman runtime yedek.
+   */
+  const indexNowFile = pathname.match(/^\/([a-zA-Z0-9-]{8,128})\.txt$/);
+  if (indexNowFile) {
+    const fileKey = indexNowFile[1];
+    const envRaw = process.env.INDEXNOW_KEY?.trim();
+    const envKey = envRaw ? sanitizeIndexNowKey(envRaw) : '';
+    if (envKey && envKey.length >= 8 && fileKey === envKey) {
+      return new NextResponse(envKey, {
+        status: 200,
+        headers: {
+          'Content-Type': 'text/plain; charset=utf-8',
+          'Cache-Control': 'public, max-age=3600',
+          'X-Robots-Tag': 'noindex',
+        },
+      });
+    }
   }
 
   const isSitemapPath = pathname === '/sitemap.xml' || pathname.endsWith('/sitemap.xml');

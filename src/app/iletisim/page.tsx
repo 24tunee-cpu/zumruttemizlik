@@ -72,7 +72,7 @@ const contactStructuredData = {
   ],
   address: {
     '@type': 'PostalAddress',
-    streetAddress: SITE_CONTACT.addressLine,
+    streetAddress: SITE_CONTACT.addressStreet,
     addressLocality: SITE_CONTACT.addressLocality,
     addressRegion: SITE_CONTACT.addressRegion,
     postalCode: SITE_CONTACT.postalCode,

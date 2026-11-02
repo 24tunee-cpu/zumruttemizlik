@@ -241,6 +241,7 @@ export default function SeoAutopilotPanel({ compact = false }: Props) {
               ['Mevsim', last.results.seasonalCreated],
               ['Testimonial', last.results.testimonialsSynced],
               ['IndexNow', last.results.indexNowSubmitted],
+              ['WebSub', last.results.webSubSubmitted ?? 0],
             ].map(([label, val]) => (
               <span
                 key={String(label)}

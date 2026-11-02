@@ -1,10 +1,12 @@
 /**
  * Merkezi feed üretici — RSS 2.0, Atom 1.0, JSON Feed 1.1
  * Keşif kanalı (Google recent URLs); AI cite sihri değil.
+ * WebSub hub linkleri: Google recent-URL push keşfi.
  */
 import { prisma } from '@/lib/prisma';
 import { SITE_CONTACT } from '@/config/site-contact';
 import { getSiteUrl } from '@/lib/seo';
+import { WEBSUB_HUB_URL, buildWebSubLinkHeader } from '@/lib/websub';
 
 export const FEED_ITEM_LIMIT = 30;
 export const FEED_REVALIDATE_SEC = 3600;
@@ -168,6 +170,7 @@ export function buildRssXml(posts: FeedPost[]): string {
     <webMaster>${escapeXml(m.email)} (${escapeXml(m.title)})</webMaster>
     <atom:link href="${m.rssUrl}" rel="self" type="application/rss+xml" />
     <atom:link href="${m.atomUrl}" rel="alternate" type="application/atom+xml" />
+    <atom:link href="${WEBSUB_HUB_URL}" rel="hub" />
     <image>
       <url>${m.logo}</url>
       <title>${escapeXml(m.title)}</title>
@@ -212,6 +215,7 @@ export function buildAtomXml(posts: FeedPost[]): string {
   <link href="${m.atomUrl}" rel="self" type="application/atom+xml" />
   <link href="${m.blogUrl}" rel="alternate" type="text/html" />
   <link href="${m.rssUrl}" rel="alternate" type="application/rss+xml" />
+  <link href="${WEBSUB_HUB_URL}" rel="hub" />
   <id>${m.blogUrl}/</id>
   <updated>${formatRfc3339(newest)}</updated>
   <author>
@@ -268,20 +272,35 @@ export function buildJsonFeed(posts: FeedPost[]): object {
   };
 }
 
-export const feedCacheHeaders = {
-  rss: {
-    'Content-Type': 'application/rss+xml; charset=utf-8',
-    'Cache-Control': `public, s-maxage=${FEED_REVALIDATE_SEC}, stale-while-revalidate=86400`,
-  },
-  atom: {
-    'Content-Type': 'application/atom+xml; charset=utf-8',
-    'Cache-Control': `public, s-maxage=${FEED_REVALIDATE_SEC}, stale-while-revalidate=86400`,
-  },
-  json: {
+function feedCacheControl(): string {
+  return `public, s-maxage=${FEED_REVALIDATE_SEC}, stale-while-revalidate=86400`;
+}
+
+/** Content-Type + Cache-Control + WebSub Link (RSS/Atom) */
+export function feedResponseHeaders(
+  kind: 'rss' | 'atom' | 'json'
+): Record<string, string> {
+  const base = getSiteUrl().replace(/\/$/, '');
+  if (kind === 'rss') {
+    return {
+      'Content-Type': 'application/rss+xml; charset=utf-8',
+      'Cache-Control': feedCacheControl(),
+      Link: buildWebSubLinkHeader(`${base}/feed.xml`),
+    };
+  }
+  if (kind === 'atom') {
+    return {
+      'Content-Type': 'application/atom+xml; charset=utf-8',
+      'Cache-Control': feedCacheControl(),
+      Link: buildWebSubLinkHeader(`${base}/atom.xml`),
+    };
+  }
+  return {
     'Content-Type': 'application/feed+json; charset=utf-8',
-    'Cache-Control': `public, s-maxage=${FEED_REVALIDATE_SEC}, stale-while-revalidate=86400`,
-  },
-} as const;
+    'Cache-Control': feedCacheControl(),
+  };
+}
+
 
 export function emptyFeedFallback(kind: 'rss' | 'atom'): string {
   const base = getSiteUrl();
@@ -289,15 +308,18 @@ export function emptyFeedFallback(kind: 'rss' | 'atom'): string {
     return `<?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>${escapeXml(SITE_CONTACT.companyName)}</title>
-  <link href="${base}/atom.xml" rel="self" />
+  <link href="${base}/atom.xml" rel="self" type="application/atom+xml" />
+  <link href="${WEBSUB_HUB_URL}" rel="hub" />
   <id>${base}/blog/</id>
   <updated>${formatRfc3339(new Date())}</updated>
 </feed>`;
   }
   return `<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0"><channel>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel>
   <title>${escapeXml(SITE_CONTACT.companyName)}</title>
   <link>${base}/blog</link>
   <description>Feed geçici olarak kullanılamıyor</description>
+  <atom:link href="${base}/feed.xml" rel="self" type="application/rss+xml" />
+  <atom:link href="${WEBSUB_HUB_URL}" rel="hub" />
 </channel></rss>`;
 }

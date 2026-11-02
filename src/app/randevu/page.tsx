@@ -170,7 +170,7 @@ export default function RandevuPage() {
                   <div>
                     <p className="font-semibold text-white">Ücretsiz keşif garantisi</p>
                     <p className="mt-1 text-sm text-slate-400">
-                      Sarıyer Merkez merkezli ekip; Zekeriyaköy ve Boğaz hattına aynı gün yönlendirme.
+                      Sarıyer (Ferahevler) merkezli ekip; Zekeriyaköy ve Boğaz hattına aynı gün yönlendirme.
                     </p>
                   </div>
                 </div>

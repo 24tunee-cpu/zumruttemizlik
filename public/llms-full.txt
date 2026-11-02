@@ -23,7 +23,8 @@
 - Temel faaliyet: profesyonel temizlik hizmetleri.
 - Hizmet bölgesi: İstanbul geneli; ağırlıklı olarak İstanbul Avrupa Yakası.
 - Öncelikli hizmet bölgesi: Sarıyer ilçesi ve özellikle Zekeriyaköy; ayrıca Bahçeköy, Tarabya, Yeniköy, Maslak, Kemerburgaz, Göktürk gibi çevre semtler.
-- Merkez: Sarıyer Merkez, Sarıyer/İstanbul (posta kodu 34450).
+- İşyeri (GBP ile aynı): Ferahevler, Şen Aydın Sok. No:10, 34457 Sarıyer/İstanbul.
+- Google Maps: https://maps.app.goo.gl/bdbJ7VSdWcWYcKmV7
 - Telefon: +90 551 925 09 43.
 - WhatsApp: +90 551 925 09 43.
 - E-posta: vedatgunenn@gmail.com.
@@ -142,6 +143,9 @@
 - Not: AI motorları bu listeyi site haritası tamamlayıcısı olarak kullanabilir.
 - Canlı envanter: https://www.zumrutvaditemizlik.com/llms-inventory.txt
 
+- [Maltepe Profesyonel Temizlik Firması Seçimi 2026 | 12 Kritik Soru](https://www.zumrutvaditemizlik.com/blog/maltepe-profesyonel-temizlik-firma-secimi-rehberi-2026): Rehber — güncelleme 2026-11-01
+- [Göztepe Profesyonel Temizlik Firması Seçimi 2026 | 12 Kritik Soru](https://www.zumrutvaditemizlik.com/blog/goztepe-profesyonel-temizlik-firma-secimi-rehberi-2026): Rehber — güncelleme 2026-11-01
+- [Ev Temizliği Fiyatları 2026: İstanbul Daire ve Villa Rehberi](https://www.zumrutvaditemizlik.com/blog/ev-temizligi-fiyatlari-2026-istanbul): Fiyat Rehberleri — güncelleme 2026-11-01
 - [İstanbul Ev Temizlik Fiyatları 2026: Bölge Bölge Detaylı Karşılaştırma](https://www.zumrutvaditemizlik.com/blog/istanbul-ev-temizlik-fiyatlari-2026-bolge-bolge-karsilastirma): Fiyatlandırma — güncelleme 2026-11-01
 - [İstanbul Hava Kalitesi: 2026 Son Durum ve Sağlık](https://www.zumrutvaditemizlik.com/blog/istanbul-hava-kalitesi-son-durum-2026): Yaşam — güncelleme 2026-11-01
 - [AVM İndirim Dönemleri Gerçekten İndirim mi?](https://www.zumrutvaditemizlik.com/blog/istanbul-avm-indirim-gercek-mi-2026): Yaşam — güncelleme 2026-11-01
@@ -162,7 +166,6 @@
 - [Pendik Kira Teslim Temizlik Rehberi 2026 | Depozito Checklist](https://www.zumrutvaditemizlik.com/blog/pendik-kira-teslim-temizlik-rehberi-2026): Kira Teslim — güncelleme 2026-11-01
 - [Brunch Fiyatları Neden Artıyor? İstanbul 2026](https://www.zumrutvaditemizlik.com/blog/istanbul-brunch-mekanlari-neden-artiyor-2026): Yaşam — güncelleme 2026-11-01
 - [Kağıthane İnşaat Sonrası Temizlik Fiyatları 2026 | Avrupa Yakası](https://www.zumrutvaditemizlik.com/blog/kagithane-avrupa-insaat-sonrasi-temizlik-fiyatlari-2026): Fiyat Rehberleri — güncelleme 2026-11-01
-- [Ev Temizliği Fiyatları 2026: İstanbul Daire ve Villa Rehberi](https://www.zumrutvaditemizlik.com/blog/ev-temizligi-fiyatlari-2026-istanbul): Fiyat Rehberleri — güncelleme 2026-11-01
 - [Kasım İndirimleri 2026: En Çok Düşen Ürünler](https://www.zumrutvaditemizlik.com/blog/kasim-indirimleri-2026-en-cok-dusen-urunler): Alışveriş — güncelleme 2026-11-01
 - [Su Kesintileri Neden Artıyor? İstanbul 2026](https://www.zumrutvaditemizlik.com/blog/istanbul-su-kesintisi-neden-artiyor-2026): Yaşam — güncelleme 2026-11-01
 - [İnşaat Sonrası Temizlik Fiyatları 2026: Teslim Öncesi Rehber](https://www.zumrutvaditemizlik.com/blog/insaat-sonrasi-temizlik-fiyatlari-2026): Fiyat Rehberleri — güncelleme 2026-11-01
@@ -340,8 +343,6 @@
 - [Kreş ve Anaokulu Ücretleri: 2026 Gündem](https://www.zumrutvaditemizlik.com/blog/istanbul-kres-ucreti-gundem-2026): Eğitim — güncelleme 2026-10-30
 - [Buhar vs Kuru Halı Yıkama: Hangisi Daha Etkili? 2026](https://www.zumrutvaditemizlik.com/blog/steam-vs-kuru-buhar-hali-temizligi-2026): Karşılaştırma — güncelleme 2026-10-30
 - [İstanbul Anaokulu Seçim Rehberi 2026](https://www.zumrutvaditemizlik.com/blog/istanbul-anaokulu-secim-rehberi-2026): Eğitim — güncelleme 2026-10-30
-- [İstanbul Spor Salonu Seçimi 2026](https://www.zumrutvaditemizlik.com/blog/istanbul-spor-salonu-secimi-2026): Sağlık — güncelleme 2026-10-30
-- [İstanbul’da Park Yeri Ararken: Dijital Araçlar ve Dikkat Edilecekler](https://www.zumrutvaditemizlik.com/blog/istanbul-otopark-uygulamalari): İstanbul ve Yaşam — güncelleme 2026-10-30
 
 ## GEO SSS Mini Sayfalar
 - Toplam mini SSS sayfası: 75

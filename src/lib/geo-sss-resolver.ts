@@ -3,6 +3,7 @@ import {
   GEO_SSS_PAGES,
   type GeoSssPage,
 } from '@/config/geo-district-faqs';
+import { revisionDate } from '@/lib/sitemap-lastmod';
 
 export type ResolvedGeoSssPage = GeoSssPage;
 
@@ -43,12 +44,34 @@ export async function getGeoSssBySlugAsync(slug: string): Promise<GeoSssPage | u
 }
 
 export async function listPublishedGeoSssSlugs(): Promise<string[]> {
-  const dbSlugs = await prisma.geoSssContent.findMany({
+  const entries = await listPublishedGeoSssSitemapEntries();
+  return entries.map((e) => e.slug);
+}
+
+export type GeoSssSitemapEntry = {
+  slug: string;
+  /** DB yayınları: updatedAt · statik: revizyon tarihi */
+  lastModified: Date;
+};
+
+/** Sitemap için slug + dürüst lastmod */
+export async function listPublishedGeoSssSitemapEntries(): Promise<GeoSssSitemapEntry[]> {
+  const staticRevision = revisionDate('geoSssStatic');
+  const bySlug = new Map<string, Date>();
+
+  for (const page of GEO_SSS_PAGES) {
+    bySlug.set(page.slug, staticRevision);
+  }
+
+  const dbRows = await prisma.geoSssContent.findMany({
     where: { published: true },
-    select: { slug: true },
+    select: { slug: true, updatedAt: true },
   });
-  const staticSlugs = GEO_SSS_PAGES.map((p) => p.slug);
-  return [...new Set([...staticSlugs, ...dbSlugs.map((r) => r.slug)])];
+  for (const row of dbRows) {
+    bySlug.set(row.slug, row.updatedAt);
+  }
+
+  return [...bySlug.entries()].map(([slug, lastModified]) => ({ slug, lastModified }));
 }
 
 /** İndeks sayfası — statik + yayınlanmış DB geo-sss birleşik liste */

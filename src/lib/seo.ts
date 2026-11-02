@@ -84,24 +84,24 @@ const SITE_CONFIG = {
   telephone: SITE_CONTACT.phoneE164,
   email: SITE_CONTACT.email,
   address: {
-    street: 'Sarıyer Merkez',
-    locality: 'Sarıyer',
-    region: 'İstanbul',
-    postalCode: '34450',
-    country: 'TR',
+    street: SITE_CONTACT.addressStreet,
+    locality: SITE_CONTACT.addressLocality,
+    region: SITE_CONTACT.addressRegion,
+    postalCode: SITE_CONTACT.postalCode,
+    country: SITE_CONTACT.addressCountry,
   },
   geo: {
-    latitude: 41.166900,
-    longitude: 29.057700,
+    latitude: SITE_CONTACT.geo.latitude,
+    longitude: SITE_CONTACT.geo.longitude,
   },
   social: {
     facebook: 'https://facebook.com/zumrutvaditemizlik',
     instagram: 'https://instagram.com/zumrutvaditemizlik',
   },
   openingHours: {
-    days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-    opens: '00:00',
-    closes: '23:59',
+    days: [...SITE_CONTACT.openingHours.days],
+    opens: SITE_CONTACT.openingHours.opens,
+    closes: SITE_CONTACT.openingHours.closes,
   },
 } as const;
 

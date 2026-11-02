@@ -10,6 +10,8 @@ import { syncTestimonialsFromMaps } from './tasks/testimonial-sync';
 import { ensureSeasonalBlogDrafts } from './seasonal';
 import { pingIndexNowForPaths } from './indexnow-batch';
 import { AUTOPILOT_LIMITS } from './constants';
+import { pingWebSub, type WebSubResult } from '@/lib/websub';
+import { safeRevalidatePath } from '@/lib/safe-revalidate';
 
 export type SeoAutopilotResult = {
   ok: boolean;
@@ -24,6 +26,7 @@ export type SeoAutopilotResult = {
   testimonials: Awaited<ReturnType<typeof syncTestimonialsFromMaps>>;
   metaAb: Awaited<ReturnType<typeof applyLowCtrMetaAb>>;
   indexNow: Awaited<ReturnType<typeof pingIndexNowForPaths>>;
+  webSub: WebSubResult | null;
   geoSync: Awaited<ReturnType<typeof runFullGeoSync>> | null;
   seoSync: Awaited<ReturnType<typeof runSeoChecklistAutoSync>> | null;
   llmsSync: Awaited<ReturnType<typeof syncPublishedBlogsToLlmsFull>> | null;
@@ -91,6 +94,7 @@ const emptyBlog = {
   remainingScheduled: 0,
   internalLinksAdded: 0,
   indexNow: { ok: true, submitted: 0, skipped: true, reason: 'skipped' as const },
+  webSub: null as WebSubResult | null,
 };
 
 /**
@@ -115,6 +119,7 @@ export async function runSeoAutopilot(prisma: PrismaClient): Promise<SeoAutopilo
       testimonials: { synced: 0, skipped: true },
       metaAb: { programmaticUpdated: 0, blogUpdated: 0, skipped: true },
       indexNow: { ok: true, submitted: 0, skipped: true, reason: 'concurrent-skip' },
+      webSub: null,
       geoSync: null,
       seoSync: null,
       llmsSync: null,
@@ -191,6 +196,26 @@ export async function runSeoAutopilot(prisma: PrismaClient): Promise<SeoAutopilo
       { ok: false, submitted: 0, skipped: true, reason: 'error' }
     );
 
+    /** Blog feed değiştiyse WebSub (publish zaten ping’lediyse ikinci ping zararsız) */
+    const feedsChanged = blog.published > 0 || blogRefresh.refreshed > 0;
+    let webSub: WebSubResult | null = blog.webSub;
+    if (feedsChanged) {
+      webSub = await safeStep(
+        'webSub',
+        warnings,
+        () => pingWebSub(),
+        { ok: false, submitted: 0, skipped: true, reason: 'error' }
+      );
+      safeRevalidatePath('/feed.xml');
+      safeRevalidatePath('/atom.xml');
+      safeRevalidatePath('/feed.json');
+      safeRevalidatePath('/blog/sitemap.xml');
+    }
+
+    if (geoSss.published > 0) {
+      safeRevalidatePath('/geo-sss/sitemap.xml');
+    }
+
     const result: SeoAutopilotResult = {
       ok: warnings.length === 0,
       warnings,
@@ -202,6 +227,7 @@ export async function runSeoAutopilot(prisma: PrismaClient): Promise<SeoAutopilo
       testimonials,
       metaAb,
       indexNow,
+      webSub,
       geoSync,
       seoSync,
       llmsSync,
@@ -218,6 +244,8 @@ export async function runSeoAutopilot(prisma: PrismaClient): Promise<SeoAutopilo
       testimonialsSynced: testimonials.synced,
       metaAb,
       indexNowSubmitted: indexNow.submitted,
+      webSubSubmitted: webSub?.submitted ?? 0,
+      webSubOk: webSub?.ok ?? null,
       warnings,
     };
 

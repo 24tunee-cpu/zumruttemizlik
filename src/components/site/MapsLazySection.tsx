@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { MapPin, Loader2 } from 'lucide-react';
 
 const STATIC_MAP_SRC =
-  'https://staticmap.openstreetmap.de/staticmap.php?center=41.1669,29.0577&zoom=14&size=800x450&markers=41.1669,29.0577,red-pushpin';
+  'https://staticmap.openstreetmap.de/staticmap.php?center=41.1307,29.0416&zoom=15&size=800x450&markers=41.1307,29.0416,red-pushpin';
 
 interface MapsLazySectionProps {
   embedSrc: string;
@@ -47,7 +47,7 @@ export function MapsLazySection({
           <div className="absolute inset-x-0 bottom-0 flex flex-col gap-3 p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5">
             <p className="flex items-center gap-2 text-sm text-slate-200">
               <MapPin className="h-4 w-4 shrink-0 text-emerald-400" aria-hidden="true" />
-              Sarıyer Merkez, İstanbul
+              Ferahevler, Sarıyer
             </p>
             <div className="flex flex-col gap-2 sm:flex-row">
               <a

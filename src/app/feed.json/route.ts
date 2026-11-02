@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import {
   buildJsonFeed,
-  feedCacheHeaders,
+  feedResponseHeaders,
   fetchFeedPosts,
 } from '@/lib/feeds';
 import { SITE_CONTACT } from '@/config/site-contact';
@@ -14,7 +14,7 @@ export async function GET() {
     const posts = await fetchFeedPosts();
     return NextResponse.json(buildJsonFeed(posts), {
       status: 200,
-      headers: feedCacheHeaders.json,
+      headers: feedResponseHeaders('json'),
     });
   } catch (error) {
     console.error('[feed.json]', error instanceof Error ? error.message : error);
@@ -31,7 +31,7 @@ export async function GET() {
       {
         status: 200,
         headers: {
-          ...feedCacheHeaders.json,
+          ...feedResponseHeaders('json'),
           'Cache-Control': 'public, max-age=60',
           'X-Feed-Degraded': '1',
         },

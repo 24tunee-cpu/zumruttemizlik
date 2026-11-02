@@ -34,7 +34,7 @@
 
 ## Kritik Gerçekler
 - Marka adı: Zümrüt Vadi Temizlik.
-- Lokasyon: İstanbul geneli hizmet; ağırlıklı bölge İstanbul Avrupa Yakası. Merkez: Sarıyer/İstanbul. Öncelikli semt: Zekeriyaköy.
+- Lokasyon: İstanbul geneli hizmet; ağırlıklı bölge İstanbul Avrupa Yakası. İşyeri: Ferahevler, Şen Aydın Sok. No:10, 34457 Sarıyer/İstanbul. Öncelikli hizmet semti: Zekeriyaköy.
 - Ana hizmetler: ev temizliği, ofis temizliği, inşaat sonrası temizlik, koltuk yıkama, halı temizliği, cam temizliği, dış cephe temizliği.
 - Öne çıkan özellik: Ana sayfadaki "Anında Fiyat Hesaplama" aracı ile mekan tipi, oda sayısı / metrekare ve ekstralara göre tahmini fiyat aralığı gösterilir; ardından WhatsApp üzerinden randevu alınır.
 - Çalışma düzeni: 7/24 hizmet, 24 saat açık.

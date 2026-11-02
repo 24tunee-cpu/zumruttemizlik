@@ -60,15 +60,19 @@ export async function buildRootSchemaGraphJson(): Promise<string> {
   const phoneDisplay = settings?.phone?.trim() || SITE_CONTACT.phoneDisplay;
   const telephone =
     guessE164FromDisplay(phoneDisplay) || SITE_CONTACT.phoneE164;
-  // NAP tek kaynak: GEO_NAP (site-contact). DB address serbest metin olabilir — schema'ya uydurma sokak no yok.
-  const addressLine = GEO_NAP.streetAddress;
+  // NAP tek kaynak: GEO_NAP (site-contact). DB address serbest metin — schema’ya uydurma yok.
+  const addressLine = SITE_CONTACT.addressLine;
 
   const logoUrl = toAbsoluteUrl(base, settings?.logo) ?? `${base}/logo.png`;
   const ogUrl = toAbsoluteUrl(base, settings?.ogImage) ?? `${base}/og-image.jpg`;
 
-  // Varsayılan: Zekeriyaköy hattı centroid — GBP pin ile hizalamak için env override
-  const lat = Number(process.env.NEXT_PUBLIC_BUSINESS_LAT ?? '41.1669');
-  const lng = Number(process.env.NEXT_PUBLIC_BUSINESS_LNG ?? '29.0577');
+  // GBP Ferahevler pin — env override
+  const lat = Number(
+    process.env.NEXT_PUBLIC_BUSINESS_LAT ?? String(SITE_CONTACT.geo.latitude)
+  );
+  const lng = Number(
+    process.env.NEXT_PUBLIC_BUSINESS_LNG ?? String(SITE_CONTACT.geo.longitude)
+  );
 
   const sameAs = getGeoSameAsUrls(base).concat(
     [settings?.facebook, settings?.instagram, settings?.twitter, settings?.linkedin, settings?.youtube]
@@ -149,9 +153,9 @@ export async function buildRootSchemaGraphJson(): Promise<string> {
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-        opens: '00:00',
-        closes: '23:59',
+        dayOfWeek: [...SITE_CONTACT.openingHours.days],
+        opens: SITE_CONTACT.openingHours.opens,
+        closes: SITE_CONTACT.openingHours.closes,
       },
     ],
     areaServed,
@@ -159,6 +163,7 @@ export async function buildRootSchemaGraphJson(): Promise<string> {
     knowsAbout: [
       'Sarıyer temizlik',
       'Zekeriyaköy villa temizliği',
+      'Ferahevler temizlik',
       'İnşaat sonrası temizlik',
       'Ofis temizliği',
       'Ev temizliği',
@@ -166,7 +171,10 @@ export async function buildRootSchemaGraphJson(): Promise<string> {
     ],
     priceRange: '₺₺',
     foundingDate: '2010',
-    hasMap: `https://www.google.com/maps?q=${encodeURIComponent(addressLine)}`,
+    hasMap:
+      process.env.NEXT_PUBLIC_GBP_URL?.trim() ||
+      SITE_CONTACT.gbpMapsUrl ||
+      `https://www.google.com/maps?q=${encodeURIComponent(addressLine)}`,
   };
 
   if (uniqueSameAs.length > 0) {

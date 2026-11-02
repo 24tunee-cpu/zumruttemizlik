@@ -11,6 +11,8 @@ export type AutopilotRunResults = {
   seasonalCreated?: number;
   testimonialsSynced?: number;
   indexNowSubmitted?: number;
+  webSubSubmitted?: number;
+  webSubOk?: boolean | null;
   warnings?: string[];
 };
 
@@ -67,6 +69,8 @@ function parseResults(raw: unknown): AutopilotRunResults | null {
     seasonalCreated: typeof r.seasonalCreated === 'number' ? r.seasonalCreated : undefined,
     testimonialsSynced: typeof r.testimonialsSynced === 'number' ? r.testimonialsSynced : undefined,
     indexNowSubmitted: typeof r.indexNowSubmitted === 'number' ? r.indexNowSubmitted : undefined,
+    webSubSubmitted: typeof r.webSubSubmitted === 'number' ? r.webSubSubmitted : undefined,
+    webSubOk: typeof r.webSubOk === 'boolean' ? r.webSubOk : r.webSubOk === null ? null : undefined,
     warnings: Array.isArray(r.warnings) ? (r.warnings as string[]) : undefined,
   };
 }
