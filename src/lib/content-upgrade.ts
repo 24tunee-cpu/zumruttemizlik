@@ -112,7 +112,7 @@ const BEFORE_AFTER_SECTIONS = {
             </div>
           </div>
           <ul class="text-slate-300 mt-3 space-y-1 text-sm">
-            <li>• %100 hijyenik ortam</li>
+            <li>• Hijyenik yüzeyler</li>
             <li>• Parlak ve temiz yüzeyler</li>
             <li>• Profesyonel görünüm</li>
             <li>• Sağlıklı yaşam alanı</li>
@@ -120,8 +120,8 @@ const BEFORE_AFTER_SECTIONS = {
         </div>
       </div>
       <p class="text-slate-300 mt-4">
-        15 yıllık deneyimimizle en zorlu temizlik sorunlarını bile çözüyoruz. 
-        Professional ekipmanlarımız ve uzman ekibimizle fark yaratıyoruz.
+        Profesyonel ekipman ve eğitimli ekiple detaylı temizlik uyguluyoruz.
+        Güncel Google puanı için harita &amp; yorumlar sayfamıza bakın.
       </p>
     </section>
   `
@@ -152,7 +152,7 @@ const FAQ_SECTIONS = {
         <div class="faq-item bg-slate-700/50 rounded-lg p-4">
           <h3 class="text-lg font-semibold text-emerald-400 mb-2">Garanti sunuyor musunuz?</h3>
           <p class="text-slate-300">
-            Evet, tüm hizmetlerimiz için %100 müşteri memnuniyeti garantisi sunuyoruz. 
+            Memnuniyet için kalite kontrolü yapıyoruz; sorun olursa düzeltiyoruz. 
             Memnun kalmazsanız ücretsiz düzeltme yapıyoruz.
           </p>
         </div>

@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import { SITE_CONTACT, toTelHref } from '@/config/site-contact';
+import { formatGoogleTrustLine } from '@/config/trust-signals';
+import { getPublicMapsUrl, getPublicReviewUrl, withGmbUtm } from '@/lib/gbp-links';
 
 type Props = {
   /** Örn. "Sarıyer ev temizliği" — WA/ara bağlamı */
@@ -31,6 +33,10 @@ export function WhyChooseZvt({
     : 'Merhaba, temizlik hizmeti için ücretsiz keşif ve fiyat teklifi almak istiyorum.';
   const waHref = `https://wa.me/${SITE_CONTACT.whatsappDigits}?text=${encodeURIComponent(waText)}`;
   const callHref = toTelHref(SITE_CONTACT.phoneE164);
+  const reviewHref =
+    getPublicReviewUrl() ||
+    withGmbUtm(getPublicMapsUrl(), 'why-zvt-review', { content: sourcePrefix });
+  const trustLine = formatGoogleTrustLine();
 
   return (
     <section
@@ -58,7 +64,7 @@ export function WhyChooseZvt({
             : 'mt-1 text-sm text-emerald-800/90 dark:text-emerald-100/80'
         }
       >
-        Tek net sonraki adım: ara, WhatsApp veya ücretsiz keşif.
+        Tek net sonraki adım: ara, WhatsApp veya ücretsiz keşif. {trustLine}.
       </p>
       <ul
         className={
@@ -102,6 +108,30 @@ export function WhyChooseZvt({
           }
         >
           Ücretsiz keşif
+        </Link>
+        <a
+          href={reviewHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-source={`${sourcePrefix}-google-review`}
+          className={
+            isDark
+              ? 'inline-flex min-h-[44px] items-center justify-center rounded-lg border border-emerald-400/50 px-4 py-2 text-sm font-semibold text-emerald-100 hover:bg-emerald-500/20'
+              : 'inline-flex min-h-[44px] items-center justify-center rounded-lg border border-emerald-600/40 px-4 py-2 text-sm font-semibold text-emerald-900 hover:bg-emerald-100 dark:border-emerald-400/50 dark:text-emerald-100 dark:hover:bg-emerald-500/20'
+          }
+        >
+          Google’da yorum
+        </a>
+        <Link
+          href="/harita-ve-yorumlar"
+          data-source={`${sourcePrefix}-harita`}
+          className={
+            isDark
+              ? 'inline-flex min-h-[44px] items-center justify-center rounded-lg border border-emerald-400/50 px-4 py-2 text-sm font-semibold text-emerald-100 hover:bg-emerald-500/20'
+              : 'inline-flex min-h-[44px] items-center justify-center rounded-lg border border-emerald-600/40 px-4 py-2 text-sm font-semibold text-emerald-900 hover:bg-emerald-100 dark:border-emerald-400/50 dark:text-emerald-100 dark:hover:bg-emerald-500/20'
+          }
+        >
+          Harita &amp; yorumlar
         </Link>
       </div>
     </section>

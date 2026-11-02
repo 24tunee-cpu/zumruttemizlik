@@ -20,8 +20,11 @@ Garrett `dispatch` tüm pack’i açabilir. **ZVT’de max 2–3 Garrett skill**
 - `localseodata-tool`, BrightLocal, Ahrefs, Semrush, Local Falcon — **kullanıcı onayı + bütçe**  
 - `multi-location-seo`, LSA/PPC skill’leri (istenmedikçe)  
 - Indexing API “Google’a gönder”  
-- Keyword-stuffed GBP adı (Garrett bazen “name keyword” fırsatından bahseder → **AGENTS yasak**)
+- Keyword-stuffed GBP adı (Garrett / Whitespark “name keyword” → **AGENTS yasak**)  
+- Doorway tarzı “her şehre sayfa” (`anti-patterns.md`)  
+- llms.txt / FAQ rich = AI ranking sihir iddiası  
 
 ## Implement
 
-Kod = `zvt-seo-beast` + `checklist.md`. Garrett yalnızca playbook.
+Kod = `zvt-seo-beast` + `decision-tree` + `checklist.md`. Garrett yalnızca playbook.  
+Local sütunlar: `systems-map.md` §1.

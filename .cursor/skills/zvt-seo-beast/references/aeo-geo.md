@@ -1,30 +1,44 @@
-# AEO / GEO — ZVT kuralları (2026 araştırma özeti)
+# AEO / GEO — ZVT kuralları (2026-11 Google-aligned)
 
-Sıralama garantisi yok. Amaç: entity netliği + çıkarılabilir cevap + Maps/site tutarlılığı.
+Sıralama / AI citation **garantisi yok**.
 
-## Ne işe yarar (kanıtlı / resmi)
+## Resmi Google (generative AI Search)
 
-1. **Entity:** NAP + Place ID + sameAs + `areaServed` tutarlılığı (`site-contact` / `geo-entity` / schema).  
-2. **Görünür Q&A:** Sayfada gerçek soru-cevap (40–80 kelime net cevap). AI’ler içerikten çıkarır.  
-3. **GBP canlılığı:** fotoğraf, post, yorum **velocity** + yanıt (prominence).  
-4. **Yerel sayfa derinliği:** özgün semt/operasyon — template spam değil.
+Kaynak: [Optimizing for generative AI features](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) · [AI features & your website](https://developers.google.com/search/docs/appearance/ai-features)
 
-## Ne sihir değil (abartma)
+| Yap | Yapma |
+|-----|-------|
+| Crawlable, indexable HTML; iç link; mobil deneyim | “AI için özel markup / chunking” zorunlu sanma |
+| People-first, uzman, görünür metin | Sadece AI için yeniden yazma |
+| Schema-content **parity** (rich result için) | AI Overviews için özel schema.org şartı uydurma |
+| GBP / Merchant bilgisi güncel | Sahte mention / forum spam |
+| — | **llms.txt = Google ranking faktörü** iddiası (Google: Search kullanmaz) |
 
-- **llms.txt** Google AI Overviews için “zorunlu faktör” değil (Google generative AI mythbusting yönü). Mevcut dosyaları bozma; ranking garantisi iddia etme.  
-- **FAQPage rich result** Google’da genel sitelerde kaldırıldı (2026). Schema kalabilir; **zengin sonuç / AI citation garantisi yok**. FAQ’yu yalnızca faydalı içerik için yaz.  
-- Schema ≠ kısa vadeli AI citation artışı (çoklu endüstri ölçümü). Schema-content **parity** şart (markup = görünür metin).  
-- Keyword stuffing / sahte Reddit / sahte yorum → yasak.
+Mevcut `llms.txt` / `llms-full.txt` **bozulmaz**; entity tutarlılığı için tutulabilir — “sihir” diye satılmaz.
 
-## ZVT uygulama
+## FAQPage
+
+- Google genel sitelerde FAQ **rich result**’ı kaldırmış / kısıtlamıştır; “rich = AEO win” iddiası yasak.  
+- FAQPage markup: yalnızca sayfada **görünen** gerçek Q&A ile birebir parity.  
+- FAQ ekleme gerekçesi: kullanıcı sorusu; schema bahanesi değil.
+
+## Ne işe yarar (ZVT pratik)
+
+1. **Entity:** NAP + Place ID + sameAs + `areaServed` (`site-contact` / `geo-entity` / schema).  
+2. **Görünür Q&A:** 40–80 kelime net cevap (home AEO strip, `/sss/[topic]`, geo-sss, semt FAQ).  
+3. **GBP canlılığı:** fotoğraf, post, yorum velocity + yanıt → prominence (local).  
+4. **Özgün yerel derinlik:** template spam değil (`neighborhood-gate` + `anti-patterns`).
+
+## ZVT uygulama tablosu
 
 | İş | Yap |
 |----|-----|
-| Geo SSS / `/sss/[topic]` | Tek niyet, özgün cevap, hub’a link |
-| Pair FAQ | `buildLocalizedPairFaqs` — ilçe soft claim |
-| Schema | `schema-contract.md`; AggregateRating yalnızca verified trust |
+| Geo SSS / `/sss/[topic]` | Tek niyet, özgün cevap, hub link |
+| Pair FAQ | `buildLocalizedPairFaqs` + soft claim |
+| Home AEO | Az sayıda yüksek niyet FAQ + FAQPage parity |
+| Schema | `schema-contract.md`; AggregateRating yalnız verified trust |
 | AI mention test | Admin GEO Mention Skor — manuel; scraping yok |
 
 ## Çıkış
 
-AEO işi bitince: “FAQ rich result / AI citation garantisi yok” + hangi sayfada görünür Q&A eklendiğini raporla.
+“FAQ rich / AI citation / llms sihir garantisi yok” + hangi URL’de görünür Q&A değişti.

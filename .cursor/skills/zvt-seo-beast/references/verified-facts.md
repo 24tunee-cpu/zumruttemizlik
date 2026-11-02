@@ -37,7 +37,9 @@ Bahçe = yalnızca yüzey/teras temizliği (peyzaj değil).
 
 ## Açık sorular (uydurma yasak)
 
-AGENTS §14: expansion ilçelerde gerçek operasyon kapsamı; site/bina ayrı hizmet mi; Tekne GBP kategorisi; admin DB adresi override.
+AGENTS §14: expansion ilçelerde gerçek operasyon kapsamı; site/bina ayrı hizmet mi; Tekne GBP kategorisi.  
+`foundingDate` schema’dan kaldırıldı (doğrulanmamış 2010 yok).  
+Footer/public settings adres = her zaman `site-contact` (DB override kapatıldı).
 
 ## Asla uydurma
 
@@ -45,6 +47,10 @@ Sıralama, tıklama, SoLV %, “#1 olduk”, GSC trafiği (API/okuma yoksa), rak
 
 ## Resmi local sinyaller (Google Help)
 
-Local sonuçlar: **relevance · distance · prominence**. Ücretli sıralama yok. Profil tamamlığı + yorum/yanıt + tanınırlık (link/yorum) prominence’a katkı. Kaynak: [Google Business Profile Help — local ranking](https://support.google.com/business/answer/7091).
+Local sonuçlar: **relevance · distance · prominence/popularity**. Ücretli sıralama yok. Profil tamamlığı + yorum/yanıt + tanınırlık (link/yorum) prominence’a katkı. Kaynak: [Google Business Profile Help — local ranking](https://support.google.com/business/answer/7091).
 
-Sektör gözlemi (nedensellik değil): review **velocity/recency**, fotoğraf, ikincil kategori, tutarlı citation — skill’de “garanti” diye yazma.
+Sektör gözlemi (Whitespark LSRF 2026 — **nedensellik değil**): review velocity/recency, kategori, NAP match, coğrafi title/H1, dedicated service pages, citation tutarlılığı. **“Keywords in GBP business title” anket skoru → ZVT’de uygulama yasağı** (AGENTS).
+
+AI Search: [Google AI optimization guide](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) — llms.txt Google Search faktörü değil; özel AI schema zorunlu değil.
+
+Detay harita: `systems-map.md`.

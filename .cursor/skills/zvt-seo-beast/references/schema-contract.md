@@ -1,12 +1,15 @@
 # Schema contract
 
+Google AI features: özel schema.org **zorunlu değil** ([AI optimization guide](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide)). Schema hâlâ rich result + entity netliği için; ranking sihri değil.
+
 ## Kurallar
 
-1. Markup = sayfada görünen gerçek (parity).  
+1. Markup = sayfada görünen gerçek (**parity**).  
 2. NAP / geo / telefon → `SITE_CONTACT` / `GEO_NAP`.  
 3. AggregateRating yalnızca `trust-signals` veya Maps sync gerçek veri — uydurma yok.  
-4. FAQPage: yalnızca görünür Q&A ile birebir; Google FAQ rich result beklenmez (2026).  
-5. Tek H1; BreadcrumbList pozisyonları tutarlı.
+4. FAQPage: yalnızca görünür Q&A ile birebir; FAQ rich result beklenmez; AI citation garantisi yok.  
+5. Tek H1; BreadcrumbList pozisyonları tutarlı.  
+6. `areaServed` abartma (aşağı).
 
 ## Nerede
 

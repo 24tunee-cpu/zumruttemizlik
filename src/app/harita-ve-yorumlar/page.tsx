@@ -13,6 +13,8 @@ import {
   fetchGoogleMapReviewsForSeo,
 } from '@/lib/map-reviews-seo';
 import { getGoogleMapsPublicLinks, withGmbUtm } from '@/lib/google-maps-public-links';
+import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
+import { formatGoogleTrustLine } from '@/config/trust-signals';
 
 /** ISR: 24 saat — bkz. src/lib/isr-config.ts */
 export const revalidate = 86400;
@@ -20,15 +22,16 @@ export const revalidate = 86400;
 export async function generateMetadata(): Promise<Metadata> {
   const googleReviews = await fetchGoogleMapReviewsForSeo();
   const agg = computeGoogleReviewAggregate(googleReviews);
-  const title = 'Google Harita ve Müşteri Yorumları | İstanbul | Zümrüt Vadi';
-  const description =
+  const title = clampMetaTitle('Google Harita & Yorumlar | Sarıyer');
+  const description = clampMetaDescription(
     agg && agg.reviewCount > 0
-      ? `${SITE_CONTACT.addressLocality} konumumuzu haritada görüntüleyin. Google'da ${agg.ratingValue}/5 ortalama (${agg.reviewCount} yorum). Yol tarifi ve yorum yazın.`
-      : `${SITE_CONTACT.addressLocality} konumumuzu haritada görüntüleyin, gerçek müşteri yorumlarını inceleyin ve doğrudan yol tarifi alın.`;
+      ? `Sarıyer pin ve Google ${agg.ratingValue} · ${agg.reviewCount} yorum. Yol tarifi, yorum yaz, ücretsiz keşif.`
+      : `Sarıyer / Ferahevler konum, ${formatGoogleTrustLine()}. Yol tarifi ve yorum yazın.`
+  );
   const canonical = canonicalUrl('/harita-ve-yorumlar');
 
   return {
-    title,
+    title: { absolute: title },
     description,
     alternates: { canonical },
     openGraph: {

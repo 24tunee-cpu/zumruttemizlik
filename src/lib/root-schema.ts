@@ -91,7 +91,7 @@ export async function buildRootSchemaGraphJson(): Promise<string> {
     email,
     telephone,
     description,
-    foundingDate: '2010',
+    // foundingDate: doğrulanmamış yıl uydurma yasak (AGENTS açık soru)
     address: {
       '@type': 'PostalAddress',
       streetAddress: GEO_NAP.streetAddress,
@@ -170,7 +170,6 @@ export async function buildRootSchemaGraphJson(): Promise<string> {
       'Uskumruköy temizlik',
     ],
     priceRange: '₺₺',
-    foundingDate: '2010',
     hasMap:
       process.env.NEXT_PUBLIC_GBP_URL?.trim() ||
       SITE_CONTACT.gbpMapsUrl ||

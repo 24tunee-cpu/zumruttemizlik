@@ -1,35 +1,36 @@
-# ZVT SEO Beast — preflight checklist
+# ZVT SEO Beast — preflight checklist (smart)
 
-## Authority
-- [ ] AGENTS §0
-- [ ] `references/verified-facts.md`
-- [ ] Local/GBP ise `zvt-local-seo` + ilgili reference
-- [ ] Garrett ise `zvt-garrett-dispatch` (max 2–3 skill; ücretli MCP kapalı)
+## 0. Decision
+- [ ] `decision-tree.md` niyet sınıfı seçildi
+- [ ] Hard stop yok (fake review, stuffed GBP adı, doorway, ücretli MCP…)
+- [ ] `AGENTS.md` §0
 
-## NAP / trust
-- [ ] `site-contact.ts` / `trust-signals.ts` okundu
+## 1. Facts / systems
+- [ ] `verified-facts.md` + ilgili TS
+- [ ] `systems-map.md` — hangi kaldıraç (local / organik / AI)
+- [ ] Local/GBP → `zvt-local-seo`; Garrett → `zvt-garrett-dispatch` (max 2–3)
+
+## 2. Anti-pattern
+- [ ] `anti-patterns.md` okundu (swap-city, scaled, FAQ spam, IndexNow≠Google)
+
+## 3. NAP / trust
+- [ ] `site-contact.ts` / `trust-signals.ts`
 - [ ] Hardcoded tel/adres/5000+/fake 5.0 yok
-- [ ] SiteSettings.address override not edildi (footer)
+- [ ] SiteSettings.address override not edildi
 
-## Homepage / meta
-- [ ] `meta-and-trust-patterns.md`
-- [ ] Tek H1 + clamp meta (emoji yok)
-- [ ] Sticky / WhyChoose / RelatedSeoLinks (hub)
+## 4. Page type
+- [ ] Para sayfa → `money-page-playbook.md` (H1, CTA, Sticky, trust)
+- [ ] Meta → `meta-and-trust-patterns.md` + clamp
+- [ ] Programatik → inventory + `neighborhood-gate.md`
+- [ ] Schema değişti → `schema-contract.md` + parity
+- [ ] AEO → `aeo-geo.md` (sihir yok)
+- [ ] Keşif URL → `discovery-stack.md` (honest lastmod)
+- [ ] Ağır UI → `cwv-and-experience.md`
 
-## Programatik
-- [ ] `programmatic-inventory.md`
-- [ ] Yeni semt → `neighborhood-gate.md` geçti
-- [ ] Soft claim / cannibalization
+## 5. Blog / autopilot
+- [ ] `autopilot-and-blog.md` + `seo:gates`
 
-## Schema / AEO
-- [ ] `schema-contract.md` (schema değiştiyse)
-- [ ] `aeo-geo.md` — FAQ rich/llms sihir iddiası yok
-
-## Keşif / blog
-- [ ] `discovery-stack.md` — bozulmadı
-- [ ] Blog → `autopilot-and-blog.md` + `seo:gates`
-
-## Verify
+## 6. Verify
 - [ ] `npm run type-check`
-- [ ] İlgili gates / audit-meta / legacy redirects
-- [ ] Exit raporu + “garanti yok”
+- [ ] İlgili: `seo:gates` / `seo:audit-meta` / legacy redirects / `perf:check`
+- [ ] Exit raporu + **garanti yok**

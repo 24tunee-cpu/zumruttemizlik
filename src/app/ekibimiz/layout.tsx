@@ -1,22 +1,28 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { canonicalUrl } from '@/lib/seo';
+import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
+import { formatGoogleTrustLine } from '@/config/trust-signals';
+import { SITE_CONTACT } from '@/config/site-contact';
+
+const title = clampMetaTitle('Ekibimiz | Sarıyer Temizlik');
+const description = clampMetaDescription(
+  `Zümrüt Vadi Temizlik ekibi. ${formatGoogleTrustLine()}. Ücretsiz keşif, Sarıyer / Zekeriyaköy.`
+);
 
 export const metadata: Metadata = {
-  title: 'Ekibimiz | İstanbul Temizlik Uzmanları',
-  description:
-    'İstanbul genelinde hizmet veren Zümrüt Vadi Temizlik ekibini tanıyın. Ev, ofis ve inşaat sonrası temizlikte görev alan uzman kadro bilgileri.',
+  title: { absolute: title },
+  description,
   alternates: {
     canonical: canonicalUrl('/ekibimiz'),
   },
   openGraph: {
-    title: 'Ekibimiz | Zümrüt Vadi Temizlik',
-    description:
-      'İstanbul temizlik operasyonlarında görev alan uzman ekip üyelerini ve çalışma yaklaşımımızı inceleyin.',
+    title,
+    description,
     url: canonicalUrl('/ekibimiz'),
     type: 'website',
     locale: 'tr_TR',
-    siteName: 'Zümrüt Vadi Temizlik',
+    siteName: SITE_CONTACT.companyName,
     images: [
       {
         url: canonicalUrl('/logo.png'),
@@ -28,8 +34,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ekibimiz | Zümrüt Vadi Temizlik',
-    description: 'İstanbul genelinde hizmet veren uzman temizlik ekibini tanıyın.',
+    title,
+    description,
     images: [canonicalUrl('/logo.png')],
   },
 };
