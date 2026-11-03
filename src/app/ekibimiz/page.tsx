@@ -1,6 +1,7 @@
 /**
  * Ekibimiz — SSR H1 + Prisma ekip; animasyon client’ta.
  */
+import type { Metadata } from 'next';
 import { Users } from 'lucide-react';
 import SiteLayout from '../site/layout';
 import { TeamPageClient } from '@/components/site/TeamPageClient';
@@ -8,8 +9,35 @@ import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
 import { WhyChooseZvt } from '@/components/site/WhyChooseZvt';
 import { prisma } from '@/lib/prisma';
 import { formatGoogleTrustLine } from '@/config/trust-signals';
+import {
+  canonicalUrl,
+  generateBreadcrumbSchema,
+  generateWebPageSchema,
+  serializeSchemaGraph,
+} from '@/lib/seo';
+import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
+import { SITE_CONTACT } from '@/config/site-contact';
 
 export const revalidate = 3600;
+
+const ekipTitle = clampMetaTitle('Ekibimiz | Sarıyer Temizlik Ekibi');
+const ekipDescription = clampMetaDescription(
+  `Sarıyer / Zekeriyaköy temizlik ekibi. ${formatGoogleTrustLine()}. Ücretsiz keşif için yazın.`
+);
+
+export const metadata: Metadata = {
+  title: { absolute: ekipTitle },
+  description: ekipDescription,
+  alternates: { canonical: canonicalUrl('/ekibimiz') },
+  openGraph: {
+    title: ekipTitle,
+    description: ekipDescription,
+    url: canonicalUrl('/ekibimiz'),
+    type: 'website',
+    locale: 'tr_TR',
+    siteName: SITE_CONTACT.companyName,
+  },
+};
 
 export default async function TeamPage() {
   const rows = await prisma.teamMember.findMany({
@@ -27,8 +55,21 @@ export default async function TeamPage() {
     },
   });
 
+  const jsonLd = serializeSchemaGraph([
+    generateWebPageSchema({
+      path: '/ekibimiz',
+      title: ekipTitle,
+      description: ekipDescription,
+    }),
+    generateBreadcrumbSchema([
+      { name: 'Ana Sayfa', url: '/' },
+      { name: 'Ekibimiz', url: '/ekibimiz' },
+    ]),
+  ]);
+
   return (
     <SiteLayout>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} />
       <section
         className="bg-slate-900 pb-12 pt-24 sm:pb-14 sm:pt-28 md:pb-16 md:pt-32"
         aria-label="Sayfa başlığı"

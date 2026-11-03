@@ -10,8 +10,6 @@ export type GoogleMapReviewRow = {
   reviewTime: string | null;
 };
 
-const MAX_REVIEW_ENTITIES = 5;
-
 export const fetchGoogleMapReviewsForSeo = cache(async (): Promise<GoogleMapReviewRow[]> => {
   try {
     return await prisma.mapReviewSnapshot.findMany({
@@ -44,15 +42,20 @@ export function computeGoogleReviewAggregate(rows: { starRating: number | null }
   return { ratingValue, reviewCount: valid.length };
 }
 
-/** Google Maps kaynaklı yorumlar — harita sayfası LocalBusiness schema için */
+/**
+ * Harita sayfası LocalBusiness JSON-LD.
+ * Self-serving AggregateRating/Review EKLENMEZ — Google review snippet
+ * LocalBusiness/Organization için kendi sitesindeki puanları rich result saymaz
+ * ve GSC’de “geçersiz yorum snippet” üretir (AGENTS + Google review-snippet guidelines).
+ * Görünür puan HTML/trust-signals’ta kalır.
+ */
 export function buildGoogleMapsReviewSchemaGraph(
-  rows: GoogleMapReviewRow[],
+  _rows: GoogleMapReviewRow[],
   mapsLinks: Pick<GoogleMapsPublicLinks, 'mapsOpenUrl' | 'reviewUrl'>
 ) {
   const base = getSiteUrl();
-  const agg = computeGoogleReviewAggregate(rows);
 
-  const localBusiness: Record<string, unknown> = {
+  return {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     '@id': `${base}/harita-ve-yorumlar#business`,
@@ -62,43 +65,4 @@ export function buildGoogleMapsReviewSchemaGraph(
     hasMap: mapsLinks.mapsOpenUrl,
     sameAs: [mapsLinks.reviewUrl],
   };
-
-  if (agg && agg.reviewCount >= 1) {
-    localBusiness.aggregateRating = {
-      '@type': 'AggregateRating',
-      ratingValue: agg.ratingValue,
-      reviewCount: agg.reviewCount,
-      bestRating: 5,
-      worstRating: 1,
-    };
-
-    const reviewEntities = rows
-      .filter((r) => r.starRating != null && r.comment?.trim())
-      .slice(0, MAX_REVIEW_ENTITIES)
-      .map((r) => ({
-        '@type': 'Review',
-        author: {
-          '@type': 'Person',
-          name: r.reviewerDisplayName?.trim() || 'Google kullanıcısı',
-        },
-        reviewRating: {
-          '@type': 'Rating',
-          ratingValue: r.starRating,
-          bestRating: 5,
-          worstRating: 1,
-        },
-        reviewBody: r.comment!.trim().slice(0, 500),
-        ...(r.reviewTime && { datePublished: r.reviewTime }),
-        publisher: {
-          '@type': 'Organization',
-          name: 'Google',
-        },
-      }));
-
-    if (reviewEntities.length > 0) {
-      localBusiness.review = reviewEntities;
-    }
-  }
-
-  return localBusiness;
 }

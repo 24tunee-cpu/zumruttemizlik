@@ -1,4 +1,3 @@
-import { cache } from 'react';
 import type { IntentLanding } from '@/config/intent-seo';
 import {
   canonicalUrl,
@@ -10,39 +9,6 @@ import {
   generateWebPageSchema,
   serializeSchemaGraph,
 } from '@/lib/seo';
-import {
-  computeTestimonialAggregate,
-  fetchPublicTestimonialsForSeo,
-} from '@/lib/testimonials-seo';
-
-const getTestimonials = cache(fetchPublicTestimonialsForSeo);
-
-const MIN_SERVICE_REVIEWS = 3;
-
-function matchesIntentService(service: string | null, intent: IntentLanding): boolean {
-  if (!service?.trim()) return false;
-  const normalized = service.toLowerCase();
-  const slugPhrase = intent.serviceSlug.replace(/-/g, ' ');
-  return normalized.includes(slugPhrase) || normalized.includes(intent.name.toLowerCase());
-}
-
-async function buildServiceAggregateRating(intent: IntentLanding) {
-  const rows = await getTestimonials();
-  const matched = rows.filter((r) => matchesIntentService(r.service, intent));
-  const pool = matched.length >= MIN_SERVICE_REVIEWS ? matched : rows;
-  if (pool.length < MIN_SERVICE_REVIEWS) return undefined;
-
-  const agg = computeTestimonialAggregate(pool);
-  if (!agg) return undefined;
-
-  return {
-    '@type': 'AggregateRating',
-    ratingValue: agg.ratingValue,
-    reviewCount: agg.reviewCount,
-    bestRating: 5,
-    worstRating: 1,
-  };
-}
 
 type IntentSchemaParams = {
   path: string;
@@ -55,6 +21,11 @@ type IntentSchemaParams = {
   howToTotalTime?: string;
 };
 
+/**
+ * Intent landing JSON-LD.
+ * Service üzerine AggregateRating basılmaz — GSC “yorum snippet geçersiz”
+ * (Service tipi review rich result desteklemez; self-serving yıldız yok).
+ */
 export async function buildIntentLandingSchemaGraph(
   params: IntentSchemaParams
 ): Promise<string> {
@@ -76,11 +47,6 @@ export async function buildIntentLandingSchemaGraph(
     priceHint: params.intent.priceHint,
   });
   serviceSchema.offers = offerSchema;
-
-  const aggregateRating = await buildServiceAggregateRating(params.intent);
-  if (aggregateRating) {
-    serviceSchema.aggregateRating = aggregateRating;
-  }
 
   const howToSchema = generateHowToSchema({
     name: `${params.intent.name} — nasıl çalışır?`,

@@ -24,7 +24,7 @@ import {
   VERIFIED_TRUST,
   formatGoogleTrustLine,
 } from '@/config/trust-signals';
-import { canonicalUrl, getSiteUrl } from '@/lib/seo';
+import { canonicalUrl, generateBreadcrumbSchema, getSiteUrl } from '@/lib/seo';
 import { keywordsForPage } from '@/lib/seo-keywords';
 import { Sparkles, Shield, Award, Clock, Heart, ArrowRight } from 'lucide-react';
 import { ConversionSeoAside } from '@/components/site/ConversionSeoAside';
@@ -171,6 +171,17 @@ export default function AboutPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateBreadcrumbSchema([
+              { name: 'Ana Sayfa', url: '/' },
+              { name: 'Hakkımızda', url: '/hakkimizda' },
+            ])
+          ),
+        }}
       />
 
       <SiteLayout>
