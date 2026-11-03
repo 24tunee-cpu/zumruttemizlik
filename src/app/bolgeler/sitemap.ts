@@ -13,10 +13,12 @@ import { revisionDate, withHonestLastmod } from '@/lib/sitemap-lastmod';
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = getSiteUrl();
   const lastModified = revisionDate('bolgeler');
-  const neighborhoodSet = new Set(allNeighborhoodLandingPaths());
-  const programmaticPaths = allProgrammaticLandingPaths();
+  const neighborhoodPaths = allNeighborhoodLandingPaths();
+  const neighborhoodSet = new Set(neighborhoodPaths);
+  /** İlçe×hizmet + hub; semt landing’ler ayrı listedeydi → sitemap’e eklenmezse GSC keşfi zayıf kalır */
+  const paths = [...allProgrammaticLandingPaths(), ...neighborhoodPaths];
 
-  return programmaticPaths.map((path) => {
+  return paths.map((path) => {
     const segments = path.split('/').filter(Boolean);
     const isHub = path === '/bolgeler';
     const isNeighborhood = neighborhoodSet.has(path);

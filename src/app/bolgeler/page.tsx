@@ -21,6 +21,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: canonicalUrl('/bolgeler'),
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
   openGraph: {
     title: 'İstanbul İlçe Bazlı Temizlik | Zümrüt Vadi Temizlik',
     description: bolgelerOgDescription,
