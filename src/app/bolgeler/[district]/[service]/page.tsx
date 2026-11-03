@@ -76,6 +76,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           `${neighborhood.districtName} temizlik`,
         ],
         alternates: { canonical },
+        robots: {
+          index: true,
+          follow: true,
+          googleBot: { index: true, follow: true },
+        },
         openGraph: {
           title,
           description,
@@ -116,6 +121,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description,
     keywords: [districtData.name, serviceData.name, ...serviceData.intentKeywords],
     alternates: { canonical },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: { index: true, follow: true },
+    },
     openGraph: {
       title,
       description,

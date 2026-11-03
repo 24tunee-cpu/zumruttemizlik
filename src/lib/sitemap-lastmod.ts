@@ -16,7 +16,7 @@ export const SITEMAP_CONTENT_REVISIONS = {
   /** Hizmet seed/DB yokken fallback */
   servicesFallback: '2026-10-30T12:00:00.000Z',
   /** İlçe / semt programatik matris (A5 semt×hizmet dahil) */
-  bolgeler: '2026-11-02T15:00:00.000Z',
+  bolgeler: '2026-11-03T20:15:00.000Z',
   /** Çözüm / niyet silosu */
   cozumler: '2026-10-30T12:00:00.000Z',
   /** Blog silo hub sayfaları */
