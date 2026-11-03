@@ -6,7 +6,12 @@ import { MapsLazySection } from '@/components/site/MapsLazySection';
 import RelatedSeoLinks from '@/components/site/RelatedSeoLinks';
 import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
 import { WhyChooseZvt } from '@/components/site/WhyChooseZvt';
-import { canonicalUrl, generateWebPageSchema, serializeSchemaGraph } from '@/lib/seo';
+import {
+  canonicalUrl,
+  generateBreadcrumbSchema,
+  generateWebPageSchema,
+  serializeSchemaGraph,
+} from '@/lib/seo';
 import {
   buildGoogleMapsReviewSchemaGraph,
   computeGoogleReviewAggregate,
@@ -65,6 +70,10 @@ export default async function MapsAndReviewsPage() {
       title: 'Google Harita ve Müşteri Yorumları | İstanbul | Zümrüt Vadi',
       description: 'Zümrüt Vadi Temizlik Google Harita konumu, müşteri yorumları ve yol tarifi.',
     }),
+    generateBreadcrumbSchema([
+      { name: 'Ana Sayfa', url: '/' },
+      { name: 'Harita ve Yorumlar', url: '/harita-ve-yorumlar' },
+    ]),
     buildGoogleMapsReviewSchemaGraph(googleReviews, mapsLinks),
   ]);
 

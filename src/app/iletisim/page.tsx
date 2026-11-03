@@ -11,7 +11,7 @@ import { ContactForm } from '@/components/site/ContactForm';
 import { PremiumPageHero } from '@/components/site/PremiumPageHero';
 import { SeoPriorityStrip } from '@/components/site/SeoPriorityStrip';
 import { SITE_CONTACT, toTelHref } from '@/config/site-contact';
-import { canonicalUrl, getSiteUrl } from '@/lib/seo';
+import { canonicalUrl, generateBreadcrumbSchema, getSiteUrl } from '@/lib/seo';
 import { keywordsForPage } from '@/lib/seo-keywords';
 import { metadataForParamAwarePage } from '@/lib/param-page-metadata';
 import { ConversionSeoAside } from '@/components/site/ConversionSeoAside';
@@ -141,6 +141,17 @@ export default function ContactPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(contactStructuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateBreadcrumbSchema([
+              { name: 'Ana Sayfa', url: '/' },
+              { name: 'İletişim', url: '/iletisim' },
+            ])
+          ),
+        }}
       />
 
       <SiteLayout>

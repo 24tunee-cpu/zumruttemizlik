@@ -23,7 +23,7 @@ import RelatedSeoLinks from '@/components/site/RelatedSeoLinks';
 import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
 import { WhyChooseZvt } from '@/components/site/WhyChooseZvt';
 import { faqPageJsonLdObject } from '@/lib/seed-faq';
-import { canonicalUrl } from '@/lib/seo';
+import { canonicalUrl, generateBreadcrumbSchema } from '@/lib/seo';
 import { keywordsForPage } from '@/lib/seo-keywords';
 import { SSS_TOPICS } from '@/config/sss-topics';
 import { HelpCircle } from 'lucide-react';
@@ -101,6 +101,17 @@ export default function FAQPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateBreadcrumbSchema([
+              { name: 'Ana Sayfa', url: '/' },
+              { name: 'SSS', url: '/sss' },
+            ])
+          ),
+        }}
       />
 
       <SiteLayout>

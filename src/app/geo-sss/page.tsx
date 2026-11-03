@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import SiteLayout from '../site/layout';
 import type { Metadata } from 'next';
-import { canonicalUrl } from '@/lib/seo';
+import { canonicalUrl, generateBreadcrumbSchema } from '@/lib/seo';
 import { listAllGeoSssPagesForIndex } from '@/lib/geo-sss-resolver';
 import SiteHubLinkStrip from '@/components/site/SiteHubLinkStrip';
 import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
@@ -32,8 +32,17 @@ export default async function GeoSssIndexPage() {
     byDistrict.set(p.districtName, list);
   }
 
+  const breadcrumbLd = generateBreadcrumbSchema([
+    { name: 'Ana Sayfa', url: '/' },
+    { name: 'GEO SSS', url: '/geo-sss' },
+  ]);
+
   return (
     <SiteLayout>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
       <div className="min-h-screen bg-slate-900 pb-16 pt-28 text-white">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl font-bold">GEO SSS Rehberleri</h1>
