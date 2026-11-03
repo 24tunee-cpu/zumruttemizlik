@@ -9,7 +9,21 @@ import { getSiteUrl } from '@/lib/seo';
  */
 export default function robots(): MetadataRoute.Robots {
   const base = getSiteUrl();
-  const disallow = ['/admin/', '/api/', '/login', '/blog?', '/fiyat-hesaplama?', '/iletisim?'];
+  /**
+   * Query/filtre URL’leri + admin — tüm bot gruplarında aynı disallow.
+   * Googlebot grubunda Disallow yoksa (eski hata) Google `?page`/`?utm` tarar,
+   * meta noindex görür → GSC’de yüzlerce “noindex ile hariç” satırı şişer.
+   */
+  const disallow = [
+    '/admin/',
+    '/api/',
+    '/login',
+    '/ara',
+    '/ara?',
+    '/blog?',
+    '/fiyat-hesaplama?',
+    '/iletisim?',
+  ];
   const indexNowConfigured = Boolean(process.env.INDEXNOW_KEY?.trim());
   if (!indexNowConfigured && process.env.VERCEL_ENV === 'production') {
     console.warn(
@@ -28,11 +42,13 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: 'Googlebot',
         allow: '/',
+        disallow,
         crawlDelay: 0.5,
       },
       {
         userAgent: ['Bingbot', 'Slurp', 'DuckDuckBot'],
         allow: '/',
+        disallow,
         crawlDelay: 1,
       },
       {
