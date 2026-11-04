@@ -31,7 +31,7 @@ Düzenli ev temizliği paketleri (haftalık, iki haftada bir veya aylık) ile yo
     priceRange: '400 TL – 1.800 TL (metrekareye göre)',
     order: 1,
     isActive: true,
-    metaTitle: 'Ev Temizliği İstanbul | Profesyonel Ev Temizlik Şirketi',
+    metaTitle: 'Ev Temizliği İstanbul | Sarıyer & Zekeriyaköy',
     metaDesc:
       'İstanbul’da profesyonel ev temizliği. Derinlemesine mutfak, banyo ve genel temizlik; düzenli paketler, uygun fiyat. Hemen randevu alın.',
   },
@@ -57,7 +57,7 @@ Günlük yüzey temizliği, haftalık detay çalışması veya aylık derin temi
     priceRange: '350 TL – 3.500 TL (alan ve sıklığa göre)',
     order: 2,
     isActive: true,
-    metaTitle: 'Ofis Temizliği İstanbul | Kurumsal İş Yeri Temizliği',
+    metaTitle: 'Ofis Temizliği İstanbul | Kurumsal & Plaza',
     metaDesc:
       'İstanbul ofis temizliği ve kurumsal iş yeri hijyeni. Esnek günlük/haftalık planlar, profesyonel ekip. Teklif için iletişime geçin.',
   },
@@ -161,9 +161,9 @@ Endüstriyel süpürgeler, yüzey uyumlu kimyasallar ve detay fırçaları ile f
     priceRange: '250 TL – 2.500 TL (yükseklik ve alana göre)',
     order: 6,
     isActive: true,
-    metaTitle: 'Cam Temizliği İstanbul | Dış Cephe ve Ofis Cam Silme',
+    metaTitle: 'Cam Temizliği İstanbul | Ofis & Villa Cam Silme',
     metaDesc:
-      'İstanbul cam temizliği: iç/dış cephe, vitrin ve yüksek cam. Profesyonel ekip, güvenli erişim, düzenli paketler. Teklif alın.',
+      'İstanbul cam temizliği: ofis, villa, vitrin. Sarıyer hattı ekip, ücretsiz keşif. İç/dış cam — fiyat hesapla veya hemen ara.',
   },
   {
     title: 'Dış Cephe Temizliği',
