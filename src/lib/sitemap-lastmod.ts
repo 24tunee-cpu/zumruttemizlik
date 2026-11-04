@@ -17,8 +17,8 @@ export const SITEMAP_CONTENT_REVISIONS = {
   servicesFallback: '2026-11-04T17:40:00.000Z',
   /** İlçe / semt programatik matris (A5 semt×hizmet dahil) */
   bolgeler: '2026-11-04T17:40:00.000Z',
-  /** Çözüm / niyet silosu */
-  cozumler: '2026-10-30T12:00:00.000Z',
+  /** Çözüm / niyet silosu — AggregateRating scrub sonrası re-crawl (GSC parent_node) */
+  cozumler: '2026-11-04T17:50:00.000Z',
   /** Blog silo hub sayfaları */
   blogSilo: '2026-11-04T17:40:00.000Z',
   /** Statik GEO SSS sayfaları */
