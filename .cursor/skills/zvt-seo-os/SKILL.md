@@ -1,11 +1,10 @@
 ---
 name: zvt-seo-os
 description: >-
-  ZVT peak SEO operating system: run zvt-gsc-ops → zvt-ga4-ops →
-  zvt-change-validate → zvt-seo-beast in order for analysis and hardening.
-  Use when the user wants a full ranked SEO pass, “SEO canavarı”, sequential
-  skill audit, or post-GSC perfection. AGENTS.md wins; no ranking guarantees;
-  no paid MCP; no doorway/fake ratings.
+  ZVT peak SEO operating system: site-audit → geo-audit → gsc → ga4 →
+  change-validate → seo-beast. Use for full SEO/GEO pass, “SEO canavarı”,
+  page-by-page site crawl, or post-GSC perfection. AGENTS.md wins; no ranking
+  guarantees; no paid MCP; no doorway/fake ratings.
 ---
 
 # ZVT SEO OS (orkestratör)
@@ -16,13 +15,17 @@ Tek istekte dört skill’i **sırayla** çalıştır. Çıktı = kanıtlı P0�
 
 ```text
 0. AGENTS.md §0 + hard stop (anti-patterns)
-1. zvt-gsc-ops          → CSV/ekran olgu + CTR/index/rich/crawl
-2. zvt-ga4-ops          → lead/key event + para landing CRO boşluğu
-3. zvt-change-validate  → canlı smoke vs recovery baseline
-4. zvt-seo-beast        → decision-tree + money/schema/meta implement
-5. type-check (+ seo:gates / legacy redirect gerektiğinde)
-6. Exit raporu + docs/gsc-ga4-recovery delta (isteğe bağlı)
+1. zvt-site-audit       → sitemap sayfa-sayfa teknik envanter (opsiyonel ama full audit’te zorunlu)
+2. zvt-geo-audit        → AI crawler / llms / citability / NAP
+3. zvt-gsc-ops          → CSV/ekran olgu + CTR/index/rich/crawl
+4. zvt-ga4-ops          → lead/key event + para landing CRO boşluğu
+5. zvt-change-validate  → canlı smoke vs recovery baseline
+6. zvt-seo-beast        → decision-tree + money/schema/meta implement
+7. type-check (+ seo:gates / legacy redirect gerektiğinde)
+8. Exit raporu + audit JSON/MD
 ```
+
+Tek URL derin: `zvt-page-audit` (+ `node scripts/zvt-page-seo-audit.mjs <url>`).
 
 ## Her adımda
 
@@ -49,4 +52,5 @@ Sahte AggregateRating · ince mahalle · Indexing API · IndexNow=Google · ücr
 
 - Recovery: `docs/gsc-ga4-recovery-2026-11-04.md`  
 - İndeks: `.cursor/skills/README.md`  
-- Nested: `zvt-gsc-ops`, `zvt-ga4-ops`, `zvt-change-validate`, `zvt-seo-beast`
+- Nested: `zvt-site-audit`, `zvt-page-audit`, `zvt-geo-audit`, `zvt-gsc-ops`, `zvt-ga4-ops`, `zvt-change-validate`, `zvt-seo-beast`
+- Scripts: `npm run seo:crawl` · `seo:page-audit` · `seo:geo-audit`

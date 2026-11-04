@@ -1,0 +1,131 @@
+{
+  "generatedAt": "2026-11-04T18:30:23.456Z",
+  "pageCount": 1126,
+  "bySev": {
+    "High": 13,
+    "Medium": 0,
+    "Low": 17,
+    "Info": 0
+  },
+  "byCode": {
+    "Low|title_short": 13,
+    "High|duplicate_title": 13,
+    "Low|title_long": 4
+  },
+  "byPath": {
+    "bolgeler": 151,
+    "hizmetler": 8,
+    "cozumler": 46,
+    "blog": 648,
+    "geo": 251,
+    "other": 22
+  },
+  "httpErrCount": 0,
+  "httpErrSample": [],
+  "noindexCount": 0,
+  "noindexSample": [],
+  "moneyCount": 211,
+  "moneyBySev": {
+    "Low": 4
+  },
+  "moneyHighMed": [],
+  "topHigh": [
+    {
+      "sev": "High",
+      "code": "duplicate_title",
+      "msg": "Aynı title ×13",
+      "url": "https://www.zumrutvaditemizlik.com/blog/anti-bakteriyel-temizlik-nedir-hangi-odalarda-sarttir"
+    },
+    {
+      "sev": "High",
+      "code": "duplicate_title",
+      "msg": "Aynı title ×13",
+      "url": "https://www.zumrutvaditemizlik.com/blog/evde-kedi-kopek-tuyu-temizligi-hayat-kurtaran-cozumler"
+    },
+    {
+      "sev": "High",
+      "code": "duplicate_title",
+      "msg": "Aynı title ×13",
+      "url": "https://www.zumrutvaditemizlik.com/blog/evin-gunlerce-guzel-kokmas-icin-temizlik-suyuna-ne-katilmali"
+    },
+    {
+      "sev": "High",
+      "code": "duplicate_title",
+      "msg": "Aynı title ×13",
+      "url": "https://www.zumrutvaditemizlik.com/blog/istanbul-temizlik-fiyatlari-online-hesaplama-2026"
+    },
+    {
+      "sev": "High",
+      "code": "duplicate_title",
+      "msg": "Aynı title ×13",
+      "url": "https://www.zumrutvaditemizlik.com/blog/kimyasal-kullanmadan-ekolojik-dogal-ev-temizligi-mumkun-mu"
+    },
+    {
+      "sev": "High",
+      "code": "duplicate_title",
+      "msg": "Aynı title ×13",
+      "url": "https://www.zumrutvaditemizlik.com/blog/koltuk-yikama-fiyatlari-2026-istanbul"
+    },
+    {
+      "sev": "High",
+      "code": "duplicate_title",
+      "msg": "Aynı title ×13",
+      "url": "https://www.zumrutvaditemizlik.com/blog/maslak-ev-temizligi-fiyatlari-2026"
+    },
+    {
+      "sev": "High",
+      "code": "duplicate_title",
+      "msg": "Aynı title ×13",
+      "url": "https://www.zumrutvaditemizlik.com/blog/musteri-yorumlari-deneyimleri-temizlik-sirketi-seciminde-neden-belirleyici"
+    },
+    {
+      "sev": "High",
+      "code": "duplicate_title",
+      "msg": "Aynı title ×13",
+      "url": "https://www.zumrutvaditemizlik.com/blog/nisantasi-ev-temizligi-fiyatlari-2026"
+    },
+    {
+      "sev": "High",
+      "code": "duplicate_title",
+      "msg": "Aynı title ×13",
+      "url": "https://www.zumrutvaditemizlik.com/blog/plaza-dis-cephe-cam-temizligi-profesyonel-cozumler-neden-onemli"
+    },
+    {
+      "sev": "High",
+      "code": "duplicate_title",
+      "msg": "Aynı title ×13",
+      "url": "https://www.zumrutvaditemizlik.com/blog/sariyer-temizlik-fiyatlari-2026"
+    },
+    {
+      "sev": "High",
+      "code": "duplicate_title",
+      "msg": "Aynı title ×13",
+      "url": "https://www.zumrutvaditemizlik.com/blog/temizlik-personeli-sigortal-guvenilir-neden-onemli"
+    },
+    {
+      "sev": "High",
+      "code": "duplicate_title",
+      "msg": "Aynı title ×13",
+      "url": "https://www.zumrutvaditemizlik.com/blog/zumrut-vadi-temizlik-referanslar-calisma-prensibi"
+    }
+  ],
+  "topMed": [],
+  "lowByCode": {
+    "Low|title_short": 13,
+    "Low|title_long": 4
+  },
+  "dupTitleGroups": [
+    {
+      "title": "(sayfa raporu)",
+      "count": 13,
+      "sample": [
+        "https://www.zumrutvaditemizlik.com/blog/anti-bakteriyel-temizlik-nedir-hangi-odalarda-sarttir",
+        "https://www.zumrutvaditemizlik.com/blog/evde-kedi-kopek-tuyu-temizligi-hayat-kurtaran-cozumler",
+        "https://www.zumrutvaditemizlik.com/blog/evin-gunlerce-guzel-kokmas-icin-temizlik-suyuna-ne-katilmali",
+        "https://www.zumrutvaditemizlik.com/blog/istanbul-temizlik-fiyatlari-online-hesaplama-2026",
+        "https://www.zumrutvaditemizlik.com/blog/kimyasal-kullanmadan-ekolojik-dogal-ev-temizligi-mumkun-mu"
+      ]
+    }
+  ],
+  "aggregateRatingHits": 0
+}

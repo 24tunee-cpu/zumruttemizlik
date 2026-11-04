@@ -18,20 +18,20 @@ import { ConversionSeoAside } from '@/components/site/ConversionSeoAside';
 import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
 import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
 
-const iletisimTitle = clampMetaTitle('İletişim | Sarıyer & Zekeriyaköy Temizlik Teklif Hattı');
+const iletisimTitle = clampMetaTitle('İletişim | Sarıyer Temizlik Teklif Hattı');
 const iletisimDescription = clampMetaDescription(
-  `Zekeriyaköy, Sarıyer ve İstanbul Avrupa Yakası temizlik teklifi: ${SITE_CONTACT.phoneDisplay}. Ücretsiz keşif, online fiyat hesaplama ve aynı gün geri dönüş.`
+  `Zekeriyaköy, Sarıyer ve İstanbul Avrupa Yakası temizlik teklifi: ${SITE_CONTACT.phoneDisplay}. Ücretsiz keşif, online fiyat, aynı gün dönüş.`
 );
 
 const BASE_METADATA: Metadata = {
-  title: iletisimTitle,
+  title: { absolute: iletisimTitle },
   description: iletisimDescription,
   keywords: keywordsForPage('iletisim'),
   alternates: {
     canonical: canonicalUrl('/iletisim'),
   },
   openGraph: {
-    title: clampMetaTitle('İletişim | Zümrüt Vadi Temizlik — Sarıyer & Zekeriyaköy'),
+    title: iletisimTitle,
     description: clampMetaDescription('Ücretsiz keşif, teklif ve randevu için hızlı iletişim kanalları.'),
     url: canonicalUrl('/iletisim'),
     type: 'website',
@@ -41,7 +41,7 @@ const BASE_METADATA: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'İletişim | Zümrüt Vadi Temizlik',
+    title: iletisimTitle,
     description: clampMetaDescription('Sarıyer & Zekeriyaköy temizlik teklifi ve ücretsiz keşif.'),
     images: [canonicalUrl('/logo.png')],
   },

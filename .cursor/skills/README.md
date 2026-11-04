@@ -9,7 +9,10 @@ Anayasa: kök `AGENTS.md` (üstün). Skill pack: **2026-11-02 smart** (Google AI
 | `zvt-local-seo` | GBP panel, yorum, citation, SAB/hybrid |
 | `zvt-competitor-intel` | Rakip gap — neden öndeler, ne güncellenir (ücretli MCP kapalı) |
 | `zvt-programmatic-landing` | `/bolgeler` semt / ilçe×hizmet (swap-city) |
-| `zvt-seo-os` | **Orkestratör** — gsc → ga4 → validate → beast sırayla |
+| `zvt-seo-os` | **Orkestratör** — site/geo audit → gsc → ga4 → validate → beast |
+| `zvt-site-audit` | **Tüm site** sitemap crawl; sayfa sayfa SEO sorun envanteri |
+| `zvt-page-audit` | **Tek URL** derin SEO checklist |
+| `zvt-geo-audit` | **GEO/AEO** — AI crawler, llms/NAP, citability (sihir yok) |
 | `zvt-gsc-ops` | GSC CSV/ekran: CTR, drop, cannibalization, rich-result, crawl |
 | `zvt-ga4-ops` | GA4 lead/key event, landing dönüşüm, GBP UTM |
 | `zvt-change-validate` | Deploy/GSC fix sonrası **doğrulama tarama** (recovery baseline) |
@@ -26,20 +29,28 @@ Anayasa: kök `AGENTS.md` (üstün). Skill pack: **2026-11-02 smart** (Google AI
   → exit: garanti yok
 
 GSC/GA / “SEO canavarı” / full pass:
-  → zvt-seo-os (gsc-ops → ga4-ops → change-validate → seo-beast)
+  → zvt-seo-os
+  → site-audit (crawl) + geo-audit + gsc + ga4 + validate + beast
+
+Tek sayfa: zvt-page-audit · Tüm site: zvt-site-audit · GEO: zvt-geo-audit
 ```
 
-## GSC/GA skill araştırması (2026-11-04)
+## Araştırma notu (2026-11-04) — site/GEO skill pack
 
-Dahil edilen öz (AGENTS filtresiyle ZVT’ye gömüldü):
+| Kaynak | Ne aldık |
+|--------|----------|
+| JakeLabate/Claude-SEO-Skills | Sayfa cache + meta/canonical/schema/sitemap/heading audit modeli |
+| AgriciDaniel/claude-seo (`seo-geo`) | GEO citability + Google AI guide hizası |
+| MYehia565 google-seo-agent-skills | Audit öncelik: blocker → high → … |
+| yanivgoldenberg / SeyitKaanGunes GEO | AI crawler + llms (sihir filtresi AGENTS) |
+| younes / AminForou / Garrett | GSC/GA (önceki pack) |
 
-- younesbenallal `gsc-analysis` recipes + `gsc_rows.py`
-- AminForou mcp-gsc opportunity / cannibalization patterns
-- MYehia565 `search-console-ops` + structured-data discipline
-- Garrett GSC/GA tool CTR + conversion playbooks
-- Resmî GSC MCP yok → CSV/browser birinci sınıf
+Komutlar:
+- `npm run seo:crawl` / `npm run seo:crawl -- --limit=80 --out=docs/seo-crawl-latest.json`
+- `npm run seo:page-audit -- /bolgeler/sariyer`
+- `npm run seo:geo-audit`
 
-MCP / LocalSEOData varsayılan **kapalı** (CSV/ekran yeter).
+MCP / LocalSEOData varsayılan **kapalı**.
 
 ## Beast’te yeni “akıllı” referanslar
 

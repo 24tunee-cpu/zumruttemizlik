@@ -12,6 +12,7 @@ import { buildSmartMetaForPair } from '@/lib/programmatic-smart-meta';
 import { BLOG_CANNIBAL_CANONICAL } from '@/config/seo-cannibalization';
 import type { GscRow } from '@/lib/gsc-meta';
 import { parseGscCsv } from '@/lib/gsc-meta';
+import { hasGscPlaceholderLeak, isGscPlaceholderQuery } from '@/lib/gsc-query-guards';
 
 export type MetaVariant = 'query' | 'cta';
 
@@ -149,21 +150,31 @@ function buildCtaDesc(districtName: string, serviceName: string, query: string):
   );
 }
 
+function humanizeSlug(slug: string): string {
+  return slug
+    .replace(/-20\d{2}$/, '')
+    .split('-')
+    .filter(Boolean)
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(' ');
+}
+
 function buildBlogTitles(slug: string, query: string, variant: MetaVariant): { title: string; description: string } {
-  const base = query.trim() || slug.replace(/-/g, ' ');
+  const safeQuery = isGscPlaceholderQuery(query) ? '' : query.trim();
+  const base = safeQuery || humanizeSlug(slug);
   if (variant === 'cta') {
     return {
-      title: trimMeta(`${base} · Ücretsiz Keşif 2026 | Zümrüt Vadi Blog`, 58),
+      title: trimMeta(`${base} · Ücretsiz Keşif | Zümrüt Vadi`, 58),
       description: trimMeta(
-        `"${base.slice(0, 45)}" için güncel rehber + anında fiyat tahmini. WhatsApp veya online hesaplama ile teklif alın.`,
+        `${base.slice(0, 50)} için güncel rehber + fiyat tahmini. Online hesaplama veya ücretsiz keşif ile teklif alın.`,
         158
       ),
     };
   }
   return {
-    title: trimMeta(`${base} | Zümrüt Vadi Temizlik Blog`, 58),
+    title: trimMeta(`${base} | Zümrüt Vadi Temizlik`, 58),
     description: trimMeta(
-      `${base} hakkında 2026 güncel rehber — fiyat aralıkları, ipuçları ve ${'İstanbul'} genelinde profesyonel temizlik.`,
+      `${base} — 2026 rehber: fiyat aralıkları, ipuçları ve İstanbul genelinde profesyonel temizlik. Ücretsiz keşif.`,
       158
     ),
   };
@@ -311,14 +322,19 @@ export function analyzeGscImport(rows: GscRow[]): GscImportReport {
       const service = getServiceBySlug(serviceSlug);
       if (!district || !service) continue;
 
-      const title =
-        variant === 'cta'
+      const queryOk = !isGscPlaceholderQuery(top.query);
+      // Pages-only satır: sorgu yok → smart meta (placeholder title üretme)
+      const smart = buildSmartMetaForPair(district, service);
+      const title = queryOk
+        ? variant === 'cta'
           ? buildCtaTitle(district.name, service.name, top.query)
-          : buildQueryTitle(district.name, service.name, top.query);
-      const description =
-        variant === 'cta'
+          : buildQueryTitle(district.name, service.name, top.query)
+        : smart.title;
+      const description = queryOk
+        ? variant === 'cta'
           ? buildCtaDesc(district.name, service.name, top.query)
-          : buildQueryDesc(district.name, service.name, top.query);
+          : buildQueryDesc(district.name, service.name, top.query)
+        : smart.description;
 
       programmatic.push({
         id: `p:${bolgelerKey}`,
@@ -329,10 +345,12 @@ export function analyzeGscImport(rows: GscRow[]): GscImportReport {
         pagePath,
         title,
         description,
-        variant,
-        reason: `GSC: ${top.impressions} gösterim, CTR ${(normalizeCtr(top.ctr) * 100).toFixed(2)}%, konum ${top.position.toFixed(1)}`,
+        variant: queryOk ? variant : 'cta',
+        reason: queryOk
+          ? `GSC: ${top.impressions} gösterim, CTR ${(normalizeCtr(top.ctr) * 100).toFixed(2)}%, konum ${top.position.toFixed(1)}`
+          : `GSC pages-only (sorgu yok) → smart meta; ${top.impressions} gösterim`,
         score: top.impressions * 0.7 + top.clicks * 20 - top.position * 2,
-        query: top.query,
+        query: queryOk ? top.query : '',
         clicks: top.clicks,
         impressions: top.impressions,
         ctr: normalizeCtr(top.ctr),
@@ -453,6 +471,13 @@ export async function applyGscSuggestions(
   const errors: string[] = [];
 
   for (const s of programmatic) {
+    if (hasGscPlaceholderLeak(s.title) || hasGscPlaceholderLeak(s.description) || isGscPlaceholderQuery(s.query)) {
+      // Pages-only / sızıntılı öneri: yine de smart meta yaz (title zaten smart olmalı)
+      if (hasGscPlaceholderLeak(s.title) || hasGscPlaceholderLeak(s.description)) {
+        errors.push(`programmatic ${s.key}: sayfa-raporu sızıntısı — atlandı`);
+        continue;
+      }
+    }
     try {
       await db.programmaticMetaOverride.upsert({
         where: { key: s.key },
@@ -477,6 +502,10 @@ export async function applyGscSuggestions(
   }
 
   for (const s of blogItems) {
+    if (hasGscPlaceholderLeak(s.title) || hasGscPlaceholderLeak(s.description)) {
+      errors.push(`blog ${s.slug}: sayfa-raporu sızıntısı — atlandı`);
+      continue;
+    }
     try {
       const post = await db.blogPost.findUnique({
         where: { slug: s.slug },

@@ -5,6 +5,7 @@
 
 import { clampMetaDescription, clampMetaTitle, stripMetaEmoji } from './meta-clamp';
 import { BLOG_CTR_META } from './gsc-ctr-overrides';
+import { hasGscPlaceholderLeak } from './gsc-query-guards';
 
 const TITLE_MAX = 58;
 const DESC_MAX = 155;
@@ -37,7 +38,10 @@ export function resolveBlogMetaTitle(
   if (ctr?.title) return clampMetaTitle(normalizeTitleBrand(ctr.title), 60);
 
   const custom = storedMeta?.trim();
-  if (custom) return clampMetaTitle(normalizeTitleBrand(custom), 60);
+  // GSC pages-only sızıntısı "(sayfa raporu)" — yok say, H1/title’dan üret
+  if (custom && !hasGscPlaceholderLeak(custom)) {
+    return clampMetaTitle(normalizeTitleBrand(custom), 60);
+  }
 
   const base = normalizeTitleBrand(title.trim());
   const suffix = TITLE_SUFFIX;
@@ -61,7 +65,9 @@ export function resolveBlogMetaDesc(
   if (ctr?.description) return clampMetaDescription(ctr.description, 160);
 
   const custom = storedMeta?.trim();
-  if (custom) return clampMetaDescription(custom, 160);
+  if (custom && !hasGscPlaceholderLeak(custom)) {
+    return clampMetaDescription(custom, 160);
+  }
 
   const plain = excerpt.replace(/\s+/g, ' ').trim();
   return clampMetaDescription(plain, DESC_MAX);

@@ -122,6 +122,72 @@ export const BLOG_CTR_META: Record<string, MetaPair> = {
     description:
       'Yağmur ve sel sonrası evde su hasarı: acil adımlar + profesyonel temizlik. İstanbul / Sarıyer ekibi — ücretsiz keşif için ara.',
   },
+  // 2026-11-04 audit: GSC "(sayfa raporu)" sızıntısı scrub — premium CTR meta
+  'anti-bakteriyel-temizlik-nedir-hangi-odalarda-sarttir': {
+    title: 'Anti-Bakteriyel Temizlik Nedir? | Hangi Odalar',
+    description:
+      'Anti-bakteriyel temizlik nedir, mutfak-banyo-çocuk odasında ne zaman şart? Pratik rehber + profesyonel hijyen. Ücretsiz keşif için ara.',
+  },
+  'evde-kedi-kopek-tuyu-temizligi-hayat-kurtaran-cozumler': {
+    title: 'Evde Kedi Köpek Tüyü Temizliği | Pratik Çözüm',
+    description:
+      'Kedi-köpek tüyü için evde işe yarayan yöntemler + profesyonel destek. Halı/koltuk tüy temizliği. Sarıyer hattı — keşif için ara.',
+  },
+  'evin-gunlerce-guzel-kokmas-icin-temizlik-suyuna-ne-katilmali': {
+    title: 'Temizlik Suyuna Ne Katmalı? | Kalıcı Ev Kokusu',
+    description:
+      'Evin günlerce güzel kokması için temizlik suyuna ne katılır? Güvenli ipuçları + profesyonel ev temizliği. Ücretsiz keşif.',
+  },
+  'istanbul-temizlik-fiyatlari-online-hesaplama-2026': {
+    title: 'İstanbul Temizlik Fiyatları 2026 | Online Hesap',
+    description:
+      'İstanbul temizlik fiyatları 2026 (tahmini). Online hesaplama, ücretsiz keşif. Ev/ofis/inşaat sonrası — Sarıyer odaklı ekip.',
+  },
+  'kimyasal-kullanmadan-ekolojik-dogal-ev-temizligi-mumkun-mu': {
+    title: 'Doğal Ev Temizliği | Kimyasalsız Rehber 2026',
+    description:
+      'Kimyasalsız / ekolojik ev temizliği mümkün mü? Güvenli yöntemler + profesyonel destek. İstanbul — ücretsiz keşif için ara.',
+  },
+  'koltuk-yikama-fiyatlari-2026-istanbul': {
+    title: 'Koltuk Yıkama Fiyatları 2026 | İstanbul',
+    description:
+      'İstanbul koltuk yıkama fiyatları 2026 (tahmini). Yerinde kanepe/döşeme. Ücretsiz keşif — Sarıyer hattı ekip.',
+  },
+  'maslak-ev-temizligi-fiyatlari-2026': {
+    title: 'Maslak Ev Temizliği Fiyatları 2026 | Tablo',
+    description:
+      'Maslak ev temizliği 2026 fiyat aralıkları (tahmini). Plaza/site daire. Ücretsiz keşif — online hesapla veya ara.',
+  },
+  'musteri-yorumlari-deneyimleri-temizlik-sirketi-seciminde-neden-belirleyici': {
+    title: 'Temizlik Firması Seçiminde Yorumlar Neden Önemli',
+    description:
+      'Müşteri yorumları temizlik şirketi seçimini nasıl etkiler? Güven sinyalleri + Google Maps ipuçları. Zümrüt Vadi Temizlik.',
+  },
+  'nisantasi-ev-temizligi-fiyatlari-2026': {
+    title: 'Nişantaşı Ev Temizliği Fiyatları 2026',
+    description:
+      'Nişantaşı ev temizliği 2026 tahmini fiyat tablosu. Şeffaf kapsam, ücretsiz keşif. Avrupa yakası ekip — ara veya hesapla.',
+  },
+  'plaza-dis-cephe-cam-temizligi-profesyonel-cozumler-neden-onemli': {
+    title: 'Plaza Dış Cephe Cam Temizliği | Profesyonel',
+    description:
+      'Plaza ve dış cephe cam temizliği neden profesyonel ekip ister? Güvenli erişim + iz bırakmayan sonuç. Ücretsiz keşif.',
+  },
+  'sariyer-temizlik-fiyatlari-2026': {
+    title: 'Sarıyer Temizlik Fiyatları 2026 | Semt Rehber',
+    description:
+      'Sarıyer temizlik fiyatları 2026: Zekeriyaköy ve semt semt tahmini. Ücretsiz keşif — online hesapla veya hemen ara.',
+  },
+  'temizlik-personeli-sigortal-guvenilir-neden-onemli': {
+    title: 'Sigortalı Temizlik Personeli Neden Önemli?',
+    description:
+      'Temizlik personelinin sigortalı ve güvenilir olması neden kritik? Kontrol listesi + profesyonel ekip. Ücretsiz keşif.',
+  },
+  'zumrut-vadi-temizlik-referanslar-calisma-prensibi': {
+    title: 'Zümrüt Vadi Referanslar & Çalışma Prensibi',
+    description:
+      'Zümrüt Vadi Temizlik çalışma prensibi ve referans yaklaşımı. Google Maps yorumları, şeffaf kapsam — keşif için ara.',
+  },
 };
 
 export function pairCtrKey(districtSlug: string, serviceSlug: string): string {
