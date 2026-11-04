@@ -10,8 +10,26 @@ function sanitizeIndexNowKey(raw: string): string {
   return raw.trim().replace(/[^a-zA-Z0-9-]/g, '');
 }
 
+/** Next.js App Router flight/prefetch — tarayıcı `RSC` header gönderir; Googlebot göndermez. */
+function isNextRscFlightRequest(request: NextRequest): boolean {
+  if (request.headers.get('rsc') === '1') return true;
+  if (request.headers.get('next-router-prefetch')) return true;
+  if (request.headers.get('next-router-state-tree')) return true;
+  return false;
+}
+
 export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  /**
+   * `?_rsc=` Googlebot’a “Diğer dosya türü” olarak 200 dönüp crawl şişiriyor.
+   * Gerçek Next flight isteği (RSC header) aynen geçer; botsuz istek → temiz URL’ye 308.
+   */
+  if (request.nextUrl.searchParams.has('_rsc') && !isNextRscFlightRequest(request)) {
+    const clean = request.nextUrl.clone();
+    clean.searchParams.delete('_rsc');
+    return NextResponse.redirect(clean, 308);
+  }
 
   const legacy = resolveLegacyRedirect(pathname);
   if (legacy) {
