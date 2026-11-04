@@ -139,12 +139,24 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     const useCTROptimization = process.env.NODE_ENV === 'production';
 
     const metaTitle = useCTROptimization
-      ? resolveCTROptimizedBlogTitle(post.title, post.metaTitle, post.category, post.content)
-      : resolveBlogMetaTitle(post.title, post.metaTitle);
+      ? resolveCTROptimizedBlogTitle(
+          post.title,
+          post.metaTitle,
+          post.category,
+          post.content,
+          post.slug
+        )
+      : resolveBlogMetaTitle(post.title, post.metaTitle, post.slug);
 
     const metaDesc = useCTROptimization
-      ? resolveCTROptimizedBlogDesc(post.excerpt, post.metaDesc, post.title, post.category)
-      : resolveBlogMetaDesc(post.excerpt, post.metaDesc);
+      ? resolveCTROptimizedBlogDesc(
+          post.excerpt,
+          post.metaDesc,
+          post.title,
+          post.category,
+          post.slug
+        )
+      : resolveBlogMetaDesc(post.excerpt, post.metaDesc, post.slug);
     const contentWordCount = getWordCount(post.content);
     const ogImage = toAbsoluteAsset(post.image, getSiteUrl());
 
@@ -219,7 +231,7 @@ function generateArticleSchema(post: BlogPostData) {
   }
 
   // Mevcut sistem (development ve fallback için)
-  const metaDesc = resolveBlogMetaDesc(post.excerpt, post.metaDesc);
+  const metaDesc = resolveBlogMetaDesc(post.excerpt, post.metaDesc, post.slug);
   const wordCount = post.content.split(/\s+/).filter(Boolean).length;
   const cover = toAbsoluteAsset(post.image, getSiteUrl());
   return {

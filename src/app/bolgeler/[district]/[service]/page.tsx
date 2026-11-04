@@ -35,6 +35,7 @@ import {
   buildSmartMetaForPair,
   isLowQualityProgrammaticTitle,
 } from '@/lib/programmatic-smart-meta';
+import { PAIR_CTR_H1, pairCtrKey } from '@/lib/gsc-ctr-overrides';
 
 type Props = {
   params: Promise<{ district: string; service: string }>;
@@ -252,7 +253,8 @@ export default async function ProgrammaticLandingPage({ params }: Props) {
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
             <div className="flex flex-wrap items-center gap-2">
               <h1 className="text-3xl font-bold sm:text-4xl">
-                {districtData.name} {serviceData.name}
+                {PAIR_CTR_H1[pairCtrKey(districtData.slug, serviceData.slug)] ??
+                  `${districtData.name} ${serviceData.name}`}
               </h1>
               {formatDistrictSide(districtData) && (
                 <span className="rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-300">
@@ -265,6 +267,29 @@ export default async function ProgrammaticLandingPage({ params }: Props) {
             )}
             <p className="mt-4 text-slate-300">{contentVariant.heroLead}</p>
             <p className="mt-3 text-sm text-slate-400">{coverageNote}</p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              <a
+                href={callHref}
+                data-source={`pair-${districtData.slug}-${serviceData.slug}-phone`}
+                className="rounded-lg bg-emerald-500 px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-600"
+              >
+                Ara: {SITE_CONTACT.phoneDisplay}
+              </a>
+              <Link
+                href="/randevu"
+                data-source={`pair-${districtData.slug}-${serviceData.slug}-randevu`}
+                className="rounded-lg border border-emerald-400/50 px-4 py-2 text-sm font-medium text-emerald-100 hover:bg-emerald-500/20"
+              >
+                Ücretsiz keşif
+              </Link>
+              <Link
+                href={`/fiyat-hesaplama?district=${districtData.slug}&intent=${serviceData.slug}`}
+                data-source={`pair-${districtData.slug}-${serviceData.slug}-fiyat`}
+                className="rounded-lg border border-slate-600 px-4 py-2 text-sm font-medium text-slate-200 hover:border-emerald-500/40"
+              >
+                Fiyat hesapla
+              </Link>
+            </div>
             <div className="mt-5">
               <GeoExtractAnswer
                 label="Kısa cevap"

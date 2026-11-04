@@ -13,6 +13,7 @@ import { SITE_CONTACT, toTelHref } from '@/config/site-contact';
 import { canonicalUrl, getSiteUrl } from '@/lib/seo';
 import { getPublicMapsUrl, withGmbUtm } from '@/lib/gbp-links';
 import { formatGoogleTrustLine } from '@/config/trust-signals';
+import { NEIGHBORHOOD_CTR_H1 } from '@/lib/gsc-ctr-overrides';
 
 export default function NeighborhoodLanding({ data }: { data: NeighborhoodLandingData }) {
   const canonical = canonicalUrl(`/bolgeler/${data.districtSlug}/${data.slug}`);
@@ -22,7 +23,9 @@ export default function NeighborhoodLanding({ data }: { data: NeighborhoodLandin
     content: data.districtSlug,
   });
   const intentSlug = data.calculatorIntentSlug ?? 'tasinma-temizligi';
-  const pageHeading = /temizlik/i.test(data.name) ? data.name : `${data.name} Temizlik`;
+  const pageHeading =
+    NEIGHBORHOOD_CTR_H1[data.slug] ??
+    (/temizlik/i.test(data.name) ? data.name : `${data.name} Temizlik`);
 
   const featuredServices = data.featuredServiceSlugs
     .map((slug) => getServiceBySlug(slug))

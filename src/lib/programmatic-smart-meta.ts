@@ -4,6 +4,7 @@ import {
   type DistrictLanding,
   type ServiceLanding,
 } from '@/config/programmatic-seo';
+import { PAIR_CTR_META, pairCtrKey } from '@/lib/gsc-ctr-overrides';
 
 const BRAND_SHORT = 'Zümrüt Vadi Temizlik';
 
@@ -48,32 +49,11 @@ export function buildSmartMetaForPair(
   district: DistrictLanding,
   service: ServiceLanding
 ): { title: string; description: string } {
-  /** P0 para çiftleri — GSC ticari sorgu CTR */
-  if (district.slug === 'sariyer' && service.slug === 'ev-temizligi') {
+  const ctr = PAIR_CTR_META[pairCtrKey(district.slug, service.slug)];
+  if (ctr) {
     return {
-      title: trimEndEllipsis('Sarıyer Ev Temizliği | Zekeriyaköy Villa', 58),
-      description: trimEndEllipsis(
-        'Sarıyer ev temizliği: Zekeriyaköy villa & site. Ücretsiz keşif, şeffaf kapsam, aynı gün dönüş. Fiyat hesapla veya hemen ara.',
-        158
-      ),
-    };
-  }
-  if (district.slug === 'sariyer' && service.slug === 'dis-cephe-temizligi') {
-    return {
-      title: trimEndEllipsis('Sarıyer Dış Cephe Temizliği | Cam & Bina', 58),
-      description: trimEndEllipsis(
-        'Sarıyer dış cephe ve cam cephe temizliği. Villa/plaza güvenli erişim, ücretsiz keşif. Zekeriyaköy–Boğaz hattı ekip planı.',
-        158
-      ),
-    };
-  }
-  if (district.slug === 'sariyer' && service.slug === 'insaat-sonrasi-temizlik') {
-    return {
-      title: trimEndEllipsis('Sarıyer İnşaat Sonrası Temizlik | Fiyat', 58),
-      description: trimEndEllipsis(
-        'Sarıyer inşaat sonrası temizlik: ince toz, teslim checklist. Zekeriyaköy villa & yeni teslim. Ücretsiz keşif, net kapsam.',
-        158
-      ),
+      title: trimEndEllipsis(ctr.title, 58),
+      description: trimEndEllipsis(ctr.description, 158),
     };
   }
 

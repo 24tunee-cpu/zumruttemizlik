@@ -12,15 +12,15 @@
  */
 export const SITEMAP_CONTENT_REVISIONS = {
   /** Çekirdek statik sayfalar (/, /iletisim, /hakkimizda, …) */
-  core: '2026-11-04T17:20:00.000Z',
+  core: '2026-11-04T17:40:00.000Z',
   /** Hizmet seed/DB yokken fallback */
-  servicesFallback: '2026-11-04T17:20:00.000Z',
+  servicesFallback: '2026-11-04T17:40:00.000Z',
   /** İlçe / semt programatik matris (A5 semt×hizmet dahil) */
-  bolgeler: '2026-11-04T17:20:00.000Z',
+  bolgeler: '2026-11-04T17:40:00.000Z',
   /** Çözüm / niyet silosu */
   cozumler: '2026-10-30T12:00:00.000Z',
   /** Blog silo hub sayfaları */
-  blogSilo: '2026-10-30T12:00:00.000Z',
+  blogSilo: '2026-11-04T17:40:00.000Z',
   /** Statik GEO SSS sayfaları */
   geoSssStatic: '2026-10-30T12:00:00.000Z',
   /** Galeri hub (DB tarihi yoksa) */

@@ -4,6 +4,7 @@
  */
 
 import { clampMetaDescription, clampMetaTitle, stripMetaEmoji } from './meta-clamp';
+import { BLOG_CTR_META } from './gsc-ctr-overrides';
 
 const TITLE_MAX = 58;
 const DESC_MAX = 155;
@@ -25,11 +26,16 @@ function normalizeTitleBrand(input: string): string {
 /**
  * Sayfa <title> ve OpenGraph title için.
  * `storedMeta` doluysa öncelikli; yoksa yazı başlığı + marka (uzunluk sınırlı).
+ * GSC CTR slug override varsa en yüksek öncelik.
  */
 export function resolveBlogMetaTitle(
   title: string,
-  storedMeta: string | null | undefined
+  storedMeta: string | null | undefined,
+  slug?: string | null
 ): string {
+  const ctr = slug ? BLOG_CTR_META[slug] : undefined;
+  if (ctr?.title) return clampMetaTitle(normalizeTitleBrand(ctr.title), 60);
+
   const custom = storedMeta?.trim();
   if (custom) return clampMetaTitle(normalizeTitleBrand(custom), 60);
 
@@ -48,8 +54,12 @@ export function resolveBlogMetaTitle(
  */
 export function resolveBlogMetaDesc(
   excerpt: string,
-  storedMeta: string | null | undefined
+  storedMeta: string | null | undefined,
+  slug?: string | null
 ): string {
+  const ctr = slug ? BLOG_CTR_META[slug] : undefined;
+  if (ctr?.description) return clampMetaDescription(ctr.description, 160);
+
   const custom = storedMeta?.trim();
   if (custom) return clampMetaDescription(custom, 160);
 
@@ -58,22 +68,24 @@ export function resolveBlogMetaDesc(
 }
 
 /**
- * Eski CTR yolları — emoji/random başlık yok; kanonik blog meta.
+ * Eski CTR yolları — emoji/random başlık yok; GSC slug override + kanonik blog meta.
  */
 export function resolveCTROptimizedBlogTitle(
   title: string,
   storedMeta: string | null | undefined,
   _category: string,
-  _content: string
+  _content: string,
+  slug?: string | null
 ): string {
-  return resolveBlogMetaTitle(title, storedMeta);
+  return resolveBlogMetaTitle(title, storedMeta, slug);
 }
 
 export function resolveCTROptimizedBlogDesc(
   excerpt: string,
   storedMeta: string | null | undefined,
   _title: string,
-  _category: string
+  _category: string,
+  slug?: string | null
 ): string {
-  return resolveBlogMetaDesc(excerpt, storedMeta);
+  return resolveBlogMetaDesc(excerpt, storedMeta, slug);
 }

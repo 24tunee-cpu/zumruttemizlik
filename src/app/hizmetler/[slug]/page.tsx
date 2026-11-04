@@ -32,6 +32,7 @@ import {
   buildServiceExtractAnswer,
 } from '@/components/site/GeoExtractAnswer';
 import { buildServicePageSeoLinks } from '@/lib/internal-seo-links';
+import { SERVICE_CTR_META } from '@/lib/gsc-ctr-overrides';
 import {
   canonicalUrl,
   generateBreadcrumbSchema,
@@ -264,20 +265,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       };
     }
 
-    /** GSC’de yüksek gösterim / düşük CTR — seed DB gecikse bile runtime CTR */
-    const CTR_META: Record<string, { title: string; description: string }> = {
-      'dis-cephe-temizligi': {
-        title: 'Dış Cephe Temizliği İstanbul | Cam & Bina Cephe',
-        description:
-          'İstanbul dış cephe temizliği: cam/cephe, güvenli erişim, su izi giderme. Sarıyer–Zekeriyaköy hattı. Ücretsiz keşif, fiyat hesapla veya ara.',
-      },
-      'insaat-sonrasi-temizlik': {
-        title: 'İnşaat Sonrası Temizlik İstanbul | Fiyat & Teslim',
-        description:
-          'İnşaat sonrası temizlik İstanbul: ince toz, tadilat teslim checklist. Sarıyer odaklı ekip. Ücretsiz keşif, şeffaf kapsam ve fiyat.',
-      },
-    };
-    const ctr = CTR_META[service.slug];
+    const ctr = SERVICE_CTR_META[service.slug];
     const rawTitle = normalizeMetaTitle(
       ctr?.title || service.metaTitle?.trim() || `${service.title} İstanbul`
     );

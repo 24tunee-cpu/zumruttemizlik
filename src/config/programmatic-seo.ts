@@ -461,9 +461,9 @@ export const NEIGHBORHOOD_LANDINGS: NeighborhoodLanding[] = [
     slug: 'maslak',
     name: 'Maslak',
     districtName: 'Sarıyer',
-    metaTitle: 'Maslak Temizlik Şirketi | Ofis & Rezidans Temizliği',
+    metaTitle: 'Maslak Temizlik Şirketi | Ofis & Plaza',
     metaDescription:
-      'Maslak plaza, ofis ve rezidans temizliği: kurumsal hijyen, inşaat sonrası teslim, cam. Ücretsiz keşif, aynı gün randevu.',
+      'Maslak temizlik şirketi: ofis, plaza, rezidans. Kurumsal hijyen, mesai dışı, ücretsiz keşif. Hemen ara veya fiyat hesapla.',
     intro:
       'Maslak, İstanbul’un kurumsal ve rezidans yoğunluklu merkezlerinden biridir. Plaza ofisleri, yeni rezidans kuleleri ve karma kullanım binalarında ofis temizliği, taşınma öncesi/sonrası daire temizliği ve inşaat sonrası teslim hizmeti sunuyoruz.',
     body: [
