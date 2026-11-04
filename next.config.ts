@@ -268,9 +268,23 @@ const nextConfig: NextConfig = {
         destination: 'https://www.zumrutvaditemizlik.com/:path*',
       },
       /**
-       * `?_rsc=` temizliği: next.config `destination: /:path*` query’yi KORUR →
-       * Location hâlâ `?_rsc=` (308 döngü / crawl israfı). Stripping `src/proxy.ts`’te.
+       * `?_rsc=` strip — destination sonunda `?` query forward’ı keser (Vercel/Next).
+       * Flight istekleri `rsc: 1` header ile missing kuralından düşer; proxy yedek.
        */
+      {
+        source: '/',
+        has: [{ type: 'query', key: '_rsc' }],
+        missing: [{ type: 'header', key: 'rsc', value: '1' }],
+        destination: '/?',
+        permanent: true,
+      },
+      {
+        source: '/:path*',
+        has: [{ type: 'query', key: '_rsc' }],
+        missing: [{ type: 'header', key: 'rsc', value: '1' }],
+        destination: '/:path*?',
+        permanent: true,
+      },
       // Legacy redirects (example)
       {
         source: '/hizmetlerimiz',

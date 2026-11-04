@@ -83,6 +83,11 @@ export const SERVICE_CTR_META: Record<string, MetaPair> = {
     description:
       'İstanbul ev temizliği: Sarıyer / Zekeriyaköy villa & daire. Ücretsiz keşif, şeffaf kapsam. Fiyat hesapla veya ara.',
   },
+  'koltuk-yikama': {
+    title: 'Koltuk Yıkama İstanbul | Yerinde Kanepe Temizliği',
+    description:
+      'İstanbul koltuk yıkama: yerinde kanepe/döşeme. Sarıyer hattı ekip, ücretsiz keşif. Hızlı randevu — ara veya fiyat hesapla.',
+  },
 };
 
 /** Yüksek gösterimli blog slug → SERP CTR */

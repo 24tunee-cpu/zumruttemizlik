@@ -22,23 +22,23 @@ export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   /**
-   * `?_rsc=` Googlebot’a “Diğer dosya türü” olarak 200 dönüp crawl şişiriyor.
-   * Gerçek Next flight isteği (RSC header) aynen geçer; botsuz istek → temiz URL’ye 308.
-   * Not: nextUrl.searchParams bazı edge durumlarda boş kalabiliyor → raw URL yedek.
+   * `?_rsc=` — bot/crawler (RSC header yok) → temiz URL 308.
+   * Gerçek App Router flight (`rsc: 1` vb.) dokunulmaz.
+   * CDN HIT + query ile 200 HTML = crawl kopyası; redirect zorunlu.
    */
   const rawUrl = request.url;
+  const sp = request.nextUrl.searchParams;
   const hasRscQuery =
-    request.nextUrl.searchParams.has('_rsc') || /[?&]_rsc=/.test(rawUrl);
+    sp.has('_rsc') ||
+    rawUrl.includes('?_rsc=') ||
+    rawUrl.includes('&_rsc=') ||
+    /(?:\?|&)_rsc(?:=|&|$)/.test(rawUrl);
   if (hasRscQuery && !isNextRscFlightRequest(request)) {
-    const clean = request.nextUrl.clone();
+    const clean = new URL(request.url);
     clean.searchParams.delete('_rsc');
-    // nextUrl query boşsa yine de pathname’e düş
-    if (/[?&]_rsc=/.test(clean.search)) {
-      clean.search = clean.search
-        .replace(/([?&])_rsc=[^&]*/g, '$1')
-        .replace(/\?&/, '?')
-        .replace(/[?&]$/, '')
-        .replace(/&&/g, '&');
+    // Boş / bozuk query artığı temizle
+    if ([...clean.searchParams.keys()].length === 0) {
+      clean.search = '';
     }
     return NextResponse.redirect(clean, 308);
   }
