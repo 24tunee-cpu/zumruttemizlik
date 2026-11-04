@@ -155,40 +155,14 @@ function createHowToSchema(
 }
 
 /**
- * Review schema oluştur
+ * @deprecated Self-serving AggregateRating/Review GSC “yorum snippet” hatası üretir.
+ * Sahte/örnek yorum JSON-LD YASAK (AGENTS). Görünür puan trust-signals + Maps.
  */
-function createReviewSchema(
-  businessName: string,
-  reviews: Array<{ author: string, rating: number, comment: string, date: string }>
-) {
-  const aggregateRating = {
-    '@type': 'AggregateRating',
-    ratingValue: '4.8',
-    reviewCount: reviews.length.toString(),
-    bestRating: '5',
-    worstRating: '1'
-  };
-
+function createLocalBusinessWithoutReviews(businessName: string) {
   return {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: businessName,
-    aggregateRating,
-    review: reviews.map(review => ({
-      '@type': 'Review',
-      author: {
-        '@type': 'Person',
-        name: review.author
-      },
-      datePublished: review.date,
-      reviewRating: {
-        '@type': 'Rating',
-        ratingValue: review.rating.toString(),
-        bestRating: '5',
-        worstRating: '1'
-      },
-      reviewBody: review.comment
-    }))
   };
 }
 
@@ -338,35 +312,14 @@ export async function createEnhancedServiceSchema(
 }
 
 /**
- * Ana sayfa için enhanced schema (Review ile)
+ * Ana sayfa enhanced schema — AggregateRating/Review YOK (GSC parent_node / self-serving).
+ * Root layout `buildRootSchemaGraphJson` birincil kaynaktır; bu yardımcı legacy uyumluluk.
  */
 export async function createEnhancedHomePageSchema(
-  baseUrl: string,
+  _baseUrl: string,
   businessName: string,
-  phone: string,
-  address: any
+  _phone: string,
+  _address: unknown
 ) {
-  // Örnek müşteri yorumları
-  const sampleReviews = [
-    {
-      author: 'Ahmet Y.',
-      rating: 5,
-      comment: 'Harika temizlik hizmeti, çok memnun kaldım.',
-      date: '2024-01-15'
-    },
-    {
-      author: 'Ayşe K.',
-      rating: 5,
-      comment: 'Profesyonel ekip, hızlı ve temiz çalıştılar.',
-      date: '2024-01-20'
-    },
-    {
-      author: 'Mehmet D.',
-      rating: 4,
-      comment: 'Fiyat performans olarak çok iyi.',
-      date: '2024-02-01'
-    }
-  ];
-
-  return createReviewSchema(businessName, sampleReviews);
+  return createLocalBusinessWithoutReviews(businessName);
 }

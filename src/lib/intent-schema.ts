@@ -7,6 +7,7 @@ import {
   generateOfferSchema,
   generateServiceSchema,
   generateWebPageSchema,
+  getSiteUrl,
   serializeSchemaGraph,
 } from '@/lib/seo';
 
@@ -39,6 +40,9 @@ export async function buildIntentLandingSchemaGraph(
     url: pageUrl,
     areaServed: params.areaServed,
   });
+  // Nested incomplete LocalBusiness → root #business @id (review/parent_node karışıklığı yok)
+  const businessId = `${getSiteUrl()}/#business`;
+  serviceSchema.provider = { '@id': businessId };
 
   const offerSchema = generateOfferSchema({
     name: params.intent.name,
@@ -46,6 +50,7 @@ export async function buildIntentLandingSchemaGraph(
     url: pageUrl,
     priceHint: params.intent.priceHint,
   });
+  offerSchema.seller = { '@id': businessId };
   serviceSchema.offers = offerSchema;
 
   const howToSchema = generateHowToSchema({

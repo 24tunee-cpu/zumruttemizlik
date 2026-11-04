@@ -537,63 +537,28 @@ export function generateFAQSchema(
 }
 
 /**
- * Review schema oluştur (Testimonials için)
- *
- * @example
- * generateReviewSchema({
- *   author: 'Ahmet Yılmaz',
- *   rating: 5,
- *   reviewBody: 'Harika hizmet!',
- *   datePublished: '2024-01-15',
- * });
+ * @deprecated GSC “Yorum snippet / parent_node” — Service/WebPage üzerine Review basma.
+ * Site kendi yorumlarını rich result olarak işaretlemez (AGENTS + Google guidelines).
+ * Görünür güven: trust-signals / Maps; JSON-LD’de AggregateRating yok.
  */
-export function generateReviewSchema(review: {
+export function generateReviewSchema(_review: {
   author: string;
   rating: number;
   reviewBody: string;
   datePublished: string | Date;
 }): Record<string, unknown> {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Review',
-    author: {
-      '@type': 'Person',
-      name: review.author,
-    },
-    reviewRating: {
-      '@type': 'Rating',
-      ratingValue: review.rating,
-      bestRating: 5,
-    },
-    reviewBody: review.reviewBody,
-    datePublished: new Date(review.datePublished).toISOString(),
-    publisher: {
-      '@type': 'Organization',
-      name: SITE_CONFIG.name,
-    },
-  };
+  return {};
 }
 
 /**
- * AggregateRating schema oluştur (Yıldız derecelendirmesi)
- *
- * @example
- * generateAggregateRatingSchema({
- *   ratingValue: 4.8,
- *   reviewCount: 127,
- * });
+ * @deprecated Self-serving AggregateRating — GSC invalid review snippet (parent_node).
+ * Çağırma; boş nesne döner (yanlışlıkla Service’e eklenmesin diye).
  */
-export function generateAggregateRatingSchema(rating: {
+export function generateAggregateRatingSchema(_rating: {
   ratingValue: number;
   reviewCount: number;
 }): Record<string, unknown> {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'AggregateRating',
-    ratingValue: rating.ratingValue,
-    bestRating: 5,
-    reviewCount: rating.reviewCount,
-  };
+  return {};
 }
 
 /**
