@@ -23,6 +23,8 @@ export default function robots(): MetadataRoute.Robots {
     '/blog?',
     '/fiyat-hesaplama?',
     '/iletisim?',
+    // Next.js RSC prefetch query — GSC “Diğer dosya türü” şişkinliği (HTML değil)
+    '/*?*_rsc=',
   ];
   const indexNowConfigured = Boolean(process.env.INDEXNOW_KEY?.trim());
   if (!indexNowConfigured && process.env.VERCEL_ENV === 'production') {
