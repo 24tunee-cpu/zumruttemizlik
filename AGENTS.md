@@ -23,6 +23,7 @@ Bu dosya **tek ana anayasadır**. Üçüncü taraf Agent Skills (ör. `garrettjs
 | 3 | `zvt-local-seo` + `zvt-garrett-dispatch` | GBP/citation + Garrett router (ücretli MCP kapalı) |
 | 4 | `zvt-programmatic-landing` | Semt / ilçe×hizmet kapısı |
 | 4b | `zvt-competitor-intel` | Rakip gap (Garrett competitor playbook filtreli) |
+| 4c | `zvt-gsc-ops` / `zvt-ga4-ops` / `zvt-change-validate` | GSC/GA kanıt + post-change doğrulama (CSV birinci; ücretli MCP kapalı) |
 | 5 | Local SEO Skills (Garrett) | Playbook only — indeks: `.cursor/skills/README.md` |
 | 6 | Genel SEO tavsiyesi | En düşük |
 
@@ -298,6 +299,7 @@ Her öneride: fayda · risk · efor · öncelik. Trafik/sıralama garantisi yok.
 | 2026-11-02 | `zvt-competitor-intel` skill: rakip gap matrisi + hard-stops; Garrett `local-competitor-analysis` AGENTS filtresi; ücretli MCP kapalı |
 | 2026-11-02 | Sarıyer hub CRO (ev temizliği H1/meta + CTA + WhyChoose); trust seed scrub; stok görsel kapısı |
 | 2026-11-03–04 | GSC/GA4 recovery: AggregateRating scrub, `_rsc`/Disallow, 2024→2026, CTR overrides, review parent_node sertleştirme; günlük: `docs/gsc-ga4-recovery-2026-11-04.md` |
+| 2026-11-04 | Skill pack: `zvt-gsc-ops` + `zvt-ga4-ops` + `zvt-change-validate` (younes/AminForou/MYehia/Garrett/Google GA MCP özü; AGENTS üstün) |
 
 **Talimat dosyaları:** `CLAUDE.md` → `@AGENTS.md`. Skill indeks: `.cursor/skills/README.md`. User-global: Garrett pack + mirrored `zvt-*`. Tek ana anayasa: bu dosya.
 
