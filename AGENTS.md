@@ -8,7 +8,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 > Kalıcı çalışma kuralları. Tahmin yazma; doğrulanmamış bilgiyi “açık soru” olarak işaretle.
 > Hassas bilgi (şifre, token, `.env` içeriği) bu dosyaya konmaz.
-> Son anayasa güncellemesi: 2026-11-02 (local SEO skill hiyerarşisi + keşif/feed notları).
+> Son anayasa güncellemesi: 2026-11-04 (GSC/GA4 recovery notu + CTR overrides).
 
 ---
 
@@ -117,7 +117,7 @@ scripts/          # seed, bootstrap, validate, audit yardımcıları
 
 - Programatik ilçe/hizmet matrisi + semt landing (Sarıyer 4 semt)
 - Çoklu sitemap, canonical yardımcıları (`src/lib/seo.ts`)
-- Schema: LocalBusiness/Organization root (`root-schema.ts`), FAQ/Breadcrumb, AggregateRating (Maps)
+- Schema: LocalBusiness/Organization root (`root-schema.ts`), FAQ/Breadcrumb; **AggregateRating JSON-LD yok** (GSC self-serving / parent_node — puan HTML + Maps)
 - GSC sync + meta A/B + cannibalization map
 - SEO Autopilot: blog/geo-sss yayın, refresh, seasonal, IndexNow, run log + `/admin/seo-autopilot`
 - İç link: topic cluster, blog publish links, silo, priority links
@@ -245,6 +245,13 @@ Her öneride: fayda · risk · efor · öncelik. Trafik/sıralama garantisi yok.
 | A7 | ~~P2~~ | ~~Citation tracker~~ → admin GEO dizin durumu + MapPlatformListing PATCH (2026-11-02) |
 | A8 | ~~P3~~ | İlçe fiyat: hub CTA (thin URL yok) + galeri SEO; video schema yok (içerik yok) |
 | A9 | ~~P3~~ | ~~README 14 vs 16~~ → Next.js 16 notu |
+| A10 | ~~P1~~ | ~~GSC review parent_node / AggregateRating on Service~~ → scrub + `#business` @id (`c4f3cbb`, `5fdf451`) |
+| A11 | ~~P1~~ | ~~Crawl `_rsc` / query noindex / 2024 blog 404~~ → robots+redirect+308 (`9753c85`…`1e82b72`) |
+| A12 | P2 | GSC CTR: Sarıyer pair/hub + blog meta (`gsc-ctr-overrides.ts`, `1f463b4`) — 7–14g izle |
+| A13 | P2 | GA4 `generate_lead` key event + GBP kategori (Peyzaj/Tekne) — **panel manuel** |
+| A14 | P3 | Breadcrumb GSC tespit 45→11 (yeniden işleme); canlı `name` OK — doğrulama bekle |
+
+**Tam “nasıldı / ne yaptık” günlüğü:** [`docs/gsc-ga4-recovery-2026-11-04.md`](docs/gsc-ga4-recovery-2026-11-04.md)
 
 ---
 
@@ -290,6 +297,7 @@ Her öneride: fayda · risk · efor · öncelik. Trafik/sıralama garantisi yok.
 | 2026-11-02 | Gap pass: `gbp-services-copy` + Admin GEO yapıştır, review yanıt/istek, engagement money bridges, `seo:verify-env` / stock-image report, randevu review CTA; A3 kısmi (IndexNow/GBP OK, GSC/Maps/Bing/Apple eksik) |
 | 2026-11-02 | `zvt-competitor-intel` skill: rakip gap matrisi + hard-stops; Garrett `local-competitor-analysis` AGENTS filtresi; ücretli MCP kapalı |
 | 2026-11-02 | Sarıyer hub CRO (ev temizliği H1/meta + CTA + WhyChoose); trust seed scrub; stok görsel kapısı |
+| 2026-11-03–04 | GSC/GA4 recovery: AggregateRating scrub, `_rsc`/Disallow, 2024→2026, CTR overrides, review parent_node sertleştirme; günlük: `docs/gsc-ga4-recovery-2026-11-04.md` |
 
 **Talimat dosyaları:** `CLAUDE.md` → `@AGENTS.md`. Skill indeks: `.cursor/skills/README.md`. User-global: Garrett pack + mirrored `zvt-*`. Tek ana anayasa: bu dosya.
 
