@@ -268,23 +268,9 @@ const nextConfig: NextConfig = {
         destination: 'https://www.zumrutvaditemizlik.com/:path*',
       },
       /**
-       * Next.js `?_rsc=` — Googlebot RSC header göndermeden tarayınca GSC “Diğer” şişiyor.
-       * next.config redirect, proxy’den ÖNCE çalışır; gerçek Flight (`rsc: 1`) dokunulmaz.
+       * `?_rsc=` temizliği: next.config `destination: /:path*` query’yi KORUR →
+       * Location hâlâ `?_rsc=` (308 döngü / crawl israfı). Stripping `src/proxy.ts`’te.
        */
-      {
-        source: '/',
-        has: [{ type: 'query', key: '_rsc' }],
-        missing: [{ type: 'header', key: 'rsc', value: '1' }],
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/:path*',
-        has: [{ type: 'query', key: '_rsc' }],
-        missing: [{ type: 'header', key: 'rsc', value: '1' }],
-        destination: '/:path*',
-        permanent: true,
-      },
       // Legacy redirects (example)
       {
         source: '/hizmetlerimiz',

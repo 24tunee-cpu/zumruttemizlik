@@ -23,7 +23,7 @@ GA4 = sitede **ne olur** (oturum, olay, dönüşüm). Anahtar kelime → GSC (`z
 
 1. Kullanıcı GA4 ekran / export  
 2. Admin pazarlama analitik (`/admin/pazarlama-analitik`)  
-3. (Onay) `analytics-mcp` — credential chat’e yok  
+3. MCP kurma — CSV/ekran yeterli (AGENTS: onaysız MCP yok)  
 
 ## ZVT key events (doğrulanacak)
 
