@@ -88,3 +88,18 @@
 - [ ] GA4 `generate_lead` dönüşüm raporu
 
 *Not tarihi: 2026-11-04. Güncelleme: yeni GSC dump gelince bu dosyaya kısa “delta” satırı ekle.*
+
+---
+
+## 6. Delta — SEO OS pass (2026-11-04 akşam)
+
+Skills sırası: `zvt-seo-os` = gsc → ga4 → validate → beast.
+
+| Adım | Sonuç |
+|------|--------|
+| GSC | Baseline hâlâ geçerli; yerel `gsc csv/` klasörü silinmiş — yeniden export faydalı |
+| GA4 | Kod `generate_lead` OK; panel key event hâlâ manuel |
+| Validate | CTR titles canlı OK; AggregateRating yok; 2024→2026 OK; `?_rsc` strip güçlendirildi (`/?` destination + proxy) |
+| Beast | cozumler `WhyChooseZvt`; koltuk SERVICE_CTR; type-check + seo:gates OK |
+
+**Garanti yok.** Re-crawl 3–14g.

@@ -23,7 +23,7 @@ Bu dosya **tek ana anayasadır**. Üçüncü taraf Agent Skills (ör. `garrettjs
 | 3 | `zvt-local-seo` + `zvt-garrett-dispatch` | GBP/citation + Garrett router (ücretli MCP kapalı) |
 | 4 | `zvt-programmatic-landing` | Semt / ilçe×hizmet kapısı |
 | 4b | `zvt-competitor-intel` | Rakip gap (Garrett competitor playbook filtreli) |
-| 4c | `zvt-gsc-ops` / `zvt-ga4-ops` / `zvt-change-validate` | GSC/GA kanıt + post-change doğrulama (CSV birinci; ücretli MCP kapalı) |
+| 4c | `zvt-seo-os` → gsc-ops / ga4-ops / change-validate / seo-beast | Peak SEO orkestrasyon (CSV birinci; ücretli MCP kapalı) |
 | 5 | Local SEO Skills (Garrett) | Playbook only — indeks: `.cursor/skills/README.md` |
 | 6 | Genel SEO tavsiyesi | En düşük |
 

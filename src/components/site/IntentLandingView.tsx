@@ -14,6 +14,7 @@ import { buildCalculatorHref } from '@/lib/intent-analytics';
 import { SITE_CONTACT, toTelHref } from '@/config/site-contact';
 import { ConversionSeoAside } from '@/components/site/ConversionSeoAside';
 import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
+import { WhyChooseZvt } from '@/components/site/WhyChooseZvt';
 
 interface IntentLandingViewProps {
   intent: IntentLanding;
@@ -232,6 +233,16 @@ export function IntentLandingView({ intent }: IntentLandingViewProps) {
           </div>
         </div>
       </section>
+
+      <div className="border-t border-slate-800 px-4 py-10 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <WhyChooseZvt
+            contextLabel={intent.name}
+            sourcePrefix={`cozum-${intent.slug}-why`}
+            tone="dark"
+          />
+        </div>
+      </div>
 
       {/* CTA */}
       <section className="border-t border-slate-800 py-14">

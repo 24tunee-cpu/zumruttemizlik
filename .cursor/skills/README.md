@@ -9,7 +9,8 @@ Anayasa: kök `AGENTS.md` (üstün). Skill pack: **2026-11-02 smart** (Google AI
 | `zvt-local-seo` | GBP panel, yorum, citation, SAB/hybrid |
 | `zvt-competitor-intel` | Rakip gap — neden öndeler, ne güncellenir (ücretli MCP kapalı) |
 | `zvt-programmatic-landing` | `/bolgeler` semt / ilçe×hizmet (swap-city) |
-| `zvt-gsc-ops` | GSC CSV/MCP: CTR, drop, cannibalization, rich-result, crawl |
+| `zvt-seo-os` | **Orkestratör** — gsc → ga4 → validate → beast sırayla |
+| `zvt-gsc-ops` | GSC CSV/ekran: CTR, drop, cannibalization, rich-result, crawl |
 | `zvt-ga4-ops` | GA4 lead/key event, landing dönüşüm, GBP UTM |
 | `zvt-change-validate` | Deploy/GSC fix sonrası **doğrulama tarama** (recovery baseline) |
 
@@ -24,9 +25,8 @@ Anayasa: kök `AGENTS.md` (üstün). Skill pack: **2026-11-02 smart** (Google AI
   → type-check / seo:gates / (GSC field iddiası yalnız veri varsa)
   → exit: garanti yok
 
-GSC/GA veri veya “değişiklik doğru mu?”:
-  → zvt-gsc-ops ve/veya zvt-ga4-ops
-  → sonra zvt-change-validate (canlı + recovery doc)
+GSC/GA / “SEO canavarı” / full pass:
+  → zvt-seo-os (gsc-ops → ga4-ops → change-validate → seo-beast)
 ```
 
 ## GSC/GA skill araştırması (2026-11-04)
