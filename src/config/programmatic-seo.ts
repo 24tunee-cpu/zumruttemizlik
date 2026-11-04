@@ -142,7 +142,7 @@ export const DISTRICT_LANDINGS: DistrictLanding[] = [
     side: 'avrupa',
     populationNote: 'Zekeriyaköy başta olmak üzere villa, site ve yüksek gelir segmentinde detay beklentisi',
     regionBlurb:
-      'Sarıyer ev temizliği ve villa/site hijyeninde Zekeriyaköy, Bahçeköy, Uskumruköy ve Boğaz hattında (Maslak, Tarabya, İstinye) titiz temizlik uyguluyoruz. Sarıyer, öncelikli hizmet bölgemizdir — kesin fiyat ücretsiz keşif sonrası netleşir.',
+      'Zümrüt Vadi Temizlik, Sarıyer’de ev, villa ve site temizliğinde Zekeriyaköy, Bahçeköy, Uskumruköy ile Maslak–Tarabya–İstinye hattına odaklanır. Tahmini aralık online hesaplanır; kesin bedel ücretsiz keşif sonrası netleşir.',
     neighborhoods: [
       'Zekeriyaköy',
       'Bahçeköy',
@@ -155,13 +155,13 @@ export const DISTRICT_LANDINGS: DistrictLanding[] = [
       'İstinye',
     ],
     localSignals: [
-      'Zekeriyaköy, Bahçeköy ve Uskumruköy hattındaki müstakil villa ve sitelerde detaylı ev temizliği ile taşınma öncesi/sonrası temizlik talepleri yoğundur.',
-      'Boğaz hattı yerleşimlerinde cam, dış cephe ve bahçe kenarı yüzey temizliği sık talep edilir; bahçe peyzaj/düzenleme ayrı bir hizmet değildir.',
+      'Zümrüt Vadi Temizlik, Zekeriyaköy–Bahçeköy–Uskumruköy hattında villa ve kapalı siteler için detaylı ev ile taşınma öncesi/sonrası temizliği ana operasyon kapsamına alır; kapsam ve süre ücretsiz keşifte yazılır.',
+      'Maslak, Tarabya ve İstinye hattında cam, dış cephe ile bahçe kenarı yüzey temizliği aynı iş planında paketlenebilir. Peyzaj ve bahçe düzenleme sunulmaz; yalnızca yüzey temizliği yapılır.',
       'Yüksek segment konutlarda aynı gün ücretsiz keşif ve gizlilik odaklı çalışma önceliklidir.',
     ],
     deepDive: [
       'Zekeriyaköy, Zümrüt Vadi Temizlik için öncelikli hizmet bölgesidir. Bölgedeki müstakil villalar, kapalı siteler ve orman içi yerleşimlerde detaylı ev temizliği, inşaat sonrası teslim temizliği ve periyodik bakım paketlerinde hızlı ekip yönlendirmesi yapıyoruz.',
-      'Bahçeköy, Uskumruköy, Maslak ve Boğaz hattındaki (Tarabya, Yeniköy, İstinye) konutlarda geniş cam yüzeyleri, yüksek tavanlar ve bahçeli yapılar nedeniyle cam temizliği, dış cephe ve detay temizlik sıklıkla birlikte planlanır. Alanı; zemin türü, cam yüzeyi, ıslak hacim ve erişim koşullarına göre başlıklara ayırıp uyguluyoruz.',
+      'Geniş cam ve yüksek tavanlı Sarıyer konutlarında cam, dış cephe ve detay temizliği tek keşifte zemin türü, cam metrajı, ıslak hacim ve erişime göre ayrı kalemler halinde planlanır.',
       'Sarıyer genelinde ana sayfamızdaki Anında Fiyat Hesaplama aracıyla mekan tipi, oda sayısı veya metrekare ve ekstralara göre tahmini fiyat aralığınızı saniyeler içinde görebilir, ardından WhatsApp üzerinden ücretsiz keşif randevusu oluşturabilirsiniz.',
     ],
   },

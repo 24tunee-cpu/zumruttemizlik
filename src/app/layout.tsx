@@ -13,7 +13,6 @@
 
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import Script from "next/script";
 import { DeferredDexterWidget } from "@/components/site/DeferredDexterWidget";
 import VercelMonitoring from "@/components/analytics/VercelMonitoring";
 import { CoreWebVitalsOptimizer } from "@/lib/core-web-vitals";
@@ -164,7 +163,8 @@ export default async function RootLayout({ children }: RootLayoutProps) {
       suppressHydrationWarning
     >
       <head>
-        <Script
+        {/* next/script JSON-LD’yi flight payload’a gömebilir — crawlable SSR script kullan */}
+        <script
           id="site-root-schema-graph"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: rootSchemaJsonLd }}

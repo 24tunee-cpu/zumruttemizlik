@@ -1,0 +1,56 @@
+{
+  "generatedAt": "2026-11-04T18:14:51.085Z",
+  "base": "https://www.zumrutvaditemizlik.com",
+  "pageCount": 3,
+  "bySev": {
+    "High": 0,
+    "Medium": 0,
+    "Low": 1,
+    "Info": 0
+  },
+  "top": [],
+  "pages": [
+    {
+      "url": "https://www.zumrutvaditemizlik.com/",
+      "status": 200,
+      "title": "İstanbul Temizlik Şirketi | Sarıyer & Zekeriyaköy",
+      "description": "Sarıyer ve Zekeriyaköy ev, ofis, inşaat sonrası temizlik. Google 4.9 · 12 yorum. Ücretsiz keşif, aynı gün randevu. 0551 925 09 43.",
+      "canonical": "https://www.zumrutvaditemizlik.com",
+      "h1": "Sarıyer & Zekeriyaköy temizlik şirketi",
+      "h1Count": 1,
+      "noindex": false,
+      "textLen": 7537,
+      "findings": []
+    },
+    {
+      "url": "https://www.zumrutvaditemizlik.com/bolgeler/sariyer",
+      "status": 200,
+      "title": "Sarıyer Temizlik Şirketi | Ev & Zekeriyaköy Villa",
+      "description": "Sarıyer temizlik şirketi: ev, villa, inşaat sonrası. Zekeriyaköy odaklı. Google 4.9 · 12 yorum. Ücretsiz keşif · fiyat hesapla.",
+      "canonical": "https://www.zumrutvaditemizlik.com/bolgeler/sariyer",
+      "h1": "Sarıyer Temizlik Şirketi — Ev & Zekeriyaköy Villa",
+      "h1Count": 1,
+      "noindex": false,
+      "textLen": 7641,
+      "findings": []
+    },
+    {
+      "url": "https://www.zumrutvaditemizlik.com/cozumler",
+      "status": 200,
+      "title": "Temizlik Çözümleri | İnşaat, Taşınma, Kira & Ofis | İstanbul | Zümrüt Vadi Temizlik",
+      "description": "İnşaat sonrası, taşınma, kira teslim, boş ev ve kurumsal ofis temizliği çözümleri. Sarıyer, Zekeriyaköy ve İstanbul geneli. Ücretsiz keşif ve online fiyat he…",
+      "canonical": "https://www.zumrutvaditemizlik.com/cozumler",
+      "h1": "Temizlik Çözümleri",
+      "h1Count": 1,
+      "noindex": false,
+      "textLen": 3686,
+      "findings": [
+        {
+          "sev": "Low",
+          "code": "title_long",
+          "msg": "Title uzun (83)"
+        }
+      ]
+    }
+  ]
+}

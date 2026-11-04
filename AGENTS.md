@@ -301,6 +301,7 @@ Her öneride: fayda · risk · efor · öncelik. Trafik/sıralama garantisi yok.
 | 2026-11-03–04 | GSC/GA4 recovery: AggregateRating scrub, `_rsc`/Disallow, 2024→2026, CTR overrides, review parent_node sertleştirme; günlük: `docs/gsc-ga4-recovery-2026-11-04.md` |
 | 2026-11-04 | Skill pack: `zvt-gsc-ops` + `zvt-ga4-ops` + `zvt-change-validate` (younes/AminForou/MYehia/Garrett/Google GA MCP özü; AGENTS üstün) |
 | 2026-11-04 | Site/GEO audit pack: `zvt-site-audit` + `zvt-page-audit` + `zvt-geo-audit` + crawl scripts (`seo:crawl` / `seo:page-audit` / `seo:geo-audit`); JakeLabate/AgriciDaniel/MYehia GEO özü; AGENTS üstün |
+| 2026-11-04 | Cognitic `geoskills` kısa deneme → extract `docs/geoskills-useful-extract-2026-11-04.md` → pack silindi; kalıcı GEO = `zvt-geo-audit` |
 
 **Talimat dosyaları:** `CLAUDE.md` → `@AGENTS.md`. Skill indeks: `.cursor/skills/README.md`. User-global: Garrett pack + mirrored `zvt-*`. Tek ana anayasa: bu dosya.
 

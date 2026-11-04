@@ -213,10 +213,7 @@ export default async function ProgrammaticLandingPage({ params }: Props) {
     serviceType: serviceData.name,
     areaServed: districtData.name,
     provider: {
-      '@type': 'LocalBusiness',
-      name: 'Zümrüt Vadi Temizlik',
-      url: siteRoot,
-      telephone: SITE_CONTACT.phoneE164,
+      '@id': `${siteRoot}/#business`,
     },
     url: canonical,
     description: `${districtData.name} bölgesinde ${contentVariant.heroLead}`,
