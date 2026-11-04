@@ -26,7 +26,7 @@ const STATIC_PAGES: StaticEntry[] = [
   { path: '/iletisim', changeFrequency: 'monthly', priority: 0.9 },
   { path: '/randevu', changeFrequency: 'weekly', priority: 0.88 },
   { path: '/rehber', changeFrequency: 'monthly', priority: 0.82 },
-  { path: '/ara', changeFrequency: 'weekly', priority: 0.75 },
+  // /ara robots noindex + Disallow — sitemap’e koyma (keşif↔robots çelişkisi)
   { path: '/blog', changeFrequency: 'daily', priority: 0.85, dynamicLastmod: 'blog' },
   { path: '/galeri', changeFrequency: 'weekly', priority: 0.8, dynamicLastmod: 'galeri' },
   { path: '/harita-ve-yorumlar', changeFrequency: 'weekly', priority: 0.84 },

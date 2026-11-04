@@ -182,13 +182,26 @@ const nextConfig: NextConfig = {
           },
         ],
       },
-      // Static Assets (caching)
+      // Static Assets (caching) — indekslenmesin; render için robots allow kalır
       {
         source: '/_next/static/:path*',
         headers: [
           {
             key: 'Cache-Control',
             value: 'public, max-age=31536000, immutable',
+          },
+          {
+            key: 'X-Robots-Tag',
+            value: 'noindex, nofollow',
+          },
+        ],
+      },
+      {
+        source: '/_next/image',
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'noindex, nofollow',
           },
         ],
       },
@@ -253,6 +266,24 @@ const nextConfig: NextConfig = {
         ],
         permanent: true,
         destination: 'https://www.zumrutvaditemizlik.com/:path*',
+      },
+      /**
+       * Next.js `?_rsc=` — Googlebot RSC header göndermeden tarayınca GSC “Diğer” şişiyor.
+       * next.config redirect, proxy’den ÖNCE çalışır; gerçek Flight (`rsc: 1`) dokunulmaz.
+       */
+      {
+        source: '/',
+        has: [{ type: 'query', key: '_rsc' }],
+        missing: [{ type: 'header', key: 'rsc', value: '1' }],
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/:path*',
+        has: [{ type: 'query', key: '_rsc' }],
+        missing: [{ type: 'header', key: 'rsc', value: '1' }],
+        destination: '/:path*',
+        permanent: true,
       },
       // Legacy redirects (example)
       {

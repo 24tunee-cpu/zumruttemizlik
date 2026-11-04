@@ -1,6 +1,14 @@
 /**
  * Eski WordPress / hatalı URL kalıpları — GSC 404 ve junk URL düzeltmesi.
+ * İlçe legacy (`/sariyer` → `/bolgeler/sariyer`) edge’de çözülür; App Router
+ * sayfa redirect’ine düşmeden tek hop 308 (crawl “Diğer” + gecikme azalır).
  */
+import {
+  getDistrictBySlug,
+  getNeighborhoodLanding,
+  getServiceBySlug,
+} from '@/config/programmatic-seo';
+
 export type LegacyRedirect = {
   to: string;
   permanent: boolean;
@@ -64,6 +72,26 @@ export function resolveLegacyRedirect(pathname: string): LegacyRedirect | null {
       .replace(/[\u0300-\u036f]/g, '')
       .toLowerCase();
     return { to: `/bolgeler/${slug}`, permanent: true };
+  }
+
+  // /sariyer → /bolgeler/sariyer (kök catch-all ile çakışmayan bilinen ilçeler)
+  const districtOnly = path.match(/^\/([a-z0-9-]+)$/i);
+  if (districtOnly?.[1]) {
+    const d = getDistrictBySlug(districtOnly[1].toLowerCase());
+    if (d) return { to: `/bolgeler/${d.slug}`, permanent: true };
+  }
+
+  // /sariyer/ev-temizligi | /sariyer/zekeriyakoy → /bolgeler/...
+  const districtChild = path.match(/^\/([a-z0-9-]+)\/([a-z0-9-]+)$/i);
+  if (districtChild?.[1] && districtChild[2]) {
+    const dSlug = districtChild[1].toLowerCase();
+    const child = districtChild[2].toLowerCase();
+    const d = getDistrictBySlug(dSlug);
+    if (d) {
+      if (getServiceBySlug(child) || getNeighborhoodLanding(dSlug, child)) {
+        return { to: `/bolgeler/${d.slug}/${child}`, permanent: true };
+      }
+    }
   }
 
   return null;

@@ -24,10 +24,22 @@ export async function proxy(request: NextRequest) {
   /**
    * `?_rsc=` Googlebot’a “Diğer dosya türü” olarak 200 dönüp crawl şişiriyor.
    * Gerçek Next flight isteği (RSC header) aynen geçer; botsuz istek → temiz URL’ye 308.
+   * Not: nextUrl.searchParams bazı edge durumlarda boş kalabiliyor → raw URL yedek.
    */
-  if (request.nextUrl.searchParams.has('_rsc') && !isNextRscFlightRequest(request)) {
+  const rawUrl = request.url;
+  const hasRscQuery =
+    request.nextUrl.searchParams.has('_rsc') || /[?&]_rsc=/.test(rawUrl);
+  if (hasRscQuery && !isNextRscFlightRequest(request)) {
     const clean = request.nextUrl.clone();
     clean.searchParams.delete('_rsc');
+    // nextUrl query boşsa yine de pathname’e düş
+    if (/[?&]_rsc=/.test(clean.search)) {
+      clean.search = clean.search
+        .replace(/([?&])_rsc=[^&]*/g, '$1')
+        .replace(/\?&/, '?')
+        .replace(/[?&]$/, '')
+        .replace(/&&/g, '&');
+    }
     return NextResponse.redirect(clean, 308);
   }
 
