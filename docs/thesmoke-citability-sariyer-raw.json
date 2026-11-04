@@ -1,0 +1,6 @@
+﻿{
+  "ok": false,
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\vedat\\AppData\\Local\\Programs\\Python\\Python311\\share\\geoskills\\skills\\geo\\scripts\\citability_scorer.py\", line 342, in <module>\n    result = analyze_page_citability(url)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\vedat\\AppData\\Local\\Programs\\Python\\Python311\\share\\geoskills\\skills\\geo\\scripts\\citability_scorer.py\", line 261, in analyze_page_citability\n    soup = BeautifulSoup(response.text, \"lxml\")\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\vedat\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\bs4\\__init__.py\", line 366, in __init__\n    raise FeatureNotFound(\nbs4.exceptions.FeatureNotFound: Couldn't find a tree builder with the features you requested: lxml. Do you need to install a parser library?"
+}

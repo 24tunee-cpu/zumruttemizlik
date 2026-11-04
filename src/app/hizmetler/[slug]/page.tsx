@@ -339,17 +339,7 @@ function generateServiceSchema(service: ServiceData) {
     "url": url,
     "serviceType": service.title,
     "provider": {
-      "@type": "LocalBusiness",
-      "name": "Zümrüt Vadi Temizlik Şirketi",
-      "url": canonicalUrl('/'),
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": SITE_CONTACT.addressStreet,
-        "addressLocality": SITE_CONTACT.addressLocality,
-        "addressRegion": SITE_CONTACT.addressRegion,
-        "postalCode": SITE_CONTACT.postalCode,
-        "addressCountry": "TR"
-      }
+      "@id": `${getSiteUrl()}/#business`,
     },
     "areaServed": [
       { "@type": "City", "name": "Sarıyer" },

@@ -308,9 +308,7 @@ export function generateServiceSchema(service: {
     name: service.title,
     description: service.description,
     provider: {
-      '@type': 'LocalBusiness',
-      name: SITE_CONFIG.name,
-      '@id': SITE_URL,
+      '@id': `${SITE_URL}/#business`,
     },
     url: fullUrl,
     image: fullImage,

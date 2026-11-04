@@ -51,12 +51,12 @@ const SERVICE_TEMPLATES = {
  * Service schema oluştur
  */
 function createServiceSchema(
-  serviceType: string,
+  _serviceType: string,
   template: any,
   baseUrl: string,
-  businessName: string,
-  phone: string,
-  address: any
+  _businessName: string,
+  _phone: string,
+  _address: any
 ) {
   return {
     '@context': 'https://schema.org',
@@ -64,10 +64,7 @@ function createServiceSchema(
     name: template.name,
     description: template.description,
     provider: {
-      '@type': 'LocalBusiness',
-      name: businessName,
-      telephone: phone,
-      address: address
+      '@id': `${baseUrl.replace(/\/$/, '')}/#business`,
     },
     serviceType: template.name,
     areaServed: {

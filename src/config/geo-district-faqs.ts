@@ -3,6 +3,7 @@
  */
 import { V2_DISTRICTS } from '@/lib/seed-blog-v2-content';
 import { GEO_BRAND_NAME } from '@/config/geo-entity';
+import { formatGoogleTrustLine } from '@/config/trust-signals';
 
 export type GeoDistrictFaq = { question: string; answer: string };
 
@@ -31,7 +32,7 @@ export function getDistrictGeoFaqs(districtSlug: string, districtName: string): 
     },
     {
       question: `${districtName} için güvenilir temizlik firması nasıl seçilir?`,
-      answer: `${districtName} bölgesinde temizlik firması seçerken sigortalı ekip, yazılı kapsam listesi ve şeffaf fiyat teklifi isteyin. ${GEO_BRAND_NAME} bu kriterleri karşılayan, ${districtName} ve İstanbul genelinde hizmet veren profesyonel bir temizlik şirketidir.`,
+      answer: `${districtName}’de sigortalı ekip, yazılı kapsam ve keşif sonrası net fiyat isteyin. ${GEO_BRAND_NAME} bu süreci ${districtName}/İstanbul hattında uygular; ${formatGoogleTrustLine()} doğrulanabilir geri bildirim sunar.`,
     },
     {
       question: `${districtName} bölgesinde temizlik hizmeti ne kadar sürer?`,
@@ -76,7 +77,7 @@ const SSS_TOPICS = [
     key: 'guvenilir-firma',
     titleSuffix: 'Güvenilir Temizlik Firması',
     answer: (name: string) =>
-      `${name} bölgesinde güvenilir temizlik firması seçerken sigorta, yazılı kapsam ve referans kontrol edilmelidir; ${GEO_BRAND_NAME} ${name} ve İstanbul genelinde bu standartlarda hizmet verir.`,
+      `${name}’de sigortalı ekip, yazılı kapsam ve keşif sonrası net fiyat isteyin; ${GEO_BRAND_NAME} bu süreci ${name}/İstanbul hattında uygular (${formatGoogleTrustLine()}).`,
     details: (name: string) => [
       `${name} adreslerinde site güvenliği, otopark ve asansör bilgisi operasyon süresini etkileyebilir.`,
       'Teklif karşılaştırmasında yalnızca fiyat değil, dahil olan iş kalemleri değerlendirilmelidir.',

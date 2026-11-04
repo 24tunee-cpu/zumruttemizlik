@@ -1,0 +1,179 @@
+{
+  "version": 1,
+  "skills": {
+    "ai-seo": {
+      "source": "TheSmokeDev/geo-skills",
+      "sourceType": "github",
+      "skillPath": "skills/ai-seo/SKILL.md",
+      "computedHash": "780c6d47db40fc12dd1f332d1c19c94c6573a7d4ac0869db7d3b4f6b628c7121"
+    },
+    "competitor-alternatives": {
+      "source": "TheSmokeDev/geo-skills",
+      "sourceType": "github",
+      "skillPath": "skills/competitor-alternatives/SKILL.md",
+      "computedHash": "cd659f1e90560e272d683681ac1b45769c25c0f7b26f524358ecc78244fd1471"
+    },
+    "content-strategy": {
+      "source": "TheSmokeDev/geo-skills",
+      "sourceType": "github",
+      "skillPath": "skills/content-strategy/SKILL.md",
+      "computedHash": "e01f52eeee7b508f205edf26c54949ba2aa69ab15991297f6fe9a0f1d3a70661"
+    },
+    "geo": {
+      "source": "TheSmokeDev/geo-skills",
+      "sourceType": "github",
+      "skillPath": "skills/geo/SKILL.md",
+      "computedHash": "f2fb108573b51562f4ca5425c69cf4a906b8ead0f3a504e2fdc7122552f558f7"
+    },
+    "geo-ai-index-access": {
+      "source": "TheSmokeDev/geo-skills",
+      "sourceType": "github",
+      "skillPath": "skills/geo-ai-index-access/SKILL.md",
+      "computedHash": "c267f14d3de549278c24bae11049d97e212bc1175dbc373a3f206e648740e7a2"
+    },
+    "geo-audit": {
+      "source": "TheSmokeDev/geo-skills",
+      "sourceType": "github",
+      "skillPath": "skills/geo-audit/SKILL.md",
+      "computedHash": "759f5c01a5a7aadceb6f3349d236fe95651a8070441073bdc39da9b015981529"
+    },
+    "geo-brand-mentions": {
+      "source": "TheSmokeDev/geo-skills",
+      "sourceType": "github",
+      "skillPath": "skills/geo-brand-mentions/SKILL.md",
+      "computedHash": "76dc1b3f5261ed08dc699b83e3a897096964cdfc447146cc76873adf3916ce5c"
+    },
+    "geo-citability": {
+      "source": "TheSmokeDev/geo-skills",
+      "sourceType": "github",
+      "skillPath": "skills/geo-citability/SKILL.md",
+      "computedHash": "bc64dd1b129e433aceb6c9c85aa5fb57b761e33efa2d824318b7af988fc63796"
+    },
+    "geo-compare": {
+      "source": "TheSmokeDev/geo-skills",
+      "sourceType": "github",
+      "skillPath": "skills/geo-compare/SKILL.md",
+      "computedHash": "af77104fd23b220edd2ce490fe6c5e08a60da368e8a63ef8a71c2cd4b6d1c9c2"
+    },
+    "geo-content": {
+      "source": "TheSmokeDev/geo-skills",
+      "sourceType": "github",
+      "skillPath": "skills/geo-content/SKILL.md",
+      "computedHash": "40bd9202d9cd508de75442d503b49b49e1ae1a5c57252d9f3a45b0ad817d84fc"
+    },
+    "geo-crawlers": {
+      "source": "TheSmokeDev/geo-skills",
+      "sourceType": "github",
+      "skillPath": "skills/geo-crawlers/SKILL.md",
+      "computedHash": "d088c0e1af100eb0b721adfcf0ad9baac4a6ff87741de9ad4ffc6947cbe177c0"
+    },
+    "geo-fanout": {
+      "source": "TheSmokeDev/geo-skills",
+      "sourceType": "github",
+      "skillPath": "skills/geo-fanout/SKILL.md",
+      "computedHash": "3d0bdd667e575933ec993fce8245f2b22fe0d786aef5fadb555eae073880a825"
+    },
+    "geo-llmstxt": {
+      "source": "TheSmokeDev/geo-skills",
+      "sourceType": "github",
+      "skillPath": "skills/geo-llmstxt/SKILL.md",
+      "computedHash": "267c3ad2eaaa00d0d2ef9f09eaac4f6ecd1d084743ceaed350531273d4a77c07"
+    },
+    "geo-measurement": {
+      "source": "TheSmokeDev/geo-skills",
+      "sourceType": "github",
+      "skillPath": "skills/geo-measurement/SKILL.md",
+      "computedHash": "275fd1e8c331ee01f65257aec911ea0e0e27891b7c48d8c2be88ed9d8b0c7107"
+    },
+    "geo-platform-optimizer": {
+      "source": "TheSmokeDev/geo-skills",
+      "sourceType": "github",
+      "skillPath": "skills/geo-platform-optimizer/SKILL.md",
+      "computedHash": "83cf8199cb2bfeec199f0ecf8916cd64f46d975b109317e6dfe042e9b6a75fbd"
+    },
+    "geo-proposal": {
+      "source": "TheSmokeDev/geo-skills",
+      "sourceType": "github",
+      "skillPath": "skills/geo-proposal/SKILL.md",
+      "computedHash": "edc020a59d3a7053d449be409e5048b0e2f156f2319b8f4d297eb11a41d89516"
+    },
+    "geo-prospect": {
+      "source": "TheSmokeDev/geo-skills",
+      "sourceType": "github",
+      "skillPath": "skills/geo-prospect/SKILL.md",
+      "computedHash": "57f4cc2201de3a61d165ea75d053c4e2f1b7eeba0a1aa757debc280d168f9381"
+    },
+    "geo-report": {
+      "source": "TheSmokeDev/geo-skills",
+      "sourceType": "github",
+      "skillPath": "skills/geo-report/SKILL.md",
+      "computedHash": "5f4d0f0e6c4ebc7b3d05c26904289e14f0a6638f982d60b83fb0ebf5aa6e6d05"
+    },
+    "geo-report-pdf": {
+      "source": "TheSmokeDev/geo-skills",
+      "sourceType": "github",
+      "skillPath": "skills/geo-report-pdf/SKILL.md",
+      "computedHash": "090d7490124beb5bca318e94910fa899944444cb0890520e06c00bfe843a7dd3"
+    },
+    "geo-schema": {
+      "source": "TheSmokeDev/geo-skills",
+      "sourceType": "github",
+      "skillPath": "skills/geo-schema/SKILL.md",
+      "computedHash": "394c3240036dd45ec2e4669f09ad4f4d5f5a8f400971e3f7427c889ca935579a"
+    },
+    "geo-technical": {
+      "source": "TheSmokeDev/geo-skills",
+      "sourceType": "github",
+      "skillPath": "skills/geo-technical/SKILL.md",
+      "computedHash": "bbda43d2ab8343b4e466670f0a159f1f307c96114941101026b0aa6940016200"
+    },
+    "geo-youtube": {
+      "source": "TheSmokeDev/geo-skills",
+      "sourceType": "github",
+      "skillPath": "skills/geo-youtube/SKILL.md",
+      "computedHash": "fb5f1c54063e34cd1e985a2b98a62ed0db97bb99a1885d0154540f1a43859fda"
+    },
+    "geoskills-cli": {
+      "source": "TheSmokeDev/geo-skills",
+      "sourceType": "github",
+      "skillPath": "skills/geoskills-cli/SKILL.md",
+      "computedHash": "9acf0713a1226f517c52e465518631404fc3db50cf6a4dd95ae4c12512058321"
+    },
+    "programmatic-seo": {
+      "source": "TheSmokeDev/geo-skills",
+      "sourceType": "github",
+      "skillPath": "skills/programmatic-seo/SKILL.md",
+      "computedHash": "bd40e7597ba0743e119106c11f02394e1e3c78b2db472f8a9ff0383a5789c69d"
+    },
+    "schema-markup": {
+      "source": "TheSmokeDev/geo-skills",
+      "sourceType": "github",
+      "skillPath": "skills/schema-markup/SKILL.md",
+      "computedHash": "eb8c545273ba78ad1a8b4cf1c798a1e24484f76a030c51bc496ba43b9de88e6b"
+    },
+    "seo-audit": {
+      "source": "TheSmokeDev/geo-skills",
+      "sourceType": "github",
+      "skillPath": "skills/seo-audit/SKILL.md",
+      "computedHash": "4ed0a9fecab62a7ebd9a4e2f53c9745c3c6c355d4efa613964da9baf0c5ea77d"
+    },
+    "site-architecture": {
+      "source": "TheSmokeDev/geo-skills",
+      "sourceType": "github",
+      "skillPath": "skills/site-architecture/SKILL.md",
+      "computedHash": "9e9b074eec90274843cf3f6531282325208e8fcbd7765c77331f3c3c6fa8474b"
+    },
+    "token-max-factory": {
+      "source": "TheSmokeDev/geo-skills",
+      "sourceType": "github",
+      "skillPath": "skills/token-max-factory/SKILL.md",
+      "computedHash": "1050f75d5cee9cb593ebc4335a21c35206bc6239a1a43f2c9e32b2e12b5a546d"
+    },
+    "tokenmax-fleet-orchestrator": {
+      "source": "TheSmokeDev/geo-skills",
+      "sourceType": "github",
+      "skillPath": "skills/tokenmax-fleet-orchestrator/SKILL.md",
+      "computedHash": "290c69dfb32d17e9ce4bc269535cd5b03bf083e01127a10852ac7f9272607a88"
+    }
+  }
+}

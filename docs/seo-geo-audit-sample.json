@@ -1,0 +1,60 @@
+{
+  "generatedAt": "2026-11-04T18:15:02.276Z",
+  "note": "llms.txt is not a Google ranking factor; AI Overview citation not guaranteed",
+  "bySev": {
+    "High": 0,
+    "Medium": 0,
+    "Low": 0,
+    "Info": 8
+  },
+  "findings": [
+    {
+      "sev": "Info",
+      "code": "bot_ok",
+      "msg": "GPTBot: kural var",
+      "url": "https://www.zumrutvaditemizlik.com/robots.txt"
+    },
+    {
+      "sev": "Info",
+      "code": "bot_ok",
+      "msg": "OAI-SearchBot: kural var",
+      "url": "https://www.zumrutvaditemizlik.com/robots.txt"
+    },
+    {
+      "sev": "Info",
+      "code": "bot_ok",
+      "msg": "ChatGPT-User: kural var",
+      "url": "https://www.zumrutvaditemizlik.com/robots.txt"
+    },
+    {
+      "sev": "Info",
+      "code": "bot_ok",
+      "msg": "ClaudeBot: kural var",
+      "url": "https://www.zumrutvaditemizlik.com/robots.txt"
+    },
+    {
+      "sev": "Info",
+      "code": "bot_ok",
+      "msg": "PerplexityBot: kural var",
+      "url": "https://www.zumrutvaditemizlik.com/robots.txt"
+    },
+    {
+      "sev": "Info",
+      "code": "bot_ok",
+      "msg": "Google-Extended: kural var",
+      "url": "https://www.zumrutvaditemizlik.com/robots.txt"
+    },
+    {
+      "sev": "Info",
+      "code": "bot_ok",
+      "msg": "Bytespider: kural var",
+      "url": "https://www.zumrutvaditemizlik.com/robots.txt"
+    },
+    {
+      "sev": "Info",
+      "code": "bot_ok",
+      "msg": "anthropic-ai: kural var",
+      "url": "https://www.zumrutvaditemizlik.com/robots.txt"
+    }
+  ]
+}
