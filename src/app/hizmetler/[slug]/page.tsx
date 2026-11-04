@@ -264,9 +264,27 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       };
     }
 
-    const rawTitle = normalizeMetaTitle(service.metaTitle?.trim() || `${service.title} İstanbul`);
+    /** GSC’de yüksek gösterim / düşük CTR — seed DB gecikse bile runtime CTR */
+    const CTR_META: Record<string, { title: string; description: string }> = {
+      'dis-cephe-temizligi': {
+        title: 'Dış Cephe Temizliği İstanbul | Cam & Bina Cephe',
+        description:
+          'İstanbul dış cephe temizliği: cam/cephe, güvenli erişim, su izi giderme. Sarıyer–Zekeriyaköy hattı. Ücretsiz keşif, fiyat hesapla veya ara.',
+      },
+      'insaat-sonrasi-temizlik': {
+        title: 'İnşaat Sonrası Temizlik İstanbul | Fiyat & Teslim',
+        description:
+          'İnşaat sonrası temizlik İstanbul: ince toz, tadilat teslim checklist. Sarıyer odaklı ekip. Ücretsiz keşif, şeffaf kapsam ve fiyat.',
+      },
+    };
+    const ctr = CTR_META[service.slug];
+    const rawTitle = normalizeMetaTitle(
+      ctr?.title || service.metaTitle?.trim() || `${service.title} İstanbul`
+    );
     const title = clampMetaTitle(rawTitle);
-    const description = clampMetaDescription(service.metaDesc || service.shortDesc);
+    const description = clampMetaDescription(
+      ctr?.description || service.metaDesc || service.shortDesc
+    );
     const canonical = canonicalUrl(`/hizmetler/${service.slug}`);
     const imageUrl = toAbsoluteUrl(service.image) ?? canonicalUrl('/logo.png');
     const derivedKeywords = serviceKeywordsFromTitleAndSlug(`${service.title} ${service.slug}`);

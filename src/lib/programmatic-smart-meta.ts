@@ -24,10 +24,59 @@ function trimEndEllipsis(s: string, max: number): string {
  * Programatik ilçe + hizmet sayfaları için tutarlı, SEO odaklı title/description.
  * Admin toplu otomasyon ve önizlemede kullanılır.
  */
+/** GSC’de stuffed / yinelenen title override’larını reddet */
+export function isLowQualityProgrammaticTitle(title: string): boolean {
+  const t = title.trim();
+  if (!t) return true;
+  // "Sarıyer Ev Temizliği | sarıyer ev temizliği — Marka" tipi kopya
+  const parts = t.split('|').map((p) => p.trim().toLowerCase());
+  if (parts.length >= 2) {
+    const left = parts[0].replace(/[^a-z0-9ğüşıöç\s]/gi, '').replace(/\s+/g, ' ');
+    const right = parts[1]
+      .split(/[—–-]/)[0]
+      .replace(/[^a-z0-9ğüşıöç\s]/gi, '')
+      .replace(/\s+/g, ' ')
+      .trim();
+    if (left && right && (left === right || right.includes(left) || left.includes(right))) {
+      return true;
+    }
+  }
+  return false;
+}
+
 export function buildSmartMetaForPair(
   district: DistrictLanding,
   service: ServiceLanding
 ): { title: string; description: string } {
+  /** P0 para çiftleri — GSC ticari sorgu CTR */
+  if (district.slug === 'sariyer' && service.slug === 'ev-temizligi') {
+    return {
+      title: trimEndEllipsis('Sarıyer Ev Temizliği | Zekeriyaköy Villa', 58),
+      description: trimEndEllipsis(
+        'Sarıyer ev temizliği: Zekeriyaköy villa & site. Ücretsiz keşif, şeffaf kapsam, aynı gün dönüş. Fiyat hesapla veya hemen ara.',
+        158
+      ),
+    };
+  }
+  if (district.slug === 'sariyer' && service.slug === 'dis-cephe-temizligi') {
+    return {
+      title: trimEndEllipsis('Sarıyer Dış Cephe Temizliği | Cam & Bina', 58),
+      description: trimEndEllipsis(
+        'Sarıyer dış cephe ve cam cephe temizliği. Villa/plaza güvenli erişim, ücretsiz keşif. Zekeriyaköy–Boğaz hattı ekip planı.',
+        158
+      ),
+    };
+  }
+  if (district.slug === 'sariyer' && service.slug === 'insaat-sonrasi-temizlik') {
+    return {
+      title: trimEndEllipsis('Sarıyer İnşaat Sonrası Temizlik | Fiyat', 58),
+      description: trimEndEllipsis(
+        'Sarıyer inşaat sonrası temizlik: ince toz, teslim checklist. Zekeriyaköy villa & yeni teslim. Ücretsiz keşif, net kapsam.',
+        158
+      ),
+    };
+  }
+
   let title = `${district.name} ${service.name} | ${BRAND_SHORT}`;
   if (title.length > 58) {
     title = `${district.name} ${service.name} · Zümrüt Vadi`;

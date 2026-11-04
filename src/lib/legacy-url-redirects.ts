@@ -52,6 +52,18 @@ export function resolveLegacyRedirect(pathname: string): LegacyRedirect | null {
     return { to: '/fiyatlar', permanent: true };
   }
 
+  /**
+   * Eski yıl blogları (…-2024) canlıda 404; GSC hâlâ tıklama/gösterim gönderiyor.
+   * …-2026 kanoniğe 308 — soft 404 crawl israfını keser.
+   */
+  const blogYear = path.match(/^\/blog\/(.+)$/i);
+  if (blogYear?.[1] && /2024/.test(blogYear[1])) {
+    const nextSlug = blogYear[1].replace(/2024/g, '2026');
+    if (nextSlug !== blogYear[1]) {
+      return { to: `/blog/${nextSlug}`, permanent: true };
+    }
+  }
+
   // WordPress yinelenen slug: /blog/yazi-basligi-2 → /blog/yazi-basligi
   // Yıl soneklerini (2024, 2025, 2026 …) hariç tut — v2/v3 blog slug'ları -2026 ile biter.
   const blogDup = path.match(/^\/blog\/(.+)-(\d+)$/i);

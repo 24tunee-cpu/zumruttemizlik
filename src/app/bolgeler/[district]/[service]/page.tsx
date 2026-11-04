@@ -31,7 +31,10 @@ import { SITE_CONTACT, toTelHref } from '@/config/site-contact';
 import { canonicalUrl, getSiteUrl } from '@/lib/seo';
 import { buildProgrammaticPairSeoLinks } from '@/lib/internal-seo-links';
 import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
-import { buildSmartMetaForPair } from '@/lib/programmatic-smart-meta';
+import {
+  buildSmartMetaForPair,
+  isLowQualityProgrammaticTitle,
+} from '@/lib/programmatic-smart-meta';
 
 type Props = {
   params: Promise<{ district: string; service: string }>;
@@ -108,11 +111,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     select: { title: true, description: true, isActive: true },
   });
   const smart = buildSmartMetaForPair(districtData, serviceData);
+  const overrideTitle = override?.isActive ? override.title?.trim() : '';
+  const overrideDesc = override?.isActive ? override.description?.trim() : '';
   const rawTitle =
-    (override?.isActive && override?.title?.trim()) || smart.title;
+    overrideTitle && !isLowQualityProgrammaticTitle(overrideTitle)
+      ? overrideTitle
+      : smart.title;
   const title = clampMetaTitle(rawTitle);
-  const rawDescription =
-    (override?.isActive && override?.description?.trim()) || smart.description;
+  const rawDescription = overrideDesc || smart.description;
   const description = clampMetaDescription(rawDescription);
   const canonical = canonicalUrl(`/bolgeler/${districtData.slug}/${serviceData.slug}`);
 

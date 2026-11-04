@@ -50,12 +50,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     `${districtData.name} bölgesinde ofis temizliği, inşaat sonrası temizlik, koltuk yıkama ve daha fazlası için hızlı teklif alın.`;
   const description = clampMetaDescription(
     isSariyerHub
-      ? `${descBase} ${formatGoogleTrustLine()}. Ücretsiz keşif · fiyat hesaplama.`
+      ? `Sarıyer temizlik şirketi: ev, villa, inşaat sonrası. Zekeriyaköy odaklı. ${formatGoogleTrustLine()}. Ücretsiz keşif · fiyat hesapla.`
       : descBase
   );
   const pageTitle = clampMetaTitle(
     isSariyerHub
-      ? 'Sarıyer Ev Temizliği | Zekeriyaköy Villa & Temizlik'
+      ? 'Sarıyer Temizlik Şirketi | Ev & Zekeriyaköy Villa'
       : `${districtData.name} Temizlik Hizmetleri | İstanbul`
   );
 
@@ -105,7 +105,7 @@ export default async function DistrictPage({ params }: Props) {
     `Merhaba, ${districtData.name} temizlik için ücretsiz keşif ve fiyat teklifi almak istiyorum.`
   )}`;
   const h1 = isSariyerHub
-    ? 'Sarıyer Ev Temizliği ve Temizlik Hizmetleri'
+    ? 'Sarıyer Temizlik Şirketi — Ev & Zekeriyaköy Villa'
     : `${districtData.name} Temizlik Hizmetleri`;
 
   const publishedDistrictBlogs = await prisma.blogPost.findMany({
@@ -186,12 +186,14 @@ export default async function DistrictPage({ params }: Props) {
             <div className="mt-5 flex flex-wrap gap-2">
               <a
                 href={callHref}
+                data-source={`district-${districtData.slug}-phone`}
                 className="rounded-lg bg-emerald-500 px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-600"
               >
                 Ara: {SITE_CONTACT.phoneDisplay}
               </a>
               <a
                 href={waHref}
+                data-source={`district-${districtData.slug}-whatsapp`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-lg border border-emerald-400/50 px-4 py-2 text-sm font-medium text-emerald-100 hover:bg-emerald-500/20"
@@ -200,12 +202,14 @@ export default async function DistrictPage({ params }: Props) {
               </a>
               <Link
                 href="/randevu"
+                data-source={`district-${districtData.slug}-randevu`}
                 className="rounded-lg border border-emerald-400/50 px-4 py-2 text-sm font-medium text-emerald-100 hover:bg-emerald-500/20"
               >
                 Ücretsiz keşif
               </Link>
               <Link
                 href={`/fiyat-hesaplama?district=${districtData.slug}`}
+                data-source={`district-${districtData.slug}-fiyat`}
                 className="rounded-lg border border-slate-600 px-4 py-2 text-sm font-medium text-slate-200 hover:border-emerald-500/40"
               >
                 Fiyat hesapla

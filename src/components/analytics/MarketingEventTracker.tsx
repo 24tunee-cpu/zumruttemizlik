@@ -55,8 +55,11 @@ export default function MarketingEventTracker() {
           link_text: text,
           source,
           location,
+          method: 'phone',
         };
         pushEvent('phone_click', payload);
+        // GA4 key event adayı — Search Console/GA “lead=0” boşluğunu kapatır
+        pushEvent('generate_lead', { ...payload, lead_type: 'phone_click' });
         sendToBackend({ eventType: 'phone_click', ...payload });
         return;
       }
@@ -67,10 +70,36 @@ export default function MarketingEventTracker() {
           link_text: text,
           source,
           location,
+          method: 'whatsapp',
         };
         pushEvent('whatsapp_click', payload);
+        pushEvent('generate_lead', { ...payload, lead_type: 'whatsapp_click' });
         sendToBackend({ eventType: 'whatsapp_click', ...payload });
         return;
+      }
+
+      // Para CTA — randevu / fiyat hesaplama
+      try {
+        const pathOnly = href.startsWith('http')
+          ? new URL(href).pathname
+          : href.split('?')[0];
+        if (pathOnly === '/randevu' || pathOnly === '/fiyat-hesaplama') {
+          const payload = {
+            link_url: href,
+            link_text: text,
+            source,
+            location,
+            method: pathOnly === '/randevu' ? 'appointment' : 'price_calculator',
+          };
+          pushEvent('cta_click', payload);
+          pushEvent('generate_lead', {
+            ...payload,
+            lead_type: pathOnly === '/randevu' ? 'randevu_cta' : 'fiyat_cta',
+          });
+          sendToBackend({ eventType: 'cta_click', ...payload });
+        }
+      } catch {
+        /* ignore bad href */
       }
 
       if (href.startsWith('mailto:')) {
