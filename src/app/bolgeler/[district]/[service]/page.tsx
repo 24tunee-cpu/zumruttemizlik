@@ -35,7 +35,7 @@ import {
   buildSmartMetaForPair,
   isLowQualityProgrammaticTitle,
 } from '@/lib/programmatic-smart-meta';
-import { PAIR_CTR_H1, pairCtrKey } from '@/lib/gsc-ctr-overrides';
+import { PAIR_CTR_H1, PAIR_CTR_META, pairCtrKey } from '@/lib/gsc-ctr-overrides';
 
 type Props = {
   params: Promise<{ district: string; service: string }>;
@@ -112,14 +112,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     select: { title: true, description: true, isActive: true },
   });
   const smart = buildSmartMetaForPair(districtData, serviceData);
+  // GSC CTR map (`PAIR_CTR_META`) smart içinde — DB override CTR’yi ezmesin
+  const hasCtrTitle = Boolean(PAIR_CTR_META[key]);
   const overrideTitle = override?.isActive ? override.title?.trim() : '';
   const overrideDesc = override?.isActive ? override.description?.trim() : '';
   const rawTitle =
-    overrideTitle && !isLowQualityProgrammaticTitle(overrideTitle)
-      ? overrideTitle
-      : smart.title;
+    hasCtrTitle
+      ? smart.title
+      : overrideTitle && !isLowQualityProgrammaticTitle(overrideTitle)
+        ? overrideTitle
+        : smart.title;
   const title = clampMetaTitle(rawTitle);
-  const rawDescription = overrideDesc || smart.description;
+  const rawDescription =
+    hasCtrTitle && smart.description
+      ? smart.description
+      : overrideDesc || smart.description;
   const description = clampMetaDescription(rawDescription);
   const canonical = canonicalUrl(`/bolgeler/${districtData.slug}/${serviceData.slug}`);
 

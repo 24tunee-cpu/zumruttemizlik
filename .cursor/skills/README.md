@@ -37,10 +37,9 @@ Dahil edilen öz (AGENTS filtresiyle ZVT’ye gömüldü):
 - AminForou mcp-gsc opportunity / cannibalization patterns
 - MYehia565 `search-console-ops` + structured-data discipline
 - Garrett GSC/GA tool CTR + conversion playbooks
-- Google **resmî** `googleanalytics/google-analytics-mcp` (opsiyonel; onaylı)
 - Resmî GSC MCP yok → CSV/browser birinci sınıf
 
-Ücretli MCP / LocalSEOData varsayılan **kapalı**.
+MCP / LocalSEOData varsayılan **kapalı** (CSV/ekran yeter).
 
 ## Beast’te yeni “akıllı” referanslar
 
