@@ -17,20 +17,18 @@ import { ConversionSeoAside } from '@/components/site/ConversionSeoAside';
 import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
 import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
 
-const randevuMetaTitle = clampMetaTitle(
-  'İstanbul Temizlik Randevusu | Ücretsiz Keşif | Sarıyer & Zekeriyaköy'
-);
+const randevuMetaTitle = clampMetaTitle('Ücretsiz Keşif Randevusu | İstanbul Temizlik');
 const randevuMetaDescription = clampMetaDescription(
-  'Zekeriyaköy, Sarıyer ve İstanbul genelinde ücretsiz keşif randevusu. Ev, ofis, inşaat sonrası temizlik için aynı gün geri dönüş. Online randevu formu.'
+  'Zekeriyaköy, Sarıyer ve İstanbul genelinde ücretsiz keşif randevusu. Ev, ofis, inşaat sonrası — aynı gün geri dönüş. Online form.'
 );
 
 export const metadata: Metadata = {
-  title: randevuMetaTitle,
+  title: { absolute: randevuMetaTitle },
   description: randevuMetaDescription,
   keywords: keywordsForPage('randevu'),
   alternates: { canonical: canonicalUrl('/randevu') },
   openGraph: {
-    title: 'Ücretsiz Keşif Randevusu | Zümrüt Vadi Temizlik',
+    title: randevuMetaTitle,
     description: clampMetaDescription(
       'Sarıyer ve Zekeriyaköy dahil İstanbul genelinde ücretsiz keşif. Aynı gün geri dönüş.'
     ),
@@ -42,7 +40,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ücretsiz Keşif Randevusu | Zümrüt Vadi',
+    title: randevuMetaTitle,
     description: clampMetaDescription('İstanbul temizlik randevusu — ücretsiz keşif, aynı gün dönüş.'),
     images: [canonicalUrl('/logo.png')],
   },

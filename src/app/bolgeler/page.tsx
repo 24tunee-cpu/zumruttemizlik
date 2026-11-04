@@ -6,16 +6,16 @@ import { ConversionSeoAside } from '@/components/site/ConversionSeoAside';
 import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
 import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
 
-const bolgelerTitle = clampMetaTitle('İstanbul İlçe Bazlı Temizlik Hizmetleri | Sarıyer & Zekeriyaköy');
+const bolgelerTitle = clampMetaTitle('İstanbul İlçe Temizlik Hizmetleri | Sarıyer');
 const bolgelerDescription = clampMetaDescription(
-  "Zekeriyaköy, Sarıyer, Beşiktaş, Şişli ve İstanbul'un 18 ilçesinde ev, ofis, inşaat sonrası temizlik. İlçe bazlı landing sayfaları ve ücretsiz keşif."
+  "Zekeriyaköy, Sarıyer, Beşiktaş, Şişli ve İstanbul'un 18 ilçesinde ev, ofis, inşaat sonrası temizlik. İlçe bazlı landing ve ücretsiz keşif."
 );
 const bolgelerOgDescription = clampMetaDescription(
   'Zekeriyaköy ve Sarıyer öncelikli İstanbul ilçe temizlik sayfaları. Ev, ofis, inşaat sonrası ve halı-koltuk hizmetleri.'
 );
 
 export const metadata: Metadata = {
-  title: bolgelerTitle,
+  title: { absolute: bolgelerTitle },
   description: bolgelerDescription,
   keywords: keywordsForPage('bolgeler'),
   alternates: {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true },
   },
   openGraph: {
-    title: 'İstanbul İlçe Bazlı Temizlik | Zümrüt Vadi Temizlik',
+    title: bolgelerTitle,
     description: bolgelerOgDescription,
     url: canonicalUrl('/bolgeler'),
     type: 'website',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'İstanbul İlçe Bazlı Temizlik | Zümrüt Vadi',
+    title: bolgelerTitle,
     description: clampMetaDescription('Zekeriyaköy, Sarıyer ve İstanbul ilçelerinde profesyonel temizlik.'),
     images: [canonicalUrl('/logo.png')],
   },

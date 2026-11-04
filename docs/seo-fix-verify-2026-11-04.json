@@ -1,0 +1,146 @@
+{
+  "generatedAt": "2026-11-04T18:35:44.689Z",
+  "base": "https://www.zumrutvaditemizlik.com",
+  "pageCount": 9,
+  "bySev": {
+    "High": 0,
+    "Medium": 0,
+    "Low": 4,
+    "Info": 0
+  },
+  "top": [],
+  "pages": [
+    {
+      "url": "https://www.zumrutvaditemizlik.com/blog/sariyer-temizlik-fiyatlari-2026",
+      "status": 200,
+      "title": "Sarıyer Temizlik Fiyatları 2026 | Semt Rehber",
+      "description": "Sarıyer temizlik fiyatları 2026: Zekeriyaköy ve semt semt tahmini. Ücretsiz keşif — online hesapla veya hemen ara.",
+      "canonical": "https://www.zumrutvaditemizlik.com/blog/sariyer-temizlik-fiyatlari-2026",
+      "h1": "Sarıyer Temizlik Fiyatları 2026: Semt Semt Rehber",
+      "h1Count": 1,
+      "noindex": false,
+      "textLen": 8114,
+      "findings": []
+    },
+    {
+      "url": "https://www.zumrutvaditemizlik.com/blog/maslak-ev-temizligi-fiyatlari-2026",
+      "status": 200,
+      "title": "Maslak Ev Temizliği Fiyatları 2026 | Tablo",
+      "description": "Maslak ev temizliği 2026 fiyat aralıkları (tahmini). Plaza/site daire. Ücretsiz keşif — online hesapla veya ara.",
+      "canonical": "https://www.zumrutvaditemizlik.com/blog/maslak-ev-temizligi-fiyatlari-2026",
+      "h1": "Maslak Ev Temizliği Fiyatları 2026 | Güncel Tahmini Tablo",
+      "h1Count": 1,
+      "noindex": false,
+      "textLen": 9786,
+      "findings": []
+    },
+    {
+      "url": "https://www.zumrutvaditemizlik.com/bolgeler/kartal/ev-temizligi",
+      "status": 200,
+      "title": "Kartal Ev Temizliği | (sayfa raporu) — Zümrüt Vadi",
+      "description": "Kartal ev temizliği: \"(sayfa raporu)\" araması için güncel teklif, şeffaf fiyat ve aynı gün planlama.",
+      "canonical": "https://www.zumrutvaditemizlik.com/bolgeler/kartal/ev-temizligi",
+      "h1": "Kartal Ev Temizliği",
+      "h1Count": 1,
+      "noindex": false,
+      "textLen": 6848,
+      "findings": []
+    },
+    {
+      "url": "https://www.zumrutvaditemizlik.com/bolgeler/sisli/ev-temizligi",
+      "status": 200,
+      "title": "Şişli Ev Temizliği | (sayfa raporu) — Zümrüt Vadi",
+      "description": "Şişli ev temizliği: \"(sayfa raporu)\" araması için güncel teklif, şeffaf fiyat ve aynı gün planlama.",
+      "canonical": "https://www.zumrutvaditemizlik.com/bolgeler/sisli/ev-temizligi",
+      "h1": "Şişli Ev Temizliği",
+      "h1Count": 1,
+      "noindex": false,
+      "textLen": 6678,
+      "findings": []
+    },
+    {
+      "url": "https://www.zumrutvaditemizlik.com/bolgeler/kagithane/insaat-sonrasi-temizlik",
+      "status": 200,
+      "title": "Kağıthane İnşaat Sonrası Temizlik | (sayfa raporu) — Zümr…",
+      "description": "Kağıthane i̇nşaat sonrası temizlik: \"(sayfa raporu)\" araması için güncel teklif, şeffaf fiyat ve aynı gün planlama.",
+      "canonical": "https://www.zumrutvaditemizlik.com/bolgeler/kagithane/insaat-sonrasi-temizlik",
+      "h1": "Kağıthane İnşaat Sonrası Temizlik",
+      "h1Count": 1,
+      "noindex": false,
+      "textLen": 7488,
+      "findings": []
+    },
+    {
+      "url": "https://www.zumrutvaditemizlik.com/randevu",
+      "status": 200,
+      "title": "İstanbul Temizlik Randevusu | Ücretsiz Keşif | Sarıyer & Ze… | Zümrüt Vadi Temizlik",
+      "description": "Zekeriyaköy, Sarıyer ve İstanbul genelinde ücretsiz keşif randevusu. Ev, ofis, inşaat sonrası temizlik için aynı gün geri dönüş. Online randevu formu.",
+      "canonical": "https://www.zumrutvaditemizlik.com/randevu",
+      "h1": "İstanbul Temizlik Randevusu — Ücretsiz Keşif",
+      "h1Count": 1,
+      "noindex": false,
+      "textLen": 3677,
+      "findings": [
+        {
+          "sev": "Low",
+          "code": "title_long",
+          "msg": "Title uzun (83)"
+        }
+      ]
+    },
+    {
+      "url": "https://www.zumrutvaditemizlik.com/cozumler",
+      "status": 200,
+      "title": "Temizlik Çözümleri | İnşaat, Taşınma, Kira & Ofis | İstanbul | Zümrüt Vadi Temizlik",
+      "description": "İnşaat sonrası, taşınma, kira teslim, boş ev ve kurumsal ofis temizliği çözümleri. Sarıyer, Zekeriyaköy ve İstanbul geneli. Ücretsiz keşif ve online fiyat he…",
+      "canonical": "https://www.zumrutvaditemizlik.com/cozumler",
+      "h1": "Temizlik Çözümleri",
+      "h1Count": 1,
+      "noindex": false,
+      "textLen": 3686,
+      "findings": [
+        {
+          "sev": "Low",
+          "code": "title_long",
+          "msg": "Title uzun (83)"
+        }
+      ]
+    },
+    {
+      "url": "https://www.zumrutvaditemizlik.com/iletisim",
+      "status": 200,
+      "title": "İletişim | Sarıyer & Zekeriyaköy Temizlik Teklif Hattı | Zümrüt Vadi Temizlik",
+      "description": "Zekeriyaköy, Sarıyer ve İstanbul Avrupa Yakası temizlik teklifi: 0551 925 09 43. Ücretsiz keşif, online fiyat hesaplama ve aynı gün geri dönüş.",
+      "canonical": "https://www.zumrutvaditemizlik.com/iletisim",
+      "h1": "Sarıyer & Zekeriyaköy İçin Bize Ulaşın",
+      "h1Count": 1,
+      "noindex": false,
+      "textLen": 3329,
+      "findings": [
+        {
+          "sev": "Low",
+          "code": "title_long",
+          "msg": "Title uzun (77)"
+        }
+      ]
+    },
+    {
+      "url": "https://www.zumrutvaditemizlik.com/bolgeler",
+      "status": 200,
+      "title": "İstanbul İlçe Bazlı Temizlik Hizmetleri | Sarıyer & Zekeriy… | Zümrüt Vadi Temizlik",
+      "description": "Zekeriyaköy, Sarıyer, Beşiktaş, Şişli ve İstanbul&#x27;un 18 ilçesinde ev, ofis, inşaat sonrası temizlik. İlçe bazlı landing sayfaları ve ücretsiz keşif.",
+      "canonical": "https://www.zumrutvaditemizlik.com/bolgeler",
+      "h1": "İlçe Bazlı Temizlik Hizmetleri",
+      "h1Count": 1,
+      "noindex": false,
+      "textLen": 6314,
+      "findings": [
+        {
+          "sev": "Low",
+          "code": "title_long",
+          "msg": "Title uzun (83)"
+        }
+      ]
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 import { DISTRICT_LANDINGS, SERVICE_LANDINGS } from '@/config/programmatic-seo';
+import { isGscPlaceholderQuery } from '@/lib/gsc-query-guards';
 
 export type GscRow = {
   query: string;
@@ -274,8 +275,11 @@ function parseOneGscCsvSegment(csv: string): GscRow[] {
     if (pageOnly && !page) continue;
     if (queryOnly && !query) continue;
     if (!pageOnly && !queryOnly && (!query || !page)) continue;
+    // Pages-only CSV: query boş kalsın — asla '(sayfa raporu)' yazma (meta sızıntısı)
+    const safeQuery = pageOnly ? '' : query;
+    if (!pageOnly && isGscPlaceholderQuery(safeQuery) && !page) continue;
     rows.push({
-      query: query || (pageOnly ? '(sayfa raporu)' : query),
+      query: safeQuery,
       page: page || '/',
       clicks: idx.clicks === -1 ? 0 : parseNumber(cols[idx.clicks] ?? '0'),
       impressions: idx.impressions === -1 ? 0 : parseNumber(cols[idx.impressions] ?? '0'),
@@ -324,13 +328,19 @@ export function buildMetaSuggestions(rows: GscRow[]): MetaSuggestion[] {
     if (!district || !service) continue;
 
     bucket.sort((a, b) => b.impressions - a.impressions || b.clicks - a.clicks);
-    const top = bucket[0];
+    const top = bucket.find((r) => !isGscPlaceholderQuery(r.query)) || bucket[0];
     const score = top.impressions * 0.7 + top.clicks * 20 - top.position * 2;
-    const title = `${district.name} ${service.name} | ${top.query} - Zümrüt Vadi Temizlik`.slice(0, 70);
-    const description = `${district.name} için ${service.name.toLowerCase()} hizmetinde ${top.query} odaklı hızlı teklif alın. Aynı gün planlama ve şeffaf fiyatlandırma.`.slice(
-      0,
-      160
-    );
+    const useQuery = !isGscPlaceholderQuery(top.query);
+    const title = (
+      useQuery
+        ? `${district.name} ${service.name} | ${top.query} - Zümrüt Vadi Temizlik`
+        : `${district.name} ${service.name} | Zümrüt Vadi Temizlik`
+    ).slice(0, 70);
+    const description = (
+      useQuery
+        ? `${district.name} için ${service.name.toLowerCase()} hizmetinde ${top.query} odaklı hızlı teklif alın. Aynı gün planlama ve şeffaf fiyatlandırma.`
+        : `${district.name} ${service.name.toLowerCase()}: ücretsiz keşif, şeffaf fiyat, aynı gün planlama. Zümrüt Vadi Temizlik.`
+    ).slice(0, 160);
 
     suggestions.push({
       key,

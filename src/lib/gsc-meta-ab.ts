@@ -5,6 +5,7 @@ import type { PrismaClient } from '@prisma/client';
 import { prisma } from '@/lib/prisma';
 import { getDistrictBySlug, getServiceBySlug } from '@/config/programmatic-seo';
 import { buildSmartMetaForPair } from '@/lib/programmatic-smart-meta';
+import { isGscPlaceholderQuery } from '@/lib/gsc-query-guards';
 import { sanitizeInput } from '@/lib/security';
 
 const MIN_IMPRESSIONS_PROGRAMMATIC = 100;
@@ -20,7 +21,7 @@ function trimMeta(s: string, max: number): string {
 }
 
 function buildAbTitle(baseTitle: string, topQuery: string | null | undefined): string {
-  const q = topQuery?.trim();
+  const q = isGscPlaceholderQuery(topQuery) ? '' : topQuery?.trim();
   if (!q || q.length < 4) {
     return trimMeta(`${baseTitle.replace(/\s*·.*$/, '')} · Ücretsiz Keşif`, 58);
   }
@@ -29,8 +30,9 @@ function buildAbTitle(baseTitle: string, topQuery: string | null | undefined): s
 }
 
 function buildAbDescription(baseDesc: string, topQuery: string | null | undefined): string {
-  const hook = topQuery?.trim()
-    ? `"${topQuery.trim().slice(0, 40)}" araması için güncel teklif.`
+  const safeQ = isGscPlaceholderQuery(topQuery) ? '' : topQuery?.trim();
+  const hook = safeQ
+    ? `"${safeQ.slice(0, 40)}" araması için güncel teklif.`
     : 'Online fiyat hesaplama ve ücretsiz keşif.';
   const merged = `${baseDesc.replace(/\s*Ücretsiz keşif.*$/i, '').trim()} ${hook} Hemen teklif alın.`;
   return trimMeta(merged, 158);

@@ -5,6 +5,7 @@ import {
   type ServiceLanding,
 } from '@/config/programmatic-seo';
 import { PAIR_CTR_META, pairCtrKey } from '@/lib/gsc-ctr-overrides';
+import { hasGscPlaceholderLeak } from '@/lib/gsc-query-guards';
 
 const BRAND_SHORT = 'Zümrüt Vadi Temizlik';
 
@@ -25,10 +26,11 @@ function trimEndEllipsis(s: string, max: number): string {
  * Programatik ilçe + hizmet sayfaları için tutarlı, SEO odaklı title/description.
  * Admin toplu otomasyon ve önizlemede kullanılır.
  */
-/** GSC’de stuffed / yinelenen title override’larını reddet */
+/** GSC’de stuffed / yinelenen / sızıntılı title override’larını reddet */
 export function isLowQualityProgrammaticTitle(title: string): boolean {
   const t = title.trim();
   if (!t) return true;
+  if (hasGscPlaceholderLeak(t)) return true;
   // "Sarıyer Ev Temizliği | sarıyer ev temizliği — Marka" tipi kopya
   const parts = t.split('|').map((p) => p.trim().toLowerCase());
   if (parts.length >= 2) {
@@ -43,6 +45,12 @@ export function isLowQualityProgrammaticTitle(title: string): boolean {
     }
   }
   return false;
+}
+
+export function isLowQualityProgrammaticDescription(description: string): boolean {
+  const d = description.trim();
+  if (!d) return true;
+  return hasGscPlaceholderLeak(d);
 }
 
 export function buildSmartMetaForPair(

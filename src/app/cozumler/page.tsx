@@ -9,13 +9,13 @@ import { ConversionSeoAside } from '@/components/site/ConversionSeoAside';
 import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
 import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
 
-const pageTitle = clampMetaTitle('Temizlik Çözümleri | İnşaat, Taşınma, Kira & Ofis | İstanbul');
+const pageTitle = clampMetaTitle('Temizlik Çözümleri | İnşaat, Taşınma, Ofis');
 const pageDescription = clampMetaDescription(
-  'İnşaat sonrası, taşınma, kira teslim, boş ev ve kurumsal ofis temizliği çözümleri. Sarıyer, Zekeriyaköy ve İstanbul geneli. Ücretsiz keşif ve online fiyat hesaplama.'
+  'İnşaat sonrası, taşınma, kira teslim, boş ev ve kurumsal ofis temizliği. Sarıyer, Zekeriyaköy ve İstanbul. Ücretsiz keşif + online fiyat.'
 );
 
 export const metadata: Metadata = {
-  title: pageTitle,
+  title: { absolute: pageTitle },
   description: pageDescription,
   keywords: [
     'inşaat sonrası temizlik',

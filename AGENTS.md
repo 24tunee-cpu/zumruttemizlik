@@ -23,7 +23,7 @@ Bu dosya **tek ana anayasadır**. Üçüncü taraf Agent Skills (ör. `garrettjs
 | 3 | `zvt-local-seo` + `zvt-garrett-dispatch` | GBP/citation + Garrett router (ücretli MCP kapalı) |
 | 4 | `zvt-programmatic-landing` | Semt / ilçe×hizmet kapısı |
 | 4b | `zvt-competitor-intel` | Rakip gap (Garrett competitor playbook filtreli) |
-| 4c | `zvt-seo-os` → gsc-ops / ga4-ops / change-validate / seo-beast | Peak SEO orkestrasyon (CSV birinci; ücretli MCP kapalı) |
+| 4c | `zvt-seo-os` → site-audit / page-audit / geo-audit / gsc / ga4 / validate / beast | Peak SEO + GEO orkestrasyon (CSV+crawl; ücretli MCP kapalı) |
 | 5 | Local SEO Skills (Garrett) | Playbook only — indeks: `.cursor/skills/README.md` |
 | 6 | Genel SEO tavsiyesi | En düşük |
 
@@ -300,6 +300,7 @@ Her öneride: fayda · risk · efor · öncelik. Trafik/sıralama garantisi yok.
 | 2026-11-02 | Sarıyer hub CRO (ev temizliği H1/meta + CTA + WhyChoose); trust seed scrub; stok görsel kapısı |
 | 2026-11-03–04 | GSC/GA4 recovery: AggregateRating scrub, `_rsc`/Disallow, 2024→2026, CTR overrides, review parent_node sertleştirme; günlük: `docs/gsc-ga4-recovery-2026-11-04.md` |
 | 2026-11-04 | Skill pack: `zvt-gsc-ops` + `zvt-ga4-ops` + `zvt-change-validate` (younes/AminForou/MYehia/Garrett/Google GA MCP özü; AGENTS üstün) |
+| 2026-11-04 | Site/GEO audit pack: `zvt-site-audit` + `zvt-page-audit` + `zvt-geo-audit` + crawl scripts (`seo:crawl` / `seo:page-audit` / `seo:geo-audit`); JakeLabate/AgriciDaniel/MYehia GEO özü; AGENTS üstün |
 
 **Talimat dosyaları:** `CLAUDE.md` → `@AGENTS.md`. Skill indeks: `.cursor/skills/README.md`. User-global: Garrett pack + mirrored `zvt-*`. Tek ana anayasa: bu dosya.
 

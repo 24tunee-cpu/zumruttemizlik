@@ -33,6 +33,7 @@ import { buildProgrammaticPairSeoLinks } from '@/lib/internal-seo-links';
 import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
 import {
   buildSmartMetaForPair,
+  isLowQualityProgrammaticDescription,
   isLowQualityProgrammaticTitle,
 } from '@/lib/programmatic-smart-meta';
 import { PAIR_CTR_H1, PAIR_CTR_META, pairCtrKey } from '@/lib/gsc-ctr-overrides';
@@ -126,7 +127,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const rawDescription =
     hasCtrTitle && smart.description
       ? smart.description
-      : overrideDesc || smart.description;
+      : overrideDesc && !isLowQualityProgrammaticDescription(overrideDesc)
+        ? overrideDesc
+        : smart.description;
   const description = clampMetaDescription(rawDescription);
   const canonical = canonicalUrl(`/bolgeler/${districtData.slug}/${serviceData.slug}`);
 
