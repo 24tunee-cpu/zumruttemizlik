@@ -10,6 +10,18 @@ const cases: Array<{ path: string; expect: string | null }> = [
   { path: '/blog/eski-yazi-2', expect: '/blog/eski-yazi' },
   { path: '/blog/eski-yazi-3', expect: '/blog/eski-yazi' },
   { path: '/blog/foo-1', expect: null },
+  // GSC 2024 soft-404 → 2026
+  {
+    path: '/blog/insaat-sonrasi-temizlik-fiyatlari-2024',
+    expect: '/blog/insaat-sonrasi-temizlik-fiyatlari-2026',
+  },
+  {
+    path: '/blog/cam-temizligi-fiyatlari-2024-istanbul',
+    expect: '/blog/cam-temizligi-fiyatlari-2026-istanbul',
+  },
+  { path: '/sariyer', expect: '/bolgeler/sariyer' },
+  { path: '/sariyer/zekeriyakoy', expect: '/bolgeler/sariyer/zekeriyakoy' },
+  { path: '/sariyer/ev-temizligi', expect: '/bolgeler/sariyer/ev-temizligi' },
 ];
 
 let failed = 0;

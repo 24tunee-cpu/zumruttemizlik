@@ -135,9 +135,9 @@ Endüstriyel süpürgeler, yüzey uyumlu kimyasallar ve detay fırçaları ile f
     priceRange: '600 TL – 6.000 TL (metrekare ve kirliliğe göre)',
     order: 5,
     isActive: true,
-    metaTitle: 'İnşaat Sonrası Temizlik İstanbul | Tadilat Detay Temizlik',
+    metaTitle: 'İnşaat Sonrası Temizlik İstanbul | Fiyat & Teslim',
     metaDesc:
-      'İstanbul inşaat sonrası temizlik ve tadilat temizliği. Toz, boya ve inşaat artığı giderme; profesyonel ekip, net teslim. Keşif için arayın.',
+      'İstanbul inşaat sonrası temizlik: ince toz, tadilat teslim. Sarıyer odaklı ekip, ücretsiz keşif, şeffaf kapsam ve fiyat.',
   },
   {
     title: 'Cam Temizliği',
@@ -187,9 +187,9 @@ Düzenli dış cephe cam temizliği paketleriyle işletmenizin vitrin görünür
     priceRange: '350 TL – 3.500 TL (erişim ve metrekareye göre)',
     order: 7,
     isActive: true,
-    metaTitle: 'Dış Cephe Temizliği | İstanbul',
+    metaTitle: 'Dış Cephe Temizliği İstanbul | Cam & Bina Cephe',
     metaDesc:
-      'İstanbul dış cephe temizliği ve dış cephe cam silme hizmeti. Güvenli erişim, su izi/yağmur izi giderme ve düzenli bakım planları. Teklif al.',
+      'İstanbul dış cephe temizliği: cam/cephe, güvenli erişim, su izi giderme. Sarıyer–Zekeriyaköy hattı. Ücretsiz keşif, fiyat hesapla veya ara.',
   },
 ];
 

@@ -412,9 +412,9 @@ export const NEIGHBORHOOD_LANDINGS: NeighborhoodLanding[] = [
     slug: 'zekeriyakoy',
     name: 'Zekeriyaköy',
     districtName: 'Sarıyer',
-    metaTitle: 'Zekeriyaköy Temizlik Şirketi | Villa & Ev Temizliği',
+    metaTitle: 'Zekeriyaköy Temizlik Şirketi | Villa Ev Temizliği',
     metaDescription:
-      'Zekeriyaköy villa, site ve daire temizliği: detaylı ev, inşaat sonrası, cam ve dış cephe. Ücretsiz keşif, aynı gün randevu. Anında fiyat hesaplama.',
+      'Zekeriyaköy temizlik şirketi: villa, site, inşaat sonrası, cam. Ücretsiz keşif, aynı gün randevu. Fiyat hesapla veya hemen ara.',
     intro:
       'Zekeriyaköy, Zümrüt Vadi Temizlik’in öncelikli hizmet bölgesidir. Bölgedeki villalar, kapalı siteler ve orman içi konutlarda detaylı ev temizliği, inşaat sonrası teslim temizliği, cam ve dış cephe temizliğinde hızlı ve güvenilir ekip yönlendirmesi yapıyoruz.',
     body: [
