@@ -10,7 +10,7 @@ const IMG_HOME = 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w
 const IMG_OFFICE = 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200';
 const IMG_CONSTRUCTION = 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200';
 const IMG_SOFA = 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200';
-const IMG_CARPET = 'https://images.unsplash.com/photo-1558317374-a354d5f6d40b?w=1200';
+const IMG_CARPET = 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200';
 const IMG_WINDOW = 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1200';
 const IMG_FACADE = 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200';
 const IMG_VILLA = 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200';

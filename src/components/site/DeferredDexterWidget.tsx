@@ -11,20 +11,14 @@ interface DeferredDexterWidgetProps {
 }
 
 /**
- * Dexter GPT widget — mobilde etkileşim/scroll/idle sonrası yüklenir.
- * Masaüstünde afterInteractive ile mevcut davranış korunur.
+ * Dexter GPT widget — tüm cihazlarda etkileşim/scroll/idle sonrası + lazyOnload.
+ * PSI: üçüncü taraf minify edilemez; yüklemeyi LCP sonrası bırakırız.
  */
 export function DeferredDexterWidget({ token }: DeferredDexterWidgetProps) {
   const [load, setLoad] = useState(false);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
-
-    const isMobile = window.matchMedia(MOBILE_MEDIA).matches;
-    if (!isMobile) {
-      setLoad(true);
-      return;
-    }
 
     let loaded = false;
     const activate = () => {
@@ -33,7 +27,9 @@ export function DeferredDexterWidget({ token }: DeferredDexterWidgetProps) {
       setLoad(true);
     };
 
-    const idleTimer = window.setTimeout(activate, MOBILE_IDLE_MS);
+    const isMobile = window.matchMedia(MOBILE_MEDIA).matches;
+    const idleMs = isMobile ? MOBILE_IDLE_MS : 4_000;
+    const idleTimer = window.setTimeout(activate, idleMs);
 
     const onInteraction = () => {
       window.clearTimeout(idleTimer);
@@ -54,15 +50,12 @@ export function DeferredDexterWidget({ token }: DeferredDexterWidgetProps) {
 
   if (!load || !token) return null;
 
-  const isMobile =
-    typeof window !== 'undefined' && window.matchMedia(MOBILE_MEDIA).matches;
-
   return (
     <Script
       id="dexter-widget"
       src="https://apiv4.dextergpt.com/api/v1/dexterWidget"
       data-token={token}
-      strategy={isMobile ? 'lazyOnload' : 'afterInteractive'}
+      strategy="lazyOnload"
     />
   );
 }

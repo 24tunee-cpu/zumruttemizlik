@@ -97,7 +97,7 @@ Profesyonel makinelerle derinlemesine yıkama, emiş gücü yüksek vakumlama ve
 Derinlemesine yıkama ile halı ömrünü uzatırken iç mekan hava kalitesini iyileştirirsiniz. Ofis ve ev tipi halılarda ayrı iş akışları; gerekirse yerinde ön işlem veya toplama–teslimat seçenekleriyle esnek hizmet veriyoruz.
 
 İstanbul’da halı yıkama ve halı temizliği arayan müşterilerimize şeffaf metrekare fiyatları ve ücretsiz bilgilendirme sunuyoruz. Lekeli bölgeler için ön değerlendirme ve renk sabitliği testleriyle güvenli sonuç hedefliyoruz.`,
-    image: 'https://images.unsplash.com/photo-1558317374-a354d5f6d40b?w=800',
+    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800',
     icon: 'Square',
     features: [
       'Makine ve el halısına özel işlem',

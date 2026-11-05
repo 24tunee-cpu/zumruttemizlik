@@ -12,6 +12,7 @@
 - Detaylı ve genişletilmiş sürüm: [llms-full.txt](./llms-full.txt)
 - Canlı blog/GEO SSS envanteri (DB): [llms-inventory.txt](./llms-inventory.txt)
 - Makine okunur kimlik: [identity.json](./identity.json)
+- Ajan keşif kataloğu (ARD): [ai-catalog.json](./ai-catalog.json) · [.well-known/ard.json](./.well-known/ard.json)
 - Çelişki durumunda öncelik sırası: `llms.txt`, canlı sayfa içeriği, `identity.json`, `llms-inventory.txt`, `llms-full.txt`.
 
 ## En Önemli Sayfalar
