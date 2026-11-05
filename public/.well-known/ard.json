@@ -1,0 +1,63 @@
+{
+  "entries": [
+    {
+      "identifier": "urn:air:zumrutvaditemizlik.com:entity:local-business",
+      "displayName": "Zümrüt Vadi Temizlik — LocalBusiness",
+      "type": "application/ld+json",
+      "url": "https://www.zumrutvaditemizlik.com/identity.json",
+      "description": "İstanbul Sarıyer / Zekeriyaköy ağırlıklı profesyonel temizlik hizmeti. NAP, telefon ve hizmet alanları.",
+      "tags": [
+        "temizlik",
+        "Istanbul",
+        "Sariyer",
+        "Zekeriyakoy",
+        "LocalBusiness"
+      ],
+      "capabilities": [
+        "BusinessIdentity",
+        "NAP",
+        "ServiceArea"
+      ],
+      "representativeQueries": [
+        "Sarıyer temizlik firması telefon",
+        "Zekeriyaköy ev temizliği",
+        "Zümrüt Vadi Temizlik iletişim",
+        "İstanbul Avrupa Yakası temizlik hizmeti"
+      ],
+      "version": "1.0.0",
+      "updatedAt": "2026-11-05T00:00:00.000Z"
+    },
+    {
+      "identifier": "urn:air:zumrutvaditemizlik.com:docs:llms",
+      "displayName": "Zümrüt Vadi Temizlik — LLM özeti",
+      "type": "text/plain",
+      "url": "https://www.zumrutvaditemizlik.com/llms.txt",
+      "description": "AI ajanları için kısa marka, hizmet ve URL rehberi (llms.txt).",
+      "tags": ["llms.txt", "AEO", "GEO"],
+      "capabilities": ["BrandSummary", "ServiceLinks"],
+      "representativeQueries": [
+        "Zümrüt Vadi Temizlik ne hizmet verir",
+        "Sarıyer temizlik fiyat teklifi nasıl alınır",
+        "Zekeriyaköy villa temizliği"
+      ],
+      "version": "1.0.0",
+      "updatedAt": "2026-11-05T00:00:00.000Z"
+    },
+    {
+      "identifier": "urn:air:zumrutvaditemizlik.com:docs:llms-full",
+      "displayName": "Zümrüt Vadi Temizlik — geniş LLM envanteri",
+      "type": "text/plain",
+      "url": "https://www.zumrutvaditemizlik.com/llms-full.txt",
+      "description": "Hizmet, bölge ve SSS URL envanteri — ajan keşfi için uzun biçim.",
+      "tags": ["llms-full", "sitemap-companion"],
+      "capabilities": ["UrlInventory", "DistrictServices"],
+      "representativeQueries": [
+        "Maslak ofis temizliği sayfası",
+        "Sarıyer ev temizliği GEO SSS",
+        "İstanbul temizlik hizmet listesi"
+      ],
+      "version": "1.0.0",
+      "updatedAt": "2026-11-05T00:00:00.000Z"
+    }
+  ]
+}

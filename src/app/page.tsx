@@ -221,13 +221,16 @@ export default async function HomePage() {
               <h2 id="home-aeo-faq-heading" className="text-xl font-semibold text-white">
                 Sık sorulanlar
               </h2>
-              <p className="mt-2 text-sm text-slate-400">
+              <p className="mt-2 text-sm text-slate-300">
                 Kısa cevaplar — detay için{' '}
-                <Link href="/sss" className="text-emerald-400 underline-offset-2 hover:underline">
+                <Link href="/sss" className="font-medium text-emerald-300 underline underline-offset-2">
                   SSS
                 </Link>{' '}
                 veya{' '}
-                <Link href="/geo-sss" className="text-emerald-400 underline-offset-2 hover:underline">
+                <Link
+                  href="/geo-sss"
+                  className="font-medium text-emerald-300 underline underline-offset-2"
+                >
                   GEO SSS
                 </Link>
                 .

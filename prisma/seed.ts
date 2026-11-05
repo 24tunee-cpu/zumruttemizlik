@@ -35,7 +35,7 @@ const defaultGallery = [
   {
     title: 'Halı Temizliği',
     description: 'Profesyonel halı temizliği',
-    image: 'https://images.unsplash.com/photo-1558317374-a354d5f6d40b?w=800',
+    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800',
     category: 'Yıkama',
     isActive: true,
     order: 4,

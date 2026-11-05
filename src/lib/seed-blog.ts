@@ -10,7 +10,7 @@ import { PRICING_BLOG_POSTS } from './seed-blog-pricing';
 const IMG_HOME = 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200';
 const IMG_OFFICE = 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200';
 const IMG_SOFA = 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200';
-const IMG_CARPET = 'https://images.unsplash.com/photo-1558317374-a354d5f6d40b?w=1200';
+const IMG_CARPET = 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200';
 const IMG_WINDOW = 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1200';
 const IMG_TECH = 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200';
 const IMG_ISTANBUL = 'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200';
