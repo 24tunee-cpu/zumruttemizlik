@@ -29,7 +29,7 @@ import { ConversionSeoAside } from '@/components/site/ConversionSeoAside';
 import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
 import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
 /** ISR: 1 saat — bkz. src/lib/isr-config.ts ISR_BLOG_INDEX_SEC */
-export const revalidate = 3600;
+export const revalidate = 86400;
 
 // ============================================
 // METADATA (SEO)

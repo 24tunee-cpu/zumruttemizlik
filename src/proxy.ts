@@ -74,10 +74,31 @@ export async function proxy(request: NextRequest) {
   if (
     pathname.startsWith('/_next') ||
     pathname.startsWith('/api') ||
+    pathname.startsWith('/admin') ||
     pathname === '/robots.txt' ||
     isSitemapPath ||
     /\.[a-zA-Z0-9]{1,8}$/.test(pathname)
   ) {
+    return NextResponse.next();
+  }
+
+  /**
+   * Prefetch / RSC flight — Node redirect resolve çağırma (Fluid CPU ana maliyet).
+   * Gerçek navigasyonda resolve çalışır.
+   */
+  if (isNextRscFlightRequest(request)) {
+    return NextResponse.next();
+  }
+  const purpose = request.headers.get('purpose') || request.headers.get('sec-purpose');
+  if (purpose === 'prefetch') {
+    return NextResponse.next();
+  }
+
+  /**
+   * Canlı kanonik sayfalar DB redirect’ten geçmez — her HIT’te function açılmaz.
+   * Admin RedirectRule genelde eski/bozuk path’ler içindir.
+   */
+  if (isCanonicalPublicPath(pathname)) {
     return NextResponse.next();
   }
 
@@ -89,7 +110,7 @@ export async function proxy(request: NextRequest) {
         'x-middleware-fetch': '1',
         'x-internal-redirect': process.env.CRON_SECRET?.trim() || '1',
       },
-      next: { revalidate: 300 },
+      next: { revalidate: 1800 },
     });
     if (!res.ok) return NextResponse.next();
     const data = (await res.json()) as { redirect?: string | null; permanent?: boolean };
@@ -103,6 +124,35 @@ export async function proxy(request: NextRequest) {
   } catch {
     return NextResponse.next();
   }
+}
+
+/** Proxy’nin Node function’a gitmediği canlı surface’ler */
+function isCanonicalPublicPath(pathname: string): boolean {
+  if (pathname === '/') return true;
+  const prefixes = [
+    '/hizmetler',
+    '/bolgeler',
+    '/blog',
+    '/cozumler',
+    '/geo-sss',
+    '/sss',
+    '/iletisim',
+    '/randevu',
+    '/fiyat-hesaplama',
+    '/fiyatlar',
+    '/hakkimizda',
+    '/galeri',
+    '/referanslar',
+    '/harita-ve-yorumlar',
+    '/ekibimiz',
+    '/kullanim-kosullari',
+    '/gizlilik',
+    '/kvkk',
+    '/cerez',
+    '/login',
+    '/ara',
+  ] as const;
+  return prefixes.some((p) => pathname === p || pathname.startsWith(`${p}/`));
 }
 
 export const config = {

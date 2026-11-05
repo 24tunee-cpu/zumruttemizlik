@@ -5,8 +5,8 @@ type RedirectHit = { toPath: string; permanent: boolean };
 let cachedAt = 0;
 let byPath = new Map<string, RedirectHit>();
 
-/** DB yükünü azaltır — proxy her istekte Prisma çağırmaz */
-const CACHE_TTL_MS = 5 * 60 * 1000;
+/** DB yükünü azaltır — proxy her istekte Prisma çağırmaz (30 dk instance cache) */
+const CACHE_TTL_MS = 30 * 60 * 1000;
 
 export function invalidateRedirectCache() {
   cachedAt = 0;

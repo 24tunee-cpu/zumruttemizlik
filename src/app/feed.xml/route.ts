@@ -7,7 +7,7 @@ import {
 } from '@/lib/feeds';
 
 /** ISR — literal zorunlu (Next segment config) */
-export const revalidate = 3600;
+export const revalidate = 86400;
 
 export async function GET() {
   try {
