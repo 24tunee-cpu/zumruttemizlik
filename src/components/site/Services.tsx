@@ -111,12 +111,13 @@ function ServiceCard({ service, seo, index, featured }: ServiceCardProps) {
         <div className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-700/80 bg-slate-800/60 shadow-xl backdrop-blur-xl transition duration-500 group-hover:-translate-y-1 group-hover:border-emerald-500/40 group-hover:shadow-emerald-500/10">
           {/* Görsel bandı */}
           {imageSrc ? (
-            <div className="relative h-36 w-full overflow-hidden sm:h-40">
+            <div className="relative aspect-[16/9] w-full overflow-hidden sm:aspect-[5/3]">
               <Image
                 src={imageSrc}
                 alt={`${service.title} — İstanbul profesyonel temizlik hizmeti`}
-                fill
-                className="object-cover transition duration-700 group-hover:scale-105"
+                width={640}
+                height={360}
+                className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 onError={() => {
                   if (fallbackImage && imageSrc !== fallbackImage) {

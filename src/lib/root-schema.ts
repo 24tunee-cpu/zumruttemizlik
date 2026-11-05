@@ -86,6 +86,10 @@ export async function buildRootSchemaGraphJson(): Promise<string> {
     '@type': 'Organization',
     '@id': `${base}/#organization`,
     name: siteName,
+    alternateName: [
+      'Sarıyer ve Zekeriyaköy temizlik şirketi',
+      'Zümrüt Vadi Temizlik Sarıyer',
+    ],
     url: base,
     logo: logoUrl,
     email,
@@ -130,6 +134,10 @@ export async function buildRootSchemaGraphJson(): Promise<string> {
     additionalType: 'https://schema.org/HouseCleaner',
     '@id': `${base}/#business`,
     name: siteName,
+    alternateName: [
+      'Sarıyer ve Zekeriyaköy temizlik şirketi',
+      'Zümrüt Vadi Temizlik Sarıyer',
+    ],
     url: base,
     logo: logoUrl,
     image: [logoUrl, ogUrl],

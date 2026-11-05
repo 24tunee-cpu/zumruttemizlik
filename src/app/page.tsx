@@ -14,7 +14,6 @@ import DeferredHomeSections from '@/components/site/DeferredHomeSections';
 import RelatedSeoLinks from '@/components/site/RelatedSeoLinks';
 import { WhyChooseZvt } from '@/components/site/WhyChooseZvt';
 import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
-import { keywordsForPage } from '@/lib/seo-keywords';
 import { SERVICE_SEED_DATA } from '@/lib/seed-services';
 import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
 import { fetchPublicTestimonialsForSeo } from '@/lib/testimonials-seo';
@@ -27,7 +26,8 @@ const Services = dynamic(() => import('@/components/site/Services').then((mod) =
   loading: () => <div className="h-96 animate-pulse bg-slate-50" />,
 });
 
-const homeTitle = clampMetaTitle('İstanbul Temizlik Şirketi | Sarıyer & Zekeriyaköy');
+/** 50–60 karakter bandı (SERP); meta keywords yok (Google yok sayar) */
+const homeTitle = clampMetaTitle('İstanbul Temizlik Şirketi | Sarıyer ve Zekeriyaköy');
 const homeDescription = clampMetaDescription(
   `Sarıyer ve Zekeriyaköy ev, ofis, inşaat sonrası temizlik. ${formatGoogleTrustLine()}. Ücretsiz keşif, aynı gün randevu. ${SITE_CONTACT.phoneDisplay}.`
 );
@@ -35,7 +35,6 @@ const homeDescription = clampMetaDescription(
 export const metadata: Metadata = {
   title: { absolute: homeTitle },
   description: homeDescription,
-  keywords: keywordsForPage('home'),
   alternates: {
     canonical: canonicalUrl('/'),
   },
@@ -74,9 +73,9 @@ const homeServicesItemListJson = serializeSchemaGraph([
   {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'Zümrüt Vadi Temizlik Hizmetleri',
+    name: 'Sarıyer ve Zekeriyaköy temizlik hizmetleri — Zümrüt Vadi Temizlik',
     description:
-      'İstanbul Avrupa Yakası, Sarıyer ve Zekeriyaköy ev, ofis, inşaat sonrası, koltuk, halı, cam ve dış cephe temizlik hizmetleri.',
+      'Sarıyer ve Zekeriyaköy odaklı ev, ofis, inşaat sonrası, koltuk, halı, cam ve dış cephe temizlik hizmetleri (İstanbul Avrupa Yakası planlama).',
     itemListElement: activeServices.map((s, i) => ({
       '@type': 'ListItem',
       position: i + 1,
@@ -95,6 +94,10 @@ const HOME_AEO_FAQS = [
   {
     q: 'İstanbul temizlik fiyatı nasıl netleşir?',
     a: 'Metrekare, kirlilik, hizmet türü ve ekip süresi fiyatı etkiler. Online hesaplayıcı tahmini verir; kesin teklif ücretsiz keşif veya kısa bilgi sonrası netleşir.',
+  },
+  {
+    q: 'Kalite ve kapsam nasıl netleşir? Garanti sınırı nedir?',
+    a: 'Kapsam ücretsiz keşifte yazılır. Checklist’li uygulama sonrası eksik kalırsa aynı plan kapsamında düzeltilir. Garanti sınırı keşifte yazılı işlerdir; keşif dışı ekstra ayrıca teklif edilir. Online fiyat kesin teklif değildir. Peyzaj/bahçe düzenleme hizmeti yok.',
   },
   {
     q: 'Google yorumlarınız nerede?',
