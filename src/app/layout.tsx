@@ -20,7 +20,6 @@ import { Providers } from "./providers";
 import { getSiteIconHref } from "@/lib/site-branding";
 import { canonicalUrl, getSiteUrl } from "@/lib/seo";
 import { buildRootSchemaGraphJson } from "@/lib/root-schema";
-import { keywordsForPage } from "@/lib/seo-keywords";
 import { clampMetaDescription, clampMetaTitle } from "@/lib/meta-clamp";
 import { formatGoogleTrustLine } from "@/config/trust-signals";
 import { SITE_CONTACT } from "@/config/site-contact";
@@ -47,7 +46,6 @@ const rootMetadataBase: Metadata = {
     template: `%s | ${SITE_CONTACT.companyName}`,
   },
   description: rootDescription,
-  keywords: keywordsForPage("root"),
   authors: [{ name: SITE_CONTACT.companyName }],
   creator: SITE_CONTACT.companyName,
   publisher: SITE_CONTACT.companyName,

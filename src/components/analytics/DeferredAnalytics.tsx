@@ -8,11 +8,13 @@ interface DeferredAnalyticsProps {
   measurementId: string;
 }
 
+/** LCP sonrası — gtag paketini geciktir (Fluid CPU + TBT) */
+const GA_IDLE_MS = 4_500;
+
 function hasCookieConsent(storageKey: string): boolean {
   try {
     if (localStorage.getItem(storageKey)) return true;
 
-    // Geriye uyumluluk: önceki consent versiyonlarını da kabul et.
     for (let i = 0; i < localStorage.length; i += 1) {
       const key = localStorage.key(i);
       if (key?.startsWith('cookie-consent-v') && localStorage.getItem(key)) {
@@ -27,16 +29,13 @@ function hasCookieConsent(storageKey: string): boolean {
 }
 
 /**
- * Google Analytics 4 — Consent Mode v2.
- *
- * gtag her zaman yüklenir; ancak varsayılan olarak tüm consent sinyalleri "denied"dir.
- * Bu sayede onay verilmeden çerez yazılmaz (KVKK/GDPR uyumlu) fakat GA çerezsiz
- * (cookieless) sinyal gönderir — böylece Google etiketi tespit eder, doğrulama ve
- * temel veri toplama çalışır. Kullanıcı çerezleri kabul edince consent "granted"e güncellenir.
+ * Google Analytics 4 — Consent Mode v2 + idle/interaction defer.
+ * Onaysız çerez yazılmaz; gtag LCP’den sonra yüklenir.
  */
 export default function DeferredAnalytics({ measurementId }: DeferredAnalyticsProps) {
   const { settings, isLoading } = useSiteSettings();
   const [consentGranted, setConsentGranted] = useState(false);
+  const [loadGa, setLoadGa] = useState(false);
 
   useEffect(() => {
     if (isLoading || !measurementId) return;
@@ -46,7 +45,6 @@ export default function DeferredAnalytics({ measurementId }: DeferredAnalyticsPr
 
     if (hasCookieConsent(storageKey)) {
       setConsentGranted(true);
-      return;
     }
 
     const onAccepted = () => {
@@ -61,9 +59,44 @@ export default function DeferredAnalytics({ measurementId }: DeferredAnalyticsPr
     };
   }, [isLoading, measurementId, settings.consentPolicyVersion]);
 
-  // Onay verildiğinde consent'i "granted"e yükselt.
   useEffect(() => {
-    if (!consentGranted) return;
+    if (!measurementId || loadGa) return;
+
+    let done = false;
+    const activate = () => {
+      if (done) return;
+      done = true;
+      setLoadGa(true);
+    };
+
+    const timer = window.setTimeout(activate, GA_IDLE_MS);
+    const onInteract = () => {
+      window.clearTimeout(timer);
+      activate();
+    };
+
+    window.addEventListener('scroll', onInteract, { once: true, passive: true });
+    window.addEventListener('pointerdown', onInteract, { once: true });
+    window.addEventListener('keydown', onInteract, { once: true });
+
+    let idleId: number | undefined;
+    if (typeof window.requestIdleCallback === 'function') {
+      idleId = window.requestIdleCallback(activate, { timeout: GA_IDLE_MS + 800 });
+    }
+
+    return () => {
+      window.clearTimeout(timer);
+      window.removeEventListener('scroll', onInteract);
+      window.removeEventListener('pointerdown', onInteract);
+      window.removeEventListener('keydown', onInteract);
+      if (idleId !== undefined && typeof window.cancelIdleCallback === 'function') {
+        window.cancelIdleCallback(idleId);
+      }
+    };
+  }, [measurementId, loadGa]);
+
+  useEffect(() => {
+    if (!consentGranted || !loadGa) return;
     const w = window as unknown as { gtag?: (...args: unknown[]) => void };
     if (typeof w.gtag === 'function') {
       w.gtag('consent', 'update', {
@@ -73,14 +106,13 @@ export default function DeferredAnalytics({ measurementId }: DeferredAnalyticsPr
         ad_personalization: 'granted',
       });
     }
-  }, [consentGranted]);
+  }, [consentGranted, loadGa]);
 
-  if (!measurementId) return null;
+  if (!measurementId || !loadGa) return null;
 
   return (
     <>
-      {/* Consent Mode v2 — küçük inline; GA harici script lazyOnload ile ertelenir */}
-      <Script id="ga-consent-default" strategy="afterInteractive">
+      <Script id="ga-consent-default" strategy="lazyOnload">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}

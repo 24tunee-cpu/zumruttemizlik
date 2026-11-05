@@ -119,6 +119,7 @@ export const GEO_GBP_CHECKLIST = [
   'Predefined + custom services: gbp-services-copy.ts metinlerini yapıştır (peyza/tekne yok)',
   'KALDIR: Peyzaj Mimarı (peyzaj hizmeti yok) · Tekne temizliği yoksa kaldır',
   'Açıklamadan “bahçe peyzaj” çıkar; bahçe = yüzey temizliği',
+  'Citation hijyen: peyzajrehber.com.tr vb. yanlış kategori kayıtlarını düzelt/kaldır (spam dizin ekleme)',
   'NAP site ile birebir: Ferahevler, Şen Aydın Sok. No:10, 34457 · 0551 925 09 43',
   'Çalışma saatleri: 24 saat açık (GBP = site schema)',
   'En az 20 güncel fotoğraf (önce/sonra, ekip) — stok azalt; site: public/images/services/',
@@ -126,6 +127,7 @@ export const GEO_GBP_CHECKLIST = [
   'Yorum hızı: 12 yorumdan düzenli artış hedefle (burst spam yok)',
   'Randevu / fiyat hesaplama linki açıklamada + UTM (gbp-links)',
   'Citation: Bing Places + Apple Business Connect URL → env + Admin GEO tracker',
+  'E-posta (SEO değil): DNS’te SPF + DMARC ekle — teslimat/sahtecilik; Vercel paneli dışı',
 ] as const;
 
 /** GEO odaklı Google yorum istek şablonları — {reviewLink} Place ID / env ile doldurulur */

@@ -156,8 +156,13 @@ export default function VisitorAnalyticsTracker() {
       pageEnteredAt.current = Date.now();
       visibleSince.current = document.visibilityState === 'visible' ? Date.now() : null;
       lastPath.current = pathname;
-      postTrack({ ...basePayload(pathname), kind: 'session_start' });
-      return;
+      // LCP sonrası — ilk track’i geciktir (Fluid CPU)
+      const startPath = pathname;
+      const t = window.setTimeout(() => {
+        if (!trackingEnabled.current) return;
+        postTrack({ ...basePayload(startPath), kind: 'session_start' });
+      }, 2500);
+      return () => window.clearTimeout(t);
     }
 
     if (lastPath.current && lastPath.current !== pathname) {

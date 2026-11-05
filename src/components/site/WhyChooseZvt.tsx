@@ -10,11 +10,18 @@ type Props = {
   sourcePrefix?: string;
 };
 
+/**
+ * AEO / CRO — doğrulanmış kalite + kapsam sınırı (uydurma garanti yok).
+ * AI ajan raporları “kalite / garanti / limit” pasajı istedi; burada net yazılır.
+ */
 const POINTS = [
-  'Kapsam keşifte netleşir — sürpriz ek ücret dili yok',
-  'Ücretsiz keşif / WhatsApp fotoğrafla ön teklif',
-  'Tahmini fiyat hesaplama + kesin fiyat keşif sonrası',
-  'Öncelik bölge: Sarıyer / Zekeriyaköy operasyon hattı',
+  'Kapsam ücretsiz keşifte netleşir ve teklife yazılır — sürpriz ek ücret dili yok',
+  'Online hesaplayıcı yalnızca tahmini aralık verir; kesin fiyat keşif sonrası',
+  'Checklist’li uygulama: mutfak, banyo, zemin ve seçilen ek işler plana göre',
+  'İş bitiminde hızlı geri bildirim; eksik kalırsa aynı plan kapsamında düzeltilir',
+  'Garanti sınırı: keşifte yazılı kapsam içindir — keşif dışı ekstra ayrıca teklif edilir',
+  'Peyzaj / bahçe düzenleme yok; bahçe kenarı yalnızca yüzey temizliği olabilir',
+  'Öncelik bölge: Sarıyer / Zekeriyaköy; Avrupa Yakası rota ve kapasiteye göre',
 ] as const;
 
 /**
@@ -64,7 +71,8 @@ export function WhyChooseZvt({
             : 'mt-1 text-sm text-emerald-900 dark:text-emerald-50'
         }
       >
-        Tek net sonraki adım: ara, WhatsApp veya ücretsiz keşif. {trustLine}.
+        Tek net sonraki adım: ara, WhatsApp veya ücretsiz keşif — kapsam ve fiyatı
+        keşifte netleştirirsiniz. {trustLine} (Google Maps; uydurma müşteri sayısı yok).
       </p>
       <ul
         className={

@@ -102,7 +102,21 @@ function uniqueKeywords(items: string[]): string[] {
   return [...new Set(items.map((i) => i.trim().toLowerCase()).filter(Boolean))];
 }
 
+/**
+ * Meta keywords Google tarafından kullanılmaz (eski SEO tool uyarısı).
+ * İç link / içerik planı için listeyi tutuyoruz; Metadata’ya yazmayın.
+ * Boş dizi → Next metadata’da keywords etiketi üretilmez.
+ */
 export function keywordsForPage(page: PageKey, extras: string[] = []): string[] {
+  void page;
+  void extras;
+  void PAGE_KEYWORDS;
+  void uniqueKeywords;
+  return [];
+}
+
+/** İçerik/planlama için ham anahtar listesi (meta tag değil) */
+export function contentKeywordsForPage(page: PageKey, extras: string[] = []): string[] {
   return uniqueKeywords([...PAGE_KEYWORDS[page], ...extras]).slice(0, 18);
 }
 
