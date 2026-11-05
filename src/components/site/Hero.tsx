@@ -7,7 +7,6 @@
 import Link from 'next/link';
 import {
   ArrowRight,
-  Sparkles,
   Shield,
   Clock,
   Star,
@@ -20,6 +19,7 @@ import {
   HeroCalculatorSection,
   HeroScrollIndicator,
 } from '@/components/site/HeroClientParts';
+import { HeroLocalizedPlace } from '@/components/site/HeroLocalizedPlace';
 import { SITE_CONTACT, toTelHref } from '@/config/site-contact';
 import {
   VERIFIED_TRUST,
@@ -51,24 +51,7 @@ export function Hero() {
       <div className="relative mx-auto max-w-7xl px-4 pt-24 pb-20 sm:px-6 sm:pt-28 md:pt-28 md:pb-24 lg:px-8 lg:pt-32 lg:pb-28">
         <div className="grid items-center gap-10 sm:gap-12 lg:grid-cols-2 lg:gap-10">
           <div>
-            <div className="hero-enter inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-2 text-emerald-400 backdrop-blur-sm">
-              <Sparkles
-                size={16}
-                className="max-md:animate-none md:animate-spin md:[animation-duration:3s]"
-                aria-hidden="true"
-              />
-              <span className="text-sm font-medium">
-                Sarıyer · Zekeriyaköy · İstanbul Avrupa Yakası
-              </span>
-            </div>
-
-            <h1 className="hero-enter hero-enter-delay-1 mt-6 text-balance text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
-              Sarıyer &amp; Zekeriyaköy{' '}
-              <span className="bg-gradient-to-r from-emerald-400 to-emerald-500 bg-clip-text text-transparent">
-                temizlik
-              </span>{' '}
-              şirketi
-            </h1>
+            <HeroLocalizedPlace />
 
             <p className="hero-enter hero-enter-delay-2 mt-6 max-w-xl text-base text-slate-300 sm:text-lg">
               Villa, ev, ofis ve inşaat sonrası temizlik. Ücretsiz keşif, net kapsam,

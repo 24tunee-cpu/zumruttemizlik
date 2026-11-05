@@ -18,7 +18,7 @@ import {
 import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
 import { SITE_CONTACT } from '@/config/site-contact';
 
-export const revalidate = 3600;
+export const revalidate = 86400;
 
 const ekipTitle = clampMetaTitle('Ekibimiz | Sarıyer Temizlik Ekibi');
 const ekipDescription = clampMetaDescription(

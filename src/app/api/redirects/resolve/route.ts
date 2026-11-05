@@ -2,7 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { resolveRedirectRule } from '@/lib/redirect-resolve-cache';
 import { checkRateLimit, getClientIp } from '@/lib/security';
 
-export const dynamic = 'force-dynamic';
+/** force-dynamic kaldırıldı — CDN/Data Cache ile Fluid CPU düşer */
+export const revalidate = 1800;
 
 /**
  * Proxy (Edge) → Node resolve. Harici abuse'u sınırlamak için:
@@ -26,19 +27,23 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ redirect: null }, { status: 200 });
   }
 
+  const cacheHeaders = {
+    'Cache-Control': 'public, s-maxage=1800, stale-while-revalidate=86400',
+  };
+
   try {
     const rule = await resolveRedirectRule(path);
     if (!rule) {
       return NextResponse.json(
         { redirect: null, permanent: false },
-        { headers: { 'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=600' } }
+        { headers: cacheHeaders }
       );
     }
     return NextResponse.json(
       { redirect: rule.toPath, permanent: rule.permanent },
-      { headers: { 'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=600' } }
+      { headers: cacheHeaders }
     );
   } catch {
-    return NextResponse.json({ redirect: null }, { status: 200 });
+    return NextResponse.json({ redirect: null }, { status: 200, headers: cacheHeaders });
   }
 }

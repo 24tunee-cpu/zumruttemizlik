@@ -9,7 +9,7 @@ import { WhyChooseZvt } from '@/components/site/WhyChooseZvt';
 import RelatedSeoLinks from '@/components/site/RelatedSeoLinks';
 import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
 
-export const revalidate = 3600;
+export const revalidate = 86400;
 
 const geoSssTitle = clampMetaTitle('GEO SSS | İlçe Temizlik Soruları');
 const geoSssDescription = clampMetaDescription(

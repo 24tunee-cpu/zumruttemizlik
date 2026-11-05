@@ -5,8 +5,8 @@ import { useEffect, useRef } from 'react';
 
 const VISITOR_KEY = 'zv_visitor_id';
 const SESSION_KEY = 'zv_session_id';
-/** Canlı oturum için yeterli; 30sn yerine 2dk — CPU/DB yükünü ~4x azaltır */
-const HEARTBEAT_MS = 120_000;
+/** Canlı oturum — 5 dk (önce 2 dk). page_exit/session_end zaten süre tutar. */
+const HEARTBEAT_MS = 300_000;
 
 function shouldTrack(pathname: string): boolean {
   if (pathname.startsWith('/admin')) return false;
@@ -194,9 +194,17 @@ export default function VisitorAnalyticsTracker() {
       if (!el) return;
 
       const anchor = el.closest('a') as HTMLAnchorElement | null;
-      const label = (el.getAttribute('aria-label') || el.textContent || '').trim().slice(0, 200);
       const href = anchor?.getAttribute('href') || undefined;
       const source = (anchor?.dataset.source || el.dataset.source || undefined)?.slice(0, 80);
+      // Fluid CPU: her tıklama değil — yalnızca CTA (data-source) veya tel/WA
+      const isConversionHref =
+        !!href &&
+        (href.startsWith('tel:') ||
+          href.includes('wa.me/') ||
+          href.includes('whatsapp.com'));
+      if (!source && !isConversionHref) return;
+
+      const label = (el.getAttribute('aria-label') || el.textContent || '').trim().slice(0, 200);
 
       postTrack({
         ...basePayload(currentPath()),

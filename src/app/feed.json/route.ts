@@ -7,7 +7,7 @@ import {
 import { SITE_CONTACT } from '@/config/site-contact';
 import { getSiteUrl } from '@/lib/seo';
 
-export const revalidate = 3600;
+export const revalidate = 86400;
 
 export async function GET() {
   try {
