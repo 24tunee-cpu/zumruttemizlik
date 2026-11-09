@@ -109,9 +109,6 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: process.env.NETLIFY === "true",
   },
-  eslint: {
-    ignoreDuringBuilds: process.env.NETLIFY === "true",
-  },
 
   // ============================================
   // TRAILING SLASH
