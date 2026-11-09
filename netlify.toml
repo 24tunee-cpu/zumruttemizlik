@@ -7,6 +7,8 @@
 
 [build.environment]
   NODE_VERSION = "20"
+  # Install sırasında production omit → prisma/postinstall kırılıyor
+  NPM_CONFIG_PRODUCTION = "false"
   NPM_FLAGS = "--legacy-peer-deps"
 
 [[plugins]]
@@ -16,9 +18,8 @@
   # Free tier koruması — uzun SEO cron'ları Netlify'da şimdilik yok
   node_bundler = "esbuild"
 
-[context.production.environment]
-  NODE_ENV = "production"
+# NODE_ENV=production install aşamasında koyma (devDeps atlanır).
+# Runtime'da Netlify kendisi production set eder.
 
 [context.deploy-preview.environment]
-  NODE_ENV = "production"
   NEXT_PUBLIC_IS_PREVIEW = "true"
