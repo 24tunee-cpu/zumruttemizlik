@@ -104,6 +104,15 @@ const nextConfig: NextConfig = {
   // ============================================
   compress: true,
 
+  // Netlify free build ~2GB heap: tsc during `next build` OOM oluyor.
+  // Tip kontrolü CI/local: `npm run type-check`
+  typescript: {
+    ignoreBuildErrors: process.env.NETLIFY === "true",
+  },
+  eslint: {
+    ignoreDuringBuilds: process.env.NETLIFY === "true",
+  },
+
   // ============================================
   // TRAILING SLASH
   // ============================================

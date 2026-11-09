@@ -10,6 +10,8 @@
   # Install sırasında production omit → prisma/postinstall kırılıyor
   NPM_CONFIG_PRODUCTION = "false"
   NPM_FLAGS = "--legacy-peer-deps"
+  # Free build worker OOM (tsc ~2GB) — heap + NETLIFY skip typecheck
+  NODE_OPTIONS = "--max-old-space-size=4096"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
