@@ -59,6 +59,10 @@ export async function OPTIONS(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   const headers = publicCorsHeaders(request.headers.get('origin'));
+  // Free/Netlify: varsayılan kapalı — NEXT_PUBLIC_VISITOR_ANALYTICS=1 ile aç
+  if (process.env.NEXT_PUBLIC_VISITOR_ANALYTICS !== '1') {
+    return new NextResponse(null, { status: 204, headers });
+  }
   const ip = getClientIp(request);
   const limit = await checkDistributedRateLimit(`visitor-track:${ip}`, 180, 60_000);
   if (!limit.allowed) {

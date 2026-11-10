@@ -67,6 +67,9 @@ function scrollDepthPct(): number {
   return Math.min(100, Math.round((window.scrollY / maxScroll) * 100));
 }
 
+/** Free/Netlify: varsayılan kapalı. Açmak için NEXT_PUBLIC_VISITOR_ANALYTICS=1 */
+const VISITOR_ANALYTICS_ON = process.env.NEXT_PUBLIC_VISITOR_ANALYTICS === '1';
+
 /**
  * Ziyaretçi oturumu, sayfa geçişi, etkileşim süresi, dönüşüm ve çıkış takibi.
  * Konum/cihaz sunucuda Vercel header + UA ile çözülür.
@@ -141,6 +144,10 @@ export default function VisitorAnalyticsTracker() {
   };
 
   useEffect(() => {
+    if (!VISITOR_ANALYTICS_ON) {
+      trackingEnabled.current = false;
+      return;
+    }
     if (!shouldTrack(pathname)) {
       trackingEnabled.current = false;
       return;

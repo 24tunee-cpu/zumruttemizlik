@@ -12,11 +12,16 @@
   NPM_FLAGS = "--legacy-peer-deps"
   # Free build worker OOM (tsc ~2GB) — heap + NETLIFY skip typecheck
   NODE_OPTIONS = "--max-old-space-size=4096"
+  # NEXTAUTH_URL / SITE_URL = public site URL; repo docs'ta geçer → false positive
+  SECRETS_SCAN_OMIT_KEYS = "NEXTAUTH_URL,NEXT_PUBLIC_SITE_URL"
+  # Free tier: ziyaretçi DB yazımı kapalı (CPU/function şişmesi)
+  NEXT_PUBLIC_VISITOR_ANALYTICS = "0"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
 [functions]
+  directory = "netlify/functions"
   # Free tier koruması — uzun SEO cron'ları Netlify'da şimdilik yok
   node_bundler = "esbuild"
 
