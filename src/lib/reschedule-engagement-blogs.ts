@@ -5,6 +5,8 @@ import {
   BLOG_ENGAGEMENT_PUBLISH_PER_DAY,
   BLOG_V4_SCHEDULE_ANCHOR_ISO,
   BLOG_V6_SCHEDULE_ANCHOR_ISO,
+  BLOG_V7_PUBLISH_PER_DAY,
+  BLOG_V7_SCHEDULE_ANCHOR_ISO,
 } from './blog-schedule';
 
 export type RescheduleEngagementResult = {
@@ -15,6 +17,7 @@ export type RescheduleEngagementResult = {
   v4Count: number;
   v5Count: number;
   v6Count?: number;
+  v7Count?: number;
 };
 
 type DraftPost = {
@@ -132,6 +135,53 @@ export async function scheduleV6EngagementQueue(
     v4Count: 0,
     v5Count: 0,
     v6Count: drafts.length,
+  };
+}
+
+/**
+ * v7 ticari/yerel taslaklar — günde 5, BLOG_V7_SCHEDULE_ANCHOR_ISO’dan.
+ */
+export async function scheduleV7CommercialQueue(
+  prisma: PrismaClient
+): Promise<RescheduleEngagementResult> {
+  const drafts = await prisma.blogPost.findMany({
+    where: {
+      published: false,
+      tags: { has: 'otomatik yayın v7' },
+    },
+    select: { id: true, slug: true, createdAt: true, tags: true },
+    orderBy: { createdAt: 'asc' },
+  });
+
+  const seedPosts: BlogSeedPost[] = drafts.map((d) => ({
+    slug: d.slug,
+    title: d.slug,
+    excerpt: '',
+    content: '',
+    category: 'Temizlik',
+    tags: ['istanbul'],
+  }));
+
+  const scheduled = assignPublishSchedule(seedPosts, {
+    anchor: new Date(BLOG_V7_SCHEDULE_ANCHOR_ISO),
+    postsPerDay: BLOG_V7_PUBLISH_PER_DAY,
+  });
+
+  for (let i = 0; i < drafts.length; i++) {
+    await prisma.blogPost.update({
+      where: { id: drafts[i].id },
+      data: { scheduledPublishAt: scheduled[i].scheduledPublishAt },
+    });
+  }
+
+  return {
+    total: drafts.length,
+    days: Math.ceil(drafts.length / BLOG_V7_PUBLISH_PER_DAY) || 0,
+    firstPublishAt: scheduled[0]?.scheduledPublishAt.toISOString() ?? '',
+    lastPublishAt: scheduled[scheduled.length - 1]?.scheduledPublishAt.toISOString() ?? '',
+    v4Count: 0,
+    v5Count: 0,
+    v7Count: drafts.length,
   };
 }
 

@@ -12,6 +12,12 @@ export const BLOG_V4_SCHEDULE_ANCHOR_ISO = '2026-08-17T00:00:00.000Z';
 /** V6 kuyruk — v4+v5 bitti; yarın (31 Eki 2026) 10/gün */
 export const BLOG_V6_SCHEDULE_ANCHOR_ISO = '2026-10-31T00:00:00.000Z';
 
+/** V7 ticari/yerel kuyruk — v6 sonrası (11 Kas 2026), Netlify için 5/gün */
+export const BLOG_V7_SCHEDULE_ANCHOR_ISO = '2026-11-11T00:00:00.000Z';
+
+/** v7 günlük yayın (CPU/keşif dengesi) */
+export const BLOG_V7_PUBLISH_PER_DAY = 5;
+
 /** v4 etkileşim içerikleri (geriye dönük) */
 export const BLOG_V4_PUBLISH_PER_DAY = 5;
 

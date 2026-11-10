@@ -210,7 +210,7 @@ export function buildSiteHubStripLinks(): SeoLinkItem[] {
   ]);
 }
 
-/** Engagement / viral (v4–v6) blog → zorunlu temizlik hub köprüleri */
+/** Engagement / viral (v4–v7) blog → zorunlu temizlik hub köprüleri */
 export const REQUIRED_ENGAGEMENT_BRIDGE_HREFS = [
   '/hizmetler/ev-temizligi',
   '/hizmetler/ofis-temizligi',
@@ -237,11 +237,11 @@ export function buildEngagementBlogBridgeLinks(): SeoLinkItem[] {
   ]);
 }
 
-/** v4/v5/v6 kuyruk veya viral engagement slug */
+/** v4/v5/v6/v7 kuyruk veya viral engagement slug */
 export function isEngagementBlogPost(slug: string, tags: string[] = []): boolean {
   const tagHit = tags.some(
     (t) =>
-      /otomatik\s*yay[iı]n\s*v[456]/i.test(t) ||
+      /otomatik\s*yay[iı]n\s*v[4567]/i.test(t) ||
       /engagement/i.test(t) ||
       /viral/i.test(t)
   );
