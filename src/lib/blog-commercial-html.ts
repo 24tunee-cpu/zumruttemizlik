@@ -150,3 +150,136 @@ export function makeCommercialGuidePost(cfg: CommercialGuideConfig): BlogSeedPos
     skipLongFormEnrichment: true,
   };
 }
+
+export type PricingGuideConfig = CommercialGuideConfig & {
+  priceFactors: string[];
+  scenarios: string[];
+  compareNote: string;
+};
+
+/** Top-CTR “fiyatları 2026” formatı — daha derin fiyat faktörleri + senaryo + hesaplama CTA */
+export function buildPricingGuideHtml(cfg: PricingGuideConfig): string {
+  const intro =
+    cfg.intro.endsWith('.') || cfg.intro.endsWith('…')
+      ? cfg.intro
+      : `${cfg.intro}.`;
+  const tldr = buildGeoTldr(intro);
+  const featured = buildFeaturedSnippetBlock(
+    `${cfg.keyword} — 2026 kısa cevap`,
+    `${intro} Online hesaplama tahmindir; kesin teklif ücretsiz keşif veya kısa brifing ile netleşir.`
+  );
+
+  const factors = buildPassageSection(
+    `${cfg.keyword}: fiyatı neler belirler?`,
+    'Tek satır “sabit fiyat” yerine keşifte yazılan kapsam ile ilerleriz; aşağıdaki faktörler teklifi şekillendirir.',
+    [
+      `<a href="/fiyat-hesaplama">Online fiyat hesaplama</a> ile hızlı tahmin alın; villa, inşaat sonrası ve yüksek kat camda keşif önerilir.`,
+      `${cfg.compareNote}`,
+    ],
+    cfg.priceFactors
+  );
+
+  const scenarios = buildPassageSection(
+    'Tipik senaryolar (tahmini süre / plan)',
+    `Süre ve ekip ${cfg.durationHint} bandında değişir; kesin plan yazılı kapsamda çıkar.`,
+    [
+      `${cfg.areaLabel} hattında erişim, otopark ve site/plaza prosedürü randevu öncesi not edilir.`,
+      `Hizmet sayfası: <a href="${cfg.serviceHref}">${escapeHtml(cfg.serviceLabel)}</a>.`,
+    ],
+    cfg.scenarios
+  );
+
+  const scope = buildPassageSection(
+    'Kapsam ve sınırlar',
+    'Yüzey ve yaşam alanı temizliği planlanır; peyzaj/bahçe düzenleme hizmetimiz yoktur.',
+    ['Garanti sınırı keşifte yazılan checklist’tir; keşif dışı iş ayrı teklif edilir.'],
+    [
+      ...cfg.scopeIn.map((x) => `Dahil (tipik): ${x}`),
+      ...cfg.scopeOut.map((x) => `Dahil değil: ${x}`),
+      'Peyzaj mimarisi / bahçe düzenleme: yok',
+    ]
+  );
+
+  const process = buildPassageSection(
+    'Şeffaf fiyat süreci',
+    'Önce bilgi veya keşif → yazılı kapsam → uygulama → checklist kontrolü.',
+    cfg.steps,
+    cfg.mistakes.map((m) => `Kaçının: ${m}`)
+  );
+
+  const price = buildPassageSection(
+    'Online hesaplama vs keşif',
+    cfg.priceNote,
+    [
+      '<a href="/fiyat-hesaplama">Fiyat hesaplama</a> aracı m² ve hizmet tipine göre tahmin üretir.',
+      'Kesin rakam için <a href="/randevu">ücretsiz keşif</a> veya WhatsApp ile foto/m² paylaşın: <a href="/iletisim">iletişim</a>.',
+    ]
+  );
+
+  const who = buildPassageSection('Bu rehber kimler için?', cfg.audience, [
+    `${cfg.areaLabel} ve İstanbul genelinde ${cfg.keyword} araştıranlar için maliyet şeffaflığı sağlar.`,
+  ]);
+
+  const extra =
+    cfg.sections
+      ?.map((s) =>
+        buildPassageSection(s.heading, s.paragraphs[0] ?? intro, s.paragraphs.slice(1), s.bullets)
+      )
+      .join('') ?? '';
+
+  const faqHtml = cfg.faq.map((f) => `<div><h3>${escapeHtml(f.q)}</h3><p>${f.a}</p></div>`).join('');
+
+  const moneyLinks = buildEngagementBlogBridgeLinks()
+    .slice(0, 8)
+    .map((l) => `<a href="${l.href}">${escapeHtml(l.label)}</a>`)
+    .join(' · ');
+
+  return `
+${tldr}
+${featured}
+<p class="geo-passage-answer" data-geo-extract="true"><strong>Özet:</strong> ${escapeHtml(intro)}</p>
+<p><strong>Zümrüt Vadi Temizlik</strong> — Sarıyer / Zekeriyaköy öncelikli, İstanbul genelinde profesyonel temizlik. Bu yazı <strong>${escapeHtml(cfg.keyword)}</strong> niyetine odaklıdır; kesin fiyat keşif sonrası yazılıdır.</p>
+
+${who}
+${factors}
+${scenarios}
+${scope}
+${process}
+${price}
+${extra}
+
+<h2>Sık sorulan sorular</h2>
+${faqHtml}
+
+<table>
+  <thead><tr><th>Adım</th><th>Ne olur?</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><a href="/fiyat-hesaplama">Online tahmin</a></td></tr>
+    <tr><td>2</td><td><a href="/randevu">Ücretsiz keşif / brifing</a></td></tr>
+    <tr><td>3</td><td>Yazılı kapsam + teklif</td></tr>
+    <tr><td>4</td><td>Checklist’li uygulama</td></tr>
+  </tbody>
+</table>
+
+<h2>Sonraki adım</h2>
+<p class="geo-passage-answer" data-geo-extract="true"><strong>Özet:</strong> ${escapeHtml(cfg.keyword)} için tahmini <a href="/fiyat-hesaplama">hemen hesaplayın</a>; kesin teklif için <a href="/randevu">randevu</a> alın.</p>
+<p><a href="${cfg.serviceHref}">${escapeHtml(cfg.serviceLabel)}</a> · <a href="${cfg.areaHref}">${escapeHtml(cfg.areaLabel)}</a> · <a href="/bolgeler/sariyer">Sarıyer temizlik</a> · <a href="/bolgeler/sariyer/zekeriyakoy">Zekeriyaköy</a></p>
+<p class="engagement-money-bridges"><strong>Hizmet ve bölge:</strong> ${moneyLinks}</p>
+<p><em>Zümrüt Vadi Temizlik</em> — 0551 925 09 43 · Maps yorumları · ücretsiz keşif.</p>
+  `.trim();
+}
+
+export function makePricingGuidePost(cfg: PricingGuideConfig): BlogSeedPost {
+  return {
+    slug: cfg.slug,
+    title: cfg.title,
+    excerpt: cfg.excerpt,
+    content: buildPricingGuideHtml(cfg),
+    image: cfg.image,
+    category: cfg.category,
+    tags: cfg.tags,
+    metaTitle: cfg.metaTitle,
+    metaDesc: cfg.metaDesc,
+    skipLongFormEnrichment: true,
+  };
+}
