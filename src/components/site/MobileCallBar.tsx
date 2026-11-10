@@ -15,7 +15,7 @@ export default function MobileCallBar() {
   )}`;
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-700 bg-slate-900/95 px-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-2 backdrop-blur lg:hidden">
+    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-700 bg-slate-900/95 px-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-2 backdrop-blur lg:hidden [:is(html.lead-assistant-open)_&]:hidden">
       <p className="mb-2 text-center text-xs text-slate-300">Hızlı dönüş: Genelde 30 dakika içinde geri dönüş yapıyoruz.</p>
       <div className="grid grid-cols-2 gap-2">
         <a

@@ -1,7 +1,7 @@
 /**
  * @fileoverview Site Layout
  * @description Site-wide layout bileşeni.
- * Navbar, Footer, FloatingWhatsApp ve skip-to-content link ile.
+ * Navbar, Footer, LeadAssistant (mobil asistan) ve skip-to-content link ile.
  * Tüm site sayfalarını saran ana layout.
  *
  * @architecture

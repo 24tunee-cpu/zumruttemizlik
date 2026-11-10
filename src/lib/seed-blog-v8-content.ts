@@ -163,7 +163,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "zeker",
     "image": "villa",
-    "tag": "villa",
     "compareNote": "Daire paketinden farklıdır; keşifsiz sabit fiyat yanıltıcıdır.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -234,7 +233,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "bahce",
     "image": "home",
-    "tag": "dubleks",
     "compareNote": "Tek kat daireye göre süre genelde uzar.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -305,7 +303,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "sariyer",
     "image": "home",
-    "tag": "boş ev",
     "compareNote": "Dolu eve göre süre kısalabilir; kirlilik sınıfı ayrıdır.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -376,7 +373,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "sisli",
     "image": "home",
-    "tag": "dolu ev",
     "compareNote": "Boş ev checklist’i birebir uygulanmaz.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -447,7 +443,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "sariyer",
     "image": "home",
-    "tag": "periyodik",
     "compareNote": "Tek sefer genel temizlik farklı pakettir.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -518,7 +513,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "besiktas",
     "image": "home",
-    "tag": "tek sefer",
     "compareNote": "Periyodik abonelikten farklı fiyatlanır.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -589,7 +583,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "kadikoy",
     "image": "home",
-    "tag": "taşınma",
     "compareNote": "İnşaat tozu varsa ayrı paket düşünülür.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -660,7 +653,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "umraniye",
     "image": "home",
-    "tag": "depozito",
     "compareNote": "Emlakçı beklentisi keşifte netleştirilir.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -731,7 +723,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "besiktas",
     "image": "home",
-    "tag": "airbnb",
     "compareNote": "Genel ev paketinden daha kısa tur olabilir.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -802,7 +793,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "sariyer",
     "image": "home",
-    "tag": "bebek",
     "compareNote": "Tıbbi sterilizasyon iddiası yoktur.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -873,7 +863,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "kagithane",
     "image": "home",
-    "tag": "pet",
     "compareNote": "Halı/koltuk ayrı paketlenebilir.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -944,7 +933,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "kadikoy",
     "image": "home",
-    "tag": "mutfak",
     "compareNote": "Genel ev içinde veya lokal paket olabilir.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -1015,7 +1003,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "bakirkoy",
     "image": "home",
-    "tag": "banyo",
     "compareNote": "Yanlış asit malzemeyi bozar — ürün seçimi kritik.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -1086,7 +1073,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "sariyer",
     "image": "home",
-    "tag": "bayram",
     "compareNote": "Son gün acil taleplerde kapasite sınırlı olabilir.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -1157,7 +1143,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "sisli",
     "image": "home",
-    "tag": "yılbaşı",
     "compareNote": "Cam eklenirse süre uzar.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -1228,7 +1213,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "maltepe",
     "image": "home",
-    "tag": "bahar",
     "compareNote": "Cam ve balkon ayrı kalem olabilir.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -1299,7 +1283,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "bahce",
     "image": "home",
-    "tag": "küf",
     "compareNote": "İzolasyon/inşaat işi dahil değildir.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -1370,7 +1353,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "sariyer",
     "image": "villa",
-    "tag": "sarıyer",
     "compareNote": "Peyzaj yoktur; yüzey temizliği planlanır.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -1441,7 +1423,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "zeker",
     "image": "villa",
-    "tag": "zekeriyaköy",
     "compareNote": "Online tahmin sonrası keşif önerilir.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -1512,7 +1493,6 @@ const TOPICS: V8Topic[] = [
     "service": "ofis",
     "area": "maslak",
     "image": "office",
-    "tag": "maslak",
     "compareNote": "Frekanslı sözleşme birim maliyeti düşürebilir.",
     "priceFactors": [
       "Ofis m² ve workstation sayısı",
@@ -1583,7 +1563,6 @@ const TOPICS: V8Topic[] = [
     "service": "cam",
     "area": "tarabya",
     "image": "window",
-    "tag": "tarabya",
     "compareNote": "Yüksek katta güvenlik planı şart.",
     "priceFactors": [
       "Cam paneli / cephe sayısı",
@@ -1654,7 +1633,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "bahce",
     "image": "home",
-    "tag": "bahçeköy",
     "compareNote": "İnşaat sonrası ayrı pakettir.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -1725,7 +1703,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "uskum",
     "image": "home",
-    "tag": "uskumruköy",
     "compareNote": "Kış erişiminde sabah slotları tercih edilebilir.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -1796,7 +1773,6 @@ const TOPICS: V8Topic[] = [
     "service": "ofis",
     "area": "sisli",
     "image": "office",
-    "tag": "şişli",
     "compareNote": "Güvenlik izni önceden alınmalı.",
     "priceFactors": [
       "Ofis m² ve workstation sayısı",
@@ -1867,7 +1843,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "besiktas",
     "image": "home",
-    "tag": "beşiktaş",
     "compareNote": "Daire tipi fiyatı değiştirir.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -1938,7 +1913,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "kadikoy",
     "image": "home",
-    "tag": "kadıköy",
     "compareNote": "Anadolu Yakası operasyonu planlıdır.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -2009,7 +1983,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "umraniye",
     "image": "home",
-    "tag": "ümraniye",
     "compareNote": "Finans çevresi ofis paketleri ayrıdır.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -2080,7 +2053,6 @@ const TOPICS: V8Topic[] = [
     "service": "ofis",
     "area": "atasehir",
     "image": "office",
-    "tag": "ataşehir",
     "compareNote": "Tek sefer açılış temizliği farklıdır.",
     "priceFactors": [
       "Ofis m² ve workstation sayısı",
@@ -2151,7 +2123,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "bakirkoy",
     "image": "home",
-    "tag": "bakırköy",
     "compareNote": "Periyodik plan birim maliyeti dengeleyebilir.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -2222,7 +2193,6 @@ const TOPICS: V8Topic[] = [
     "service": "insaat",
     "area": "kagithane",
     "image": "build",
-    "tag": "kağıthane",
     "compareNote": "Standart ev paketi yetmeyebilir.",
     "priceFactors": [
       "Brüt / net m² ve kirlilik sınıfı",
@@ -2292,7 +2262,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "uskudar",
     "image": "home",
-    "tag": "üsküdar",
     "compareNote": "Dubleks/villa ayrı keşif.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -2363,7 +2332,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "maltepe",
     "image": "home",
-    "tag": "maltepe",
     "compareNote": "Cam balkon sonrası toz ayrı olabilir.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -2434,7 +2402,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "kartal",
     "image": "home",
-    "tag": "kartal",
     "compareNote": "Ofis talepleri ayrı fiyatlanır.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -2505,7 +2472,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "pendik",
     "image": "home",
-    "tag": "pendik",
     "compareNote": "Aynı gün slot garanti değildir.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -2576,7 +2542,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "fatih",
     "image": "home",
-    "tag": "fatih",
     "compareNote": "Asansörsüz kat bilgisi kritik.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -2647,7 +2612,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "eyup",
     "image": "home",
-    "tag": "eyüpsultan",
     "compareNote": "İnşaat teslimi ayrı paket.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -2718,7 +2682,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "zeytinburnu",
     "image": "home",
-    "tag": "zeytinburnu",
     "compareNote": "Periyodik seçenek sunulabilir.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -2789,7 +2752,6 @@ const TOPICS: V8Topic[] = [
     "service": "insaat",
     "area": "sariyer",
     "image": "build",
-    "tag": "inşaat",
     "compareNote": "Standart ev turu ile karıştırılmamalı.",
     "priceFactors": [
       "Brüt / net m² ve kirlilik sınıfı",
@@ -2859,7 +2821,6 @@ const TOPICS: V8Topic[] = [
     "service": "insaat",
     "area": "maslak",
     "image": "build",
-    "tag": "ofis teslim",
     "compareNote": "Plaza prosedürü ek süre doğurabilir.",
     "priceFactors": [
       "Brüt / net m² ve kirlilik sınıfı",
@@ -2929,7 +2890,6 @@ const TOPICS: V8Topic[] = [
     "service": "insaat",
     "area": "kadikoy",
     "image": "build",
-    "tag": "boya",
     "compareNote": "Boya işçiliği dahil değildir.",
     "priceFactors": [
       "Brüt / net m² ve kirlilik sınıfı",
@@ -2999,7 +2959,6 @@ const TOPICS: V8Topic[] = [
     "service": "insaat",
     "area": "umraniye",
     "image": "build",
-    "tag": "montaj",
     "compareNote": "İnşaat tesliminden daha hafif olabilir.",
     "priceFactors": [
       "Brüt / net m² ve kirlilik sınıfı",
@@ -3069,7 +3028,6 @@ const TOPICS: V8Topic[] = [
     "service": "insaat",
     "area": "atasehir",
     "image": "build",
-    "tag": "teslim",
     "compareNote": "Online tahmin + keşif ikilisi önerilir.",
     "priceFactors": [
       "Brüt / net m² ve kirlilik sınıfı",
@@ -3139,7 +3097,6 @@ const TOPICS: V8Topic[] = [
     "service": "ofis",
     "area": "maslak",
     "image": "office",
-    "tag": "gece",
     "compareNote": "Gündüz kısa turdan farklı fiyatlanabilir.",
     "priceFactors": [
       "Ofis m² ve workstation sayısı",
@@ -3210,7 +3167,6 @@ const TOPICS: V8Topic[] = [
     "service": "ofis",
     "area": "sisli",
     "image": "office",
-    "tag": "çay ocağı",
     "compareNote": "Genel ofis turuna eklenebilir.",
     "priceFactors": [
       "Ofis m² ve workstation sayısı",
@@ -3281,7 +3237,6 @@ const TOPICS: V8Topic[] = [
     "service": "ofis",
     "area": "maslak",
     "image": "office",
-    "tag": "plaza",
     "compareNote": "Peyzaj yoktur.",
     "priceFactors": [
       "Ofis m² ve workstation sayısı",
@@ -3352,7 +3307,6 @@ const TOPICS: V8Topic[] = [
     "service": "ofis",
     "area": "atasehir",
     "image": "office",
-    "tag": "site",
     "compareNote": "Bahçe düzenleme dahil değil.",
     "priceFactors": [
       "Ofis m² ve workstation sayısı",
@@ -3423,7 +3377,6 @@ const TOPICS: V8Topic[] = [
     "service": "cam",
     "area": "besiktas",
     "image": "window",
-    "tag": "mağaza",
     "compareNote": "Cam + zemin ayrı kalem olabilir.",
     "priceFactors": [
       "Cam paneli / cephe sayısı",
@@ -3494,7 +3447,6 @@ const TOPICS: V8Topic[] = [
     "service": "ofis",
     "area": "sisli",
     "image": "office",
-    "tag": "klinik",
     "compareNote": "Tıbbi cihaz temizliği dahil değil.",
     "priceFactors": [
       "Ofis m² ve workstation sayısı",
@@ -3565,7 +3517,6 @@ const TOPICS: V8Topic[] = [
     "service": "ofis",
     "area": "kadikoy",
     "image": "office",
-    "tag": "açılış",
     "compareNote": "İnşaat tozu varsa ayrı program.",
     "priceFactors": [
       "Ofis m² ve workstation sayısı",
@@ -3636,7 +3587,6 @@ const TOPICS: V8Topic[] = [
     "service": "koltuk",
     "area": "sariyer",
     "image": "sofa",
-    "tag": "koltuk",
     "compareNote": "Ev tipi agresif kimyasal risklidir.",
     "priceFactors": [
       "Koltuk/kanepe takım adedi",
@@ -3707,7 +3657,6 @@ const TOPICS: V8Topic[] = [
     "service": "koltuk",
     "area": "kadikoy",
     "image": "sofa",
-    "tag": "leke",
     "compareNote": "Garanti her lekeyi %100 çıkarmak değildir.",
     "priceFactors": [
       "Koltuk/kanepe takım adedi",
@@ -3778,7 +3727,6 @@ const TOPICS: V8Topic[] = [
     "service": "koltuk",
     "area": "sariyer",
     "image": "sofa",
-    "tag": "sarıyer",
     "compareNote": "Villa erişimi süreye yansıyabilir.",
     "priceFactors": [
       "Koltuk/kanepe takım adedi",
@@ -3849,7 +3797,6 @@ const TOPICS: V8Topic[] = [
     "service": "hali",
     "area": "kadikoy",
     "image": "carpet",
-    "tag": "halı",
     "compareNote": "Kuruma alanı ayırmamak maliyeti artırır (tekrar).",
     "priceFactors": [
       "Halı / kilim m²",
@@ -3920,7 +3867,6 @@ const TOPICS: V8Topic[] = [
     "service": "hali",
     "area": "zeker",
     "image": "carpet",
-    "tag": "zekeriyaköy",
     "compareNote": "Evde yıkama taşımayı azaltır.",
     "priceFactors": [
       "Halı / kilim m²",
@@ -3991,7 +3937,6 @@ const TOPICS: V8Topic[] = [
     "service": "cam",
     "area": "sisli",
     "image": "window",
-    "tag": "yüksek kat",
     "compareNote": "İskele/vinç gerekirse ayrı teklif.",
     "priceFactors": [
       "Cam paneli / cephe sayısı",
@@ -4062,7 +4007,6 @@ const TOPICS: V8Topic[] = [
     "service": "cam",
     "area": "bakirkoy",
     "image": "window",
-    "tag": "cam balkon",
     "compareNote": "Standart cam turundan farklı olabilir.",
     "priceFactors": [
       "Cam paneli / cephe sayısı",
@@ -4133,7 +4077,6 @@ const TOPICS: V8Topic[] = [
     "service": "cephe",
     "area": "tarabya",
     "image": "build",
-    "tag": "cephe",
     "compareNote": "Peyzaj/bahçe düzenleme yoktur.",
     "priceFactors": [
       "Cephe alanı ve malzeme",
@@ -4204,7 +4147,6 @@ const TOPICS: V8Topic[] = [
     "service": "cephe",
     "area": "tarabya",
     "image": "build",
-    "tag": "tuz",
     "compareNote": "Boyama/izolasyon dahil değil.",
     "priceFactors": [
       "Cephe alanı ve malzeme",
@@ -4275,7 +4217,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "sariyer",
     "image": "city",
-    "tag": "keşif",
     "compareNote": "Fark büyüdükçe kirlilik/erişim notu eksik demektir.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -4346,7 +4287,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "sariyer",
     "image": "city",
-    "tag": "teklif",
     "compareNote": "Satış baskısı değil bilgi turu.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -4417,7 +4357,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "sariyer",
     "image": "city",
-    "tag": "hata",
     "compareNote": "Yazılı checklist maliyeti kontrol eder.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -4488,7 +4427,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "sariyer",
     "image": "city",
-    "tag": "garanti",
     "compareNote": "Keşif dışı ekstra ayrıca teklif edilir.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -4559,7 +4497,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "sariyer",
     "image": "home",
-    "tag": "malzeme",
     "compareNote": "Özel ürün talebi fiyatı değiştirebilir.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -4630,7 +4567,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "sariyer",
     "image": "home",
-    "tag": "acil",
     "compareNote": "Yoğun günde ertesi gün daha ekonomik olabilir.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -4701,7 +4637,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "sariyer",
     "image": "home",
-    "tag": "karşılaştırma",
     "compareNote": "Saat ücreti tek başına karşılaştırma kriteri değildir.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -4772,7 +4707,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "sariyer",
     "image": "city",
-    "tag": "avrupa",
     "compareNote": "Sarıyer–Zekeriyaköy öncelikli operasyon deneyimi.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -4843,7 +4777,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "kadikoy",
     "image": "city",
-    "tag": "anadolu",
     "compareNote": "Trafik slot seçimini etkiler.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -4914,7 +4847,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "besiktas",
     "image": "home",
-    "tag": "satış",
     "compareNote": "Cam eklenirse fotoğraf kalitesi artar.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -4985,7 +4917,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "kadikoy",
     "image": "home",
-    "tag": "çekim",
     "compareNote": "Derin genel temizlikten kısa olabilir.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -5056,7 +4987,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "sisli",
     "image": "home",
-    "tag": "kiralık",
     "compareNote": "Depozito çıkış paketinden farklı niyet.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -5127,7 +5057,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "atasehir",
     "image": "home",
-    "tag": "yaşam",
     "compareNote": "Periyodik abonelik uygun olabilir.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -5198,7 +5127,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "kadikoy",
     "image": "home",
-    "tag": "öğrenci",
     "compareNote": "Kapsam önceden yazılmalı.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -5269,7 +5197,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "sariyer",
     "image": "home",
-    "tag": "bakım",
     "compareNote": "Hemşirelik hizmeti yok.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -5340,7 +5267,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "sisli",
     "image": "home",
-    "tag": "hijyen",
     "compareNote": "Hastane sterilizasyonu değildir.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -5411,7 +5337,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "sariyer",
     "image": "home",
-    "tag": "yeşil",
     "compareNote": "Özel marka talebi önceden yazılır.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -5482,7 +5407,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "sariyer",
     "image": "city",
-    "tag": "whatsapp",
     "compareNote": "Eksik bilgi tahmin sapmasını büyütür.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -5553,7 +5477,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "sariyer",
     "image": "city",
-    "tag": "hesaplama",
     "compareNote": "Araç tahmindir, sözleşme değildir.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -5624,7 +5547,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "sariyer",
     "image": "home",
-    "tag": "periyodik",
     "compareNote": "Tek sefer genel temizlik ayrıdır.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -5695,7 +5617,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "zeker",
     "image": "villa",
-    "tag": "villa",
     "compareNote": "Peyzaj yoktur.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -5766,7 +5687,6 @@ const TOPICS: V8Topic[] = [
     "service": "ofis",
     "area": "maslak",
     "image": "office",
-    "tag": "periyodik",
     "compareNote": "Gece vardiyası ayrıca netleştirilir.",
     "priceFactors": [
       "Ofis m² ve workstation sayısı",
@@ -5837,7 +5757,6 @@ const TOPICS: V8Topic[] = [
     "service": "cam",
     "area": "besiktas",
     "image": "window",
-    "tag": "cam",
     "compareNote": "Yüksek kat keşifsiz istenmemeli.",
     "priceFactors": [
       "Cam paneli / cephe sayısı",
@@ -5908,7 +5827,6 @@ const TOPICS: V8Topic[] = [
     "service": "koltuk",
     "area": "kadikoy",
     "image": "sofa",
-    "tag": "koltuk",
     "compareNote": "Kuruma süresi planlanmalı.",
     "priceFactors": [
       "Koltuk/kanepe takım adedi",
@@ -5979,7 +5897,6 @@ const TOPICS: V8Topic[] = [
     "service": "hali",
     "area": "umraniye",
     "image": "carpet",
-    "tag": "halı",
     "compareNote": "Kuruma alanı şart.",
     "priceFactors": [
       "Halı / kilim m²",
@@ -6050,7 +5967,6 @@ const TOPICS: V8Topic[] = [
     "service": "cam",
     "area": "sisli",
     "image": "window",
-    "tag": "cam",
     "compareNote": "Yönetici onayı olmadan başlanmaz.",
     "priceFactors": [
       "Cam paneli / cephe sayısı",
@@ -6121,7 +6037,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "bakirkoy",
     "image": "home",
-    "tag": "taşınma",
     "compareNote": "İki adres aynı gün mümkün olmayabilir.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -6192,7 +6107,6 @@ const TOPICS: V8Topic[] = [
     "service": "insaat",
     "area": "kagithane",
     "image": "build",
-    "tag": "inşaat",
     "compareNote": "Kirlilik sınıfı m² kadar önemlidir.",
     "priceFactors": [
       "Brüt / net m² ve kirlilik sınıfı",
@@ -6262,7 +6176,6 @@ const TOPICS: V8Topic[] = [
     "service": "insaat",
     "area": "sariyer",
     "image": "build",
-    "tag": "sarıyer",
     "compareNote": "Villa tesliminde keşif şart.",
     "priceFactors": [
       "Brüt / net m² ve kirlilik sınıfı",
@@ -6332,7 +6245,6 @@ const TOPICS: V8Topic[] = [
     "service": "insaat",
     "area": "bahce",
     "image": "build",
-    "tag": "inşaat",
     "compareNote": "Peyzaj dahil değil.",
     "priceFactors": [
       "Brüt / net m² ve kirlilik sınıfı",
@@ -6402,7 +6314,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "uskum",
     "image": "home",
-    "tag": "uskumruköy",
     "compareNote": "Online tahmin + keşif.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -6473,7 +6384,6 @@ const TOPICS: V8Topic[] = [
     "service": "cam",
     "area": "tarabya",
     "image": "window",
-    "tag": "cam",
     "compareNote": "Tek seferden birim maliyet farkı olabilir.",
     "priceFactors": [
       "Cam paneli / cephe sayısı",
@@ -6544,7 +6454,6 @@ const TOPICS: V8Topic[] = [
     "service": "ofis",
     "area": "besiktas",
     "image": "office",
-    "tag": "levent",
     "compareNote": "Mevcut ofis fiyat sayfalarından farklı açı: maliyet kırılımı.",
     "priceFactors": [
       "Ofis m² ve workstation sayısı",
@@ -6615,7 +6524,6 @@ const TOPICS: V8Topic[] = [
     "service": "ofis",
     "area": "sisli",
     "image": "office",
-    "tag": "nişantaşı",
     "compareNote": "Plaza paketinden farklı kapsam.",
     "priceFactors": [
       "Ofis m² ve workstation sayısı",
@@ -6686,7 +6594,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "besiktas",
     "image": "villa",
-    "tag": "etiler",
     "compareNote": "Peyzaj yoktur.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -6757,7 +6664,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "besiktas",
     "image": "home",
-    "tag": "bebek",
     "compareNote": "Cam tuzu birikimi ek kalem olabilir.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -6828,7 +6734,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "kadikoy",
     "image": "home",
-    "tag": "göztepe",
     "compareNote": "Mevcut fiyat sluğundan farklı: maliyet kırılımı odaklı.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -6899,7 +6804,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "kadikoy",
     "image": "home",
-    "tag": "bostancı",
     "compareNote": "Genel + cam ayrı yazılmalı.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",
@@ -6970,7 +6874,6 @@ const TOPICS: V8Topic[] = [
     "service": "ofis",
     "area": "kadikoy",
     "image": "office",
-    "tag": "kozyatağı",
     "compareNote": "Gece slotu ayrıca.",
     "priceFactors": [
       "Ofis m² ve workstation sayısı",
@@ -7041,7 +6944,6 @@ const TOPICS: V8Topic[] = [
     "service": "ofis",
     "area": "umraniye",
     "image": "office",
-    "tag": "finans",
     "compareNote": "Tek sefer vs abonelik farkı büyüktür.",
     "priceFactors": [
       "Ofis m² ve workstation sayısı",
@@ -7112,7 +7014,6 @@ const TOPICS: V8Topic[] = [
     "service": "ofis",
     "area": "atasehir",
     "image": "office",
-    "tag": "rezidans",
     "compareNote": "Daire içi temizlik ayrı pakettir.",
     "priceFactors": [
       "Ofis m² ve workstation sayısı",
@@ -7183,7 +7084,6 @@ const TOPICS: V8Topic[] = [
     "service": "ev",
     "area": "sariyer",
     "image": "home",
-    "tag": "hafta sonu",
     "compareNote": "Aynı gün acilden farklı dinamik.",
     "priceFactors": [
       "Net m² ve oda/banyo sayısı",

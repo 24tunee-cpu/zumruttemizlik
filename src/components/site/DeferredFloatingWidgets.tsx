@@ -2,8 +2,9 @@
 
 import dynamic from 'next/dynamic';
 
-const FloatingWhatsApp = dynamic(
-  () => import('@/components/site/FloatingWhatsApp').then((mod) => mod.FloatingWhatsApp),
+/** LeadAssistant replaces FloatingWhatsApp — tek FAB, mobil bottom sheet */
+const LeadAssistant = dynamic(
+  () => import('@/components/site/LeadAssistant').then((mod) => mod.LeadAssistant),
   { ssr: false }
 );
 
@@ -25,7 +26,7 @@ export default function DeferredFloatingWidgets() {
   return (
     <>
       <MarketingPopup />
-      <FloatingWhatsApp />
+      <LeadAssistant />
       <MobileCallBar />
       <CookieConsent />
     </>

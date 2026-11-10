@@ -274,7 +274,6 @@ const topics = ROWS.map((row) => {
     service,
     area,
     image,
-    tag,
     compareNote,
     priceFactors: factors,
     scenarios,

@@ -65,7 +65,7 @@ export function StickySeoCtaBar({
 
   return (
     <div
-      className="fixed inset-x-0 bottom-0 z-50 border-t border-slate-700/80 bg-slate-900/95 px-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-2 backdrop-blur-md shadow-[0_-8px_30px_rgba(0,0,0,0.35)]"
+      className="fixed inset-x-0 bottom-0 z-50 border-t border-slate-700/80 bg-slate-900/95 px-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-2 backdrop-blur-md shadow-[0_-8px_30px_rgba(0,0,0,0.35)] [:is(html.lead-assistant-open)_&]:hidden"
       role="region"
       aria-label="Hızlı teklif ve iletişim"
     >
