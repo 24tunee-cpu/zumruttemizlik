@@ -22,8 +22,13 @@
 
 [functions]
   directory = "netlify/functions"
-  # Free tier koruması — uzun SEO cron'ları Netlify'da şimdilik yok
+  # Free tier: uzun SEO autopilot yok; yalnızca hafif blog drip
   node_bundler = "esbuild"
+
+# Günlük due blog yayın (05:00 UTC ≈ 08:00 TR) — GH Actions fatura kilidine yedek
+[functions."publish-due-blogs"]
+  schedule = "0 5 * * *"
+
 
 # NODE_ENV=production install aşamasında koyma (devDeps atlanır).
 # Runtime'da Netlify kendisi production set eder.

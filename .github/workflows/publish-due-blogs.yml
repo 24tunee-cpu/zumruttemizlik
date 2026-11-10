@@ -1,11 +1,9 @@
-# Netlify'da Vercel Cron yok — günlük drip için GitHub Actions tetikleyici.
-# Secrets: SITE_URL (örn. https://www.zumrutvaditemizlik.com), CRON_SECRET
+# YEDEK: GitHub hesabında billing lock varsa bu workflow başlamaz.
+# Asıl drip: Netlify scheduled function `publish-due-blogs` (netlify.toml).
+# Secrets (billing açılınca): SITE_URL, CRON_SECRET
 name: Publish due blogs
 
 on:
-  schedule:
-    # 05:00 UTC ≈ 08:00 TR — eski Vercel cron ile hizalı
-    - cron: '0 5 * * *'
   workflow_dispatch:
 
 concurrency:
@@ -17,20 +15,20 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - name: Call publish-blogs cron
+      - name: Call publish-due-blogs cron
         env:
           SITE_URL: ${{ secrets.SITE_URL }}
           CRON_SECRET: ${{ secrets.CRON_SECRET }}
         run: |
           set -euo pipefail
           if [ -z "${SITE_URL:-}" ] || [ -z "${CRON_SECRET:-}" ]; then
-            echo "SITE_URL veya CRON_SECRET eksik — workflow_dispatch/secrets kontrol edin."
+            echo "SITE_URL veya CRON_SECRET eksik — Netlify schedule kullanın."
             exit 1
           fi
           BASE="${SITE_URL%/}"
           code=$(curl -sS -o /tmp/cron-out.json -w "%{http_code}" \
             -H "Authorization: Bearer ${CRON_SECRET}" \
-            "${BASE}/api/cron/publish-blogs")
+            "${BASE}/api/cron/publish-due-blogs")
           echo "HTTP $code"
           cat /tmp/cron-out.json
           test "$code" = "200"
