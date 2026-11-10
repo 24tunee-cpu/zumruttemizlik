@@ -18,8 +18,11 @@ import {
   LayoutGrid,
   List,
   Eye,
+  TrendingUp,
 } from 'lucide-react';
 import { formatDate } from '@/lib/utils';
+
+const TOP_VIEWED_LIMIT = 10;
 
 interface BlogPost {
   id: string;
@@ -46,6 +49,7 @@ export default function BlogPage() {
   const [statusFilter, setStatusFilter] = useState<StatusFilter>('all');
   const [deleteModal, setDeleteModal] = useState<string | null>(null);
   const [denseView, setDenseView] = useState(false);
+  const [sortByViews, setSortByViews] = useState(false);
 
   useEffect(() => {
     void fetchPosts();
@@ -126,12 +130,20 @@ export default function BlogPage() {
   const stats = useMemo(() => {
     const total = posts.length;
     const published = posts.filter((p) => p.published).length;
-    return { total, published, draft: total - published };
+    const totalViews = posts.reduce((sum, p) => sum + (p.views ?? 0), 0);
+    return { total, published, draft: total - published, totalViews };
+  }, [posts]);
+
+  const topViewedPosts = useMemo(() => {
+    return [...posts]
+      .filter((p) => p.published && (p.views ?? 0) > 0)
+      .sort((a, b) => (b.views ?? 0) - (a.views ?? 0))
+      .slice(0, TOP_VIEWED_LIMIT);
   }, [posts]);
 
   const filteredPosts = useMemo(() => {
     const term = searchTerm.trim().toLowerCase();
-    return posts.filter((p) => {
+    const list = posts.filter((p) => {
       if (statusFilter === 'published' && !p.published) return false;
       if (statusFilter === 'draft' && p.published) return false;
       if (!term) return true;
@@ -144,7 +156,9 @@ export default function BlogPage() {
         Boolean(tagHit)
       );
     });
-  }, [posts, searchTerm, statusFilter]);
+    if (!sortByViews) return list;
+    return [...list].sort((a, b) => (b.views ?? 0) - (a.views ?? 0));
+  }, [posts, searchTerm, statusFilter, sortByViews]);
 
   const filterPill = (key: StatusFilter, label: string, count: number) => (
     <button
@@ -168,8 +182,8 @@ export default function BlogPage() {
           <div className="h-8 w-48 animate-pulse rounded-lg bg-slate-200 dark:bg-slate-700" />
           <div className="h-10 w-32 animate-pulse rounded-lg bg-slate-200 dark:bg-slate-700" />
         </div>
-        <div className="grid gap-4 sm:grid-cols-3">
-          {[1, 2, 3].map((i) => (
+        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          {[1, 2, 3, 4].map((i) => (
             <div key={i} className="h-24 animate-pulse rounded-xl bg-slate-200 dark:bg-slate-700" />
           ))}
         </div>
@@ -245,7 +259,7 @@ export default function BlogPage() {
         </div>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         <div className="rounded-xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-4 dark:border-slate-700 dark:from-slate-800 dark:to-slate-900">
           <p className="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">Toplam</p>
           <p className="mt-1 text-2xl font-bold text-slate-900 dark:text-white">{stats.total}</p>
@@ -258,6 +272,79 @@ export default function BlogPage() {
           <p className="text-xs font-medium uppercase tracking-wide text-amber-900/70 dark:text-amber-200/90">Taslak</p>
           <p className="mt-1 text-2xl font-bold text-amber-900 dark:text-amber-200">{stats.draft}</p>
         </div>
+        <div className="rounded-xl border border-sky-200/80 bg-gradient-to-br from-sky-50 to-white p-4 dark:border-sky-900/40 dark:from-sky-950/40 dark:to-slate-900">
+          <p className="text-xs font-medium uppercase tracking-wide text-sky-800/80 dark:text-sky-400/90">Toplam görüntülenme</p>
+          <p className="mt-1 text-2xl font-bold tabular-nums text-sky-900 dark:text-sky-200">
+            {stats.totalViews.toLocaleString('tr-TR')}
+          </p>
+        </div>
+      </div>
+
+      <div className="rounded-xl border border-slate-200 bg-white shadow-sm dark:border-slate-700 dark:bg-slate-800">
+        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 px-4 py-3 dark:border-slate-700">
+          <div className="flex items-center gap-2">
+            <TrendingUp className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
+            <h2 className="text-sm font-semibold text-slate-900 dark:text-white">
+              En çok ziyaret edilenler
+            </h2>
+            <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs text-slate-600 dark:bg-slate-700 dark:text-slate-300">
+              Top {TOP_VIEWED_LIMIT}
+            </span>
+          </div>
+          <p className="text-xs text-slate-500 dark:text-slate-400">
+            Yayınlı yazılar · site sayfa görüntülenmesi
+          </p>
+        </div>
+        {topViewedPosts.length === 0 ? (
+          <p className="px-4 py-8 text-center text-sm text-slate-500 dark:text-slate-400">
+            Henüz görüntülenme kaydı yok. Yazılar sitede açıldıkça burada listelenir.
+          </p>
+        ) : (
+          <ol className="divide-y divide-slate-100 dark:divide-slate-700/80">
+            {topViewedPosts.map((post, index) => (
+              <li
+                key={post.id}
+                className="flex flex-wrap items-center gap-3 px-4 py-3 hover:bg-slate-50/80 dark:hover:bg-slate-700/30"
+              >
+                <span
+                  className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-xs font-bold tabular-nums ${
+                    index < 3
+                      ? 'bg-emerald-600 text-white'
+                      : 'bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300'
+                  }`}
+                >
+                  {index + 1}
+                </span>
+                <div className="min-w-0 flex-1">
+                  <p className="truncate font-medium text-slate-900 dark:text-white">{post.title}</p>
+                  <p className="truncate font-mono text-xs text-slate-400 dark:text-slate-500">/{post.slug}</p>
+                </div>
+                <span className="inline-flex items-center gap-1 rounded-full bg-sky-50 px-2.5 py-1 text-xs font-semibold tabular-nums text-sky-800 dark:bg-sky-950/50 dark:text-sky-300">
+                  <Eye className="h-3.5 w-3.5" />
+                  {(post.views ?? 0).toLocaleString('tr-TR')}
+                </span>
+                <div className="flex items-center gap-1">
+                  <Link
+                    href={`/admin/blog/${post.slug}/edit`}
+                    className="rounded-lg p-2 text-slate-400 hover:bg-slate-100 hover:text-emerald-600 dark:hover:bg-slate-700 dark:hover:text-emerald-400"
+                    aria-label="Düzenle"
+                  >
+                    <Edit size={16} />
+                  </Link>
+                  <a
+                    href={`/blog/${post.slug}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-lg p-2 text-slate-400 hover:bg-slate-100 hover:text-blue-600 dark:hover:bg-slate-700 dark:hover:text-blue-400"
+                    aria-label="Sitede aç"
+                  >
+                    <ExternalLink size={16} />
+                  </a>
+                </div>
+              </li>
+            ))}
+          </ol>
+        )}
       </div>
 
       <div className="rounded-xl border border-slate-200 bg-white shadow-sm dark:border-slate-700 dark:bg-slate-800">
@@ -276,6 +363,18 @@ export default function BlogPage() {
             {filterPill('all', 'Tümü', stats.total)}
             {filterPill('published', 'Yayında', stats.published)}
             {filterPill('draft', 'Taslak', stats.draft)}
+            <button
+              type="button"
+              onClick={() => setSortByViews((v) => !v)}
+              className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-medium transition-colors ${
+                sortByViews
+                  ? 'bg-sky-600 text-white shadow-sm dark:bg-sky-500'
+                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-slate-600'
+              }`}
+            >
+              <TrendingUp className="h-3.5 w-3.5" />
+              Görüntülenmeye göre
+            </button>
           </div>
         </div>
 
