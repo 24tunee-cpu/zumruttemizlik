@@ -61,7 +61,7 @@ export function cronUnauthorizedResponse(
     return Response.json(
       {
         error:
-          'CRON_SECRET tanımlı değil. Vercel → Settings → Environment Variables → CRON_SECRET ekleyin ve redeploy yapın.',
+          'CRON_SECRET tanımlı değil. Netlify → Site configuration → Environment variables → CRON_SECRET ekleyin, redeploy edin; GitHub Actions için aynı değeri repo Secrets’a koyun.',
       },
       { status: 500 }
     );
