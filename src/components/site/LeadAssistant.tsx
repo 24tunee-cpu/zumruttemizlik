@@ -28,6 +28,7 @@ import {
 } from 'lucide-react';
 import { useSiteSettings } from '@/context/SiteSettingsContext';
 import { SITE_CONTACT, toTelHref } from '@/config/site-contact';
+import { trackGoogleAdsQuoteConversion } from '@/lib/ga4-client';
 
 type Screen = 'menu' | 'quote';
 
@@ -180,6 +181,11 @@ export function LeadAssistant() {
     }
     setFormError(null);
     trackLead('lead-assistant-quote-wa', { service, area });
+    trackGoogleAdsQuoteConversion({
+      form_id: 'lead_assistant_quote',
+      service,
+      area,
+    });
     window.open(waHref, '_blank', 'noopener,noreferrer');
   };
 

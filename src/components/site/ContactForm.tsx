@@ -18,7 +18,7 @@ import { cn } from '@/lib/utils';
 import { toast } from '@/store/toastStore';
 import { useSiteSettings } from '@/context/SiteSettingsContext';
 import { SITE_CONTACT, toTelHref } from '@/config/site-contact';
-import { trackGa4Event } from '@/lib/ga4-client';
+import { trackGa4Event, trackGoogleAdsQuoteConversion } from '@/lib/ga4-client';
 
 // ============================================
 // TYPES
@@ -419,6 +419,11 @@ export function ContactForm({ variant = 'light', layout = 'default' }: ContactFo
           writeServiceCookie(formData.service);
         }
         trackGa4Event('generate_lead', {
+          form_id: 'contact',
+          form_destination: '/iletisim',
+          service: formData.service || undefined,
+        });
+        trackGoogleAdsQuoteConversion({
           form_id: 'contact',
           form_destination: '/iletisim',
           service: formData.service || undefined,

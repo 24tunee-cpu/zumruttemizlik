@@ -4,7 +4,7 @@ import { useState, useCallback, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, Loader2, Send } from 'lucide-react';
 import { toast } from '@/store/toastStore';
-import { trackGa4Event } from '@/lib/ga4-client';
+import { trackGa4Event, trackGoogleAdsQuoteConversion } from '@/lib/ga4-client';
 import { getPublicReviewUrl, withGmbUtm, getPublicMapsUrl } from '@/lib/gbp-links';
 import { SITE_CONTACT } from '@/config/site-contact';
 
@@ -70,6 +70,10 @@ export function AppointmentRequestForm({ embedded = false }: { embedded?: boolea
         const data = (await res.json().catch(() => ({}))) as { error?: string };
         if (!res.ok) throw new Error(data.error || 'Gönderilemedi');
         trackGa4Event('generate_lead', {
+          form_id: 'appointment_request',
+          form_destination: '/randevu',
+        });
+        trackGoogleAdsQuoteConversion({
           form_id: 'appointment_request',
           form_destination: '/randevu',
         });

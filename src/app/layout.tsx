@@ -27,6 +27,8 @@ import { SITE_CONTACT } from "@/config/site-contact";
 /** Google Analytics 4 — `NEXT_PUBLIC_GA_MEASUREMENT_ID` ile değiştirilebilir */
 const GA_MEASUREMENT_ID =
   process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "G-20PLCYV15H";
+/** Google Ads — `NEXT_PUBLIC_GOOGLE_ADS_ID` (AW-…) */
+const GOOGLE_ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID?.trim() ?? "";
 const DEXTER_WIDGET_TOKEN =
   process.env.NEXT_PUBLIC_DEXTER_WIDGET_TOKEN ??
   "qA_hhPpFkkr4agR36ikMZOfETZZFzmSB_P86Lz0sLJ2iuLdnCNXbmnRag7ZCgNxMfwirj8isNbTSM8UNNECU9gvL751V6LSqk9a0oIm3VuRyRUuf8aM2CAlitzPD4y-xWLAoPMK2pERuJmsYoEuA8vSu5e7F6z9_uYksMERB13k-QXEIwH6i4NA9dqnPJKHzgSB9XeBFkU2oOi0.3lwqgG1rGtCbM6KWrr3Eoed3dlz3W8AJwCGOZeAPFRE";
@@ -170,7 +172,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
       </head>
       <body className="min-h-screen bg-white dark:bg-slate-900 transition-colors">
         <DeferredDexterWidget token={DEXTER_WIDGET_TOKEN} />
-        <Providers gaMeasurementId={GA_MEASUREMENT_ID}>
+        <Providers gaMeasurementId={GA_MEASUREMENT_ID} googleAdsId={GOOGLE_ADS_ID}>
           {children}
         </Providers>
         <VercelMonitoring />

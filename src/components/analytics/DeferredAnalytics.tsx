@@ -6,6 +6,8 @@ import { useSiteSettings } from '@/context/SiteSettingsContext';
 
 interface DeferredAnalyticsProps {
   measurementId: string;
+  /** Opsiyonel Google Ads kimliği (AW-…) — dönüşüm etkinlikleri için */
+  googleAdsId?: string;
 }
 
 /** LCP sonrası — gtag paketini geciktir (Fluid CPU + TBT) */
@@ -32,10 +34,14 @@ function hasCookieConsent(storageKey: string): boolean {
  * Google Analytics 4 — Consent Mode v2 + idle/interaction defer.
  * Onaysız çerez yazılmaz; gtag LCP’den sonra yüklenir.
  */
-export default function DeferredAnalytics({ measurementId }: DeferredAnalyticsProps) {
+export default function DeferredAnalytics({
+  measurementId,
+  googleAdsId,
+}: DeferredAnalyticsProps) {
   const { settings, isLoading } = useSiteSettings();
   const [consentGranted, setConsentGranted] = useState(false);
   const [loadGa, setLoadGa] = useState(false);
+  const adsId = googleAdsId?.trim() || '';
 
   useEffect(() => {
     if (isLoading || !measurementId) return;
@@ -137,6 +143,7 @@ export default function DeferredAnalytics({ measurementId }: DeferredAnalyticsPr
           window.gtag = gtag;
           gtag('js', new Date());
           gtag('config', '${measurementId}', { anonymize_ip: true });
+          ${adsId ? `gtag('config', '${adsId}');` : ''}
         `}
       </Script>
     </>

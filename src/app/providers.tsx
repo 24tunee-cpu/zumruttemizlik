@@ -30,6 +30,7 @@ interface ProvidersProps {
   /** Uygulama içeriği */
   children: React.ReactNode;
   gaMeasurementId?: string;
+  googleAdsId?: string;
 }
 
 // ============================================
@@ -42,7 +43,11 @@ interface ProvidersProps {
  * 
  * @param children Application content
  */
-export function Providers({ children, gaMeasurementId = '' }: ProvidersProps) {
+export function Providers({
+  children,
+  gaMeasurementId = '',
+  googleAdsId = '',
+}: ProvidersProps) {
   // SSR hydration fix
   const [isMounted, setIsMounted] = useState(false);
 
@@ -67,7 +72,7 @@ export function Providers({ children, gaMeasurementId = '' }: ProvidersProps) {
   if (!isMounted) {
     return (
       <SiteSettingsProvider>
-        <DeferredAnalytics measurementId={gaMeasurementId} />
+        <DeferredAnalytics measurementId={gaMeasurementId} googleAdsId={googleAdsId} />
         <MarketingEventTracker />
         <VisitorAnalyticsTracker />
         <SiteCustomCss />
@@ -99,7 +104,7 @@ export function Providers({ children, gaMeasurementId = '' }: ProvidersProps) {
       }
     >
       <SiteSettingsProvider>
-        <DeferredAnalytics measurementId={gaMeasurementId} />
+        <DeferredAnalytics measurementId={gaMeasurementId} googleAdsId={googleAdsId} />
         <MarketingEventTracker />
         <VisitorAnalyticsTracker />
         <SiteCustomCss />

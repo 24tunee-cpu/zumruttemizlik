@@ -37,7 +37,7 @@ import {
   type ExtraId,
 } from '@/config/pricing';
 import type { CalculatorIntentContext } from '@/lib/intent-analytics';
-import { trackGa4Event } from '@/lib/ga4-client';
+import { trackGa4Event, trackGoogleAdsQuoteConversion } from '@/lib/ga4-client';
 
 const SPACE_TYPE_ICONS: Record<SpaceTypeId, React.ComponentType<{ className?: string }>> = {
   ev: Home,
@@ -182,6 +182,11 @@ export function HeroPriceCalculator({
   const handleWhatsappClick = () => {
     const payload = buildAnalyticsPayload(spaceType, room, area, range, intentContext);
     trackGa4Event('generate_lead', {
+      ...payload,
+      form_id: 'price_calculator_whatsapp',
+      form_destination: '/fiyat-hesaplama',
+    });
+    trackGoogleAdsQuoteConversion({
       ...payload,
       form_id: 'price_calculator_whatsapp',
       form_destination: '/fiyat-hesaplama',
