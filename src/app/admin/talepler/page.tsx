@@ -26,8 +26,10 @@ import {
   GitBranch,
 } from 'lucide-react';
 import { formatDate, toDatetimeLocalValue, fromDatetimeLocalValue } from '@/lib/utils';
+import { isLeadAssistantContact } from '@/lib/lead-assistant';
 
 type PipelineKey = 'new' | 'contacted' | 'quoted' | 'won' | 'lost';
+type SourceFilter = 'all' | 'assistant' | 'form';
 
 interface StaffUser {
   id: string;
@@ -74,6 +76,7 @@ export default function ContactRequestsPage() {
   const [selectedRequest, setSelectedRequest] = useState<ContactRequest | null>(null);
   const [statusFilter, setStatusFilter] = useState<StatusFilter>('all');
   const [pipelineFilter, setPipelineFilter] = useState<PipelineFilter>('all');
+  const [sourceFilter, setSourceFilter] = useState<SourceFilter>('all');
   const [denseView, setDenseView] = useState(false);
   const [deleteId, setDeleteId] = useState<string | null>(null);
   const [staffUsers, setStaffUsers] = useState<StaffUser[]>([]);
@@ -254,6 +257,8 @@ export default function ContactRequestsPage() {
   const stats = useMemo(() => {
     const total = requests.length;
     const unread = requests.filter((r) => !r.read).length;
+    const assistant = requests.filter((r) => isLeadAssistantContact(r)).length;
+    const form = total - assistant;
     const byPipe = PIPELINE_ORDER.reduce(
       (acc, k) => {
         acc[k] = requests.filter((r) => (r.pipelineStatus as PipelineKey | undefined) === k).length;
@@ -261,7 +266,7 @@ export default function ContactRequestsPage() {
       },
       {} as Record<PipelineKey, number>
     );
-    return { total, unread, read: total - unread, byPipe };
+    return { total, unread, read: total - unread, byPipe, assistant, form };
   }, [requests]);
 
   const filteredRequests = useMemo(() => {
@@ -274,6 +279,8 @@ export default function ContactRequestsPage() {
           const p = (r.pipelineStatus as PipelineKey) || 'new';
           if (p !== pipelineFilter) return false;
         }
+        if (sourceFilter === 'assistant' && !isLeadAssistantContact(r)) return false;
+        if (sourceFilter === 'form' && isLeadAssistantContact(r)) return false;
         if (!term) return true;
         return (
           r.name.toLowerCase().includes(term) ||
@@ -285,7 +292,7 @@ export default function ContactRequestsPage() {
         );
       })
       .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
-  }, [requests, searchTerm, statusFilter, pipelineFilter]);
+  }, [requests, searchTerm, statusFilter, pipelineFilter, sourceFilter]);
 
   const pipelinePill = (key: PipelineFilter, label: string, count: number) => (
     <button
@@ -310,6 +317,21 @@ export default function ContactRequestsPage() {
       className={`rounded-full px-3 py-1.5 text-sm font-medium transition-colors ${
         statusFilter === key
           ? 'bg-emerald-600 text-white shadow-sm dark:bg-emerald-500'
+          : 'bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-slate-600'
+      }`}
+    >
+      {label}
+      <span className="ml-1.5 tabular-nums opacity-80">({count})</span>
+    </button>
+  );
+
+  const sourcePill = (key: SourceFilter, label: string, count: number) => (
+    <button
+      type="button"
+      onClick={() => setSourceFilter(key)}
+      className={`rounded-full px-3 py-1.5 text-sm font-medium transition-colors ${
+        sourceFilter === key
+          ? 'bg-sky-600 text-white shadow-sm dark:bg-sky-500'
           : 'bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-slate-600'
       }`}
     >
@@ -361,7 +383,7 @@ export default function ContactRequestsPage() {
         <div>
           <h1 className="text-2xl font-bold text-slate-900 dark:text-white">Müşteri talepleri</h1>
           <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-            İletişim formundan gelen mesajlar. Yalnızca yöneticiler bu listeyi görebilir.
+            Form + site asistanı talepleri. Kaynak filtresiyle ayırabilirsiniz.
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-2">
@@ -429,6 +451,14 @@ export default function ContactRequestsPage() {
               {filterPill('read', 'Okunmuş', stats.read)}
             </div>
             <div className="flex flex-wrap items-center gap-2 border-t border-slate-100 pt-3 dark:border-slate-700">
+              <span className="text-xs font-medium uppercase tracking-wide text-slate-400 dark:text-slate-500">
+                Kaynak
+              </span>
+              {sourcePill('all', 'Tümü', stats.total)}
+              {sourcePill('assistant', 'Asistan', stats.assistant)}
+              {sourcePill('form', 'Form / diğer', stats.form)}
+            </div>
+            <div className="flex flex-wrap items-center gap-2 border-t border-slate-100 pt-3 dark:border-slate-700">
               <span className="flex items-center gap-1 text-xs font-medium uppercase tracking-wide text-slate-400 dark:text-slate-500">
                 <GitBranch className="h-3.5 w-3.5" />
                 Satış hattı
@@ -473,6 +503,11 @@ export default function ContactRequestsPage() {
                       <span className="shrink-0 rounded-full bg-violet-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-violet-800 dark:bg-violet-900/40 dark:text-violet-200">
                         {PIPELINE_LABEL[(request.pipelineStatus as PipelineKey) || 'new']}
                       </span>
+                      {isLeadAssistantContact(request) ? (
+                        <span className="shrink-0 rounded-full bg-sky-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-sky-800 dark:bg-sky-900/40 dark:text-sky-200">
+                          Asistan
+                        </span>
+                      ) : null}
                     </div>
                     <p className="truncate text-sm text-slate-500 dark:text-slate-400">{request.email}</p>
                     <p className="mt-0.5 line-clamp-1 text-xs text-slate-400 dark:text-slate-500">{request.message}</p>

@@ -2,8 +2,9 @@
 
 /**
  * Native lead asistan — Logsby yok.
- * Mobil: tek FAB + bottom sheet (kalabalık yok). Masaüstü: sağ alt kart.
- * FloatingWhatsApp yerine geçer; WA/Ara menüden.
+ * Mobil: tek FAB + bottom sheet. Masaüstü: sağ alt kart.
+ * Faz 1–3: path/query, Ads chip, koltuk parça, başarı, Contact API, nudge,
+ * Sarıyer alt semt, MobileCallBar köprüsü, admin kaynak filtresi. LLM yok.
  */
 
 import {
@@ -16,10 +17,12 @@ import {
   type FormEvent,
 } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import {
   Calculator,
   Calendar,
+  CheckCircle2,
   ChevronLeft,
   MessageCircle,
   Phone,
@@ -29,32 +32,211 @@ import {
 import { useSiteSettings } from '@/context/SiteSettingsContext';
 import { SITE_CONTACT, toTelHref } from '@/config/site-contact';
 import { trackGoogleAdsQuoteConversion } from '@/lib/ga4-client';
+import {
+  LEAD_ASSISTANT_SOURCE_TAG,
+  ZVT_OPEN_LEAD_ASSISTANT,
+  type ZvtOpenLeadAssistantDetail,
+} from '@/lib/lead-assistant';
 
-type Screen = 'menu' | 'quote';
+type Screen = 'menu' | 'quote' | 'success';
 
 const SERVICES = [
-  { value: 'Ev temizliği', href: '/hizmetler/ev-temizligi' },
-  { value: 'Ofis temizliği', href: '/hizmetler/ofis-temizligi' },
-  { value: 'İnşaat sonrası', href: '/hizmetler/insaat-sonrasi-temizlik' },
-  { value: 'Koltuk yıkama', href: '/hizmetler/koltuk-yikama' },
-  { value: 'Halı temizliği', href: '/hizmetler/hali-temizligi' },
-  { value: 'Cam temizliği', href: '/hizmetler/cam-temizligi' },
+  { value: 'Ev temizliği', href: '/hizmetler/ev-temizligi', key: 'ev' },
+  { value: 'Ofis temizliği', href: '/hizmetler/ofis-temizligi', key: 'ofis' },
+  { value: 'İnşaat sonrası', href: '/hizmetler/insaat-sonrasi-temizlik', key: 'insaat' },
+  { value: 'Koltuk yıkama', href: '/hizmetler/koltuk-yikama', key: 'koltuk' },
+  { value: 'Halı temizliği', href: '/hizmetler/hali-temizligi', key: 'hali' },
+  { value: 'Cam temizliği', href: '/hizmetler/cam-temizligi', key: 'cam' },
 ] as const;
 
-const AREAS = [
-  'Sarıyer',
+type ServiceValue = (typeof SERVICES)[number]['value'];
+
+const POPULAR_KEYS = ['koltuk', 'insaat', 'ev'] as const;
+
+const SARIYER_SUBS = [
+  'Sarıyer (merkez)',
   'Zekeriyaköy',
   'Maslak',
   'Tarabya',
   'Bahçeköy',
-  'Beşiktaş',
-  'Şişli',
-  'Kadıköy',
-  'Diğer / İstanbul',
+  'Uskumruköy',
+  'İstinye',
+  'Yeniköy',
 ] as const;
+
+const REGIONS = [
+  { id: 'sariyer', label: 'Sarıyer hattı', subs: SARIYER_SUBS },
+  { id: 'besiktas', label: 'Beşiktaş', subs: [] as const },
+  { id: 'sisli', label: 'Şişli', subs: [] as const },
+  { id: 'kadikoy', label: 'Kadıköy', subs: [] as const },
+  { id: 'diger', label: 'Diğer / İstanbul', subs: [] as const },
+] as const;
+
+type RegionId = (typeof REGIONS)[number]['id'];
+type AreaValue =
+  | (typeof SARIYER_SUBS)[number]
+  | 'Beşiktaş'
+  | 'Şişli'
+  | 'Kadıköy'
+  | 'Diğer / İstanbul'
+  | 'Sarıyer';
+
+function regionIdForArea(area: string): RegionId {
+  if (
+    area === 'Sarıyer' ||
+    area === 'Sarıyer (merkez)' ||
+    (SARIYER_SUBS as readonly string[]).includes(area)
+  ) {
+    return 'sariyer';
+  }
+  if (area === 'Beşiktaş') return 'besiktas';
+  if (area === 'Şişli') return 'sisli';
+  if (area === 'Kadıköy') return 'kadikoy';
+  return 'diger';
+}
+
+function defaultAreaForRegion(regionId: RegionId): AreaValue {
+  if (regionId === 'sariyer') return 'Sarıyer (merkez)';
+  if (regionId === 'besiktas') return 'Beşiktaş';
+  if (regionId === 'sisli') return 'Şişli';
+  if (regionId === 'kadikoy') return 'Kadıköy';
+  return 'Diğer / İstanbul';
+}
+
+function displayAreaLabel(area: string): string {
+  return area === 'Sarıyer (merkez)' ? 'Sarıyer' : area;
+}
+
+const KOLTUK_TYPES = [
+  'Tekli / berjer',
+  'İkili kanepe',
+  'Üçlü kanepe',
+  '3+2+1 takım',
+  'Köşe / L',
+  'Çekyat',
+  'Diğer / belirtilecek',
+] as const;
+
+const NUDGE_KEY = 'zvt_lead_assistant_nudge_v1';
+
+const SERVICE_QUERY_MAP: Record<string, ServiceValue> = {
+  ev: 'Ev temizliği',
+  'ev-temizligi': 'Ev temizliği',
+  home: 'Ev temizliği',
+  ofis: 'Ofis temizliği',
+  'ofis-temizligi': 'Ofis temizliği',
+  office: 'Ofis temizliği',
+  insaat: 'İnşaat sonrası',
+  'insaat-sonrasi': 'İnşaat sonrası',
+  'insaat-sonrasi-temizlik': 'İnşaat sonrası',
+  tadilat: 'İnşaat sonrası',
+  koltuk: 'Koltuk yıkama',
+  'koltuk-yikama': 'Koltuk yıkama',
+  sofa: 'Koltuk yıkama',
+  hali: 'Halı temizliği',
+  'hali-temizligi': 'Halı temizliği',
+  'hali-yikama': 'Halı temizliği',
+  cam: 'Cam temizliği',
+  'cam-temizligi': 'Cam temizliği',
+};
+
+const AREA_QUERY_MAP: Record<string, AreaValue> = {
+  sariyer: 'Sarıyer (merkez)',
+  zekeriyakoy: 'Zekeriyaköy',
+  'zekeriya-koy': 'Zekeriyaköy',
+  maslak: 'Maslak',
+  tarabya: 'Tarabya',
+  bahcekoy: 'Bahçeköy',
+  uskumrukoy: 'Uskumruköy',
+  istinye: 'İstinye',
+  yenikoy: 'Yeniköy',
+  besiktas: 'Beşiktaş',
+  sisli: 'Şişli',
+  kadikoy: 'Kadıköy',
+  istanbul: 'Diğer / İstanbul',
+};
 
 function digitsOnly(s: string): string {
   return s.replace(/\D/g, '');
+}
+
+/** API isValidPhone ile uyumlu TR format (0XXXXXXXXXX). */
+function formatTrPhoneForApi(digits: string): string {
+  let d = digitsOnly(digits);
+  if (d.startsWith('90') && d.length >= 12) d = d.slice(2);
+  if (d.length === 10) return `0${d}`;
+  if (d.length === 11 && d.startsWith('0')) return d;
+  return d;
+}
+
+function normalizeKey(raw: string | null | undefined): string {
+  if (!raw) return '';
+  return raw
+    .trim()
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/ı/g, 'i')
+    .replace(/ğ/g, 'g')
+    .replace(/ü/g, 'u')
+    .replace(/ş/g, 's')
+    .replace(/ö/g, 'o')
+    .replace(/ç/g, 'c')
+    .replace(/\s+/g, '-')
+    .replace(/[^a-z0-9-]/g, '');
+}
+
+function resolveServiceFromQuery(raw: string | null): ServiceValue | null {
+  const key = normalizeKey(raw);
+  if (!key) return null;
+  return SERVICE_QUERY_MAP[key] ?? null;
+}
+
+function resolveServiceFromPath(pathname: string): ServiceValue | null {
+  const path = pathname.toLowerCase();
+  for (const s of SERVICES) {
+    if (path.includes(s.href) || path.includes(`/hizmetler/${s.key}`)) {
+      return s.value;
+    }
+  }
+  if (path.includes('koltuk')) return 'Koltuk yıkama';
+  if (path.includes('insaat') || path.includes('tadilat')) return 'İnşaat sonrası';
+  if (path.includes('ofis')) return 'Ofis temizliği';
+  if (path.includes('hali')) return 'Halı temizliği';
+  if (path.includes('cam')) return 'Cam temizliği';
+  if (path.includes('ev-temizligi') || path.includes('/ev')) return 'Ev temizliği';
+  return null;
+}
+
+function resolveAreaFromQuery(raw: string | null): AreaValue | null {
+  const key = normalizeKey(raw);
+  if (!key) return null;
+  return AREA_QUERY_MAP[key] ?? null;
+}
+
+function resolveAreaFromPath(pathname: string): AreaValue | null {
+  const path = normalizeKey(pathname);
+  const entries: Array<[string, AreaValue]> = [
+    ['zekeriyakoy', 'Zekeriyaköy'],
+    ['uskumrukoy', 'Uskumruköy'],
+    ['bahcekoy', 'Bahçeköy'],
+    ['tarabya', 'Tarabya'],
+    ['maslak', 'Maslak'],
+    ['istinye', 'İstinye'],
+    ['yenikoy', 'Yeniköy'],
+    ['sariyer', 'Sarıyer (merkez)'],
+    ['besiktas', 'Beşiktaş'],
+    ['sisli', 'Şişli'],
+    ['kadikoy', 'Kadıköy'],
+  ];
+  for (const [needle, label] of entries) {
+    if (path.includes(needle)) return label;
+  }
+  return null;
+}
+
+function isKoltukService(service: string): boolean {
+  return service === 'Koltuk yıkama';
 }
 
 function WhatsAppGlyph({ className }: { className?: string }) {
@@ -69,25 +251,45 @@ function trackLead(source: string, extra?: Record<string, string>) {
   if (typeof window === 'undefined') return;
   const payload = { source, location: window.location.pathname, ...extra };
   window.dataLayer?.push({ event: 'lead_assistant', ...payload });
-  window.gtag?.('event', 'generate_lead', { ...payload, lead_type: 'lead_assistant' });
+  // Funnel: open/quote_start soft; submit/call/wa = generate_lead
+  const hardLead =
+    source.includes('quote-wa') ||
+    source.includes('whatsapp') ||
+    source.includes('call') ||
+    source.includes('quote-submit');
+  if (hardLead) {
+    window.gtag?.('event', 'generate_lead', { ...payload, lead_type: 'lead_assistant' });
+  } else {
+    window.gtag?.('event', 'lead_assistant_ui', payload);
+  }
 }
 
 export function LeadAssistant() {
+  const pathname = usePathname() || '/';
   const { settings } = useSiteSettings();
   const reduceMotion = useReducedMotion();
   const panelId = useId();
   const titleId = `${panelId}-title`;
   const closeRef = useRef<HTMLButtonElement>(null);
   const fabRef = useRef<HTMLButtonElement>(null);
+  const userTouchedService = useRef(false);
+  const userTouchedArea = useRef(false);
 
   const [open, setOpen] = useState(false);
   const [screen, setScreen] = useState<Screen>('menu');
   const [service, setService] = useState<string>(SERVICES[0].value);
-  const [area, setArea] = useState<string>(AREAS[0]);
+  const [regionId, setRegionId] = useState<RegionId>('sariyer');
+  const [area, setArea] = useState<string>('Sarıyer (merkez)');
   const [sqm, setSqm] = useState('');
+  const [koltukType, setKoltukType] = useState<string>(KOLTUK_TYPES[3]);
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [formError, setFormError] = useState<string | null>(null);
+  const [submitting, setSubmitting] = useState(false);
+  const [showNudge, setShowNudge] = useState(false);
+
+  const activeRegion = REGIONS.find((r) => r.id === regionId) ?? REGIONS[0];
+  const hasSubs = activeRegion.subs.length > 0;
 
   const waDigits = useMemo(() => {
     const raw = settings.whatsapp?.trim() || SITE_CONTACT.whatsappDigits;
@@ -98,22 +300,83 @@ export function LeadAssistant() {
   const callHref = toTelHref(settings.phone?.trim() || SITE_CONTACT.phoneE164);
   const brand = settings.siteName?.trim() || SITE_CONTACT.companyName;
 
+  const syncContextFromUrl = useCallback(() => {
+    if (typeof window === 'undefined') return;
+    const params = new URLSearchParams(window.location.search);
+    const nextService =
+      resolveServiceFromQuery(params.get('service')) || resolveServiceFromPath(pathname);
+    const nextArea =
+      resolveAreaFromQuery(params.get('area')) || resolveAreaFromPath(pathname);
+
+    if (nextService && !userTouchedService.current) {
+      setService(nextService);
+    }
+    if (nextArea && !userTouchedArea.current) {
+      setArea(nextArea);
+      setRegionId(regionIdForArea(nextArea));
+    }
+  }, [pathname]);
+
+  useEffect(() => {
+    syncContextFromUrl();
+  }, [syncContextFromUrl]);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    try {
+      if (sessionStorage.getItem(NUDGE_KEY) === '1') return;
+    } catch {
+      return;
+    }
+    const t = window.setTimeout(() => {
+      if (!open) setShowNudge(true);
+    }, 10000);
+    return () => window.clearTimeout(t);
+  }, [open]);
+
+  const dismissNudge = useCallback(() => {
+    setShowNudge(false);
+    try {
+      sessionStorage.setItem(NUDGE_KEY, '1');
+    } catch {
+      // ignore
+    }
+  }, []);
+
   const close = useCallback(() => {
     setOpen(false);
     setScreen('menu');
     setFormError(null);
+    setSubmitting(false);
+    dismissNudge();
     requestAnimationFrame(() => fabRef.current?.focus({ preventScroll: true }));
-  }, []);
+  }, [dismissNudge]);
 
-  const openPanel = useCallback(() => {
-    setOpen(true);
-    setScreen('menu');
-    trackLead('lead-assistant-open');
-  }, []);
+  const openPanel = useCallback(
+    (nextScreen: Screen = 'menu') => {
+      syncContextFromUrl();
+      setOpen(true);
+      setScreen(nextScreen);
+      setFormError(null);
+      dismissNudge();
+      trackLead(nextScreen === 'quote' ? 'lead-assistant-quote' : 'lead-assistant-open');
+    },
+    [dismissNudge, syncContextFromUrl]
+  );
+
+  useEffect(() => {
+    const onOpen = (ev: Event) => {
+      const detail = (ev as CustomEvent<ZvtOpenLeadAssistantDetail>).detail;
+      const next = detail?.screen === 'quote' ? 'quote' : 'menu';
+      openPanel(next);
+    };
+    window.addEventListener(ZVT_OPEN_LEAD_ASSISTANT, onOpen);
+    return () => window.removeEventListener(ZVT_OPEN_LEAD_ASSISTANT, onOpen);
+  }, [openPanel]);
 
   const toggle = useCallback(() => {
     if (open) close();
-    else openPanel();
+    else openPanel('menu');
   }, [open, close, openPanel]);
 
   useEffect(() => {
@@ -124,14 +387,15 @@ export function LeadAssistant() {
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        e.preventDefault();
-        if (screen === 'quote') {
-          setScreen('menu');
-          setFormError(null);
-        } else {
-          close();
-        }
+      if (e.key !== 'Escape') return;
+      e.preventDefault();
+      if (screen === 'quote') {
+        setScreen('menu');
+        setFormError(null);
+      } else if (screen === 'success') {
+        close();
+      } else {
+        close();
       }
     };
     document.addEventListener('keydown', onKey);
@@ -149,45 +413,114 @@ export function LeadAssistant() {
     };
   }, [open]);
 
+  const detailLine = useMemo(() => {
+    if (isKoltukService(service)) {
+      return koltukType ? `Koltuk tipi: ${koltukType}` : '';
+    }
+    return sqm.trim() ? `Alan: ${sqm.trim()} m²` : '';
+  }, [service, koltukType, sqm]);
+
   const buildWaMessage = useCallback(() => {
     const lines = [
       `Merhaba, ${brand} asistanından yazıyorum.`,
+      LEAD_ASSISTANT_SOURCE_TAG,
       `Hizmet: ${service}`,
-      `Bölge: ${area}`,
+      `Bölge: ${displayAreaLabel(area)}`,
     ];
-    if (sqm.trim()) lines.push(`Alan: ${sqm.trim()} m²`);
+    if (detailLine) lines.push(detailLine);
     if (name.trim()) lines.push(`Ad: ${name.trim()}`);
     if (phone.trim()) lines.push(`Tel: ${phone.trim()}`);
+    lines.push(`Sayfa: ${pathname}`);
     lines.push('Ücretsiz keşif / fiyat teklifi istiyorum. (Online tahmin ≠ kesin fiyat.)');
     return lines.join('\n');
-  }, [brand, service, area, sqm, name, phone]);
+  }, [brand, service, area, detailLine, name, phone, pathname]);
 
   const waHref = useMemo(() => {
     return `https://wa.me/${waDigits}?text=${encodeURIComponent(buildWaMessage())}`;
   }, [waDigits, buildWaMessage]);
 
   const quickWaHref = useMemo(() => {
-    const text =
-      'Merhaba, Zümrüt Vadi Temizlik asistanından yazıyorum. Temizlik için bilgi / teklif istiyorum.';
+    const text = `Merhaba, ${brand} asistanından yazıyorum. Temizlik için bilgi / teklif istiyorum.`;
     return `https://wa.me/${waDigits}?text=${encodeURIComponent(text)}`;
-  }, [waDigits]);
+  }, [waDigits, brand]);
 
-  const onQuoteSubmit = (e: FormEvent) => {
+  const persistContact = useCallback(
+    async (phoneDigits: string) => {
+      const displayName = name.trim() || 'Asistan lead';
+      const apiPhone = formatTrPhoneForApi(phoneDigits);
+      const email = `asistan.${digitsOnly(apiPhone)}@zumrutvaditemizlik.com`;
+      const message = buildWaMessage();
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: displayName,
+            email,
+            phone: apiPhone,
+            service,
+            message,
+            website: '',
+            honeypot: '',
+          }),
+        });
+        if (!res.ok) {
+          // 429 vb. — WA akışı bozulmasın
+          return;
+        }
+      } catch {
+        // WA yine açılsın — kayıt opsiyonel
+      }
+    },
+    [name, service, buildWaMessage]
+  );
+
+  const onQuoteSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    if (submitting) return;
     const p = digitsOnly(phone);
     if (p.length < 10) {
       setFormError('Geçerli bir telefon numarası girin.');
       return;
     }
     setFormError(null);
-    trackLead('lead-assistant-quote-wa', { service, area });
-    trackGoogleAdsQuoteConversion({
-      form_id: 'lead_assistant_quote',
-      service,
-      area,
-    });
-    window.open(waHref, '_blank', 'noopener,noreferrer');
+    setSubmitting(true);
+    try {
+      trackLead('lead-assistant-quote-wa', { service, area });
+      trackGoogleAdsQuoteConversion({
+        form_id: 'lead_assistant_quote',
+        service,
+        area,
+      });
+      const href = `https://wa.me/${waDigits}?text=${encodeURIComponent(buildWaMessage())}`;
+      await persistContact(p);
+      window.open(href, '_blank', 'noopener,noreferrer');
+      setScreen('success');
+    } finally {
+      setSubmitting(false);
+    }
   };
+
+  const startQuoteForService = (value: ServiceValue) => {
+    userTouchedService.current = true;
+    setService(value);
+    setFormError(null);
+    openPanel('quote');
+  };
+
+  const headerTitle =
+    screen === 'quote'
+      ? 'Hızlı teklif'
+      : screen === 'success'
+        ? 'Talep alındı'
+        : `${brand} Asistan`;
+
+  const headerSub =
+    screen === 'quote'
+      ? 'Tahmini yol · kesin fiyat keşifle'
+      : screen === 'success'
+        ? 'WhatsApp açıldı · keşif ile netleşir'
+        : 'Teklif · keşif · hesaplama';
 
   const menuActions = [
     {
@@ -195,10 +528,7 @@ export function LeadAssistant() {
       title: 'Hızlı teklif',
       desc: 'Kısa bilgi → WhatsApp özeti',
       icon: MessageCircle,
-      onClick: () => {
-        setScreen('quote');
-        trackLead('lead-assistant-quote');
-      },
+      onClick: () => openPanel('quote'),
     },
     {
       key: 'kesif',
@@ -217,6 +547,13 @@ export function LeadAssistant() {
       source: 'lead-assistant-fiyat',
     },
   ] as const;
+
+  const popularServices = SERVICES.filter((s) =>
+    (POPULAR_KEYS as readonly string[]).includes(s.key)
+  );
+
+  const fieldClass =
+    'w-full rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 dark:border-slate-600 dark:bg-slate-800 dark:text-white';
 
   return (
     <div className="pointer-events-none fixed inset-0 z-[96]">
@@ -244,7 +581,6 @@ export function LeadAssistant() {
             : 'max(0.5rem, env(safe-area-inset-bottom, 0px))',
         }}
       >
-        {/* Mobilde FAB, alt Ara/WA çubuğunun üstünde */}
         <div
           className={`pointer-events-none flex w-full flex-col items-stretch gap-3 sm:max-w-[22rem] sm:items-end ${
             open ? '' : 'mb-[4.75rem] lg:mb-0'
@@ -258,11 +594,7 @@ export function LeadAssistant() {
                 role="dialog"
                 aria-modal="true"
                 aria-labelledby={titleId}
-                initial={
-                  reduceMotion
-                    ? { opacity: 0 }
-                    : { opacity: 0, y: 28 }
-                }
+                initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 28 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
                 transition={{ type: 'spring', stiffness: 420, damping: 34 }}
@@ -281,6 +613,10 @@ export function LeadAssistant() {
                     >
                       <ChevronLeft className="h-5 w-5" aria-hidden />
                     </button>
+                  ) : screen === 'success' ? (
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-600/10 text-emerald-700 dark:text-emerald-400">
+                      <CheckCircle2 className="h-5 w-5" aria-hidden />
+                    </span>
                   ) : (
                     <span className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-600/10 text-emerald-700 dark:text-emerald-400">
                       <Sparkles className="h-5 w-5" aria-hidden />
@@ -291,12 +627,10 @@ export function LeadAssistant() {
                       id={titleId}
                       className="truncate text-sm font-semibold text-slate-900 dark:text-white sm:text-base"
                     >
-                      {screen === 'quote' ? 'Hızlı teklif' : `${brand} Asistan`}
+                      {headerTitle}
                     </h2>
                     <p className="truncate text-xs text-slate-500 dark:text-slate-400">
-                      {screen === 'quote'
-                        ? 'Tahmini yol · kesin fiyat keşifle'
-                        : 'Teklif · keşif · hesaplama'}
+                      {headerSub}
                     </p>
                   </div>
                   <button
@@ -316,6 +650,28 @@ export function LeadAssistant() {
                       <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300">
                         İhtiyacınızı seçin. Peyzaj yok — yüzey ve yaşam alanı temizliği.
                       </p>
+
+                      <div>
+                        <p className="mb-2 text-xs font-medium uppercase tracking-wide text-slate-400">
+                          Popüler (Ads)
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {popularServices.map((s) => (
+                            <button
+                              key={s.key}
+                              type="button"
+                              onClick={() => startQuoteForService(s.value)}
+                              className={`rounded-full border px-3 py-1.5 text-xs font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 ${
+                                service === s.value
+                                  ? 'border-emerald-600 bg-emerald-600 text-white'
+                                  : 'border-slate-200 bg-white text-slate-700 hover:border-emerald-500/50 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200'
+                              }`}
+                            >
+                              {s.value}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
 
                       <ul className="space-y-2">
                         {menuActions.map((action) => {
@@ -387,7 +743,7 @@ export function LeadAssistant() {
 
                       <div>
                         <p className="mb-2 text-xs font-medium uppercase tracking-wide text-slate-400">
-                          Hizmet
+                          Tüm hizmetler
                         </p>
                         <div className="-mx-1 flex gap-2 overflow-x-auto px-1 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                           {SERVICES.map((s) => (
@@ -409,7 +765,8 @@ export function LeadAssistant() {
                   {screen === 'quote' && (
                     <form onSubmit={onQuoteSubmit} className="space-y-3">
                       <p className="text-xs leading-relaxed text-slate-500 dark:text-slate-400">
-                        Bilgiler WhatsApp özetine eklenir. Kesin fiyat ücretsiz keşif sonrası yazılır.
+                        Bilgiler WhatsApp özetine eklenir ve admin talebe düşer. Kesin fiyat ücretsiz
+                        keşif sonrası yazılır.
                       </p>
 
                       <label className="block space-y-1">
@@ -418,8 +775,11 @@ export function LeadAssistant() {
                         </span>
                         <select
                           value={service}
-                          onChange={(e) => setService(e.target.value)}
-                          className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 dark:border-slate-600 dark:bg-slate-800 dark:text-white"
+                          onChange={(e) => {
+                            userTouchedService.current = true;
+                            setService(e.target.value);
+                          }}
+                          className={fieldClass}
                         >
                           {SERVICES.map((s) => (
                             <option key={s.value} value={s.value}>
@@ -434,31 +794,77 @@ export function LeadAssistant() {
                           Bölge
                         </span>
                         <select
-                          value={area}
-                          onChange={(e) => setArea(e.target.value)}
-                          className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 dark:border-slate-600 dark:bg-slate-800 dark:text-white"
+                          value={regionId}
+                          onChange={(e) => {
+                            userTouchedArea.current = true;
+                            const next = e.target.value as RegionId;
+                            setRegionId(next);
+                            setArea(defaultAreaForRegion(next));
+                          }}
+                          className={fieldClass}
                         >
-                          {AREAS.map((a) => (
-                            <option key={a} value={a}>
-                              {a}
+                          {REGIONS.map((r) => (
+                            <option key={r.id} value={r.id}>
+                              {r.label}
                             </option>
                           ))}
                         </select>
                       </label>
 
-                      <label className="block space-y-1">
-                        <span className="text-xs font-medium text-slate-600 dark:text-slate-300">
-                          Alan (m²) — isteğe bağlı
-                        </span>
-                        <input
-                          type="text"
-                          inputMode="numeric"
-                          value={sqm}
-                          onChange={(e) => setSqm(e.target.value)}
-                          placeholder="örn. 120"
-                          className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 dark:border-slate-600 dark:bg-slate-800 dark:text-white"
-                        />
-                      </label>
+                      {hasSubs ? (
+                        <label className="block space-y-1">
+                          <span className="text-xs font-medium text-slate-600 dark:text-slate-300">
+                            Semt (Sarıyer hattı)
+                          </span>
+                          <select
+                            value={area}
+                            onChange={(e) => {
+                              userTouchedArea.current = true;
+                              setArea(e.target.value);
+                            }}
+                            className={fieldClass}
+                          >
+                            {activeRegion.subs.map((s) => (
+                              <option key={s} value={s}>
+                                {s}
+                              </option>
+                            ))}
+                          </select>
+                        </label>
+                      ) : null}
+
+                      {isKoltukService(service) ? (
+                        <label className="block space-y-1">
+                          <span className="text-xs font-medium text-slate-600 dark:text-slate-300">
+                            Koltuk tipi
+                          </span>
+                          <select
+                            value={koltukType}
+                            onChange={(e) => setKoltukType(e.target.value)}
+                            className={fieldClass}
+                          >
+                            {KOLTUK_TYPES.map((t) => (
+                              <option key={t} value={t}>
+                                {t}
+                              </option>
+                            ))}
+                          </select>
+                        </label>
+                      ) : (
+                        <label className="block space-y-1">
+                          <span className="text-xs font-medium text-slate-600 dark:text-slate-300">
+                            Alan (m²) — isteğe bağlı
+                          </span>
+                          <input
+                            type="text"
+                            inputMode="numeric"
+                            value={sqm}
+                            onChange={(e) => setSqm(e.target.value)}
+                            placeholder="örn. 120"
+                            className={fieldClass}
+                          />
+                        </label>
+                      )}
 
                       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                         <label className="block space-y-1">
@@ -470,7 +876,7 @@ export function LeadAssistant() {
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                             autoComplete="name"
-                            className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 dark:border-slate-600 dark:bg-slate-800 dark:text-white"
+                            className={fieldClass}
                           />
                         </label>
                         <label className="block space-y-1">
@@ -484,24 +890,28 @@ export function LeadAssistant() {
                             onChange={(e) => setPhone(e.target.value)}
                             autoComplete="tel"
                             placeholder="05xx xxx xx xx"
-                            className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 dark:border-slate-600 dark:bg-slate-800 dark:text-white"
+                            className={fieldClass}
                           />
                         </label>
                       </div>
 
                       {formError ? (
-                        <p className="text-xs font-medium text-red-600 dark:text-red-400" role="alert">
+                        <p
+                          className="text-xs font-medium text-red-600 dark:text-red-400"
+                          role="alert"
+                        >
                           {formError}
                         </p>
                       ) : null}
 
                       <button
                         type="submit"
+                        disabled={submitting}
                         data-source="lead-assistant-quote-submit"
-                        className="flex w-full min-h-[48px] items-center justify-center gap-2 rounded-xl bg-[#25D366] px-4 py-3 text-sm font-semibold text-[#053e2f] focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+                        className="flex w-full min-h-[48px] items-center justify-center gap-2 rounded-xl bg-[#25D366] px-4 py-3 text-sm font-semibold text-[#053e2f] focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 disabled:opacity-60"
                       >
                         <WhatsAppGlyph className="h-5 w-5" />
-                        WhatsApp ile gönder
+                        {submitting ? 'Gönderiliyor…' : 'WhatsApp ile gönder'}
                       </button>
 
                       <div className="grid grid-cols-2 gap-2">
@@ -524,29 +934,101 @@ export function LeadAssistant() {
                       </div>
                     </form>
                   )}
+
+                  {screen === 'success' && (
+                    <div className="space-y-4">
+                      <div className="rounded-xl border border-emerald-200 bg-emerald-50/80 px-3 py-3 dark:border-emerald-800 dark:bg-emerald-950/40">
+                        <p className="text-sm font-semibold text-emerald-900 dark:text-emerald-200">
+                          WhatsApp özeti hazırlandı
+                        </p>
+                        <p className="mt-1 text-xs leading-relaxed text-emerald-800/90 dark:text-emerald-300/90">
+                          {service} · {displayAreaLabel(area)}
+                          {detailLine ? ` · ${detailLine}` : ''}. Kesin fiyat keşif sonrası yazılır —
+                          peyzaj yok.
+                        </p>
+                      </div>
+
+                      <a
+                        href={waHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex w-full min-h-[48px] items-center justify-center gap-2 rounded-xl bg-[#25D366] px-4 py-3 text-sm font-semibold text-[#053e2f]"
+                        onClick={() => trackLead('lead-assistant-whatsapp-retry')}
+                      >
+                        <WhatsAppGlyph className="h-5 w-5" />
+                        WhatsApp’ı tekrar aç
+                      </a>
+
+                      <div className="grid grid-cols-2 gap-2">
+                        <a
+                          href={callHref}
+                          onClick={() => trackLead('lead-assistant-call')}
+                          className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl bg-amber-600 px-3 py-2.5 text-sm font-semibold text-white hover:bg-amber-500"
+                        >
+                          <Phone className="h-4 w-4" aria-hidden />
+                          Ara
+                        </a>
+                        <Link
+                          href="/randevu"
+                          onClick={close}
+                          className="inline-flex min-h-[44px] items-center justify-center rounded-xl bg-emerald-600 px-3 py-2.5 text-sm font-semibold text-white hover:bg-emerald-700"
+                        >
+                          Keşif
+                        </Link>
+                      </div>
+
+                      <button
+                        type="button"
+                        onClick={close}
+                        className="w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-800"
+                      >
+                        Kapat
+                      </button>
+                    </div>
+                  )}
                 </div>
               </motion.div>
             )}
           </AnimatePresence>
 
           {!open && (
-            <motion.button
-              ref={fabRef}
-              type="button"
-              onClick={toggle}
-              aria-expanded={open}
-              aria-controls={panelId}
-              aria-haspopup="dialog"
-              className="pointer-events-auto relative ml-auto flex h-14 items-center gap-2 rounded-full bg-emerald-700 px-4 text-sm font-semibold text-white shadow-lg shadow-emerald-900/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 dark:bg-emerald-600 sm:h-[3.25rem]"
-              whileHover={reduceMotion ? undefined : { scale: 1.03 }}
-              whileTap={reduceMotion ? undefined : { scale: 0.96 }}
-              initial={reduceMotion ? false : { scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-            >
-              <Sparkles className="h-5 w-5 shrink-0" aria-hidden />
-              <span className="pr-0.5">Asistan</span>
-              <span className="sr-only">Teklif ve iletişim asistanını aç</span>
-            </motion.button>
+            <div className="pointer-events-auto relative ml-auto flex flex-col items-end gap-2">
+              <AnimatePresence>
+                {showNudge && (
+                  <motion.button
+                    key="nudge"
+                    type="button"
+                    initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 6 }}
+                    onClick={() => openPanel('quote')}
+                    className="max-w-[14rem] rounded-2xl border border-slate-200 bg-white px-3 py-2 text-left text-xs font-medium text-slate-800 shadow-lg dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100"
+                  >
+                    Teklif veya keşif mi? Asistana dokunun.
+                    <span className="mt-1 block text-[10px] font-normal text-slate-500">
+                      Sarıyer · koltuk · inşaat
+                    </span>
+                  </motion.button>
+                )}
+              </AnimatePresence>
+              <motion.button
+                ref={fabRef}
+                type="button"
+                onClick={toggle}
+                aria-expanded={open}
+                aria-controls={panelId}
+                aria-haspopup="dialog"
+                className="relative flex h-14 items-center gap-2 rounded-full bg-emerald-700 px-4 text-sm font-semibold text-white shadow-lg shadow-emerald-900/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 dark:bg-emerald-600 sm:h-[3.25rem]"
+                whileHover={reduceMotion ? undefined : { scale: 1.03 }}
+                whileTap={reduceMotion ? undefined : { scale: 0.96 }}
+                initial={reduceMotion ? false : { scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+              >
+                <Sparkles className="h-5 w-5 shrink-0" aria-hidden />
+                <span className="pr-0.5">Asistan</span>
+                <span className="sr-only">Teklif ve iletişim asistanını aç</span>
+              </motion.button>
+            </div>
           )}
         </div>
       </div>
