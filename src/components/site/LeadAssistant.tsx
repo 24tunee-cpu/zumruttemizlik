@@ -420,36 +420,52 @@ export function LeadAssistant() {
     return sqm.trim() ? `Alan: ${sqm.trim()} m²` : '';
   }, [service, koltukType, sqm]);
 
+  /** Müşterinin WA’da göreceği sade metin — kaynak/sayfa yok. */
   const buildWaMessage = useCallback(() => {
+    const region = displayAreaLabel(area);
     const lines = [
-      `Merhaba, ${brand} asistanından yazıyorum.`,
-      LEAD_ASSISTANT_SOURCE_TAG,
-      `Hizmet: ${service}`,
-      `Bölge: ${displayAreaLabel(area)}`,
+      `Merhaba, ${region} bölgesinde ${service.toLowerCase()} için ücretsiz keşif ve fiyat teklifi istiyorum.`,
     ];
-    if (detailLine) lines.push(detailLine);
-    if (name.trim()) lines.push(`Ad: ${name.trim()}`);
-    if (phone.trim()) lines.push(`Tel: ${phone.trim()}`);
-    lines.push(`Sayfa: ${pathname}`);
-    lines.push('Ücretsiz keşif / fiyat teklifi istiyorum. (Online tahmin ≠ kesin fiyat.)');
+    if (detailLine) {
+      // "Alan: 120 m²" / "Koltuk tipi: …" → daha doğal
+      if (detailLine.startsWith('Alan:')) {
+        lines.push(detailLine.replace('Alan:', 'Metrekare:'));
+      } else if (detailLine.startsWith('Koltuk tipi:')) {
+        lines.push(detailLine.replace('Koltuk tipi:', 'Koltuk:'));
+      } else {
+        lines.push(detailLine);
+      }
+    }
+    if (name.trim()) lines.push(`Adım: ${name.trim()}`);
+    if (phone.trim()) lines.push(`Telefon: ${phone.trim()}`);
     return lines.join('\n');
-  }, [brand, service, area, detailLine, name, phone, pathname]);
+  }, [service, area, detailLine, name, phone]);
+
+  /** Admin ContactRequest — filtre için kaynak etiketi + sayfa. */
+  const buildAdminMessage = useCallback(() => {
+    return [
+      LEAD_ASSISTANT_SOURCE_TAG,
+      buildWaMessage(),
+      `Sayfa: ${pathname}`,
+    ].join('\n');
+  }, [buildWaMessage, pathname]);
 
   const waHref = useMemo(() => {
     return `https://wa.me/${waDigits}?text=${encodeURIComponent(buildWaMessage())}`;
   }, [waDigits, buildWaMessage]);
 
   const quickWaHref = useMemo(() => {
-    const text = `Merhaba, ${brand} asistanından yazıyorum. Temizlik için bilgi / teklif istiyorum.`;
+    const text =
+      'Merhaba, temizlik hizmeti için ücretsiz keşif ve fiyat teklifi istiyorum.';
     return `https://wa.me/${waDigits}?text=${encodeURIComponent(text)}`;
-  }, [waDigits, brand]);
+  }, [waDigits]);
 
   const persistContact = useCallback(
     async (phoneDigits: string) => {
       const displayName = name.trim() || 'Asistan lead';
       const apiPhone = formatTrPhoneForApi(phoneDigits);
       const email = `asistan.${digitsOnly(apiPhone)}@zumrutvaditemizlik.com`;
-      const message = buildWaMessage();
+      const message = buildAdminMessage();
       try {
         const res = await fetch('/api/contact', {
           method: 'POST',
@@ -472,7 +488,7 @@ export function LeadAssistant() {
         // WA yine açılsın — kayıt opsiyonel
       }
     },
-    [name, service, buildWaMessage]
+    [name, service, buildAdminMessage]
   );
 
   const onQuoteSubmit = async (e: FormEvent) => {
