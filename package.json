@@ -30,6 +30,7 @@
     "seed:blogs-v6": "tsx scripts/seed-scheduled-blogs-v6.ts",
     "seed:blogs-v7": "tsx scripts/seed-scheduled-blogs-v7.ts",
     "seed:blogs-v8": "tsx scripts/seed-publish-blogs-v8.ts",
+    "seed:blogs-v9": "tsx scripts/seed-publish-blogs-v9.ts",
     "seo:autopilot:bootstrap": "tsx scripts/bootstrap-seo-autopilot.ts",
     "seo:autopilot:validate": "tsx scripts/validate-autopilot-slugs.ts",
     "seo:autopilot:run": "tsx scripts/run-seo-autopilot.ts",
