@@ -14,7 +14,6 @@ import { SITE_CONTACT, toTelHref } from '@/config/site-contact';
 import { canonicalUrl, generateBreadcrumbSchema, getSiteUrl } from '@/lib/seo';
 import { keywordsForPage } from '@/lib/seo-keywords';
 import { metadataForParamAwarePage } from '@/lib/param-page-metadata';
-import { ConversionSeoAside } from '@/components/site/ConversionSeoAside';
 import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
 import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
 
@@ -271,11 +270,6 @@ export default function ContactPage() {
             <ContactForm variant="dark" />
           </Suspense>
 
-          <ConversionSeoAside
-            contextLabel="İletişim sonrası temizlik teklifi"
-            sourcePrefix="iletisim-aside"
-            tone="dark"
-          />
           <StickySeoCtaBar contextLabel="İletişim" sourcePrefix="iletisim-sticky" />
         </div>
       </SiteLayout>

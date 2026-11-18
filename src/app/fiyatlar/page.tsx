@@ -174,12 +174,11 @@ export default async function FiyatlarPage() {
             İlçe bazlı fiyat rotası
           </h2>
           <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
-            Ayrı ince “ilçe fiyat” sayfası üretmiyoruz; her ilçe hub’ında fiyat CTA’sı ve hesaplama
-            aracı var. Öncelik bölgeler:
+            Her ilçe sayfasında fiyat hesabı ve ücretsiz keşif var. Öncelik bölgeler:
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             {[
-              { href: '/bolgeler/sariyer', label: 'Sarıyer fiyat / hub' },
+              { href: '/bolgeler/sariyer', label: 'Sarıyer temizlik' },
               { href: '/bolgeler/sariyer/zekeriyakoy', label: 'Zekeriyaköy' },
               { href: '/bolgeler/sariyer/uskumrukoy', label: 'Uskumruköy' },
               { href: '/bolgeler/kagithane', label: 'Kağıthane' },

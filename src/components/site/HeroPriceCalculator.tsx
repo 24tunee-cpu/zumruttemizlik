@@ -159,8 +159,8 @@ export function HeroPriceCalculator({
 
     const intentLine = intentContext
       ? intentContext.districtName
-        ? `Niyet: ${intentContext.intentName} (${intentContext.districtName})\n`
-        : `Niyet: ${intentContext.intentName}\n`
+        ? `Konu: ${intentContext.intentName} (${intentContext.districtName})\n`
+        : `Konu: ${intentContext.intentName}\n`
       : '';
 
     const extrasText = selectedExtras.length
@@ -207,7 +207,7 @@ export function HeroPriceCalculator({
         {intentContext && (
           <div className="mb-4 rounded-xl border border-emerald-500/25 bg-emerald-950/40 px-4 py-3">
             <p className="text-xs font-semibold uppercase tracking-wide text-emerald-400">
-              Niyet modu
+              Seçili hizmet
             </p>
             <p className="mt-1 text-sm font-medium text-white">{intentContext.intentName}</p>
             {intentContext.districtName && (

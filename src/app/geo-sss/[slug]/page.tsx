@@ -51,7 +51,7 @@ export default async function GeoSssPage({ params }: Props) {
   ]);
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Ana Sayfa', url: '/' },
-    { name: 'GEO SSS', url: '/geo-sss' },
+    { name: 'İlçe SSS', url: '/geo-sss' },
     { name: page.title, url: `/geo-sss/${page.slug}` },
   ]);
 
@@ -68,7 +68,7 @@ export default async function GeoSssPage({ params }: Props) {
           <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
             <nav className="mb-6 text-sm text-slate-400">
               <Link href="/geo-sss" className="hover:text-emerald-400">
-                GEO SSS
+                İlçe SSS
               </Link>
               <span className="mx-2">/</span>
               <span className="text-slate-300">{page.districtName}</span>
@@ -77,7 +77,7 @@ export default async function GeoSssPage({ params }: Props) {
             <h1 className="text-3xl font-bold sm:text-4xl">{page.title}</h1>
 
             <aside className="mt-6 rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4">
-              <p className="text-sm font-medium text-emerald-200">TL;DR</p>
+              <p className="text-sm font-medium text-emerald-200">Kısa cevap</p>
               <p className="mt-2 text-emerald-50">{page.directAnswer}</p>
             </aside>
 

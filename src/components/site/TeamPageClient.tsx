@@ -132,11 +132,10 @@ export function TeamPageClient({ members }: { members: PublicTeamMember[] }) {
               id="ekip-guven-heading"
               className="text-3xl font-bold text-slate-900 dark:text-white"
             >
-              Doğrulanmış güven
+              Güvenilir hizmet
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-slate-600 dark:text-slate-400">
-              Uydurma “20+ yıl / 50+ personel / %100” iddiası yok — yalnızca operasyonel gerçekler
-              ve Google sinyali.
+              Gerçek ekip, gerçek Google yorumları ve net kapsam — abartılı rakam iddiası yok.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-3">

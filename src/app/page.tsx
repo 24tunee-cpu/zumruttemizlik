@@ -97,11 +97,11 @@ const HOME_AEO_FAQS = [
   },
   {
     q: 'Kalite ve kapsam nasıl netleşir? Garanti sınırı nedir?',
-    a: 'Kapsam ücretsiz keşifte yazılır. Checklist’li uygulama sonrası eksik kalırsa aynı plan kapsamında düzeltilir. Garanti sınırı keşifte yazılı işlerdir; keşif dışı ekstra ayrıca teklif edilir. Online fiyat kesin teklif değildir. Peyzaj/bahçe düzenleme hizmeti yok.',
+    a: 'Kapsam ücretsiz keşifte yazılır. Checklist’li uygulama sonrası eksik kalırsa aynı plan kapsamında düzeltilir. Garanti sınırı keşifte yazılı işlerdir; keşif dışı ekstra ayrıca teklif edilir. Online fiyat kesin teklif değildir. Bahçe düzenleme hizmetimiz yoktur.',
   },
   {
     q: 'Google yorumlarınız nerede?',
-    a: `${formatGoogleTrustLine()}. Güncel puan ve yorumlar için /harita-ve-yorumlar sayfasına bakın; uydurma müşteri sayısı kullanmıyoruz.`,
+    a: `${formatGoogleTrustLine()}. Güncel puan ve yorumlar için Harita & Yorumlar sayfasından bakabilirsiniz.`,
   },
   {
     q: 'Aynı gün randevu mümkün mü?',
@@ -177,16 +177,17 @@ export default async function HomePage() {
           <div className="mx-auto max-w-5xl">
             <WhyChooseZvt
               tone="dark"
+              variant="full"
               contextLabel="Ana sayfa temizlik teklifi"
               sourcePrefix="home-why-zvt"
             />
             <RelatedSeoLinks
               tone="dark"
-              heading="Öncelikli semt ve niyetler"
-              intro="Sarıyer hattı ve SSS — kopya mahalle şişirmeden doğru sayfaya geçin."
+              heading="Öncelikli semtler"
+              intro="Sarıyer hattı ve sık sorulanlar."
               groups={[
                 {
-                  title: 'Semt & semt×hizmet',
+                  title: 'Semtler',
                   links: [
                     { href: '/bolgeler/sariyer/zekeriyakoy', label: 'Zekeriyaköy' },
                     {
@@ -197,15 +198,15 @@ export default async function HomePage() {
                       href: '/bolgeler/sariyer/maslak-ofis-temizligi',
                       label: 'Maslak ofis',
                     },
-                    { href: '/bolgeler/sariyer', label: 'Sarıyer hub' },
+                    { href: '/bolgeler/sariyer', label: 'Sarıyer temizlik' },
                   ],
                 },
                 {
-                  title: 'SSS / AEO',
+                  title: 'SSS',
                   links: [
                     { href: '/sss/fiyat', label: 'Fiyat SSS' },
                     { href: '/sss/bolge', label: 'Bölge SSS' },
-                    { href: '/geo-sss', label: 'GEO SSS' },
+                    { href: '/geo-sss', label: 'İlçe SSS' },
                     { href: '/harita-ve-yorumlar', label: 'Harita & yorumlar' },
                   ],
                 },
@@ -234,7 +235,7 @@ export default async function HomePage() {
                   href="/geo-sss"
                   className="font-medium text-emerald-300 underline underline-offset-2"
                 >
-                  GEO SSS
+                  ilçe soru-cevap
                 </Link>
                 .
               </p>

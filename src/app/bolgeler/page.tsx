@@ -8,7 +8,7 @@ import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
 
 const bolgelerTitle = clampMetaTitle('İstanbul İlçe Temizlik Hizmetleri | Sarıyer');
 const bolgelerDescription = clampMetaDescription(
-  "Zekeriyaköy, Sarıyer, Beşiktaş, Şişli ve İstanbul'un 18 ilçesinde ev, ofis, inşaat sonrası temizlik. İlçe bazlı landing ve ücretsiz keşif."
+  "Zekeriyaköy, Sarıyer, Beşiktaş, Şişli ve İstanbul'un 18 ilçesinde ev, ofis, inşaat sonrası temizlik. İlçe sayfaları ve ücretsiz keşif."
 );
 const bolgelerOgDescription = clampMetaDescription(
   'Zekeriyaköy ve Sarıyer öncelikli İstanbul ilçe temizlik sayfaları. Ev, ofis, inşaat sonrası ve halı-koltuk hizmetleri.'
@@ -55,7 +55,7 @@ const pageSchema = {
   '@type': 'CollectionPage',
   name: 'İstanbul İlçe Bazlı Temizlik Hizmetleri',
   url: canonicalUrl('/bolgeler'),
-  description: 'Zekeriyaköy, Sarıyer ve İstanbul ilçelerine özel temizlik landing sayfaları.',
+  description: 'Zekeriyaköy, Sarıyer ve İstanbul ilçelerine özel temizlik sayfaları.',
 };
 
 const breadcrumbSchema = {
@@ -74,7 +74,7 @@ export default function RegionsHubPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <RegionsPageClient>
         <ConversionSeoAside
-          contextLabel="Bölgeler hub temizlik teklifi"
+          contextLabel="Bölgeler temizlik teklifi"
           sourcePrefix="bolgeler-aside"
           tone="dark"
         />

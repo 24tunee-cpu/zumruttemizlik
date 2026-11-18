@@ -43,6 +43,7 @@ import {
 } from '@/lib/seo';
 import { extractFaqsFromBlogHtml } from '@/lib/geo-passage';
 import { injectFeaturedSnippetIfMissing } from '@/lib/blog-snippet-enrich';
+import { sanitizeCustomerFacingHtml } from '@/lib/sanitize-customer-copy';
 import {
   resolveBlogCanonicalUrl,
   isCannibalDuplicate,
@@ -368,10 +369,8 @@ export default async function BlogPostPage({ params }: PageProps) {
     }
   }
 
-  enhancedPostContent = injectFeaturedSnippetIfMissing(
-    post.slug,
-    post.title,
-    enhancedPostContent
+  enhancedPostContent = sanitizeCustomerFacingHtml(
+    injectFeaturedSnippetIfMissing(post.slug, post.title, enhancedPostContent)
   );
 
   // Update view counter (fire and forget)

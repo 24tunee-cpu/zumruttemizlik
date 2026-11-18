@@ -11,9 +11,9 @@ import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
 
 export const revalidate = 86400;
 
-const geoSssTitle = clampMetaTitle('GEO SSS | İlçe Temizlik Soruları');
+const geoSssTitle = clampMetaTitle('İlçe SSS | Temizlik Soru-Cevap');
 const geoSssDescription = clampMetaDescription(
-  'İlçe bazlı kısa SSS — Sarıyer / Zekeriyaköy odaklı passage cevaplar. Ücretsiz keşif için randevu.'
+  'İlçe bazlı kısa temizlik soru-cevapları — Sarıyer / Zekeriyaköy odaklı. Ücretsiz keşif için randevu.'
 );
 
 export const metadata: Metadata = {
@@ -34,7 +34,7 @@ export default async function GeoSssIndexPage() {
 
   const breadcrumbLd = generateBreadcrumbSchema([
     { name: 'Ana Sayfa', url: '/' },
-    { name: 'GEO SSS', url: '/geo-sss' },
+    { name: 'İlçe SSS', url: '/geo-sss' },
   ]);
 
   return (
@@ -45,10 +45,10 @@ export default async function GeoSssIndexPage() {
       />
       <div className="min-h-screen bg-slate-900 pb-16 pt-28 text-white">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl font-bold">GEO SSS Rehberleri</h1>
+          <h1 className="text-3xl font-bold">İlçe temizlik soru-cevap</h1>
           <p className="mt-4 max-w-2xl text-slate-300">
-            İlçe bazlı kısa soru-cevap sayfaları — doğrudan alıntılanabilir passage format.
-            Sihirli ranking iddiası yok; faydalı cevap + hub linkleri öncelik.
+            İlçe ve semte göre kısa cevaplar — fiyat, süre ve güvenilir ekip hakkında net bilgi.
+            Detaylı teklif için ücretsiz keşif alın.
           </p>
           <SiteHubLinkStrip tone="dark" className="mt-6" />
           <div className="mt-10 space-y-8">
@@ -63,7 +63,7 @@ export default async function GeoSssIndexPage() {
                       href={`/bolgeler/${districtSlug}`}
                       className="text-sm text-slate-400 underline-offset-2 hover:text-emerald-300 hover:underline"
                     >
-                      {district} temizlik hub →
+                      {district} temizlik →
                     </Link>
                   ) : null}
                 </div>
@@ -85,36 +85,26 @@ export default async function GeoSssIndexPage() {
           </div>
           <RelatedSeoLinks
             tone="dark"
-            heading="GEO SSS sonrası teklif"
-            intro="Passage’den para sayfasına — Sarıyer hattı ve keşif."
+            heading="İlgili sayfalar"
             groups={[
               {
-                title: 'Öncelik',
+                title: 'Bölgeler',
                 links: [
-                  { href: '/bolgeler/sariyer', label: 'Sarıyer hub' },
+                  { href: '/bolgeler/sariyer', label: 'Sarıyer temizlik' },
                   { href: '/bolgeler/sariyer/zekeriyakoy', label: 'Zekeriyaköy' },
-                  { href: '/sss/bolge', label: 'Bölge SSS' },
-                  { href: '/sss/fiyat', label: 'Fiyat SSS' },
-                ],
-              },
-              {
-                title: 'Teklif',
-                links: [
-                  { href: '/randevu', label: 'Ücretsiz keşif' },
-                  { href: '/fiyat-hesaplama', label: 'Fiyat hesapla' },
-                  { href: '/harita-ve-yorumlar', label: 'Harita & yorumlar' },
+                  { href: '/sss', label: 'Genel SSS' },
                 ],
               },
             ]}
           />
           <WhyChooseZvt
             tone="dark"
-            contextLabel="GEO SSS sonrası temizlik"
+            contextLabel="İlçe SSS sonrası temizlik"
             sourcePrefix="geo-sss-hub-why-zvt"
           />
         </div>
       </div>
-      <StickySeoCtaBar contextLabel="GEO SSS" sourcePrefix="geo-sss-hub-sticky" />
+      <StickySeoCtaBar contextLabel="İlçe SSS" sourcePrefix="geo-sss-hub-sticky" />
     </SiteLayout>
   );
 }

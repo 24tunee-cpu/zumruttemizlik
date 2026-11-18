@@ -183,7 +183,7 @@ const TOPICS: V9Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -209,8 +209,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -252,7 +252,7 @@ const TOPICS: V9Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -278,8 +278,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -321,7 +321,7 @@ const TOPICS: V9Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -347,8 +347,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -390,7 +390,7 @@ const TOPICS: V9Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -416,8 +416,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -459,7 +459,7 @@ const TOPICS: V9Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -485,8 +485,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -528,7 +528,7 @@ const TOPICS: V9Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -554,8 +554,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -597,7 +597,7 @@ const TOPICS: V9Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -623,8 +623,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -666,7 +666,7 @@ const TOPICS: V9Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -692,8 +692,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -735,7 +735,7 @@ const TOPICS: V9Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -761,8 +761,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -804,7 +804,7 @@ const TOPICS: V9Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -830,8 +830,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -873,7 +873,7 @@ const TOPICS: V9Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -899,8 +899,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -922,7 +922,7 @@ const TOPICS: V9Topic[] = [
     "service": "koltuk",
     "area": "bahce",
     "image": "sofa",
-    "compareNote": "Peyzaj/bahçe düzenleme yok.",
+    "compareNote": "Bahçe düzenleme yoktur.",
     "priceFactors": [
       "Takım / parça adedi",
       "Kumaş tipi ve leke yaşı",
@@ -942,7 +942,7 @@ const TOPICS: V9Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -968,8 +968,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -1011,7 +1011,7 @@ const TOPICS: V9Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -1037,8 +1037,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -1080,7 +1080,7 @@ const TOPICS: V9Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -1106,8 +1106,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -1149,7 +1149,7 @@ const TOPICS: V9Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -1175,8 +1175,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -1218,7 +1218,7 @@ const TOPICS: V9Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -1244,8 +1244,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -1287,7 +1287,7 @@ const TOPICS: V9Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -1313,8 +1313,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -1356,7 +1356,7 @@ const TOPICS: V9Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -1382,8 +1382,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -1425,7 +1425,7 @@ const TOPICS: V9Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -1451,8 +1451,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -1494,7 +1494,7 @@ const TOPICS: V9Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -1520,8 +1520,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -1563,7 +1563,7 @@ const TOPICS: V9Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -1589,8 +1589,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -1632,7 +1632,7 @@ const TOPICS: V9Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -1658,8 +1658,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -1701,7 +1701,7 @@ const TOPICS: V9Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -1727,8 +1727,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -1770,7 +1770,7 @@ const TOPICS: V9Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -1796,8 +1796,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -1839,7 +1839,7 @@ const TOPICS: V9Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -1865,8 +1865,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -1908,7 +1908,7 @@ const TOPICS: V9Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -1934,8 +1934,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -1977,7 +1977,7 @@ const TOPICS: V9Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -2003,8 +2003,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -2046,7 +2046,7 @@ const TOPICS: V9Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -2072,8 +2072,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -2115,7 +2115,7 @@ const TOPICS: V9Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -2141,8 +2141,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -2184,7 +2184,7 @@ const TOPICS: V9Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -2210,8 +2210,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -2253,7 +2253,7 @@ const TOPICS: V9Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -2279,8 +2279,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -2322,7 +2322,7 @@ const TOPICS: V9Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -2348,8 +2348,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -2391,7 +2391,7 @@ const TOPICS: V9Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -2417,8 +2417,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -2460,7 +2460,7 @@ const TOPICS: V9Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -2486,8 +2486,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -2529,7 +2529,7 @@ const TOPICS: V9Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -2555,8 +2555,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -2598,7 +2598,7 @@ const TOPICS: V9Topic[] = [
       "Zemin"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -2624,8 +2624,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -2667,7 +2667,7 @@ const TOPICS: V9Topic[] = [
       "Zemin"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -2693,8 +2693,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -2736,7 +2736,7 @@ const TOPICS: V9Topic[] = [
       "Zemin"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -2762,8 +2762,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -2805,7 +2805,7 @@ const TOPICS: V9Topic[] = [
       "Zemin"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -2831,8 +2831,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -2874,7 +2874,7 @@ const TOPICS: V9Topic[] = [
       "Zemin"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -2900,8 +2900,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -2943,7 +2943,7 @@ const TOPICS: V9Topic[] = [
       "Zemin"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -2969,8 +2969,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -3012,7 +3012,7 @@ const TOPICS: V9Topic[] = [
       "Zemin"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -3038,8 +3038,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -3081,7 +3081,7 @@ const TOPICS: V9Topic[] = [
       "Zemin"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -3107,8 +3107,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -3150,7 +3150,7 @@ const TOPICS: V9Topic[] = [
       "Zemin"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -3176,8 +3176,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -3219,7 +3219,7 @@ const TOPICS: V9Topic[] = [
       "Zemin"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -3245,8 +3245,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -3288,7 +3288,7 @@ const TOPICS: V9Topic[] = [
       "Zemin"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -3314,8 +3314,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -3357,7 +3357,7 @@ const TOPICS: V9Topic[] = [
       "Zemin"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -3383,8 +3383,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -3426,7 +3426,7 @@ const TOPICS: V9Topic[] = [
       "Zemin"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -3452,8 +3452,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -3495,7 +3495,7 @@ const TOPICS: V9Topic[] = [
       "Zemin"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -3521,8 +3521,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -3564,7 +3564,7 @@ const TOPICS: V9Topic[] = [
       "Zemin"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -3590,8 +3590,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -3633,7 +3633,7 @@ const TOPICS: V9Topic[] = [
       "Zemin"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -3659,8 +3659,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -3702,7 +3702,7 @@ const TOPICS: V9Topic[] = [
       "Zemin"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -3728,8 +3728,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -3771,7 +3771,7 @@ const TOPICS: V9Topic[] = [
       "Zemin"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -3797,8 +3797,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -3840,7 +3840,7 @@ const TOPICS: V9Topic[] = [
       "Zemin"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -3866,8 +3866,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -3909,7 +3909,7 @@ const TOPICS: V9Topic[] = [
       "Zemin"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -3935,8 +3935,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -3978,7 +3978,7 @@ const TOPICS: V9Topic[] = [
       "Zemin"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -4004,8 +4004,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -4047,7 +4047,7 @@ const TOPICS: V9Topic[] = [
       "Zemin"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -4073,8 +4073,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -4116,7 +4116,7 @@ const TOPICS: V9Topic[] = [
       "Zemin"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -4142,8 +4142,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -4185,7 +4185,7 @@ const TOPICS: V9Topic[] = [
       "Zemin"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -4211,8 +4211,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -4254,7 +4254,7 @@ const TOPICS: V9Topic[] = [
       "Zemin"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -4280,8 +4280,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -4324,7 +4324,7 @@ const TOPICS: V9Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -4350,8 +4350,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -4394,7 +4394,7 @@ const TOPICS: V9Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -4420,8 +4420,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -4464,7 +4464,7 @@ const TOPICS: V9Topic[] = [
       "Çöp/zemin"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -4490,8 +4490,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -4534,7 +4534,7 @@ const TOPICS: V9Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -4560,8 +4560,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -4604,7 +4604,7 @@ const TOPICS: V9Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -4630,8 +4630,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -4674,7 +4674,7 @@ const TOPICS: V9Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -4700,8 +4700,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -4744,7 +4744,7 @@ const TOPICS: V9Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -4770,8 +4770,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -4814,7 +4814,7 @@ const TOPICS: V9Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -4840,8 +4840,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -4884,7 +4884,7 @@ const TOPICS: V9Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -4910,8 +4910,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -4954,7 +4954,7 @@ const TOPICS: V9Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -4980,8 +4980,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -5024,7 +5024,7 @@ const TOPICS: V9Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -5050,8 +5050,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -5094,7 +5094,7 @@ const TOPICS: V9Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -5120,8 +5120,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -5164,7 +5164,7 @@ const TOPICS: V9Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -5190,8 +5190,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -5234,7 +5234,7 @@ const TOPICS: V9Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -5260,8 +5260,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -5304,7 +5304,7 @@ const TOPICS: V9Topic[] = [
       "Çöp/zemin"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -5330,8 +5330,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -5374,7 +5374,7 @@ const TOPICS: V9Topic[] = [
       "Çöp/zemin"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -5400,8 +5400,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -5444,7 +5444,7 @@ const TOPICS: V9Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -5470,8 +5470,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -5514,7 +5514,7 @@ const TOPICS: V9Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -5540,8 +5540,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -5584,7 +5584,7 @@ const TOPICS: V9Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -5610,8 +5610,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -5654,7 +5654,7 @@ const TOPICS: V9Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -5680,8 +5680,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -5724,7 +5724,7 @@ const TOPICS: V9Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -5750,8 +5750,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -5794,7 +5794,7 @@ const TOPICS: V9Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -5820,8 +5820,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -5864,7 +5864,7 @@ const TOPICS: V9Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -5890,8 +5890,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -5934,7 +5934,7 @@ const TOPICS: V9Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -5960,8 +5960,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -6004,7 +6004,7 @@ const TOPICS: V9Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -6030,8 +6030,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -6074,7 +6074,7 @@ const TOPICS: V9Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -6100,8 +6100,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -6144,7 +6144,7 @@ const TOPICS: V9Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -6170,8 +6170,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -6214,7 +6214,7 @@ const TOPICS: V9Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -6240,8 +6240,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -6284,7 +6284,7 @@ const TOPICS: V9Topic[] = [
       "Çöp/zemin"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -6310,8 +6310,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -6354,7 +6354,7 @@ const TOPICS: V9Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -6380,8 +6380,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -6424,7 +6424,7 @@ const TOPICS: V9Topic[] = [
       "Çöp/zemin"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -6450,8 +6450,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -6494,7 +6494,7 @@ const TOPICS: V9Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -6520,8 +6520,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -6564,7 +6564,7 @@ const TOPICS: V9Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -6590,8 +6590,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -6634,7 +6634,7 @@ const TOPICS: V9Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -6660,8 +6660,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -6704,7 +6704,7 @@ const TOPICS: V9Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -6730,8 +6730,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -6774,7 +6774,7 @@ const TOPICS: V9Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -6800,8 +6800,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -6844,7 +6844,7 @@ const TOPICS: V9Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -6870,8 +6870,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -6914,7 +6914,7 @@ const TOPICS: V9Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -6940,8 +6940,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -6984,7 +6984,7 @@ const TOPICS: V9Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -7010,8 +7010,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [
@@ -7053,7 +7053,7 @@ const TOPICS: V9Topic[] = [
       "Zemin"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -7079,8 +7079,8 @@ const TOPICS: V9Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur."
       }
     ],
     "tags": [

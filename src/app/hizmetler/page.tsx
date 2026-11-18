@@ -105,7 +105,7 @@ export default async function ServicesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
       <ServicesPageClient services={services}>
         <ConversionSeoAside
-          contextLabel="Hizmetler hub teklif"
+          contextLabel="Hizmetler teklifi"
           sourcePrefix="hizmetler-aside"
           tone="dark"
         />

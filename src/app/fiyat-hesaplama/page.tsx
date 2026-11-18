@@ -11,7 +11,6 @@ import {
   serializeSchemaGraph,
 } from '@/lib/seo';
 import { metadataForParamAwarePage } from '@/lib/param-page-metadata';
-import { ConversionSeoAside } from '@/components/site/ConversionSeoAside';
 import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
 import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
 
@@ -205,11 +204,6 @@ export default function FiyatHesaplamaPage() {
         </div>
       </section>
 
-      <ConversionSeoAside
-        contextLabel="Fiyat hesaplama sonrası keşif"
-        sourcePrefix="fiyat-hesaplama-aside"
-        tone="light"
-      />
       <StickySeoCtaBar contextLabel="Fiyat hesaplama" sourcePrefix="fiyat-hesaplama-sticky" />
     </SiteLayout>
   );

@@ -42,10 +42,10 @@ export function buildUltimateSeoHtml(cfg: UltimateSeoConfig): string {
   );
 
   const intents = buildPassageSection(
-    'Google’da sık aranan niyetler (bu yazının kapsadığı)',
+    'Sık aranan konular',
     `“${escapeHtml(cfg.keyword)}” çevresinde kullanıcılar genelde fiyat, süre, kapsam ve yerel firma güvenini birlikte arar.`,
     [
-      'Aşağıdaki niyetler aynı landing’de çözülür; ayrı ince sayfa spam’i yoktur.',
+      'Aşağıdaki konular bu rehberde birlikte ele alınır.',
       `<a href="${cfg.serviceHref}">${escapeHtml(cfg.serviceLabel)}</a> · <a href="${cfg.areaHref}">${escapeHtml(cfg.areaLabel)}</a>`,
     ],
     cfg.searchIntents
@@ -72,7 +72,7 @@ export function buildUltimateSeoHtml(cfg: UltimateSeoConfig): string {
   );
 
   const deep = buildPassageSection(
-    `${cfg.keyword} — derinlemesine operasyon notu`,
+    `${cfg.keyword} — detaylı notlar`,
     cfg.deepParagraphs[0] ?? intro,
     cfg.deepParagraphs.slice(1),
     undefined
@@ -87,18 +87,18 @@ export function buildUltimateSeoHtml(cfg: UltimateSeoConfig): string {
 
   const scope = buildPassageSection(
     'Kapsam ve sınırlar (şeffaf)',
-    'Yüzey ve yaşam alanı temizliği planlanır; peyzaj/bahçe düzenleme hizmetimiz yoktur.',
+    'Yüzey ve yaşam alanı temizliği planlanır; bahçe düzenleme hizmetimiz yoktur.',
     ['Garanti keşifte yazılan işlerdir.'],
     [
       ...cfg.scopeIn.map((x) => `Dahil (tipik): ${x}`),
       ...cfg.scopeOut.map((x) => `Dahil değil: ${x}`),
-      'Peyzaj mimarisi / bahçe düzenleme: yok',
+      'Bahçe düzenleme: yok',
     ]
   );
 
   const process = buildPassageSection(
-    'Adım adım süreç (SEO + CRO uyumlu)',
-    'Önce niyet netliği → bilgi veya keşif → yazılı kapsam → uygulama → kontrol.',
+    'Adım adım süreç',
+    'Önce ihtiyaç netliği → bilgi veya keşif → yazılı kapsam → uygulama → kontrol.',
     cfg.steps,
     cfg.mistakes.map((m) => `Kaçının: ${m}`)
   );
@@ -141,7 +141,7 @@ export function buildUltimateSeoHtml(cfg: UltimateSeoConfig): string {
 ${tldr}
 ${featured}
 <p class="geo-passage-answer" data-geo-extract="true"><strong>Özet:</strong> ${escapeHtml(intro)}</p>
-<p><strong>Zümrüt Vadi Temizlik</strong> — Sarıyer / Zekeriyaköy öncelikli, İstanbul genelinde profesyonel temizlik. Bu uzun form rehber <strong>${escapeHtml(cfg.keyword)}</strong> niyetine odaklıdır; abartılı sıralama vaadi yoktur, yazılı kapsam ve keşif esastır.</p>
+<p><strong>Zümrüt Vadi Temizlik</strong> — Sarıyer / Zekeriyaköy öncelikli, İstanbul genelinde profesyonel temizlik. Bu rehber <strong>${escapeHtml(cfg.keyword)}</strong> konusu içindir; yazılı kapsam ve keşif esastır.</p>
 
 ${who}
 ${intents}
@@ -172,8 +172,8 @@ ${faqHtml}
 <h2>Sonraki adım</h2>
 <p class="geo-passage-answer" data-geo-extract="true"><strong>Özet:</strong> ${escapeHtml(cfg.keyword)} için <a href="/fiyat-hesaplama">online tahmin</a> alın; kesin teklif için <a href="/randevu">ücretsiz keşif</a> planlayın.</p>
 <p><a href="${cfg.serviceHref}">${escapeHtml(cfg.serviceLabel)}</a> · <a href="${cfg.areaHref}">${escapeHtml(cfg.areaLabel)}</a> · <a href="/bolgeler/sariyer">Sarıyer</a> · <a href="/bolgeler/sariyer/zekeriyakoy">Zekeriyaköy</a> · <a href="/hizmetler">Tüm hizmetler</a></p>
-<p class="engagement-money-bridges"><strong>İç link köprüsü:</strong> ${moneyLinks}</p>
-<p><em>Zümrüt Vadi Temizlik</em> — 0551 925 09 43 · Google Maps · peyzaj yoktur.</p>
+<p class="engagement-money-bridges"><strong>İlgili sayfalar:</strong> ${moneyLinks}</p>
+<p><em>Zümrüt Vadi Temizlik</em> — 0551 925 09 43 · Google Maps.</p>
   `.trim();
 }
 

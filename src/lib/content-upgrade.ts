@@ -235,12 +235,12 @@ const HOWTO_SECTIONS = {
 const STATISTICS_SECTIONS = {
   temizlik: `
     <section class="statistics-section bg-slate-800/50 rounded-xl p-6 my-8">
-      <h2 class="text-2xl font-bold text-white mb-6">Doğrulanmış güven</h2>
+      <h2 class="text-2xl font-bold text-white mb-6">Güvenilir hizmet</h2>
       <div class="grid md:grid-cols-3 gap-6">
         <div class="stat-card bg-slate-700/50 rounded-lg p-4 text-center">
           <div class="text-3xl font-bold text-emerald-400 mb-2">4.9</div>
           <p class="text-white font-semibold">Google puan</p>
-          <p class="text-slate-300 text-sm mt-1">GBP doğrulanmış</p>
+          <p class="text-slate-300 text-sm mt-1">Harita profili</p>
         </div>
         <div class="stat-card bg-slate-700/50 rounded-lg p-4 text-center">
           <div class="text-3xl font-bold text-emerald-400 mb-2">12</div>
@@ -372,12 +372,12 @@ function generateAdditionalContent(category: string, _targetWords: number): stri
 
   return `
     <section class="extended-content bg-slate-800/50 rounded-xl p-6 my-8">
-      <h2 class="text-2xl font-bold text-white mb-4">Operasyon notları</h2>
+      <h2 class="text-2xl font-bold text-white mb-4">Hizmet notları</h2>
       <div class="text-slate-300 space-y-4">
         <p>
           Sarıyer / Zekeriyaköy odaklı çalışıyoruz; Avrupa Yakası ve İstanbul geneli talepleri
-          rota ve kapasiteye göre planlıyoruz. Google Harita puanımız doğrulanmış güven sinyalidir —
-          uydurma müşteri sayısı kullanmıyoruz.
+          rota ve kapasiteye göre planlıyoruz. Güncel Google puan ve yorumlar Harita &amp; Yorumlar
+          sayfasında.
         </p>
         <p>
           Tipik süre yaklaşık ${stats.ortalamaSüre}; fiyat ${stats.fiyatAraligi}.

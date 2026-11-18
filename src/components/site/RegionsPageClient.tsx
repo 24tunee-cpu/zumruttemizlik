@@ -116,7 +116,7 @@ export default function RegionsPageClient({ children }: { children?: React.React
                   İlçeler
                 </h2>
                 <p className="mt-2 text-slate-400">
-                  {districts.length} ilçede yerel SEO sayfaları — tıklayarak bölgenize özel hizmetleri inceleyin.
+                  {districts.length} ilçede bölgeye özel hizmet sayfaları — tıklayarak inceleyin.
                 </p>
               </div>
             </div>

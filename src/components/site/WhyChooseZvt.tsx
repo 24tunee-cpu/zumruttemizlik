@@ -1,146 +1,107 @@
 import Link from 'next/link';
 import { SITE_CONTACT, toTelHref } from '@/config/site-contact';
 import { formatGoogleTrustLine } from '@/config/trust-signals';
-import { getPublicMapsUrl, getPublicReviewUrl, withGmbUtm } from '@/lib/gbp-links';
 
 type Props = {
   /** Örn. "Sarıyer ev temizliği" — WA/ara bağlamı */
   contextLabel?: string;
   tone?: 'dark' | 'light';
   sourcePrefix?: string;
+  /**
+   * compact (varsayılan): kısa güven + 3 CTA — her sayfada yormaz
+   * full: yalnızca ana sayfa / kritik money page
+   */
+  variant?: 'compact' | 'full';
 };
 
-/**
- * AEO / CRO — doğrulanmış kalite + kapsam sınırı (uydurma garanti yok).
- * AI ajan raporları “kalite / garanti / limit” pasajı istedi; burada net yazılır.
- */
-const POINTS = [
-  'Kapsam ücretsiz keşifte netleşir ve teklife yazılır — sürpriz ek ücret dili yok',
+const COMPACT_POINTS = [
+  'Kapsam ücretsiz keşifte yazılır; kesin fiyat keşif sonrası',
+  'Online hesaplayıcı yalnızca tahmini aralık verir',
+  'Öncelik: Sarıyer / Zekeriyaköy — Avrupa Yakası kapasiteye göre',
+] as const;
+
+const FULL_POINTS = [
+  'Kapsam ücretsiz keşifte netleşir ve teklife yazılır',
   'Online hesaplayıcı yalnızca tahmini aralık verir; kesin fiyat keşif sonrası',
-  'Checklist’li uygulama: mutfak, banyo, zemin ve seçilen ek işler plana göre',
-  'İş bitiminde hızlı geri bildirim; eksik kalırsa aynı plan kapsamında düzeltilir',
-  'Garanti sınırı: keşifte yazılı kapsam içindir — keşif dışı ekstra ayrıca teklif edilir',
-  'Peyzaj / bahçe düzenleme yok; bahçe kenarı yalnızca yüzey temizliği olabilir',
+  'Checklist’li uygulama: mutfak, banyo, zemin ve seçilen ek işler',
+  'Eksik kalırsa aynı plan kapsamında düzeltilir',
   'Öncelik bölge: Sarıyer / Zekeriyaköy; Avrupa Yakası rota ve kapasiteye göre',
 ] as const;
 
 /**
- * Tek iş: “Neden Zümrüt Vadi?” güven kutusu + net CTA.
- * Kart değil; mevcut dark/light SEO yüzeylerine uyum.
+ * Tek iş: kısa güven + net CTA.
+ * Sticky bar zaten Ara/WA taşıdığı için burada buton sayısı sınırlı tutulur.
  */
 export function WhyChooseZvt({
   contextLabel,
   tone = 'dark',
   sourcePrefix = 'why-zvt',
+  variant = 'compact',
 }: Props) {
   const isDark = tone === 'dark';
+  const isFull = variant === 'full';
   const context = contextLabel?.trim();
   const waText = context
     ? `Merhaba, ${context} için ücretsiz keşif ve fiyat teklifi almak istiyorum.`
     : 'Merhaba, temizlik hizmeti için ücretsiz keşif ve fiyat teklifi almak istiyorum.';
   const waHref = `https://wa.me/${SITE_CONTACT.whatsappDigits}?text=${encodeURIComponent(waText)}`;
   const callHref = toTelHref(SITE_CONTACT.phoneE164);
-  const reviewHref =
-    getPublicReviewUrl() ||
-    withGmbUtm(getPublicMapsUrl(), 'why-zvt-review', { content: sourcePrefix });
   const trustLine = formatGoogleTrustLine();
+  const points = isFull ? FULL_POINTS : COMPACT_POINTS;
+
+  const shell = isDark
+    ? 'mt-8 rounded-2xl border border-emerald-500/25 bg-emerald-500/[0.07] p-5 sm:p-6'
+    : 'mt-10 rounded-xl border border-emerald-500/25 bg-emerald-50/80 p-5 dark:border-emerald-500/25 dark:bg-emerald-500/[0.07]';
+  const titleClass = isDark
+    ? 'text-lg font-semibold text-white sm:text-xl'
+    : 'text-lg font-semibold text-emerald-950 sm:text-xl dark:text-white';
+  const bodyClass = isDark
+    ? 'mt-1.5 text-sm leading-relaxed text-emerald-50/90'
+    : 'mt-1.5 text-sm leading-relaxed text-emerald-950/80 dark:text-emerald-50/90';
+  const listClass = isDark
+    ? 'mt-3 space-y-1.5 text-sm text-emerald-50/85'
+    : 'mt-3 space-y-1.5 text-sm text-emerald-950/80 dark:text-emerald-50/85';
+  const secondaryBtn = isDark
+    ? 'inline-flex min-h-[44px] items-center justify-center rounded-lg border border-emerald-400/40 px-4 py-2 text-sm font-semibold text-emerald-100 hover:bg-emerald-500/15'
+    : 'inline-flex min-h-[44px] items-center justify-center rounded-lg border border-emerald-600/35 px-4 py-2 text-sm font-semibold text-emerald-900 hover:bg-emerald-100 dark:border-emerald-400/40 dark:text-emerald-100 dark:hover:bg-emerald-500/15';
 
   return (
-    <section
-      className={
-        isDark
-          ? 'mt-8 rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-5 sm:p-6'
-          : 'mt-12 rounded-xl border border-emerald-500/30 bg-emerald-50 p-5 dark:border-emerald-500/30 dark:bg-emerald-500/10'
-      }
-      aria-labelledby="why-zvt-heading"
-    >
-      <h2
-        id="why-zvt-heading"
-        className={
-          isDark
-            ? 'text-xl font-semibold text-emerald-100'
-            : 'text-xl font-semibold text-emerald-900 dark:text-emerald-100'
-        }
-      >
+    <section className={shell} aria-labelledby="why-zvt-heading">
+      <h2 id="why-zvt-heading" className={titleClass}>
         Neden {SITE_CONTACT.companyName}?
       </h2>
-      <p
-        className={
-          isDark
-            ? 'mt-1 text-sm text-emerald-50'
-            : 'mt-1 text-sm text-emerald-900 dark:text-emerald-50'
-        }
-      >
-        Tek net sonraki adım: ara, WhatsApp veya ücretsiz keşif — kapsam ve fiyatı
-        keşifte netleştirirsiniz. {trustLine} (Google Maps; uydurma müşteri sayısı yok).
+      <p className={bodyClass}>
+        {trustLine}. Ara, WhatsApp veya ücretsiz keşif ile kapsamı netleştirin.
       </p>
-      <ul
-        className={
-          isDark
-            ? 'mt-4 list-disc space-y-2 pl-5 text-sm text-emerald-50'
-            : 'mt-4 list-disc space-y-2 pl-5 text-sm text-emerald-950 dark:text-emerald-50'
-        }
-      >
-        {POINTS.map((p) => (
-          <li key={p}>{p}</li>
+      <ul className={listClass}>
+        {points.map((p) => (
+          <li key={p} className="flex gap-2">
+            <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-emerald-400" aria-hidden />
+            <span>{p}</span>
+          </li>
         ))}
       </ul>
-      <div className="mt-5 flex flex-wrap gap-2">
+      <div className="mt-4 flex flex-wrap gap-2">
         <a
           href={waHref}
           target="_blank"
           rel="noopener noreferrer"
           data-source={`${sourcePrefix}-whatsapp`}
-          className="inline-flex min-h-[44px] items-center justify-center rounded-lg bg-emerald-700 px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-800"
+          className="inline-flex min-h-[44px] items-center justify-center rounded-lg bg-emerald-600 px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-500"
         >
           WhatsApp
         </a>
-        <a
-          href={callHref}
-          data-source={`${sourcePrefix}-call`}
-          className={
-            isDark
-              ? 'inline-flex min-h-[44px] items-center justify-center rounded-lg border border-emerald-400/50 px-4 py-2 text-sm font-semibold text-emerald-100 hover:bg-emerald-500/20'
-              : 'inline-flex min-h-[44px] items-center justify-center rounded-lg border border-emerald-600/40 px-4 py-2 text-sm font-semibold text-emerald-900 hover:bg-emerald-100 dark:border-emerald-400/50 dark:text-emerald-100 dark:hover:bg-emerald-500/20'
-          }
-        >
-          Ara: {SITE_CONTACT.phoneDisplay}
+        <a href={callHref} data-source={`${sourcePrefix}-call`} className={secondaryBtn}>
+          Ara
         </a>
-        <Link
-          href="/randevu"
-          data-source={`${sourcePrefix}-randevu`}
-          className={
-            isDark
-              ? 'inline-flex min-h-[44px] items-center justify-center rounded-lg border border-emerald-400/50 px-4 py-2 text-sm font-semibold text-emerald-100 hover:bg-emerald-500/20'
-              : 'inline-flex min-h-[44px] items-center justify-center rounded-lg border border-emerald-600/40 px-4 py-2 text-sm font-semibold text-emerald-900 hover:bg-emerald-100 dark:border-emerald-400/50 dark:text-emerald-100 dark:hover:bg-emerald-500/20'
-          }
-        >
+        <Link href="/randevu" data-source={`${sourcePrefix}-randevu`} className={secondaryBtn}>
           Ücretsiz keşif
         </Link>
-        <a
-          href={reviewHref}
-          target="_blank"
-          rel="noopener noreferrer"
-          data-source={`${sourcePrefix}-google-review`}
-          className={
-            isDark
-              ? 'inline-flex min-h-[44px] items-center justify-center rounded-lg border border-emerald-400/50 px-4 py-2 text-sm font-semibold text-emerald-100 hover:bg-emerald-500/20'
-              : 'inline-flex min-h-[44px] items-center justify-center rounded-lg border border-emerald-600/40 px-4 py-2 text-sm font-semibold text-emerald-900 hover:bg-emerald-100 dark:border-emerald-400/50 dark:text-emerald-100 dark:hover:bg-emerald-500/20'
-          }
-        >
-          Google’da yorum
-        </a>
-        <Link
-          href="/harita-ve-yorumlar"
-          data-source={`${sourcePrefix}-harita`}
-          className={
-            isDark
-              ? 'inline-flex min-h-[44px] items-center justify-center rounded-lg border border-emerald-400/50 px-4 py-2 text-sm font-semibold text-emerald-100 hover:bg-emerald-500/20'
-              : 'inline-flex min-h-[44px] items-center justify-center rounded-lg border border-emerald-600/40 px-4 py-2 text-sm font-semibold text-emerald-900 hover:bg-emerald-100 dark:border-emerald-400/50 dark:text-emerald-100 dark:hover:bg-emerald-500/20'
-          }
-        >
-          Harita &amp; yorumlar
-        </Link>
+        {isFull ? (
+          <Link href="/fiyat-hesaplama" data-source={`${sourcePrefix}-fiyat`} className={secondaryBtn}>
+            Fiyat hesapla
+          </Link>
+        ) : null}
       </div>
     </section>
   );

@@ -13,7 +13,6 @@ import {
 import { keywordsForPage } from '@/lib/seo-keywords';
 import { CalendarDays, Clock, Phone, CheckCircle2, ArrowRight } from 'lucide-react';
 import { SITE_CONTACT, toTelHref } from '@/config/site-contact';
-import { ConversionSeoAside } from '@/components/site/ConversionSeoAside';
 import { StickySeoCtaBar } from '@/components/site/StickySeoCtaBar';
 import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
 
@@ -202,11 +201,6 @@ export default function RandevuPage() {
           </div>
         </div>
 
-        <ConversionSeoAside
-          contextLabel="Randevu / ücretsiz keşif"
-          sourcePrefix="randevu-aside"
-          tone="dark"
-        />
         <StickySeoCtaBar contextLabel="Randevu" sourcePrefix="randevu-sticky" />
       </div>
     </SiteLayout>

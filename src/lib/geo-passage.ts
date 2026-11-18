@@ -5,7 +5,7 @@ import { GEO_BRAND_NAME } from '@/config/geo-entity';
 
 /** 40–80 kelime hedefli özet kutusu */
 export function buildGeoTldr(summary: string): string {
-  return `<aside class="geo-tldr" data-geo-extract="true"><p><strong>TL;DR:</strong> ${summary}</p></aside>`;
+  return `<aside class="geo-tldr" data-geo-extract="true"><p><strong>Özet:</strong> ${summary}</p></aside>`;
 }
 
 /** H2 bölümü: ilk paragraf doğrudan cevap, sonra detay */

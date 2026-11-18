@@ -68,7 +68,7 @@ export function DistrictHubLinks({ districtSlug, districtName, blogSlugs = [] }:
 
         {geoSss.length > 0 && (
           <div>
-            <h3 className="text-sm font-semibold text-emerald-300">GEO SSS</h3>
+            <h3 className="text-sm font-semibold text-emerald-300">İlçe SSS</h3>
             <ul className="mt-2 space-y-1.5">
               {geoSss.map((p) => (
                 <li key={p.slug}>

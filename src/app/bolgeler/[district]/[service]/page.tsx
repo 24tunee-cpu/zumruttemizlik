@@ -346,7 +346,7 @@ export default async function ProgrammaticLandingPage({ params }: Props) {
             </section>
 
             <section className="mt-8 rounded-2xl border border-slate-700 bg-slate-800/40 p-6">
-              <h2 className="text-xl font-semibold">Bölgesel operasyon sinyalleri</h2>
+              <h2 className="text-xl font-semibold">Bölgeye özel notlar</h2>
               <ul className="mt-4 list-disc space-y-2 pl-5 text-slate-300">
                 {operationalSignals.map((signal) => (
                   <li key={signal}>{signal}</li>
@@ -357,7 +357,7 @@ export default async function ProgrammaticLandingPage({ params }: Props) {
             {districtDeepDive.length > 0 && (
               <section className="mt-8 rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-6">
                 <h2 className="text-xl font-semibold text-emerald-200">
-                  {districtData.name} için yerel operasyon notu
+                  {districtData.name} için yerel çalışma notu
                 </h2>
                 <div className="mt-3 space-y-3 text-sm leading-6 text-emerald-100/90">
                   {districtDeepDive.map((paragraph) => (
@@ -398,11 +398,11 @@ export default async function ProgrammaticLandingPage({ params }: Props) {
                 <RelatedSeoLinks
                   tone="dark"
                   heading="Bu sayfadan devam edin"
-                  intro="Aynı ilçedeki diğer hizmetler, semt sayfaları ve ticari hub’lar."
+                  intro="Aynı ilçedeki diğer hizmetler, semt sayfaları ve ilgili rehberler."
                   groups={[
                     { title: 'Diğer hizmetler', links: seo.otherServices },
                     { title: 'Semt sayfaları', links: seo.neighborhoods },
-                    { title: 'Hub’lar', links: seo.hubs },
+                    { title: 'İlgili sayfalar', links: seo.hubs },
                     { title: 'Teklif / randevu', links: seo.cta },
                   ]}
                 />

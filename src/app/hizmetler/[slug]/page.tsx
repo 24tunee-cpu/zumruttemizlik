@@ -599,11 +599,11 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                 <RelatedSeoLinks
                   tone="light"
                   heading={`${service.title} — bölgeler ve ilgili sayfalar`}
-                  intro="İstanbul’da bu hizmeti ilçe bazında inceleyin; Sarıyer ve Zekeriyaköy öncelikli operasyon bölgelerimizdir."
+                  intro="İstanbul’da bu hizmeti ilçe bazında inceleyin; Sarıyer ve Zekeriyaköy öncelikli bölgelerimizdir."
                   groups={[
                     { title: 'İlçe sayfaları', links: seo.districts },
-                    { title: 'Hub ve rehberler', links: seo.hubs },
-                    { title: 'Çözüm niyetleri', links: seo.intents },
+                    { title: 'Rehberler', links: seo.hubs },
+                    { title: 'Çözüm rehberleri', links: seo.intents },
                     { title: 'Teklif / randevu', links: seo.cta },
                   ]}
                 />

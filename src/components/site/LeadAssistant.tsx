@@ -664,12 +664,12 @@ export function LeadAssistant() {
                   {screen === 'menu' && (
                     <div className="space-y-4">
                       <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-                        İhtiyacınızı seçin. Peyzaj yok — yüzey ve yaşam alanı temizliği.
+                        İhtiyacınızı seçin; teklif, keşif veya fiyat hesabına geçin.
                       </p>
 
                       <div>
                         <p className="mb-2 text-xs font-medium uppercase tracking-wide text-slate-400">
-                          Popüler (Ads)
+                          Popüler
                         </p>
                         <div className="flex flex-wrap gap-2">
                           {popularServices.map((s) => (
@@ -959,8 +959,7 @@ export function LeadAssistant() {
                         </p>
                         <p className="mt-1 text-xs leading-relaxed text-emerald-800/90 dark:text-emerald-300/90">
                           {service} · {displayAreaLabel(area)}
-                          {detailLine ? ` · ${detailLine}` : ''}. Kesin fiyat keşif sonrası yazılır —
-                          peyzaj yok.
+                          {detailLine ? ` · ${detailLine}` : ''}. Kesin fiyat keşif sonrası yazılır.
                         </p>
                       </div>
 

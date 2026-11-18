@@ -178,7 +178,7 @@ export default async function MapsAndReviewsPage() {
           <RelatedSeoLinks
             tone="dark"
             heading="Hizmet ve bölge sayfalarına geçin"
-            intro="Yorumlardan sonra doğru landing’e yönelin — Sarıyer / Zekeriyaköy öncelikli."
+            intro="Yorumlardan sonra ilgili hizmet veya bölge sayfasına geçin."
             groups={[
               {
                 title: 'Öncelik bölgeler',
@@ -203,7 +203,7 @@ export default async function MapsAndReviewsPage() {
                 links: [
                   { href: '/fiyat-hesaplama', label: 'Fiyat hesapla' },
                   { href: '/randevu', label: 'Ücretsiz keşif' },
-                  { href: '/geo-sss', label: 'GEO SSS' },
+                  { href: '/geo-sss', label: 'İlçe SSS' },
                   { href: '/iletisim', label: 'İletişim' },
                 ],
               },
@@ -217,7 +217,7 @@ export default async function MapsAndReviewsPage() {
             </Link>{' '}
             veya{' '}
             <Link href="/geo-sss" className="text-emerald-300 hover:underline">
-              ilçe GEO SSS
+              ilçe soru-cevap
             </Link>
             .
           </p>

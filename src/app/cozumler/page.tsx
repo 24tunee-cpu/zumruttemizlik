@@ -127,7 +127,7 @@ export default function CozumlerHubPage() {
         </section>
 
         <ConversionSeoAside
-          contextLabel="Çözümler hub teklif"
+          contextLabel="Çözümler teklifi"
           sourcePrefix="cozumler-aside"
           tone="dark"
         />

@@ -66,7 +66,7 @@ function SiloContent({ silo }: { silo: BlogSiloCluster }) {
     {
       '@context': 'https://schema.org',
       '@type': 'ItemList',
-      name: `${silo.name} blog cluster`,
+      name: `${silo.name} yazıları`,
       itemListElement: [
         {
           '@type': 'ListItem',
@@ -113,7 +113,7 @@ function SiloContent({ silo }: { silo: BlogSiloCluster }) {
             </nav>
             <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-1 text-sm font-medium text-emerald-400">
               <BookOpen className="h-4 w-4" aria-hidden="true" />
-              Konu Silosu
+              Konu rehberi
             </span>
             <h1 className="mt-4 text-3xl font-bold text-white sm:text-4xl">{silo.name}</h1>
             <p className="mt-4 max-w-3xl text-lg text-slate-400">{silo.description}</p>
@@ -145,7 +145,7 @@ function SiloContent({ silo }: { silo: BlogSiloCluster }) {
 
         <section className="border-t border-slate-800 py-14">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl font-bold text-white">Cluster blog yazıları</h2>
+            <h2 className="text-2xl font-bold text-white">İlgili blog yazıları</h2>
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               {silo.blogLinks.map((blog) => (
                 <Link

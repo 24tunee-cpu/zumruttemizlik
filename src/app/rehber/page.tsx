@@ -149,7 +149,7 @@ export default function RehberPage() {
                 ],
               },
               {
-                title: 'Çözümler & CTA',
+                title: 'Çözümler ve teklif',
                 links: [
                   { href: '/cozumler', label: 'Çözüm rehberleri' },
                   { href: '/fiyat-hesaplama', label: 'Fiyat hesapla' },

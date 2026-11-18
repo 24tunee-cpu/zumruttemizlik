@@ -26,7 +26,6 @@ import { ConversionSeoAside } from '@/components/site/ConversionSeoAside';
 import { SITE_CONTACT, toTelHref } from '@/config/site-contact';
 import { formatGoogleTrustLine } from '@/config/trust-signals';
 import { clampMetaDescription, clampMetaTitle } from '@/lib/meta-clamp';
-import { WhyChooseZvt } from '@/components/site/WhyChooseZvt';
 
 type Props = {
   params: Promise<{ district: string }>;
@@ -355,7 +354,7 @@ export default async function DistrictPage({ params }: Props) {
             </section>
 
             <section className="mt-8 rounded-xl border border-slate-700 bg-slate-800/40 p-5">
-              <h2 className="text-xl font-semibold text-white">Bölgesel operasyon notları</h2>
+              <h2 className="text-xl font-semibold text-white">Bölgeye özel notlar</h2>
               <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-slate-300">
                 {operationalSignals.map((signal) => (
                   <li key={signal}>{signal}</li>
@@ -366,7 +365,7 @@ export default async function DistrictPage({ params }: Props) {
             {districtDeepDive.length > 0 && (
               <section className="mt-8 rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-5">
                 <h2 className="text-xl font-semibold text-emerald-200">
-                  {districtData.name} özel operasyon yaklaşımımız
+                  {districtData.name} için çalışma yaklaşımımız
                 </h2>
                 <div className="mt-3 space-y-3 text-sm leading-6 text-emerald-100/90">
                   {districtDeepDive.map((paragraph) => (
@@ -395,12 +394,6 @@ export default async function DistrictPage({ params }: Props) {
               blogSlugs={publishedDistrictBlogs.map((b) => b.slug)}
             />
 
-            <WhyChooseZvt
-              contextLabel={`${districtData.name} temizlik`}
-              tone="dark"
-              sourcePrefix={`district-${districtData.slug}-why`}
-            />
-
             <section className="mt-8 rounded-xl border border-slate-700 bg-slate-800/40 p-5">
               <h2 className="text-xl font-semibold text-white">Sık sorulan sorular — {districtData.name}</h2>
               <div className="mt-4 space-y-4">
@@ -413,7 +406,7 @@ export default async function DistrictPage({ params }: Props) {
               </div>
               <div className="mt-4">
                 <Link href="/geo-sss" className="text-sm text-emerald-400 hover:underline">
-                  {districtData.name} GEO SSS sayfaları →
+                  {districtData.name} ilçe soru-cevap →
                 </Link>
               </div>
             </section>
@@ -438,6 +431,7 @@ export default async function DistrictPage({ params }: Props) {
             contextLabel={`${districtData.name} temizlik teklifi`}
             sourcePrefix={`district-${districtData.slug}-aside`}
             tone="dark"
+            showRegionChips
           />
           <StickySeoCtaBar
             contextLabel={`${districtData.name} temizlik`}

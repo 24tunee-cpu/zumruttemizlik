@@ -188,7 +188,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -215,8 +215,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -248,8 +248,8 @@ const TOPICS: V10Topic[] = [
       "Sarıyer’de ev temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Sarıyer temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -291,7 +291,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -318,8 +318,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -351,8 +351,8 @@ const TOPICS: V10Topic[] = [
       "Sarıyer’de ofis temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Sarıyer temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -394,7 +394,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -421,8 +421,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -454,8 +454,8 @@ const TOPICS: V10Topic[] = [
       "Sarıyer’de i̇nşaat sonrası temizlik ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Sarıyer temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -496,7 +496,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -523,8 +523,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -556,8 +556,8 @@ const TOPICS: V10Topic[] = [
       "Sarıyer’de koltuk yıkama ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Sarıyer temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -599,7 +599,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -626,8 +626,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -659,8 +659,8 @@ const TOPICS: V10Topic[] = [
       "Sarıyer’de halı temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Sarıyer temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -702,7 +702,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -729,8 +729,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -762,8 +762,8 @@ const TOPICS: V10Topic[] = [
       "Sarıyer’de cam temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Sarıyer temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -790,7 +790,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -805,7 +805,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -832,8 +832,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -865,8 +865,8 @@ const TOPICS: V10Topic[] = [
       "Sarıyer’de dış cephe temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Sarıyer temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -908,7 +908,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -935,8 +935,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -968,8 +968,8 @@ const TOPICS: V10Topic[] = [
       "Zekeriyaköy’de ev temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Zekeriyaköy temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -1011,7 +1011,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -1038,8 +1038,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -1071,8 +1071,8 @@ const TOPICS: V10Topic[] = [
       "Zekeriyaköy’de ofis temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Zekeriyaköy temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -1114,7 +1114,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -1141,8 +1141,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -1174,8 +1174,8 @@ const TOPICS: V10Topic[] = [
       "Zekeriyaköy’de i̇nşaat sonrası temizlik ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Zekeriyaköy temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -1216,7 +1216,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -1243,8 +1243,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -1276,8 +1276,8 @@ const TOPICS: V10Topic[] = [
       "Zekeriyaköy’de koltuk yıkama ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Zekeriyaköy temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -1319,7 +1319,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -1346,8 +1346,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -1379,8 +1379,8 @@ const TOPICS: V10Topic[] = [
       "Zekeriyaköy’de halı temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Zekeriyaköy temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -1422,7 +1422,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -1449,8 +1449,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -1482,8 +1482,8 @@ const TOPICS: V10Topic[] = [
       "Zekeriyaköy’de cam temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Zekeriyaköy temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -1510,7 +1510,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -1525,7 +1525,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -1552,8 +1552,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -1585,8 +1585,8 @@ const TOPICS: V10Topic[] = [
       "Zekeriyaköy’de dış cephe temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Zekeriyaköy temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -1628,7 +1628,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -1655,8 +1655,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -1688,8 +1688,8 @@ const TOPICS: V10Topic[] = [
       "Maslak’de ev temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Maslak temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -1731,7 +1731,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -1758,8 +1758,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -1791,8 +1791,8 @@ const TOPICS: V10Topic[] = [
       "Maslak’de ofis temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Maslak temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -1834,7 +1834,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -1861,8 +1861,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -1894,8 +1894,8 @@ const TOPICS: V10Topic[] = [
       "Maslak’de i̇nşaat sonrası temizlik ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Maslak temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -1936,7 +1936,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -1963,8 +1963,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -1996,8 +1996,8 @@ const TOPICS: V10Topic[] = [
       "Maslak’de koltuk yıkama ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Maslak temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -2039,7 +2039,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -2066,8 +2066,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -2099,8 +2099,8 @@ const TOPICS: V10Topic[] = [
       "Maslak’de halı temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Maslak temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -2142,7 +2142,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -2169,8 +2169,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -2202,8 +2202,8 @@ const TOPICS: V10Topic[] = [
       "Maslak’de cam temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Maslak temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -2230,7 +2230,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -2245,7 +2245,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -2272,8 +2272,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -2305,8 +2305,8 @@ const TOPICS: V10Topic[] = [
       "Maslak’de dış cephe temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Maslak temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -2348,7 +2348,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -2375,8 +2375,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -2408,8 +2408,8 @@ const TOPICS: V10Topic[] = [
       "Tarabya’de ev temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Tarabya temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -2451,7 +2451,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -2478,8 +2478,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -2511,8 +2511,8 @@ const TOPICS: V10Topic[] = [
       "Tarabya’de ofis temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Tarabya temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -2554,7 +2554,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -2581,8 +2581,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -2614,8 +2614,8 @@ const TOPICS: V10Topic[] = [
       "Tarabya’de i̇nşaat sonrası temizlik ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Tarabya temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -2656,7 +2656,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -2683,8 +2683,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -2716,8 +2716,8 @@ const TOPICS: V10Topic[] = [
       "Tarabya’de koltuk yıkama ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Tarabya temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -2759,7 +2759,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -2786,8 +2786,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -2819,8 +2819,8 @@ const TOPICS: V10Topic[] = [
       "Tarabya’de halı temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Tarabya temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -2862,7 +2862,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -2889,8 +2889,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -2922,8 +2922,8 @@ const TOPICS: V10Topic[] = [
       "Tarabya’de cam temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Tarabya temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -2950,7 +2950,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -2965,7 +2965,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -2992,8 +2992,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -3025,8 +3025,8 @@ const TOPICS: V10Topic[] = [
       "Tarabya’de dış cephe temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Tarabya temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -3068,7 +3068,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -3095,8 +3095,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -3128,8 +3128,8 @@ const TOPICS: V10Topic[] = [
       "Bahçeköy’de ev temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Bahçeköy temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -3171,7 +3171,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -3198,8 +3198,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -3231,8 +3231,8 @@ const TOPICS: V10Topic[] = [
       "Bahçeköy’de ofis temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Bahçeköy temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -3274,7 +3274,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -3301,8 +3301,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -3334,8 +3334,8 @@ const TOPICS: V10Topic[] = [
       "Bahçeköy’de i̇nşaat sonrası temizlik ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Bahçeköy temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -3376,7 +3376,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -3403,8 +3403,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -3436,8 +3436,8 @@ const TOPICS: V10Topic[] = [
       "Bahçeköy’de koltuk yıkama ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Bahçeköy temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -3479,7 +3479,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -3506,8 +3506,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -3539,8 +3539,8 @@ const TOPICS: V10Topic[] = [
       "Bahçeköy’de halı temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Bahçeköy temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -3582,7 +3582,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -3609,8 +3609,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -3642,8 +3642,8 @@ const TOPICS: V10Topic[] = [
       "Bahçeköy’de cam temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Bahçeköy temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -3670,7 +3670,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -3685,7 +3685,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -3712,8 +3712,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -3745,8 +3745,8 @@ const TOPICS: V10Topic[] = [
       "Bahçeköy’de dış cephe temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Bahçeköy temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -3788,7 +3788,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -3815,8 +3815,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -3848,8 +3848,8 @@ const TOPICS: V10Topic[] = [
       "Uskumruköy’de ev temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Uskumruköy temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -3891,7 +3891,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -3918,8 +3918,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -3951,8 +3951,8 @@ const TOPICS: V10Topic[] = [
       "Uskumruköy’de ofis temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Uskumruköy temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -3994,7 +3994,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -4021,8 +4021,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -4054,8 +4054,8 @@ const TOPICS: V10Topic[] = [
       "Uskumruköy’de i̇nşaat sonrası temizlik ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Uskumruköy temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -4096,7 +4096,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -4123,8 +4123,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -4156,8 +4156,8 @@ const TOPICS: V10Topic[] = [
       "Uskumruköy’de koltuk yıkama ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Uskumruköy temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -4199,7 +4199,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -4226,8 +4226,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -4259,8 +4259,8 @@ const TOPICS: V10Topic[] = [
       "Uskumruköy’de halı temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Uskumruköy temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -4302,7 +4302,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -4329,8 +4329,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -4362,8 +4362,8 @@ const TOPICS: V10Topic[] = [
       "Uskumruköy’de cam temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Uskumruköy temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -4390,7 +4390,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -4405,7 +4405,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -4432,8 +4432,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -4465,8 +4465,8 @@ const TOPICS: V10Topic[] = [
       "Uskumruköy’de dış cephe temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Uskumruköy temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -4508,7 +4508,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -4535,8 +4535,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -4568,8 +4568,8 @@ const TOPICS: V10Topic[] = [
       "Şişli’de ev temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Şişli temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -4611,7 +4611,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -4638,8 +4638,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -4671,8 +4671,8 @@ const TOPICS: V10Topic[] = [
       "Şişli’de ofis temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Şişli temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -4714,7 +4714,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -4741,8 +4741,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -4774,8 +4774,8 @@ const TOPICS: V10Topic[] = [
       "Şişli’de i̇nşaat sonrası temizlik ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Şişli temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -4816,7 +4816,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -4843,8 +4843,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -4876,8 +4876,8 @@ const TOPICS: V10Topic[] = [
       "Şişli’de koltuk yıkama ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Şişli temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -4919,7 +4919,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -4946,8 +4946,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -4979,8 +4979,8 @@ const TOPICS: V10Topic[] = [
       "Şişli’de halı temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Şişli temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -5022,7 +5022,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -5049,8 +5049,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -5082,8 +5082,8 @@ const TOPICS: V10Topic[] = [
       "Şişli’de cam temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Şişli temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -5110,7 +5110,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -5125,7 +5125,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -5152,8 +5152,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -5185,8 +5185,8 @@ const TOPICS: V10Topic[] = [
       "Şişli’de dış cephe temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Şişli temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -5228,7 +5228,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -5255,8 +5255,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -5288,8 +5288,8 @@ const TOPICS: V10Topic[] = [
       "Beşiktaş’de ev temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Beşiktaş temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -5331,7 +5331,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -5358,8 +5358,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -5391,8 +5391,8 @@ const TOPICS: V10Topic[] = [
       "Beşiktaş’de ofis temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Beşiktaş temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -5434,7 +5434,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -5461,8 +5461,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -5494,8 +5494,8 @@ const TOPICS: V10Topic[] = [
       "Beşiktaş’de i̇nşaat sonrası temizlik ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Beşiktaş temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -5536,7 +5536,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -5563,8 +5563,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -5596,8 +5596,8 @@ const TOPICS: V10Topic[] = [
       "Beşiktaş’de koltuk yıkama ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Beşiktaş temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -5639,7 +5639,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -5666,8 +5666,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -5699,8 +5699,8 @@ const TOPICS: V10Topic[] = [
       "Beşiktaş’de halı temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Beşiktaş temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -5742,7 +5742,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -5769,8 +5769,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -5802,8 +5802,8 @@ const TOPICS: V10Topic[] = [
       "Beşiktaş’de cam temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Beşiktaş temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -5830,7 +5830,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -5845,7 +5845,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -5872,8 +5872,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -5905,8 +5905,8 @@ const TOPICS: V10Topic[] = [
       "Beşiktaş’de dış cephe temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Beşiktaş temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -5948,7 +5948,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -5975,8 +5975,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -6008,8 +6008,8 @@ const TOPICS: V10Topic[] = [
       "Kadıköy’de ev temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Kadıköy temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -6051,7 +6051,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -6078,8 +6078,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -6111,8 +6111,8 @@ const TOPICS: V10Topic[] = [
       "Kadıköy’de ofis temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Kadıköy temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -6154,7 +6154,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -6181,8 +6181,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -6214,8 +6214,8 @@ const TOPICS: V10Topic[] = [
       "Kadıköy’de i̇nşaat sonrası temizlik ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Kadıköy temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -6256,7 +6256,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -6283,8 +6283,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -6316,8 +6316,8 @@ const TOPICS: V10Topic[] = [
       "Kadıköy’de koltuk yıkama ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Kadıköy temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -6359,7 +6359,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -6386,8 +6386,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -6419,8 +6419,8 @@ const TOPICS: V10Topic[] = [
       "Kadıköy’de halı temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Kadıköy temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -6462,7 +6462,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -6489,8 +6489,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -6522,8 +6522,8 @@ const TOPICS: V10Topic[] = [
       "Kadıköy’de cam temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Kadıköy temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -6550,7 +6550,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -6565,7 +6565,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -6592,8 +6592,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -6625,8 +6625,8 @@ const TOPICS: V10Topic[] = [
       "Kadıköy’de dış cephe temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Kadıköy temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -6668,7 +6668,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -6695,8 +6695,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -6728,8 +6728,8 @@ const TOPICS: V10Topic[] = [
       "Ümraniye’de ev temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Ümraniye temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -6771,7 +6771,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -6798,8 +6798,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -6831,8 +6831,8 @@ const TOPICS: V10Topic[] = [
       "Ümraniye’de ofis temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Ümraniye temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -6874,7 +6874,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -6901,8 +6901,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -6934,8 +6934,8 @@ const TOPICS: V10Topic[] = [
       "Ümraniye’de i̇nşaat sonrası temizlik ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Ümraniye temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -6976,7 +6976,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -7003,8 +7003,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -7036,8 +7036,8 @@ const TOPICS: V10Topic[] = [
       "Ümraniye’de koltuk yıkama ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Ümraniye temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -7079,7 +7079,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -7106,8 +7106,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -7139,8 +7139,8 @@ const TOPICS: V10Topic[] = [
       "Ümraniye’de halı temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Ümraniye temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -7182,7 +7182,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -7209,8 +7209,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -7242,8 +7242,8 @@ const TOPICS: V10Topic[] = [
       "Ümraniye’de cam temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Ümraniye temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -7270,7 +7270,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -7285,7 +7285,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -7312,8 +7312,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -7345,8 +7345,8 @@ const TOPICS: V10Topic[] = [
       "Ümraniye’de dış cephe temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Ümraniye temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -7388,7 +7388,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -7415,8 +7415,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -7448,8 +7448,8 @@ const TOPICS: V10Topic[] = [
       "Ataşehir’de ev temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Ataşehir temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -7491,7 +7491,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -7518,8 +7518,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -7551,8 +7551,8 @@ const TOPICS: V10Topic[] = [
       "Ataşehir’de ofis temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Ataşehir temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -7594,7 +7594,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -7621,8 +7621,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -7654,8 +7654,8 @@ const TOPICS: V10Topic[] = [
       "Ataşehir’de i̇nşaat sonrası temizlik ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Ataşehir temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -7696,7 +7696,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -7723,8 +7723,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -7756,8 +7756,8 @@ const TOPICS: V10Topic[] = [
       "Ataşehir’de koltuk yıkama ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Ataşehir temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -7799,7 +7799,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -7826,8 +7826,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -7859,8 +7859,8 @@ const TOPICS: V10Topic[] = [
       "Ataşehir’de halı temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Ataşehir temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -7902,7 +7902,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -7929,8 +7929,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -7962,8 +7962,8 @@ const TOPICS: V10Topic[] = [
       "Ataşehir’de cam temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Ataşehir temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -7990,7 +7990,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -8005,7 +8005,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -8032,8 +8032,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -8065,8 +8065,8 @@ const TOPICS: V10Topic[] = [
       "Ataşehir’de dış cephe temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Ataşehir temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -8108,7 +8108,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -8135,8 +8135,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -8168,8 +8168,8 @@ const TOPICS: V10Topic[] = [
       "Bakırköy’de ev temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Bakırköy temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -8211,7 +8211,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -8238,8 +8238,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -8271,8 +8271,8 @@ const TOPICS: V10Topic[] = [
       "Bakırköy’de ofis temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Bakırköy temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -8314,7 +8314,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -8341,8 +8341,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -8374,8 +8374,8 @@ const TOPICS: V10Topic[] = [
       "Bakırköy’de i̇nşaat sonrası temizlik ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Bakırköy temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -8416,7 +8416,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -8443,8 +8443,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -8476,8 +8476,8 @@ const TOPICS: V10Topic[] = [
       "Bakırköy’de koltuk yıkama ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Bakırköy temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -8519,7 +8519,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -8546,8 +8546,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -8579,8 +8579,8 @@ const TOPICS: V10Topic[] = [
       "Bakırköy’de halı temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Bakırköy temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -8622,7 +8622,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -8649,8 +8649,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -8682,8 +8682,8 @@ const TOPICS: V10Topic[] = [
       "Bakırköy’de cam temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Bakırköy temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -8710,7 +8710,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -8725,7 +8725,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -8752,8 +8752,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -8785,8 +8785,8 @@ const TOPICS: V10Topic[] = [
       "Bakırköy’de dış cephe temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Bakırköy temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -8828,7 +8828,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -8855,8 +8855,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -8888,8 +8888,8 @@ const TOPICS: V10Topic[] = [
       "Kağıthane’de ev temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Kağıthane temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -8931,7 +8931,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -8958,8 +8958,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -8991,8 +8991,8 @@ const TOPICS: V10Topic[] = [
       "Kağıthane’de ofis temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Kağıthane temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -9034,7 +9034,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -9061,8 +9061,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -9094,8 +9094,8 @@ const TOPICS: V10Topic[] = [
       "Kağıthane’de i̇nşaat sonrası temizlik ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Kağıthane temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -9136,7 +9136,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -9163,8 +9163,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -9196,8 +9196,8 @@ const TOPICS: V10Topic[] = [
       "Kağıthane’de koltuk yıkama ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Kağıthane temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -9239,7 +9239,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -9266,8 +9266,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -9299,8 +9299,8 @@ const TOPICS: V10Topic[] = [
       "Kağıthane’de halı temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Kağıthane temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -9342,7 +9342,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -9369,8 +9369,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -9402,8 +9402,8 @@ const TOPICS: V10Topic[] = [
       "Kağıthane’de cam temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Kağıthane temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -9430,7 +9430,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -9445,7 +9445,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -9472,8 +9472,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -9505,8 +9505,8 @@ const TOPICS: V10Topic[] = [
       "Kağıthane’de dış cephe temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Kağıthane temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -9548,7 +9548,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -9575,8 +9575,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -9608,8 +9608,8 @@ const TOPICS: V10Topic[] = [
       "Üsküdar’de ev temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Üsküdar temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -9651,7 +9651,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -9678,8 +9678,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -9711,8 +9711,8 @@ const TOPICS: V10Topic[] = [
       "Üsküdar’de ofis temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Üsküdar temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -9754,7 +9754,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -9781,8 +9781,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -9814,8 +9814,8 @@ const TOPICS: V10Topic[] = [
       "Üsküdar’de i̇nşaat sonrası temizlik ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Üsküdar temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -9856,7 +9856,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -9883,8 +9883,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -9916,8 +9916,8 @@ const TOPICS: V10Topic[] = [
       "Üsküdar’de koltuk yıkama ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Üsküdar temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -9959,7 +9959,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -9986,8 +9986,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -10019,8 +10019,8 @@ const TOPICS: V10Topic[] = [
       "Üsküdar’de halı temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Üsküdar temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -10062,7 +10062,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -10089,8 +10089,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -10122,8 +10122,8 @@ const TOPICS: V10Topic[] = [
       "Üsküdar’de cam temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Üsküdar temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -10150,7 +10150,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -10165,7 +10165,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -10192,8 +10192,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -10225,8 +10225,8 @@ const TOPICS: V10Topic[] = [
       "Üsküdar’de dış cephe temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Üsküdar temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -10268,7 +10268,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -10295,8 +10295,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -10328,8 +10328,8 @@ const TOPICS: V10Topic[] = [
       "Maltepe’de ev temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Maltepe temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -10371,7 +10371,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -10398,8 +10398,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -10431,8 +10431,8 @@ const TOPICS: V10Topic[] = [
       "Maltepe’de ofis temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Maltepe temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -10474,7 +10474,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -10501,8 +10501,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -10534,8 +10534,8 @@ const TOPICS: V10Topic[] = [
       "Maltepe’de i̇nşaat sonrası temizlik ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Maltepe temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -10576,7 +10576,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -10603,8 +10603,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -10636,8 +10636,8 @@ const TOPICS: V10Topic[] = [
       "Maltepe’de koltuk yıkama ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Maltepe temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -10679,7 +10679,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -10706,8 +10706,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -10739,8 +10739,8 @@ const TOPICS: V10Topic[] = [
       "Maltepe’de halı temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Maltepe temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -10782,7 +10782,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -10809,8 +10809,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -10842,8 +10842,8 @@ const TOPICS: V10Topic[] = [
       "Maltepe’de cam temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Maltepe temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -10870,7 +10870,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -10885,7 +10885,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -10912,8 +10912,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -10945,8 +10945,8 @@ const TOPICS: V10Topic[] = [
       "Maltepe’de dış cephe temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Maltepe temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -10988,7 +10988,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -11015,8 +11015,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -11048,8 +11048,8 @@ const TOPICS: V10Topic[] = [
       "Kartal’de ev temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Kartal temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -11091,7 +11091,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -11118,8 +11118,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -11151,8 +11151,8 @@ const TOPICS: V10Topic[] = [
       "Kartal’de ofis temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Kartal temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -11194,7 +11194,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -11221,8 +11221,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -11254,8 +11254,8 @@ const TOPICS: V10Topic[] = [
       "Kartal’de i̇nşaat sonrası temizlik ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Kartal temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -11296,7 +11296,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -11323,8 +11323,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -11356,8 +11356,8 @@ const TOPICS: V10Topic[] = [
       "Kartal’de koltuk yıkama ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Kartal temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -11399,7 +11399,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -11426,8 +11426,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -11459,8 +11459,8 @@ const TOPICS: V10Topic[] = [
       "Kartal’de halı temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Kartal temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -11502,7 +11502,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -11529,8 +11529,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -11562,8 +11562,8 @@ const TOPICS: V10Topic[] = [
       "Kartal’de cam temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Kartal temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -11590,7 +11590,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -11605,7 +11605,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -11632,8 +11632,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -11665,8 +11665,8 @@ const TOPICS: V10Topic[] = [
       "Kartal’de dış cephe temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Kartal temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -11708,7 +11708,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -11735,8 +11735,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -11768,8 +11768,8 @@ const TOPICS: V10Topic[] = [
       "Pendik’de ev temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Pendik temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -11811,7 +11811,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -11838,8 +11838,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -11871,8 +11871,8 @@ const TOPICS: V10Topic[] = [
       "Pendik’de ofis temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Pendik temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -11914,7 +11914,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -11941,8 +11941,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -11974,8 +11974,8 @@ const TOPICS: V10Topic[] = [
       "Pendik’de i̇nşaat sonrası temizlik ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Pendik temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -12016,7 +12016,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -12043,8 +12043,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -12076,8 +12076,8 @@ const TOPICS: V10Topic[] = [
       "Pendik’de koltuk yıkama ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Pendik temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -12119,7 +12119,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -12146,8 +12146,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -12179,8 +12179,8 @@ const TOPICS: V10Topic[] = [
       "Pendik’de halı temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Pendik temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -12222,7 +12222,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -12249,8 +12249,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -12282,8 +12282,8 @@ const TOPICS: V10Topic[] = [
       "Pendik’de cam temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Pendik temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -12310,7 +12310,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -12325,7 +12325,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -12352,8 +12352,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -12385,8 +12385,8 @@ const TOPICS: V10Topic[] = [
       "Pendik’de dış cephe temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Pendik temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -12428,7 +12428,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -12455,8 +12455,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -12488,8 +12488,8 @@ const TOPICS: V10Topic[] = [
       "Fatih’de ev temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Fatih temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -12531,7 +12531,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -12558,8 +12558,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -12591,8 +12591,8 @@ const TOPICS: V10Topic[] = [
       "Fatih’de ofis temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Fatih temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -12634,7 +12634,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -12661,8 +12661,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -12694,8 +12694,8 @@ const TOPICS: V10Topic[] = [
       "Fatih’de i̇nşaat sonrası temizlik ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Fatih temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -12736,7 +12736,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -12763,8 +12763,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -12796,8 +12796,8 @@ const TOPICS: V10Topic[] = [
       "Fatih’de koltuk yıkama ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Fatih temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -12839,7 +12839,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -12866,8 +12866,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -12899,8 +12899,8 @@ const TOPICS: V10Topic[] = [
       "Fatih’de halı temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Fatih temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -12942,7 +12942,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -12969,8 +12969,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -13002,8 +13002,8 @@ const TOPICS: V10Topic[] = [
       "Fatih’de cam temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Fatih temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -13030,7 +13030,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -13045,7 +13045,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -13072,8 +13072,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -13105,8 +13105,8 @@ const TOPICS: V10Topic[] = [
       "Fatih’de dış cephe temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Fatih temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -13148,7 +13148,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -13175,8 +13175,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -13208,8 +13208,8 @@ const TOPICS: V10Topic[] = [
       "Eyüpsultan’de ev temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Eyüpsultan temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -13251,7 +13251,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -13278,8 +13278,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -13311,8 +13311,8 @@ const TOPICS: V10Topic[] = [
       "Eyüpsultan’de ofis temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Eyüpsultan temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -13354,7 +13354,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -13381,8 +13381,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -13414,8 +13414,8 @@ const TOPICS: V10Topic[] = [
       "Eyüpsultan’de i̇nşaat sonrası temizlik ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Eyüpsultan temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -13456,7 +13456,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -13483,8 +13483,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -13516,8 +13516,8 @@ const TOPICS: V10Topic[] = [
       "Eyüpsultan’de koltuk yıkama ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Eyüpsultan temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -13559,7 +13559,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -13586,8 +13586,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -13619,8 +13619,8 @@ const TOPICS: V10Topic[] = [
       "Eyüpsultan’de halı temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Eyüpsultan temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -13662,7 +13662,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -13689,8 +13689,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -13722,8 +13722,8 @@ const TOPICS: V10Topic[] = [
       "Eyüpsultan’de cam temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Eyüpsultan temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -13750,7 +13750,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -13765,7 +13765,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -13792,8 +13792,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -13825,8 +13825,8 @@ const TOPICS: V10Topic[] = [
       "Eyüpsultan’de dış cephe temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Eyüpsultan temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -13868,7 +13868,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -13895,8 +13895,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -13928,8 +13928,8 @@ const TOPICS: V10Topic[] = [
       "Zeytinburnu’de ev temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Zeytinburnu temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -13971,7 +13971,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -13998,8 +13998,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -14031,8 +14031,8 @@ const TOPICS: V10Topic[] = [
       "Zeytinburnu’de ofis temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Zeytinburnu temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -14074,7 +14074,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -14101,8 +14101,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -14134,8 +14134,8 @@ const TOPICS: V10Topic[] = [
       "Zeytinburnu’de i̇nşaat sonrası temizlik ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Zeytinburnu temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -14176,7 +14176,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -14203,8 +14203,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -14236,8 +14236,8 @@ const TOPICS: V10Topic[] = [
       "Zeytinburnu’de koltuk yıkama ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Zeytinburnu temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -14279,7 +14279,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -14306,8 +14306,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -14339,8 +14339,8 @@ const TOPICS: V10Topic[] = [
       "Zeytinburnu’de halı temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Zeytinburnu temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -14382,7 +14382,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -14409,8 +14409,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -14442,8 +14442,8 @@ const TOPICS: V10Topic[] = [
       "Zeytinburnu’de cam temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Zeytinburnu temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -14470,7 +14470,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -14485,7 +14485,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -14512,8 +14512,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -14545,8 +14545,8 @@ const TOPICS: V10Topic[] = [
       "Zeytinburnu’de dış cephe temizliği ücreti m²/kapsam/erişime göre değişir; sabit internet fiyatı yanıltıcıdır. Zeytinburnu temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ne-kadar",
@@ -14588,7 +14588,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -14615,8 +14615,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -14648,8 +14648,8 @@ const TOPICS: V10Topic[] = [
       "Sarıyer ev temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Sarıyer temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -14691,7 +14691,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -14718,8 +14718,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -14751,8 +14751,8 @@ const TOPICS: V10Topic[] = [
       "Sarıyer ofis temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Sarıyer temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -14794,7 +14794,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -14821,8 +14821,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -14854,8 +14854,8 @@ const TOPICS: V10Topic[] = [
       "Sarıyer i̇nşaat sonrası temizlik fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Sarıyer temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -14896,7 +14896,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -14923,8 +14923,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -14956,8 +14956,8 @@ const TOPICS: V10Topic[] = [
       "Sarıyer koltuk yıkama fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Sarıyer temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -14999,7 +14999,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -15026,8 +15026,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -15059,8 +15059,8 @@ const TOPICS: V10Topic[] = [
       "Sarıyer halı temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Sarıyer temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -15102,7 +15102,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -15129,8 +15129,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -15162,8 +15162,8 @@ const TOPICS: V10Topic[] = [
       "Sarıyer cam temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Sarıyer temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -15190,7 +15190,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -15205,7 +15205,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -15232,8 +15232,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -15265,8 +15265,8 @@ const TOPICS: V10Topic[] = [
       "Sarıyer dış cephe temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Sarıyer temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -15308,7 +15308,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -15335,8 +15335,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -15368,8 +15368,8 @@ const TOPICS: V10Topic[] = [
       "Zekeriyaköy ev temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Zekeriyaköy temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -15411,7 +15411,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -15438,8 +15438,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -15471,8 +15471,8 @@ const TOPICS: V10Topic[] = [
       "Zekeriyaköy ofis temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Zekeriyaköy temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -15514,7 +15514,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -15541,8 +15541,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -15574,8 +15574,8 @@ const TOPICS: V10Topic[] = [
       "Zekeriyaköy i̇nşaat sonrası temizlik fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Zekeriyaköy temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -15616,7 +15616,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -15643,8 +15643,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -15676,8 +15676,8 @@ const TOPICS: V10Topic[] = [
       "Zekeriyaköy koltuk yıkama fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Zekeriyaköy temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -15719,7 +15719,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -15746,8 +15746,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -15779,8 +15779,8 @@ const TOPICS: V10Topic[] = [
       "Zekeriyaköy halı temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Zekeriyaköy temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -15822,7 +15822,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -15849,8 +15849,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -15882,8 +15882,8 @@ const TOPICS: V10Topic[] = [
       "Zekeriyaköy cam temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Zekeriyaköy temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -15910,7 +15910,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -15925,7 +15925,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -15952,8 +15952,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -15985,8 +15985,8 @@ const TOPICS: V10Topic[] = [
       "Zekeriyaköy dış cephe temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Zekeriyaköy temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -16028,7 +16028,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -16055,8 +16055,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -16088,8 +16088,8 @@ const TOPICS: V10Topic[] = [
       "Maslak ev temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Maslak temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -16131,7 +16131,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -16158,8 +16158,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -16191,8 +16191,8 @@ const TOPICS: V10Topic[] = [
       "Maslak ofis temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Maslak temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -16234,7 +16234,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -16261,8 +16261,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -16294,8 +16294,8 @@ const TOPICS: V10Topic[] = [
       "Maslak i̇nşaat sonrası temizlik fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Maslak temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -16336,7 +16336,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -16363,8 +16363,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -16396,8 +16396,8 @@ const TOPICS: V10Topic[] = [
       "Maslak koltuk yıkama fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Maslak temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -16439,7 +16439,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -16466,8 +16466,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -16499,8 +16499,8 @@ const TOPICS: V10Topic[] = [
       "Maslak halı temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Maslak temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -16542,7 +16542,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -16569,8 +16569,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -16602,8 +16602,8 @@ const TOPICS: V10Topic[] = [
       "Maslak cam temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Maslak temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -16630,7 +16630,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -16645,7 +16645,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -16672,8 +16672,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -16705,8 +16705,8 @@ const TOPICS: V10Topic[] = [
       "Maslak dış cephe temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Maslak temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -16748,7 +16748,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -16775,8 +16775,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -16808,8 +16808,8 @@ const TOPICS: V10Topic[] = [
       "Tarabya ev temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Tarabya temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -16851,7 +16851,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -16878,8 +16878,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -16911,8 +16911,8 @@ const TOPICS: V10Topic[] = [
       "Tarabya ofis temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Tarabya temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -16954,7 +16954,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -16981,8 +16981,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -17014,8 +17014,8 @@ const TOPICS: V10Topic[] = [
       "Tarabya i̇nşaat sonrası temizlik fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Tarabya temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -17056,7 +17056,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -17083,8 +17083,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -17116,8 +17116,8 @@ const TOPICS: V10Topic[] = [
       "Tarabya koltuk yıkama fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Tarabya temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -17159,7 +17159,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -17186,8 +17186,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -17219,8 +17219,8 @@ const TOPICS: V10Topic[] = [
       "Tarabya halı temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Tarabya temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -17262,7 +17262,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -17289,8 +17289,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -17322,8 +17322,8 @@ const TOPICS: V10Topic[] = [
       "Tarabya cam temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Tarabya temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -17350,7 +17350,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -17365,7 +17365,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -17392,8 +17392,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -17425,8 +17425,8 @@ const TOPICS: V10Topic[] = [
       "Tarabya dış cephe temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Tarabya temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -17468,7 +17468,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -17495,8 +17495,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -17528,8 +17528,8 @@ const TOPICS: V10Topic[] = [
       "Bahçeköy ev temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Bahçeköy temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -17571,7 +17571,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -17598,8 +17598,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -17631,8 +17631,8 @@ const TOPICS: V10Topic[] = [
       "Bahçeköy ofis temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Bahçeköy temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -17674,7 +17674,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -17701,8 +17701,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -17734,8 +17734,8 @@ const TOPICS: V10Topic[] = [
       "Bahçeköy i̇nşaat sonrası temizlik fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Bahçeköy temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -17776,7 +17776,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -17803,8 +17803,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -17836,8 +17836,8 @@ const TOPICS: V10Topic[] = [
       "Bahçeköy koltuk yıkama fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Bahçeköy temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -17879,7 +17879,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -17906,8 +17906,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -17939,8 +17939,8 @@ const TOPICS: V10Topic[] = [
       "Bahçeköy halı temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Bahçeköy temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -17982,7 +17982,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -18009,8 +18009,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -18042,8 +18042,8 @@ const TOPICS: V10Topic[] = [
       "Bahçeköy cam temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Bahçeköy temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -18070,7 +18070,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -18085,7 +18085,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -18112,8 +18112,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -18145,8 +18145,8 @@ const TOPICS: V10Topic[] = [
       "Bahçeköy dış cephe temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Bahçeköy temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -18188,7 +18188,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -18215,8 +18215,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -18248,8 +18248,8 @@ const TOPICS: V10Topic[] = [
       "Uskumruköy ev temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Uskumruköy temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -18291,7 +18291,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -18318,8 +18318,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -18351,8 +18351,8 @@ const TOPICS: V10Topic[] = [
       "Uskumruköy ofis temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Uskumruköy temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -18394,7 +18394,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -18421,8 +18421,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -18454,8 +18454,8 @@ const TOPICS: V10Topic[] = [
       "Uskumruköy i̇nşaat sonrası temizlik fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Uskumruköy temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -18496,7 +18496,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -18523,8 +18523,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -18556,8 +18556,8 @@ const TOPICS: V10Topic[] = [
       "Uskumruköy koltuk yıkama fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Uskumruköy temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -18599,7 +18599,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -18626,8 +18626,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -18659,8 +18659,8 @@ const TOPICS: V10Topic[] = [
       "Uskumruköy halı temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Uskumruköy temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -18702,7 +18702,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -18729,8 +18729,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -18762,8 +18762,8 @@ const TOPICS: V10Topic[] = [
       "Uskumruköy cam temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Uskumruköy temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -18790,7 +18790,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -18805,7 +18805,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -18832,8 +18832,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -18865,8 +18865,8 @@ const TOPICS: V10Topic[] = [
       "Uskumruköy dış cephe temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Uskumruköy temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -18908,7 +18908,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -18935,8 +18935,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -18968,8 +18968,8 @@ const TOPICS: V10Topic[] = [
       "Şişli ev temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Şişli temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -19011,7 +19011,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -19038,8 +19038,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -19071,8 +19071,8 @@ const TOPICS: V10Topic[] = [
       "Şişli ofis temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Şişli temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -19114,7 +19114,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -19141,8 +19141,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -19174,8 +19174,8 @@ const TOPICS: V10Topic[] = [
       "Şişli i̇nşaat sonrası temizlik fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Şişli temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -19216,7 +19216,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -19243,8 +19243,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -19276,8 +19276,8 @@ const TOPICS: V10Topic[] = [
       "Şişli koltuk yıkama fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Şişli temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -19319,7 +19319,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -19346,8 +19346,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -19379,8 +19379,8 @@ const TOPICS: V10Topic[] = [
       "Şişli halı temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Şişli temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -19422,7 +19422,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -19449,8 +19449,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -19482,8 +19482,8 @@ const TOPICS: V10Topic[] = [
       "Şişli cam temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Şişli temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -19510,7 +19510,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -19525,7 +19525,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -19552,8 +19552,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -19585,8 +19585,8 @@ const TOPICS: V10Topic[] = [
       "Şişli dış cephe temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Şişli temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -19628,7 +19628,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -19655,8 +19655,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -19688,8 +19688,8 @@ const TOPICS: V10Topic[] = [
       "Beşiktaş ev temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Beşiktaş temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -19731,7 +19731,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -19758,8 +19758,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -19791,8 +19791,8 @@ const TOPICS: V10Topic[] = [
       "Beşiktaş ofis temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Beşiktaş temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -19834,7 +19834,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -19861,8 +19861,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -19894,8 +19894,8 @@ const TOPICS: V10Topic[] = [
       "Beşiktaş i̇nşaat sonrası temizlik fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Beşiktaş temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -19936,7 +19936,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -19963,8 +19963,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -19996,8 +19996,8 @@ const TOPICS: V10Topic[] = [
       "Beşiktaş koltuk yıkama fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Beşiktaş temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -20039,7 +20039,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -20066,8 +20066,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -20099,8 +20099,8 @@ const TOPICS: V10Topic[] = [
       "Beşiktaş halı temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Beşiktaş temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -20142,7 +20142,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -20169,8 +20169,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -20202,8 +20202,8 @@ const TOPICS: V10Topic[] = [
       "Beşiktaş cam temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Beşiktaş temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -20230,7 +20230,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -20245,7 +20245,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -20272,8 +20272,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -20305,8 +20305,8 @@ const TOPICS: V10Topic[] = [
       "Beşiktaş dış cephe temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Beşiktaş temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -20348,7 +20348,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -20375,8 +20375,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -20408,8 +20408,8 @@ const TOPICS: V10Topic[] = [
       "Kadıköy ev temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Kadıköy temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -20451,7 +20451,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -20478,8 +20478,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -20511,8 +20511,8 @@ const TOPICS: V10Topic[] = [
       "Kadıköy ofis temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Kadıköy temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -20554,7 +20554,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -20581,8 +20581,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -20614,8 +20614,8 @@ const TOPICS: V10Topic[] = [
       "Kadıköy i̇nşaat sonrası temizlik fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Kadıköy temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -20656,7 +20656,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -20683,8 +20683,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -20716,8 +20716,8 @@ const TOPICS: V10Topic[] = [
       "Kadıköy koltuk yıkama fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Kadıköy temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -20759,7 +20759,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -20786,8 +20786,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -20819,8 +20819,8 @@ const TOPICS: V10Topic[] = [
       "Kadıköy halı temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Kadıköy temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -20862,7 +20862,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -20889,8 +20889,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -20922,8 +20922,8 @@ const TOPICS: V10Topic[] = [
       "Kadıköy cam temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Kadıköy temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -20950,7 +20950,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -20965,7 +20965,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -20992,8 +20992,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -21025,8 +21025,8 @@ const TOPICS: V10Topic[] = [
       "Kadıköy dış cephe temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Kadıköy temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -21068,7 +21068,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -21095,8 +21095,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -21128,8 +21128,8 @@ const TOPICS: V10Topic[] = [
       "Ümraniye ev temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Ümraniye temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -21171,7 +21171,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -21198,8 +21198,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -21231,8 +21231,8 @@ const TOPICS: V10Topic[] = [
       "Ümraniye ofis temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Ümraniye temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -21274,7 +21274,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -21301,8 +21301,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -21334,8 +21334,8 @@ const TOPICS: V10Topic[] = [
       "Ümraniye i̇nşaat sonrası temizlik fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Ümraniye temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -21376,7 +21376,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -21403,8 +21403,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -21436,8 +21436,8 @@ const TOPICS: V10Topic[] = [
       "Ümraniye koltuk yıkama fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Ümraniye temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -21479,7 +21479,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -21506,8 +21506,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -21539,8 +21539,8 @@ const TOPICS: V10Topic[] = [
       "Ümraniye halı temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Ümraniye temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -21582,7 +21582,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -21609,8 +21609,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -21642,8 +21642,8 @@ const TOPICS: V10Topic[] = [
       "Ümraniye cam temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Ümraniye temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -21670,7 +21670,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -21685,7 +21685,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -21712,8 +21712,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -21745,8 +21745,8 @@ const TOPICS: V10Topic[] = [
       "Ümraniye dış cephe temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Ümraniye temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -21788,7 +21788,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -21815,8 +21815,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -21848,8 +21848,8 @@ const TOPICS: V10Topic[] = [
       "Ataşehir ev temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Ataşehir temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -21891,7 +21891,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -21918,8 +21918,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -21951,8 +21951,8 @@ const TOPICS: V10Topic[] = [
       "Ataşehir ofis temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Ataşehir temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -21994,7 +21994,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -22021,8 +22021,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -22054,8 +22054,8 @@ const TOPICS: V10Topic[] = [
       "Ataşehir i̇nşaat sonrası temizlik fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Ataşehir temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -22096,7 +22096,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -22123,8 +22123,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -22156,8 +22156,8 @@ const TOPICS: V10Topic[] = [
       "Ataşehir koltuk yıkama fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Ataşehir temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -22199,7 +22199,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -22226,8 +22226,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -22259,8 +22259,8 @@ const TOPICS: V10Topic[] = [
       "Ataşehir halı temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Ataşehir temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -22302,7 +22302,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -22329,8 +22329,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -22362,8 +22362,8 @@ const TOPICS: V10Topic[] = [
       "Ataşehir cam temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Ataşehir temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -22390,7 +22390,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -22405,7 +22405,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -22432,8 +22432,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -22465,8 +22465,8 @@ const TOPICS: V10Topic[] = [
       "Ataşehir dış cephe temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Ataşehir temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -22508,7 +22508,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -22535,8 +22535,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -22568,8 +22568,8 @@ const TOPICS: V10Topic[] = [
       "Bakırköy ev temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Bakırköy temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -22611,7 +22611,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -22638,8 +22638,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -22671,8 +22671,8 @@ const TOPICS: V10Topic[] = [
       "Bakırköy ofis temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Bakırköy temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -22714,7 +22714,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -22741,8 +22741,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -22774,8 +22774,8 @@ const TOPICS: V10Topic[] = [
       "Bakırköy i̇nşaat sonrası temizlik fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Bakırköy temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -22816,7 +22816,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -22843,8 +22843,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -22876,8 +22876,8 @@ const TOPICS: V10Topic[] = [
       "Bakırköy koltuk yıkama fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Bakırköy temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -22919,7 +22919,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -22946,8 +22946,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -22979,8 +22979,8 @@ const TOPICS: V10Topic[] = [
       "Bakırköy halı temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Bakırköy temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -23022,7 +23022,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -23049,8 +23049,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -23082,8 +23082,8 @@ const TOPICS: V10Topic[] = [
       "Bakırköy cam temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Bakırköy temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -23110,7 +23110,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -23125,7 +23125,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -23152,8 +23152,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -23185,8 +23185,8 @@ const TOPICS: V10Topic[] = [
       "Bakırköy dış cephe temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Bakırköy temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -23228,7 +23228,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -23255,8 +23255,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -23288,8 +23288,8 @@ const TOPICS: V10Topic[] = [
       "Kağıthane ev temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Kağıthane temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -23331,7 +23331,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -23358,8 +23358,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -23391,8 +23391,8 @@ const TOPICS: V10Topic[] = [
       "Kağıthane ofis temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Kağıthane temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -23434,7 +23434,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -23461,8 +23461,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -23494,8 +23494,8 @@ const TOPICS: V10Topic[] = [
       "Kağıthane i̇nşaat sonrası temizlik fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Kağıthane temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -23536,7 +23536,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -23563,8 +23563,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -23596,8 +23596,8 @@ const TOPICS: V10Topic[] = [
       "Kağıthane koltuk yıkama fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Kağıthane temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -23639,7 +23639,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -23666,8 +23666,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -23699,8 +23699,8 @@ const TOPICS: V10Topic[] = [
       "Kağıthane halı temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Kağıthane temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -23742,7 +23742,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -23769,8 +23769,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -23802,8 +23802,8 @@ const TOPICS: V10Topic[] = [
       "Kağıthane cam temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Kağıthane temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -23830,7 +23830,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -23845,7 +23845,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -23872,8 +23872,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -23905,8 +23905,8 @@ const TOPICS: V10Topic[] = [
       "Kağıthane dış cephe temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Kağıthane temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -23948,7 +23948,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -23975,8 +23975,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -24008,8 +24008,8 @@ const TOPICS: V10Topic[] = [
       "Üsküdar ev temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Üsküdar temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -24051,7 +24051,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -24078,8 +24078,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -24111,8 +24111,8 @@ const TOPICS: V10Topic[] = [
       "Üsküdar ofis temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Üsküdar temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -24154,7 +24154,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -24181,8 +24181,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -24214,8 +24214,8 @@ const TOPICS: V10Topic[] = [
       "Üsküdar i̇nşaat sonrası temizlik fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Üsküdar temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -24256,7 +24256,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -24283,8 +24283,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -24316,8 +24316,8 @@ const TOPICS: V10Topic[] = [
       "Üsküdar koltuk yıkama fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Üsküdar temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -24359,7 +24359,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -24386,8 +24386,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -24419,8 +24419,8 @@ const TOPICS: V10Topic[] = [
       "Üsküdar halı temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Üsküdar temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -24462,7 +24462,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -24489,8 +24489,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -24522,8 +24522,8 @@ const TOPICS: V10Topic[] = [
       "Üsküdar cam temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Üsküdar temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -24550,7 +24550,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -24565,7 +24565,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -24592,8 +24592,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -24625,8 +24625,8 @@ const TOPICS: V10Topic[] = [
       "Üsküdar dış cephe temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Üsküdar temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -24668,7 +24668,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -24695,8 +24695,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -24728,8 +24728,8 @@ const TOPICS: V10Topic[] = [
       "Maltepe ev temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Maltepe temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -24771,7 +24771,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -24798,8 +24798,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -24831,8 +24831,8 @@ const TOPICS: V10Topic[] = [
       "Maltepe ofis temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Maltepe temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -24874,7 +24874,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -24901,8 +24901,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -24934,8 +24934,8 @@ const TOPICS: V10Topic[] = [
       "Maltepe i̇nşaat sonrası temizlik fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Maltepe temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -24976,7 +24976,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -25003,8 +25003,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -25036,8 +25036,8 @@ const TOPICS: V10Topic[] = [
       "Maltepe koltuk yıkama fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Maltepe temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -25079,7 +25079,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -25106,8 +25106,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -25139,8 +25139,8 @@ const TOPICS: V10Topic[] = [
       "Maltepe halı temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Maltepe temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -25182,7 +25182,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -25209,8 +25209,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -25242,8 +25242,8 @@ const TOPICS: V10Topic[] = [
       "Maltepe cam temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Maltepe temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -25270,7 +25270,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -25285,7 +25285,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -25312,8 +25312,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -25345,8 +25345,8 @@ const TOPICS: V10Topic[] = [
       "Maltepe dış cephe temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Maltepe temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -25388,7 +25388,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -25415,8 +25415,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -25448,8 +25448,8 @@ const TOPICS: V10Topic[] = [
       "Kartal ev temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Kartal temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -25491,7 +25491,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -25518,8 +25518,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -25551,8 +25551,8 @@ const TOPICS: V10Topic[] = [
       "Kartal ofis temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Kartal temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -25594,7 +25594,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -25621,8 +25621,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -25654,8 +25654,8 @@ const TOPICS: V10Topic[] = [
       "Kartal i̇nşaat sonrası temizlik fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Kartal temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -25696,7 +25696,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -25723,8 +25723,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -25756,8 +25756,8 @@ const TOPICS: V10Topic[] = [
       "Kartal koltuk yıkama fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Kartal temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -25799,7 +25799,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -25826,8 +25826,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -25859,8 +25859,8 @@ const TOPICS: V10Topic[] = [
       "Kartal halı temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Kartal temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -25902,7 +25902,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -25929,8 +25929,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -25962,8 +25962,8 @@ const TOPICS: V10Topic[] = [
       "Kartal cam temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Kartal temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -25990,7 +25990,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -26005,7 +26005,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -26032,8 +26032,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -26065,8 +26065,8 @@ const TOPICS: V10Topic[] = [
       "Kartal dış cephe temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Kartal temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -26108,7 +26108,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -26135,8 +26135,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -26168,8 +26168,8 @@ const TOPICS: V10Topic[] = [
       "Pendik ev temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Pendik temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -26211,7 +26211,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -26238,8 +26238,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -26271,8 +26271,8 @@ const TOPICS: V10Topic[] = [
       "Pendik ofis temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Pendik temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -26314,7 +26314,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -26341,8 +26341,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -26374,8 +26374,8 @@ const TOPICS: V10Topic[] = [
       "Pendik i̇nşaat sonrası temizlik fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Pendik temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -26416,7 +26416,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -26443,8 +26443,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -26476,8 +26476,8 @@ const TOPICS: V10Topic[] = [
       "Pendik koltuk yıkama fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Pendik temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -26519,7 +26519,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -26546,8 +26546,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -26579,8 +26579,8 @@ const TOPICS: V10Topic[] = [
       "Pendik halı temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Pendik temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -26622,7 +26622,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -26649,8 +26649,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -26682,8 +26682,8 @@ const TOPICS: V10Topic[] = [
       "Pendik cam temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Pendik temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -26710,7 +26710,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -26725,7 +26725,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -26752,8 +26752,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -26785,8 +26785,8 @@ const TOPICS: V10Topic[] = [
       "Pendik dış cephe temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Pendik temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -26828,7 +26828,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -26855,8 +26855,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -26888,8 +26888,8 @@ const TOPICS: V10Topic[] = [
       "Fatih ev temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Fatih temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -26931,7 +26931,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -26958,8 +26958,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -26991,8 +26991,8 @@ const TOPICS: V10Topic[] = [
       "Fatih ofis temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Fatih temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -27034,7 +27034,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -27061,8 +27061,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -27094,8 +27094,8 @@ const TOPICS: V10Topic[] = [
       "Fatih i̇nşaat sonrası temizlik fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Fatih temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -27136,7 +27136,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -27163,8 +27163,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -27196,8 +27196,8 @@ const TOPICS: V10Topic[] = [
       "Fatih koltuk yıkama fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Fatih temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -27239,7 +27239,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -27266,8 +27266,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -27299,8 +27299,8 @@ const TOPICS: V10Topic[] = [
       "Fatih halı temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Fatih temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -27342,7 +27342,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -27369,8 +27369,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -27402,8 +27402,8 @@ const TOPICS: V10Topic[] = [
       "Fatih cam temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Fatih temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -27430,7 +27430,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -27445,7 +27445,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -27472,8 +27472,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -27505,8 +27505,8 @@ const TOPICS: V10Topic[] = [
       "Fatih dış cephe temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Fatih temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -27548,7 +27548,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -27575,8 +27575,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -27608,8 +27608,8 @@ const TOPICS: V10Topic[] = [
       "Eyüpsultan ev temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Eyüpsultan temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -27651,7 +27651,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -27678,8 +27678,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -27711,8 +27711,8 @@ const TOPICS: V10Topic[] = [
       "Eyüpsultan ofis temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Eyüpsultan temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -27754,7 +27754,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -27781,8 +27781,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -27814,8 +27814,8 @@ const TOPICS: V10Topic[] = [
       "Eyüpsultan i̇nşaat sonrası temizlik fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Eyüpsultan temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -27856,7 +27856,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -27883,8 +27883,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -27916,8 +27916,8 @@ const TOPICS: V10Topic[] = [
       "Eyüpsultan koltuk yıkama fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Eyüpsultan temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -27959,7 +27959,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -27986,8 +27986,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -28019,8 +28019,8 @@ const TOPICS: V10Topic[] = [
       "Eyüpsultan halı temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Eyüpsultan temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -28062,7 +28062,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -28089,8 +28089,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -28122,8 +28122,8 @@ const TOPICS: V10Topic[] = [
       "Eyüpsultan cam temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Eyüpsultan temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -28150,7 +28150,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -28165,7 +28165,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -28192,8 +28192,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -28225,8 +28225,8 @@ const TOPICS: V10Topic[] = [
       "Eyüpsultan dış cephe temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Eyüpsultan temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -28268,7 +28268,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -28295,8 +28295,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -28328,8 +28328,8 @@ const TOPICS: V10Topic[] = [
       "Zeytinburnu ev temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Zeytinburnu temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -28371,7 +28371,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -28398,8 +28398,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -28431,8 +28431,8 @@ const TOPICS: V10Topic[] = [
       "Zeytinburnu ofis temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Zeytinburnu temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -28474,7 +28474,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -28501,8 +28501,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -28534,8 +28534,8 @@ const TOPICS: V10Topic[] = [
       "Zeytinburnu i̇nşaat sonrası temizlik fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Zeytinburnu temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -28576,7 +28576,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -28603,8 +28603,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -28636,8 +28636,8 @@ const TOPICS: V10Topic[] = [
       "Zeytinburnu koltuk yıkama fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Zeytinburnu temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -28679,7 +28679,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -28706,8 +28706,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -28739,8 +28739,8 @@ const TOPICS: V10Topic[] = [
       "Zeytinburnu halı temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Zeytinburnu temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -28782,7 +28782,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -28809,8 +28809,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -28842,8 +28842,8 @@ const TOPICS: V10Topic[] = [
       "Zeytinburnu cam temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Zeytinburnu temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -28870,7 +28870,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -28885,7 +28885,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -28912,8 +28912,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -28945,8 +28945,8 @@ const TOPICS: V10Topic[] = [
       "Zeytinburnu dış cephe temizliği fiyatları 2026’da keşif sonrası netleşir; online araç yalnızca tahmindir. Zeytinburnu temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "fiyatlar",
@@ -28988,7 +28988,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -29015,8 +29015,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -29048,8 +29048,8 @@ const TOPICS: V10Topic[] = [
       "İstanbul’da temizlik fiyatı hizmet tipine göre ayrılır; tek rakam her eve uymaz. Sarıyer temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ultimate",
@@ -29091,7 +29091,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -29118,8 +29118,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -29151,8 +29151,8 @@ const TOPICS: V10Topic[] = [
       "Keşif satış baskısı değil; kapsam ve kirlilik için bilgi turudur. Sarıyer temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ultimate",
@@ -29194,7 +29194,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -29221,8 +29221,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -29254,8 +29254,8 @@ const TOPICS: V10Topic[] = [
       "Hesaplayıcı tahmindir; villa/inşaatta keşif şarttır. Sarıyer temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ultimate",
@@ -29297,7 +29297,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -29324,8 +29324,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -29357,8 +29357,8 @@ const TOPICS: V10Topic[] = [
       "Ekip + checklist ölçeklenebilir sonuç verir; saat ücreti tek kriter değildir. Sarıyer temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ultimate",
@@ -29400,7 +29400,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -29427,8 +29427,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -29460,8 +29460,8 @@ const TOPICS: V10Topic[] = [
       "Garanti keşifte yazılan işlerdir; sözlü vaat pahalıya patlar. Sarıyer temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ultimate",
@@ -29503,7 +29503,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -29530,8 +29530,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -29563,8 +29563,8 @@ const TOPICS: V10Topic[] = [
       "Villa m², kat, cam ve erişim daire paketini geçersiz kılar; peyzaj yoktur. Sarıyer temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ultimate",
@@ -29606,7 +29606,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -29633,8 +29633,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -29666,8 +29666,8 @@ const TOPICS: V10Topic[] = [
       "Orman/villa hattında planlı randevu ve keşif kritiktir. Zekeriyaköy temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ultimate",
@@ -29708,7 +29708,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -29735,8 +29735,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -29768,8 +29768,8 @@ const TOPICS: V10Topic[] = [
       "Yerinde yıkamada takım tipi ve leke yaşı fiyatı belirler. Sarıyer temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ultimate",
@@ -29811,7 +29811,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -29838,8 +29838,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -29871,8 +29871,8 @@ const TOPICS: V10Topic[] = [
       "İnce toz turu mobilyadan önce; m² tek başına yetmez. Sarıyer temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ultimate",
@@ -29914,7 +29914,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -29941,8 +29941,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -29974,8 +29974,8 @@ const TOPICS: V10Topic[] = [
       "Boya sıçrantısı + toz birlikte planlanır; usta işi dahil değildir. Kadıköy temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ultimate",
@@ -30017,7 +30017,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -30044,8 +30044,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -30077,8 +30077,8 @@ const TOPICS: V10Topic[] = [
       "Önce kaba sonra ince; ters sıra maliyeti artırır. Sarıyer temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ultimate",
@@ -30120,7 +30120,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -30147,8 +30147,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -30180,8 +30180,8 @@ const TOPICS: V10Topic[] = [
       "Teslim tozu mobilya altına yerleşmeden çıkarılmalı. Ataşehir temizlik hattında operasyon deneyimiyle i̇nşaat sonrası temizlik paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ultimate",
@@ -30222,7 +30222,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -30249,8 +30249,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -30282,8 +30282,8 @@ const TOPICS: V10Topic[] = [
       "Ev tipi agresif kimyasal risklidir; kumaşa uygun ürün şarttır. Sarıyer temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ultimate",
@@ -30324,7 +30324,7 @@ const TOPICS: V10Topic[] = [
       "Kuruma planı"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -30351,8 +30351,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -30384,8 +30384,8 @@ const TOPICS: V10Topic[] = [
       "Deri ve kumaş farklı ürün ister; tek şampuan risklidir. Beşiktaş temizlik hattında operasyon deneyimiyle koltuk yıkama paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ultimate",
@@ -30427,7 +30427,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -30454,8 +30454,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -30487,8 +30487,8 @@ const TOPICS: V10Topic[] = [
       "Plaza güvenlik ve gece slotu maliyeti etkiler. Maslak temizlik hattında operasyon deneyimiyle ofis temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ultimate",
@@ -30530,7 +30530,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -30557,8 +30557,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -30590,8 +30590,8 @@ const TOPICS: V10Topic[] = [
       "Boğaz tuzu periyodik cam bakımını gerektirir. Tarabya temizlik hattında operasyon deneyimiyle cam temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ultimate",
@@ -30633,7 +30633,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -30660,8 +30660,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -30693,8 +30693,8 @@ const TOPICS: V10Topic[] = [
       "Orman hattı erişimi randevu planını etkiler. Bahçeköy temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ultimate",
@@ -30736,7 +30736,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -30763,8 +30763,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -30796,8 +30796,8 @@ const TOPICS: V10Topic[] = [
       "Kış/erişim slot seçimini etkiler; keşif önerilir. Uskumruköy temizlik hattında operasyon deneyimiyle ev temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ultimate",
@@ -30839,7 +30839,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -30866,8 +30866,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -30899,8 +30899,8 @@ const TOPICS: V10Topic[] = [
       "Genelde koltuk sonrası hali planı kuruma çakışmasını azaltır. Sarıyer temizlik hattında operasyon deneyimiyle halı temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ultimate",
@@ -30927,7 +30927,7 @@ const TOPICS: V10Topic[] = [
       "Malzeme",
       "Erişim yöntemi",
       "Kir/tuz",
-      "Yalnız yüzey (peyzaj yok)"
+      "Yalnız yüzey temizliği"
     ],
     "scenarios": [
       "Villa cephe",
@@ -30942,7 +30942,7 @@ const TOPICS: V10Topic[] = [
       "Yazılı checklist"
     ],
     "scopeOut": [
-      "Peyzaj/bahçe düzenleme",
+      "Bahçe düzenleme",
       "İnşaat işçiliği",
       "Mobilya taşıma"
     ],
@@ -30969,8 +30969,8 @@ const TOPICS: V10Topic[] = [
         "a": "Garanti sınırı yazılı kapsamdaki işlerdir. Keşif dışı ekstra ayrıca teklif edilir."
       },
       {
-        "q": "Peyzaj dahil mi?",
-        "a": "Hayır. Peyzaj/bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
+        "q": "Bahçe düzenleme dahil mi?",
+        "a": "Hayır. Bahçe düzenleme hizmetimiz yoktur; yalnızca yüzey ve yaşam alanı temizliği."
       },
       {
         "q": "Aynı gün olur mu?",
@@ -31002,8 +31002,8 @@ const TOPICS: V10Topic[] = [
       "Yalnızca yüzey; bahçe düzenleme / peyzaj yoktur. Tarabya temizlik hattında operasyon deneyimiyle dış cephe temizliği paketlerinde yazılı kapsam sunuyoruz.",
       "Zümrüt Vadi Temizlik olarak Sarıyer / Zekeriyaköy önceliklidir; İstanbul genelinde planlı randevu ile ilerlenir. Aynı gün garanti edilmez.",
       "İçerikte keyword stuffing yoktur; tek birincil niyet + yardımcı SSS ile AEO uyumu hedeflenir. Sıralama garantisi verilmez.",
-      "Peyzaj / bahçe düzenleme yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
-      "Telefon / WhatsApp: 0551 925 09 43. Ads veya organik girenler için CTA: fiyat hesaplama veya ücretsiz keşif."
+      "Bahçe düzenleme hizmetimiz yoktur. Bahçe kenarı yalnızca yüzey temizliği olarak paketlenebilir.",
+      "Telefon / WhatsApp: 0551 925 09 43. Fiyat hesaplama veya ücretsiz keşif ile devam edin."
     ],
     "tags": [
       "ultimate",

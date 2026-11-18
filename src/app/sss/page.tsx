@@ -157,26 +157,26 @@ export default function FAQPage() {
         <div className="mx-auto w-full max-w-3xl px-4 pb-8 sm:px-6 lg:px-8">
           <RelatedSeoLinks
             tone="dark"
-            heading="Niyete göre devam edin (AEO)"
-            intro="Genel SSS burada; ilçe/soru ve çözüm niyetleri ayrı sayfalarda — kopya FAQ şişirme yok."
+            heading="Konuya göre devam edin"
+            intro="Genel SSS burada; ilçe ve çözüm sayfalarında daha spesifik cevaplar var."
             groups={[
               {
-                title: 'İlçe GEO SSS',
+                title: 'İlçe SSS',
                 links: [
-                  { href: '/geo-sss', label: 'GEO SSS listesi' },
+                  { href: '/geo-sss', label: 'İlçe soru-cevap listesi' },
                   { href: '/bolgeler/sariyer', label: 'Sarıyer temizlik' },
                   { href: '/bolgeler/sariyer/zekeriyakoy', label: 'Zekeriyaköy' },
                 ],
               },
               {
-                title: 'Konu SSS (AEO)',
+                title: 'Konu SSS',
                 links: SSS_TOPICS.slice(0, 6).map((t) => ({
                   href: `/sss/${t.slug}`,
                   label: t.title,
                 })),
               },
               {
-                title: 'Çözüm niyetleri',
+                title: 'Çözüm rehberleri',
                 links: [
                   { href: '/cozumler/insaat-sonrasi-temizlik', label: 'İnşaat sonrası' },
                   { href: '/cozumler/tasinma-temizligi', label: 'Taşınma temizliği' },

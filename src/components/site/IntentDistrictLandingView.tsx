@@ -162,7 +162,7 @@ export function IntentDistrictLandingView({ page }: IntentDistrictLandingViewPro
             {district.name} ilgili sayfalar
           </h2>
           <p className="mt-3 text-slate-400">
-            Aynı ilçede hizmet detayı ve diğer niyet sayfalarına hızlı erişim.
+            Aynı ilçede hizmet detayı ve ilgili rehber sayfalarına hızlı erişim.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link

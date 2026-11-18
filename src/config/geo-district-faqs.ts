@@ -46,7 +46,7 @@ export function getDistrictGeoPassageLead(
   districtSlug?: string
 ): string {
   if (districtSlug === 'sariyer') {
-    return `${GEO_BRAND_NAME}, Sarıyer’de ev temizliği ve villa/site hijyeninde öncelikli operasyon hattıdır; Zekeriyaköy, Maslak, Tarabya, Bahçeköy ve Uskumruköy odaklı ücretsiz keşif, sigortalı ekip ve online fiyat hesaplama ile hizmet verir.`;
+    return `${GEO_BRAND_NAME}, Sarıyer’de ev temizliği ve villa/site hijyeninde öncelikli çalışır; Zekeriyaköy, Maslak, Tarabya, Bahçeköy ve Uskumruköy odaklı ücretsiz keşif, sigortalı ekip ve online fiyat hesaplama ile hizmet verir.`;
   }
   return `${GEO_BRAND_NAME}, ${districtName} bölgesinde ev temizliği, ofis temizliği, inşaat sonrası temizlik, koltuk yıkama ve cam temizliği hizmetleri sunar; ${districtName} ve çevresinde ücretsiz keşif, sigortalı ekip ve online fiyat hesaplama aracı ile hizmet verir.`;
 }

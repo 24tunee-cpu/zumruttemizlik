@@ -145,8 +145,8 @@ export default function GalleryPage() {
           <div className="mx-auto w-full max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
             <RelatedSeoLinks
               tone="dark"
-              heading="Galeriden sonra teklif rotası"
-              intro="Örnekleri gördünüzse doğru hizmet veya bölge sayfasına geçin."
+              heading="İlgili sayfalar"
+              intro="Hizmet veya bölge sayfalarına geçin."
               groups={[
                 {
                   title: 'Hizmetler',

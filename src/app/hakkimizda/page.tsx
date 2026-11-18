@@ -234,8 +234,8 @@ export default function AboutPage() {
               </p>
               <p>
                 Ev, ofis, inşaat sonrası, cam, koltuk ve halı temizliği paketlerimiz keşif sonrası
-                netleşir — sürpriz kapsam dili kullanmayız. Peyzaj veya bahçe düzenleme hizmeti
-                vermiyoruz; bahçe kenarı yalnızca yüzey temizliği olarak eklenebilir.
+                netleşir — sürpriz ek ücret dili kullanmayız. Bahçe düzenleme hizmetimiz yoktur;
+                bahçe kenarı yalnızca yüzey temizliği olarak eklenebilir.
               </p>
               <p>
                 Teklif için {SITE_CONTACT.phoneDisplay}, WhatsApp veya ücretsiz keşif formu yeterlidir.

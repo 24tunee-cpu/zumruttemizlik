@@ -67,7 +67,7 @@ export function buildServicePageSeoLinks(serviceSlug: string, serviceTitle: stri
     { href: '/bolgeler/sariyer/zekeriyakoy', label: 'Zekeriyaköy temizlik' },
     { href: '/cozumler', label: 'Temizlik çözüm rehberleri' },
     { href: '/rehber', label: 'Temizlik karar rehberi' },
-    { href: '/geo-sss', label: 'İlçe SSS rehberleri' },
+    { href: '/geo-sss', label: 'İlçe soru-cevap' },
   ];
 
   const intents = INTENT_LANDINGS.slice(0, 4).map((i) => ({
@@ -110,12 +110,12 @@ export function buildProgrammaticPairSeoLinks(
   }));
 
   const hubs: SeoLinkItem[] = [
-    { href: `/bolgeler/${districtSlug}`, label: `${district.name} temizlik hub` },
+    { href: `/bolgeler/${districtSlug}`, label: `${district.name} temizlik` },
     { href: `/hizmetler/${serviceSlug}`, label: `${service.name} hizmet detayı` },
     { href: '/bolgeler', label: 'Tüm bölgeler' },
     { href: '/hizmetler', label: 'Tüm hizmetler' },
     { href: '/cozumler', label: 'Çözüm rehberleri' },
-    { href: '/geo-sss', label: 'GEO SSS' },
+    { href: '/geo-sss', label: 'İlçe soru-cevap' },
   ];
 
   if (districtSlug === 'sariyer') {
@@ -155,7 +155,7 @@ export function buildNeighborhoodSeoLinks(districtSlug: string, neighborhoodSlug
     { href: '/bolgeler', label: 'Tüm bölgeler' },
     { href: '/hizmetler', label: 'Tüm hizmetler' },
     { href: '/cozumler', label: 'Çözüm rehberleri' },
-    { href: '/geo-sss', label: 'GEO SSS' },
+    { href: '/geo-sss', label: 'İlçe soru-cevap' },
   ];
 
   return {
@@ -178,7 +178,7 @@ export function buildGeoSssSeoLinks(params: {
     { href: `/bolgeler/${districtSlug}`, label: `${districtName} temizlik` },
     { href: '/bolgeler', label: 'Tüm bölgeler' },
     { href: '/hizmetler', label: 'Hizmetler' },
-    { href: '/geo-sss', label: 'GEO SSS listesi' },
+    { href: '/geo-sss', label: 'Tüm ilçe soru-cevap' },
     ...CTA_LINKS,
   ];
 
@@ -206,7 +206,7 @@ export function buildSiteHubStripLinks(): SeoLinkItem[] {
     { href: '/blog', label: 'Blog' },
     { href: '/fiyat-hesaplama', label: 'Fiyat hesapla' },
     { href: '/randevu', label: 'Randevu' },
-    { href: '/geo-sss', label: 'GEO SSS' },
+    { href: '/geo-sss', label: 'İlçe SSS' },
   ]);
 }
 

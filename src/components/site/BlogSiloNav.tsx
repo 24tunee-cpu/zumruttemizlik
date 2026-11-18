@@ -12,12 +12,12 @@ export function BlogSiloNav() {
         <div className="flex items-center gap-2">
           <Layers className="h-5 w-5 text-emerald-400" aria-hidden="true" />
           <h2 id="blog-silo-heading" className="text-lg font-bold text-white sm:text-xl">
-            Konu Siloları
+            Konu rehberleri
           </h2>
         </div>
         <p className="mt-2 max-w-3xl text-sm text-slate-400">
-          İnşaat sonrası, taşınma, kira teslim, boş ev ve ofis temizliği için pillar rehberler ve
-          cluster blog yazıları.
+          İnşaat sonrası, taşınma, kira teslim, boş ev ve ofis temizliği için rehberler ve ilgili
+          yazılar.
         </p>
         <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {BLOG_SILO_CLUSTERS.map((silo) => (
@@ -32,7 +32,7 @@ export function BlogSiloNav() {
               </span>
               <p className="mt-2 line-clamp-2 text-xs text-slate-400">{silo.description}</p>
               <span className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-emerald-400">
-                Siloya git
+                Rehbere git
                 <ArrowRight className="h-3.5 w-3.5 transition group-hover:translate-x-0.5" aria-hidden="true" />
               </span>
             </Link>

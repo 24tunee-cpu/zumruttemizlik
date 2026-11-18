@@ -173,11 +173,11 @@ export default function NeighborhoodLanding({ data }: { data: NeighborhoodLandin
                 <RelatedSeoLinks
                   tone="dark"
                   heading={`${data.name} için ilgili sayfalar`}
-                  intro="Bölge, hizmet ve çözüm sayfalarına geçerek doğru teklif rotasını seçin."
+                  intro="Bölge, hizmet ve çözüm sayfaları."
                   groups={[
                     { title: 'Hizmet × bölge', links: seo.services },
                     { title: 'Yakın semtler', links: seo.siblings },
-                    { title: 'Hub & rehber', links: seo.hubs },
+                    { title: 'Rehberler', links: seo.hubs },
                     { title: 'Hemen başla', links: seo.cta },
                   ]}
                 />
