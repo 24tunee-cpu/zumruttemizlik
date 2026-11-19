@@ -196,7 +196,7 @@ export function FloatingWhatsApp({
                   ref={primaryCtaRef}
                   href={waUrl}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="nofollow noopener noreferrer"
                   className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#25D366] px-4 py-3.5 text-sm font-semibold text-[#053e2f] shadow-lg shadow-emerald-900/30 transition-transform hover:bg-[#20bd5a] hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 active:scale-[0.99]"
                 >
                   <WhatsAppGlyph className="h-5 w-5" />

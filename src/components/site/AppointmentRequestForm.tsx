@@ -127,7 +127,7 @@ export function AppointmentRequestForm({ embedded = false }: { embedded?: boolea
             <a
               href={reviewHref}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="nofollow noopener noreferrer"
               className="font-medium text-emerald-200 underline underline-offset-2 hover:text-white"
               onClick={() =>
                 trackGa4Event('review_cta_click', { source: 'appointment_success' })

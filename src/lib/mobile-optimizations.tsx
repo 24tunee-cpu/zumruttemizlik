@@ -103,10 +103,18 @@ export function WhatsAppButton({
   const { isMobile } = useMobileDetection();
   
   const handleClick = () => {
-    const formattedPhone = phone.replace(/\D/g, '');
+    let digits = phone.replace(/\D/g, '');
+    // 0551… → 90551… ; zaten 90 ile geliyorsa dokunma; 551… → 90551…
+    if (digits.startsWith('0') && digits.length === 11) {
+      digits = `90${digits.slice(1)}`;
+    } else if (digits.length === 10 && digits.startsWith('5')) {
+      digits = `90${digits}`;
+    } else if (!digits.startsWith('90') && digits.length >= 10) {
+      digits = `90${digits.replace(/^0+/, '')}`;
+    }
     const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/90${formattedPhone}?text=${encodedMessage}`;
-    
+    const whatsappUrl = `https://wa.me/${digits}?text=${encodedMessage}`;
+
     if (isMobile) {
       window.open(whatsappUrl, '_blank');
     } else {

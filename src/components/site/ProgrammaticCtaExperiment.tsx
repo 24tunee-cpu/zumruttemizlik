@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { useSiteSettings } from '@/context/SiteSettingsContext';
+import { SITE_CONTACT } from '@/config/site-contact';
 
 type Variant = 'A' | 'B';
 
@@ -16,7 +17,7 @@ type Props = {
 const STORAGE_KEY = 'programmatic-cta-variant-v1';
 
 function buildWhatsAppLink(message: string, variant: Variant) {
-  const base = 'https://wa.me/905467152844';
+  const base = `https://wa.me/${SITE_CONTACT.whatsappDigits}`;
   const q = new URLSearchParams({
     text: message,
     utm_source: 'programmatic-landing',
@@ -95,7 +96,7 @@ export default function ProgrammaticCtaExperiment({
         <a
           href={waHref}
           target="_blank"
-          rel="noopener noreferrer"
+          rel="nofollow noopener noreferrer"
           data-source={`programmatic-cta-${variant.toLowerCase()}-wa`}
           className="rounded-lg bg-emerald-500 px-5 py-2.5 font-medium text-white transition-colors hover:bg-emerald-600"
         >

@@ -39,7 +39,7 @@ const phoneSchema = z
   .optional()
   .refine(
     (val) => !val || phoneRegex.test(val.replace(/\s/g, '')),
-    'Geçerli bir telefon numarası girin (örn: 0546 715 2844)'
+    'Geçerli bir telefon numarası girin (örn: 0551 925 09 43)'
   );
 
 /**

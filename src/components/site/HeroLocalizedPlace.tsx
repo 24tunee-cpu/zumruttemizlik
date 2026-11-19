@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { MapPin, Sparkles } from 'lucide-react';
 import { HERO_GEO_SSR_DEFAULT } from '@/config/istanbul-geo-points';
+import { SITE_CONTACT } from '@/config/site-contact';
 import {
   fallbackHeroPlace,
   resolveVisitorArea,
@@ -150,11 +151,16 @@ export function HeroLocalizedPlace() {
       </div>
 
       <h1 className="hero-enter hero-enter-delay-1 mt-6 text-balance text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
-        <span className="transition-opacity duration-300">{place.label}</span>{' '}
-        <span className="bg-gradient-to-r from-emerald-400 to-emerald-500 bg-clip-text text-transparent">
-          temizlik
-        </span>{' '}
-        şirketi
+        <span className="block text-[0.72em] font-semibold tracking-tight text-emerald-300/95 sm:text-[0.78em]">
+          {SITE_CONTACT.companyName}
+        </span>
+        <span className="mt-1 block transition-opacity duration-300">
+          <span>{place.label}</span>{' '}
+          <span className="bg-gradient-to-r from-emerald-400 to-emerald-500 bg-clip-text text-transparent">
+            temizlik
+          </span>{' '}
+          şirketi
+        </span>
       </h1>
     </>
   );

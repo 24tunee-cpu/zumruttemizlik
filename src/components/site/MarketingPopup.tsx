@@ -144,7 +144,7 @@ export function MarketingPopup() {
         <a
           href={waHref}
           target="_blank"
-          rel="noopener noreferrer"
+          rel="nofollow noopener noreferrer"
           data-source="marketing-popup-whatsapp"
           onClick={onPrimaryCta}
           className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-500 px-3 py-2.5 text-sm font-medium text-slate-100 transition-colors hover:bg-white/10"

@@ -9,7 +9,7 @@ import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import SiteLayout from './site/layout';
 import { Hero } from '@/components/site/Hero';
-import { canonicalUrl, serializeSchemaGraph } from '@/lib/seo';
+import { canonicalUrl, getSiteUrl, serializeSchemaGraph } from '@/lib/seo';
 import DeferredHomeSections from '@/components/site/DeferredHomeSections';
 import RelatedSeoLinks from '@/components/site/RelatedSeoLinks';
 import { WhyChooseZvt } from '@/components/site/WhyChooseZvt';
@@ -29,7 +29,7 @@ const Services = dynamic(() => import('@/components/site/Services').then((mod) =
 /** 50–60 karakter bandı (SERP); meta keywords yok (Google yok sayar) */
 const homeTitle = clampMetaTitle('İstanbul Temizlik Şirketi | Sarıyer ve Zekeriyaköy');
 const homeDescription = clampMetaDescription(
-  `Sarıyer ve Zekeriyaköy ev, ofis, inşaat sonrası temizlik. ${formatGoogleTrustLine()}. Ücretsiz keşif, aynı gün randevu. ${SITE_CONTACT.phoneDisplay}.`
+  `Sarıyer ve Zekeriyaköy’de ev, ofis ve inşaat sonrası temizlik. ${formatGoogleTrustLine()}. Ücretsiz keşif, aynı gün randevu — hemen ara: ${SITE_CONTACT.phoneDisplay}.`
 );
 
 export const metadata: Metadata = {
@@ -121,6 +121,23 @@ const homeFaqJson = serializeSchemaGraph([
   },
 ]);
 
+const siteRoot = getSiteUrl();
+const homeWebPageJson = serializeSchemaGraph([
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${siteRoot}/#webpage`,
+    url: canonicalUrl('/'),
+    name: `${SITE_CONTACT.companyName} — Sarıyer & Zekeriyaköy temizlik şirketi`,
+    headline: `${SITE_CONTACT.companyName} — Sarıyer & Zekeriyaköy temizlik şirketi`,
+    description: homeDescription,
+    isPartOf: { '@id': `${siteRoot}/#website` },
+    about: { '@id': `${siteRoot}/#business` },
+    inLanguage: 'tr-TR',
+    primaryImageOfPage: canonicalUrl('/og-image.jpg'),
+  },
+]);
+
 const initialHomeServices = activeServices.map((s) => ({
   id: `seed-${s.slug}`,
   title: s.title,
@@ -158,6 +175,10 @@ export default async function HomePage() {
     <>
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: homeWebPageJson }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: homeServicesItemListJson }}
       />
       <script
@@ -168,6 +189,26 @@ export default async function HomePage() {
         <Suspense fallback={<SectionLoading height="h-screen" />}>
           <Hero />
         </Suspense>
+
+        <section
+          className="border-b border-slate-800 bg-slate-950 px-4 py-10 sm:px-6 lg:px-8"
+          aria-labelledby="home-intro-heading"
+        >
+          <div className="mx-auto max-w-3xl text-center">
+            <h2
+              id="home-intro-heading"
+              className="text-2xl font-bold text-white sm:text-3xl"
+            >
+              Sarıyer ve Zekeriyaköy odaklı profesyonel temizlik
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-slate-300">
+              {SITE_CONTACT.companyName}; ev, ofis, inşaat sonrası, koltuk ve cam temizliğinde
+              ücretsiz keşif ile kapsamı netleştirir. Öncelik hattımız Sarıyer (Zekeriyaköy,
+              Maslak, Tarabya, Bahçeköy, Uskumruköy); Avrupa Yakası talepleri rota ve kapasiteye
+              göre planlanır. Online fiyat tahmindir — kesin teklif keşif sonrası yazılır.
+            </p>
+          </div>
+        </section>
 
         <Suspense fallback={<SectionLoading height="h-96" />}>
           <Services initialServices={initialHomeServices} />

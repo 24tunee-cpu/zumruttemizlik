@@ -260,15 +260,16 @@ export function ContactForm({ variant = 'light', layout = 'default' }: ContactFo
           icon: MapPin,
           label: 'Adres',
           value: addr,
-          href: '#',
+          href: SITE_CONTACT.gbpMapsUrl || '/harita-ve-yorumlar',
           color: 'from-amber-500 to-amber-600',
           ariaLabel: `Adres: ${addr}`,
+          external: Boolean(SITE_CONTACT.gbpMapsUrl),
         },
         {
           icon: Clock,
           label: 'Çalışma Saatleri',
           value: hours,
-          href: '#',
+          href: null,
           color: 'from-purple-500 to-purple-600',
           ariaLabel: `Çalışma saatleri: ${hours}`,
         },
@@ -519,35 +520,57 @@ export function ContactForm({ variant = 'light', layout = 'default' }: ContactFo
             <div className="mt-8 space-y-4">
               {contactCards.map((item) => {
                 const gradient = isDark ? 'from-emerald-500 to-emerald-600' : item.color;
-                return (
-                <motion.a
-                  key={item.label}
-                  href={item.href}
-                  whileHover={shouldReduceMotion ? {} : { scale: 1.02, x: 4 }}
-                  className={cn(
-                    'group flex min-w-0 items-center gap-3 rounded-xl p-3 transition-colors sm:gap-4',
-                    isDark ? 'hover:bg-slate-800/80' : 'hover:bg-white',
-                  )}
-                  aria-label={item.ariaLabel}
-                >
-                  <div className={cn('flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br text-white shadow-lg sm:h-12 sm:w-12', gradient)} aria-hidden="true">
-                    <item.icon size={20} />
-                  </div>
-                  <div className="min-w-0">
-                    <p className={cn('text-sm', isDark ? 'text-slate-400' : 'text-slate-500')}>{item.label}</p>
-                    <p
-                      className={cn(
-                        'break-words font-semibold transition-colors',
-                        isDark
-                          ? 'text-white group-hover:text-emerald-400'
-                          : 'text-slate-900 group-hover:text-emerald-600',
-                      )}
+                const className = cn(
+                  'group flex min-w-0 items-center gap-3 rounded-xl p-3 transition-colors sm:gap-4',
+                  isDark ? 'hover:bg-slate-800/80' : 'hover:bg-white',
+                );
+                const inner = (
+                  <>
+                    <div className={cn('flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br text-white shadow-lg sm:h-12 sm:w-12', gradient)} aria-hidden="true">
+                      <item.icon size={20} />
+                    </div>
+                    <div className="min-w-0">
+                      <p className={cn('text-sm', isDark ? 'text-slate-400' : 'text-slate-500')}>{item.label}</p>
+                      <p
+                        className={cn(
+                          'break-words font-semibold transition-colors',
+                          isDark
+                            ? 'text-white group-hover:text-emerald-400'
+                            : 'text-slate-900 group-hover:text-emerald-600',
+                        )}
+                      >
+                        {item.value}
+                      </p>
+                    </div>
+                  </>
+                );
+                if (!item.href) {
+                  return (
+                    <motion.div
+                      key={item.label}
+                      whileHover={shouldReduceMotion ? {} : { scale: 1.02, x: 4 }}
+                      className={className}
+                      aria-label={item.ariaLabel}
                     >
-                      {item.value}
-                    </p>
-                  </div>
-                </motion.a>
-              );
+                      {inner}
+                    </motion.div>
+                  );
+                }
+                const isExternal = 'external' in item && item.external;
+                return (
+                  <motion.a
+                    key={item.label}
+                    href={item.href}
+                    whileHover={shouldReduceMotion ? {} : { scale: 1.02, x: 4 }}
+                    className={className}
+                    aria-label={item.ariaLabel}
+                    {...(isExternal
+                      ? { target: '_blank', rel: 'noopener noreferrer' }
+                      : {})}
+                  >
+                    {inner}
+                  </motion.a>
+                );
               })}
             </div>
 
@@ -556,7 +579,7 @@ export function ContactForm({ variant = 'light', layout = 'default' }: ContactFo
                 <Link
                   href={`https://wa.me/${SITE_CONTACT.whatsappDigits}`}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="nofollow noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-4 py-3 text-sm font-medium text-emerald-400 transition-all hover:bg-emerald-500/20"
                 >
                   <MessageCircle className="h-4 w-4" aria-hidden="true" />

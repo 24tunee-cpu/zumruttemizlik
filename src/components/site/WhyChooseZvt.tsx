@@ -85,7 +85,7 @@ export function WhyChooseZvt({
         <a
           href={waHref}
           target="_blank"
-          rel="noopener noreferrer"
+          rel="nofollow noopener noreferrer"
           data-source={`${sourcePrefix}-whatsapp`}
           className="inline-flex min-h-[44px] items-center justify-center rounded-lg bg-emerald-600 px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-500"
         >

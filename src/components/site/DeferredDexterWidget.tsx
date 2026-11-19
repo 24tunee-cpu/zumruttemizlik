@@ -4,7 +4,7 @@ import Script from 'next/script';
 import { useEffect, useState } from 'react';
 
 const MOBILE_MEDIA = '(max-width: 767px)';
-const MOBILE_IDLE_MS = 6_000;
+const MOBILE_IDLE_MS = 12_000;
 
 interface DeferredDexterWidgetProps {
   token: string;

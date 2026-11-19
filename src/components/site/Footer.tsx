@@ -375,7 +375,7 @@ export function Footer() {
                     key={social.label}
                     href={social.href}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="nofollow noopener noreferrer"
                     whileHover={shouldReduceMotion ? {} : { scale: 1.1, y: -2 }}
                     whileTap={shouldReduceMotion ? {} : { scale: 0.9 }}
                     className={`flex h-10 w-10 items-center justify-center rounded-full bg-slate-800 text-slate-300 transition-all ${social.color} hover:text-white`}
@@ -501,7 +501,7 @@ export function Footer() {
                   <a
                     href={withGmbUtm(getPublicReviewUrl()!, 'footer-review', { content: 'nap' })}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="nofollow noopener noreferrer"
                     data-source="footer-gmb-review"
                     className="text-amber-300 hover:text-amber-200 transition-colors"
                   >

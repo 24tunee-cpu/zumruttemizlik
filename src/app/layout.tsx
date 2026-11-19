@@ -39,7 +39,7 @@ const rootDefaultTitle = clampMetaTitle(
   `${SITE_CONTACT.companyName} | Sarıyer & İstanbul Temizlik`
 );
 const rootDescription = clampMetaDescription(
-  `Sarıyer / Zekeriyaköy ev, ofis, inşaat sonrası temizlik. ${formatGoogleTrustLine()}. Ücretsiz keşif, 7/24 destek. ${SITE_CONTACT.phoneDisplay}.`
+  `Sarıyer ve Zekeriyaköy’de ev, ofis, inşaat sonrası temizlik. ${formatGoogleTrustLine()}. Ücretsiz keşif, 7/24 destek — ara: ${SITE_CONTACT.phoneDisplay}.`
 );
 
 const rootMetadataBase: Metadata = {

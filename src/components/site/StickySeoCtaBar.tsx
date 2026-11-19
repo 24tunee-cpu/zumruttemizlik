@@ -76,7 +76,7 @@ export function StickySeoCtaBar({
         <a
           href={waHref}
           target="_blank"
-          rel="noopener noreferrer"
+          rel="nofollow noopener noreferrer"
           data-source={`${sourcePrefix}-whatsapp`}
           className="flex min-h-[44px] flex-col items-center justify-center gap-0.5 rounded-xl bg-emerald-700 px-2 py-2 text-center text-xs font-semibold text-white transition-colors hover:bg-emerald-800 sm:flex-row sm:gap-1.5 sm:text-sm"
         >
@@ -116,7 +116,7 @@ export function StickySeoCtaBar({
           <a
             href={reviewHref}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="nofollow noopener noreferrer"
             data-source={`${sourcePrefix}-review`}
             className="flex min-h-[44px] flex-col items-center justify-center gap-0.5 rounded-xl border border-amber-500/40 bg-amber-500/15 px-2 py-2 text-center text-xs font-semibold text-amber-100 transition-colors hover:bg-amber-500/25 sm:flex-row sm:gap-1.5 sm:text-sm"
           >

@@ -737,7 +737,7 @@ export function LeadAssistant() {
                         <a
                           href={quickWaHref}
                           target="_blank"
-                          rel="noopener noreferrer"
+                          rel="nofollow noopener noreferrer"
                           data-source="lead-assistant-whatsapp"
                           onClick={() => trackLead('lead-assistant-whatsapp')}
                           className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl bg-[#25D366] px-3 py-2.5 text-sm font-semibold text-[#053e2f] focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
@@ -966,7 +966,7 @@ export function LeadAssistant() {
                       <a
                         href={waHref}
                         target="_blank"
-                        rel="noopener noreferrer"
+                        rel="nofollow noopener noreferrer"
                         className="flex w-full min-h-[48px] items-center justify-center gap-2 rounded-xl bg-[#25D366] px-4 py-3 text-sm font-semibold text-[#053e2f]"
                         onClick={() => trackLead('lead-assistant-whatsapp-retry')}
                       >
